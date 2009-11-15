@@ -1,0 +1,34 @@
+Salida:
+----------
+
+Iniciando una nueva simulación vie 01. jun 2007 en 21:07:24 
+ 
+creando netlist... hecho. 
+parsing netlist... 
+checking netlist... 
+checking equations... 
+checker notice, variable `S' in equation `S11Mod' not yet defined 
+checker notice, variable `S' in equation `S21Mod' not yet defined 
+checker notice, variable `S' in equation `S41Mod' not yet defined 
+checker notice, variable `S' in equation `S21Phas' not yet defined 
+checker notice, variable `S' in equation `S41Phas' not yet defined 
+netlist content 
+      4 Pac instances 
+      1 SUBST instances 
+     10 MLIN instances 
+      2 MCORN instances 
+      4 MTEE instances 
+      1 SP instances 
+creating netlist... 
+ 
+La simulación ha finalizado vie 01. jun 2007 en 21:07:25 
+Listo. 
+ 
+
+
+
+
+Errores:
+-----------
+
+ 

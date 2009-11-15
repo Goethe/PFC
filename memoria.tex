@@ -1,0 +1,52 @@
+\documentclass[a4paper, 12pt]{book}
+\includeonly{chapter01, chapter02}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish, es-ucroman]{babel}
+\usepackage[a4paper, BCOR1cm]{typearea}
+\usepackage[full]{textcomp}
+\usepackage[format=hang, labelfont=bf, textfont=it, width=.8\textwidth]{caption}
+\usepackage[hang, sf]{subfigure}
+\usepackage[bf, sf]{titlesec}
+\usepackage{color, fancyhdr, hyperref, amsmath, amssymb, amsfonts, graphicx, array, booktabs, rotating, calc, textcase, nextpage, listings, tocbibind}
+\titleformat{\part}[display]{\centering\huge\sffamily\bfseries}{\partname\ \thepart}{.5\baselineskip}{}
+\hypersetup{%
+	pdftitle=Proceso de adquisición y tratamiento de señales de %
+	ultrasonidos, pdfauthor=José Ramón Gisbert Valls, pdfcreator=Vim 7.1,%
+	pdfstartview=FitH, colorlinks=true, pdfdisplaydoctitle=true,%
+	naturalnames=true, breaklinks=true, bookmarksopen=true,%
+	linkcolor=black%
+}
+\fancyhf{}
+\fancyhead[RO, LE]{\sffamily\bfseries\thepage}
+\fancyhead[LO]{\sffamily\nouppercase{\rightmark}}
+\fancyhead[RE]{\sffamily\nouppercase{\leftmark}}
+\pagestyle{fancy}
+\fancypagestyle{plain}{%
+	\fancyhf{}
+	\renewcommand\headrulewidth{0pt} 
+}
+\lstloadlanguages{Matlab}
+\lstset{language=Matlab}
+\newcommand\matlab{\textsc{matlab}}
+\newcommand\kpci{\textsc{kpci}-3108}
+\renewcommand\chaptermark[1]{\markboth{#1}{}}
+\renewcommand\cleardoublepage{\cleartooddpage[\thispagestyle{empty}]}
+\begin{document}
+
+\frontmatter
+
+\tableofcontents
+
+\include{chapter01}
+
+
+\mainmatter
+
+\part{Sistema de adquisición y procesado de señales}
+
+\include{chapter02}
+
+\include{chapter03}
+
+
+\end{document}

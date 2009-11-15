@@ -1,0 +1,31 @@
+-Observaciones
+-Breve descripción del funcionamiento de la tarjeta
+ (incluyendo una descripción del mapeo de la caja de inputs)
+-Descripción del comportamiento de un osciloscopio centrada en el procedimiento
+ de adquisición de muestras, disparo de la señal y representación
+-Usar diagramas de flujo para describir los distintos módulos de que se compone la
+ GUI, añadiendo el código posteriormente y describiendo dichos fragmentos de
+ código. Un apéndice podría ser el código completo (no es necesario)
+-Manual de usuario (apéndice?) / breve descripción del funcionamiento de la GUI.
+
+----------------------------------------------------------------------------------
+
+-Breve introducción a los transductores de ultrasonidos, exposición del modelo
+ escogido
+-Objetivos del circuito acondicionador, diseño e implementación
+-Algunos resultados y conclusiones (sobre el funcionamiento del circuito)
+-Implementación del algoritmo y medidas con objetos
+-Resultados y conclusiones
+
+-----------------------------------------------------------------------------------
+
+-Evitar la profundización en el código
+-Documentarse sobre propagación de ultrasonidos en materiales para la justificación
+ de las conclusiones posteriores
+-http://es.farnell.com/prowave/235ac130/transmisor-ultrasonicos-235khz/dp/1007362
+ (Prowave - 235AC130, transmisor de ultrasonidos a 235 KHz, código farnell 1007362)
+
+-----------------------------------------------------------------------------------
+
+El siguiente comando funciona en Vim
+:%s/\[\([A-Za-z\ á-úÁ-ÚñÑ]\+\)\]/\\textbf\{\1\}/gc

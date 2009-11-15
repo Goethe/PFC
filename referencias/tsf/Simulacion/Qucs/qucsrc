@@ -1,0 +1,8 @@
+Settings file, Qucs 0.0.9
+Position=0,24
+Size=1014,691
+Font=Helvetica,12,-1,5,50,0,0,0,0,0
+Language=
+BGColor=#fffae1
+maxUndo=20
+Editor=/usr/bin/qucsedit

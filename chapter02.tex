@@ -1,0 +1,12 @@
+\chapter{Tarjeta de adquisición de señales}
+
+Para preparar el sistema de adquisición y procesado de señales se dispuso en origen de una tarjeta de adquisición con interfaz \textsc{pci}. En concreto se ha empleado el modelo \kpci{} de la casa \emph{Keithley}. A continuación se exponen las características técnicas que ofrece este dispositivo, en apartados siguientes una breve descripción funcional y la disposición y usos de los puertos presentes en el mencionado dispositivo.
+
+
+\section{Características técnicas del hardware}
+
+La tarjeta \kpci{} es capaz de las operaciones de adquisición y muestreo de señales analógicas, construcción y emisión señales analógicas a partir de muestras previamente almacenadas, o del manejo de señales digitales de entrada o salida entre otras. A continuación se resumen las características principales del módulo de adquisición analógico.
+
+\begin{itemize}
+	\item La frecuencia de muestreo máxima es de 100 KS/s (cien mil muestras por segundo). Sin embargo esta velocidad de muestreo sólo es alcanzable en caso de que se muestree con un sólo canal y con una ganancia inferior a 10 V/V. Además para poder mantener esta ganancia tan sólo el módulo de adquisición analógica puede estar en funcionamiento.\par El dispositivo permite, como el lector habrá podido deducir, el muestreo con varios canales simultáneamente. En caso de que se muestree con más de un canal, la velocidad de muestreo en cada uno de ellos será el cociente entre la frecuencia máxima y el número de canales activos redondeado a la baja. Esto es cierto mientras la ganancia en todos los canales activos sea semejante y esté por debajo de los 10 V/V.
+\end{itemize}

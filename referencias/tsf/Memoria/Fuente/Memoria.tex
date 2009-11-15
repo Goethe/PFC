@@ -1,0 +1,777 @@
+
+%%%%%		         PREÁMBULO		      %%%%%
+
+%#########################################################%
+% Las secciones en este documento fuente están separadas  %
+% mediante comentarios como el que aparece a continuación %
+% anunciando la cabecera de código. Si se desea realizar  %
+% una búsqueda de una sección tan sólo es necesario ha--- %
+% cerlo con un editor de texto sencillo que permita la -- %
+% búsqueda con sensibilidad en mayúsculas y buscar la pa- %
+% labra SECCIÓN precedidas del ordinal correspondiente, - %
+% también en mayúsculas, o las palabras SUBSECCIÓN y SUB- %
+% SUBSECCIÓN seguidas de su número asociado en cardinales %
+% separados por puntos. También son válidas las búsquedas %
+% que contengan las palabras: PREÁMBULO, CABECERA, TÍTULO %
+% , ÍNDICES o BIBLIOGRAFÍA.				  %
+%#########################################################%
+
+%%%%%                   CABECERA                      %%%%%
+
+\documentclass[a4paper, 10pt, twocolumn]{article}
+\usepackage[spanish]{babel}
+\usepackage[latin9]{inputenc}
+\usepackage[T1,OT1]{fontenc}
+\usepackage{color,amsmath,amsfonts,amssymb,fancyhdr,graphicx,hyperref,capt-of,fancybox}
+
+%---------------------------------------------------------%
+% A continuación comandos para la síntesis de títulos,    %
+% notas al margen y otros elementos empleados para dotar  %
+% de carácter tipográfico los textos.			  %
+%---------------------------------------------------------%
+
+\newcommand{\Titulares}{\fontsize{25pt}{30pt}\usefont{OT1}{iwona}{c}{n}}
+\newcommand{\Cabecera}{\fontsize{6pt}{7.2pt}\usefont{OT1}{iwona}{m}{n}}
+\newcommand{\Resumen}{\fontsize{8pt}{9.6pt}\usefont{OT1}{iwona}{m}{n}}
+\newcommand{\paglimpia}{\clearpage{\pagestyle{plain}\cleardoublepage}}
+\newcommand{\margnota}[1]{\marginpar{\hspace{0pt}\raise1ex\hbox{\scriptsize$\blacktriangleright$}#1}}
+\newcommand{\iteme}[1]{\item\emph{#1},}
+\newcommand{\itemver}[1]{\item\textsc{#1},}
+\renewcommand\tablename{Tabla}
+\newenvironment{ej}[1][Ejemplo\emph{:}]{\begin{quotation}\noindent\emph{#1} }{\end{quotation}}
+
+%---------------------------------------------------------%
+% Código que se debe emplear para introducir una figura.  %
+% \begin{figure}[ht]					  %
+%							  %
+% \begin{center}					  %
+%							  %
+% \includegraphics[keepaspectratio=true,scale=0.5]{}	  %
+%							  %
+% \end{center}						  %
+%							  %
+% \caption[#5]{#6}					  %
+% \end{figure}						  %
+%---------------------------------------------------------%
+
+%---------------------------------------------------------%
+% Los siguientes comandos y entornos son de diseño propio %
+% y su cometido es simplificar la implementación de es--- %
+% tructuras matemáticas.				  %
+%---------------------------------------------------------%
+
+\newcommand{\flecha}[2][\longrightarrow]{\stackrel{\scriptscriptstyle #2}{#1}}
+\newcommand{\fourier}[1]{\mathrm{TF}\left\{#1\right\}}
+\newcommand{\Corche}[1]{\left\lbrack#1\right\rbrack}
+\newcommand{\corche}[1]{\lbrack#1\rbrack}
+\newcommand{\neel}[1]{\mathrm{e}^{#1}}
+\newcommand{\Llaves}[1]{\left\{#1\right\}}
+\newcommand{\llaves}[1]{\{#1\}}
+\newcommand{\Norma}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\mid#1\mid}
+\newcommand{\paren}[1]{\left(#1\right)}
+\newcommand{\var}{\mathrm{Var}}
+\newcommand{\volado}[1]{\raise1ex\hbox{\underbar{\scriptsize #1}}}
+\newtheorem{tma}{Teorema}
+
+%---------------------------------------------------------%
+% Definición de colores.				  %
+%---------------------------------------------------------%
+
+\definecolor{verde}{rgb}{0,0.33,0.2}
+\definecolor{gris_c}{gray}{0.9}
+\definecolor{gris_o}{gray}{0.65}
+\definecolor{violeta}{rgb}{0.45,0,0.7}
+\definecolor{azul}{rgb}{0,0.22,0.95}
+\definecolor{verde_c}{rgb}{0,0.95,0.22}
+\definecolor{verde_o}{rgb}{0.35,1,0.37}
+\definecolor{naranja}{rgb}{0.9,0.42,0}
+\definecolor{rojo_o}{rgb}{0.55,0,0}
+
+%---------------------------------------------------------%
+% Hiperenlaces y características del documento *.pdf .	  %
+%---------------------------------------------------------%
+
+\hypersetup{
+	a4paper,pdftitle={Memorias},pdfsubject={Práctica optativa TSF},
+	pdfauthor={L. Fernández Rojo, D. Valiente García, J.R. Gisbert Valls},
+	colorlinks,urlcolor=violeta,linkcolor=azul,citecolor=violeta,bookmarksnumbered,
+	raiselinks=true
+}
+
+%---------------------------------------------------------%
+% Propiedades exclusivas de este documento.		  %
+%---------------------------------------------------------%
+
+\setlength{\hoffset}{-27pt}
+\setlength{\oddsidemargin}{0pt}
+\setlength{\headheight}{10pt}
+\setlength{\textheight}{750pt}
+\setlength{\marginparsep}{0pt}
+\setlength{\footskip}{0pt}
+\setlength{\voffset}{-45pt}
+\setlength{\topmargin}{0pt}
+\setlength{\headsep}{13pt}
+\setlength{\textwidth}{510pt}
+\setlength{\marginparwidth}{0pt}
+\setlength{\marginparpush}{0pt}
+
+%---------------------------------------------------------%
+% Cabeceras y pies de página.				  %
+%---------------------------------------------------------%
+
+\fancypagestyle{plain}{%
+\fancyhf{}%
+\fancyhead[RO]{\Cabecera\thepage}%
+\fancyhead[LO]{\Cabecera PRÁCTICA OPTATIVA, TRANSMISIÓN POR SOPORTE FÍSICO}%
+\renewcommand{\headrulewidth}{0pt}%
+\renewcommand{\footrulewidth}{0pt}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[RO]{\Cabecera\thepage}
+\fancyhead[LO]{\Cabecera PRÁCTICA OPTATIVA, TRANSMISIÓN POR SOPORTE FÍSICO}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\frenchspacing
+
+%---------------------------------------------------------%
+% Título y autores.					  %
+%---------------------------------------------------------%
+
+\title{\Titulares Híbrido <<Rat-race>> a 3 GHz}
+\author{\Large L. Fernández Rojo, D. Valiente García, J.R. Gisbert Valls}
+\date{\begin{quotation}\noindent\Resumen\textbf{Resumen} --- En este artículo se expone el diseño de un híbrido de 180º a frecuencia de diseño de 3 GHz. Partiendo de una breve descripción teórica se calculan las dimensiones correspondientes al circuito para ser este construido en tecnología microstrip. Tras este paso se simula el circuito tanto en \textsc{Matlab} como en \textsc{Touch\-Stone}\footnote{Software específico que resuelve las discontinuidades introducidas por los puntos de unión entre las diferentes ramas de las que está compuesto el circuito.}\ \ \ con la intención de corregir los fallos de diseño introducidos por las limitaciones teóricas del estudio previo. Por último se realiza el negativo mediante un programa de \textsc{cad}\footnote{Diseño asistido por ordenador (\textsc{dao}) o \emph{Computer Aided Design}.}\ \ \ \ para después llevar el circuito a la práctica.\end{quotation}\centering\rule{350pt}{0.4pt}}
+
+%%%%% AQUÍ TERMINA LA CABECERA Y EMPIEZA EL DOCUMENTO %%%%%
+
+\begin{document}
+
+\maketitle
+
+%\begin{abstract}
+%
+%\end{abstract}
+%
+\section{Introducción teórica}
+\subsection{Descripción breve de un híbrido \emph{Rat-race}}
+
+Un híbrido a 3 dB y 180º es un acoplador direccional que entrega ---si la entrada se encuentra en la primera puerta, como es habitual--- dos réplicas de la señal original, una por la segunda puerta y otra desfasada 180º por la cuarta. Como se indica en su nombre la potencia se reparte equitativamente entre las dos contribuciones a la salida. La configuración que se emplea con mayor frecuencia para sintetizar este tipo de circuitos en tecnología microstrip se conoce con el sobrenombre de <<Rat-race>>.
+
+\begin{figure}[ht]
+
+\begin{center}
+
+{\color{gris_o}\setlength{\shadowsize}{2pt}
+\shadowbox{\includegraphics[keepaspectratio=true,scale=0.5]{comercial.eps}}}
+
+\end{center}
+
+\caption{Híbrido <<Rat-race>> comercial}
+\end{figure}
+
+La elección de una frecuencia de trabajo de 3 GHz está justificada por la intención de utilizar este diseño en la implementación de un prototipo de \textsc{radar} que trabaje a esa misma frecuencia.
+
+\subsection{Cálculo de la matriz $S$}
+
+Este tipo de circuitos tiene la forma de un anillo enlazado a sus cuatro accesos que por su parte tienen forma de rectángulos estrechos. La longitud del arco descrito por el anillo debe ser $\frac{6\lambda}{4}$ en medidas de longitudes de onda, mientras que las dimensiones de las puertas vienen determinadas por la impedancia que deben presentar y por las características del material empleado. Se sitúan las puertas uno y cuatro sobre la extensión del diámetro del anillo solapadas con su borde exterior en lados opuestos, la puerta dos se encuentra a $\frac{\lambda}{4}$ de la puerta uno, y finalmente la tercera puerta se obtiene por simetría; tal y como se describe en la \hyperref[fig:hibrido]{figura 11}.
+
+A la frecuencia de diseño y para valores concretos de impedancia que expondremos posteriormente, la matriz de parámetros $S$ asociada a un circuito como este es de la siguiente forma:
+
+\begin{equation}
+S=\frac{1}{\sqrt{2}}\paren{\begin{array}{rrrr}
+0 & -j & 0 & j\\
+-j & 0 &-j & 0\\
+0 & -j & 0 &-j\\
+j & 0 & -j & 0
+\end{array}}
+\end{equation}
+
+Sin embargo para poder simular el funcionamiento del circuito para señales que se encuentren en todo el rango de frecuencias es necesario calcular de manera analítica cada uno de los elementos de la matriz $S$ en función de la propia frecuencia interviniendo como parámetro. Para ello se emplea el método de superposición, por el cual el cálculo de cada $S_{ij}$ se divide en dos cálculos de menor dificultad que responden a dos formas distintas de excitar el circuito, para finalmente superponer los resultados de dichos cálculos y así obtener el resultado definitivo.
+
+\subsubsection{Parámetro $S_{11}$}
+
+Se seleccionan las dos excitaciones siguientes:
+
+\[
+\mathrm{1\volado{a}\ excitaci\acute{o}n}\ \left\{\begin{array}{c}
+a^1_1=a\\
+a^1_2=0\\
+a^1_3=0\\
+a^1_4=a
+\end{array}\right.\quad\mathrm{2\volado{a}\ excitaci\acute{o}n}\ \left\{\begin{array}{c}
+a^2_1=a\\
+a^2_2=0\\
+a^2_3=0\\
+a^2_4=-a
+\end{array}\right.
+\]
+
+La razón por la que se han elegido, tanto estos dos modos de excitar los accesos al circuito, como los correspondientes al cálculo del resto de parámetros radica en que de esta forma el circuito queda dividido en dos partes iguales separadas por un eje de simetría y así resulta más sencillo el cálculo.
+
+Si se excita el circuito como muestra la primera de las dos excitaciones anteriores el plano de simetría que divide al híbrido en dos se comporta como una pared magnética, y por tanto, en su análisis se trata como un circuito abierto.
+
+\begin{figure}[ht]
+
+\begin{center}
+
+\includegraphics[keepaspectratio=true,width=160pt]{s11_1.1}
+\par\bigskip
+\includegraphics[keepaspectratio=true,width=160pt]{s11_2.1}
+
+\end{center}
+
+\caption{Cálculo de $S_{11}$\ \ \ a. 1ª excitación\ \ \ b. 2ª excitación}
+\end{figure}
+
+Ahora aplicando la segunda excitación vemos que el citado plano de simetría pasa a ser una pared eléctrica, es decir, se comporta como un cortocircuito.
+
+\subsubsection{Parámetros $S_{22}$ y $S_{12}$}
+
+El cálculo de estas dos componentes de la matriz $S$ es análogo al anterior, al aplicarse los mismos principios, pero cabe observar como cambia la situación del plano de simetría con respecto al anterior apartado.
+
+Las excitaciones que se aplican al circuito son:
+
+\begin{itemize}
+\item Para el cálculo de $S_{22}$
+
+\[
+\mathrm{1\volado{a}\ excitaci\acute{o}n}\ \left\{\begin{array}{c}
+a^1_1=0\\
+a^1_2=a\\
+a^1_3=a\\
+a^1_4=0
+\end{array}\right.\ \mathrm{2\volado{a}\ excitaci\acute{o}n}\ \left\{\begin{array}{c}
+a^2_1=0\\
+a^2_2=a\\
+a^2_3=-a\\
+a^2_4=0
+\end{array}\right.
+\]
+
+\item Vemos que coinciden con las empleadas para $S_{12}$
+
+\[
+\mathrm{1\volado{a}\ excitaci\acute{o}n}\ \left\{\begin{array}{c}
+a^1_1=0\\
+a^1_2=a\\
+a^1_3=a\\
+a^1_4=0
+\end{array}\right.\ \mathrm{2\volado{a}\ excitaci\acute{o}n}\ \left\{\begin{array}{c}
+a^2_1=0\\
+a^2_2=a\\
+a^2_3=-a\\
+a^2_4=0
+\end{array}\right.
+\]
+
+\end{itemize}
+
+Y a continuación se han añadido las figuras correspondientes a los circuitos resultantes, donde los circuitos descritos para $S_{22}$ son equivalentes para $S_{12}$.
+
+\begin{figure}[ht]
+
+\begin{center}
+
+\includegraphics[keepaspectratio=true,width=160pt]{s22_1.1}
+\par\bigskip
+\includegraphics[keepaspectratio=true,width=160pt]{s22_2.1}
+
+\end{center}
+
+\caption{Cálculo de $S_{22}$\ \ \ a. 1ª excitación\ \ \ b. 2ª excitación}
+\end{figure}
+
+\subsubsection{Resto de parámetros $S$}
+
+Una vez calculados $S_{11_a}$\footnote{para la primera excitación.}, $S_{11_b}$\footnote{para la segunda.}, $S_{22_a}$, $S_{22_b}$, $S_{12_a}$ y $S_{12_b}$; podemos calcular el resto de elementos de la matriz $S$ a partir de ellos. Esto es posible debido a las propiedades del circuito, ya que se trata de una red simétrica y recíproca.
+
+\begin{equation}
+\begin{split}
+S_{11}&=\frac{1}{2}\paren{S^1_{11}+S^2_{11}}\\
+S_{22}&=\frac{1}{2}\paren{S^1_{22}+S^2_{22}}\\
+S_{12}&=\frac{1}{2}\paren{S^1_{12}+S^2_{12}}\\
+S_{13}&=\frac{1}{2}\paren{S^1_{12}-S^2_{12}}\\
+S_{23}&=\frac{1}{2}\paren{S^1_{22}-S^2_{22}}\\
+S_{14}&=\frac{1}{2}\paren{S^1_{11}-S^2_{11}}
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+S&=\paren{\begin{array}{cccc}
+S_{11} & S_{12} & S_{13} & S_{14}\\
+S_{21} & S_{22} & S_{23} & S_{24}\\
+S_{31} & S_{32} & S_{33} & S_{34}\\
+S_{41} & S_{42} & S_{43} & S_{44}
+\end{array}}\\
+\\
+&=\paren{\begin{array}{cccc}
+S_{11} & S_{12} & S_{13} & S_{14}\\
+S_{12} & S_{22} & S_{23} & S_{13}\\
+S_{13} & S_{23} & S_{22} & S_{12}\\
+S_{14} & S_{13} & S_{12} & S_{11}
+\end{array}}
+\end{split}
+\end{equation}
+
+\subsection[Cálculo de $\epsilon_{\mathrm{rel}}$]{Cálculo de la permitividad relativa del sustrato}
+
+Para poder obtener un valor para $\epsilon_{\mathrm{rel}}$ tenemos en primer lugar que medir experimentalmente la $\epsilon_{\mathrm{eff}}$. Para ese propósito empleamos una línea con un stub terminado en circuito abierto construida en tecnología microstrip, una línea como la mostrada en la \hyperref[fig:stub]{figura 4}. Se procede del modo descrito a continuación.
+
+\begin{figure}[hb]\label{fig:stub}
+
+\begin{center}
+
+\includegraphics[keepaspectratio=true,width=170pt]{stub.1}
+
+\end{center}
+
+\caption{Línea microstrip con stub disponible en el laboratorio}
+\end{figure}
+
+\begin{enumerate}
+\item Se conectan la entrada y la salida del dispositivo de la \hyperref[fig:stub]{figura 4} al analizador de espectros y se observa el comportamiento de $S_{12}$ en función de la frecuencia.
+\item Aquel valor de frecuencia en la que se produzca un mínimo global corresponderá con la frecuencia para la que no hay transferencia de potencia. A esa frecuencia el stub medirá $\frac{\lambda}{4}$, ya que sólo cuando su tamaño sea ese su impedancia correspondiente será equivalente a un cortocircuito, como resultado de desplazar un circuito abierto $\frac{\lambda}{4}$ hacia el generador. Cortocircuito que en ese punto hará que la totalidad de la potencia incidente se refleje y que, por lo tanto, no haya potencia transmitida.
+\item Por último se compara la longitud del stub con su longitud eléctrica y se deduce de esa comparación el tamaño de la longitud de onda, con ella y el resto de parámetros conocidos se obtiene la $\epsilon_{\mathrm{eff}}$.
+
+\[
+\mathrm{Valores\ conocidos}\quad\left\{\begin{array}{lll}
+\lambda=17.2\ \mathrm{cm}\\
+c=3\cdot10^8\ \mathrm{m}\cdot\mathrm{s}^{-1}\\
+f=1.005\ \mathrm{GHz}
+\end{array}\right.
+\]
+
+\begin{equation}
+\lambda=\frac{c}{f\sqrt{\epsilon_{\mathrm{eff}}}}\quad\rightarrow\quad\epsilon_{\mathrm{eff}}=\paren{\frac{c}{\lambda\cdot f}}^2=3.009\ \mathrm{F}/\mathrm{m}
+\end{equation}
+
+\end{enumerate}
+
+Una vez se dispone del valor de $\epsilon_{\mathrm{eff}}$ nos dirigimos a la herramienta software \emph{AppCad} para calcular definitivamente la $\epsilon_{\mathrm{rel}}$ del material. Para ello introducimos en el programa tanto el valor de $\epsilon_{\mathrm{eff}}$ recientemente obtenido como los valores de espesor del sustrato, ancho de la pista metálica y espesor de esta misma; así como el valor para la longitud del stub. Tras hacerlo tal y como se ilustra en la \hyperref[fig:erel]{figura 5} el resultado es la $\epsilon_{\mathrm{rel}}$ que buscábamos, que como podemos apreciar en la citada figura, tomará un valor de $4.392$.
+
+\begin{equation}
+\epsilon_{\mathrm{rel}}=4.392\ \frac{\mathrm{F}}{\mathrm{m}}
+\end{equation}
+
+\[
+\begin{array}{c}
+\mathrm{Valores\ conocidos\ en\ el\ orden}\\
+\mathrm{en\ que\ fueron\ propuestos}
+\end{array}\quad\left\{\begin{array}{lll}
+H=800\ \mu\mathrm{m}\\
+W=500\ \mu\mathrm{m}\\
+T=30\ \mu\mathrm{m}
+\end{array}\right.
+\]
+
+\begin{figure}[ht]\label{fig:erel}
+
+\begin{center}
+
+{\color{gris_o}\setlength{\shadowsize}{2pt}
+\shadowbox{\includegraphics[keepaspectratio=true,width=200pt]{erel_bnp.eps}}}
+
+\end{center}
+
+\caption{Toma de \emph{AppCad}, cálculo de $\epsilon_{\mathrm{rel}}$}
+\end{figure}
+
+\section{Simulación del circuito}
+
+Como se indicaba en el resumen es necesario simular el circuito antes de proceder a su proceso de fabricación, y así disponer de la oportunidad de ajustar los valores teóricos obtenidos a la realidad. La simulación consta de dos pasos, en primer lugar se utiliza \textsc{Matlab} más bien con el propósito de afianzar los conceptos teóricos y como aproximación de carácter menos riguroso; y posteriormente se empleará \textsc{TouchStone} que al tratarse de software específico nos proporcionará datos de mayor valor.
+
+\subsection{Simulación mediante \emph{Matlab}}
+
+La simulación en \textsc{Matlab} se convierte en una tarea sencilla si se dispone de los resultados que se obtuvieron durante el análisis teórico del circuito, ya que una vez llegados a este punto sólo resta traducir las expresiones al lenguaje que la máquina entiende. En realidad sólo es necesario simular los componentes $S_{11}$, $S_{22}$ y $S_{12}$; pues como se vio con anterioridad los demás son combinaciones de estos. Aunque las gráficas que se obtienen son de un interés razonable, no lo es del mismo modo el código necesario para generarlas, por lo tanto, se dará incluso un paso más en este documento ya que sólo se incluirá un resumen a modo de ejemplo.
+
+\begin{itemize}
+\item En el encabezado se declaran e inicializan los parámetros característicos del medio así como impedancias cuyo uso repetido hace que esto sea aconsejable.
+
+\begin{verbatim}
+function hibrido()
+
+f0=1e-9:1e-3:6;
+f=1e9*f0; Er=4.392;
+lambda=(3e8)./(f*(sqrt(Er)));
+lambda0=(3e8)/(3e9*(sqrt(Er)));
+beta=(2*pi)./(lambda);
+beta0=(2*pi)/(lambda0);
+
+% Longitudes
+t1=tan((beta*0.375*lambda0));
+t2=tan((beta*0.125*lambda0));
+
+% Impedancias
+z0=50;
+y0=1/z0;
+zr=sqrt(2)*z0;
+yr=1/zr;
+% Cuando tenemos circuito abierto
+z1a=zr./(i*t1);
+z2a=zr./(i*t2);
+% Cuando tenemos cortocircuito
+z1b=i*zr*t1;
+z2b=i*zr*t2;
+\end{verbatim}
+
+\item Posteriormente se calculan las dos excitaciones asociadas a los parámetros básicos, como en este caso la primera para el cálculo de $S_{11}$.
+
+\begin{verbatim}
+% Contribuciones para S11
+% Primera excitacion
+yin1=1./z2a;
+yin2=1./z1a;
+yl1=y0+yin1;
+zl1=1./yl1;
+yl2=yr.*((yl1+i*yr.*tan(beta*lambda0*%
+0.25))./(yr+i*yl1.*tan(beta*lambda0*%
+0.25)));
+ye=yin2+yl2;
+s11a=((y0-ye)./(y0+ye));
+\end{verbatim}
+
+\item Se acaba por calcular la superposición de ambas contribuciones y mostrar los resultados.
+
+\begin{verbatim}
+% Observamos valores concretos a 3Ghz
+s11(3000)
+s12(3000)
+s13(3000)
+s14(3000)
+
+plot(f,20*log10(abs(s11)),'r');
+hold all;
+plot(f,20*log10(abs(s12)),'b');
+hold all;
+plot(f,20*log10(abs(s13)),'g');
+hold all;
+plot(f,20*log10(abs(s14)),'y');
+end
+\end{verbatim}
+
+\end{itemize}
+
+\subsubsection{\emph{Matlab}, resultados}
+
+En la figuras siguientes podemos observar los resultados obtenidos. Al examinarlos con detalle podemos comprobar que a la frecuencia de diseño el híbrido se comporta tal y como se esperaba. A 3 GHz el coeficiente de reflexión de la primera puerta tiende a cero, es decir, no se refleja nada; mientras que la potencia a la entrada se divide equitativamente entre el segundo y el cuarto acceso como reflejan los -3 dB alcanzados por $S_{12}$ y $S_{14}$.
+
+\begin{figure}[ht]\label{fig:matMod}
+
+\begin{center}
+
+{\color{gris_o}\setlength{\shadowsize}{2pt}
+\shadowbox{\includegraphics[keepaspectratio=true,width=200pt]{matMod.eps}}}
+
+\end{center}
+
+\caption{Toma de \emph{Matlab}, simulación de la magnitud de los parámetros $S$}
+\end{figure}
+
+Por su parte la fase también cumple las especificaciones, y de este modo $\Phi_{S_{12}}=\frac{-\pi}{2}$ y $\Phi_{S_{14}}=\frac{\pi}{2}$ se diferencian en 180º tal y como se quería desde un principio. Podemos verlo en la \hyperref[fig:matPhas]{figura 7}.
+
+\begin{figure}[ht]\label{fig:matPhas}
+
+\begin{center}
+
+{\color{gris_o}\setlength{\shadowsize}{2pt}
+\shadowbox{\includegraphics[keepaspectratio=true,width=200pt]{matPhas.eps}}}
+
+\end{center}
+
+\caption{Toma de \emph{Matlab}, fase de $S_{12}$ y $S_{14}$}
+\end{figure}
+
+\subsection{Simulación mediante \emph{TouchStone}}
+
+\textsc{TouchStone} es como se ha recalcado anteriormente un programa dedicado específicamente a la simulación de circuitos, que al igual que \textsc{Matlab} y al contrario que la mayoría de software actual no dispone de una interfaz gráfica basada en diagramas, sino que las características del objeto a simular se introducen mediante órdenes textuales. Se desarrolló con ese propósito un lenguaje específico que facilitase la labor al programador, y aunque pretende ser intuitivo puede resultar de difícil comprensión cuando se es ajeno a él. Es por este motivo por el que se dedicará una especial atención a este punto de las memorias.
+
+\subsubsection{\emph{Touchstone}, elaboración del código}
+
+El desarrollo de un programa para \textsc{TouchStone} pasa por la composición de una serie de bloques de código cada uno de los cuales está etiquetado siguiendo el manual para que pueda ser reconocido inequívocamente. Cada uno de esos bloques desempeña una función que lo caracteriza, así por ejemplo, en el bloque \textsc{\texttt{var}} se definen las variables implicadas en la simulación del circuito, en el bloque \textsc{\texttt{out}} lo que se espera a la salida, y así sucesivamente. El bloque \textsc{\texttt{ckt}} es el único bloque de interés en ausencia, como se da en este caso, del bloque \textsc{\texttt{eqn}}\footnote{Aquel bloque de código en el que se definen las ecuaciones que gobiernan el comportamiento de los elementos que conforman el circuito.}; pues es el bloque de código característico de cada simulación.
+
+En el bloque \textsc{\texttt{ckt}} se describe el esqueleto del circuito, es decir, en él se caracterizan los elementos que forman la red y de que modo están interconectados, y se indica cuales son los accesos a dicha red. Las expresiones utilizadas para introducir los distintos componentes que intervendrán en una simulación tienen la forma general expuesta a continuación.
+
+\begin{center}
+\verb+TIPO_NOMBRE  NODOS    CARACTERÍSTICAS+
+\end{center}
+
+Donde lo que varía de un componente a otro, omitiendo su tipo que evidentemente cambiará, son esencialmente sus características. Seguidamente una breve lista en la que se enumeran, para cada uno de los elementos necesarios en un híbrido como este\footnote{Es pertinente indicar aquí que la simulación sobre \textsc{TouchStone} se realiza a partir del modelo modificado teniendo en cuenta los conceptos prácticos considerados en la sección \ref{subsec:cPracticos}, ya que de no hacerlo así los resultados que pudieran haber sido obtenidos no tendrían una aplicación práctica sobre la red final.}, las características anteriormente citadas.
+
+\begin{description}
+\item[mSub] Esta orden define un elemento especial de la red, el sustrato. \textsc{TouchStone} no toma \textsc{msub} como tal, si no que interviene en el papel de modificador de otros elementos cuando aquellos lo incluyen en una nueva línea tras el operador \verb+&+. Si este modificador se sitúa durante el comienzo del bloque \textsc{\texttt{ckt}} se aplicará a todo el circuito. Se define como en el siguiente ejemplo.
+
+\begin{verbatim}
+MSUB_xxx    ER^EREL  H^HSUB  T^TSUB  &
+                     RHO=1   RGH=0
+\end{verbatim}
+
+Donde \textsc{\texttt{rho}} representa el papel de la resistividad del metal empleado, y \textsc{\texttt{rgh}} la rugosidad de la superficie que depende en gran medida de la forma en que el metal es depositado sobre el propio sustrato\footnote{En el desarrollo de esta práctica se han tomado respectivamente los valores de \textsc{1} y \textsc{0} para estos parámetros, como valores por defecto en ausencia de más información.}.
+\item[mLin] El elemento más simple que interviene en un híbrido en tecnología microstrip es un tramo de línea recto. Se define por su anchura y su longitud del siguiente modo.
+
+\begin{center}
+\verb+MLIN_xxx  n1  n2    W  L+
+\end{center}
+
+\item[mTee] Un requisito para la unión de tres elementos en un <<único nodo>> es la inclusión de líneas en forma de T. Este tipo de elementos se define por las anchuras de las puertas que debe unir, y como se puede apreciar no tiene ninguna longitud asociada ya que esta se deduce de sus otros atributos.
+
+\begin{center}
+\verb+MTEE_xxx  n1  n2  n3    W1  W2  W3+
+\end{center}
+
+
+
+\begin{figure}[ht]
+
+\begin{center}
+
+{\color{gris_o}\setlength{\shadowsize}{2pt}
+\shadowbox{\includegraphics[keepaspectratio=true,width=150pt]{mte.eps}}}
+
+\end{center}
+
+\caption{\textsc{mtee}, línea microstrip en forma de T}
+\end{figure}
+
+\item[mCurve] Un codo curvo de línea microstrip está definido en \textsc{TouchStone} por el centro del arco, y por el ángulo recorrido; del siguiente modo.
+
+\begin{center}
+\verb+MCURVE_xxx  n1  n2    W  ANG  RAD+
+\end{center}
+
+Es importante mencionar que desgraciadamente este comando no está soportado en la versión de la aplicación disponible desde la web de la asignatura y por este motivo no se pudo proceder con la simulación.
+\item[mBend] Sin duda el componente que caracteriza en mayor medida este proyecto a nivel de simulación es el codo de línea microstrip. Aunque inicialmente no es un requisito en el diseño de un híbrido como el expuesto en esta memoria, debido a las particularidades con las que se debía proceder resultó indispensable la inclusión de dos elementos como este. 
+
+El catálogo del software empleado oferta tres elementos canditatos a suplir la necesidad de desviar un tramo de línea:
+
+\begin{itemize}
+\itemver{mbend} Cuando se desea modificar manualmente cada parámetro.
+\itemver{mbend2} Para codos en los que el corte se realiza de forma aleatoria.
+\itemver{mbend3} Donde, al contrario, el corte es óptimo.
+\end{itemize}
+
+Teniendo en cuenta que para la implementación del negativo era preciso conocer el ángulo de desviación, así como la magnitud del inglete se optó por la primera opción. Tomando como referencia las medidas que se dan en la figura siguiente, un codo se define en \textsc{TouchStone} como se expone a continuación.
+
+\begin{center}
+\verb+MBEND_xxx  n1  n2    W  ANG  M+
+\end{center}
+
+
+
+\begin{figure}[ht]
+
+\begin{center}
+
+\includegraphics[keepaspectratio=true,width=150pt]{mbend.eps}
+
+\end{center}
+
+\caption{\textsc{mbend}, codo en tecnología microstrip}
+\end{figure}
+
+Donde \textsc{\texttt{M}}, la magnitud del inglete, viene determinada por la relación $M=\frac{x}{d}$.
+
+\end{description}
+
+Una vez conocidas las expresiones anteriores concluye esta sección con la recopilación de comandos que da lugar al híbrido en configuración <<rat-race>> diseñado para esta práctica.
+
+\begin{verbatim}
+MSUB          ER = erel    H = hs   T=espMet  &
+              RHO = rMet            RGH = rug
+MLIN_PUERTA1  1   2        W^Wpue   L^LONGpue
+MTEE          2   3   20   W1^Wpue  W2^Wani   &
+                           W3^Wani
+MCURVE        3   4        W^Wani             &
+              ANG^ANGcorto          RAD^Radio
+MTEE          4   5    9   W1^Wani  W2^Wpue   &
+                           W3^Wani
+MLIN          5   6        W^Wpue   L^LONGlar
+MBEND         6   7        W^Wpue   ANG = -30 &
+                                    M^Inglete
+MLIN_PUERTA2  7   8        W^Wpue   L^LONGcor
+MCURVE        9  10        W^Wani             &
+              ANG^ANGcorto          RAD^Radio
+MTEE         10  11   15   W1^Wani  W2^Wpue   &
+                           W3^Wani
+MLIN         11  12        W^Wpue   L^LONGlar
+MBEND        12  13        W^Wpue   ANG = 30  &
+                           M^Inglete
+MLIN_PUERTA3 13  14        W^Wpue   L^LONGcor
+MCURVE       15  16        W^Wani             &
+             ANG^ANGcorto           RAD^Radio
+MTEE         16  17   19   W1^Wani  W2^Wpue   &
+                           W3^Wani
+MLIN_PUERTA4 17  18        W^Wpue   L^LNGpue
+MCURVE       19  20        W^Wani   ANG = 180 &
+                                    RAD^Radio
+DEF4P         2   8   14   18       Hibrido
+\end{verbatim}
+
+El lector debe saber que en el código anterior el operador \verb+&+ tiene la función de separar un comando en varias líneas sucesivas, y el operador \verb+^+ la de asignar a un parámetro el valor de una variable que previamente se definió en el bloque \textsc{\texttt{var}}. Por su parte una expresión del tipo:
+
+\begin{center}
+\verb+DEFnP  NODOS    NOMBRE+
+\end{center}
+
+Indica al compilador que la red con nombre \textsc{\texttt{nombre}} está compuesta por los elementos comprendidos entre los \texttt{n} nodos especificados en la instrucción.
+
+\subsubsection{\emph{TouchStone}, resultados}
+
+Como se mencionó en el apartado anterior el comando \textsc{mcurve} no está soportado por la versión del software empleada durante la ejecución de la práctica, por lo que la inclusión de los resultados que se habrían obtenido a partir de la simulación mediante la herramienta informática \textsc{TouchStone} se hace realmente complicada debido a los altos costes de las licencias que suponen un obstáculo insalvable para este grupo de prácticas.
+
+\section{Implementación}
+
+Una vez se han ajustado las variables del circuito para que se comporte de la manera más parecida posible a como se le exige, se lleva éste a la práctica.
+
+\subsection{Cálculos previos}
+
+Para ello primero se calculan sus características de naturaleza física, como son el ancho de las pistas, la distancia entre las puertas y el radio del anillo.
+
+El ancho de las pistas viene determinado por la impedancia característica que debe mostrar cada tramo de línea. Para calcularlo utilizamos de nuevo la herramienta \emph{AppCad}, únicamente será necesario pasarle como argumentos los datos de impedancia y las propiedades de la línea que ya se han obtenido en apartados anteriores y devolverá los valores requeridos. De ese modo obtenemos:
+
+\begin{figure}[ht]
+
+\begin{center}
+
+{\color{gris_o}\setlength{\shadowsize}{2pt}
+\shadowbox{\includegraphics[keepaspectratio=true,width=200pt]{wz0_bnp.eps}}
+\par\smallskip
+\shadowbox{\includegraphics[keepaspectratio=true,width=200pt]{wzr_bnp.eps}}}
+
+\end{center}
+
+\caption{Tomas de \emph{AppCad}, cálculo de $W_{Z_0}$ y $W_{Z_{\mathrm{r}}}$}
+\end{figure}
+
+\begin{itemize}
+\item Para las puertas, todas idénticas
+
+\begin{equation}
+Z_0=50\ \Omega\quad\longrightarrow\quad\left\{\begin{array}{l}
+W_{\mathrm{puertas}}=1.497\ \mathrm{mm}\\
+\epsilon_{\mathrm{eff}}=3.287\ \mathrm{F}/\mathrm{m}
+\end{array}\right.
+\end{equation}
+
+\item Para el anillo, cuya impedancia característica es diferente
+\begin{equation}
+Z_\mathrm{r}=Z_0\sqrt{2}=70.71\ \Omega\ \rightarrow\ \left\{\begin{array}{l}
+W_{\mathrm{anillo}}=0.773\ \mathrm{mm}\\
+\epsilon_{\mathrm{eff}}=3.104\ \mathrm{F}/\mathrm{m}
+\end{array}\right.
+\end{equation}
+
+\end{itemize}
+
+Utilizamos las expresiones teóricas que conocemos para el cálculo del radio del anillo y la separación entre los accesos.
+
+\begin{itemize}
+\item El radio se obtiene comparando la longitud del arco descrito por el anillo con su longitud eléctrica.
+
+\begin{equation}\label{eq:rmed}
+2\pi R=\frac{6\lambda}{4}\quad\rightarrow\quad R=1.335\ \mathrm{cm}
+\end{equation}
+
+\item Mientras que el recorrido entre accesos adyacentes por la ruta corta se deduce únicamente de su longitud eléctrica, teniendo en cuenta la $\epsilon_{\mathrm{eff}}$ de la pista que los conforma.
+
+\begin{equation}
+d=\frac{\lambda}{4}=1.419\ \mathrm{cm}
+\end{equation}
+
+\end{itemize}
+
+\subsection{Criterios prácticos, cálculos secundarios}\label{subsec:cPracticos}
+
+En este punto es necesario decidir sobre detalles preliminares que caracterizarán este diseño pero que, sin embargo, no tendrán un papel decisivo en cuanto al funcionamiento del dispositivo. Se adopta una decisión en cuanto al modo de unir los tramos de línea pertenecientes a los accesos al correspondiente al anillo, y en cuanto a como se adapta el circuito a la forma de la placa de sustrato proporcionada en el laboratorio. Por su parte estas resoluciones determinan el comportamiento del circuito frente a las discontinuidades producidas por los citados puntos de unión, y a varíaciones con respecto a su modelo teórico. 
+
+Creemos conveniente que la base de cada acceso más cercana al centro del anillo sea tangente a la circunferencia que divida a dicho anillo de forma que, a ambos lados quede una parte equitativa de la superficie total de este último. Para ello se considera que la circunferencia de radio $R$\footnote{Se debe prestar atención, $R$ no es una incógnita en el desarrollo expuesto a continuación.} calculado en la \hyperref[eq:rmed]{ecuación $\paren{8}$} es la circunferencia intermedia y las otras dos circunferencias -las que delimitan el anillo- han de calcularse según el sistema de ecuaciones expuesto a continuación.
+
+\[
+\begin{split}
+\left.\begin{array}{c}
+\pi\paren{R^2_{\mathrm{ext}}-R^2}=\pi\paren{R^2-R^2_{\mathrm{int}}}\\
+R_{\mathrm{ext}}-R_{\mathrm{int}}=W_{\mathrm{anillo}}
+\end{array}\right\}&\\
+\\
+\hookrightarrow\quad2R^2_{\mathrm{int}}+2R_{\mathrm{int}}\cdot W_{\mathrm{anillo}}+&W^2_{\mathrm{anillo}}-2R^2=0
+\end{split}
+\]
+
+{\setlength{\arraycolsep}{2pt}\begin{equation}
+\begin{split}
+R_{\mathrm{int}}&=\frac{-2W_{\mathrm{anillo}}\pm\sqrt{4W^2_{\mathrm{anillo}}-8(W^2_{\mathrm{anillo}}-2R^2)}}{4}\\
+\\
+&=\begin{array}{rl}
+& R_{\mathrm{int}}=13.16\ \mathrm{mm},\ R_{\mathrm{ext}}=13.93\ \mathrm{mm}\\
+\nearrow & \\
+\searrow & \\
+& R_{\mathrm{int}},\ R_{\mathrm{ext}}\in\Llaves{\mathbb{R}^-}
+\end{array}
+\end{split}
+\end{equation}}
+
+Para la fabricación se dispone en un principio de una placa cuadrada, esto hace del hecho de que los accesos 2 y 3 finalicen con un ángulo de 30º con respecto a la horizontal un inconveniente. Para evitarlo es pertinente modificar las puertas implicadas de manera que sus extremos más alejados al centro del híbrido sean paralelos al eje en el que se sitúan los otros dos accesos. Para nosotros lo adecuado es hacerlo de forma que la superficie comprendida por los límites de la puerta afectada permanezca inalterada como se observa en el resultado final expuesto en la \hyperref[fig:hibrido]{figura 11}.
+
+\subsection{Negativo}
+
+Finalmente resta la construcción de un modelo mediante un programa de \textsc{cad} que debe convertirse en un negativo del circuito real a escala 1:1. Como esta asignatura es ajena al manejo de este tipo de software únicamente resulta conveniente mencionar las principales dificultades que presenta el proceso por el cual se plasma este diseño al fichero correspondiente. Sin duda en esta etapa de dibujo trazar la segunda y tercera puertas es lo más complicado debido a sus situaciones y a sus formas especiales, aunque una vez se consigue una de las dos la restante se obtiene por simetría.
+
+A continuación en la \hyperref[fig:hibrido]{figura 11} se muestra el resultado.
+
+\begin{figure}[ht]\label{fig:hibrido}
+
+\begin{center}
+
+{\color{gris_o}\setlength{\shadowsize}{2pt}
+\shadowbox{\includegraphics[keepaspectratio=true,width=180pt]{modificado.eps}}}
+
+\end{center}
+
+\caption{Híbrido \emph{Rat-race} cuya frecuencia de diseño es 3 GHz. La imagen no se encuentra a escala}
+\end{figure}
+
+\subsection{Insolación de la placa}
+
+Una vez realizado el negativo se insoló la red sobre la placa, este procedimiento fue llevado a cabo por el técnico de laboratorio, así como también la soldadura de los conectores sobre cada una de las puertas. Es por ello que no se entra en los detalles del proceso de insolación puesto que no ha sido realizado por el grupo.
+
+\subsection{Medidas experimentales}
+
+A continuación se llevó a cabo la toma de medidas del circuito, proporcionadas por el analizador vectorial de redes. Las medidas necesarias para completar la matriz de parámetros de dispersión fueron seis: $S_{11}$ $S_{12}$ $S_{13}$ $S_{14}$ $S_{22}$ $S_{23}$.
+
+Se presentan los resultados en la siguiente gráfica:
+
+\begin{figure}[ht]
+
+\begin{center}
+
+{\color{gris_o}\setlength{\shadowsize}{2pt}
+\shadowbox{\includegraphics[keepaspectratio=true,width=200pt]{Mod.eps}}}
+
+\end{center}
+
+\caption{Módulo de los parámetros de dispersión}
+\end{figure}
+
+\begin{figure}[ht]
+
+\begin{center}
+
+{\color{gris_o}\setlength{\shadowsize}{2pt}
+\shadowbox{\includegraphics[keepaspectratio=true,width=200pt]{Phas.eps}}}
+
+\end{center}
+
+\caption{Fase de los parámetros de dispersión}
+\end{figure}
+
+Como era de esperar los resultados observados difieren ligeramente de lo previsto teóricamente. Existe una ligera desviación sobre la frecuencia esperada de 3 GHz, al igual que sobre los parámetros $S$. A pesar de ello se puede comprobar que a la frecuencia de diseño se obtienen unos valores de -3.8 dB para el módulo del $S_{12}$ y $S_{14}$, cuando teóricamente su valor era de -3 dB. En cuanto al desfase entre puerta 2 y 4 se obtiene un valor de 180º.
+
+Señalar que dichas diferencias entre modelo teórico y práctico son debidas, entre otras circunstancias, a la desestimación de las pérdidas en el diseño, los codos introducidos sobre las puertas 2 y 3, los tramos curvos, ya que la simulación está basada únicamente en el análisis circuital de la líneas como tramos rectilíneos, y por último cualquier imperfección posible en los procesos de impresión del negativo o bien en el litografiado del circuito.
+
+\section{Conclusiones}
+
+A la vista de los resultados la valoración que se puede extraer es que el circuito cumple correctamente con su cometido. Cabe destacar que se realizaron simulaciones previas con el programa \emph{Qucs} bastante desalentadoras ya que la respuesta del circuito se desviaba varios gigaherzios de lo esperado. También añadir que al no haber podido realizar la simulación con \textsc{TouchStone} no fue posible escalar las medidas del circuito para un resultado más óptimo, aunque como es observable esto no ha sido necesario puesto que los resultados son bastante aceptables. 
+
+\tableofcontents
+
+\end{document}
