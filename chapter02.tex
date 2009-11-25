@@ -5,8 +5,112 @@ Para preparar el sistema de adquisición y procesado de señales se dispuso en ori
 
 \section{Características técnicas del hardware}
 
-La tarjeta \kpci{} es capaz de las operaciones de adquisición y muestreo de señales analógicas, construcción y emisión señales analógicas a partir de muestras previamente almacenadas, o del manejo de señales digitales de entrada o salida entre otras. A continuación se resumen las características principales del módulo de adquisición analógico.
+La tarjeta \kpci{} es capaz de las operaciones de adquisición y muestreo de señales analógicas, de generar señales analógicas a partir de muestras previamente almacenadas, o del manejo de señales digitales de entrada o salida, entre otras.\par
+El sistema de adquisición y procesado propuesto requiere únicamente del modo de adquisición analógica de la tarjeta. De entre todas las características del dispositivo, se resumen a continuación aquellas que resultan relevantes en dicho modo de operación. Algunos de estos atributos se explican con mayor detalle en el siguiente apartado.
 
 \begin{itemize}
-	\item La frecuencia de muestreo máxima es de 100 KS/s (cien mil muestras por segundo). Sin embargo esta velocidad de muestreo sólo es alcanzable en caso de que se muestree con un sólo canal y con una ganancia inferior a 10 V/V. Además para poder mantener esta ganancia tan sólo el módulo de adquisición analógica puede estar en funcionamiento.\par El dispositivo permite, como el lector habrá podido deducir, el muestreo con varios canales simultáneamente. En caso de que se muestree con más de un canal, la velocidad de muestreo en cada uno de ellos será el cociente entre la frecuencia máxima y el número de canales activos redondeado a la baja. Esto es cierto mientras la ganancia en todos los canales activos sea semejante y esté por debajo de los 10 V/V.
+	\item El módulo dispone de 16 puertos físicos de entrada/salida.
+	\item En condiciones óptimas de productividad, es posible conseguir una frecuencia de muestreo máxima de 100 KS/s (cien mil muestras por segundo) a una resolución de 16 bits por muestra.
+	\item La cola de muestreo tiene capacidad para 256 canales distintos. Cada uno de los cuales puede configurarse independientemente en términos de ganancia o modo de adquisición.
+	\item La ganancia, que controla la resolución de las muestras, puede tomar uno de entre 16 valores posibles.	
+	\item Soporte, tanto en el modo de entrada como en el modo de salida, para disparo digital externo o controlado por software.
+	\item Selección por software del flanco activo de disparo.
+	\item Capacidad de interrumpir el muestreo tras un determinado número de ciclos después del disparo. La cantidad de ciclos puede controlarse por software.
 \end{itemize}
+
+
+\section{Descripción funcional}
+
+Una tabla almacenada en una memoria \textsc{ram} de 256 posiciones contiene la configuración dada a cada canal de muestreo. Por consiguiente, es posible configurar hasta 256 canales independientes y asignar a cada uno de ellos una ganancia y orden de muestreo diferentes. Además puede configurarse el modo de adquisición y el modo de terminación para cada canal. La frecuencia de muestreo por canal viene determinada por el número de veces que ese canal aparece repetido en la tabla. Puede verse un ejemplo de esta tabla en el cuadro \vref{tab:sample-queue}.
+
+\begin{table}
+	\begin{center}
+	\begin{threeparttable}
+	\begin{tabular}{lccccccccc}
+		\toprule
+		Posición en la cola & 1 & 2 & 3 & 4 & \multicolumn{2}{c}{$\cdots$} & 254 & 255 & 256 \\
+		\midrule
+		Número de canal & 15 & 15 & 02 & 02 & \multicolumn{2}{c}{$\cdots$} & 17 & 13 & 01 \\
+		Ganancia & 1 & 1 & 40 & 40 & \multicolumn{2}{c}{$\cdots$} & 200 & 8 & 80 \\
+		Polaridad de la medida\tnote{a} & $\pm$ & $\pm$ & $+$ & $+$ & \multicolumn{2}{c}{$\cdots$} & $\pm$ & $+$ & $\pm$ \\
+		Modo de terminación\tnote{b} & \textsc{d} & \textsc{d} & \textsc{ts} & \textsc{ts} & \multicolumn{2}{c}{$\cdots$} & \textsc{d} & \textsc{ts} & \textsc{ts} \\
+		\bottomrule
+	\end{tabular}
+	\begin{tablenotes}
+		\item[a] $\pm$ bipolar; $+$ unipolar
+		\item[b] \textsc{d} diferencial; \textsc{ts} un sólo terminal
+	\end{tablenotes}
+	\end{threeparttable}
+	\end{center}
+	\caption{Ejemplo de cola de muestreo}
+	\label{tab:sample-queue}
+\end{table}
+
+\cbstart[4pt]
+Debería referenciar el documento del que he extraído el ejemplo. Por Dios, corregir eso de modo de terminación por algo. Con threeparttable desaparece la barra que salía encima de las notas en el entorno table.
+\cbend
+
+
+\subsection{Métodos de entrada}
+
+La \kpci{} permite dos modos de adquisición y dos modos de terminación. Aprender a diferenciar cuando es oportuno seleccionar entre cada uno de ellos beneficiará la calidad de la medida.
+
+
+\subsubsection{Modos de adquisición}
+Como probablemente el lector ya sepa, una señal es bipolar cuando toma valores positivos y negativos. Por otro lado, el valor de las señales unipolares es o siempre positivo o siempre negativo, incluyendo el cero. Sabiendo que la tarjeta \kpci{} permite los modos de adquisición bipolar y unipolar (este último exclusivamente para señales de rango positivo), debe configurarse atendiendo a la polaridad de la señal de interés.\par
+El modo de adquisición unipolar presenta la ventaja de duplicar prácticamente la precisión de la medida. Manteniendo la ganancia, se reduce el intervalo de medida a la mitad. El paso correspondiente a una cuantificación de 16 bits se reduce de igual manera y aumenta, por tanto, la precisión.
+\begin{table}
+	\centering
+	\begin{tabular}{ccccc}
+		\toprule
+		& \multicolumn{2}{c}{Bipolar} & \multicolumn{2}{c}{Unipolar} \\
+		\cmidrule(r){2-3}\cmidrule(l){4-5}
+		\multicolumn{1}{c}{Ganancia} & \multicolumn{1}{c}{Rango (mV)} & \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} & \multicolumn{1}{c}{Rango (mV)} & \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} \\
+		\midrule
+		1 & $\pm10.0\cdot10^3$ & $305$ & $(0 - 10.0)\cdot10^3$ & $153$ \\
+		2 & $\pm5.0\cdot10^3$ & $153$ & $(0 - 5.0)\cdot10^3$ & $76$ \\
+		4 & $\pm2.5\cdot10^3$ & $76$ & $(0 - 2.5)\cdot10^3$ & $38$ \\
+		8 & $\pm1.25\cdot10^3$ & $38$ & $(0 - 1.25)\cdot10^3$ & $19$ \\
+		10 & $\pm1.0\cdot10^3$ & $31$ & $(0 - 1.0)\cdot10^3$ & $15$ \\
+		20 & $\pm500$ & $15$ & $0 - 500$ & $7.6$ \\
+		40 & $\pm250$ & $7.6$ & $0 - 250$ & $3.8$ \\
+		80 & $\pm125$ & $3.8$ & $0 - 125$ & $1.9$ \\
+		100 & $\pm100$ & $3.1$ & $0 - 100$ & $1.5$ \\
+		200 & $\pm50$ & $1.5$ & $0 - 50$ & $0.8$ \\
+		400 & $\pm25$ & $0.8$ & $0 - 25$ & $0.4$ \\
+		800 & $\pm12.5$ & $0.4$ & $0 - 12.5$ & $0.2$ \\
+		\bottomrule
+	\end{tabular}
+	\caption{Relación entre ganancias, rangos de medida y resolución según el modo de adquisición}
+	\label{tab:adquisition-modes}
+\end{table}
+
+
+\subsubsection{Modos de terminación}
+
+Internamente la tarjeta \kpci{} emplea un amplificador de instrumentación diferencial. Sin embargo es posible configurar los puertos físicos de la tarjeta para que cada uno muestree una señal diferente, en esta situación uno de los puertos de entrada del amplificador se conecta a la referencia de masa. De ese modo es posible trabajar con un mayor número de señales. El uso del modo de adquisición diferencial aporta otras ventajas como son una mayor inmunidad al ruido y la eliminación de la componente en continua.
+% Preferiría una estructura del tipo. Internamente uso de amplificador diferencial. Es lógico pensar que cada canal necesita dos puertos, pero es posible configurar cada puerto para que muestree por separado. Ventajas de una u otra configuración. Se soporta una configuración mixta.
+% Atendiendo a su configuración pueden clasificarse los puertos entre diferenciales o de un único terminal. La kpci soporta también configuraciones mixtas en las que un determinado número par de puertos se utiliza en modo diferencial, y el resto se configura como único puerto de entrada.
+
+\begin{center}
+	\MakeTextUppercase{figura, esquema interno con amplificador de instrumentación}
+\end{center}
+
+
+\subsection{Ganancia y optimización de la productividad}
+
+El amplificador de instrumentación interno de la \kpci{} es de ganancia variable. Es posible configurar una ganancia distinta para cada canal. Variar la ganancia supone modificar el rango de medida, alterando así la precisión.\par
+Aunque la tarjeta lo permite, encadenar una secuencia de canales con ganancia distinta en la cola de muestreo puede afectar a la productividad. Esto ocurre por dos razones. En primer lugar la adquisición de pequeña señal requiere de una mayor ganancia y es de modo inherente más lenta. Por otro lado, tras el muestreo de una señal de voltaje superior a los 100 mV, y antes de proceder a muestrear pequeña señal, es necesario un periodo de tiempo adicional para eliminar el valor residual a la entrada del conversor \textsc{a/d}. El fabricante hace las siguientes recomendaciones en el manual de usuario:
+
+\begin{itemize}
+	\item Los canales que operen en el mismo rango deben localizarse contiguamente en la cola aunque esto suponga muestrear fuera de orden.
+	\item Para muestrear pequeña señal a altas velocidades de muestreo se recomienda la preamplificación. De este modo, además, se reducen los niveles de ruido.
+	\item Deberían mantenerse dos listas, una para los canales <<rápidos>> y otra para los <<lentos>>.
+	\item Si se dispone de posiciones vacías en la cola pueden obtenerse medidas de mayor precisión en el muestreo de pequeña señal siguiendo este procedimiento.
+		\begin{itemize}
+			\item En primer lugar se asignan dos posiciones contiguas de la cola a los canales de alta ganancia siempre que esto sea posible.
+			\item Para cada canal al que se haya asociado más de una posición en la cola, se ignoran todas las muestras excepto la correspondiente a la última posición.
+		\end{itemize}
+\end{itemize}
+
+A nivel práctico pueden traducirse estas recomendaciones en la siguiente máxima. Las señales de rango inferior a los 100 mV deben preamplificarse o de lo contrario se verá afectada la frecuencia de muestreo.

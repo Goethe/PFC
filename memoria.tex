@@ -7,7 +7,8 @@
 \usepackage[format=hang, labelfont=bf, textfont=it, width=.8\textwidth]{caption}
 \usepackage[hang, sf]{subfigure}
 \usepackage[bf, sf]{titlesec}
-\usepackage{color, fancyhdr, hyperref, amsmath, amssymb, amsfonts, graphicx, array, booktabs, rotating, calc, textcase, nextpage, listings, tocbibind}
+\usepackage[color]{changebar}
+\usepackage{amsfonts, amsmath, amssymb, array, arydshln, booktabs, calc, color, dcolumn, fancyhdr, graphicx, hyperref, listings, nextpage, rotating, textcase, threeparttable, tocbibind, varioref}
 \titleformat{\part}[display]{\centering\huge\sffamily\bfseries}{\partname\ \thepart}{.5\baselineskip}{}
 \hypersetup{%
 	pdftitle=Proceso de adquisición y tratamiento de señales de %
@@ -27,6 +28,7 @@
 }
 \lstloadlanguages{Matlab}
 \lstset{language=Matlab}
+\cbcolor{red}
 \newcommand\matlab{\textsc{matlab}}
 \newcommand\kpci{\textsc{kpci}-3108}
 \renewcommand\chaptermark[1]{\markboth{#1}{}}
