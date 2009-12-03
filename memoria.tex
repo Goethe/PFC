@@ -1,14 +1,16 @@
 \documentclass[a4paper, 12pt]{book}
 \includeonly{chapter01, chapter02}
-\usepackage[latin1]{inputenc}
 \usepackage[spanish, es-ucroman]{babel}
-\usepackage[a4paper, BCOR1cm]{typearea}
-\usepackage[full]{textcomp}
 \usepackage[format=hang, labelfont=bf, textfont=it, width=.8\textwidth]{caption}
-\usepackage[hang, sf]{subfigure}
-\usepackage[bf, sf]{titlesec}
 \usepackage[color]{changebar}
-\usepackage{amsfonts, amsmath, amssymb, array, arydshln, booktabs, calc, color, dcolumn, fancyhdr, graphicx, hyperref, listings, nextpage, rotating, textcase, threeparttable, tocbibind, varioref}
+\usepackage[latin1]{inputenc}
+\usepackage[hang, sf]{subfigure}
+\usepackage[full]{textcomp}
+\usepackage[bf, sf]{titlesec}
+\usepackage[nottoc]{tocbibind}
+\usepackage[a4paper, BCOR1cm]{typearea}
+\usepackage[spanish]{varioref}
+\usepackage{amsfonts, amsmath, amssymb, array, arydshln, booktabs, calc, color, dcolumn, fancyhdr, graphicx, hyperref, ifthen, listings, nextpage, rotating, textcase, threeparttable}
 \titleformat{\part}[display]{\centering\huge\sffamily\bfseries}{\partname\ \thepart}{.5\baselineskip}{}
 \hypersetup{%
 	pdftitle=Proceso de adquisición y tratamiento de señales de %
@@ -29,10 +31,21 @@
 \lstloadlanguages{Matlab}
 \lstset{language=Matlab}
 \cbcolor{red}
+\labelformat{equation}{ecuación~#1}
+\labelformat{figure}{figura~#1}
+\labelformat{footnote}{#1\protect\iscurrentchapter{\thechapter}}
+\labelformat{section}{sección~#1}
+\labelformat{table}{cuadro~#1}
+\setkeys{Gin}{width=.8\linewidth}
+\graphicspath{{./pictures/}{../pictures/}}
+\DeclareGraphicsRule{.1}{mps}{*}{}
+\newcommand\iscurrentchapter[1]{\ifthenelse{\equal{#1}{\thechapter}}{  en el Capítulo~#1}}
 \newcommand\matlab{\textsc{matlab}}
 \newcommand\kpci{\textsc{kpci}-3108}
 \renewcommand\chaptermark[1]{\markboth{#1}{}}
 \renewcommand\cleardoublepage{\cleartooddpage[\thispagestyle{empty}]}
+\newcolumntype{d}[1]{D{,}{,}{#1}}
+\newcolumntype{+}{D{/}{\mbox{\ --\ }}{5}}
 \begin{document}
 
 \frontmatter

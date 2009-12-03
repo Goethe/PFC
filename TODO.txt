@@ -1,31 +1,61 @@
--Observaciones
--Breve descripción del funcionamiento de la tarjeta
- (incluyendo una descripción del mapeo de la caja de inputs)
--Descripción del comportamiento de un osciloscopio centrada en el procedimiento
- de adquisición de muestras, disparo de la señal y representación
--Usar diagramas de flujo para describir los distintos módulos de que se compone la
- GUI, añadiendo el código posteriormente y describiendo dichos fragmentos de
- código. Un apéndice podría ser el código completo (no es necesario)
--Manual de usuario (apéndice?) / breve descripción del funcionamiento de la GUI.
+Salvo que se especifique lo contrario en este TODO se darán instrucciones para modificar el contenido de las memorias del proyecto de fin de carrera. Este es el convenio que se utilizará en este fichero:
 
-----------------------------------------------------------------------------------
-
--Breve introducción a los transductores de ultrasonidos, exposición del modelo
- escogido
--Objetivos del circuito acondicionador, diseño e implementación
--Algunos resultados y conclusiones (sobre el funcionamiento del circuito)
--Implementación del algoritmo y medidas con objetos
--Resultados y conclusiones
+	-Las instrucciones para distintas secciones/apartados se separarán con una línea formada por guiones a la que desde ahora se llamará margen.
+	-A la sección de texto entre márgenes se la conocerá como procedimiento. El procedimiento contendrá salvo que se indique lo contrario instrucciones o consejos para modificar un apartado de las memorias con intención de alcanzar una versión definitiva.
+	-La primera línea tras un margen será una línea en blanco, a continuación se especificarán el nombre provisional de la sección a la que está destinada el procedimiento actual y su disposición en las memorias. P.e.: "1. Introducción". Si el contenido del procedimiento no es convencional, se denotará de ello en esta línea utilizando un asterisco '*' como primer caracter.
+	-A continuación se dá una nueva línea en blanco y se construye el grueso del procedimiento y por último se deja otra línea en blanco que precede al siguiente margen.
 
 -----------------------------------------------------------------------------------
 
+0.0. Introducción
+
+-Corregir al final
+-Introducir el término ENDUS
+-Cambiar fiables y obviamente no destructiva. Tomar como principal referencia la tesis doctoral de M.A.
+-No debo incluir términos de frecuencia ni adelantar información de las técnicas empleadas en esta sección
+
+-----------------------------------------------------------------------------------
+
+0.2. Estructura de este documento
+
+-Corregir al final
+-Ampliar el punto incluyendo un brevísimo resumen de cada capítulo
+-Añadir información sobre los convenios tipográficos si se cree conveniente
+
+-----------------------------------------------------------------------------
+
+1.2. Descripción funcional
+
+-Debería referenciar el documento del que he extraído el ejemplo
+-Con threeparttable desaparece la barra que salía encima de las notas en el entorno table, he de recuperarla
+
+-----------------------------------------------------------------------------------
+
+1.2.1. Métodos de entrada
+
+Modos de terminación
+-Terminar la figura del esquemático y añadirla al documento
+
+-----------------------------------------------------------------------------------
+
+1.2.2. Ganancia y optimización de la rendimiento
+
+-Preferiría una estructra del tipo. Cúando se obtiene rendimiento óptimo. Productividad óptima con uno o varios canales. Errores en la estimación del fabricante. Productividad por encima y por debajo de los 100 mV. Cómo obtener rendimiento óptimo con canales que operan con distinta ganancia.
+-"Productividad"
+-"Muestreo/Adquisición de pequeña señal"
+
+-----------------------------------------------------------------------------------
+
+*Consejos e Instrucciones de Alberto
+
 -Evitar la profundización en el código
--Documentarse sobre propagación de ultrasonidos en materiales para la justificación
- de las conclusiones posteriores
 -http://es.farnell.com/prowave/235ac130/transmisor-ultrasonicos-235khz/dp/1007362
  (Prowave - 235AC130, transmisor de ultrasonidos a 235 KHz, código farnell 1007362)
 
 -----------------------------------------------------------------------------------
 
-El siguiente comando funciona en Vim
+*El siguiente comando funciona en Vim
+
 :%s/\[\([A-Za-z\ á-úÁ-ÚñÑ]\+\)\]/\\textbf\{\1\}/gc
+
+-----------------------------------------------------------------------------------
