@@ -42,6 +42,9 @@
 \newcommand\iscurrentchapter[1]{\ifthenelse{\equal{#1}{\thechapter}}{  en el Capítulo~#1}}
 \newcommand\matlab{\textsc{matlab}}
 \newcommand\kpci{\textsc{kpci}-3108}
+\newcommand\minifootnoterule{\vspace*{-3pt}\hrule width 2in height 0.4pt \vspace*{2.2pt}}
+\newcommand\minifootnotemark[1]{\makebox[1.8em][l]{\mbox{\textsuperscript{\normalfont#1}}}}
+\newcommand\minifootnotetext[2]{\makebox[1.8em][r]{\mbox{\textsuperscript{\normalfont#1}}}\footnotesize#2\par\noindent}
 \renewcommand\chaptermark[1]{\markboth{#1}{}}
 \renewcommand\cleardoublepage{\cleartooddpage[\thispagestyle{empty}]}
 \newcolumntype{d}[1]{D{,}{,}{#1}}

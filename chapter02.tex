@@ -1,64 +1,75 @@
 \chapter{Tarjeta de adquisición de señales}
 
-Para preparar el sistema de adquisición y procesado de señales se dispuso en origen de una tarjeta de adquisición con interfaz \textsc{pci}. En concreto se ha empleado el modelo \kpci{} de la casa \emph{Keithley}. A continuación se exponen las características técnicas que ofrece este dispositivo, en apartados siguientes una breve descripción funcional y la disposición y usos de los puertos presentes en el mencionado dispositivo.
+Para preparar el sistema de adquisición y procesado de señales se dispuso en origen de una tarjeta de adquisición con interfaz \textsc{pci}. En concreto se ha empleado el modelo \kpci{} de la casa \emph{Keithley}. A continuación se exponen las características técnicas que ofrece este dispositivo, en apartados siguientes una breve descripción funcional y la disposición y uso de los puertos presentes en el mencionado dispositivo.
 
 
 \section{Características técnicas del hardware}
 
 La tarjeta \kpci{} puede emplearse para la adquisición y conversión de señales analógicas en señales digitales, para sintetizar señales analógicas a partir de señales digitales previamente generadas o almacenadas, o ---gracias a sus 32 puertos digitales de propósito general--- trabajar con señales digitales.\par
-El primer bloque del sistema electrónico de medida propuesto, es decir el sistema de adquisición y procesado de señales, tan sólo requiere de la función de adquisición analógica de la tarjeta. Por ello, de entre todas las características del dispositivo, se ha creído conveniente resumir a continuación aquellas que tienen relación directa con dicho modo de operación. Para obtener información detallada sobre la relación que estos atributos guardan con el proceso de adquisición de señales analógicas en la tarjeta \kpci{}, recúrrase a la \vref{sec:functional-description}.
+El primer bloque del sistema electrónico de medida propuesto, es decir el sistema de adquisición y procesado de señales, tan sólo requiere de la función de adquisición analógica de la tarjeta. Por ello, de entre todas las características del dispositivo, se ha creído conveniente resumir a continuación aquellas que tienen relación directa con dicha función. Para obtener información detallada sobre la relación que estos atributos guardan con el proceso de adquisición de señales analógicas en la tarjeta \kpci{}, recúrrase a la \vref{sec:functional-description}.
 
 \begin{itemize}
 	\item El módulo de adquisición analógica dispone de 16 puertos físicos.
 	\item La impedancia de entrada equivalente de cada puerto es aproximadamente igual a una capacidad de 200 pF en serie con una resistencia de valor inferior, pero aproximadamente igual, a 1 K$\Omega$.
-	\item En condiciones óptimas de rendimiento, es posible conseguir una frecuencia de muestreo máxima de 100 KS/s (cien mil muestras por segundo) a una resolución de 16 bits por muestra.
+	\item En condiciones óptimas, es posible conseguir un rendimiento máximo de 100 KS/s (cien mil operaciones de conversión por segundo). Este valor está sujeto a un error relativo del $0.02 \%$.
+	\item La resolución del conversor analógico digital es de 16 bits por muestra. El rango de amplitudes en el que opera depende de como esté configurado el modo de adquisición.% Este puede ser de 0 a 10 si el modo de adquisición es unipolar, o de -10 a 10 si es bipolar.
 	\item La cola de muestreo tiene capacidad para hasta 256 canales distintos. Cada uno de los cuales puede configurarse independientemente en términos de ganancia, frecuencia de muestreo, modo de adquisición o modo de terminación.
-	\item La ganancia, que controla la resolución de las muestras, puede tomar uno de entre 16 valores posibles. Véase el \vref{tab:acquisition-modes}.
-	\item Soporte, tanto en el modo de adquisición y conversión como en el modo de síntesis, para disparo digital externo o controlado por software.
-	\item Selección por software del flanco activo de disparo.
-	\item Capacidad de interrumpir el muestreo tras un determinado número de ciclos después del disparo. La cantidad de ciclos puede controlarse por software.
+	\item La ganancia, responsable en parte de la resolución con la que se cuantifica las muestras, puede tomar cada ciclo de reloj uno de entre 16 valores posibles. Véase el cuadro \vref{tab:acquisition-modes}.
+	% \item Soporte, tanto en el modo de adquisición y conversión como en el modo de síntesis, para disparo digital externo o controlado por software.
+	% \item Selección por software del flanco activo de disparo.
+	% \item Capacidad de interrumpir el muestreo tras un determinado número de ciclos después del disparo. La cantidad de ciclos puede controlarse por software.
 \end{itemize}
 
 
 \section{Descripción funcional}\label{sec:functional-description}
 
-Es necesario programar el comportamiento de la tarjeta de adquisición antes de ponerla en funcionamiento. La configuración correspondiente al proceso de adquisición analógica reside en su práctica totalidad en la cola de muestreo. Desde la cola se controlan los principales aspectos de este proceso, como por ejemplo, en que instantes se encuentra activo.\par
+Es necesario programar el comportamiento de la tarjeta de adquisición antes de ponerla en funcionamiento. Desde la cola de muestreo se controlan los principales aspectos del proceso de adquisición, como por ejemplo, en que instantes se encuentra activo.\par% La configuración correspondiente al proceso de adquisición analógica reside en su práctica totalidad en la cola de muestreo. Desde la cola se controlan los principales aspectos de este proceso, como por ejemplo, en que instantes se encuentra activo.\par
 La cola de muestreo, como su propio nombre indica, es una estructura de datos ordenada. Se encuentra almacenada en una memoria \textsc{ram} de 256 entradas que forma parte del hardware de la tarjeta. En el \vref{tab:sample-queue} puede verse una representación de un ejemplo de la cola de muestreo.\par
 
-\begin{table}[htbp]
+\begin{table}[h]
 	\begin{center}
 	\begin{threeparttable}
 	\begin{tabular}{lccccccccc}
 		\toprule
-		Posición en la cola & 1 & 2 & 3 & 4 & \multicolumn{2}{c}{$\cdots$} & 254 & 255 & 256 \\
+		Posición en la cola & 1 & 2 & 3 & 4 %
+		& \multicolumn{2}{c}{$\cdots$} & 254 & 255 & 256 \\
 		\midrule
-		Número de canal & 15 & 15 & 02 & 02 & \multicolumn{2}{c}{$\cdots$} & 17 & 13 & 01 \\
-		Ganancia & 1 & 1 & 40 & 40 & \multicolumn{2}{c}{$\cdots$} & 200 & 8 & 80 \\
-		Polaridad de la medida\tnote{a} & $\pm$ & $\pm$ & $+$ & $+$ & \multicolumn{2}{c}{$\cdots$} & $\pm$ & $+$ & $\pm$ \\
-		Modo de terminación\tnote{b} & \textsc{d} & \textsc{d} & \textsc{ts} & \textsc{ts} & \multicolumn{2}{c}{$\cdots$} & \textsc{d} & \textsc{ts} & \textsc{ts} \\
+		Número de canal & 15 & 15 & 02 & 02 %
+		& \multicolumn{2}{c}{$\cdots$} & 17 & 13 & 01 \\
+		Número de puerto\minifootnotemark{a, b} & 07 & 07 & 11 & 11 %
+		& \multicolumn{2}{c}{$\cdots$} & 07 & 09 & 01 \\
+		Ganancia & 1 & 1 & 40 & 40 %
+		& \multicolumn{2}{c}{$\cdots$} & 200 & 8 & 80 \\
+		Modo de adquisición\minifootnotemark{c} & $\pm$ & $\pm$ & $+$ & $+$ %
+		& \multicolumn{2}{c}{$\cdots$} & $\pm$ & $+$ & $\pm$ \\
+		Modo de terminación\minifootnotemark{d} & \textsc{d} & \textsc{d} & \textsc{ts} %
+		& \textsc{ts} & \multicolumn{2}{c}{$\cdots$} & \textsc{d} & \textsc{ts} %
+		& \textsc{ts} \\
 		\bottomrule
 	\end{tabular}
-	\begin{tablenotes}
-		\item[a] $\pm$ configuración bipolar; $+$ configuración unipolar
-		\item[b] \textsc{d} canal diferencial; \textsc{ts} canal con un sólo terminal
-	\end{tablenotes}
+	\vspace{\skip\footins}
+	\minifootnoterule
+		\minifootnotetext{a}{Si el canal es diferencial el número de puerto identifica un par de puertos. Un canal diferencial no puede estar asociado a un número de puerto superior a 07.}
+		\minifootnotetext{b}{Dos canales pueden estar relacionados con los mismos puertos físicos.}
+		\minifootnotetext{c}{$\pm$ configuración bipolar; $+$ configuración unipolar}
+		\minifootnotetext{d}{\textsc{d} canal diferencial; \textsc{ts} canal monoterminal}
 	\end{threeparttable}
 	\end{center}
 	\caption{Ejemplo de cola de muestreo}
 	\label{tab:sample-queue}
 \end{table}
 
-Cada entrada en la memoria \textsc{ram} identifica una posición en la cola. Las posiciones en la cola pueden encontrarse vacías o estar ocupadas por un canal. Varias posiciones en la cola, consecutivas o no, pueden estar ocupadas por un mismo canal. Por tanto, la cola puede estar ocupada, como máximo, por 256 canales independientes.\par
+Cada entrada en la memoria \textsc{ram} se identifica con una posición en la cola. Las posiciones en la cola pueden encontrarse vacías o estar ocupadas por un canal. Varias posiciones en la cola, consecutivas o no, pueden estar ocupadas por un mismo canal. Por tanto, la cola puede estar ocupada, como máximo, por 256 canales independientes.\par
 Las posiciones ocupadas contienen información correspondiente al canal y a los atributos asociados a este. Un canal es una entidad lógica que relaciona un puerto físico con un búffer de información y una serie de atributos. Durante el proceso de adquisición un puntero recorre las distintas posiciones de la cola, una a una y en orden. El canal activo, aquel que ocupa la posición a la que apunta el puntero en cada ciclo de reloj, determina tres cosas:
 
 \begin{itemize}
-	\item De qué puerto debe proceder la señal que llega al amplificador de instrumentación interno de la tarjeta.
-	\item Dónde, en qué búffer, deben almacenarse las muestras cuantificadas resultantes del proceso.
-	\item Por último, los atributos asociados al canal: ganancia, modo de adquisición y modo de terminación; indican, respectivamente, cuál debe ser la ganancia del amplificador de instrumentación, la polaridad de las muestras y el número de terminales de entrada, uno o dos dependiendo de si la adquisición es diferencial o no, durante el ciclo actual. Se da más información al respecto en apartados subsiguientes.
+	% \footnote{Por convenio se ha elegido hablar de una sola señal que entra al amplificador. Si se ha hecho esta elección, es porque si bien al amplificador pueden entrar una o dos señales simultáneamente desde sendos puertos, tal y como se verá más adelante, esto no supone otra diferencia para el proceso que la expuesta en la sección \vref{sec:termination-modes}
+	\item De qué puerto debe proceder la señal analógica\footnote{Por convenio se ha elegido hablar de una sola señal que entra al amplificador. Si se ha hecho esta elección, es porque si bien al amplificador pueden entrar una o dos señales simultáneamente, esto no supone otra diferencia para el proceso que la expuesta en la sección \vref{sec:termination-modes}. Es por ello, y para mantener la claridad, que se ha omitido esta posibilidad.} que llega al amplificador de instrumentación interno de la tarjeta.
+	\item Dónde, en qué búffer, debe almacenarse el valor resultante de muestrear y cuantificar esta señal.% las muestras cuantificadas resultantes del proceso.
+	\item Por último, los atributos asociados al canal: ganancia, modo de adquisición y modo de terminación; indican, respectivamente, cuál debe ser la ganancia del amplificador de instrumentación, cuál debe ser el rango de trabajo del conversor analógico digital, y qué se debe conectar a los terminales de entrada del amplificador de instrumentación. Se da más información al respecto en apartados subsiguientes.% la polaridad de las muestras y el número de terminales de entrada, uno o dos dependiendo de si la adquisición es diferencial o no, durante el ciclo actual.
 \end{itemize}
 
-Para concluir el apartado cabe remarcar dos cosas. En primer lugar, es posible inferir de esta mecánica de funcionamiento basada en la cola, que el proceso de adquisición afecta a una sola señal cada vez; y que la frecuencia de muestreo asociada a un canal depende de dos factores, de la velocidad de la señal de reloj, y de la cantidad de veces que un canal aparece repetido en la cola.\par
-En segundo lugar, debe mencionarse que existen dos modos de recorrer la cola, el modo secuencial y el modo en ráfaga. En el modo secuencial se recorre una posición de la cola con cada pulso del reloj de paso. Por el contrario, en el modo en ráfaga, con cada pulso del reloj se hace un recorrido completo de la cola. Aunque existen estos dos modos de recorrer la cola, durante el desarrollo de este proyecto y por circunstancias que envuelven el uso de \matlab{}, se ha configurado la tarjeta para que opere únicamente en el modo secuencial.\par
+Para concluir el apartado cabe remarcar lo siguiente. Es posible inferir dos cosas de esta mecánica de funcionamiento basada en la cola. Una de ellas es que el proceso de adquisición afecta a una sola señal cada vez. Y la segunda, que la frecuencia de muestreo ligada a un canal depende de dos factores, de la velocidad de la señal de reloj, y de la cantidad de veces que un canal aparece repetido en la cola.
 
 
 \subsection{Métodos de entrada}
@@ -67,16 +78,18 @@ La \kpci{} permite dos modos de adquisición y dos modos de terminación. Aprender
 
 
 \subsubsection{Modos de adquisición}
-Una señal es bipolar cuando toma valores positivos y negativos. Por el contrario, se distingue a las señales unipolares porque todos sus valores mantienen la misma polaridad, ya sea esta positiva o negativa. Para cada canal, debe configurarse el modo de adquisición como bipolar o unipolar\footnote{La tarjeta \kpci{} sólo admite señales unipolares de polaridad positiva} atendiendo a la señal de interés.\par
-El modo de adquisición unipolar presenta la ventaja de que en dicho modo prácticamente se duplica la precisión de las muestras. Manteniendo la ganancia, se reduce el rango de trabajo a la mitad. El paso correspondiente a una cuantificación de 16 bits se reduce de igual manera y, por tanto, aumenta la precisión.
+Una señal es bipolar cuando toma valores positivos y negativos. Por el contrario, se distingue a las señales unipolares porque todos sus valores mantienen la misma polaridad, ya sea ésta positiva o negativa. Para cada canal, debe configurarse el modo de adquisición como bipolar o unipolar\footnote{La tarjeta \kpci{} sólo admite señales unipolares de polaridad positiva.} atendiendo a la señal de interés.\par
+% El modo de adquisición unipolar presenta la ventaja de que en dicho modo prácticamente se duplica la resolución de las muestras. Manteniendo la ganancia, se reduce el rango de trabajo a la mitad. El paso correspondiente a una cuantificación de 16 bits se reduce de igual manera y, por tanto, aumenta la precisión.
+Si se sabe a ciencia cierta que la señal de entrada es unipolar debe emplearse el modo de adquisición unipolar. De ese modo, se duplica la resolución del conversor analógico digital.
 
-\begin{table}
+\begin{table}[hbt]
 	\begin{center}
 		\begin{tabular}{>{\raggedleft}p{1.2cm}d{5.2}d{3.1}+d{3.1}}
 			\toprule
 			& \multicolumn{2}{c}{Bipolar} & \multicolumn{2}{c}{Unipolar} \\
 			\cmidrule(r){2-3}\cmidrule(l){4-5}
-			\multicolumn{1}{c}{Ganancia} & \multicolumn{1}{c}{Rango (V)} %
+			\multicolumn{1}{c}{Ganancia}
+			& \multicolumn{1}{c}{Rango ($\pm\text{V}$)} %
 			& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} %
 			& \multicolumn{1}{c}{Rango (V)} %
 			& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} \\
@@ -89,7 +102,8 @@ El modo de adquisición unipolar presenta la ventaja de que en dicho modo práctic
 			\\
 			& \multicolumn{2}{c}{Bipolar} & \multicolumn{2}{c}{Unipolar} \\
 			\cmidrule(r){2-3}\cmidrule(l){4-5}
-			\multicolumn{1}{c}{Ganancia} & \multicolumn{1}{c}{Rango (mV)} %
+			\multicolumn{1}{c}{Ganancia}
+			& \multicolumn{1}{c}{Rango ($\pm\text{mV}$)} %
 			& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} %
 			& \multicolumn{1}{c}{Rango (mV)} %
 			& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} \\
@@ -109,45 +123,136 @@ El modo de adquisición unipolar presenta la ventaja de que en dicho modo práctic
 \end{table}
 
 
-\subsubsection{Modos de terminación}
+\subsubsection{Modos de terminación}\label{sec:termination-modes}
 
-Internamente la tarjeta \kpci{} emplea un amplificador de instrumentación diferencial. En principio este hecho implicaría que a cada canal se asociasen dos puertos físicos, uno por cada uno de los dos terminales de entrada del amplificador. No obstante, es posible configurar la tarjeta para que uno de los terminales del amplificador se conecte a masa. En ese caso, el terminal restante se conecta a un puerto físico.\par
+Internamente, la tarjeta \kpci{} emplea un amplificador de instrumentación diferencial. En principio este hecho implicaría que a cada canal se asociasen dos puertos físicos, uno por cada uno de los dos terminales de entrada del amplificador. No obstante, es posible configurar la tarjeta para que uno de los terminales del amplificador se conecte a masa. En ese caso, el terminal restante se conecta a un puerto físico.\par
 
-\begin{figure}[htpb]
+\begin{figure}[htp]
 	\begin{center}
-		\includegraphics[width=.8\linewidth]{termination.1}
+		\includegraphics[width=.8\linewidth]{chapter02-01.mps}
 	\end{center}
-	\caption{Figura}
-	\label{fig:figura}
+	\caption{Figura que muestra el modo de terminación sencillo. La entrada superior del amplificador de instrumentación se conecta al puerto 9 y la entrada inferior se conecta a masa}
+	\label{fig:termination-modes}
 \end{figure}
 
 Para hacerlo, cabría pensar que es suficiente con modificar el atributo que controla el modo de terminación del canal correspondiente. Al contrario de lo que pudiera parecer, el modo de terminación es una propiedad que no es atribuible al canal, si no que se atribuye a un par de puertos\footnote{Aunque según las especificaciones del fabricante es posible configurar cada par de puertos para que opere según un modo de terminación independiente del resto, \matlab{} sólo admite un modo de terminación para el conjunto total de puertos.}. En concreto, el modo de terminación afecta a los pares de puertos compuestos por un primero de entre los puertos 0 y 7, y un segundo cuyo número de puerto es igual al del primero más 8. De ahí que todos los canales relacionados con el mismo par de puertos deban estar configurados con el mismo modo de terminación, una configuración distinta no está permitida.\par
-Los dos modos de terminación posibles se conocen como: diferencial, si es que la señal que entra en cada terminal del amplificador procede de cada uno de los puertos del par; sencillo, en caso de que uno de los terminales de entrada del amplificador se conecte a la referencia de tensión. A partir de aquí se conocerá a los canales configurados con el modo de terminación diferencial como canales diferenciales, y a los canales configurados con el modo de terminación sencillo como canales con un sólo terminal.\par
+Los dos modos de terminación posibles se conocen como: diferencial, si es que la señal que entra en cada terminal del amplificador procede de cada uno de los puertos del par; sencillo, en caso de que uno de los terminales de entrada del amplificador se conecte a la referencia de tensión. En este documento se llama canal diferencial a los canales cuyo modo de terminación sea diferencial, y canal con un sólo terminal o monoterminal a aquellos para los que el modo de terminación es sencillo. \par
 Las ventajas que presenta el uso de uno u otro tipo de canales son comprensibles. Emplear canales con un sólo terminal permite aplicar el proceso de adquisición sobre un mayor número de señales simultáneamente. Por el contrario, utilizar canales diferenciales redunda en una mayor inmunidad frente al ruido. Además, los amplificadores diferenciales eliminan de forma inherente la componente en continua.\par
 \par
 
 
-\subsection{Ganancia y optimización de la rendimiento}
+%\subsection{Ganancia y optimización del rendimiento}
+\subsection{Ganancia y rendimiento}
 
-El amplificador de instrumentación interno de la \kpci{} es de ganancia variable. Es posible configurar una ganancia distinta para cada canal. Variar la ganancia supone modificar el rango de medida, alterando así la precisión.\par
-Aunque la tarjeta lo permite, encadenar una secuencia de canales con ganancia distinta en la cola de muestreo puede afectar al rendimiento. Esto ocurre por dos razones. En primer lugar la adquisición de pequeña señal requiere de una mayor ganancia y es de modo inherente más lenta. Por otro lado, tras el muestreo de una señal de voltaje superior a los 100 mV, y antes de proceder a muestrear pequeña señal, es necesario un periodo de tiempo adicional para eliminar el valor residual a la entrada del conversor \textsc{a/d}. El fabricante hace las siguientes recomendaciones en el manual de usuario:
+% Ganancia y rendimiento se encuentran fuertemente relacionados en la \kpci{}. Esto es porque la configuración de ganancia del amplificador de instrumentación interno afecta significativamente al rendimiento obtenido en el proceso de adquisición analógica. Es por ello que su descripción se ha englobado en un mismo punto.
+Ganancia y rendimiento se encuentran fuertemente relacionados en la \kpci{}. La acción del amplificador de instrumentación es una de las que más influye en el rendimiento obtenido en el proceso de adquisición. El comportamiento del amplificador depende en gran medida de la ganancia con que debe amplificar la señal a su entrada. Es por ello por lo que ambos conceptos se engloban en un mismo apartado.
+
+\subsubsection{Ganancia}
+
+% El amplificador de instrumentación interno de la \kpci{} es de ganancia variable. Es posible configurar una ganancia distinta para cada canal. La ganancia del amplificador determina no sólo la amplitud de las muestras, si no también la precisión máxima obtenida. En el cuadro \vref{tab:acquisition-modes} puede verse una relación con las ganancias permitidas por el amplificador frente a la precisión de referencia para dichas ganancias.
+El amplificador de instrumentación interno de la \kpci{} es de ganancia variable. Es posible configurar una ganancia distinta para cada canal. Esto convierte a esta tarjeta de adquisición en un dispositivo muy versátil, capaz de trabajar simultáneamente con señales de amplitud dispar. No obstante esta versatilidad tiene un coste, el rendimiento cuando se amplifica varias señales con distintas ganancias en instantes sucesivos es menor.
+
+\subsubsection{Rendimiento}
+
+% Se entiende como rendimiento, la velocidad máxima con la que el dispositivo de adquisición y muestreo puede realizar operaciones de conversión con una precisión fijada de antemano.
+Se entiende como rendimiento la cantidad máxima de operaciones de conversión que el dispositivo puede realizar por unidad de tiempo. Para que una de estas operaciones contribuya a la medida de rendimiento, la muestra que se obtiene tras ésta debe superar un requisito de precisión, su valor debe ser lo bastante preciso. Esta es la principal razón por la que la frecuencia de muestreo es mayor o igual que el rendimiento.\par
+El rendimiento óptimo de la tarjeta \kpci{} especificado por el fabricante es de cien mil operaciones por segundo (100 KS/s). No obstante se advierte, para obtener este nivel de rendimiento es necesario alimentar la tarjeta con una fuente de tensión ideal. Además, es importante que exista adaptación de impedancias entre el circuito de alimentación y el puerto por el que se quiere introducir la señal. Aún en estas condiciones el valor proporcionado por la casa Keithley está sujeto a un error relativo máximo del $0.02\%$, el cual supone un error absoluto máximo de dos mil operaciones por segundo (2 KS/s).\par
+
+
+\subsubsection{Optimización del rendimiento}
+
+Como se ha dicho, el rendimiento puede verse afectado por la ganancia, y puede verse afectado de dos formas diferentes:
+
+\begin{enumerate}
+	\item Encadenar secuencias de canales a los que se atribuye ganancias diferentes en la cola de muestreo repercute de forma negativa en el rendimiento. Es más, en función del orden en que se sitúen canales con distinta ganancia en la cola, el rendimiento se ve afectado en mayor o menor medida. 
+	\item Aún suponiendo que todos los canales se configuren a igual ganancia, una ganancia de valor superior o igual a 100 ---lo cual es adecuado para señales con valor de pico inferior o igual a 100 mV--- implica la reducción del rendimiento a la mitad. En configuraciones multiganancia, una ganancia de 100 o más sigue siendo perjudicial.
+\end{enumerate}
+
+El manual de usuario da tres razones que explican este comportamiento.
+% Todas ellas se fundamentan en el mismo concepto. Al trabajar con varias señales simultáneamente
+% trabajar con señales de amplitud pequeña 
+% el rendimiento del proceso de adquisición depende del rendimiento del amplificador.
+% el tiempo de preparación del amplificador
 
 \begin{itemize}
-	\item Los canales que operen en el mismo rango deben localizarse contiguamente en la cola aunque esto suponga muestrear fuera de orden.
-	\item Para muestrear pequeña señal a altas velocidades de muestreo se recomienda la preamplificación. De este modo, además, se reducen los niveles de ruido.
-	\item Deberían mantenerse dos listas, una para los canales <<rápidos>> y otra para los <<lentos>>.
-	\item Si se dispone de posiciones vacías en la cola pueden obtenerse medidas de mayor precisión en el muestreo de pequeña señal siguiendo este procedimiento.
-		\begin{itemize}
-			\item En primer lugar se asignan dos posiciones contiguas de la cola a los canales de alta ganancia siempre que esto sea posible.
-			\item Para cada canal al que se haya asociado más de una posición en la cola, se ignoran todas las muestras excepto la correspondiente a la última posición.
-		\end{itemize}
+	\item En general, debido a la capacidad equivalente ---parásita o no--- que se encuentra a la entrada de los integrados, es necesario un tiempo para fijar el valor de la señal a la entrada del amplificador. En la práctica el tiempo necesario es mayor si se trata de señales de amplitud pequeña.
+	\item Si se tarda más tiempo en fijar valores pequeños de tensión es en parte debido al ruido. Si la amplitud del ruido es constante, a medida que disminuye la amplitud de la señal de entrada, más se equipara ésta a la del ruido. Lo normal es que el ruido perjudique más el proceso si la señal de entrada tiene una amplitud comparable o menor a la de ese ruido.
+	\item Tras amplificar una señal, parte de ésta queda a la entrada del amplificador. Esta componente residual es una medida de ruido que afecta a la señal que se amplifica en el próximo ciclo. Si la señal a amplificar es de amplitud mucho menor a la anterior señal amplificada, esa componente residual podría enmascarar el resultado.
 \end{itemize}
 
-Deben tomarse precauciones especiales cuando se trabajan con señales con amplitud de pico inferior a los 100 mV. Para señales de tal amplitud la frecuencia de muestreo disminuye. Las razones son:
+% Estas tres razones se resumen en un mismo concepto. Es necesario un tiempo de preparación para que el amplificador actúe correctamente. Si las condiciones empeoran, manteniendo el nivel de precisión, ese tiempo aumenta y disminuye el rendimiento. La precisión del valor de las muestras obtenidas mediante el proceso de adquisición depende de la precisión con la que el amplificador de instrumentación interno de la tarjeta amplifica, en cada ciclo de reloj, la señal analógica a su entrada. Para que el amplificador amplifique de forma precisa, precisa de un tiempo de preparación. Si las condiciones empeoran y se quiere mantener la precisión, ese tiempo de preparación aumenta y disminuye el rendimiento.
+% se engloban
+% Estas tres razones se engloban en un único concepto. Parte de cada ciclo de reloj se emplea para preparar el amplificador antes de que este amplifique la señal analógica a su entrada. De este periodo de tiempo, conocido como tiempo de preparación, depende la precisión con la que el amplificador actúa. Si aumenta el tiempo de preparación, la señal amplificada será más precisa y también lo serán las muestras.
+
+Para mejorar el rendimiento el fabricante aconseja que se preamplifique la señal antes de que ésta llegue hasta el dispositivo. Si se trabaja con varias señales, un criterio de conveniencia es el de amplificar las señales para que todas se encuentren en el mismo rango de amplitudes. De ese modo es posible fijar la ganancia del amplificador interno.\par % Siguiendo este consejo no sólo se mejora el rendimiento, si no que es probable obtener una mayor precisión.\par
+En casos en los que no se pueda preamplificar la señal o en los que, en definitiva, no se pueda aplicar esta solución, Keithley propone las siguientes recomendaciones.
 
 \begin{itemize}
-	\item El amplificador actúa más lentamente.
-	\item El ruido en las medidas es mayor y, por tanto, es necesario un filtrado de post-adquisición (promediado) para obtener resultados más precisos. Para eliminar el ruido en estas condiciones se recomienda emplear el modo de adquisición diferencial.
+	\item La primera y más inmediata consiste en una reordenación de los canales en la cola de muestreo. Los canales configurados a igual ganancia deben localizarse en posiciones contiguas de la cola, aunque esto suponga muestrear fuera de orden. De ese modo se minimiza el efecto de las componentes residuales. Minimizar el efecto perjudicial de estas señales interferentes redunda en muestras de valor más preciso.
+	\item No siempre es posible evitar que canales con ganancias desiguales coincidan en posiciones contiguas de la cola de muestreo. Por ejemplo, si se reordenan los canales como se indica en el punto anterior, el salto entre conjuntos de canales configurados con igual ganancia sigue suponiendo una fuente de errores. Una forma de atacar este problema, si se dispone de posiciones vacías en la cola, es que los canales más perjudicados ocupen más posiciones. En el ejemplo propuesto los canales más perjudicados son aquellos presentes en la transición entre grupos de canales de igual ganancia, en concreto aquellos que dan comienzo a un grupo de canales con ganancia superior a la del grupo anterior.\par
+		Al ocupar posiciones consecutivas de la cola con un mismo canal, se consigue que durante varios ciclos de reloj consecutivos la señal que entra al amplificador proceda de un mismo puerto, el puerto asociado a ese canal. Cuando esto ocurre el amplificador tiene tiempo suficiente de prepararse para amplificar la señal con bastante precisión. Tras los primeros ciclos, en los que la señal se ve corrompida por la componente residual de la señal precedente, toda traza de señal interferente será eliminada a la entrada del amplificador.\par %en la práctica 
+%	\item Los canales que operen en el mismo rango deben localizarse contiguamente en la cola aunque esto suponga muestrear fuera de orden.
+%	\item La precisión y el rendimiento son dos propiedades del proceso de adquisición que se encuentran ligadas al canal. Si se dispone de posiciones vacías en la cola es posible aumentar la precisión y/o el rendimiento ligados a uno o varios canales.\par
+%		Para aumentar el rendimiento es suficiente con que el canal ocupe alguna de esas posiciones vacías, aunque sea de forma dispersa. Si el reloj se mantiene a la misma velocidad, el rendimiento aumentará.\par
+		
+%		Una forma de que el amplificador tenga tiempo de prepararse para amplificar correctamente una señal, es que esa señal se encuentre a su entrada durante varios ciclos de reloj consecutivos. Tras los primeros ciclos, en los que la señal se verá corrompida por la componente residual de la señal precedente, se habrá eliminado prácticamente toda traza de la señal interferente en la lectura a la entrada del amplificador.\par
+		Las muestras cuyo origen sea una misma señal analógica y que se hayan obtenido en ciclos de reloj consecutivos pueden post-procesarse para obtener muestras de mayor precisión. Para minimizar el efecto de las componentes residuales, siempre que se tenga un conjunto de muestras como el que se ha descrito, pueden descartarse todas las muestras del conjunto excepto la última. Para combatir el ruido pueden emplearse técnicas como el promediado sobre un conjunto de muestras semejante, de forma que el efecto del ruido sobre la muestra resultante será menor.
+%		
+%		En los primeros ciclos de reloj ---al menos el primero de ellos--- la señal se verá corrompida por la componente residual de la señal precedente. Las muestras obtenidas durante los primeros de esos ciclos de reloj ---al menos durante el primero de ellos--- 
+%		Del mismo modo, la señal analógica que entra al dispositivo por el puerto asociado al canal, y la señal digital almacenada en el búffer asociado al mismo, también son entidades ligadas a ese canal.
+%		
+%		Si el número de posiciones en la cola de muestreo que ocupa un canal aumenta, aumenta el número de operaciones de conversión 
+%		Entiéndase el canal como una tubería por la que entra una señal analógica que se somete a un proceso de adquisición, y de la que sale una señal digital. A medida que aumenta el número de posiciones que un canal ocupa en la cola de muestreo, mayor es el rendimiento de este proceso para dicho canal.
+%		El rendimiento del proceso de conversión sobre una señal analógica, y la precisión de esa conversión, dependen en parte del número de posiciones que un canal ocupe en la cola de muestreo. 
+%		Un canal está asociado a un puerto físico, del que procederá una señal analógica, y a un búffer de datos, en el que se almacena la señal digital resultante de un proceso de conversión sobre la primera señal. Si aumenta el número de posiciones que el canal ocupa en la cola de muestreo y se mantiene la velocidad de reloj, aumenta el rendimiento del proceso.
+%		Las muestras que componen la señal digital se obtienen en el orden dispuesto en la cola. La muestra obtenida en un ciclo de reloj, Si un canal ocupa posiciones contiguas en la cola, la señal digital contendrá conjuntos periódicos de muestras 
+%		El rendimiento de conversión aumenta 
+%		
+%		Si se dispone de posiciones vacías en la cola, es posible mejorar el rendimiento y/o la precisión del proceso que afecta a la señal que procede del puerto asociado a un canal. Para ello se ha de aumentar la frecuencia con la que este canal se repite en la cola de muestreo.\par
+%		Por el contrario, para aumentar la precisión, es necesario que se ocupen posiciones contiguas de forma estratégica. Al ocupar más posiciones aumentará el rendimiento, se generarán más muestras.  Además es necesario post"-procesar 
+%		En concreto se ha de conseguir que varias muestras de la señal digital resultante pertenezcan a ciclos de reloj contiguos.
+%		Por el contrario, para aumentar la precisión, es necesario que se ocupen las posiciones vacías de forma estratégica. Si un canal ocupa posiciones contiguas de la cola, las muestras que se obtengan cuando el puntero recorra esas posiciones se obtendrán en ciclos de reloj seguidos. Las muestras. Canal, señal analógica, búffer de datos, señal digital, muestras, instantes de tiempo, ciclos de reloj, ayacentes, seguidos, contiguos, vecinos. Durante el proceso de adquisición, las muestras se obtienen en el orden indicado por el puntero que recorre la cola de muestreo, si un canal ocupa posiciones contiguas en la cola, las muestras que se obtengan cuando el puntero recorra esas posiciones se habrán obtenido en ciclos de reloj contiguos.
+%		Existen dos formas de aumentar la precisión. La primera es combatir el efecto de las componentes residuales consecuencia de señales precedentes. Para ello, en los casos en los que el canal ocupe más de una posición contigua, se ignoran todas las muestras excepto la correspondiente a la última de dichas posiciones. La otra forma es reducir el efecto del ruido en las muestras.
 \end{itemize}
 
-Para confeccionar este cuadro se han empleado fuentes de tensión ideales. Para obtener frecuencias de muestreo similares en la práctica, la fuente debe ser capaz de adaptar correctamente la impedancia de entrada del dispositivo de adquisición. La impedancia efectiva que muestra cada canal de la \kpci{} es de una capacidad de 200 pF en serie con una resistencia de aproximadamente 1 K$\Omega$. Aún en dichas condiciones puede producirse un error en la rendimiento del $0.02\%$.
+
+\subsection{Rendimiento}
+
+Se entiende como rendimiento la cantidad máxima de operaciones de conversión que el dispositivo puede realizar por unidad de tiempo. Para que una de estas operaciones contribuya a la medida de rendimiento, la muestra que se obtiene tras ésta debe superar un requisito de precisión, su valor debe ser lo bastante preciso. Esta es la principal razón por la que la frecuencia de muestreo es mayor o igual que el rendimiento.\par
+El rendimiento óptimo de la tarjeta \kpci{} especificado por el fabricante es de cien mil operaciones por segundo (100 KS/s). No obstante se advierte, para obtener este nivel de rendimiento es necesario alimentar la tarjeta con una fuente de tensión ideal. Además, es importante que exista adaptación de impedancias entre el circuito de alimentación y el puerto por el que se quiere introducir la señal. Aún en estas condiciones el valor proporcionado por la casa Keithley está sujeto a un error relativo máximo del $0.02\%$, el cual supone un error absoluto máximo de dos mil operaciones por segundo (2 KS/s).\par
+
+
+\subsubsection{Optimización del rendimiento}
+
+El amplificador de instrumentación interno de la \kpci{} es de ganancia variable. Es posible configurar una ganancia distinta para cada canal. Esto convierte a esta tarjeta de adquisición en un dispositivo muy versátil, capaz de trabajar simultáneamente con señales de amplitud dispar. No obstante esta versatilidad tiene un coste, el rendimiento disminuye cuando se amplifica varias señales con distintas ganancias en instantes sucesivos.
+
+Como se ha dicho, el rendimiento puede verse afectado por la ganancia, y puede verse afectado de dos formas diferentes:
+
+\begin{enumerate}
+	\item Encadenar secuencias de canales a los que se atribuye ganancias diferentes en la cola de muestreo repercute de forma negativa en el rendimiento. Es más, en función del orden en que se sitúen canales con distinta ganancia en la cola, el rendimiento se ve afectado en mayor o menor medida. 
+	\item Aún suponiendo que todos los canales se configuren a igual ganancia, una ganancia de valor superior o igual a 100 ---lo cual es adecuado para señales con valor de pico inferior o igual a 100 mV--- implica la reducción del rendimiento a la mitad. En configuraciones multiganancia, una ganancia de 100 o más sigue siendo perjudicial.
+\end{enumerate}
+
+El manual de usuario da tres razones que explican este comportamiento.
+% Todas ellas se fundamentan en el mismo concepto. Al trabajar con varias señales simultáneamente
+% trabajar con señales de amplitud pequeña 
+% el rendimiento del proceso de adquisición depende del rendimiento del amplificador.
+% el tiempo de preparación del amplificador
+
+\begin{itemize}
+	\item En general, debido a la capacidad equivalente ---parásita o no--- que se encuentra a la entrada de los integrados, es necesario un tiempo para fijar el valor de la señal a la entrada del amplificador. En la práctica el tiempo necesario es mayor si se trata de señales de amplitud pequeña.
+	\item Si se tarda más tiempo en fijar valores pequeños de tensión es en parte debido al ruido. Si la amplitud del ruido es constante, a medida que disminuye la amplitud de la señal de entrada, más se equipara ésta a la del ruido. Lo normal es que el ruido perjudique más el proceso si la señal de entrada tiene una amplitud comparable o menor a la de ese ruido.
+	\item Tras amplificar una señal, parte de ésta queda a la entrada del amplificador. Esta componente residual es una medida de ruido que afecta a la señal que se amplifica en el próximo ciclo. Si la señal a amplificar es de amplitud mucho menor a la anterior señal amplificada, esa componente residual podría enmascarar el resultado.
+\end{itemize}
+
+% Estas tres razones se resumen en un mismo concepto. Es necesario un tiempo de preparación para que el amplificador actúe correctamente. Si las condiciones empeoran, manteniendo el nivel de precisión, ese tiempo aumenta y disminuye el rendimiento. La precisión del valor de las muestras obtenidas mediante el proceso de adquisición depende de la precisión con la que el amplificador de instrumentación interno de la tarjeta amplifica, en cada ciclo de reloj, la señal analógica a su entrada. Para que el amplificador amplifique de forma precisa, precisa de un tiempo de preparación. Si las condiciones empeoran y se quiere mantener la precisión, ese tiempo de preparación aumenta y disminuye el rendimiento.
+% se engloban
+% Estas tres razones se engloban en un único concepto. Parte de cada ciclo de reloj se emplea para preparar el amplificador antes de que este amplifique la señal analógica a su entrada. De este periodo de tiempo, conocido como tiempo de preparación, depende la precisión con la que el amplificador actúa. Si aumenta el tiempo de preparación, la señal amplificada será más precisa y también lo serán las muestras.
+
+Para mejorar el rendimiento el fabricante aconseja que se preamplifique la señal antes de que ésta llegue hasta el dispositivo. Si se trabaja con varias señales, un criterio de conveniencia es el de amplificar las señales para que todas se encuentren en el mismo rango de amplitudes. De ese modo es posible fijar la ganancia del amplificador interno.\par % Siguiendo este consejo no sólo se mejora el rendimiento, si no que es probable obtener una mayor precisión.\par
+En casos en los que no se pueda preamplificar la señal o en los que, en definitiva, no se pueda aplicar esta solución, Keithley propone las siguientes recomendaciones.
+
+\begin{itemize}
+	\item La primera y más inmediata consiste en una reordenación de los canales en la cola de muestreo. Los canales configurados a igual ganancia deben localizarse en posiciones contiguas de la cola, aunque esto suponga muestrear fuera de orden. De ese modo se minimiza el efecto de las componentes residuales. Minimizar el efecto perjudicial de estas señales interferentes redunda en muestras de valor más preciso.
+	\item No siempre es posible evitar que canales con ganancias desiguales coincidan en posiciones contiguas de la cola de muestreo. Por ejemplo, si se reordenan los canales como se indica en el punto anterior, el salto entre conjuntos de canales configurados con igual ganancia sigue suponiendo una fuente de errores. Una forma de atacar este problema, si se dispone de posiciones vacías en la cola, es que los canales más perjudicados ocupen más posiciones. En el ejemplo propuesto los canales más perjudicados son aquellos presentes en la transición entre grupos de canales de igual ganancia, en concreto aquellos que dan comienzo a un grupo de canales con ganancia superior a la del grupo anterior.\par
+		Al ocupar posiciones consecutivas de la cola con un mismo canal, se consigue que durante varios ciclos de reloj consecutivos la señal que entra al amplificador proceda de un mismo puerto, el puerto asociado a ese canal. Cuando esto ocurre el amplificador tiene tiempo suficiente de prepararse para amplificar la señal con bastante precisión. Tras los primeros ciclos, en los que la señal se ve corrompida por la componente residual de la señal precedente, toda traza de señal interferente será eliminada a la entrada del amplificador.\par %en la práctica 

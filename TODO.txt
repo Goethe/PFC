@@ -34,7 +34,7 @@ Salvo que se especifique lo contrario en este TODO se darán instrucciones para m
 1.2.1. Métodos de entrada
 
 Modos de terminación
--Terminar la figura del esquemático y añadirla al documento
+-Referencia el documento del que se ha extraído la figura
 
 -----------------------------------------------------------------------------------
 
