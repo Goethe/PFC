@@ -1,3 +1,10 @@
 # Ignore the working directory
 work
 referencias
+*.aux
+*.log
+*.cb
+*.cb2
+*.out
+*.pdf
+*.toc
