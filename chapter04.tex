@@ -1,6 +1,8 @@
 \chapter{Diseño del dispositivo de ultrasonidos}
 
+
 \section{Base teórica}
+
 
 \subsection{Fundamentos de ultrasonidos}
 
@@ -28,6 +30,7 @@ Ecuación en la que $v$ representa la velocidad de vibración y $Z$ la impedancia 
 	\label{eq:impedancia-acustica}
 \end{equation}
 
+
 \subsection{Campo acústico generado por un transductor}
 
 La excitación eléctrica de un transductor produce una onda de presión que se propaga en el medio siguiendo las leyes físicas de la propagación de ondas y, en particular, los principios de superposición de Huygens\footnote{El tratamiento que se da en esta sección a los transductores de ultrasonidos es similar al que la teoría de antenas da a las antenas de apertura conocidas como bocinas, para un mayor detalle consultar el texto de Stutzman y Thiele}. Se denomina campo acústico a la distribución temporal y espacial de la presión acústica a la que se someten las partículas materiales del medio en el que se propagan las ondas acústicas. Las características del campo acústico dependen principalmente de aspectos geométricos del transductor.\par
@@ -45,14 +48,20 @@ Más allá del campo cercano encontramos el campo lejano. En el campo lejano el fr
 	\label{eq:angulo-divergencia}
 \end{equation}
 
+\cbstart{}
+
 En la figura - el lector puede observar una representación del campo acústico generado por un transductor de ultrasonidos cilíndrico. Puede observarse la forma geométrica del campo lejano tal y como se ha considerado en este documento: un cilindro de radio igual al del transductor y altura $L_0$. En el interior del cilindro el campo acústico permanece constante y en el exterior el campo es nulo. A continuación se ilustra como el frente de ondas diverge en el campo lejano. La figura empleada para representar el campo lejano es un tronco de cono en cuyo interior el campo acústico iría incrementando de la superficie al eje.\par
 Para finalizar este punto cabe mencionarse que el transductor es responsable de que una determinada región de los materiales inspeccionados no pueda ser caracterizada mediante el uso de ultrasonidos. La razón es que tras emitir un pulso acústico un transductor no cesa inmediatamente de vibrar, si no que lo sigue haciendo durante cierto tiempo a su frecuencia natural de oscilación con un factor de amortiguamiento que depende de factores constructivos. Durante dicho intervalo el transductor no puede emplearse como receptor y los ecos provenientes del medio se pierden. A la región del material que no puede ser inspeccionada se la conoce como zona muerta o zona ciega. La zona ciega de un material empieza en la superficie que está en contacto con el transductor y su profundidad depende de la duración de los pulsos acústicos.
 
-\subsection{Técnicas de inspección de materiales mediante ultrasonidos}\label{subsec:tecnicas}
+\cbend{}
+
+
+\subsection{Técnicas empleadas en las inspecciones ultrasónicas}\label{subsec:tecnicas}
 
 Atendiendo a la situación del receptor en los ensayos no destructivos mediante ultrasonidos se distinguen dos técnicas: la técnica de pulso"=eco y la técnica de transmisión. En la técnica de pulso"=eco el receptor suele encontrarse cercano al emisor, de hecho es frecuente que un mismo transductor haga las veces de emisor y receptor. Por el contrario en la técnica de transmisión el receptor se coloca alineado en el eje del emisor pero en el extremo opuesto del material inspeccionado.\par
 Al propagarse un pulso acústico por el medio, parte de éste se refleja al encontrarse con discontinuidades en la impedancia acústica, otra parte seguirá avanzando hasta atravesar el material o verse completamente atenuada. La señal que capta el receptor depende de su ubicación. De este modo la señal recibida cuando la técnica empleada es la de pulso"=eco es la suma de los pulsos reflejados o ecos. Si la técnica utilizada es la técnica de transmisión se percibe el pulso original, modificado por haber atravesado el medio. La información que contiene la señal recibida es, por tanto, diferente.\par
 La técnica de pulso"=eco se centra en el estudio de la amplitud, forma y posición temporal de los ecos. La técnica de transmisión por su parte observa posibles cambios de velocidad en el pulso acústico y mide la atenuación que éste experimenta al pasar a través del medio. La información que proporciona el estudio de los ecos es más rica pero también más compleja. Por consiguiente la elección de una u otra técnica está supeditada no sólo a las posibilidades de inspección que ofrece el medio, si no también al tipo de información que se pretende obtener con el ensayo.
+
 
 \subsection{Parámetros de calidad en una inspección}
 
@@ -62,8 +71,12 @@ Atendiendo a la definición de resolución que se ha proporcionado, se considera q
 La resolución lateral depende también de la frecuencia del pulso, es mejor a medida que aumenta la frecuencia puesto que disminuye la longitud de onda. Además depende del diámetro de los transductores, es peor cuanto más anchos son éstos. Y en la región de campo lejano, la resolución lateral empeora a medida que aumenta la profundidad.\par
 La definición y comportamiento de linealidad y relación señal a ruido son los habituales en términos de sistemas electrónicos, por eso se entiende que el lector tiene una noción al respecto y no se dan más aclaraciones en este apartado.
 
+
 \subsection{El problema del ruido en las inspecciones}
 
 La principal limitación en las inspecciones ultrasónicas es el ruido. Los ensayos de este tipo se ven afectados generalmente por varias fuentes de ruido. Según su naturaleza estadística el ruido perjudica en mayor o menor medida los resultados de un ensayo. Cuanto más se asemeje el ruido a la señal desde el punto de vista estadístico más la perjudicará y más difícil será contrarrestar su efecto. El \emph{ruido incoherente aleatorio} tiene, como su propio nombre indica, un origen aleatorio, y en consecuencia no está relacionado con la señal. Por el contrario, los mecanismos que originan el \emph{ruido coherente} son con frecuencia los mismos que dan lugar a la señal de interés, y de ahí que exista una fuerte relación entre el carácter estadístico de ambas señales.\par
 Entre los exponentes más comunes de ruido incoherente aleatorio encontramos el \emph{ruido gaussiano} y el \emph{ruido impulsivo}. El primero es inherente a los equipos electrónicos y su origen es térmico, el segundo tiene origen en las interferencias electromagnéticas causadas por equipos eléctricos situados en las proximidades del sistema empleado para el ensayo. Este tipo de ruido puede ser combatido sin dificultad con técnicas bien conocidas como son: el promediado temporal de señales, el filtrado paso-banda, la autocorrelación o las técnicas de compresión de pulsos, en el caso del ruido gaussiano; y algoritmos de filtrado no lineal, en el caso del ruido impulsivo.\par
-En ensayos no destructivos mediante ultrasonidos, la señal de interés y el \emph{ruido estructural o de grano} tienen una misma procedencia. Ambas señales surgen como consecuencia de interactuar un pulso acústico con los distintos elementos de que se compone un material. En el caso de la primera de las señales, el pulso se refleja en las posibles particularidades presentes en el medio como grietas o hendiduras. En el caso del ruido, las reflexiones se producen al encontrarse el pulso con las partículas suspendidas en el medio y de que éste se compone. Las diferencias entre ambas señales radican en el tamaño y distribución de los elementos reflectantes en el medio. Los reflectores que provocan el ruido son de tamaño inferior a la longitud de onda de la señal propagada, y se encuentran cercanos entre sí dispuestos de forma aleatoria por el medio. Esto provoca que el carácter de la señal que aquí se ha bautizado como ruido estructural sea a efectos de una inspección ultrasónica aleatorio e impredecible. Si bien, la naturaleza de estas señales es similar y en concreto lo es su naturaleza estadística. Por eso el ruido estructural es considerado un ruido de tipo coherente y resulta complicado neutralizar su efecto en los resultados del ensayo. Aún más, este ruido es el principal factor limitante en ensayos de este tipo, enmascarando detalles en la señal de interés que aportan información sobre posición, tamaño y forma de las singularidades que son objeto de estudio. En contraposición a este hecho, es posible emplear esta señal, que aquí es indeseada y considerada ruido, en otro tipo de trabajos con el objetivo de caracterizar las propiedades acústicas de un material.
+En ensayos no destructivos mediante ultrasonidos, la señal de interés y el \emph{ruido estructural o de grano} tienen una misma procedencia. Ambas señales surgen como consecuencia de interactuar un pulso acústico con los distintos elementos de que se compone un material. En el caso de la primera de las señales, el pulso se refleja en las posibles particularidades presentes en el medio como grietas o hendiduras. En el caso del ruido, las reflexiones se producen al encontrarse el pulso con las partículas suspendidas en el medio y de que éste se compone. Las diferencias entre ambas señales radican en el tamaño y distribución de los elementos reflectantes en el medio. Los reflectores que provocan el ruido son de tamaño inferior a la longitud de onda de la señal propagada, y se encuentran cercanos entre sí dispuestos de forma aleatoria por el medio. Esto provoca que el carácter de la señal que aquí se ha bautizado como ruido estructural sea, a efectos de una inspección ultrasónica, aleatorio e impredecible. Si bien, la naturaleza de estas señales es similar y en concreto lo es su naturaleza estadística. Por eso el ruido estructural es considerado un ruido de tipo coherente y resulta complicado neutralizar su efecto en los resultados del ensayo. Aún más, este ruido es el principal factor limitante en ensayos de este tipo, enmascarando detalles en la señal de interés que aportan información sobre posición, tamaño y forma de las singularidades que son objeto de estudio. En contraposición a este hecho, es posible emplear esta señal, que aquí es indeseada y considerada ruido, en otro tipo de trabajos con el objetivo de caracterizar las propiedades acústicas de un material.
+
+
+\subsection{Fundamentos físicos del ruido estructural}
