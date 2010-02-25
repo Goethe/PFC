@@ -9,3 +9,5 @@ referencias
 *.pdf
 *.toc
 *.swp
+*.lot
+*.lof

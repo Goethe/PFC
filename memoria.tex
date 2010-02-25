@@ -1,16 +1,17 @@
 \documentclass[a4paper, 12pt]{book}
 \includeonly{chapter01, chapter02, chapter03, chapter04}
+\usepackage[a4paper, BCOR1cm]{typearea}
 \usepackage[spanish, es-ucroman]{babel}
-\usepackage[format=hang, labelfont=bf, textfont=it, width=.8\textwidth]{caption}
+\usepackage[format=hang, font=small, labelfont=bf, labelsep=endash, width=.9\textwidth]{caption}
 \usepackage[color]{changebar}
 \usepackage[latin1]{inputenc}
 \usepackage[hang, sf]{subfigure}
 \usepackage[full]{textcomp}
 \usepackage[bf, sf]{titlesec}
 \usepackage[nottoc]{tocbibind}
-\usepackage[a4paper, BCOR1cm]{typearea}
 \usepackage[spanish]{varioref}
-\usepackage{amsfonts, amsmath, amssymb, array, arydshln, booktabs, calc, color, dcolumn, fancyhdr, graphicx, hyperref, ifthen, listings, nextpage, rotating, textcase, threeparttable}
+\usepackage{amsfonts, amsmath, amssymb, calc, color, fancyhdr, graphicx, hyperref, ifthen, listings, nextpage, textcase}
+\usepackage{array, arydshln, booktabs, dcolumn, multirow, rotating, threeparttable}
 \titleformat{\part}[display]{\centering\huge\sffamily\bfseries}{\partname\ \thepart}{.5\baselineskip}{}
 \hypersetup{%
 	pdftitle=Proceso de adquisición y tratamiento de señales de %
@@ -33,18 +34,23 @@
 \cbcolor{red}
 \labelformat{equation}{ecuación~#1}
 \labelformat{figure}{figura~#1}
-\labelformat{footnote}{#1\protect\iscurrentchapter{\thechapter}}
 \labelformat{section}{sección~#1}
+\labelformat{subsection}{sección~#1}
+\labelformat{subsubsection}{sección~#1}
 \labelformat{table}{cuadro~#1}
+\labelformat{footnote}{#1\protect\iscurrentchapter{\thechapter}}
 \setkeys{Gin}{width=.8\linewidth}
 \graphicspath{{./pictures/}{../pictures/}}
 \DeclareGraphicsRule{.1}{mps}{*}{}
+\DeclareCaptionLabelFormat{cont}{#1~#2\alph{ContinuedFloat}}
+\captionsetup[ContinuedFloat]{labelformat=cont}
 \newcommand\iscurrentchapter[1]{\ifthenelse{\equal{#1}{\thechapter}}{  en el Capítulo~#1}}
 \newcommand\matlab{\textsc{matlab}}
 \newcommand\kpci{\textsc{kpci}-3108}
 \newcommand\minifootnoterule{\vspace*{-3pt}\hrule width 2in height 0.4pt \vspace*{2.2pt}}
 \newcommand\minifootnotemark[1]{\makebox[1.8em][l]{\mbox{\textsuperscript{\normalfont#1}}}}
 \newcommand\minifootnotetext[2]{\makebox[1.8em][r]{\mbox{\textsuperscript{\normalfont#1}}}\footnotesize#2\par\noindent}
+\newcommand\miniit[1]{\begin{itemize} #1 \end{itemize}}
 \renewcommand\chaptermark[1]{\markboth{#1}{}}
 \renewcommand\cleardoublepage{\cleartooddpage[\thispagestyle{empty}]}
 \newcolumntype{d}[1]{D{,}{,}{#1}}
@@ -54,6 +60,10 @@
 \frontmatter
 
 \tableofcontents
+
+\listoftables
+
+\listoffigures
 
 \include{chapter01}
 
