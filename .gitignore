@@ -7,6 +7,8 @@ referencias
 *.cb2
 *.out
 *.pdf
+!pictures/*.pdf
+pictures/prueba.pdf
 *.toc
 *.swp
 *.lot

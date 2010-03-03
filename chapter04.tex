@@ -33,7 +33,7 @@ Ecuación en la que $v$ representa la velocidad de vibración y $Z$ la impedancia 
 
 \subsection{Campo acústico generado por un transductor}
 
-La excitación eléctrica de un transductor produce una onda de presión que se propaga en el medio siguiendo las leyes físicas de la propagación de ondas y, en particular, los principios de superposición de Huygens\footnote{El tratamiento que se da en esta sección a los transductores de ultrasonidos es similar al que la teoría de antenas da a las antenas de apertura conocidas como bocinas, para un mayor detalle consultar el texto de Stutzman y Thiele}. Se denomina campo acústico a la distribución temporal y espacial de la presión acústica a la que se someten las partículas materiales del medio en el que se propagan las ondas acústicas. Las características del campo acústico dependen principalmente de aspectos geométricos del transductor.\par
+La excitación eléctrica de un transductor produce una onda de presión que se propaga en el medio siguiendo las leyes físicas de la propagación de ondas y, en particular, los principios de superposición de Huygens\footnote{El tratamiento que se da en esta sección a los transductores de ultrasonidos es similar al que la teoría de antenas da a las antenas de apertura conocidas como bocinas. Para un mayor detalle consultar el texto de Stutzman y Thiele.}. Se denomina campo acústico a la distribución temporal y espacial de la presión acústica a la que se someten las partículas materiales del medio en el que se propagan las ondas acústicas. Las características del campo acústico dependen principalmente de aspectos geométricos del transductor.\par
 La región del campo acústico más próxima al transductor se conoce como campo próximo o cercano. También recibe el nombre de campo de interferencia debido a que en esa región el campo está constituido por máximos y mínimos que surgen como resultado de las interferencias que se producen entre las señales originadas en los distintos puntos del transductor. El máximo principal del campo acústico delimita la región de campo próximo. La longitud de esta región puede calcularse a partir del diámetro del transductor $D$, o en su defecto a partir de la dimensión principal de este.
 
 \begin{equation}
@@ -48,12 +48,16 @@ Más allá del campo cercano encontramos el campo lejano. En el campo lejano el fr
 	\label{eq:angulo-divergencia}
 \end{equation}
 
-\cbstart{}
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics{chapter04-01.pdf}
+	\end{center}
+	\caption{Diagrama simplificado que muestra el campo acústico generado por un transductor cilíndrico}
+	\label{fig:transceiver}
+\end{figure}
 
-En la figura - el lector puede observar una representación del campo acústico generado por un transductor de ultrasonidos cilíndrico. Puede observarse la forma geométrica del campo lejano tal y como se ha considerado en este documento: un cilindro de radio igual al del transductor y altura $L_0$. En el interior del cilindro el campo acústico permanece constante y en el exterior el campo es nulo. A continuación se ilustra como el frente de ondas diverge en el campo lejano. La figura empleada para representar el campo lejano es un tronco de cono en cuyo interior el campo acústico iría incrementando de la superficie al eje.\par
-Para finalizar este punto cabe mencionarse que el transductor es responsable de que una determinada región de los materiales inspeccionados no pueda ser caracterizada mediante el uso de ultrasonidos. La razón es que tras emitir un pulso acústico un transductor no cesa inmediatamente de vibrar, si no que lo sigue haciendo durante cierto tiempo a su frecuencia natural de oscilación con un factor de amortiguamiento que depende de factores constructivos. Durante dicho intervalo el transductor no puede emplearse como receptor y los ecos provenientes del medio se pierden. A la región del material que no puede ser inspeccionada se la conoce como zona muerta o zona ciega. La zona ciega de un material empieza en la superficie que está en contacto con el transductor y su profundidad depende de la duración de los pulsos acústicos.
-
-\cbend{}
+En la figura \vref{fig:transceiver} el lector puede observar una representación del campo acústico generado por un transductor de ultrasonidos cilíndrico. Puede observarse la forma geométrica del campo próximo tal y como se ha considerado en este documento: un cilindro de radio igual al del transductor y altura $L_0$. En el interior del cilindro el campo acústico permanece constante y en el exterior el campo es nulo. A continuación se ilustra como el frente de ondas diverge en el campo lejano. La figura empleada para representar el campo lejano es un tronco de cono en cuyo interior el campo acústico iría incrementando de la superficie al eje.\par
+Para finalizar este punto cabe mencionarse que el transductor es responsable de que una determinada región de los materiales inspeccionados no pueda ser caracterizada mediante el uso de ultrasonidos. La razón es que tras emitir un pulso acústico un transductor no cesa inmediatamente de vibrar, si no que lo sigue haciendo durante cierto tiempo a su frecuencia natural de oscilación con un factor de amortiguamiento que depende de factores constructivos. A la región del material que no puede ser inspeccionada se la conoce como zona muerta o zona ciega. La zona ciega de un material empieza en la superficie que está en contacto con el transductor y su profundidad depende de la duración de los pulsos acústicos. % Durante dicho intervalo el transductor no puede emplearse como receptor y los ecos provenientes del medio se pierden.
 
 
 \subsection{Técnicas empleadas en las inspecciones ultrasónicas}\label{subsec:tecnicas}
