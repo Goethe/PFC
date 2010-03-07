@@ -1,0 +1,69 @@
+\chapter{Diseño del dispositivo de ultrasonidos}
+
+\section{Base teórica}
+
+\subsection{Fundamentos de ultrasonidos}
+
+Los ultrasonidos son ondas acústicas de naturaleza mecánica o elástica como los sonidos. A diferencia de las ondas sónicas los ultrasonidos se encuentran en una banda de frecuencia superior. Dicha banda parte de los 20 KHz y, carente de un límite físico, llega hoy hasta los 1000 MHz debido a limitaciones tecnológicas. Las frecuencias empleadas en los ensayos no destructivos se encuentran entre los 20 KHz y los 25 MHz. Cabe remarcar que las propiedades de las ondas acústicas se mantienen invariantes con la frecuencia, y por tanto, son comunes dentro del espectro acústico.\par
+Las ondas ultrasónicas son perturbaciones mecánicas que viajan a través de un medio elástico, por tanto, la condición primordial para que las ondas ultrasónicas se propaguen a través de un medio es que este contenga fracciones de materia tales como átomos o moléculas susceptibles de vibrar. El medio determina también que modos de propagación pueden adoptar las ondas ultrasónicas que se propagan a su través. Frecuentemente se asocia un nombre característico a las ondas ultrasónicas en función del modo en el que se propagan por el medio. A continuación se exponen los modos de propagación de mayor relevancia.
+
+\begin{itemize}
+	\item Las \emph{ondas longitudinales}, también llamadas \emph{ondas de presión o compresión}, son aquellas que oscilan en la dirección de propagación. Al contrario que el resto de modos de propagación que sólo se dan en sólidos, el modo longitudinal puede estar presente también en líquidos y gases.
+	\item En las \emph{ondas transversales o de cizalladura} las oscilaciones se producen en la dirección perpendicular a la dirección de propagación.
+	\item Las \emph{ondas de superficie} se propagan únicamente a través de sólidos semi"=infinitos cuya superficie sea plana o curva y siempre siguiendo las irregularidades del contorno del mismo.
+	\item Las \emph{ondas de Lamb o de chapa} son propias de medios sólidos en los que el espesor es del mismo orden que la longitud de onda, provocan la vibración de todo el material.
+\end{itemize}
+
+La energía acústica que se propaga por un medio se manifiesta en forma de presión acústica, esta a su vez define el campo acústico. La presión acústica se define como:
+
+\begin{equation}
+	p = Z\cdot v
+	\label{eq:presion-acustica}
+\end{equation}
+
+Ecuación en la que $v$ representa la velocidad de vibración y $Z$ la impedancia acústica. La impedancia acústica es una medida de con que resistencia se oponen los elementos de masa de un medio a la vibración provocada por las ondas acústicas, en ningún caso da una relación de la resistencia con la que el medio se opone a la propagación de la onda acústica. Es una constante del medio que aumenta con la cohesión de sus moléculas, y puede expresarse en función de la densidad $\rho_0$ y de la velocidad de propagación de las ondas ultrasónicas en dicho medio $c$.
+
+\begin{equation}
+	Z = \rho_0\cdot c
+	\label{eq:impedancia-acustica}
+\end{equation}
+
+\subsection{Campo acústico generado por un transductor}
+
+La excitación eléctrica de un transductor produce una onda de presión que se propaga en el medio siguiendo las leyes físicas de la propagación de ondas y, en particular, los principios de superposición de Huygens\footnote{El tratamiento que se da en esta sección a los transductores de ultrasonidos es similar al que la teoría de antenas da a las antenas de apertura conocidas como bocinas, para un mayor detalle consultar el texto de Stutzman y Thiele}. Se denomina campo acústico a la distribución temporal y espacial de la presión acústica a la que se someten las partículas materiales del medio en el que se propagan las ondas acústicas. Las características del campo acústico dependen principalmente de aspectos geométricos del transductor.\par
+La región del campo acústico más próxima al transductor se conoce como campo próximo o cercano. También recibe el nombre de campo de interferencia debido a que en esa región el campo está constituido por máximos y mínimos que surgen como resultado de las interferencias que se producen entre las señales originadas en los distintos puntos del transductor. El máximo principal del campo acústico delimita la región de campo próximo. La longitud de esta región puede calcularse a partir del diámetro del transductor $D$, o en su defecto a partir de la dimensión principal de este.
+
+\begin{equation}
+	L_0 = \frac{D^2}{4\lambda}
+	\label{eq:longitud-campo-cercano}
+\end{equation}
+
+Más allá del campo cercano encontramos el campo lejano. En el campo lejano el frente de ondas de la radiación acústica empieza a divergir. Se llama ángulo de divergencia del haz a la razón con la que el haz se expande y se emplea el símbolo $\gamma_0$ para representarla. Puede calcularse $\gamma_0$ a partir de la siguiente expresión.
+
+\begin{equation}
+	\sin{\gamma_0} = 1.2\cdot\frac{\lambda}{D}
+	\label{eq:angulo-divergencia}
+\end{equation}
+
+En la figura - el lector puede observar una representación del campo acústico generado por un transductor de ultrasonidos cilíndrico. Puede observarse la forma geométrica del campo lejano tal y como se ha considerado en este documento: un cilindro de radio igual al del transductor y altura $L_0$. En el interior del cilindro el campo acústico permanece constante y en el exterior el campo es nulo. A continuación se ilustra como el frente de ondas diverge en el campo lejano. La figura empleada para representar el campo lejano es un tronco de cono en cuyo interior el campo acústico iría incrementando de la superficie al eje.\par
+Para finalizar este punto cabe mencionarse que el transductor es responsable de que una determinada región de los materiales inspeccionados no pueda ser caracterizada mediante el uso de ultrasonidos. La razón es que tras emitir un pulso acústico un transductor no cesa inmediatamente de vibrar, si no que lo sigue haciendo durante cierto tiempo a su frecuencia natural de oscilación con un factor de amortiguamiento que depende de factores constructivos. Durante dicho intervalo el transductor no puede emplearse como receptor y los ecos provenientes del medio se pierden. A la región del material que no puede ser inspeccionada se la conoce como zona muerta o zona ciega. La zona ciega de un material empieza en la superficie que está en contacto con el transductor y su profundidad depende de la duración de los pulsos acústicos.
+
+\subsection{Técnicas de inspección de materiales mediante ultrasonidos}\label{subsec:tecnicas}
+
+Atendiendo a la situación del receptor en los ensayos no destructivos mediante ultrasonidos se distinguen dos técnicas: la técnica de pulso"=eco y la técnica de transmisión. En la técnica de pulso"=eco el receptor suele encontrarse cercano al emisor, de hecho es frecuente que un mismo transductor haga las veces de emisor y receptor. Por el contrario en la técnica de transmisión el receptor se coloca alineado en el eje del emisor pero en el extremo opuesto del material inspeccionado.\par
+Al propagarse un pulso acústico por el medio, parte de éste se refleja al encontrarse con discontinuidades en la impedancia acústica, otra parte seguirá avanzando hasta atravesar el material o verse completamente atenuada. La señal que capta el receptor depende de su ubicación. De este modo la señal recibida cuando la técnica empleada es la de pulso"=eco es la suma de los pulsos reflejados o ecos. Si la técnica utilizada es la técnica de transmisión se percibe el pulso original, modificado por haber atravesado el medio. La información que contiene la señal recibida es, por tanto, diferente.\par
+La técnica de pulso"=eco se centra en el estudio de la amplitud, forma y posición temporal de los ecos. La técnica de transmisión por su parte observa posibles cambios de velocidad en el pulso acústico y mide la atenuación que éste experimenta al pasar a través del medio. La información que proporciona el estudio de los ecos es más rica pero también más compleja. Por consiguiente la elección de una u otra técnica está supeditada no sólo a las posibilidades de inspección que ofrece el medio, si no también al tipo de información que se pretende obtener con el ensayo.
+
+\subsection{Parámetros de calidad en una inspección}
+
+Los parámetros de calidad proporcionan una medida cualitativa de la bondad de un ensayo. Los más empleados son resolución, linealidad y relación señal a ruido.\par
+En ensayos no destructivos la resolución es la distancia mínima (o una medida en relación con ésta) a la que deben encontrarse dos singularidades cercanas para que ambas sean detectadas distinguiéndose una de la otra. Se hace distinción entre resolución axial y resolución lateral. La primera alude a la distancia que debe haber entre dos singularidades alineadas en la dirección longitudinal de propagación de las ondas acústicas, la segunda a la que debe haber entre singularidades que se encuentren dispuestas en una línea normal a esa dirección.\par
+Atendiendo a la definición de resolución que se ha proporcionado, se considera que la resolución es mejor si la distancia mínima disminuye y peor si ésta aumenta. Teniendo esto en cuenta, para mejorar la resolución axial de un sistema es necesario emplear dispositivos de banda ancha y emitir pulsos estrechos de alta frecuencia. La frecuencia de los pulsos acústicos está limitada por el espesor del medio, a medida que aumenta la frecuencia disminuye la profundidad de penetración del pulso, resulta pues conveniente adoptar una solución de compromiso.\par
+La resolución lateral depende también de la frecuencia del pulso, es mejor a medida que aumenta la frecuencia puesto que disminuye la longitud de onda. Además depende del diámetro de los transductores, es peor cuanto más anchos son éstos. Y en la región de campo lejano, la resolución lateral empeora a medida que aumenta la profundidad.\par
+La definición y comportamiento de linealidad y relación señal a ruido son los habituales en términos de sistemas electrónicos, por eso se entiende que el lector tiene una noción al respecto y no se dan más aclaraciones en este apartado.
+
+\subsection{El problema del ruido en las inspecciones}
+
+La principal limitación en las inspecciones ultrasónicas es el ruido. Los ensayos de este tipo se ven afectados generalmente por varias fuentes de ruido. Según su naturaleza estadística el ruido perjudica en mayor o menor medida los resultados de un ensayo. Cuanto más se asemeje el ruido a la señal desde el punto de vista estadístico más la perjudicará y más difícil será contrarrestar su efecto. El \emph{ruido incoherente aleatorio} tiene, como su propio nombre indica, un origen aleatorio, y en consecuencia no está relacionado con la señal. Por el contrario, los mecanismos que originan el \emph{ruido coherente} son con frecuencia los mismos que dan lugar a la señal de interés, y de ahí que exista una fuerte relación entre el carácter estadístico de ambas señales.\par
+Entre los exponentes más comunes de ruido incoherente aleatorio encontramos el \emph{ruido gaussiano} y el \emph{ruido impulsivo}. El primero es inherente a los equipos electrónicos y su origen es térmico, el segundo tiene origen en las interferencias electromagnéticas causadas por equipos eléctricos situados en las proximidades del sistema empleado para el ensayo. Este tipo de ruido puede ser combatido sin dificultad con técnicas bien conocidas como son: el promediado temporal de señales, el filtrado paso-banda, la autocorrelación o las técnicas de compresión de pulsos, en el caso del ruido gaussiano; y algoritmos de filtrado no lineal, en el caso del ruido impulsivo.\par
+En ensayos no destructivos mediante ultrasonidos, la señal de interés y el \emph{ruido estructural o de grano} tienen una misma procedencia. Ambas señales surgen como consecuencia de interactuar un pulso acústico con los distintos elementos de que se compone un material. En el caso de la primera de las señales, el pulso se refleja en las posibles particularidades presentes en el medio como grietas o hendiduras. En el caso del ruido, las reflexiones se producen al encontrarse el pulso con las partículas suspendidas en el medio y de que éste se compone. Las diferencias entre ambas señales radican en el tamaño y distribución de los elementos reflectantes en el medio. Los reflectores que provocan el ruido son de tamaño inferior a la longitud de onda de la señal propagada, y se encuentran cercanos entre sí dispuestos de forma aleatoria por el medio. Esto provoca que el carácter de la señal que aquí se ha bautizado como ruido estructural sea a efectos de una inspección ultrasónica aleatorio e impredecible. Si bien, la naturaleza de estas señales es similar y en concreto lo es su naturaleza estadística. Por eso el ruido estructural es considerado un ruido de tipo coherente y resulta complicado neutralizar su efecto en los resultados del ensayo. Aún más, este ruido es el principal factor limitante en ensayos de este tipo, enmascarando detalles en la señal de interés que aportan información sobre posición, tamaño y forma de las singularidades que son objeto de estudio. En contraposición a este hecho, es posible emplear esta señal, que aquí es indeseada y considerada ruido, en otro tipo de trabajos con el objetivo de caracterizar las propiedades acústicas de un material.
