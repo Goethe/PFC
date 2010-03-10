@@ -27,7 +27,7 @@ Es necesario programar el comportamiento de la tarjeta de adquisición antes de p
 La cola de muestreo, como su propio nombre indica, es una estructura de datos ordenada. Se encuentra almacenada en una memoria \textsc{ram} de 256 entradas que forma parte del hardware de la tarjeta. En el \vref{tab:sample-queue} puede verse una representación de un ejemplo de la cola de muestreo.\par
 
 \begin{table}[h]
-	\begin{center}
+	\centering
 	\begin{threeparttable}
 	\begin{tabular}{lccccccccc}
 		\toprule
@@ -54,7 +54,6 @@ La cola de muestreo, como su propio nombre indica, es una estructura de datos or
 		\minifootnotetext{c}{$\pm$ configuración bipolar; $+$ configuración unipolar}
 		\minifootnotetext{d}{\textsc{d} canal diferencial; \textsc{ts} canal monoterminal}
 	\end{threeparttable}
-	\end{center}
 	\caption{Ejemplo de cola de muestreo}
 	\label{tab:sample-queue}
 \end{table}
@@ -83,43 +82,42 @@ Una señal es bipolar cuando toma valores positivos y negativos. Por el contrario
 Si se sabe a ciencia cierta que la señal de entrada es unipolar debe emplearse el modo de adquisición unipolar. De ese modo, se duplica la resolución del conversor analógico digital.
 
 \begin{table}[hbt]
-	\begin{center}
-		\begin{tabular}{>{\raggedleft}p{1.2cm}d{5.2}d{3.1}+d{3.1}}
-			\toprule
-			& \multicolumn{2}{c}{Bipolar} & \multicolumn{2}{c}{Unipolar} \\
-			\cmidrule(r){2-3}\cmidrule(l){4-5}
-			\multicolumn{1}{c}{Ganancia}
-			& \multicolumn{1}{c}{Rango ($\pm\text{V}$)} %
-			& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} %
-			& \multicolumn{1}{c}{Rango (V)} %
-			& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} \\
-			\midrule
-			1 & 10,0 & 305 & 0/$10,0$ & 153 \\
-			2 & 5,0 & 153 & 0/$5,0$ & 76 \\
-			4 & 2,5 & 76 & 0/$2,5$ & 38 \\
-			8 & 1,25 & 38 & 0/$1,25$ & 19 \\
-			10 & 1,0 & 31 & 0/$1,0$ & 15 \\
-			\\
-			& \multicolumn{2}{c}{Bipolar} & \multicolumn{2}{c}{Unipolar} \\
-			\cmidrule(r){2-3}\cmidrule(l){4-5}
-			\multicolumn{1}{c}{Ganancia}
-			& \multicolumn{1}{c}{Rango ($\pm\text{mV}$)} %
-			& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} %
-			& \multicolumn{1}{c}{Rango (mV)} %
-			& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} \\
-			\midrule
-			20 & 500 & 15 & 0/500 & 7,6 \\
-			40 & 250 & 7,6 & 0/250 & 3,8 \\
-			80 & 125 & 3,8 & 0/125 & 1,9 \\
-			100 & 100 & 3,1 & 0/100 & 1,5 \\
-			200 & 50 & 1,5 & 0/50 & 0,8 \\
-			400 & 25 & 0,8 & 0/25 & 0,4 \\
-			800 & 12,5 & 0,4 & 0/$12,5$ & 0,2 \\
-			\bottomrule
-		\end{tabular}
-		\caption{Relación entre ganancia, rango de trabajo y resolución según el modo de adquisición}
-		\label{tab:acquisition-modes}
-	\end{center}
+	\centering
+	\begin{tabular}{>{\raggedleft}p{1.2cm}d{5.2}d{3.1}+d{3.1}}
+		\toprule
+		& \multicolumn{2}{c}{Bipolar} & \multicolumn{2}{c}{Unipolar} \\
+		\cmidrule(r){2-3}\cmidrule(l){4-5}
+		\multicolumn{1}{c}{Ganancia}
+		& \multicolumn{1}{c}{Rango ($\pm\text{V}$)} %
+		& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} %
+		& \multicolumn{1}{c}{Rango (V)} %
+		& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} \\
+		\midrule
+		1 & 10,0 & 305 & 0/$10,0$ & 153 \\
+		2 & 5,0 & 153 & 0/$5,0$ & 76 \\
+		4 & 2,5 & 76 & 0/$2,5$ & 38 \\
+		8 & 1,25 & 38 & 0/$1,25$ & 19 \\
+		10 & 1,0 & 31 & 0/$1,0$ & 15 \\
+		\\
+		& \multicolumn{2}{c}{Bipolar} & \multicolumn{2}{c}{Unipolar} \\
+		\cmidrule(r){2-3}\cmidrule(l){4-5}
+		\multicolumn{1}{c}{Ganancia}
+		& \multicolumn{1}{c}{Rango ($\pm\text{mV}$)} %
+		& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} %
+		& \multicolumn{1}{c}{Rango (mV)} %
+		& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} \\
+		\midrule
+		20 & 500 & 15 & 0/500 & 7,6 \\
+		40 & 250 & 7,6 & 0/250 & 3,8 \\
+		80 & 125 & 3,8 & 0/125 & 1,9 \\
+		100 & 100 & 3,1 & 0/100 & 1,5 \\
+		200 & 50 & 1,5 & 0/50 & 0,8 \\
+		400 & 25 & 0,8 & 0/25 & 0,4 \\
+		800 & 12,5 & 0,4 & 0/$12,5$ & 0,2 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Relación entre ganancia, rango de trabajo y resolución según el modo de adquisición}
+	\label{tab:acquisition-modes}
 \end{table}
 
 
@@ -192,126 +190,122 @@ A continuación se adjunta una relación con las distintas asignaciones que se dan
 \end{figure}
 
 \begin{table}[p]
-	\begin{center}
-		\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
-			\toprule
-			\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
-			\midrule
-			1 & ip5 & \multirow{11}{0.6\textwidth}{Bits digitales de entrada multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Base temporal para el contador/temporizador y/o entrada a \emph{gate} \\\item Reloj externo para conversiones A/D o D/A \\\item Disparador digital externo \\\item Entrada digital en el modo \emph{target-mode}}} \\
-			2 & ip3 & \\
-			3 & ip1 & \\
-			\\\\\\\\\\\\\\
-			\midrule
-			4 & op5 & \multirow{12}{0.6\textwidth}{Bits digitales de salida multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Salidas del contador/temporizador\\\item Salida del disparador\\\item Salida de control para accesorios\\\item Salida del reloj interno\\\item Salida digital en el modo \emph{target-mode}}} \\
-			5 & op3 & \\
-			6 & op1 & \\
-			\\\\\\\\\\\\\\\\
-			\midrule
-			7 & dgnd & \multicolumn{1}{c}{Tierra digital} \\
-			\midrule
-			8 & ch07 lo/ch15 & \multirow{4}{0.6\textwidth}{Entradas analógicas, cuya función depende del modo de terminación configurado: puerto asociado a un canal monoterminal o puerto bajo de un canal diferencial} \\
-			9 & ch06 lo/ch14 & \\
-			10 & ch05 lo/ch13 & \\
-			$\vdots$ & $\vdots$ & \\
-			15 & ch00 lo/ch08 & \\
-			\midrule
-			16 & {\upshape Sin conexión} & \\
-			\midrule
-			\multicolumn{1}{l}{17, 18} & agnd & Tierra analógica \\
-			\bottomrule
-		\end{tabular}
-	\end{center}
+	\centering
+	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
+		\toprule
+		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
+		\midrule
+		1 & ip5 & \multirow{11}{0.6\textwidth}{Bits digitales de entrada multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Base temporal para el contador/temporizador y/o entrada a \emph{gate} \\\item Reloj externo para conversiones A/D o D/A \\\item Disparador digital externo \\\item Entrada digital en el modo \emph{target-mode}}} \\
+		2 & ip3 & \\
+		3 & ip1 & \\
+		\\\\\\\\\\\\\\
+		\midrule
+		4 & op5 & \multirow{12}{0.6\textwidth}{Bits digitales de salida multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Salidas del contador/temporizador\\\item Salida del disparador\\\item Salida de control para accesorios\\\item Salida del reloj interno\\\item Salida digital en el modo \emph{target-mode}}} \\
+		5 & op3 & \\
+		6 & op1 & \\
+		\\\\\\\\\\\\\\\\
+		\midrule
+		7 & dgnd & \multicolumn{1}{c}{Tierra digital} \\
+		\midrule
+		8 & ch07 lo/ch15 & \multirow{4}{0.6\textwidth}{Entradas analógicas, cuya función depende del modo de terminación configurado: puerto asociado a un canal monoterminal o puerto bajo de un canal diferencial} \\
+		9 & ch06 lo/ch14 & \\
+		10 & ch05 lo/ch13 & \\
+		$\vdots$ & $\vdots$ & \\
+		15 & ch00 lo/ch08 & \\
+		\midrule
+		16 & {\upshape Sin conexión} & \\
+		\midrule
+		\multicolumn{1}{l}{17, 18} & agnd & Tierra analógica \\
+		\bottomrule
+	\end{tabular}
 	\caption{Relación entre los puertos y terminales que presenta el conector trasero de la \kpci{} etiquetado como \emph{analog}}
 	\label{tab:analog-ports}
 \end{table}
 
 \begin{table}[p]\ContinuedFloat
-	\begin{center}
-		\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
-			\toprule
-			\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
-			\midrule
-			19 & ip4 & \multirow{12}{0.6\textwidth}{Bits digitales de entrada multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Base temporal para el contador/temporizador y/o entrada a \emph{gate} \\\item Reloj externo para conversiones A/D o D/A \\\item Disparador digital externo \\\item Entrada digital en el modo \emph{target-mode}}} \\
-			20 & ip2 & \\
-			21 & ip0 & \\
-			\\\\\\\\\\\\\\\\
-			\midrule
-			22 & op4 & \multirow{12}{0.6\textwidth}{Bits digitales de salida multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Salidas del contador/temporizador\\\item Salida del disparador\\\item Salida de control para accesorios\\\item Salida del reloj interno\\\item Salida digital en el modo \emph{target-mode}}} \\
-			22 & op2 & \\
-			21 & op0 & \\
-			\\\\\\\\\\\\\\\\
-			\midrule
-			25 & {\upshape +5 V} & \multirow{2}{0.6\textwidth}{Referencia de tensión de 5 voltios de corriente continua extraídos del bus \textsc{pci} del ordenador} \\
-			& & \\
-			\midrule
-			26 & ch07 hi & \multirow{3}{0.6\textwidth}{Entradas analógicas restantes, en el modo de terminación diferencial representan el puerto alto de un canal diferencial} \\
-			27 & ch06 hi & \\
-			28 & ch05 hi & \\
-			$\vdots$ & $\vdots$ & \\
-			33 & ch00 hi & \\
-			\midrule
-			34 & {\upshape +10 V} & \multirow{6}{.6\textwidth}{Entrada diseñada para proporcionar al dispositivo una referencia externa de precisión de 10 voltios mediante una fuente de alta impedancia de salida (La impedancia de entrada de este puerto es equivalente a una resistencia de 1 K$\Omega$ en serie con la impedancia de entrada de la fuente)} \\
-			\\\\\\\\\\
-			\bottomrule
-		\end{tabular}
-	\end{center}
+	\centering
+	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
+		\toprule
+		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
+		\midrule
+		19 & ip4 & \multirow{12}{0.6\textwidth}{Bits digitales de entrada multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Base temporal para el contador/temporizador y/o entrada a \emph{gate} \\\item Reloj externo para conversiones A/D o D/A \\\item Disparador digital externo \\\item Entrada digital en el modo \emph{target-mode}}} \\
+		20 & ip2 & \\
+		21 & ip0 & \\
+		\\\\\\\\\\\\\\\\
+		\midrule
+		22 & op4 & \multirow{12}{0.6\textwidth}{Bits digitales de salida multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Salidas del contador/temporizador\\\item Salida del disparador\\\item Salida de control para accesorios\\\item Salida del reloj interno\\\item Salida digital en el modo \emph{target-mode}}} \\
+		22 & op2 & \\
+		21 & op0 & \\
+		\\\\\\\\\\\\\\\\
+		\midrule
+		25 & {\upshape +5 V} & \multirow{2}{0.6\textwidth}{Referencia de tensión de 5 voltios de corriente continua extraídos del bus \textsc{pci} del ordenador} \\
+		& & \\
+		\midrule
+		26 & ch07 hi & \multirow{3}{0.6\textwidth}{Entradas analógicas restantes, en el modo de terminación diferencial representan el puerto alto de un canal diferencial} \\
+		27 & ch06 hi & \\
+		28 & ch05 hi & \\
+		$\vdots$ & $\vdots$ & \\
+		33 & ch00 hi & \\
+		\midrule
+		34 & {\upshape +10 V} & \multirow{6}{.6\textwidth}{Entrada diseñada para proporcionar al dispositivo una referencia externa de precisión de 10 voltios mediante una fuente de alta impedancia de salida (La impedancia de entrada de este puerto es equivalente a una resistencia de 1 K$\Omega$ en serie con la impedancia de entrada de la fuente)} \\
+		\\\\\\\\\\
+		\bottomrule
+	\end{tabular}
 	\caption[]{Continuación del \vref{tab:analog-ports}}
 \end{table}
 
 \begin{table}[p]\ContinuedFloat
-	\begin{center}
-		\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
-			\toprule
-			\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
-			\midrule
-			35 & dac1 & \multirow{2}{.6\textwidth}{Salida número 1 del conversor digital a analógico de la \kpci{}} \\
-			\\
-			\midrule
-			36 & dac0 & \multirow{2}{.6\textwidth}{Salida número 0 del conversor digital a analógico de la \kpci{}} \\
-			\\
-			\bottomrule
-		\end{tabular}
-	\end{center}
+	\centering
+	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
+		\toprule
+		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
+		\midrule
+		35 & dac1 & \multirow{2}{.6\textwidth}{Salida número 1 del conversor digital a analógico de la \kpci{}} \\
+		\\
+		\midrule
+		36 & dac0 & \multirow{2}{.6\textwidth}{Salida número 0 del conversor digital a analógico de la \kpci{}} \\
+		\\
+		\bottomrule
+	\end{tabular}
 	\caption[]{Continuación del \vref{tab:analog-ports}}
 \end{table}
 
 \begin{table}[p]
-	\begin{center}
-		\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
-			\toprule
-			\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
-			\midrule
-			1 & {\upshape Bit 0} & \multirow{4}{0.6\textwidth}{Canal 0 de bits de entrada/salida de propósito general (En la \kpci{} los bits digitales se agrupan de en ocho en ocho en canales. Los canales de este tipo puede configurarse para que los bits que lo integran se comporten como todo salidas o todo entradas)} \\
-			2 & {\upshape Bit 1} & \\
-			3 & {\upshape Bit 2} & \\
-			$\vdots$ & $\vdots$ & \\
-			8 & {\upshape Bit 7} & \\
-			\\
-			\midrule
-			9 & {\upshape Bit 8} & \multirow{2}{0.6\textwidth}{Canal 1 de bits de entrada/salida de propósito general} \\
-			10 & {\upshape Bit 9} & \\
-			11 & {\upshape Bit 10} & \\
-			$\vdots$ & $\vdots$ & \\
-			16 & {\upshape Bit 15} & \\
-			\midrule
-			\multicolumn{1}{l}{17, 18} & dgnd & Tierras digitales \\
-			\midrule
-			19 & {\upshape Bit 16} & \multirow{2}{0.6\textwidth}{Canal 2 de bits de entrada/salida de propósito general} \\
-			20 & {\upshape Bit 17} & \\
-			21 & {\upshape Bit 18} & \\
-			$\vdots$ & $\vdots$ & \\
-			26 & {\upshape Bit 23} & \\
-			\midrule
-			27 & {\upshape Bit 24} & \multirow{2}{0.6\textwidth}{Canal 3 de bits de entrada/salida de propósito general} \\
-			28 & {\upshape Bit 25} & \\
-			29 & {\upshape Bit 26} & \\
-			$\vdots$ & $\vdots$ & \\
-			34 & {\upshape Bit 31} & \\
-			\midrule
-			\multicolumn{1}{l}{35, 36} & {\upshape +5 V} & +5 \textsc{vdc} desde el bus del ordenador \\
-			\bottomrule
-		\end{tabular}
-	\end{center}
+	\centering
+	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
+		\toprule
+		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
+		\midrule
+		1 & {\upshape Bit 0} & \multirow{4}{0.6\textwidth}{Canal 0 de bits de entrada/salida de propósito general (En la \kpci{} los bits digitales se agrupan de en ocho en ocho en canales. Los canales de este tipo puede configurarse para que los bits que lo integran se comporten como todo salidas o todo entradas)} \\
+		2 & {\upshape Bit 1} & \\
+		3 & {\upshape Bit 2} & \\
+		$\vdots$ & $\vdots$ & \\
+		8 & {\upshape Bit 7} & \\
+		\\
+		\midrule
+		9 & {\upshape Bit 8} & \multirow{2}{0.6\textwidth}{Canal 1 de bits de entrada/salida de propósito general} \\
+		10 & {\upshape Bit 9} & \\
+		11 & {\upshape Bit 10} & \\
+		$\vdots$ & $\vdots$ & \\
+		16 & {\upshape Bit 15} & \\
+		\midrule
+		\multicolumn{1}{l}{17, 18} & dgnd & Tierras digitales \\
+		\midrule
+		19 & {\upshape Bit 16} & \multirow{2}{0.6\textwidth}{Canal 2 de bits de entrada/salida de propósito general} \\
+		20 & {\upshape Bit 17} & \\
+		21 & {\upshape Bit 18} & \\
+		$\vdots$ & $\vdots$ & \\
+		26 & {\upshape Bit 23} & \\
+		\midrule
+		27 & {\upshape Bit 24} & \multirow{2}{0.6\textwidth}{Canal 3 de bits de entrada/salida de propósito general} \\
+		28 & {\upshape Bit 25} & \\
+		29 & {\upshape Bit 26} & \\
+		$\vdots$ & $\vdots$ & \\
+		34 & {\upshape Bit 31} & \\
+		\midrule
+		\multicolumn{1}{l}{35, 36} & {\upshape +5 V} & +5 \textsc{vdc} desde el bus del ordenador \\
+		\bottomrule
+	\end{tabular}
 	\caption{Relación entre los puertos y terminales que presenta el conector trasero de la \kpci{} etiquetado como \emph{digital}}
 	\label{tab:digital-ports}
 \end{table}
