@@ -52,8 +52,180 @@ La práctica de emplear \textsc{gui}s como fondo para aplicaciones desarrolladas 
 En cuanto a la documentación adicional que el lector puede consultar a continuación se citan varios documentos clasificados en función del tema que tratan. Para la programación de \textsc{gui}s con \matlab{} puede consultarse el manual de usuario, cite, disponible en la web del fabricante. Esta sección se basa en la guía rápida sobre el uso de la \datx{}, también a cargo de \emph{The MathWorks, Inc.}, la compañía que mantiene la suite matemática en cuya web puede obtenerse un documento extendido.
 
 
-\subsection{Componentes de la herramienta}
+\subsubsection{Componentes de la herramienta}
 
-Los elementos de \matlab{} que juegan un papel suficientemente importante en el funcionamiento de la \datx{} son los listados a continuación. % de que está compuesta la \datx{}
+Los elementos de \matlab{} que juegan un papel suficientemente importante en el funcionamiento de la \datx{} son los listados en el \vref{tab:toolbox-components}.
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabulary}{.9\textwidth}{C L}
+		\toprule
+		Componente & \multicolumn{1}{c}{Propósito} \\
+		\midrule
+		Ficheros *.m & Se emplean para automatizar la creación de objetos dispositivo, adquirir datos, configurar las propiedades del dispositivo y la sesión, y evaluar el estado de la adquisición y los recursos.\\
+		\midrule
+		Máquina virtual de adquisición de datos & Almacena objetos dispositivo y sus propiedades, controla el almacenamiento de los datos adquiridos y controla la sincronización de eventos.\\
+		\midrule
+		Adaptadores & Son la vía de comunicación entre la máquina virtual de adquisición de datos y el hardware por la cual se transmiten propiedades, datos y eventos.\\
+		\bottomrule
+	\end{tabulary}
+	\caption{Descripción de los componentes de la \datx{}}
+	\label{tab:toolbox-components}
+\end{table}
 
 
+\subsubsection{Objetos dispositivo}
+
+Los objetos dispositivo permiten el acceso a subsistemas específicos del hardware. Los objetos dispositivo soportados por la \datx{} son los objetos de entrada analógica o \emph{analog imput objects} (\textsc{ai}), los objetos de salida analógica o \emph{analog output objects} (\textsc{ao}) y los objetos de entrada/salida digital o \emph{digital \textsc{i/o} objects} (\textsc{dio}).
+
+
+\subsection{La sesión de adquisición de datos}
+
+Una sesión completa de adquisición de datos consiste en cinco pasos:
+
+\begin{enumerate}
+	\item Crear el objeto dispositivo.
+	\item Añadir canales al objeto dispositivo.
+	\item Configurar las propiedades del objeto dispositivo y los canales añadidos para controlar el comportamiento de la aplicación de adquisición de datos.
+	\item Adquirir los datos. % Iniciar la sesión de adquisición.
+	\item Eliminar el objeto dispositivo. % Sesión de limpieza.
+\end{enumerate}
+
+Cada uno de los pasos se detalla en los puntos subsiguientes.
+
+
+\subsubsection{Crear el objeto dispositivo}
+
+% Utilizo la tabla para luego decir que como a mi me interesa la adquisición utilizare el comando analoginput nada más
+Para crear un objeto dispositivo, se debe llamar a la función de creación apropiada o constructor. Como se muestra en el \vref{tab:constructors}, los constructores reciben un nombre particular en función del tipo de objetos dispositivo que crean. Para iniciar una sesión de adquisición de datos analógicos es necesario un comando como el siguiente, \texttt{analoginput(`adaptador', ID)}.\par
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{l >{\tt}l}
+		\toprule
+		\multicolumn{1}{c}{Tipo de subsistema} & \multicolumn{1}{c}{\rm Constructor} \\
+		\midrule
+		Entrada analógica & analoginput(`adaptador', ID); \\
+		\midrule
+		Salida analógica & analogoutput(`adaptador', ID); \\
+		\midrule
+		Entrada / Salida digital & digitalio(`adaptador', ID); \\
+		\bottomrule
+	\end{tabular}
+	\caption{Tipos de función de creación de acuerdo con el tipo subsistema al que se orienta el objeto dispositivo creado}
+	\label{tab:constructors}
+\end{table}
+
+El argumento \textsc{id} es un indicador de dispositivo hardware. Se trata de un argumento opcional para tarjetas de sonido con \textsc{id 0}. El argumento \texttt{adaptador} requiere el nombre del adaptador de dispositivo hardware. A continuación, en el \vref{tab:adaptors} se muestra una relación con los adaptadores de dispositivo cuyo uso es más frecuente y el nombre de adaptador que debe introducirse como argumento de la llamada a \texttt{analoginput}. Por conveniencia se ha añadido Keithley a esta lista.
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{l >{\tt\qquad}l}
+		\toprule
+		\multicolumn{1}{c}{Fabricante de Hardware} & \multicolumn{1}{c}{\rm Nombre de adaptador} \\
+		\midrule
+		Advantech & advantech \\
+		\midrule
+		Measurement Computing & mcc \\
+		\midrule
+		National Instruments & nidaq \\
+		\midrule
+		Parallel port & parallel \\
+		\midrule
+		Microsoft Windows & winsound \\
+		\midrule
+		Keithley Instruments, Inc. & keithley \\
+		\bottomrule
+	\end{tabular}
+	\caption{Nombre del adaptador que debe emplearse en la llamada a \texttt{analoginput} en función del fabricante}
+	\label{tab:adaptors}
+\end{table}
+
+
+\subsubsection{Añadiendo canales}
+
+Antes de poder utilizarse, deben añadirse canales al objeto dispositivo. Para ello, debe emplearse la función \texttt{addchannel}. Puede pensarse en un objeto dispositivo como un contenedor de grupos de canales y en los canales añadidos a un objeto dispositivo como un grupo de canales. Si se desean añadir dos canales al objeto dispositivo \texttt{objeto} puede utilizarse la siguiente llamada \texttt{cans = addchannel(objeto, 1:2);}.
+
+
+\subsubsection{Configurando propiedades}
+
+Puede controlarse el comportamiento de una sesión de adquisición de datos o de una aplicación creada con tal propósito configurando las propiedades de los objetos dispositivo que intervienen en el proceso de adquisición y de los canales que dicho objeto contiene. Estas son las reglas principales en la configuración de propiedades desde la \datx{}.
+
+\begin{itemize}
+	\item Los nombres de las propiedades pueden escribirse en mayúsculas, minúsculas o combinación de ambas.
+	\item Los nombres de las propiedades pueden abreviarse como se mostrará a continuación. % Hay que confirmar que se explican las reglas de abreviatura
+	\item La función \texttt{set} aplicada a un objeto dispositivo ---\texttt{set(objeto)}--- devuelve todas las propiedades configurables de ese objeto. Si se llama a \texttt{set} utilizando como argumento un canal ---\texttt{set(objeto.Channel(índice)}---, la función devolverá todas las propiedades configurables de dicho canal.
+	\item La función \texttt{get} devuelve todas las propiedades de un canal u objeto y el valor que toman en el momento en el que se llama a la función si se emplea como único argumento dicho canal u objeto ---\texttt{get(objeto)}, \\ \texttt{get(objeto.Channel(índice)}---.
+\end{itemize}
+
+Se distinguen dos tipos de propiedades distintas asociadas a los canales contenidos en un objeto dispositivo.
+
+\begin{itemize}
+	\item \emph{Propiedades comunes} que se aplican a cada canal contenido en un objeto dispositivo.
+	\item Y \emph{propiedades de canal} que pueden configurarse individualmente por canal.
+\end{itemize}
+
+Dentro de las propiedades comunes de los canales existen las \emph{propiedades básicas}, que se aplican a todos los subsistemas de un determinado tipo (\textsc{ai, ao, dio}); y \emph{propiedades específicas de dispositivo} aplicables únicamente al hardware específico que se está empleando.\par
+Existen tres formas de configurar u obtener el valor de una propiedad: utilizando las funciones \texttt{set} y \texttt{get}; empleando la notación de punto; o recurriendo a los nombres indexados.
+
+\begin{itemize}
+	\item La sintaxis de las funciones \texttt{get} y \texttt{set} es similar a la empleada en la herramienta de \matlab{} \emph{Handle Graphics}.
+		\begin{lstlisting}[gobble=24]
+			out = get(objeto, `SampleRate');
+			set(objeto, `SampleRate', 11025)
+		\end{lstlisting}
+	\item La notación de punto se emplea del siguiente modo:
+		\begin{lstlisting}[gobble=24]
+			out = objeto.SampleRate;
+			objeto.SampleRate = 11025;
+		\end{lstlisting}
+	\item Por último, los nombres indexados permiten asociar un nombre descriptivo a cada canal. Por ejemplo para asociar el nombre \texttt{Can1} con el primer canal contenido en \texttt{objeto} debe procederse como se enuncia a continuación.
+		\begin{lstlisting}[gobble=24]
+			set(objeto.Channel(1), `ChannelName', `Can1');
+			out = objeto.Can1.UnitsRange;
+			objeto.Can1.UnitsRange = [0, 10];
+		\end{lstlisting}
+\end{itemize}
+
+
+\subsubsection{Adquisición de datos}
+
+La adquisición de datos puede dividirse en tres tareas básicas: iniciar el objeto dispositivo; registrar datos y detener el objeto dispositivo.\par
+La función que se utiliza para iniciar un objeto dispositivo es la función \texttt{start}, p.e. para iniciar el objeto dispositivo \texttt{objeto} habría que llamar a la función de esta forma \texttt{start(objeto)}. Tras iniciar un objeto su propiedad \textsf{Running} pasa de manera automática al valor \textsf{On}.\par
+No obstante haber iniciado el dispositivo, este no empieza a registrar datos hasta que no ocurre un trigger o disparo. Hay diversos tipos de trigger, en el \vref{tab:triggers} se muestran aquellos soportados por todos los dispositivos. Tras un trigger el dispositivo hardware inicia la adquisición de datos y la propiedad \textsf{Logging} del objeto dispositivo asociado conmuta al estado \textsf{On}.
+
+\begin{table}[htbp]
+	\centering
+	\begin{threeparttable}
+	\begin{tabulary}{.9\linewidth}{>{\sf}c L}
+		\toprule
+		{\rm Tipo de disparo} & \multicolumn{1}{c}{Descripción} \\
+		\midrule
+		Inmediato & El disparo ocurre justo después de la llamada a \texttt{start}. Este es el tipo de trigger predeterminado. \\
+		\midrule
+		Manual & El disparo ocurre después de llamar manualmente a la función \texttt{trigger}. \\
+		\midrule
+		Software\tnote{a} & El disparo sucede cuando se detecta una señal que satisface una determinada condición especificada de antemano. El objeto dispositivo debe disponer de más de un canal que hará las veces de la señal de disparo. Debe especificarse, como es obvio, que canal actúa como fuente del disparo. \\
+		\midrule
+		Reloj interno\minifootnotemark{*} & Por añadidura, la \kpci{} cuenta con la posibilidad de recibir el disparo de la fuente de reloj interna. \\
+		\bottomrule
+	\end{tabulary}
+	\begin{tablenotes}
+		\vspace{\skip\footins}
+		\minifootnoterule
+		\item[*] Se ha añadido esta característica de la \kpci{} a la lista original.
+	\end{tablenotes}
+	\end{threeparttable}
+	\caption{Tipos de disparo soportados por el hardware compatible con \matlab{} y una breve descripción de los mismos}
+	\label{tab:triggers}
+\end{table}
+
+Por último, existen tres causas por las que un objeto dispositivo puede detenerse: \matlab{} detiene un objeto dispositivo iniciado una vez obtenidos los datos precisados por el usuario; al ocurrir un error de tiempo de ejecución en relación con la actividad de un objeto dispositivo éste es detenido también; y tan sólo resta el método manual, que consiste en llamar a la función \texttt{stop}, por ejemplo \texttt{stop(objeto)}.\par
+Como se ha mencionado la máquina virtual de adquisición de datos registra y controla los datos que extrae de un objeto dispositivo. Un usuario puede acceder a esos datos de dos formas diferentes:
+
+\begin{itemize}
+	\item La primera de ellas se conoce como previsualizar los datos. Se emplea con ese propósito la función \texttt{peekdata}. Si, por ejemplo, se quisiese previsualizar 1000 muestras obtenidas con el objeto dispositivo \texttt{objeto}, la llamada a \texttt{peekdata} sería la siguiente: \texttt{out = peekdata(objeto, 1000);}. La función \texttt{peekdata} devuelve el control a \matlab{} de inmediato y no elimina los datos previsualizados de la máquina virtual de adquisición.
+	\item En cualquier momento tras adquirir datos mediante un objeto dispositivo estos pueden extraerse de la máquina virtual de adquisición mediante la función \texttt{getdata}. Partiendo del ejemplo anterior, si se desea extraer 1000 muestras procedentes del objeto dispositivo \texttt{objeto}, esta es la llamada adecuada \texttt{out = getdata(objeto, 1000);}. Al contrario que la función \texttt{peekdata}, \texttt{getdata} no devuelve el control a \matlab{} hasta haber extraído todas las muestras solicitadas. Es evidente que las muestras extraídas dejarán de estar disponibles en la máquina virtual de adquisición.
+\end{itemize}
+
+Es importante señalar que en cualquiera de los procedimientos descritos intentar acceder a más datos de los obtenidos en un determinado momento causará un error que detendrá el funcionamiento del objeto dispositivo.
