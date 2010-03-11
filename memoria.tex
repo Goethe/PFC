@@ -7,22 +7,19 @@
 \usepackage[latin1]{inputenc}
 \usepackage[OT1]{fontenc}
 \usepackage[hang, sf]{subfigure}
-%\usepackage[full]{textcomp}
 \usepackage[bf, sf]{titlesec}
 \usepackage[nottoc]{tocbibind}
 \usepackage[spanish]{varioref}
 \usepackage{graphicx}
-%\usepackage{amsfonts, amsmath, amssymb, calc, color, fancyhdr, hyperref, ifthen, listings, nextpage, textcase}
-\usepackage{amsmath, fancyhdr, hyperref, listings, nextpage, textcase}
-%\usepackage{array, booktabs, tabularx, tabulary, dcolumn, multirow, rotating, threeparttable}
+\usepackage{amsmath, color, fancyhdr, hyperref, ifthen, listings, nextpage, textcase}
 \usepackage{array, booktabs, tabularx, tabulary, dcolumn, multirow, threeparttable}
 \titleformat{\part}[display]{\centering\huge\sffamily\bfseries}{\partname\ \thepart}{.5\baselineskip}{}
 \hypersetup{%
 	pdftitle=Proceso de adquisición y tratamiento de señales de %
 	ultrasonidos, pdfauthor=José Ramón Gisbert Valls, pdfcreator=Vim 7.2,%
 	pdfstartview=FitH, colorlinks=true, pdfdisplaydoctitle=true,%
-	naturalnames=true, breaklinks=true, bookmarksopen=true,%
-	linkcolor=black%
+	naturalnames=true, breaklinks=true, linkcolor=black,%
+	bookmarksopen=true, bookmarksopenlevel=1
 }
 \fancyhf{}
 \fancyhead[RO, LE]{\sffamily\bfseries\thepage}
@@ -45,18 +42,15 @@
 \labelformat{footnote}{#1\protect\iscurrentchapter{\thechapter}}
 \setkeys{Gin}{width=.8\linewidth}
 \graphicspath{{./pictures/}{../pictures/}}
-\DeclareGraphicsRule{.1}{mps}{*}{}
 \DeclareCaptionLabelFormat{cont}{#1~#2\alph{ContinuedFloat}}
 \captionsetup[ContinuedFloat]{labelformat=cont}
-\newcommand\iscurrentchapter[1]{\ifthenelse{\equal{#1}{\thechapter}}{  en el Capítulo~#1}}
 \newcommand\matlab{\textsc{matlab}}
 \newcommand\kpci{\textsc{kpci}-3108}
 \newcommand\datx{\emph{Data Acquisition Toolbox}}
-\newcommand\minifootnoterule{\vspace*{-3pt}\hrule width 2in height 0.4pt \vspace*{2.2pt}}
-\newcommand\minifootnotemark[1]{\makebox[1.8em][l]{\mbox{\textsuperscript{\normalfont#1}}}}
+\newcommand\iscurrentchapter[1]{\ifthenelse{\equal{#1}{\thechapter}}{  en el Capítulo~#1}}
 \newcommand\miniit[1]{\begin{itemize} #1 \end{itemize}}
-\newcommand\tnotetext[2]{\item[#1]\hspace*{-3.5pt}{\footnotesize #2}}
-\newenvironment{TableNotes}{\begin{tablenotes}}{\end{tablenotes}}
+\newcommand\tnotetext[2]{\item\hspace*{-5pt}\raisebox{.7ex}{\fontsize{7pt}{8.4pt}\selectfont\normalfont #1}{\footnotesize #2}}
+\newenvironment{TableNotes}{\begin{tablenotes}\vspace{\footnotesep}\footnoterule\vspace{.2ex}}{\end{tablenotes}}
 \renewcommand\chaptermark[1]{\markboth{#1}{}}
 \renewcommand\cleardoublepage{\cleartooddpage[\thispagestyle{empty}]}
 \newcolumntype{d}[1]{D{,}{,}{#1}}

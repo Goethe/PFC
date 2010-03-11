@@ -7,6 +7,7 @@ referencias
 *.cb2
 *.out
 *.pdf
+!memoria.pdf
 !pictures/*.pdf
 pictures/prueba.pdf
 *.toc

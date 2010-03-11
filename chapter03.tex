@@ -137,7 +137,7 @@ El argumento \textsc{id} es un indicador de dispositivo hardware. Se trata de un
 		Keithley Instruments, Inc. & keithley \\
 		\bottomrule
 	\end{tabular}
-	\caption{Nombre del adaptador que debe emplearse en la llamada a \texttt{analoginput} en función del fabricante}
+	\caption{Nombre de adaptador que debe emplearse en la llamada a \texttt{analoginput} en función del fabricante}
 	\label{tab:adaptors}
 \end{table}
 
@@ -207,13 +207,11 @@ No obstante haber iniciado el dispositivo, este no empieza a registrar datos has
 		\midrule
 		Software & El disparo sucede cuando se detecta una señal que satisface una determinada condición especificada de antemano. El objeto dispositivo debe disponer de más de un canal que hará las veces de la señal de disparo. Debe especificarse, como es obvio, que canal actúa como fuente del disparo. \\
 		\midrule
-		Reloj interno\tnote{*} & Por añadidura, la \kpci{} cuenta con la posibilidad de recibir el disparo de la fuente de reloj interna. \\
+		Reloj interno\tnote{a} & Por añadidura, la \kpci{} cuenta con la posibilidad de recibir el disparo de la fuente de reloj interna. \\
 		\bottomrule
 	\end{tabulary}
 	\begin{TableNotes}
-		\vspace{\skip\footins}
-		\minifootnoterule
-		\tnotetext{*}{Se ha añadido esta característica de la \kpci{} a la lista original.}
+		\tnotetext{a}{Se ha añadido esta característica de la \kpci{} a la lista original.}
 	\end{TableNotes}
 	\end{threeparttable}
 	\caption{Tipos de disparo soportados por el hardware compatible con \matlab{} y una breve descripción de los mismos}
