@@ -53,10 +53,9 @@
 \newcommand\minifootnotemark[1]{\makebox[1.8em][l]{\mbox{\textsuperscript{\normalfont#1}}}}
 \newcommand\minifootnotetext[2]{\makebox[1.8em][r]{\mbox{\textsuperscript{\normalfont#1}}}\footnotesize#2\par\noindent}
 \newcommand\miniit[1]{\begin{itemize} #1 \end{itemize}}
+\newcommand\tnotetext[2]{\item[#1]\hspace*{-3.5pt}{\footnotesize #2}}
 \renewcommand\chaptermark[1]{\markboth{#1}{}}
 \renewcommand\cleardoublepage{\cleartooddpage[\thispagestyle{empty}]}
-\renewcommand\tnote[1]{\makebox[1.8em][l]{\mbox{\textsuperscript{\normalfont#1}}}}
-\renewcommand\TPTnoteLabel[1]{\makebox[1.8em][r]{\mbox{\textsuperscript{\normalfont#1}}}}
 \newcolumntype{d}[1]{D{,}{,}{#1}}
 \newcolumntype{+}{D{/}{\mbox{\ --\ }}{5}}
 \begin{document}
