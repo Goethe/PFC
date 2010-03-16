@@ -116,7 +116,7 @@ Para crear un objeto dispositivo, se debe llamar a la función de creación apropi
 	\label{tab:constructors}
 \end{table}
 
-El argumento \textsc{id} es un indicador de dispositivo hardware. Se trata de un argumento opcional para tarjetas de sonido con \textsc{id 0}. El argumento \texttt{adaptador} requiere el nombre del adaptador de dispositivo hardware. A continuación, en el \vref{tab:adaptors} se muestra una relación con los adaptadores de dispositivo cuyo uso es más frecuente y el nombre de adaptador que debe introducirse como argumento de la llamada a \texttt{analoginput}. Por conveniencia se ha añadido Keithley a esta lista.
+El argumento \texttt{id} es un indicador de dispositivo hardware. Se trata de un argumento opcional para tarjetas de sonido con \texttt{id} 0. El argumento \texttt{adaptador} requiere el nombre del adaptador de dispositivo hardware. A continuación, en el \vref{tab:adaptors} se muestra una relación con los adaptadores de dispositivo cuyo uso es más frecuente y el nombre de adaptador que debe introducirse como argumento de la llamada a \texttt{analoginput}. Por conveniencia se ha añadido Keithley a esta lista.
 
 \begin{table}[htbp]
 	\centering
@@ -170,17 +170,17 @@ Existen tres formas de configurar u obtener el valor de una propiedad: utilizand
 
 \begin{itemize}
 	\item La sintaxis de las funciones \texttt{get} y \texttt{set} es similar a la empleada en la herramienta de \matlab{} \emph{Handle Graphics}.
-		\begin{lstlisting}[gobble=24]
+		\begin{lstlisting}[gobble=16]
 			out = get(objeto, `SampleRate');
 			set(objeto, `SampleRate', 11025)
 		\end{lstlisting}
 	\item La notación de punto se emplea del siguiente modo:
-		\begin{lstlisting}[gobble=24]
+		\begin{lstlisting}[gobble=16]
 			out = objeto.SampleRate;
 			objeto.SampleRate = 11025;
 		\end{lstlisting}
 	\item Por último, los nombres indexados permiten asociar un nombre descriptivo a cada canal. Por ejemplo para asociar el nombre \texttt{Can1} con el primer canal contenido en \texttt{objeto} debe procederse como se enuncia a continuación.
-		\begin{lstlisting}[gobble=24]
+		\begin{lstlisting}[gobble=16]
 			set(objeto.Channel(1), `ChannelName', `Can1');
 			out = objeto.Can1.UnitsRange;
 			objeto.Can1.UnitsRange = [0, 10];
@@ -227,3 +227,34 @@ Como se ha mencionado la máquina virtual de adquisición de datos registra y cont
 \end{itemize}
 
 Es importante señalar que en cualquiera de los procedimientos descritos intentar acceder a más datos de los obtenidos en un determinado momento causará un error que detendrá el funcionamiento del objeto dispositivo.
+
+
+\subsubsection{Eventos y Callbacks}
+
+Puede decirse que un evento sucede en un determinado instante después de que una cierta condición se cumple. A menos que ocurra un error, en todas las sesiones de adquisición de datos debe producirse un evento de inicio, uno de disparo y uno de parada. Puede accederse a la información que transporta un evento mediante la propiedad \textsf{EventLog}:
+
+\begin{lstlisting}
+	Events = ai.EventLog;
+	EventTypes = {Events.Types}
+	EventTypes =
+		`Start'    `Trigqer'	`Stop'
+\end{lstlisting}
+
+Cuando se produce un evento, puede ejecutarse una función de \emph{callback}. Es posible seleccionar una función para un callback especificando como valor de la propiedad asociada a dicho callback el nombre de la función (si ésta se encuentra en el mismo fichero *.m que contiene el código que ejecuta la aplicación que realiza la adquisición de datos), o el nombre del fichero *.m con el código de la función. Así mismo, pueden pasarse argumentos de entrada a la función de callback asignándolos a la mencionada propiedad.\par
+Por ejemplo, los siguientes comandos configuran \texttt{objeto} de forma que la función \texttt{datadqcallback} se ejecute desde el fichero cuyo nombre está compuesto por una raíz idéntica al nombre de la función y con extensión *.m, cuando se produzca un evento de trigger o de parada durante la actividad del objeto dispositivo. Además se pasa como argumento de la función el valor de la propiedad \textsf{Running} de \texttt{objeto} en el momento del callback.
+
+\begin{lstlisting}
+	set(objeto, `TriggerFcn', @datadqcallback, objeto.Running)
+	set(objeto, `StopFcn', @datadqcallback, objeto.Running)
+\end{lstlisting}
+
+
+\subsubsection{Suprimiendo y borrando las trazas de los objetos dispositivo}
+
+La función \texttt{delete} elimina el objeto dispositivo especificado de la máquina virtual de adquisición, pero no del espacio de trabajo de \matlab{}, ---\texttt{delete(objeto)}---. Tras una llamada semejante \texttt{objeto} sigue apareciendo en el espacio de trabajo de \matlab{}, pero se trata de un objeto inválido desde el momento en el que deja de encontrarse ligado al hardware. Deben suprimirse los objetos dispositivo faltos de validez con el comando \texttt{clear}, p.e., \texttt{clear objeto}.\par
+Si se suprime un objeto dispositivo del espacio de trabajo de \matlab{} no deja de existir en la máquina virtual. Para poder recuperar objetos borrados accidentalmente puede utilizarse la función \texttt{daqfind}.
+
+\begin{lstlisting}
+	out = daqfind;
+	ai = out(1);
+\end{lstlisting}
