@@ -36,23 +36,25 @@ La cola de muestreo, como su propio nombre indica, es una estructura de datos or
 		\midrule
 		Número de canal & 15 & 15 & 02 & 02 %
 		& \multicolumn{2}{c}{$\cdots$} & 17 & 13 & 01 \\
-		Número de puerto\minifootnotemark{a, b} & 07 & 07 & 11 & 11 %
+		Número de puerto\tnote{a, b} & 07 & 07 & 11 & 11 %
 		& \multicolumn{2}{c}{$\cdots$} & 07 & 09 & 01 \\
 		Ganancia & 1 & 1 & 40 & 40 %
 		& \multicolumn{2}{c}{$\cdots$} & 200 & 8 & 80 \\
-		Modo de adquisición\minifootnotemark{c} & $\pm$ & $\pm$ & $+$ & $+$ %
+		Modo de adquisición\tnote{c} & $\pm$ & $\pm$ & $+$ & $+$ %
 		& \multicolumn{2}{c}{$\cdots$} & $\pm$ & $+$ & $\pm$ \\
-		Modo de terminación\minifootnotemark{d} & \textsc{d} & \textsc{d} & \textsc{ts} %
+		Modo de terminación\tnote{d} & \textsc{d} & \textsc{d} & \textsc{ts} %
 		& \textsc{ts} & \multicolumn{2}{c}{$\cdots$} & \textsc{d} & \textsc{ts} %
 		& \textsc{ts} \\
 		\bottomrule
 	\end{tabular}
-	\vspace{\skip\footins}
-	\minifootnoterule
-		\minifootnotetext{a}{Si el canal es diferencial el número de puerto identifica un par de puertos. Un canal diferencial no puede estar asociado a un número de puerto superior a 07.}
-		\minifootnotetext{b}{Dos canales pueden estar relacionados con los mismos puertos físicos.}
-		\minifootnotetext{c}{$\pm$ configuración bipolar; $+$ configuración unipolar}
-		\minifootnotetext{d}{\textsc{d} canal diferencial; \textsc{ts} canal monoterminal}
+	\begin{tablenotes}
+		\vspace{\skip\footins}
+		\minifootnoterule
+		\tnotetext{a}{Si el canal es diferencial el número de puerto identifica un par de puertos. Un canal diferencial no puede estar asociado a un número de puerto superior a 07.}
+		\tnotetext{b}{Dos canales pueden estar relacionados con los mismos puertos físicos.}
+		\tnotetext{c}{$\pm$ configuración bipolar; $+$ configuración unipolar}
+		\tnotetext{d}{\textsc{d} canal diferencial; \textsc{ts} canal monoterminal}
+	\end{tablenotes}
 	\end{threeparttable}
 	\caption{Ejemplo de cola de muestreo}
 	\label{tab:sample-queue}
