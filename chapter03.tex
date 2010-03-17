@@ -73,10 +73,25 @@ Los elementos de \matlab{} que juegan un papel suficientemente importante en el 
 	\label{tab:toolbox-components}
 \end{table}
 
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics[height=.5\textheight, keepaspectratio=true]{chapter03-01.pdf}
+	\end{center}
+	\caption{Elementos que intervienen en el funcionamiento de la \datx{}}
+	\label{fig:toolbox-components}
+\end{figure}
 
 \subsubsection{Objetos dispositivo}
 
 Los objetos dispositivo permiten el acceso a subsistemas específicos del hardware. Los objetos dispositivo soportados por la \datx{} son los objetos de entrada analógica o \emph{analog imput objects} (\textsc{ai}), los objetos de salida analógica o \emph{analog output objects} (\textsc{ao}) y los objetos de entrada/salida digital o \emph{digital \textsc{i/o} objects} (\textsc{dio}).
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics{chapter03-02.pdf}
+	\end{center}
+	\caption{Grafo que representa la comunicación entre los subsistemas del hardware y los objetos dispositivo}
+	\label{fig:subsystems-objects}
+\end{figure}
 
 
 \subsection{La sesión de adquisición de datos}
@@ -137,7 +152,7 @@ El argumento \texttt{id} es un indicador de dispositivo hardware. Se trata de un
 		Keithley Instruments, Inc. & keithley \\
 		\bottomrule
 	\end{tabular}
-	\caption{Nombre de adaptador que debe emplearse en la llamada a \texttt{analoginput} en función del fabricante}
+	\caption{Argumento que debe emplearse en la llamada a \texttt{analoginput} en función del fabricante}
 	\label{tab:adaptors}
 \end{table}
 
