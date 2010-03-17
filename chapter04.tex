@@ -85,4 +85,107 @@ En ensayos no destructivos mediante ultrasonidos, la señal de interés y el \emph
 
 \subsection{Fundamentos físicos del ruido estructural}
 
-El ruido estructural es una consecuencia directa de la dispersión. Cuando un frente de ondas incide sobre una partícula de tamaño comparable a su longitud de onda la energía se dispersa por la acción de esa partícula. Dicha partícula actúa como un reflector esférico y selectivo en frecuencia ---afectando más a las altas frecuencias--- que refleja la señal en todas direcciones. Cuando un material es abundante en partículas
+El ruido estructural es una consecuencia directa de la dispersión. Cuando un frente de ondas incide sobre una partícula de tamaño comparable a su longitud de onda, la energía que transporta se dispersa por la acción de esa partícula. Dicha partícula actúa como un reflector esférico y selectivo en frecuencia ---afectando más a las altas frecuencias\footnote{Según la relación $c = \lambda\cdot f$, si se mantiene $c$, a medida que aumenta $f$ disminuirá la longitud de onda y, por tanto, el tamaño de la partícula con respecto a la longitud de onda aumentará.}--- que refleja la señal en todas direcciones. De este modo, aquellos materiales que contienen un número considerable de partículas susceptibles de interferir del modo descrito en la propagación de un determinado frente de ondas, son considerados materiales dispersivos.\par
+En el caso de un frente de ondas acústicas que incide sobre un determinado material dispersivo, la energía que tras el proceso de reflexión se propaga en sentido contrario al sentido de propagación del frente de ondas se conoce como \emph{back-scattering}. Por su parte, la energía perturbada por la acción del reflector que continúa propagándose en el mismo sentido suele denominarse \emph{forward-scattering}. En los \textsc{endus} dependiendo de la técnica empleada es uno u otro tipo de dispersión el que causa un mayor deterioro de los resultados: si la técnica empleada es de pulso"=eco, el \emph{back-scattering} será el más perjudicial; si, por el contrario, se está empleando la técnica de transmisión, será el \emph{forward-scattering} el más nocivo para el proceso.\par
+Para poder estudiar el efecto del ruido estructural en las inspecciones ultrasónicas de forma adecuada es necesario caracterizar el proceso de emisión"=recepción que se da en un ensayo mediante ultrasonidos desde el punto de vista de la respuesta al impulso o régimen transitorio.
+
+
+\subsubsection{Análisis del proceso de emisión-recepción}
+
+Los diferentes elementos que intervienen en el proceso de emisión"=recepción de que consta una inspección ultrasónica tienen un comportamiento lineal, esto permite estudiar todo el conjunto como un sistema lineal, y ello a su vez posibilita el uso de técnicas propias del análisis de este tipo de sistemas.\par
+Supóngase un transductor de perfil arbitrario, al excitarse con un pulso eléctrico, $u(t)$, y dadas a sus propiedades electromecánicas, emite un pulso acústico de velocidad $v(t)$ relacionado con la respuesta impulsiva de emisión del transductor, $h_{te}(t)$.
+
+\begin{equation}
+	v(t) = h_{te}(t)\otimes u(t)
+	\label{eq:emisor}
+\end{equation}
+
+La respuesta impulsiva electrodinámica en emisión, $h_{te}(t)$ depende del circuito electrónico empleado para excitar el transductor y de los parámetros de diseño de este último.\par
+La presión en un punto situado en el eje $y$ y a una distancia $z$ del transductor es el resultado de la suma coherente de las aportaciones de cada uno de los puntos que forman la cara del transductor por la que emite la onda acústica, considerándolos como emisores omnidireccionales y esféricos. La presión en cada punto del espacio está relacionada con la velocidad en la cara del pistón por medio de la siguiente expresión:
+
+\begin{equation}
+	p(z, t) = \rho\frac{\partial}{\partial t}\left\{v(t)\otimes h_{m}(z, t)\right\}
+	\label{eq:presion-difraccion}
+\end{equation}
+
+Siendo $\rho$ la densidad del medio por la que se propaga la onda acústica y $h_{m}(z, t)$ la respuesta al impulso en el medio de propagación considerando la difracción que se produce en dicho medio.\par% a la difracción en el medio de propagación.
+La propagación de una onda acústica se ve sometida a fenómenos de difracción propios de la naturaleza ondulatoria de la radiación acústica y fenómenos de atenuación a consecuencia de la interacción con el medio. De cara al estudio de la propagación de la onda estos fenómenos pueden tratarse por separado. Por un lado se considera el efecto de la difracción sobre la onda en un medio homogéneo y sin pérdidas, y por otro la atenuación que induce el medio. Esta aproximación mantiene su validez siempre que el estudio afecte a una región del campo muy próxima al transductor. Si se considera esta aproximación, y se tiene $h_d(z, t)$, la respuesta al impulso en un medio homogéneo y sin pérdidas a la difracción, y $a(z, t)$, la atenuación atribuida al medio; puede descomponerse la respuesta al impulso en el medio de propagación a la difracción en esos dos términos:
+
+\begin{equation}
+	h_m(z, t) = h_d(z, t)\otimes a(z, t)
+	\label{eq:descomposicion-difraccion}
+\end{equation}
+
+La atenuación es selectiva en frecuencia y ello se asocia a los siguientes aspectos derivados de la existencia de una macro y una micro"=estructura en el material:
+
+\begin{itemize}
+	\item La absorción o transformación de la energía acústica que transporta la onda en calor.
+	\item Y los efectos de dispersión de la energía.
+\end{itemize}
+
+La expresión que define la atenuación sufrida por la onda acústica toma la siguiente forma a partir de $\alpha(\omega)$ o coeficiente de atenuación característico del medio.
+
+\begin{equation}
+	A(z, \omega) = e^{\int^z_0 -\alpha(z, \omega)dz} 
+	\label{eq:atenuacion}
+\end{equation}
+
+Cuando la onda acústica incide sobre un reflector, las características de éste determinan la relación entre la onda incidente y la reflejada. Esta relación viene dada por la función de reflectividad, $h_r(t)$, que depende de la frecuencia de la onda de presión. Si la reflexión que se produce al llegar la onda hasta la partícula es especular, $h_r(t)$ coincide con una delta de Dirac ponderada.\par
+Como consecuencia de la reflexión, una señal distinta de la emitida por el transductor en origen regresa a éste. Por tanto, se produce en la cara del transductor que da al material una presión variable con el tiempo $p_R(z, t)$, constituida por la suma de la presión que se produce en cada punto de la mencionada superficie.
+
+\begin{equation}
+	p_R(z, t) = p(z, t)\otimes h_r(t)\otimes h_m(z, t)
+	\label{eq:potencia-recibida}
+\end{equation}
+
+
+\cbstart{}
+
+Del mismo modo, una parte de la onda que incide sobre el reflector es transmitida. Dicha onda debe atravesar el medio restante hasta alcanzar el otro extremo del material, en el camino pueden producirse más reflexiones. Si la técnica empleada es de transmisión, se produce, en ese caso, una presión en la superficie del transductor en recepción. Esta presión es similar a la que detecta el primer transductor, $p_R(z, t)$, pero está relacionada con la función de refracción asociada al cuerpo reflector.
+
+\begin{equation}
+	p_T(z, t) = p(z, t)\otimes h_t(t)\otimes h_m(z, t)
+	\label{eq:potencia-recibida-transmision}
+\end{equation}
+
+\cbend{}
+
+
+Finalmente, la presión $p_R$, $p_T$, se traduce en una señal eléctrica en bornes del transductor. Esta señal está relacionada con la respuesta impulsiva del transductor en recepción, $h_{tr}(t)$, que depende, al igual que $h_{te}(t)$ del circuito acondicionador y del proceso de fabricación del transductor.
+
+\begin{equation}
+	y(t) = h_{tr}(t)\otimes p_R(z, t)
+	\label{eq:receptor}
+\end{equation}
+
+Por consiguiente el proceso de emisión"=recepción en el que se fundamentan los \textsc{endus} puede considerarse como la respuesta impulsional en cascada de todos los fenómenos descritos.
+
+\begin{equation}
+	y(t) = \rho_0\frac{\partial}{\partial t}\left\{u(t)\otimes h_{te}(t)\otimes h_d(z, t)\otimes a(z, t)\otimes h_r(t)\otimes h_d(z, t)\otimes a(z, t)\otimes h_{tr}(t)\right\}
+	\label{eq:emision-recepcion}
+\end{equation}
+
+La figura --- muestra un diagrama de bloques que representa el proceso de emisión"=recepción y todos los fenómenos que en el intervienen según el modelo empleado en este documento. La función de transferencia del sistema puede obtenerse de modo sencillo aplicando el teorema de la convolución. Aprovechando la linealidad del sistema se agrupan los términos de la función de transferencia en \vref{eq:funcion-transferencia-agrupada}, para que el resultado quede en función de la respuesta electromecánica del transductor $X(\omega)$ y de la respuesta espacial al impulso $H(z, \omega)$.
+
+\begin{equation}
+	Y(\omega) = j\omega\rho_0\cdot U(\omega)\cdot H_{te}(\omega)\cdot H^2_d(z, \omega)\cdot A^2(z, \omega)\cdot H_r(\omega)\cdot H_{tr}(\omega)
+	\label{eq:funcion-transferencia}
+\end{equation}
+
+\begin{equation}
+	Y(\omega) = X(\omega)\cdot H(z, \omega)\cdot A^2(z, \omega)
+	\label{eq:funcion-transferencia-agrupada}
+\end{equation}
+
+\begin{equation}
+	X(\omega) = j\omega\rho_0\cdot U(\omega)\cdot H_{te}(\omega)\cdot H_{tr}(\omega)
+	\label{eq:respuesta-transductor}
+\end{equation}
+
+\begin{equation}
+	H(z, \omega) = H^2_d(z, \omega)\cdot H_r(\omega)
+	\label{eq:respuesta-espacial}
+\end{equation}
+
+Siendo esta última, la respuesta espacial al impulso, función de la posición del reflector y de su forma, o lo que es lo mismo, de las funciones de reflectividad y difracción.\par
+Al agrupar de este modo la función de transferencia se establece de forma intrínseca la separación entre los procesos de difracción y atenuación. Además es posible establecer nuevas separaciones: dejando por un lado los efectos debidos a los transductores y electrónica de acondicionamiento, $X(\omega)$; por otro la influencia del medio en la onda que se propaga, es decir, la atenuación, $A(z, \omega)$; y, finalmente, por otro los efectos de la propagación y la interacción con el reflector, $H(z, \omega)$.
