@@ -195,3 +195,52 @@ Siendo esta última, la respuesta espacial al impulso, función de la posición del
 \end{equation}
 
 Al agrupar de este modo la función de transferencia se establece de forma explícita la separación entre los procesos de difracción y atenuación. Además es posible establecer nuevas separaciones: dejando por un lado los efectos debidos a los transductores y electrónica de acondicionamiento, $X(\omega)$; por otro la influencia del medio en la onda que se propaga, es decir, la atenuación, $A(z, \omega)$; y, finalmente, por otro los efectos de la propagación y la interacción con el reflector, $H(z, \omega)$.
+
+
+\subsubsection{Atenuación en medios dispersivos}
+
+La atenuación es el fenómeno en el que se manifiesta la influencia del medio en la propagación de una onda. Suponiendo un medio en el que la atenuación depende únicamente de la frecuencia de la onda acústica, puede calcularse la atenuación sufrida por dicha onda tras haberse propagado una distancia $z$ a lo largo del medio, como:
+
+\begin{equation}
+	A(z, \omega) = e^{-\alpha(\omega)\cdot z}
+	\label{eq:atenuacion-independiente-profundidad}
+\end{equation}
+
+Donde, como se anticipó en \vref{eq:atenuacion}, $\alpha(\omega)$ es el coeficiente de atenuación.\par
+Cuando el material por el que se propaga la onda es no homogéneo, la atenuación se debe a dos fenómenos:
+
+\begin{description}
+	\item[Absorción]. Fenómeno que también aparece en medios homogéneos y por el cual la energía que transporta la onda se transforma en otro tipo de energía, por lo general en calor.
+	\item[Dispersión]. En este estudio se entiende dispersión como la distorsión que ejerce sobre el frente de ondas el grano suspendido en el medio. La acción del borde del grano, así como los saltos de índice de refracción que provoca la presencia de ese grano en el medio, contribuyen a la aparición de este fenómeno.
+\end{description}
+
+En el coeficiente de atenuación global vienen reflejadas las acciones que sobre la señal ejercen ambos fenómenos. Siendo $\alpha_s(\omega)$ la contribución de la dispersión y $\alpha_a(\omega)$ la contribución de la absorción.
+
+\begin{equation}
+	\alpha(\omega) = \alpha_a(\omega) + \alpha_s(\omega)
+	\label{eq:coeficiente-atenuacion}
+\end{equation}
+
+El coeficiente de absorción depende del cuadrado de la frecuencia a la que oscila el frente de ondas, $\alpha_a(\omega) = a_1\omega^2$. Siendo $a_1$ la constante de absorción del material. Por su parte, $\alpha_s(\omega)$ depende del tamaño, forma, orientación y distribución de los granos en el medio, aunque también de la frecuencia como se muestra a continuación.
+
+
+\subsubsection{Estimación del coeficiente de dispersión para un material dispersivo de naturaleza granulosa}
+
+El coeficiente de dispersión de un material no homogéneo de naturaleza granulosa puede estimarse de forma teórica asumiendo que los granos en el medio forman una matriz tridimensional de pequeños reflectores, tal y como se muestra en la figura \vref{fig:matriz}. Asumiendo este modelo, puede obtenerse la respuesta global del medio obteniendo la respuesta de un reflector e integrando a todo el volumen el resultado obtenido para un solo grano.
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics{chapter04-05.pdf}
+	\end{center}
+	\caption{Modelo de pequeños receptores para estimación del coeficiente de dispersión}
+	\label{fig:matriz}
+\end{figure}
+
+La \vref{eq:dispersor} es una aproximación de la respuesta espacial al impulso de un solo dispersor cuando sobre el incide un frente de ondas ultrasónicas longitudinales plano. En esta ecuación se han empleado: $k$, constante que depende de la geometría del reflector; la frecuencia angular a la que oscila el frente de ondas, $\omega$; $c_l$, o velocidad a la que se propaga el frente de ondas; $V$ volumen del dispersor; y $z$ distancia entre éste y el transductor.
+
+\begin{equation}
+	H_s(z, \omega) = k\frac{V\omega^2}{zc^2_l}e^{-j2\omega z/c}
+	\label{eq:dispersor}
+\end{equation}
+
+De $H_s(z, \omega)$ se deduce que la onda reflejada es dependiente de la frecuencia angular de oscilación. De hecho, se manifiestan las propiedades de filtro paso alto que muestra la partícula.
