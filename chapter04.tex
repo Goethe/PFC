@@ -131,7 +131,7 @@ La expresión que define la atenuación sufrida por la onda acústica toma la sigui
 \end{equation}
 
 Cuando la onda acústica incide sobre un reflector, las características de éste determinan la relación entre la onda incidente y la reflejada. Esta relación viene dada por la función de reflectividad, $h_r(t)$, que depende de la frecuencia de la onda de presión. Si la reflexión que se produce al llegar la onda hasta la partícula es especular, $h_r(t)$ coincide con una delta de Dirac ponderada.\par
-Como consecuencia de la reflexión, una señal distinta de la emitida por el transductor en origen regresa a éste. Por tanto, se produce en la cara del transductor que da al material una presión variable con el tiempo $p_R(z, t)$, constituida por la suma de la presión que se produce en cada punto de la mencionada superficie.
+Como consecuencia de la reflexión, una señal distinta de la emitida por el transductor en origen regresa a éste. Por tanto, se produce en la cara del transductor que da al material una presión variable con el tiempo $p_R(z, t)$, constituida por la suma de la presión que se produce en cada punto de la mencionada superficie.\par
 
 \begin{equation}
 	p_R(z, t) = p(z, t)\otimes h_r(t)\otimes h_m(z, t)
@@ -141,36 +141,41 @@ Como consecuencia de la reflexión, una señal distinta de la emitida por el trans
 
 \cbstart{}
 
-Del mismo modo, una parte de la onda que incide sobre el reflector es transmitida. Dicha onda debe atravesar el medio restante hasta alcanzar el otro extremo del material, en el camino pueden producirse más reflexiones. Si la técnica empleada es de transmisión, se produce, en ese caso, una presión en la superficie del transductor en recepción. Esta presión es similar a la que detecta el primer transductor, $p_R(z, t)$, pero está relacionada con la función de refracción asociada al cuerpo reflector.
-
-\begin{equation}
-	p_T(z, t) = p(z, t)\otimes h_t(t)\otimes h_m(z, t)
-	\label{eq:potencia-recibida-transmision}
-\end{equation}
+Del mismo modo, parte de la señal reflejada avanza en el mismo sentido de propagación que la onda incidente. Si no es dispersada completamente en el medio avanza hasta atravesar el material por completo. En ese caso, si es la técnica de transmisión la técnica empleada, una presión semejante a $p_R(z, t)$ se produce en la cara del transductor que se encuentra al otro extremo del material. La función de reflectividad no varía, tan sólo cambia la distancia que debe atravesar el frente de ondas hasta alcanzar el transductor y, por tanto, es diferente la contribución de la respuesta al impulso en el medio a la difracción, $h_m(z^\prime, t)$ en el segundo trayecto.
 
 \cbend{}
 
 
-Finalmente, la presión $p_R$, $p_T$, se traduce en una señal eléctrica en bornes del transductor. Esta señal está relacionada con la respuesta impulsiva del transductor en recepción, $h_{tr}(t)$, que depende, al igual que $h_{te}(t)$ del circuito acondicionador y del proceso de fabricación del transductor.
+Finalmente, la presión $p_R$ se traduce en una señal eléctrica en bornes del transductor. Esta señal está relacionada con la respuesta impulsiva del transductor en recepción, $h_{tr}(t)$, que depende, al igual que $h_{te}(t)$ del circuito acondicionador y del proceso de fabricación del transductor.
 
 \begin{equation}
 	y(t) = h_{tr}(t)\otimes p_R(z, t)
 	\label{eq:receptor}
 \end{equation}
 
-Por consiguiente el proceso de emisión"=recepción en el que se fundamentan los \textsc{endus} puede considerarse como la respuesta impulsional en cascada de todos los fenómenos descritos.
+Por consiguiente el proceso de emisión"=recepción en el que se fundamentan los \textsc{endus} puede describirse mediante la respuesta impulsional en cascada de todos los fenómenos descritos.
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics{chapter04-04.mps}
+	\end{center}
+	\caption{Diagrama de bloques que representa el proceso de emisión"=recepción y todos los elementos que en el intervienen (considerando el modelo propuesto)}
+	\label{fig:emision-recepcion}
+\end{figure}
 
 \begin{equation}
 	y(t) = \rho_0\frac{\partial}{\partial t}\left\{u(t)\otimes h_{te}(t)\otimes h_d(z, t)\otimes a(z, t)\otimes h_r(t)\otimes h_d(z, t)\otimes a(z, t)\otimes h_{tr}(t)\right\}
 	\label{eq:emision-recepcion}
 \end{equation}
 
-La figura --- muestra un diagrama de bloques que representa el proceso de emisión"=recepción y todos los fenómenos que en el intervienen según el modelo empleado en este documento. La función de transferencia del sistema puede obtenerse de modo sencillo aplicando el teorema de la convolución. Aprovechando la linealidad del sistema se agrupan los términos de la función de transferencia en \vref{eq:funcion-transferencia-agrupada}, para que el resultado quede en función de la respuesta electromecánica del transductor $X(\omega)$ y de la respuesta espacial al impulso $H(z, \omega)$.
+La figura \vref{fig:emision-recepcion} muestra un diagrama de bloques que representa el proceso de emisión"=recepción y todos los fenómenos que en el intervienen según el modelo empleado en este documento. La función de transferencia del sistema puede obtenerse de modo sencillo aplicando el teorema de la convolución.
 
 \begin{equation}
 	Y(\omega) = j\omega\rho_0\cdot U(\omega)\cdot H_{te}(\omega)\cdot H^2_d(z, \omega)\cdot A^2(z, \omega)\cdot H_r(\omega)\cdot H_{tr}(\omega)
 	\label{eq:funcion-transferencia}
 \end{equation}
+
+Aprovechando la linealidad del sistema se agrupan los términos de la función de transferencia en \vref{eq:funcion-transferencia-agrupada}, para que el resultado quede en función de la respuesta electromecánica del transductor, $X(\omega)$, y de la respuesta espacial al impulso, $H(z, \omega)$.
 
 \begin{equation}
 	Y(\omega) = X(\omega)\cdot H(z, \omega)\cdot A^2(z, \omega)
@@ -182,10 +187,11 @@ La figura --- muestra un diagrama de bloques que representa el proceso de emisió
 	\label{eq:respuesta-transductor}
 \end{equation}
 
+Siendo esta última, la respuesta espacial al impulso, función de la posición del reflector y de su forma, o lo que es lo mismo, de las funciones de reflectividad y difracción.
+
 \begin{equation}
 	H(z, \omega) = H^2_d(z, \omega)\cdot H_r(\omega)
 	\label{eq:respuesta-espacial}
 \end{equation}
 
-Siendo esta última, la respuesta espacial al impulso, función de la posición del reflector y de su forma, o lo que es lo mismo, de las funciones de reflectividad y difracción.\par
-Al agrupar de este modo la función de transferencia se establece de forma intrínseca la separación entre los procesos de difracción y atenuación. Además es posible establecer nuevas separaciones: dejando por un lado los efectos debidos a los transductores y electrónica de acondicionamiento, $X(\omega)$; por otro la influencia del medio en la onda que se propaga, es decir, la atenuación, $A(z, \omega)$; y, finalmente, por otro los efectos de la propagación y la interacción con el reflector, $H(z, \omega)$.
+Al agrupar de este modo la función de transferencia se establece de forma explícita la separación entre los procesos de difracción y atenuación. Además es posible establecer nuevas separaciones: dejando por un lado los efectos debidos a los transductores y electrónica de acondicionamiento, $X(\omega)$; por otro la influencia del medio en la onda que se propaga, es decir, la atenuación, $A(z, \omega)$; y, finalmente, por otro los efectos de la propagación y la interacción con el reflector, $H(z, \omega)$.
