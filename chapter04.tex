@@ -226,9 +226,9 @@ El coeficiente de absorción depende del cuadrado de la frecuencia a la que oscil
 
 \subsubsection{Estimación del coeficiente de dispersión para un material dispersivo de naturaleza granulosa}
 
-El coeficiente de dispersión de un material no homogéneo de naturaleza granulosa puede estimarse de forma teórica asumiendo que los granos en el medio forman una matriz tridimensional de pequeños reflectores, tal y como se muestra en la figura \vref{fig:matriz}. Asumiendo este modelo, puede obtenerse la respuesta global del medio obteniendo la respuesta de un reflector e integrando a todo el volumen el resultado obtenido para un solo grano.
+El coeficiente de dispersión de un material no homogéneo de naturaleza granulosa puede estimarse de forma teórica asumiendo que los granos en el medio forman una matriz tridimensional de pequeños reflectores o granos esféricos, tal y como se muestra en la figura \vref{fig:matriz}. Asumiendo este modelo, puede obtenerse la respuesta global del medio obteniendo la respuesta de un reflector e integrando a todo el volumen el resultado obtenido para un solo grano.
 
-\begin{figure}[htbp]
+\begin{figure}[htb]
 	\begin{center}
 		\includegraphics{chapter04-05.pdf}
 	\end{center}
@@ -239,8 +239,25 @@ El coeficiente de dispersión de un material no homogéneo de naturaleza granulosa
 La \vref{eq:dispersor} es una aproximación de la respuesta espacial al impulso de un solo dispersor cuando sobre el incide un frente de ondas ultrasónicas longitudinales plano. En esta ecuación se han empleado: $k$, constante que depende de la geometría del reflector; la frecuencia angular a la que oscila el frente de ondas, $\omega$; $c_l$, o velocidad a la que se propaga el frente de ondas; $V$ volumen del dispersor; y $z$ distancia entre éste y el transductor.
 
 \begin{equation}
-	H_s(z, \omega) = k\frac{V\omega^2}{zc^2_l}e^{-j2\omega z/c}
+	H_s(z, \omega) = k\,\frac{V\omega^2}{zc^2_l}\,e^{-j2\omega z/c}
 	\label{eq:dispersor}
 \end{equation}
 
-De $H_s(z, \omega)$ se deduce que la onda reflejada es dependiente de la frecuencia angular de oscilación. De hecho, se manifiestan las propiedades de filtro paso alto que muestra la partícula.
+De $H_s(z, \omega)$ se deduce que la onda reflejada es dependiente de la frecuencia angular de oscilación. De hecho, se manifiestan las propiedades de filtro paso bajo que muestra la partícula. Si el reflector es de tamaño muy superior a la longitud de onda de la radiación acústica, la dependencia de $H_s(z, \omega)$ con $\omega$ es en la práctica despreciable, y sólo dependería de la geometría del reflector.\par
+Si el conjunto de dispersores suspendidos en el medio es homogéneo, y todos ellos están equiespaciados y presentan isotropía, es posible suponer que el frente de ondas se encuentra de forma sucesiva y periódica con planos de reflectores. Si se supone además que la contribución de la dispersión múltiple es despreciable frente a la contribución de las reflexiones primarias, el frente de ondas que se propaga tras el primer plano de partículas es la suma vectorial de la onda no dispersada y de una pequeña fracción de la onda que tras interactuar con dichas partículas sigue propagándose en la misma dirección en la que se propaga el frente de ondas. Si se tiene en cuenta el comportamiento de un plano de reflectores, semejante a un filtro paso bajo, el resultado de la dispersión es \emph{un frente de ondas que con respecto al original tiene atenuadas las altas frecuencias}. Por tanto, puede manifestarse un equivalente, \emph{un material dispersivo se comporta como un filtro paso bajo cuya característica de atenuación depende de la profundidad que haya alcanzado la onda en su propagación}.\par
+Puede escribirse una expresión de la atenuación causada por la dispersión si se considera ésta en función de la energía neta que aporta al frente de ondas cada uno de los planos reflectores. Esta expresión queda en función del diámetro del grano $D$, y de $s_1$, una constante de dispersión que depende del material.
+
+\begin{equation}
+	A_s(z, \omega) = e^{-s_1D^3\omega^4z}
+	\label{eq:atenuacion-por-dispersion}
+\end{equation}
+
+Mediante esta expresión y \vref{eq:atenuacion-independiente-profundidad}, aplicando \vref{eq:coeficiente-atenuacion}, es posible calcular el coeficiente de atenuación debido a la dispersión, $\alpha_s$, en la región de Rayleigh, en la que $D\ll\lambda$. Empleando deducciones semejantes puede obtenerse el coeficiente de atenuación en distintas situaciones de tamaño de grano y longitud de onda.
+
+\begin{subequations}\label{eq:atenuacion-por-dispersion-regiones}
+	\begin{align}
+		\alpha_s(\omega) & = s_1D^3\omega^4 & \text{Para} \quad & D\ll\lambda \quad \text{Región de Rayleigh} \label{rayleigh} \\
+		\alpha_s(\omega) & = s_2D\omega & \text{Para} \quad & D\simeq\lambda \quad \text{Región estocástica} \label{estocastica} \\
+		\alpha_s(\omega) & = s_3/D & \text{Para} \quad & D>\lambda \quad \text{Región de difusión} \label{difusion}
+	\end{align}
+\end{subequations}
