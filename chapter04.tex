@@ -252,12 +252,41 @@ Puede escribirse una expresión de la atenuación causada por la dispersión si se 
 	\label{eq:atenuacion-por-dispersion}
 \end{equation}
 
-Mediante esta expresión y \vref{eq:atenuacion-independiente-profundidad}, aplicando \vref{eq:coeficiente-atenuacion}, es posible calcular el coeficiente de atenuación debido a la dispersión, $\alpha_s$, en la región de Rayleigh, en la que $D\ll\lambda$. Empleando deducciones semejantes puede obtenerse el coeficiente de atenuación en distintas situaciones de tamaño de grano y longitud de onda.
+Mediante esta expresión y la \vref{eq:atenuacion-independiente-profundidad}, aplicando la \vref{eq:coeficiente-atenuacion}, es posible calcular el coeficiente de atenuación debido a la dispersión, $\alpha_s$, en la región de Rayleigh, en la que $D\ll\lambda$. Empleando deducciones semejantes puede obtenerse el coeficiente de atenuación en distintas situaciones de tamaño de grano y longitud de onda.
 
-\begin{subequations}\label{eq:atenuacion-por-dispersion-regiones}
-	\begin{align}
-		\alpha_s(\omega) & = s_1D^3\omega^4 & \text{Para} \quad & D\ll\lambda \quad \text{Región de Rayleigh} \label{rayleigh} \\
-		\alpha_s(\omega) & = s_2D\omega & \text{Para} \quad & D\simeq\lambda \quad \text{Región estocástica} \label{estocastica} \\
-		\alpha_s(\omega) & = s_3/D & \text{Para} \quad & D>\lambda \quad \text{Región de difusión} \label{difusion}
-	\end{align}
-\end{subequations}
+\begin{equation}
+	\alpha_s(\omega) = \left\{
+	\begin{array}{l@{\qquad}l@{\quad(}c@{)}}
+		s_1D^3\omega^4, & D\ll\lambda & \text{Región de Rayleigh} \\
+		s_2D\omega, & D\simeq\lambda & \text{Región estocástica} \\
+		s_3/D, & D>\lambda & \text{Región de difusión}
+	\end{array}
+	\right.
+	\label{eq:atenuacion-por-dispersion-regiones2}
+\end{equation}
+
+Para finalizar este apartado, en la figura --- se muestra una representación del coeficiente de atenuación, en concreto del cociente $\alpha/f^2$, con respecto al cuadrado de la frecuencia. En la gráfica es posible apreciar el comportamiento del coeficiente de dispersión en cada una de las regiones descritas, y como el término que introduce la absorción es de valor constante con la frecuencia. La región de difusión muestra una atenuación abrupta que responde a una exponencial decreciente descrita por la expresión $s_3/(Df^2)$.
+
+
+\subsubsection{Limitaciones impuestas por la dispersión en los ensayos ultrasónicos}
+
+La dispersión, que contribuye de dos modos distintos a perjudicar el proceso de inspección ultrasónica, por un lado atenuando la señal acústica, por otro lado causando el ruido de grano, es el principal factor limitante en los ensayos no destructivos. Es habitual que la dispersión limite la profundidad de una inspección a la región de Rayleigh.\par
+Cualquier material posee granos de diferentes tamaños y, por tanto, un frente de ondas acústicas que atraviesa un material se ve afectado por la dispersión como si se encontrase en las tres regiones de dispersión descritas. No obstante, es el grano de mayor tamaño el que en la práctica determina el comportamiento del material en términos de dispersión.\par
+La dispersión, debido a que es el causante del ruido estructural, no puede contrarrestarse aumentando la potencia de la onda ultrasónica en emisión. La solución primera para evitar la dispersión pasa por disminuir la frecuencia de la onda, pero esto desemboca también en una pérdida de resolución. La mejor alternativa consiste en emplear técnicas de procesamiento de señal que reduzcan la energía del ruido estructural en recepción.
+
+
+\subsection{Algoritmos utilizados para la reducción del ruido estructural}
+
+Dejando a un lado las técnicas empleadas en la eliminación de ruido incoherente aleatorio, ineficaces por completo contra el ruido estructural, existe un conjunto de métodos orientados a combatir este tipo de ruido.\par
+Las técnicas empleadas con mayor frecuencia con el objeto de conseguir mayor \textsc{snr} en entornos en los que la presencia de ruido estructural es notable son aquellas que aprovechan la diversidad de información hallada al trabajar con señales incorreladas entre sí. Estas técnicas tratan de obtener una señal con una mayor \textsc{snr} a partir de la composición de varias señales generadas mediante un mismo mecanismo pero de forma que la medida de correlación entre cada una de ellas sea pobre. Los métodos empleados más a menudo con tal propósito son:
+
+\begin{itemize}
+	\item Las técnicas que explotan la diversidad espacial, en las que básicamente se repite el mismo experimento variando cada vez la orientación de los transductores implicados en el mismo.
+	\item Y las técnicas de diversidad frecuencial, manteniendo la posición de los transductores se repite el experimento utilizando señales situadas en una banda espectral diferente unas de otras.
+\end{itemize}
+
+Este tipo de técnicas consiguen mejorar de forma considerable la \textsc{snr} en inspecciones ultrasónicas, no obstante presentan una serie de inconvenientes que las hacen inapropiadas en determinadas situaciones. Por un lado, las técnicas de diversidad espacial se ven obstaculizadas con frecuencia por las dimensiones y forma de las piezas evaluadas, siendo en ocasiones imposible emplearlas. En cuanto a las técnicas de diversidad en frecuencia, los transductores empleados en inspecciones ultrasónicas actúan por lo común en una banda no lo bastante ancha como para poder dividirla en un gran número de subbandas y así poder emitir suficientes señales acústicas repartidas por el espectro de frecuencias. Para poder emplear una técnica así serían necesarios varios transductores que emitiesen en bandas de frecuencia señales acústicas con ancho de banda controlado y que todos estuviesen situados en la misma posición.\par
+La dificultad que conlleva implementar las técnicas anteriormente descritas ha contribuido a la proliferación de técnicas que a partir de una única traza sacan partido de las diferencias estadísticas que existen entre la señal que procede de un defecto y el ruido estructural.\par
+Dentro de esta categoría el algoritmo que alcanzado un éxito mayor y en consecuencia se ha convertido en el paradigma de las técnicas de reducción de ruido estructural se conoce como técnica de partición espectral o del inglés \emph{Split Spectrum Processing} (\textsc{ssp}) y fue en inicio propuesto por Vernon Newhouse en 1982. El algoritmo está basado en la explotación de la pseudo-diversidad frecuencial que existe entre las diferentes trazas de banda estrecha que se obtienen al descomponer con un banco de filtros paso banda la señal resultante tras un ensayo. No obstante los excelentes resultados encontrados utilizando esta técnica, la gran sensibilidad que muestra el algoritmo a la sintonía de los principales parámetros que definen su comportamiento lo convierten en escasamente robusto. A consecuencia de esto han aparecido numerosas publicaciones que se circunscriben a proporcionar configuraciones del algoritmo que proporcionen resultados óptimos, alternativamente aparecen también variaciones del \textsc{ssp} que persiguen mejorarlo.\par
+A pesar de su éxito, el \textsc{ssp} no es el único método empleado con el objetivo de sustraer el ruido de grano de la señal de interés de un \textsc{endus}. Otros trabajos incluyen, la estimación de máxima verosimilitud, técnicas de filtrado paso"=banda que eliminan la mitad superior del espectro de la señal, técnicas tiempo"=frecuencia como son la transformada de Wigner"=Ville o las Wavelet, técnicas que sacan partido de la información que aporta el retardo de grupo, técnicas no lineales y, finalmente, técnicas de ruido residual.\par
+A pesar del gran número de técnicas dedicadas a eliminar el ruido estructural, son pocos los trabajos orientados a establecer una relación entre ellas, a compararlas, a clasificarlas según su comportamiento en distintos tipos de materiales o a justificar por qué el uso de una u otra técnica.
