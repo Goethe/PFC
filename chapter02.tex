@@ -183,13 +183,13 @@ A continuación se adjunta una relación con las distintas asignaciones que se dan
 \newsavebox{\auxbox}
 \sbox{\auxbox}{\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{chapter02-02.pdf}}
 \newlength{\auxheight}
-\setlength{\auxheight}{\ht\auxbox + 10pt}
+\setlength{\auxheight}{\ht\auxbox + 5pt}
 \newlength{\auxwidth}
 \setlength{\auxwidth}{\wd\auxbox - 5pt}
 
 \begin{figure}[htbp]
 	\centering
-	\subfloat[Conector etiquetado como ``analog'']{\vbox  to \auxheight{\vfil %
+	\subfloat[Conector etiquetado como ``analog'']{\vbox  to \auxheight{ %
 		\hbox to \auxwidth{
 			\hspace*{-7pt}\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{chapter02-02.pdf}} %
 	\vfil}}\qquad
