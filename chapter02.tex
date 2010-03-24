@@ -180,12 +180,24 @@ La solución de carácter práctico propuesta por Keithley radica configurar la col
 Es posible conectar dispositivos de entrada/salida a la \kpci{} mediante dos conectores de tipo \textsc{ieee} 1284 de 36 terminales situados en su parte trasera. Al iniciar el proyecto se tuvo acceso a dos sondas terminadas por un lado en conectores de este tipo y por otro en cables de cobre convencionales. Para facilitar las conexiones con la tarjeta se diseñó un interfaz más robusto que posteriormente se soldó al extremo terminado en cables de las mencionadas sondas. Es posible conectar cables terminados en conectores de tipo banana y sondas coaxiales a este nuevo interfaz.\par
 A continuación se adjunta una relación con las distintas asignaciones que se dan entre puertos y terminales y se describen los tipos de señal que dichos terminales soportan o entregan.
 
+\newsavebox{\auxbox}
+\sbox{\auxbox}{\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{chapter02-02.pdf}}
+\newlength{\auxheight}
+\setlength{\auxheight}{\ht\auxbox + 5pt}
+\newlength{\auxwidth}
+\setlength{\auxwidth}{\wd\auxbox - 5pt}
+
 \begin{figure}[htbp]
-	\begin{center}
-		\subfigure[Conector etiquetado como \emph{analog}]{\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{chapter02-02.pdf}}\qquad
-		\subfigure[Conector etiquetado como \emph{digital}]{\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{chapter02-03.pdf}}
-	\end{center}
-	\caption{Esquema del panel de conexiones trasero de la \kpci{}}
+	\centering
+	\subfloat[Conector etiquetado como ``analog'']{\vbox  to \auxheight{ %
+		\hbox to \auxwidth{
+			\hspace*{-7pt}\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{chapter02-02.pdf}} %
+	\vfil}}\qquad
+	\subfloat[Conector etiquetado como ``digital'']{\vbox to \auxheight{\vfil %
+		\hbox to \auxwidth{
+			\hspace*{-7pt}\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{chapter02-03.pdf}} %
+	\vfil}}
+ 	\caption{Esquema del panel de conexiones trasero de la \kpci{}}
 	\label{fig:ports}
 \end{figure}
 
