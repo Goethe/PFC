@@ -7,7 +7,6 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="1214"
@@ -15,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.47 r22583"
-   sodipodi:docname="chapter04-test.svg">
+   sodipodi:docname="chapter04-02.svg">
   <defs
      id="defs4">
     <inkscape:perspective
@@ -40,7 +39,7 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.89503386"
+     inkscape:zoom="0.86117381"
      inkscape:cx="607"
      inkscape:cy="443"
      inkscape:document-units="px"
@@ -61,25 +60,10 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="Dibujo original"
-     transform="translate(17.281971,-26.304405)"
-     sodipodi:insensitive="true"
-     style="display:none">
-    <image
-       y="26.304405"
-       x="-17.281971"
-       id="image2827"
-       height="886"
-       width="1214"
-       xlink:href="file:///C:/Documents%20and%20Settings/Jose/Mis%20documentos/tecnicas.png" />
-  </g>
   <g
      inkscape:label="Capa 1"
      inkscape:groupmode="layer"
@@ -168,11 +152,11 @@
     <path
        id="path3715"
        transform="translate(-17.281971,334.57211)"
-       style="fill:#4b4b4b;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1;fill-rule:evenodd"
+       style="fill:#4b4b4b;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 1132.9082,294.26486 c -39.8163,-3.85546 -115.4354,322.56121 -66.5605,336.94932 42.8294,12.60837 119.8798,-331.78634 66.5605,-336.94932 z m -1.5703,14.89339 c -38.7012,13.40467 -93.3754,315.30661 -61.6418,309.97636 41.1834,-6.91752 98.6743,-322.80305 61.6418,-309.97636 z"
        sodipodi:nodetypes="csscsc" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        d="m 1102.0968,464.12208 c 0,0 55.1901,7.35238 72.7434,19.35582 74.9692,51.26618 -72.3967,102.21219 -8.8106,190.86198"
        id="path3711"
        transform="translate(-17.281971,334.57211)"
@@ -219,7 +203,7 @@
          x="681.01563"
          y="396.02231">Acoplamiento</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:6,6;stroke-dashoffset:0"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:6, 6;stroke-dashoffset:0"
        d="M 292.72636,128.48676 778.74149,78.209332 942.98108,198.87516"
        id="path3748"
        transform="translate(-17.281971,334.57211)" />
