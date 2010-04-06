@@ -1,0 +1,53 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\title{Justificación de las aproximación del coeficiente de atenuación en las distintas regiones}
+\author{José Ramón Gisbert Valls}
+\begin{document}
+
+\maketitle{}
+
+\begin{abstract}
+	Para entender el por qué de las diferentes aproximaciones que se proporcionan en la tesis de Miguel Ángel García Izquierdo y J. Rose.
+\end{abstract}
+
+En primer lugar debe sustituirse la longitud de onda por un factor $1/k$ que multiplica una longitud de onda inicial o básica $\lambda_0$, $\lambda=\lambda_0/k$. La longitud de onda inicial es una constante arbitraria. El diámetro del transductor puede darse en relación con $\lambda_0$ y una segunda constante $l$, $D = \lambda_0/l$. Por tanto, y recordando $c = \lambda f$ y $\omega = 2\pi f$, para la región de Rayleigh puede escribirse:
+
+\begin{equation}
+	\alpha_s(\omega) = s_1D^3\omega^4 = s_1\left(\frac{\lambda_0}{l}\right)^3\left(2\pi\frac{ck}{\lambda_0}\right)^4 = \frac{16\pi^4c^4s_1}{\lambda_0}\cdot\frac{k^4}{l^3} = \mathcal{C}\cdot\frac{k^4}{l^3}
+	\label{eq:coeficiente-Rayleigh}
+\end{equation}
+
+Donde $\mathcal{C}$ es una constante que depende del medio y de la longitud de onda inicial elegida.\par
+El factor $k$ aumenta con la frecuencia y, tal y como se ha mencionado en el primer párrafo, $l$ es una constante que a bajas frecuencias suele ser muy superior a $k$. Para aquellas frecuencias en las que $k\simeq l$ puede reescribirse \eqref{eq:coeficiente-Rayleigh} de forma que quede únicamente en función de $k$.
+
+\begin{equation}
+	\alpha_s(\omega) = \mathcal{C}\cdot m\cdot k\simeq\mathcal{C}\cdot k
+	\label{eq:coeficiente-simplificado}
+\end{equation}
+
+Que como puede observarse es muy semejante a la forma propuesta para la región de difusión. Sustituyendo $s_1$ por $s_2$ y $\mathcal{C}$ por $\mathcal{D}$ se tiene:
+
+\begin{equation}
+	\alpha_s(\omega) = s_2D\omega = 2\pi cs_2\frac{k}{l} = \mathcal{D}\cdot\frac{k}{l} = \mathcal{D}\cdot m\cdot k\simeq\mathcal{D}\cdot k
+	\label{eq:coeficiente-estocastica}
+\end{equation}
+
+Para terminar, en la última región o región de difusión $\lambda<D$, o lo que es lo mismo, $l<k$. En el límite el coeficiente de atenuación sería infinito, sin embargo, se proporciona una constante.
+
+\begin{equation}
+	\alpha_s(\omega) = \frac{s_3}{D} = \frac{ls_3}{\lambda_0}
+	\label{eq:coeficiente-difusion}
+\end{equation}
+
+Una suposición más, comparando las constantes $\mathcal{C}$ y $\mathcal{D}$ se llega a la siguiente conclusión.
+
+\begin{equation}
+	\mathcal{C} = \mathcal{D};\quad \frac{16\pi^4c^4}{\lambda_0}\,s_1 = 2\pi cs_2;\qquad\longrightarrow\qquad s_2 = s_1\,\frac{8\pi^3c^3}{\lambda_0}
+	\label{eq:relacion-s1-s2}
+\end{equation}
+
+\end{document}
+
+
