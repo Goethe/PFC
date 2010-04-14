@@ -1,7 +1,7 @@
 \chapter{Diseño del dispositivo de ultrasonidos}
 
 
-\section{Base teórica}
+\section{Introducción teórica a las inspecciones mediante ultrasonidos}
 
 
 \subsection{Fundamentos de ultrasonidos}
@@ -220,8 +220,8 @@ Donde, como se anticipó en \vref{eq:atenuacion}, $\alpha(\omega)$ es el coeficie
 Cuando el material por el que se propaga la onda es no homogéneo, la atenuación se debe a dos fenómenos:
 
 \begin{description}
-	\item[Absorción]. Fenómeno que también aparece en medios homogéneos y por el cual la energía que transporta la onda se transforma en otro tipo de energía, por lo general en calor.
-	\item[Dispersión]. En este estudio se entiende dispersión como la distorsión que ejerce sobre el frente de ondas el grano suspendido en el medio. La acción del borde del grano, así como los saltos de índice de refracción que provoca la presencia de ese grano en el medio, contribuyen a la aparición de este fenómeno.
+	\item[Absorción.] Fenómeno que también aparece en medios homogéneos y por el cual la energía que transporta la onda se transforma en otro tipo de energía, por lo general en calor.
+	\item[Dispersión.] En este estudio se entiende dispersión como la distorsión que ejerce sobre el frente de ondas el grano suspendido en el medio. La acción del borde del grano, así como los saltos de índice de refracción que provoca la presencia de ese grano en el medio, contribuyen a la aparición de este fenómeno.
 \end{description}
 
 En el coeficiente de atenuación global vienen reflejadas las acciones que sobre la señal ejercen ambos fenómenos. Siendo $\alpha_s(\omega)$ la contribución de la dispersión y $\alpha_a(\omega)$ la contribución de la absorción.
@@ -308,3 +308,6 @@ La dificultad que conlleva implementar las técnicas anteriormente descritas ha c
 Dentro de esta categoría el algoritmo que alcanzado un éxito mayor y en consecuencia se ha convertido en el paradigma de las técnicas de reducción de ruido estructural se conoce como técnica de partición espectral o del inglés \emph{Split Spectrum Processing} (\textsc{ssp}) y fue en inicio propuesto por Vernon Newhouse en 1982. El algoritmo está basado en la explotación de la pseudo-diversidad frecuencial que existe entre las diferentes trazas de banda estrecha que se obtienen al descomponer con un banco de filtros paso banda la señal resultante tras un ensayo. No obstante los excelentes resultados encontrados utilizando esta técnica, la gran sensibilidad que muestra el algoritmo a la sintonía de los principales parámetros que definen su comportamiento lo convierten en escasamente robusto. A consecuencia de esto han aparecido numerosas publicaciones que se circunscriben a proporcionar configuraciones del algoritmo que proporcionen resultados óptimos, alternativamente aparecen también variaciones del \textsc{ssp} que persiguen mejorarlo.\par
 A pesar de su éxito, el \textsc{ssp} no es el único método empleado con el objetivo de sustraer el ruido de grano de la señal de interés de un \textsc{endus}. Otros trabajos incluyen, la estimación de máxima verosimilitud, técnicas de filtrado paso"=banda que eliminan la mitad superior del espectro de la señal, técnicas tiempo"=frecuencia como son la transformada de Wigner"=Ville o las Wavelet, técnicas que sacan partido de la información que aporta el retardo de grupo, técnicas no lineales y, finalmente, técnicas de ruido residual.\par
 A pesar del gran número de técnicas dedicadas a eliminar el ruido estructural, son pocos los trabajos orientados a establecer una relación entre ellas, a compararlas, a clasificarlas según su comportamiento en distintos tipos de materiales o a justificar por qué el uso de una u otra técnica.
+
+
+\section{Algoritmos de procesado por partición del espectro}
