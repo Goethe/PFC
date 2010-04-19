@@ -1,5 +1,5 @@
 \documentclass[a4paper, 12pt]{book}
-\includeonly{chapter01, chapter02, chapter03, chapter04}
+\includeonly{introduction, chapter01, chapter02, chapter03}
 \usepackage[a4paper, BCOR1cm]{typearea}
 \usepackage[spanish, es-ucroman]{babel}
 \usepackage[format=hang, font=small, labelfont=bf, labelsep=endash, width=.9\textwidth]{caption}
@@ -10,7 +10,7 @@
 \usepackage[bf, sf]{titlesec}
 \usepackage[nottoc]{tocbibind}
 \usepackage[spanish]{varioref}
-\usepackage{graphicx}
+\usepackage[draft]{graphicx}
 \usepackage{amsfonts, amsmath, amssymb, calc, color, fancyhdr, hyperref, ifthen, listings, nextpage, textcase}
 \usepackage{array, booktabs, tabularx, tabulary, dcolumn, multirow, threeparttable}
 \titleformat{\part}[display]{\centering\huge\sffamily\bfseries}{\partname\ \thepart}{.5\baselineskip}{}
@@ -40,7 +40,7 @@
 \labelformat{subsubsection}{sección~#1}
 \labelformat{table}{cuadro~#1}
 \labelformat{footnote}{#1\protect\iscurrentchapter{\thechapter}}
-\setkeys{Gin}{width=.8\linewidth}
+\setkeys{Gin}{width=.8\textwidth}
 \graphicspath{{./pictures/}{../pictures/}}
 \DeclareCaptionLabelFormat{cont}{#1~#2\alph{ContinuedFloat}}
 \captionsetup[ContinuedFloat]{labelformat=cont}
@@ -65,19 +65,19 @@
 
 \listoffigures
 
-\include{chapter01}
+\include{introduction}
 
 
 \mainmatter
 
 \part{Sistema de adquisición y procesado de señales}
 
-\include{chapter02}
+\include{chapter01}
 
-\include{chapter03}
+\include{chapter02}
 
 \part{Ensayos no destructivos con ultrasonidos}
 
-\include{chapter04}
+\include{chapter03}
 
 \end{document}

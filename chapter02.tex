@@ -1,323 +1,293 @@
-\chapter{Tarjeta de adquisición de señales}
+\chapter{Aplicación para el control de la tarjeta}
 
-Para preparar el sistema de adquisición y procesado de señales se dispuso en origen de una tarjeta de adquisición con interfaz \textsc{pci}. En concreto se ha empleado el modelo \kpci{} de la casa \emph{Keithley}. A continuación se exponen las características técnicas que ofrece este dispositivo, en apartados siguientes una breve descripción funcional y la disposición y uso de los puertos presentes en el mencionado dispositivo.
+\section{Introducción}
 
-
-\section{Características técnicas del hardware}
-
-La tarjeta \kpci{} puede emplearse para la adquisición y conversión de señales analógicas en señales digitales, para sintetizar señales analógicas a partir de señales digitales previamente generadas o almacenadas, o ---gracias a sus 32 puertos digitales de propósito general--- trabajar con señales digitales.\par
-El primer bloque del sistema electrónico de medida propuesto, es decir el sistema de adquisición y procesado de señales, tan sólo requiere de la función de adquisición analógica de la tarjeta. Por ello, de entre todas las características del dispositivo, se ha creído conveniente resumir a continuación aquellas que tienen relación directa con dicha función. Para obtener información detallada sobre la relación que estos atributos guardan con el proceso de adquisición de señales analógicas en la tarjeta \kpci{}, recúrrase a la \vref{sec:functional-description}.
-
-\begin{itemize}
-	\item El módulo de adquisición analógica dispone de 16 puertos físicos.
-	\item La impedancia de entrada equivalente de cada puerto es aproximadamente igual a una capacidad de 200 pF en serie con una resistencia de valor inferior, pero aproximadamente igual, a 1 K$\Omega$.
-	\item En condiciones óptimas, es posible conseguir un rendimiento máximo de 100 KS/s (cien mil operaciones de conversión por segundo). Este valor está sujeto a un error relativo del $0.02 \%$.
-	\item La resolución del conversor analógico digital es de 16 bits por muestra. El rango de amplitudes en el que opera depende de como esté configurado el modo de adquisición.% Este puede ser de 0 a 10 si el modo de adquisición es unipolar, o de -10 a 10 si es bipolar.
-	\item La cola de muestreo tiene capacidad para hasta 256 canales distintos. Cada uno de los cuales puede configurarse independientemente en términos de ganancia, frecuencia de muestreo, modo de adquisición o modo de terminación.
-	\item La ganancia, responsable en parte de la resolución con la que se cuantifica las muestras, puede tomar cada ciclo de reloj uno de entre 16 valores posibles. Véase el \vref{tab:acquisition-modes}.
-	% \item Soporte, tanto en el modo de adquisición y conversión como en el modo de síntesis, para disparo digital externo o controlado por software.
-	% \item Selección por software del flanco activo de disparo.
-	% \item Capacidad de interrumpir el muestreo tras un determinado número de ciclos después del disparo. La cantidad de ciclos puede controlarse por software.
-\end{itemize}
+Desde los inicios de este proyecto lo que se ha pretendido es emplear un sistema de adquisición de señales como un osciloscopio digital. Para ello son necesarios la tarjeta de adquisición y un software que permita al usuario controlar el dispositivo desde una interfaz intuitiva y visualizar los resultados de forma sencilla.
 
 
-\section{Descripción funcional}\label{sec:functional-description}
+\subsection{Funcionamiento de un osciloscopio}
 
-Es necesario programar el comportamiento de la tarjeta de adquisición antes de ponerla en funcionamiento. Desde la cola de muestreo se controlan los principales aspectos del proceso de adquisición, como por ejemplo, en que instantes se encuentra activo.\par% La configuración correspondiente al proceso de adquisición analógica reside en su práctica totalidad en la cola de muestreo. Desde la cola se controlan los principales aspectos de este proceso, como por ejemplo, en que instantes se encuentra activo.\par
-La cola de muestreo, como su propio nombre indica, es una estructura de datos ordenada. Se encuentra almacenada en una memoria \textsc{ram} de 256 entradas que forma parte del hardware de la tarjeta. En el \vref{tab:sample-queue} puede verse una representación de un ejemplo de la cola de muestreo.\par
+Como se ha mencionado, el modelo de funcionamiento utilizado como referencia en el desarrollo de la aplicación de control es el de un osciloscopio digital. Por ello, y en base a las conclusiones extraídas durante la realización de este proyecto, se ha creído conveniente explicar de forma breve como funcionan de manera habitual este tipo de osciloscopios.\par
+Los osciloscopios analógicos emplean un tubo de rayos catódicos y un monitor de fósforo para generar una imagen de la señal. El cursor que el tubo dibuja en el monitor lo va barriendo de izquierda a derecha con periodicidad, y su posición vertical refleja a cada momento el valor de tensión de la señal eléctrica que entra al osciloscopio. El monitor preserva durante breves instantes una traza del cursor y así se forma la imagen que representa a la señal.\par
+En la actualidad suelen emplearse osciloscopios digitales. El procedimiento que sigue un osciloscopio digital para representar señales es completamente diferente al que siguen los osciloscopios analógicos. No existe ningún cursor, se generan fotogramas de la señal en seguimiento\footnote{En realidad, los osciloscopios digitales modernos pueden representar por pantalla varias señales simultáneamente}, imágenes completas que cubren la pantalla entera con un fragmento de señal, una vez aparece una imagen por pantalla permanece estática hasta que una nueva imagen la sustituye. La dimensión temporal de la representación determina en teoría cuanto debe esperar el osciloscopio desde que se muestra por pantalla una imagen hasta que se puede generar la siguiente. La espera resulta evidente puesto que la señal no se conoce de antemano, al contrario que ocurre con los osciloscopios analógicos que representan la señal en tiempo real, si se desea representar por pantalla un fragmento de la señal de una determinada duración el osciloscopio debe esperar hasta que transcurra dicho periodo de tiempo. En otras palabras, aparece un retardo que depende exclusivamente de la duración del fragmento de señal necesario para cubrir la ventana del osciloscopio, o lo que es lo mismo, el retardo es independiente de otros parámetros como son la velocidad de muestreo o la potencia de procesado del osciloscopio.\par
+Este modo de proceder tiene un inconveniente, el objetivo de un osciloscopio es mostrar en cada momento como es la forma de la señal, si el retardo introducido es demasiado alto el osciloscopio deja de ser eficaz pues la información que proporciona cada imagen es obsoleta. Problema que se ve agravado por la posibilidad de configurar el eje de tiempos. Así es, tanto los osciloscopios analógicos (variando la frecuencia de barrido del cursor) como los osciloscopios digitales, permiten que el usuario modifique la cantidad de tiempo que refleja el eje horizontal de la representación, pudiendo ser ésta mayor o menor. A efectos prácticos, en los osciloscopios digitales el tiempo abarcado por el eje temporal actúa como el inverso de la frecuencia de refresco del monitor, por tanto, cuanto mayor sea ese tiempo con mayor lentitud se sucederán las imágenes y habrá un mayor desfase entre la señal y la representación de ésta.
 
-\begin{table}[h]
-	\centering
-	\begin{threeparttable}
-	\begin{tabular}{lccccccccc}
-		\toprule
-		Posición en la cola & 1 & 2 & 3 & 4 %
-		& \multicolumn{2}{c}{$\cdots$} & 254 & 255 & 256 \\
-		\midrule
-		Número de canal & 15 & 15 & 02 & 02 %
-		& \multicolumn{2}{c}{$\cdots$} & 17 & 13 & 01 \\
-		Número de puerto\tnote{a, b} & 07 & 07 & 11 & 11 %
-		& \multicolumn{2}{c}{$\cdots$} & 07 & 09 & 01 \\
-		Ganancia & 1 & 1 & 40 & 40 %
-		& \multicolumn{2}{c}{$\cdots$} & 200 & 8 & 80 \\
-		Modo de adquisición\tnote{c} & $\pm$ & $\pm$ & $+$ & $+$ %
-		& \multicolumn{2}{c}{$\cdots$} & $\pm$ & $+$ & $\pm$ \\
-		Modo de terminación\tnote{d} & \textsc{d} & \textsc{d} & \textsc{ts} %
-		& \textsc{ts} & \multicolumn{2}{c}{$\cdots$} & \textsc{d} & \textsc{ts} %
-		& \textsc{ts} \\
-		\bottomrule
-	\end{tabular}
-	\begin{TableNotes}
-		\tnotetext{a}{Si el canal es diferencial el número de puerto identifica un par de puertos. Un canal diferencial no puede estar asociado a un número de puerto superior a 07.}
-		\tnotetext{b}{Dos canales pueden estar relacionados con los mismos puertos físicos.}
-		\tnotetext{c}{$\pm$ configuración bipolar; $+$ configuración unipolar}
-		\tnotetext{d}{\textsc{d} canal diferencial; \textsc{ts} canal monoterminal}
-	\end{TableNotes}
-	\end{threeparttable}
-	\caption{Ejemplo de cola de muestreo}
-	\label{tab:sample-queue}
-\end{table}
 
-Cada entrada en la memoria \textsc{ram} se identifica con una posición en la cola. Las posiciones en la cola pueden encontrarse vacías o estar ocupadas por un canal. Varias posiciones en la cola, consecutivas o no, pueden estar ocupadas por un mismo canal. Por tanto, la cola puede estar ocupada, como máximo, por 256 canales independientes.\par
-Las posiciones ocupadas contienen información correspondiente al canal y a los atributos asociados a este. Un canal es una entidad lógica que relaciona un puerto físico con un búffer de información y una serie de atributos. Durante el proceso de adquisición un puntero recorre las distintas posiciones de la cola, una a una y en orden. El canal activo, aquel que ocupa la posición a la que apunta el puntero en cada ciclo de reloj, determina tres cosas:
+\subsection{Modos de representación en los osciloscopios digitales}
+
+Para evitar que en determinadas configuraciones del eje temporal del osciloscopio el retardo sea excesivo, la mayoría de estos dispositivos implementan dos modos de funcionamiento: el modo convencional que se aplica en situaciones en las que el retardo no se considera importante; y una especie de modo continuo. Existen dos criterios que se siguen de manera habitual para diferenciar en que momento es más apropiado el uso de uno u otro modo: % En cierto modo esa es una forma de configurar el retardo o el volumen de imágenes mostradas por segundo en un osciloscopio digital. Más tiempo transcurrirá entre una imagen y la siguiente. Más anticuada será la información mostrada por pantalla. En el cual la forma de representar se asemeja a la que se da en osciloscopios analógicos.
 
 \begin{itemize}
-	% \footnote{Por convenio se ha elegido hablar de una sola señal que entra al amplificador. Si se ha hecho esta elección, es porque si bien al amplificador pueden entrar una o dos señales simultáneamente desde sendos puertos, tal y como se verá más adelante, esto no supone otra diferencia para el proceso que la expuesta en la sección \vref{sec:termination-modes}
-	\item De qué puerto debe proceder la señal analógica\footnote{Por convenio se ha elegido hablar de una sola señal que entra al amplificador. Si se ha hecho esta elección, es porque si bien al amplificador pueden entrar una o dos señales simultáneamente, esto no supone otra diferencia para el proceso que la expuesta en la sección \vref{sec:termination-modes}. Es por ello, y para mantener la claridad, que se ha omitido esta posibilidad.} que llega al amplificador de instrumentación interno de la tarjeta.
-	\item Dónde, en qué búffer, debe almacenarse el valor resultante de muestrear y cuantificar esta señal.% las muestras cuantificadas resultantes del proceso.
-	\item Por último, los atributos asociados al canal: ganancia, modo de adquisición y modo de terminación; indican, respectivamente, cuál debe ser la ganancia del amplificador de instrumentación, cuál debe ser el rango de trabajo del conversor analógico digital, y qué se debe conectar a los terminales de entrada del amplificador de instrumentación. Se da más información al respecto en apartados subsiguientes.% la polaridad de las muestras y el número de terminales de entrada, uno o dos dependiendo de si la adquisición es diferencial o no, durante el ciclo actual.
+	\item El primer criterio evalúa el correcto funcionamiento del modo convencional. Como se verá más adelante, el modo convencional de representación en un osciloscopio requiere que la cantidad de imágenes que salen por pantalla cada segundo sea lo suficiente grande como para que se simule el movimiento. Por tanto para satisfacer el primer criterio, la tasa de refresco del monitor del osciloscopio debe superar las veintiséis imágenes por segundo o encontrarse alrededor de esta cifra.
+	\item El segundo criterio está relacionado con la función de disparo que se da en el modo convencional de representación. Para poder efectuar correctamente el disparo sobre señales de baja frecuencia, al generar cada imagen el osciloscopio debe haber registrado al menos un ciclo de la señal pertinente\footnote{En la práctica se necesita algo más de un ciclo de una señal para poder garantizar el correcto disparo de ésta. Sin embargo, es común conseguir disparar una señal aunque la configuración del eje de tiempos del osciloscopio permita sólo obtener una fracción del ciclo completo de esa señal durante la realización de cada fotograma.}. Lo cual reduce la tasa mínima de refresco a la frecuencia de la señal más lenta que se desee representar de forma correcta en el modo convencional de representación del osciloscopio.
 \end{itemize}
 
-Para concluir el apartado cabe remarcar lo siguiente. Es posible inferir dos cosas de esta mecánica de funcionamiento basada en la cola. Una de ellas es que el proceso de adquisición afecta a una sola señal cada vez. Y la segunda, que la frecuencia de muestreo ligada a un canal depende de dos factores, de la velocidad de la señal de reloj, y de la cantidad de veces que un canal aparece repetido en la cola.
+Como puede verse el segundo criterio es más restrictivo pues depende de la frecuencia de la señal y ésta puede ser en efecto inferior a un hercio, es por ello que se emplea habitualmente. Siendo así, la tasa de refresco mínima que se permite en el modo convencional en la gran mayoría de dispositivos y que se ha adoptado para el software de control, es de cinco imágenes por segundo (5 Hz). Cuando se configura un osciloscopio en el modo convencional para que trabaje a esta tasa de refresco es habitual poder visualizar señales de frecuencia cercana a 1 Hz, sin embargo la representación se optimiza para configuraciones en las que el osciloscopio muestra, al menos, veinticinco imágenes por segundo, lo cual es apropiado para señales con una frecuencia mínima de 50 Hz. Si la configuración del eje de tiempos del osciloscopio obligara al dispositivo a trabajar con una frecuencia de refresco inferior a la especificada, automáticamente conmuta para funcionar en el modo continuo.
 
 
-\subsection{Métodos de entrada}
+\subsubsection{Representación en modo continuo}
 
-La \kpci{} permite dos modos de adquisición y dos modos de terminación. Aprender a diferenciar cuando es oportuno seleccionar entre cada uno de ellos beneficiará la calidad de la señal digital resultante.
+Una vez visto cual es la frecuencia umbral a la que el dispositivo conmuta entre los dos modos, debe explicarse que diferencia un modo de funcionamiento de otro. Para ello se expone a continuación cuales son los fundamentos de uno y otro modo. La representación en \emph{modo continuo} es, por decirlo así, ininterrumpida. La imagen de la señal de interés se desplaza de derecha izquierda a medida que transcurre el tiempo. Para lograr este efecto se aumenta la frecuencia de refresco a expensas de que, como es sabido, el fragmento de señal obtenido para cada imagen no cubrirá la pantalla al completo. Ocurre así por que la frecuencia de refresco es muy alta para el eje temporal que representa una gran cantidad de tiempo, por tanto, entre dos imágenes no transcurre el tiempo abarcado por la dimensión horizontal de la representación. La primera imagen sitúa el fragmento de señal que se ha digitalizado en el extremo derecho de la representación, el resto se deja en blanco. Con cada nueva imagen se desplaza el fragmento de señal representado hasta el momento el suficiente espacio hacia la izquierda como para incorporar un nuevo fragmento de señal. Así la porción de señal representada aumenta cada vez más hasta que el extremo izquierdo de la figura alcanza el margen izquierdo de la ventana del osciloscopio. Cuando esto ocurre, empieza un desplazamiento cíclico, al incorporar un nuevo fragmento de señal a la derecha se retira un fragmento de la misma proporción temporal al otro extremo. La alta tasa con la que aparecen las imágenes por pantalla garantizan que la representación siga casi en tiempo real ---por lo menos así lo percibe el ojo humano--- a la señal verdadera. Debe notarse, no obstante, que este método de representación no es adecuado para señales de alta frecuencia pues aunque el eje temporal abarque un tiempo mayor, la dimensión del monitor obviamente no varía y las señales de alta frecuencia aparecerán en exceso comprimidas.\par
 
 
-\subsubsection{Modos de adquisición}
-Una señal es bipolar cuando toma valores positivos y negativos. Por el contrario, se distingue a las señales unipolares porque todos sus valores mantienen la misma polaridad, ya sea ésta positiva o negativa. Para cada canal, debe configurarse el modo de adquisición como bipolar o unipolar\footnote{La tarjeta \kpci{} sólo admite señales unipolares de polaridad positiva.} atendiendo a la señal de interés.\par
-% El modo de adquisición unipolar presenta la ventaja de que en dicho modo prácticamente se duplica la resolución de las muestras. Manteniendo la ganancia, se reduce el rango de trabajo a la mitad. El paso correspondiente a una cuantificación de 16 bits se reduce de igual manera y, por tanto, aumenta la precisión.
-Si se sabe a ciencia cierta que la señal de entrada es unipolar debe emplearse el modo de adquisición unipolar. De ese modo, se duplica la resolución del conversor analógico digital.
+\subsubsection{Representación en modo convencional}
 
-\begin{table}[hbt]
+El \emph{modo convencional} de representación es algo más complicado. Como se ha declarado con anterioridad en este mismo apartado, la representación convencional basa su funcionamiento en imágenes que muestran fragmentos de señal que cubren la dimensión temporal de la ventana del osciloscopio y que se suceden unas a otras con presteza. La idea que persigue este método es la de conseguir algo semejante a una película de la señal. Para ello, no es sólo suficiente con que aparezcan muchas imágenes por segundo en el monitor del osciloscopio, esas imágenes deben estar de algún modo relacionadas entre sí. Si las imágenes que aparecen en el monitor son de forma consecutiva muy diferentes es probable que no pueda discernirse nada claro, y de nada valdrá la representación.\par
+	Ahí es donde entra en juego el procesado y la función de disparo de un osciloscopio digital. Cuando un fragmento suficientemente largo como para cubrir la ventana de representación se digitaliza y se almacena en memoria, empieza el procesado digital del mismo. El propósito del procesado es, ente otras cosas, eliminar las posible componente en continua, averiguar información adicional de la señal en la medida de lo posible, como p.e. su valor de pico a pico, o implementar una función de disparo. La función de disparo del osciloscopio persigue alinear los ejes verticales de la ventana donde se representa con los cruces de la señal con respecto a un determinado valor de umbral que puede ser configurado por el usuario. La idea es alinear al menos el cruce más centrado de cada fragmento de señal con el eje de abscisas que corta en dos mitades la ventana. Para conseguirlo, durante el procesado se detectan todos los cortes de la señal con el umbral y después se desplaza el fragmento de señal para que el corte más centrado case con el eje de abscisas. Si la señal es periódica las variaciones entre un fotograma y el siguiente serán mínimas, puesto que ambos estarán alineados, y se simulará con éxito el movimiento.\par
+	No obstante, la necesidad de desplazar el fragmento de señal que va a representarse presenta un inconveniente importante. Para poder desplazar el fragmento de señal y que se cubra completamente la ventana del osciloscopio su duración, la del fragmento de señal digitalizado, debe ser superior al tiempo reflejado en el eje de tiempos de la ventana. De lo contrario la señal aparecerá truncada, se mostrará un espacio en blanco y, con una tasa de refresco alta, la visualización será confusa. Desplazar fragmentos de señal implica dos cosas: por un lado el osciloscopio debe esperar más tiempo para refrescar la pantalla, es decir, se reduce la tasa de refresco para una misma configuración del eje de tiempos; y por otro, al tener para representar un fragmento de señal de mayor duración que la reflejada por el eje temporal de la ventana parte del fragmento queda ahora fuera de la representación.\par
+	Este inconveniente se ve paliado por el hecho de que el modo convencional contempla en principio trabajar con señales de alta frecuencia. Estas señales cambian de forma tan rápida que de no ser por el disparo sería imposible observar los cambios. Por otro lado puede seleccionarse que información que se muestra por pantalla accionando un control de offset temporal o modificando el valor de umbral de disparo y, generalmente, la pérdida de información a causa del disparo no es significativa.
+
+
+\section{Elaboración del software de control}
+
+
+\subsection{Elección del entorno de desarrollo}
+
+El lenguaje o, mejor dicho, plataforma que se ha empleado para el desarrollo del software de control es \matlab{}, la razón, su inmejorable compatibilidad con el hardware disponible. A partir de ahí, los componentes de \matlab{} que se han empleado para conseguir que el software de control gozase de las características previstas por los objetivos del proyecto son dos: el entorno de desarrollo de interfaces gráficas de usuario (\textsc{gui}) de \matlab{}, más conocido como \textsc{guide} (\emph{graphical user interface development environment}); y el \datx{} de \matlab{}. El primero de ellos se ha empleado para, como su nombre indica, crear la interfaz que comunica el dispositivo con el usuario. Esta comunicación se hace a través del segundo de los componentes mencionados, éste permite, mediante comandos de \matlab{} que pueden incluirse en rutinas o llamarse por separado, manejar el dispositivo ---convocarlo a muestrear, configurar sus propiedades--- y administra automáticamente los resultados almacenándolos en búffers situados en la memoria volátil del ordenador, haciéndolos de este modo accesibles al administrador de la tarjeta.
+
+
+\subsection{Data Acquisition Toolbox}
+
+La práctica de emplear \textsc{gui}s como fondo para aplicaciones desarrolladas con \matlab{} es bastante habitual, así como lo es programar esas interfaces mediante \textsc{guide}. Por ello, y dado que la documentación que se ciñe a tratar la problemática que envuelve esta actividad es abundante, se ha preferido dejar a cargo de dichos documentos este asunto y centrar este escrito en presentar con concisión los principios necesarios para emplear con éxito la \datx{} de \matlab{} en el manejo de dispositivos para la adquisición de señales analógicas. La fórmula elegida con tal propósito consiste en describir cual es el procedimiento habitual en una sesión de adquisición de datos y en cada paso detallar las opciones más significativas y proporcionar ejemplos explicativos extraídos del mismo código que integra el software de control.\par
+En cuanto a la documentación adicional que el lector puede consultar a continuación se citan varios documentos clasificados en función del tema que tratan. Para la programación de \textsc{gui}s con \matlab{} puede consultarse el manual de usuario, cite, disponible en la web del fabricante. Esta sección se basa en la guía rápida sobre el uso de la \datx{}, también a cargo de \emph{The MathWorks, Inc.}, la compañía que mantiene la suite matemática en cuya web puede obtenerse un documento extendido.
+
+
+\subsubsection{Componentes de la herramienta}
+
+Los elementos de \matlab{} que juegan un papel suficientemente importante en el funcionamiento de la \datx{} son los listados en el \vref{tab:toolbox-components}.
+
+\begin{table}[htbp]
 	\centering
-	\begin{tabular}{>{\raggedleft}p{1.2cm}d{5.2}d{3.1}+d{3.1}}
+	\begin{tabulary}{.9\textwidth}{C L}
 		\toprule
-		& \multicolumn{2}{c}{Bipolar} & \multicolumn{2}{c}{Unipolar} \\
-		\cmidrule(r){2-3}\cmidrule(l){4-5}
-		\multicolumn{1}{c}{Ganancia}
-		& \multicolumn{1}{c}{Rango ($\pm\text{V}$)} %
-		& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} %
-		& \multicolumn{1}{c}{Rango (V)} %
-		& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} \\
+		Componente & \multicolumn{1}{c}{Propósito} \\
 		\midrule
-		1 & 10,0 & 305 & 0/$10,0$ & 153 \\
-		2 & 5,0 & 153 & 0/$5,0$ & 76 \\
-		4 & 2,5 & 76 & 0/$2,5$ & 38 \\
-		8 & 1,25 & 38 & 0/$1,25$ & 19 \\
-		10 & 1,0 & 31 & 0/$1,0$ & 15 \\
-		\\
-		& \multicolumn{2}{c}{Bipolar} & \multicolumn{2}{c}{Unipolar} \\
-		\cmidrule(r){2-3}\cmidrule(l){4-5}
-		\multicolumn{1}{c}{Ganancia}
-		& \multicolumn{1}{c}{Rango ($\pm\text{mV}$)} %
-		& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} %
-		& \multicolumn{1}{c}{Rango (mV)} %
-		& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} \\
+		Ficheros *.m & Se emplean para automatizar la creación de objetos dispositivo, adquirir datos, configurar las propiedades del dispositivo y la sesión, y evaluar el estado de la adquisición y los recursos.\\
 		\midrule
-		20 & 500 & 15 & 0/500 & 7,6 \\
-		40 & 250 & 7,6 & 0/250 & 3,8 \\
-		80 & 125 & 3,8 & 0/125 & 1,9 \\
-		100 & 100 & 3,1 & 0/100 & 1,5 \\
-		200 & 50 & 1,5 & 0/50 & 0,8 \\
-		400 & 25 & 0,8 & 0/25 & 0,4 \\
-		800 & 12,5 & 0,4 & 0/$12,5$ & 0,2 \\
+		Máquina virtual de adquisición de datos & Almacena objetos dispositivo y sus propiedades, controla el almacenamiento de los datos adquiridos y controla la sincronización de eventos.\\
+		\midrule
+		Adaptadores & Son la vía de comunicación entre la máquina virtual de adquisición de datos y el hardware por la cual se transmiten propiedades, datos y eventos.\\
 		\bottomrule
-	\end{tabular}
-	\caption{Relación entre ganancia, rango de trabajo y resolución según el modo de adquisición}
-	\label{tab:acquisition-modes}
+	\end{tabulary}
+	\caption{Descripción de los componentes de la \datx{}}
+	\label{tab:toolbox-components}
 \end{table}
-
-
-\subsubsection{Modos de terminación}\label{sec:termination-modes}
-
-Internamente, la tarjeta \kpci{} emplea un amplificador de instrumentación diferencial. En principio este hecho implicaría que a cada canal se asociasen dos puertos físicos, uno por cada uno de los dos terminales de entrada del amplificador. No obstante, es posible configurar la tarjeta para que uno de los terminales del amplificador se conecte a masa. En ese caso, el terminal restante se conecta a un puerto físico.\par
 
 \begin{figure}[htbp]
 	\begin{center}
-		\includegraphics[width=.8\linewidth]{chapter02-01.pdf}
+		\includegraphics[height=.5\textheight, keepaspectratio=true]{chapter02-01.pdf}
 	\end{center}
-	\caption{Figura que muestra el modo de terminación sencillo. La entrada superior del amplificador de instrumentación se conecta al puerto 9 y la entrada inferior se conecta a masa}
-	\label{fig:termination-modes}
+	\caption{Elementos que intervienen en el funcionamiento de la \datx{}}
+	\label{fig:toolbox-components}
 \end{figure}
 
-Para hacerlo, cabría pensar que es suficiente con modificar el atributo que controla el modo de terminación del canal correspondiente. Al contrario de lo que pudiera parecer, el modo de terminación es una propiedad que no es atribuible al canal, si no que se atribuye a un par de puertos\footnote{Aunque según las especificaciones del fabricante es posible configurar cada par de puertos para que opere según un modo de terminación independiente del resto, \matlab{} sólo admite un modo de terminación para el conjunto total de puertos.}. En concreto, el modo de terminación afecta a los pares de puertos compuestos por un primero de entre los puertos 0 y 7, y un segundo cuyo número de puerto es igual al del primero más 8. De ahí que todos los canales relacionados con el mismo par de puertos deban estar configurados con el mismo modo de terminación, una configuración distinta no está permitida.\par
-Los dos modos de terminación posibles se conocen como: diferencial, si es que la señal que entra en cada terminal del amplificador procede de cada uno de los puertos del par; sencillo, en caso de que uno de los terminales de entrada del amplificador se conecte a la referencia de tensión. En este documento se llama canal diferencial a los canales cuyo modo de terminación sea diferencial, y canal con un sólo terminal o monoterminal a aquellos para los que el modo de terminación es sencillo. \par
-Las ventajas que presenta el uso de uno u otro tipo de canales son comprensibles. Emplear canales con un sólo terminal permite aplicar el proceso de adquisición sobre un mayor número de señales simultáneamente. Por el contrario, utilizar canales diferenciales redunda en una mayor inmunidad frente al ruido. Además, los amplificadores diferenciales eliminan de forma inherente la componente en continua.\par
-\par
+\subsubsection{Objetos dispositivo}
 
-
-\subsection{Rendimiento}
-
-Se entiende como rendimiento la cantidad máxima de operaciones de conversión que el dispositivo puede realizar por unidad de tiempo. Para que una de estas operaciones contribuya a la medida de rendimiento debe superar un requisito de precisión.\par
-El rendimiento óptimo de la tarjeta \kpci{} especificado por el fabricante es de cien mil operaciones por segundo (100 KS/s). No obstante se advierte, para obtener este nivel de rendimiento es necesario alimentar la tarjeta con una fuente de tensión ideal. Además, es importante que exista adaptación de impedancias entre el circuito de alimentación y el puerto por el que se quiere introducir la señal. Aún en estas condiciones el valor proporcionado por la casa Keithley está sujeto a un error relativo máximo del $0.02\%$, el cual supone un error absoluto máximo de dos mil operaciones por segundo (2 KS/s).
-
-
-\subsubsection[Factores limitantes del rendimiento]{Amplificador de instrumentación y pérdida del rendimiento}
-
-El amplificador de instrumentación interno de la \kpci{} es de ganancia variable. Es posible configurar una ganancia distinta para cada canal. El propósito del amplificador es permitir al usuario modificar la amplitud de la señal que entra al conversor. La intención que se persigue es conseguir que la conversión se enfoque en los detalles de la señal que sean de mayor interés y se pierda la mínima información posible. Todo ello aún trabajando simultáneamente con múltiples señales cuyo rango de amplitudes es con frecuencia muy diferente.\par
-La desventaja que presenta esta configuración ---multiplexor -- amplificador de instrumentación -- conversor--- es una pérdida de rendimiento que se produce en situaciones determinadas a causa de la intervención del amplificador en la operación de adquisición.\par
-Cada ciclo de reloj cambia el canal activo y debe cambiar, si es oportuno, la señal que accede al amplificador. Este proceso no es inmediato. Tras conmutar el multiplexor que precede al amplificador, se da paso al puerto conveniente. No obstante, la señal que recibe el amplificador presenta, hasta transcurrido un determinado periodo de tiempo, una componente residual de la señal que se amplificó en el anterior ciclo de reloj. Transcurrido dicho periodo de tiempo la señal que entra al amplificador se ve libre de esa componente residual y se corresponde únicamente con la señal que entrega el multiplexor, se dice que se ha fijado la señal.\par
-Y es así como el amplificador es causa de pérdida de rendimiento, por medio de las componentes residuales. Si la conversión se realiza antes de fijar la señal, el conversor toma un valor de la señal corrompido por la componente residual de la señal precedente. Por tanto, la muestra resultante queda igualmente corrompida incluso hasta el punto de perder su validez. Las operaciones de conversión que tengan como resultado muestras inválidas sólo contribuyen a falsear la medida de rendimiento, haciendo que parezca mayor de lo que en realidad es.\par
-El fabricante da a entender que existe una solución de diseño que resuelve en parte el problema planteado por las componentes residuales. Esta solución consiste en alargar de forma deliberada la duración del ciclo de reloj, de esa forma se proporciona tiempo suficiente para fijar la señal. Sin embargo, esta solución presenta dos inconvenientes: no solventa el problema en la totalidad de los casos y es, asimismo, una forma de perder rendimiento. Lo cual conduce inevitablemente a una solución de compromiso, alargar el ciclo de reloj lo suficiente para que en la mayoría de los casos el efecto de las componentes residuales sobre la precisión de la conversión no invalide las muestras resultantes y se produzca, por tanto, una caída del rendimiento, sin que la duración del nuevo ciclo contribuya por sí misma a una pérdida notable de éste.\par
-
-
-\subsubsection{Optimización del rendimiento}
-
-Como se ha visto, la inclusión del amplificador en el diseño de la tarjeta es causa directa o indirecta de una pérdida de rendimiento. La magnitud de esa caída en el rendimiento depende de la configuración de la cola de muestreo y de la amplitud de la señal una vez llega ésta al dispositivo de adquisición.
-
-\begin{itemize}
-	\item Las señales cuya tensión absoluta se encuentra por debajo de los 100 mV al llegar a la \kpci{} sufren en mayor medida las consecuencias del empleo de un amplificador en la operación de conversión. En primer lugar la señal tarda más en fijarse de modo que el rendimiento se reduce a la mitad en las mejores condiciones, de 100 KS/s pasa a 50 KS/s. Esto es debido a que, al ser la amplitud de la señal y la del ruido comparables, especialmente después de que éste se vea reforzado por el efecto de las componentes residuales, se genera una mayor incertidumbre.\par
-	Por otro lado las señales que requieren que el amplificador opere con alta ganancia son las más perjudicadas por los problemas que causa el amplificador en configuraciones multiganancia, tal y como se explica a continuación.
-	\item Por lo general, el rendimiento se ve afectado de forma más pronunciada por el efecto de las componentes residuales en configuraciones multiganancia en las que se encadenan secuencias de canales con ganancia diferente. Una configuración multiganancia de la cola de muestreo implica que en diferentes ciclos de reloj el amplificador actúa con ganancias distintas. Eso con frecuencia significa que el rango en el que se encuentra comprendida la amplitud de las señales que están entrando al dispositivo de adquisición es diferente de una señal a otra. Cuando así ocurre puede sucederse en ocasiones que en ciclos de reloj consecutivos entren al amplificador dos señales de amplitud diferente, siendo la amplitud de la señal que ocupa el primer ciclo mucho mayor que la de la otra señal en el tiempo en el que ambas permanecen a la entrada del dispositivo. Por otro lado, parece lógico considerar que la componente residual asociada a una señal cuya amplitud sea predominantemente mayor que la de otra señal es de mayor amplitud inicial y mayor duración temporal que la asociada a la segunda señal. Por tanto si ocurre como se ha dicho y se tiene en cuenta la base probable que se ha propuesto, cuando la segunda de las señales se convierte en la señal activa la amplitud de la componente residual asociada a la primera de ellas puede ser suficiente, incluso, para enmascararla.\par No sólo eso, la amplitud de la señal que llega más tarde al amplificador puede ser, en términos absolutos, la mayor parte del tiempo, menor que la de la otra señal, al ser así lo más probable es que se amplifique empleando un mayor factor de ganancia. De ser así, la amplitud de la componente residual a la que se enfrenta esta señal puede provocar en el peor de los casos que el conversor sature y la pérdida de precisión sea mucho mayor. Sea cual sea el caso, es posible observar entonces, que en configuraciones multiganancia las muestras resultantes se obtienen de una conversión menos precisa, en especial si se trabaja con señales de pequeña amplitud ---tal y como se especificó en el punto anterior--- o si las ganancias configuradas en la cola de muestreo difieren mucho unas de otras. Aplicando la relación entre la validez de las muestras y el rendimiento de la que se habló anteriormente, la consecuencia de emplear configuraciones multiganancia es una mayor pérdida de rendimiento.
-	\item En configuraciones monoganancia el uso del amplificador supone una causa indirecta de la caída de rendimiento. El diseño del dispositivo de adquisición está pensado primordialmente para su uso en configuraciones multiganancia, de lo contrario la inclusión de un amplificador de ganancia variable en el esquemático de la tarjeta sería incomprensible. Por la misma razón, Keithley adopta una solución de diseño como la expuesta en el anterior apartado, para tratar de obtener un rendimiento óptimo en configuraciones multiganancia. Sin embargo, el efecto de las componentes residuales en configuraciones monoganancia es mínimo y la consecuente pérdida de rendimiento también lo es. Por tanto, una solución que consiste en alargar el ciclo de reloj resulta, en configuraciones monoganancia, innecesaria y perjudicial para el rendimiento.
-\end{itemize}
-
-Las acciones que el fabricante adopta para tratar de que el usuario obtenga el mayor rendimiento posible del dispositivo no se limitan a aplicar una solución de compromiso en el diseño de la duración del ciclo de reloj. En el manual de usuario se hacen una serie de recomendaciones de uso orientadas a conseguir este fin.\par
-Se proponen varias soluciones, la más trivial de las cuales pasa por preamplificar todas las señales que vayan a ser objeto del proceso de adquisición efectuado por la tarjeta consiguiendo que su amplitud varíe en un mismo rango. Si se hace así, es suficiente con emplear una configuración monoganancia para minimizar los efectos de las componentes residuales en el rendimiento. Además al preamplificar las señales, éstas presentan una mejor relación señal a ruido, es decir, son menos vulnerables al ruido. Aunque buena, esta solución no deja de ser trivial puesto que el amplificador de instrumentación de la tarjeta pierde toda funcionalidad y pasa a ser un estorbo en el proceso de adquisición.\par
-La solución de carácter práctico propuesta por Keithley radica configurar la cola de muestreo de forma <<sensata>>. Como se ha visto, en determinadas ocasiones una configuración inapropiada de la cola de muestreo puede inducir que la pérdida de rendimiento que provoca la inclusión del amplificador en el circuito de adquisición sea todavía mayor. Para evitar que esto ocurra y sacar el máximo partido del dispositivo se dan en el manual dos condiciones que de cumplirse garantizan que la cola se encuentre configurada de forma óptima en términos de rendimiento.
-
-\begin{itemize}
-	\item La primera consiste en agrupar canales con distinta ganancia en posiciones consecutivas de la cola, aún si al hacerlo se pierde el orden de muestreo definido en una primera instancia por el usuario. Si como se presupuso en el apartado anterior, comúnmente dos señales que requieren ser amplificadas con el mismo factor de ganancia varían en el mismo rango de amplitudes, en estas secuencias monoganancia las consecuencias de las componentes residuales en la precisión de la conversión son mínimas.
-	\item A pesar de emplear una configuración como la anterior, la aparición de saltos de ganancia en la cola de muestreo es todavía probable. Por ejemplo, en la transición entre dos secuencias monoganancia como las descritas arriba. El salto es aún más problemático si la transición se realiza para dar paso a una secuencia de ganancia mayor. El primer canal de esta secuencia sufre en mayor proporción los efectos de las componentes residuales y el rendimiento asociado al canal se ve reducido dramáticamente. Para minimizar el impacto que en determinados canales como éste tienen los problemas causados por el amplificador, es posible modificar la configuración de la cola para que dichos canales ocupen varias posiciones consecutivas. Esta segunda condición persigue dar más tiempo para que se fije la señal cuando los mencionados canales están activos. Para ello se necesitan posiciones vacías en la cola, posiciones que es posible obtener desalojando canales previamente configurados.
-\end{itemize}
-
-
-\section{Identificando los conectores de entrada/salida}
-
-Es posible conectar dispositivos de entrada/salida a la \kpci{} mediante dos conectores de tipo \textsc{ieee} 1284 de 36 terminales situados en su parte trasera. Al iniciar el proyecto se tuvo acceso a dos sondas terminadas por un lado en conectores de este tipo y por otro en cables de cobre convencionales. Para facilitar las conexiones con la tarjeta se diseñó un interfaz más robusto que posteriormente se soldó al extremo terminado en cables de las mencionadas sondas. Es posible conectar cables terminados en conectores de tipo banana y sondas coaxiales a este nuevo interfaz.\par
-A continuación se adjunta una relación con las distintas asignaciones que se dan entre puertos y terminales y se describen los tipos de señal que dichos terminales soportan o entregan.
-
-\newsavebox{\auxbox}
-\sbox{\auxbox}{\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{chapter02-02.pdf}}
-\newlength{\auxheight}
-\setlength{\auxheight}{\ht\auxbox + 5pt}
-\newlength{\auxwidth}
-\setlength{\auxwidth}{\wd\auxbox - 5pt}
+Los objetos dispositivo permiten el acceso a subsistemas específicos del hardware. Los objetos dispositivo soportados por la \datx{} son los objetos de entrada analógica o \emph{analog imput objects} (\textsc{ai}), los objetos de salida analógica o \emph{analog output objects} (\textsc{ao}) y los objetos de entrada/salida digital o \emph{digital \textsc{i/o} objects} (\textsc{dio}).
 
 \begin{figure}[htbp]
-	\centering
-	\subfloat[Conector etiquetado como ``analog'']{\vbox  to \auxheight{ %
-		\hbox to \auxwidth{
-			\hspace*{-7pt}\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{chapter02-02.pdf}} %
-	\vfil}}\qquad
-	\subfloat[Conector etiquetado como ``digital'']{\vbox to \auxheight{\vfil %
-		\hbox to \auxwidth{
-			\hspace*{-7pt}\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{chapter02-03.pdf}} %
-	\vfil}}
- 	\caption{Esquema del panel de conexiones trasero de la \kpci{}}
-	\label{fig:ports}
+	\begin{center}
+		\includegraphics{chapter02-02.pdf}
+	\end{center}
+	\caption{Grafo que representa la comunicación entre los subsistemas del hardware y los objetos dispositivo}
+	\label{fig:subsystems-objects}
 \end{figure}
 
-\begin{table}[p]
+
+\subsection{La sesión de adquisición de datos}
+
+Una sesión completa de adquisición de datos consiste en cinco pasos:
+
+\begin{enumerate}
+	\item Crear el objeto dispositivo.
+	\item Añadir canales al objeto dispositivo.
+	\item Configurar las propiedades del objeto dispositivo y los canales añadidos para controlar el comportamiento de la aplicación de adquisición de datos.
+	\item Adquirir los datos. % Iniciar la sesión de adquisición.
+	\item Eliminar el objeto dispositivo. % Sesión de limpieza.
+\end{enumerate}
+
+Cada uno de los pasos se detalla en los puntos subsiguientes.
+
+
+\subsubsection{Crear el objeto dispositivo}
+
+% Utilizo la tabla para luego decir que como a mi me interesa la adquisición utilizare el comando analoginput nada más
+Para crear un objeto dispositivo, se debe llamar a la función de creación apropiada o constructor. Como se muestra en el \vref{tab:constructors}, los constructores reciben un nombre particular en función del tipo de objetos dispositivo que crean. Para iniciar una sesión de adquisición de datos analógicos es necesario un comando como el siguiente, \texttt{analoginput(`adaptador', ID)}.\par
+
+\begin{table}[htbp]
 	\centering
-	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
+	\begin{tabular}{l >{\tt}l}
 		\toprule
-		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
+		\multicolumn{1}{c}{Tipo de subsistema} & \multicolumn{1}{c}{\rm Constructor} \\
 		\midrule
-		1 & ip5 & \multirow{12}{0.6\textwidth}{Bits digitales de entrada multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Base temporal para el contador/temporizador y/o entrada a \emph{gate} \\\item Reloj externo para conversiones A/D o D/A \\\item Disparador digital externo \\\item Entrada digital en el modo \emph{target-mode}}} \\
-		2 & ip3 & \\
-		3 & ip1 & \\
-		\\\\\\\\\\\\\\\\
+		Entrada analógica & analoginput(`adaptador', ID); \\
 		\midrule
-		4 & op5 & \multirow{12}{0.6\textwidth}{Bits digitales de salida multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Salidas del contador/temporizador\\\item Salida del disparador\\\item Salida de control para accesorios\\\item Salida del reloj interno\\\item Salida digital en el modo \emph{target-mode}}} \\
-		5 & op3 & \\
-		6 & op1 & \\
-		\\\\\\\\\\\\\\\\
+		Salida analógica & analogoutput(`adaptador', ID); \\
 		\midrule
-		7 & dgnd & \multicolumn{1}{c}{Tierra digital} \\
-		\midrule
-		8 & ch07 lo/ch15 & \multirow{4}{0.6\textwidth}{Entradas analógicas, cuya función depende del modo de terminación configurado: puerto asociado a un canal monoterminal o puerto bajo de un canal diferencial} \\
-		9 & ch06 lo/ch14 & \\
-		10 & ch05 lo/ch13 & \\
-		$\vdots$ & $\vdots$ & \\
-		15 & ch00 lo/ch08 & \\
-		\midrule
-		16 & {\upshape Sin conexión} & \\
-		\midrule
-		\multicolumn{1}{l}{17, 18} & agnd & Tierra analógica \\
+		Entrada / Salida digital & digitalio(`adaptador', ID); \\
 		\bottomrule
 	\end{tabular}
-	\caption{Relación entre los puertos y terminales que presenta el conector trasero de la \kpci{} etiquetado como \emph{analog}}
-	\label{tab:analog-ports}
+	\caption{Tipos de función de creación de acuerdo con el tipo subsistema al que se orienta el objeto dispositivo creado}
+	\label{tab:constructors}
 \end{table}
 
-\begin{table}[p]\ContinuedFloat
+El argumento \texttt{id} es un indicador de dispositivo hardware. Se trata de un argumento opcional para tarjetas de sonido con \texttt{id} 0. El argumento \texttt{adaptador} requiere el nombre del adaptador de dispositivo hardware. A continuación, en el \vref{tab:adaptors} se muestra una relación con los adaptadores de dispositivo cuyo uso es más frecuente y el nombre de adaptador que debe introducirse como argumento de la llamada a \texttt{analoginput}. Por conveniencia se ha añadido Keithley a esta lista.
+
+\begin{table}[htbp]
 	\centering
-	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
+	\begin{tabular}{l >{\tt\qquad}l}
 		\toprule
-		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
+		\multicolumn{1}{c}{Fabricante de Hardware} & \multicolumn{1}{c}{\rm Nombre de adaptador} \\
 		\midrule
-		19 & ip4 & \multirow{12}{0.6\textwidth}{Bits digitales de entrada multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Base temporal para el contador/temporizador y/o entrada a \emph{gate} \\\item Reloj externo para conversiones A/D o D/A \\\item Disparador digital externo \\\item Entrada digital en el modo \emph{target-mode}}} \\
-		20 & ip2 & \\
-		21 & ip0 & \\
-		\\\\\\\\\\\\\\\\
+		Advantech & advantech \\
 		\midrule
-		22 & op4 & \multirow{12}{0.6\textwidth}{Bits digitales de salida multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Salidas del contador/temporizador\\\item Salida del disparador\\\item Salida de control para accesorios\\\item Salida del reloj interno\\\item Salida digital en el modo \emph{target-mode}}} \\
-		22 & op2 & \\
-		21 & op0 & \\
-		\\\\\\\\\\\\\\\\
+		Measurement Computing & mcc \\
 		\midrule
-		25 & {\upshape +5 V} & \multirow{2}{0.6\textwidth}{Referencia de tensión de 5 voltios de corriente continua extraídos del bus \textsc{pci} del ordenador} \\
-		& & \\
+		National Instruments & nidaq \\
 		\midrule
-		26 & ch07 hi & \multirow{3}{0.6\textwidth}{Entradas analógicas restantes, en el modo de terminación diferencial representan el puerto alto de un canal diferencial} \\
-		27 & ch06 hi & \\
-		28 & ch05 hi & \\
-		$\vdots$ & $\vdots$ & \\
-		33 & ch00 hi & \\
+		Parallel port & parallel \\
 		\midrule
-		34 & {\upshape +10 V} & \multirow{6}{.6\textwidth}{Entrada diseñada para proporcionar al dispositivo una referencia externa de precisión de 10 voltios mediante una fuente de alta impedancia de salida (La impedancia de entrada de este puerto es equivalente a una resistencia de 1 K$\Omega$ en serie con la impedancia de entrada de la fuente)} \\
-		\\\\\\\\\\
+		Microsoft Windows & winsound \\
+		\midrule
+		Keithley Instruments, Inc. & keithley \\
 		\bottomrule
 	\end{tabular}
-	\caption[]{Continuación del \vref{tab:analog-ports}}
+	\caption{Argumento que debe emplearse en la llamada a \texttt{analoginput} en función del fabricante}
+	\label{tab:adaptors}
 \end{table}
 
-\begin{table}[p]\ContinuedFloat
+
+\subsubsection{Añadiendo canales}
+
+Antes de poder utilizarse, deben añadirse canales al objeto dispositivo. Para ello, debe emplearse la función \texttt{addchannel}. Puede pensarse en un objeto dispositivo como un contenedor de grupos de canales y en los canales añadidos a un objeto dispositivo como un grupo de canales. Si se desean añadir dos canales al objeto dispositivo \texttt{objeto} puede utilizarse la siguiente llamada \texttt{cans = addchannel(objeto, 1:2);}.
+
+
+\subsubsection{Configurando propiedades}
+
+Puede controlarse el comportamiento de una sesión de adquisición de datos o de una aplicación creada con tal propósito configurando las propiedades de los objetos dispositivo que intervienen en el proceso de adquisición y de los canales que dicho objeto contiene. Estas son las reglas principales en la configuración de propiedades desde la \datx{}.
+
+\begin{itemize}
+	\item Los nombres de las propiedades pueden escribirse en mayúsculas, minúsculas o combinación de ambas.
+	\item Los nombres de las propiedades pueden abreviarse como se mostrará a continuación. % Hay que confirmar que se explican las reglas de abreviatura
+	\item La función \texttt{set} aplicada a un objeto dispositivo ---\texttt{set(objeto)}--- devuelve todas las propiedades configurables de ese objeto. Si se llama a \texttt{set} utilizando como argumento un canal ---\texttt{set(objeto.Channel(índice)}---, la función devolverá todas las propiedades configurables de dicho canal.
+	\item La función \texttt{get} devuelve todas las propiedades de un canal u objeto y el valor que toman en el momento en el que se llama a la función si se emplea como único argumento dicho canal u objeto ---\texttt{get(objeto)}, \\ \texttt{get(objeto.Channel(índice)}---.
+\end{itemize}
+
+Se distinguen dos tipos de propiedades distintas asociadas a los canales contenidos en un objeto dispositivo.
+
+\begin{itemize}
+	\item \emph{Propiedades comunes} que se aplican a cada canal contenido en un objeto dispositivo.
+	\item Y \emph{propiedades de canal} que pueden configurarse individualmente por canal.
+\end{itemize}
+
+Dentro de las propiedades comunes de los canales existen las \emph{propiedades básicas}, que se aplican a todos los subsistemas de un determinado tipo (\textsc{ai, ao, dio}); y \emph{propiedades específicas de dispositivo} aplicables únicamente al hardware específico que se está empleando.\par
+Existen tres formas de configurar u obtener el valor de una propiedad: utilizando las funciones \texttt{set} y \texttt{get}; empleando la notación de punto; o recurriendo a los nombres indexados.
+
+\begin{itemize}
+	\item La sintaxis de las funciones \texttt{get} y \texttt{set} es similar a la empleada en la herramienta de \matlab{} \emph{Handle Graphics}.
+		\begin{lstlisting}[gobble=16]
+			out = get(objeto, `SampleRate');
+			set(objeto, `SampleRate', 11025)
+		\end{lstlisting}
+	\item La notación de punto se emplea del siguiente modo:
+		\begin{lstlisting}[gobble=16]
+			out = objeto.SampleRate;
+			objeto.SampleRate = 11025;
+		\end{lstlisting}
+	\item Por último, los nombres indexados permiten asociar un nombre descriptivo a cada canal. Por ejemplo para asociar el nombre \texttt{Can1} con el primer canal contenido en \texttt{objeto} debe procederse como se enuncia a continuación.
+		\begin{lstlisting}[gobble=16]
+			set(objeto.Channel(1), `ChannelName', `Can1');
+			out = objeto.Can1.UnitsRange;
+			objeto.Can1.UnitsRange = [0, 10];
+		\end{lstlisting}
+\end{itemize}
+
+
+\subsubsection{Adquisición de datos}
+
+La adquisición de datos puede dividirse en tres tareas básicas: iniciar el objeto dispositivo; registrar datos y detener el objeto dispositivo.\par
+La función que se utiliza para iniciar un objeto dispositivo es la función \texttt{start}, p.e. para iniciar el objeto dispositivo \texttt{objeto} habría que llamar a la función de esta forma \texttt{start(objeto)}. Tras iniciar un objeto su propiedad \textsf{Running} pasa de manera automática al valor \textsf{On}.\par
+No obstante haber iniciado el dispositivo, este no empieza a registrar datos hasta que no ocurre un trigger o disparo. Hay diversos tipos de trigger, en el \vref{tab:triggers} se muestran aquellos soportados por todos los dispositivos. Tras un trigger el dispositivo hardware inicia la adquisición de datos y la propiedad \textsf{Logging} del objeto dispositivo asociado conmuta al estado \textsf{On}.
+
+\begin{table}[htbp]
 	\centering
-	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
+	\begin{threeparttable}
+	\begin{tabulary}{.9\linewidth}{>{\sf}c L}
 		\toprule
-		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
+		{\rm Tipo de disparo} & \multicolumn{1}{c}{Descripción} \\
 		\midrule
-		35 & dac1 & \multirow{2}{.6\textwidth}{Salida número 1 del conversor digital a analógico de la \kpci{}} \\
-		\\
+		Inmediato & El disparo ocurre justo después de la llamada a \texttt{start}. Este es el tipo de trigger predeterminado. \\
 		\midrule
-		36 & dac0 & \multirow{2}{.6\textwidth}{Salida número 0 del conversor digital a analógico de la \kpci{}} \\
-		\\
+		Manual & El disparo ocurre después de llamar manualmente a la función \texttt{trigger}. \\
+		\midrule
+		Software & El disparo sucede cuando se detecta una señal que satisface una determinada condición especificada de antemano. El objeto dispositivo debe disponer de más de un canal que hará las veces de la señal de disparo. Debe especificarse, como es obvio, que canal actúa como fuente del disparo. \\
+		\midrule
+		Reloj interno\tnote{\rm a} & Por añadidura, la \kpci{} cuenta con la posibilidad de recibir el disparo de la fuente de reloj interna. \\
 		\bottomrule
-	\end{tabular}
-	\caption[]{Continuación del \vref{tab:analog-ports}}
+	\end{tabulary}
+	\begin{TableNotes}
+		\tnotetext{a}{Se ha añadido esta característica de la \kpci{} a la lista original.}
+	\end{TableNotes}
+	\end{threeparttable}
+	\caption{Tipos de disparo soportados por el hardware compatible con \matlab{} y una breve descripción de los mismos}
+	\label{tab:triggers}
 \end{table}
 
-\begin{table}[p]
-	\centering
-	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
-		\toprule
-		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
-		\midrule
-		1 & {\upshape Bit 0} & \multirow{6}{0.6\textwidth}{Canal 0 de bits de entrada/salida de propósito general (En la \kpci{} los bits digitales se agrupan de en ocho en ocho en canales. Los canales de este tipo puede configurarse para que los bits que lo integran se comporten como todo salidas o todo entradas)} \\
-		2 & {\upshape Bit 1} & \\
-		3 & {\upshape Bit 2} & \\
-		$\vdots$ & $\vdots$ & \\
-		8 & {\upshape Bit 7} & \\
-		\\
-		\midrule
-		9 & {\upshape Bit 8} & \multirow{2}{0.6\textwidth}{Canal 1 de bits de entrada/salida de propósito general} \\
-		10 & {\upshape Bit 9} & \\
-		11 & {\upshape Bit 10} & \\
-		$\vdots$ & $\vdots$ & \\
-		16 & {\upshape Bit 15} & \\
-		\midrule
-		\multicolumn{1}{l}{17, 18} & dgnd & Tierras digitales \\
-		\midrule
-		19 & {\upshape Bit 16} & \multirow{2}{0.6\textwidth}{Canal 2 de bits de entrada/salida de propósito general} \\
-		20 & {\upshape Bit 17} & \\
-		21 & {\upshape Bit 18} & \\
-		$\vdots$ & $\vdots$ & \\
-		26 & {\upshape Bit 23} & \\
-		\midrule
-		27 & {\upshape Bit 24} & \multirow{2}{0.6\textwidth}{Canal 3 de bits de entrada/salida de propósito general} \\
-		28 & {\upshape Bit 25} & \\
-		29 & {\upshape Bit 26} & \\
-		$\vdots$ & $\vdots$ & \\
-		34 & {\upshape Bit 31} & \\
-		\midrule
-		\multicolumn{1}{l}{35, 36} & {\upshape +5 V} & +5 \textsc{vdc} desde el bus del ordenador \\
-		\bottomrule
-	\end{tabular}
-	\caption{Relación entre los puertos y terminales que presenta el conector trasero de la \kpci{} etiquetado como \emph{digital}}
-	\label{tab:digital-ports}
-\end{table}
+Por último, existen tres causas por las que un objeto dispositivo puede detenerse: \matlab{} detiene un objeto dispositivo iniciado una vez obtenidos los datos precisados por el usuario; al ocurrir un error de tiempo de ejecución en relación con la actividad de un objeto dispositivo éste es detenido también; y tan sólo resta el método manual, que consiste en llamar a la función \texttt{stop}, por ejemplo \texttt{stop(objeto)}.\par
+Como se ha mencionado la máquina virtual de adquisición de datos registra y controla los datos que extrae de un objeto dispositivo. Un usuario puede acceder a esos datos de dos formas diferentes:
+
+\begin{itemize}
+	\item La primera de ellas se conoce como previsualizar los datos. Se emplea con ese propósito la función \texttt{peekdata}. Si, por ejemplo, se quisiese previsualizar 1000 muestras obtenidas con el objeto dispositivo \texttt{objeto}, la llamada a \texttt{peekdata} sería la siguiente: \texttt{out = peekdata(objeto, 1000);}. La función \texttt{peekdata} devuelve el control a \matlab{} de inmediato y no elimina los datos previsualizados de la máquina virtual de adquisición.
+	\item En cualquier momento tras adquirir datos mediante un objeto dispositivo estos pueden extraerse de la máquina virtual de adquisición mediante la función \texttt{getdata}. Partiendo del ejemplo anterior, si se desea extraer 1000 muestras procedentes del objeto dispositivo \texttt{objeto}, esta es la llamada adecuada \texttt{out = getdata(objeto, 1000);}. Al contrario que la función \texttt{peekdata}, \texttt{getdata} no devuelve el control a \matlab{} hasta haber extraído todas las muestras solicitadas. Es evidente que las muestras extraídas dejarán de estar disponibles en la máquina virtual de adquisición.
+\end{itemize}
+
+Es importante señalar que en cualquiera de los procedimientos descritos intentar acceder a más datos de los obtenidos en un determinado momento causará un error que detendrá el funcionamiento del objeto dispositivo.
+
+
+\subsubsection{Eventos y Callbacks}
+
+Puede decirse que un evento sucede en un determinado instante después de que una cierta condición se cumple. A menos que ocurra un error, en todas las sesiones de adquisición de datos debe producirse un evento de inicio, uno de disparo y uno de parada. Puede accederse a la información que transporta un evento mediante la propiedad \textsf{EventLog}:
+
+\begin{lstlisting}
+	Events = ai.EventLog;
+	EventTypes = {Events.Types}
+	EventTypes =
+		`Start'    `Trigger'	`Stop'
+\end{lstlisting}
+
+Cuando se produce un evento, puede ejecutarse una función de \emph{callback}. Es posible seleccionar una función para un callback especificando como valor de la propiedad asociada a dicho callback el nombre de la función (si ésta se encuentra en el mismo fichero *.m que contiene el código que ejecuta la aplicación que realiza la adquisición de datos), o el nombre del fichero *.m con el código de la función. Así mismo, pueden pasarse argumentos de entrada a la función de callback asignándolos a la mencionada propiedad.\par
+Por ejemplo, los siguientes comandos configuran \texttt{objeto} de forma que la función \texttt{datadqcallback} se ejecute desde el fichero cuyo nombre está compuesto por una raíz idéntica al nombre de la función y con extensión *.m, cuando se produzca un evento de trigger o de parada durante la actividad del objeto dispositivo. Además se pasa como argumento de la función el valor de la propiedad \textsf{Running} de \texttt{objeto} en el momento del callback.
+
+\begin{lstlisting}
+	set(objeto, `TriggerFcn', @datadqcallback, objeto.Running)
+	set(objeto, `StopFcn', @datadqcallback, objeto.Running)
+\end{lstlisting}
+
+
+\subsubsection{Suprimiendo y borrando las trazas de los objetos dispositivo}
+
+La función \texttt{delete} elimina el objeto dispositivo especificado de la máquina virtual de adquisición, pero no del espacio de trabajo de \matlab{}, ---\texttt{delete(objeto)}---. Tras una llamada semejante \texttt{objeto} sigue apareciendo en el espacio de trabajo de \matlab{}, pero se trata de un objeto inválido desde el momento en el que deja de encontrarse ligado al hardware. Deben suprimirse los objetos dispositivo faltos de validez con el comando \texttt{clear}, p.e., \texttt{clear objeto}.\par
+Si se suprime un objeto dispositivo del espacio de trabajo de \matlab{} no deja de existir en la máquina virtual. Para poder recuperar objetos borrados accidentalmente puede utilizarse la función \texttt{daqfind}.
+
+\begin{lstlisting}
+	out = daqfind;
+	ai = out(1);
+\end{lstlisting}
+
+
+\section{Prueba de funcionamiento}
+
+En el apartado anterior se han dado las claves necesarias para desarrollar un software como el empleado en este proyecto, no obstante, en este documento no se contempla entrar con mayor detalle en el código desarrollado más allá de lo que hasta ahora se ha hecho. Para obtener mayor información sobre las características y funcionalidades de la aplicación desarrollada el lector puede remitirse al apéndice ??, en el cual se ha desarrollado lo que podría denominarse un manual de usuario para dicha aplicación.\par
+Para completar esta parte del documento se ha considerado conveniente la inclusión de éste apartado cuyo objetivo es cubrir desde un punto de vista práctico cual es el procedimiento a seguir durante una prueba que se realice mediante el sistema propuesto en este \textsc{pfc} y cuales son los resultados de dicha prueba en comparación con los de un osciloscopio de laboratorio. La opción elegida para dar fin a tal propósito es la de documentar un ejercicio estándar a modo de ejemplo práctico.\par
+
+
+\subsection{Montaje del dispositivo de medida}
+
+Puede completarse el montaje del sistema siguiendo un sencillo procedimiento que contempla una serie de pasos expuestos a continuación.
+
+\begin{enumerate}
+	\item En primer lugar debe conectarse la interfaz ampliada desarrollada para el proyecto (véase la \vref{subsec:connection-box}) a los dos conectores mini-\textsc{d} provistos por la \kpci{}. Los dos conectores deben encontrarse en la parte posterior de la carcasa del ordenador al que se haya conectado la tarjeta. Los conectores hembra de la tarjeta y los conectores macho de los cables de la caja de conexiones están etiquetados con las palabras \emph{analog} y \emph{digital}, deben conectarse los cables de forma que las etiquetas en los conectores coincidan.
+	\item Después es necesario establecer conexiones entre las fuentes de las señales que se quiera intervengan en el proceso de adquisición analógica y la caja de conexiones. Para ello se recomienda emplear sondas terminadas por un lado en conector macho banana o coaxial y por otro en conector de tipo cocodrilo. La terminación en conector de tipo banana o coaxial debe insertarse en uno de los conectores tipo hembra que la caja de conexiones dispone a tal efecto, por ejemplo, en el conector que comunica con el puerto analógico \textsc{ch00} de la tarjeta\footnote{Se recomienda en cualquier caso emplear los puertos analógicos \textsc{ch00} y \textsc{ch08} de la \kpci{} ya sea desde la interfaz banana o desde la interfaz coaxial}. Y la terminación en cocodrilo a la fuente de la señal analógica de interés.
+	\item Tras el paso anterior debe encenderse el ordenador y, una vez se ha accedido al sistema, lanzar \matlab{}.
+	\item Por último, ya en la consola de \matlab{}, acceder al directorio en el que se encuentren los archivos \texttt{single-channel.m} y \texttt{single-channel.fig} y lanzar la aplicación de control.
+\end{enumerate}
