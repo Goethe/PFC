@@ -252,7 +252,7 @@ Puede decirse que un evento sucede en un determinado instante después de que una
 	Events = ai.EventLog;
 	EventTypes = {Events.Types}
 	EventTypes =
-		`Start'    `Trigqer'	`Stop'
+		`Start'    `Trigger'	`Stop'
 \end{lstlisting}
 
 Cuando se produce un evento, puede ejecutarse una función de \emph{callback}. Es posible seleccionar una función para un callback especificando como valor de la propiedad asociada a dicho callback el nombre de la función (si ésta se encuentra en el mismo fichero *.m que contiene el código que ejecuta la aplicación que realiza la adquisición de datos), o el nombre del fichero *.m con el código de la función. Así mismo, pueden pasarse argumentos de entrada a la función de callback asignándolos a la mencionada propiedad.\par
@@ -273,3 +273,21 @@ Si se suprime un objeto dispositivo del espacio de trabajo de \matlab{} no deja 
 	out = daqfind;
 	ai = out(1);
 \end{lstlisting}
+
+
+\section{Prueba de funcionamiento}
+
+En el apartado anterior se han dado las claves necesarias para desarrollar un software como el empleado en este proyecto, no obstante, en este documento no se contempla entrar con mayor detalle en el código desarrollado más allá de lo que hasta ahora se ha hecho. Para obtener mayor información sobre las características y funcionalidades de la aplicación desarrollada el lector puede remitirse al apéndice ??, en el cual se ha desarrollado lo que podría denominarse un manual de usuario para dicha aplicación.\par
+Para completar esta parte del documento se ha considerado conveniente la inclusión de éste apartado cuyo objetivo es cubrir desde un punto de vista práctico cual es el procedimiento a seguir durante una prueba que se realice mediante el sistema propuesto en este \textsc{pfc} y cuales son los resultados de dicha prueba en comparación con los de un osciloscopio de laboratorio. La opción elegida para dar fin a tal propósito es la de documentar un ejercicio estándar a modo de ejemplo práctico.\par
+
+
+\subsection{Montaje del dispositivo de medida}
+
+Puede completarse el montaje del sistema siguiendo un sencillo procedimiento que contempla una serie de pasos expuestos a continuación.
+
+\begin{enumerate}
+	\item En primer lugar debe conectarse la interfaz ampliada desarrollada para el proyecto (véase la \vref{subsec:connection-box}) a los dos conectores mini-\textsc{d} provistos por la \kpci{}. Los dos conectores deben encontrarse en la parte posterior de la carcasa del ordenador al que se haya conectado la tarjeta. Los conectores hembra de la tarjeta y los conectores macho de los cables de la caja de conexiones están etiquetados con las palabras \emph{analog} y \emph{digital}, deben conectarse los cables de forma que las etiquetas en los conectores coincidan.
+	\item Después es necesario establecer conexiones entre las fuentes de las señales que se quiera intervengan en el proceso de adquisición analógica y la caja de conexiones. Para ello se recomienda emplear sondas terminadas por un lado en conector macho banana o coaxial y por otro en conector de tipo cocodrilo. La terminación en conector de tipo banana o coaxial debe insertarse en uno de los conectores tipo hembra que la caja de conexiones dispone a tal efecto, por ejemplo, en el conector que comunica con el puerto analógico \textsc{ch00} de la tarjeta\footnote{Se recomienda en cualquier caso emplear los puertos analógicos \textsc{ch00} y \textsc{ch08} de la \kpci{} ya sea desde la interfaz banana o desde la interfaz coaxial}. Y la terminación en cocodrilo a la fuente de la señal analógica de interés.
+	\item Tras el paso anterior debe encenderse el ordenador y, una vez se ha accedido al sistema, lanzar \matlab{}.
+	\item Por último, ya en la consola de \matlab{}, acceder al directorio en el que se encuentren los archivos \texttt{single-channel.m} y \texttt{single-channel.fig} y lanzar la aplicación de control.
+\end{enumerate}

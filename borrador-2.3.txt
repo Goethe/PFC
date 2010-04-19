@@ -1,3 +1,0 @@
-El nombre del apartado podría ser algo así como "Prueba de funcionamiento"
-
-La idea es describir como se monta un escenario de medición utilizando para ello los circuitos diseñados durante el proyecto (se hará referencia al 3 capítulo). Después se hace una prueba de funcionamiento con un generador de señal, y después con los transductores de ultrasonidos y sus acondicionadores. La misma prueba se hará con un osciloscopio convencional y se compararán los resultados.

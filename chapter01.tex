@@ -177,11 +177,8 @@ La solución de carácter práctico propuesta por Keithley radica configurar la col
 
 \section{Comunicación con el periférico}
 
-Para la interacción con dispositivos externos, la \kpci{} dispone de dos conectores formato mini-D de 36 terminales que cumplen con el estándar \textsc{ieee} 1284 de protocolos de comunicación en paralelo. Situados en su parte posterior, y tal y como habitualmente sucede con los dispositivos que se conectan a los puertos de expansión \textsc{pci} de una placa base convencional, tras el montaje del periférico los conectores de que dispone quedan expuestos en la parte trasera de la carcasa en la que de manera providencial debe encontrarse instalada la placa.\par
-Las tablas y figuras dispuestas (disposición)
-
-Es posible conectar dispositivos de entrada/salida a la \kpci{} mediante dos conectores de tipo \textsc{ieee} 1284 de 36 terminales situados en su parte trasera. Al iniciar el proyecto se tuvo acceso a dos sondas terminadas por un lado en conectores de este tipo y por otro en cables de cobre convencionales. Para facilitar las conexiones con la tarjeta se diseñó un interfaz más robusto que posteriormente se soldó al extremo terminado en cables de las mencionadas sondas. Es posible conectar cables terminados en conectores de tipo banana y sondas coaxiales a este nuevo interfaz.\par
-A continuación se adjunta una relación con las distintas asignaciones que se dan entre puertos y terminales y se describen los tipos de señal que dichos terminales soportan o entregan.
+Para la interacción con dispositivos externos, la \kpci{} dispone de dos conectores formato mini-\textsc{d} de 36 terminales que cumplen con el estándar \textsc{ieee} 1284 de protocolos de comunicación en paralelo. Si se observa la tarjeta como el rectángulo que forma desde un punto de vista geométrico y observándola de frente, los conectores quedan ubicados en un lado de la tarjeta contiguo a aquel en el que se sitúa la conexión \textsc{pci}. Todo ello de forma que tras el montaje del periférico en la placa base los conectores quedan expuestos en la parte posterior de la carcasa en la que providencialmente debe encontrarse instalada dicha placa, tal y como es habitual en este tipo de dispositivos.\par
+En las figuras expuestas a continuación se etiqueta cada terminal según su ubicación relativa con respecto al conector y al resto de terminales en el mismo, para cada conector, mostrando la distribución definida por el fabricante. Las tablas describen el propósito de cada terminal y se especifica que tipo de señal debe circular por los mismos. % Las tablas y figuras dispuestas (disposición)
 
 \newsavebox{\auxbox}
 \sbox{\auxbox}{\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{chapter01-02.pdf}}
@@ -324,3 +321,11 @@ A continuación se adjunta una relación con las distintas asignaciones que se dan
 	\caption{Relación entre los puertos y terminales que presenta el conector trasero de la \kpci{} etiquetado como \emph{digital}}
 	\label{tab:digital-ports}
 \end{table}
+
+
+\subsection{Desarrollo de una nueva interfaz}\label{subsec:connection-box}
+
+Por razones prácticas, la interfaz original de la \kpci{} basada en dos conectores mini-\textsc{d} no se acomoda a las necesidades que se prevé surgirán durante el desarrollo de las pruebas requeridas para la finalización de este proyecto de fin de carrera. En consecuencia, con el propósito de agilizar en la medida de lo posible la realización de estos ensayos, se decide ampliar la interfaz existente.\par
+Para ello se parte de dos extremos de cable terminados en un conector tipo macho y desprovistos de cubierta, de cada uno de los cuales surgen 36 hilos de cobre recubiertos de plástico flexible coloreado. El patrón de coloreado de las cubiertas individuales es único y no se repite en ninguno de los 36 hilos de que se compone cada extremo de cable. A partir de ahí, se identifica cada terminal de cada conector con el hilo de cobre correspondiente, relacionando las etiquetas que el fabricante pone a los terminales con el código de colores de la cubiertas individuales.\par
+Una vez recopilada esta información, se planea la construcción de una caja de conexiones. El diseño de la caja contempla que se equipe ésta con 72 conectores banana hembra soldados a los 72 hilos de cobre y que comunican con los terminales de los conectores mini-\textsc{d} en los que termina el otro extremo de los cables. Además se planifica la inclusión de cuatro conectores coaxiales con rosca con conexiones redundantes a las que se presupone son las cuatro puertas cuyo uso será más frecuente, las correspondientes al primer canal analógico diferencial y las tierras analógicas; para así facilitar el uso continuado de las mismas. Por último se decide etiquetar la caja de conexiones con marbetes que reproduzcan la nomenclatura visible en la \vref{fig:ports}.\par
+Puede observarse una representación de la caja de conexiones ya terminada en las figuras siguientes. Así mismo se ha añadido un diagrama que representa dicha caja con mayor claridad.
