@@ -1,5 +1,5 @@
 \documentclass[a4paper, 12pt]{book}
-\includeonly{introduction, chapter01, chapter02, chapter03}
+\includeonly{introduction, chapter01, chapter02, chapter03, appendixA}
 \usepackage[a4paper, BCOR1cm]{typearea}
 \usepackage[spanish, es-ucroman]{babel}
 \usepackage[format=hang, font=small, labelfont=bf, labelsep=endash, width=.9\textwidth]{caption}
@@ -10,7 +10,7 @@
 \usepackage[bf, sf]{titlesec}
 \usepackage[nottoc]{tocbibind}
 \usepackage[spanish]{varioref}
-\usepackage[draft]{graphicx}
+\usepackage{graphicx}
 \usepackage{amsfonts, amsmath, amssymb, calc, color, fancyhdr, hyperref, ifthen, listings, nextpage, textcase}
 \usepackage{array, booktabs, tabularx, tabulary, dcolumn, multirow, threeparttable}
 \titleformat{\part}[display]{\centering\huge\sffamily\bfseries}{\partname\ \thepart}{.5\baselineskip}{}
@@ -79,5 +79,13 @@
 \part{Ensayos no destructivos con ultrasonidos}
 
 \include{chapter03}
+
+\part*{Apéndices}
+
+\appendix
+
+\include{appendixA}
+
+\backmatter
 
 \end{document}
