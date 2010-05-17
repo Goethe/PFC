@@ -42,25 +42,18 @@ Por otro lado se da la incapacidad de modificar desde la utilidad propiedades de
 
 Aquí, en este apartado, se muestran los controles y sus funciones para que el usuario pueda comprender su funcionamiento. Para facilitar la búsqueda se ha procedido a agrupar las definiciones empleando como criterio la pertenencia a mismo panel, es decir, todos los controles que aparecen reunidos en un mismo panel en la interfaz de usuario se explican en un mismo cuadro.
 
-\begin{table}
+\begin{table}[htbp]
 	\centering
-	\begin{tabular}{cl}
-		\toprule
-		Control & \multicolumn{1}{c}{Función} \\
-		\midrule
-		Canal & \multirow{3}{.7\textwidth}{Determina el puerto físico asociado al canal en uso. Se trata de un control desplegable que se expande mostrando todos los puertos seleccionables.} \\\\\\
-		\midrule
-		Frecuencia & \multirow{4}{.7\textwidth}{Permite ajustar la frecuencia de muestreo. La nueva frecuencia de muestreo se limita de forma automática de modo que se encuentre entre 1 KHz y la máxima frecuencia de muestreo permitida por la tarjeta.} \\\\\\\\
-		\midrule
-		Ganancia & \multirow{5}{.7\textwidth}{Ajusta el rango de amplificación del amplificador de instrumentación integrado en la tarjeta. Esto a su vez condiciona la amplitud de pico máxima de la señal que entra a la \kpci{}. Este es también un control desplegable y muestra el conjunto de ganancias posibles.} \\\\\\\\\\
-		\midrule
-		Rango & \multirow{5}{.7\textwidth}{Indicador que presenta el rango en el que debe mantenerse la amplitud de la señal que entra a la tarjeta para que el conversor analógico digital no sature dada una configuración de ganancia y método de adquisición. Puede consultarse el \vref{tab:acquisition-modes} al respecto.} \\\\\\\\\\
-		\midrule
-		Control \textsc{u/b} & \multirow{4}{.7\textwidth}{Controla el modo de adquisición en el proceso de muestreo. El modo de adquisición es en la \datx{} una propiedad del objeto dispositivo y no del canal.} \\\\\\\\
-		\midrule
-		Control \textsc{d/s} & \multirow{5}{.7\textwidth}{Permite configurar el modo de terminación correspondiente al canal que se controla. De configurarse como diferencial el listado de canales que muestra el desplegable \emph{Canal} se modifica para concordar con esta configuración.} \\\\\\\\\\
-		\bottomrule
-	\end{tabular}
+	\begin{minipage}{.85\textwidth}
+		\begin{description}
+			\item[Canal] Determina el puerto físico asociado al canal en uso. Se trata de un control desplegable que se expande mostrando todos los puertos seleccionables.
+			\item[Frecuencia] Permite ajustar la frecuencia de muestreo. La nueva frecuencia de muestreo se limita de forma automática de modo que se encuentre entre 1 KHz y la máxima frecuencia de muestreo permitida por la tarjeta.
+			\item[Ganancia] Ajusta el rango de amplificación del amplificador de instrumentación integrado en la tarjeta. Esto a su vez condiciona la amplitud de pico máxima de la señal que entra a la \kpci{}. Este es también un control desplegable y muestra el conjunto de ganancias posibles.
+			\item[Rango] Indicador que presenta el rango en el que debe mantenerse la amplitud de la señal que entra a la tarjeta para que el conversor analógico digital no sature dada una configuración de ganancia y método de adquisición. Puede consultarse el \vref{tab:acquisition-modes} al respecto.
+			\item[Control u/b] Controla el modo de adquisición en el proceso de muestreo. El modo de adquisición es en la \datx{} una propiedad del objeto dispositivo y no del canal.
+			\item[Control d/s] Permite configurar el modo de terminación correspondiente al canal que se controla. De configurarse como diferencial el listado de canales que muestra el desplegable \emph{Canal} se modifica para concordar con esta configuración.
+		\end{description}
+	\end{minipage}
 	\caption{Primer panel de controles}
 	\label{tab:first-panel}
 \end{table}
@@ -68,21 +61,16 @@ Aquí, en este apartado, se muestran los controles y sus funciones para que el us
 El primer panel descrito en el \vref{tab:first-panel} alberga un panel secundario o subpanel en el que se encuentran ubicados dos controles más. Estos controles son el control \emph{on} y el control \emph{off} que respectivamente sirven para iniciar o detener el proceso de muestreo.\par
 El siguiente panel a la derecha con el nombre de \emph{medidas} muestra un indicador numérico verde en fondo negro que, una vez activado el proceso de muestreo, si la aplicación se encuentra funcionando en los modos \emph{valor único} o \emph{media}, presenta el valor que toma la señal en cada evento. Adicionalmente puede verse un panel más pequeño, \emph{tipo de medidas}, dentro de este panel. Los elementos que incorpora el subpanel \emph{tipo de medidas} vienen explicados en el \vref{tab:second-panel}.
 
-\begin{table}
+\begin{table}[htbp]
 	\centering
-	\begin{tabular}{cl}
-		\toprule
-		Control & \multicolumn{1}{c}{Función} \\
-		\midrule
-		Tipo de medidas & \multirow{6}{.7\textwidth}{Representado por tres botones: \emph{valor único}, \emph{media}, y \emph{gráfica}; de los cuales sólo uno puede quedar pulsado al mismo tiempo. Gobierna el modo de funcionamiento del software de control. Los modos de funcionamiento de la aplicación de control se encuentran explicados al detalle en la \vref{subsec:working-modes}.} \\\\\\\\\\\\
-		\midrule
-		Ventana \textsc{fft} & \multirow{5}{.7\textwidth}{Determina la longitud en número de muestras de la ventana empleada para el cálculo de la \textsc{fft}. Este control se presenta en la forma de cuadro de texto editable. El valor introducido en el texto es redondeado a la siguiente potencia de dos.} \\\\\\\\\\
-		\midrule
-		División temporal & \multirow{14}{.7\textwidth}{Este mando está formado por dos controles desplegables. El primero de los cuales permite seleccionar un número de una secuencia que va de 1 a 400. El segundo por su parte sirve para seleccionar una escala de unidades: milisegundos o microsegundos. El propósito del conjunto es controlar la longitud temporal que representa el eje de coordenadas del espacio de coordenadas en el que se representa la señal. Esto que a priori parece no repercutir demasiado en el funcionamiento del software, adquiere una gran importancia dado que el software de control se ha diseñado para asemejarse en su modo de funcionamiento gráfico a un osciloscopio digital. Para más información sobre el funcionamiento de los osciloscopios digitales consúltese la \vref{subsec:representation-modes}.} \\\\\\\\\\\\\\\\\\\\\\\\\\\\ % uno de los factores de diseño. es un detalle sin importancia (inane) adquiere gran importancia dado que la aplicación de control refleja el funcionamiento de un osciloscopio digital.
-		\midrule
-		Cambio & \multirow{6}{.7\textwidth}{Inicialmente la \textsc{fft} de la señal se representa en el espacio de coordenadas más pequeño, arriba a la derecha en la interfaz de usuario, y la señal se representa en el espacio de coordenadas mayor. Mediante este mando es posible reubicar las representaciones de señal y transformada de Fourier.} \\\\\\\\\\\\
-		\bottomrule
-	\end{tabular}
+	\begin{minipage}{.85\textwidth}
+		\begin{description}
+			\item[Tipo de medidas] Representado por tres botones: \emph{valor único}, \emph{media}, y \emph{gráfica}; de los cuales sólo uno puede quedar pulsado al mismo tiempo. Gobierna el modo de funcionamiento del software de control. Los modos de funcionamiento de la aplicación de control se encuentran explicados al detalle en la \vref{subsec:working-modes}.
+			\item[Ventana fft] Determina la longitud en número de muestras de la ventana empleada para el cálculo de la \textsc{fft}. Este control se presenta en la forma de cuadro de texto editable. El valor introducido en el texto es redondeado a la siguiente potencia de dos.
+			\item[División temporal] Este mando está formado por dos controles desplegables. El primero de los cuales permite seleccionar un número de una secuencia que va de 1 a 400. El segundo por su parte sirve para seleccionar una escala de unidades: milisegundos o microsegundos. El propósito del conjunto es controlar la longitud temporal que representa el eje de coordenadas del espacio de coordenadas en el que se representa la señal. Esto que a priori parece no repercutir demasiado en el funcionamiento del software, adquiere una gran importancia dado que el software de control se ha diseñado para asemejarse en su modo de funcionamiento gráfico a un osciloscopio digital. Para más información sobre el funcionamiento de los osciloscopios digitales consúltese la \vref{subsec:representation-modes}.
+			\item[Cambio] Inicialmente la \textsc{fft} de la señal se representa en el espacio de coordenadas más pequeño, arriba a la derecha en la interfaz de usuario, y la señal se representa en el espacio de coordenadas mayor. Mediante este mando es posible reubicar las representaciones de señal y transformada de Fourier.
+		\end{description}
+	\end{minipage}
 	\caption[Segundo panel de controles]{Segundo panel de controles incluido en el panel \emph{tipos de medida}}
 	\label{tab:second-panel}
 \end{table}
@@ -91,3 +79,14 @@ Para terminar existe un panel adicional que incorpora los controles \emph{oscilo
 
 
 \subsection{Modos de funcionamiento}\label{subsec:working-modes}
+
+Los modos de funcionamiento que soporta el software de control de la \kpci{} son tres. En el último de ellos, el modo gráfico, la aplicación consigue simular un osciloscopio digital de acuerdo con los resultados mostrados en la \vref{sec:working-test}. Se han discutido los pormenores de este modo de funcionamiento a lo largo del grueso de la memoria, para evitar reiteraciones innecesarias no volverá a tratarse el tema en este punto.\par
+El resto de modos de funcionamiento podría catalogarse como modos numéricos o no gráficos. La razón es que durante el proceso de adquisición el usuario percibe un valor numérico y no una representación gráfica de la señal si alguno de estos modos se encuentra activado. Es importante destacar que estos modos de funcionamiento no son apropiados para el estudio de señales de alta frecuencia. En situaciones en las que la señal oscila a alta frecuencia el análisis mediante la aplicación configurada para funcionar en alguno de estos dos modos aporta información confusa que no debe ser tomada en cuenta. No obstante, se recomienda encarecidamente su uso de producirse la situación contraria, aquella en la que la señal analizada oscila con lentitud. Esto es debido en principio a la naturaleza de los algoritmos en los que se basan ambos modos de funcionamiento y los resultados que otorgan.\par % en cuanto a que aportan en tales circunstancias / en tal caso información confusa acerca de la señal / señales / información no representativa.
+Los modos numéricos de funcionamiento comparten una mecánica similar, en lo fundamental idéntica, no obstante, diferente en cuanto a implementación. La idea es programar, antes de que dé inicio el proceso de adquisición, los eventos relacionados con el objeto dispositivo de la \datx{} de modo que ocurran periódicamente. Cuando acontece uno de los eventos se obtiene un número real positivo a partir de una interpretación hecha a partir de la muestra o muestras adquiridas desde el evento anterior y se escribe éste en el indicador numérico que forma parte de la interfaz de usuario. Hasta ahí las coincidencias entre los métodos que ejecuta cada modo de funcionamiento.\par % de modo cada cierto número periódico de muestras obtenidas se programan
+Las diferencias entre el método \emph{valor único} y \emph{media} son las que siguen:
+
+\begin{itemize}
+	\item En primer lugar, con el modo \emph{valor único} se obtiene el valor de la muestra adquirida justo antes después de producirse el evento, mientras que el modo \emph{media} proporciona la media aritmética de las muestras obtenidas desde el último evento anterior al actual al ritmo especificado por el control \textsf{frecuencia}.
+	\item Más allá de lo inferido a partir del nombre de los modos, estos se diferencian en el criterio empleado en la definición del periodo entre eventos y en la herramienta que los genera. El método \emph{valor único} emplea el reloj interno de la \kpci{} a modo de temporizador, los eventos en este modo se programan para que sucedan cada cuarto de segundo. Por el contrario el modo \emph{media} emplea una especie de testigo electrónico que implementa la \datx{} y que produce un evento cada vez que se adquiere un determinado número de muestras definido por el usuario de \matlab{}, en este caso el programador, a través de la propiedad \textsf{SamplesAcquiredFcnCount}. El número de muestras que debe adquirirse antes de que se produzca un evento se ha configurado a un valor que queda entre la cantidad de muestras que se obtienen en 250 milisegundos a la frecuencia de muestreo establecida y un mínimo que \matlab{} actualiza al modificarse esta frecuencia.
+	\item Por último, cabe hacer mención al procedimiento empleado para obtener el valor que se muestra por pantalla. El modo \emph{valor único} emplea la función \texttt{getsample} que extrae una única muestra de la tarjeta de adquisición, de este forma la tarjeta pasa gran parte del periodo entre eventos en reposo. El modo \emph{media}, por el contrario, utiliza la función \texttt{mean} sobre \texttt{getdata} que recupera las muestras almacenadas hasta el momento en el buffer en tanto que lo borra. La razón de que estos modos de funcionamiento no sean apropiados para el estudio de señales de alta frecuencia es diferente según el modo. % Dependiente del modo pero radica en la forma de obtener el número que se muestra por pantalla. El primer método aplicado a una señal que oscila no en fase con la señal de muestreo hace parecer el comportamiento de la señal errático. El segundo, la media de muchos periodos de una señal centrada en el origen tiende a cero.
+\end{itemize}
