@@ -3,7 +3,7 @@
 Para preparar el sistema de adquisición y procesado de señales se dispuso en origen de una tarjeta de adquisición con interfaz \textsc{pci}. En concreto se ha empleado el modelo \kpci{} de la casa \emph{Keithley}. A continuación se exponen las características técnicas que ofrece este dispositivo, en apartados siguientes una breve descripción funcional y la disposición y uso de los puertos presentes en el mencionado dispositivo.
 
 
-\section{Características técnicas del hardware}
+\section{Características técnicas del hardware}\label{sec:technical-features}
 
 La tarjeta \kpci{} puede emplearse para la adquisición y conversión de señales analógicas en señales digitales, para sintetizar señales analógicas a partir de señales digitales previamente generadas o almacenadas, o ---gracias a sus 32 puertos digitales de propósito general--- trabajar con señales digitales.\par
 El primer bloque del sistema electrónico de medida propuesto, es decir el sistema de adquisición y procesado de señales, tan sólo requiere de la función de adquisición analógica de la tarjeta. Por ello, de entre todas las características del dispositivo, se ha creído conveniente resumir a continuación aquellas que tienen relación directa con dicha función. Para obtener información detallada sobre la relación que estos atributos guardan con el proceso de adquisición de señales analógicas en la tarjeta \kpci{}, recúrrase a la \vref{sec:functional-description}.
@@ -139,7 +139,7 @@ Las ventajas que presenta el uso de uno u otro tipo de canales son comprensibles
 \par
 
 
-\subsection{Rendimiento}
+\subsection{Rendimiento}\label{subsec:throughput}
 
 Se entiende como rendimiento la cantidad máxima de operaciones de conversión que el dispositivo puede realizar por unidad de tiempo. Para que una de estas operaciones contribuya a la medida de rendimiento debe superar un requisito de precisión.\par
 El rendimiento óptimo de la tarjeta \kpci{} especificado por el fabricante es de cien mil operaciones por segundo (100 KS/s). No obstante se advierte, para obtener este nivel de rendimiento es necesario alimentar la tarjeta con una fuente de tensión ideal. Además, es importante que exista adaptación de impedancias entre el circuito de alimentación y el puerto por el que se quiere introducir la señal. Aún en estas condiciones el valor proporcionado por la casa Keithley está sujeto a un error relativo máximo del $0.02\%$, el cual supone un error absoluto máximo de dos mil operaciones por segundo (2 KS/s).

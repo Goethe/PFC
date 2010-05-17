@@ -1,19 +1,23 @@
 \chapter{Guía de usuario de la aplicación de control}\label{sec:apendixA}
 
-% El propósito de esta memoria es exponer los procedimientos mediante los cuales se ha abordado el tema de investigación propuesto para el proyecto fin de carrera que documenta y las conclusiones obtenidas tras ejecutar dichos procedimientos. Se considera apropiado, no obstante, añadir una guía de usuario para el uso de la solución para la representación de señales y sus espectros en frecuencia aportada durante la realización del proyecto, fuera del grueso de la memoria, en la sección de apéndices.\par
-% Es sabido que el propósito de una memoria de proyecto fin de carrera es exponer los procedimientos mediante los cuales se aborda un determinado tema de investigación, dar a conocer los frutos obtenidos en la ejecución de los mismos y alcanzar una serie de conclusiones a partir de esos resultados. Este documento se ha desarrollado (acatando estos principios) teniendo esta idea en mente, no obstante, se considera apropiado ampliar el contenido del mismo incluyendo un manual que instruya en el uso del software de representación de señales y espectros en frecuencia realizado como parte del proyecto que se documenta. La razón de esta adición es el posible interés que pudiese suscitar la aplicación en sí misma con independencia del tema central del documento. Se entiende pues, que al no formar parte de los objetivos que persigue la memoria se haya ubicado al final de ésta en forma de apéndice. \par % en la parte del documento que trata los apéndices aparte del grueso del documento. (en la sección de apéndices) debido
-% No es objetivo de la memoria - la aplicación se ha desarrollado en el curso del proyecto - puede ser de interés con independencia del resto del documento / de la temática central que trata la memoria / tema / materia - se aleja de las pretensiones convencionales de la memoria - cualquier asunto que se aleja - por otro lado -
-% Por otro lado, el software para la representación de señales y espectros en frecuencia desarrollado durante el curso del proyecto puede suscitar un interés con independencia del tema central de la memoria. En vista a que la inclusión de un manual de usuario para la aplicación se aleja de las pretensiones convencionales de una memoria de \textsc{pfc} se ha decidido incluir el manual, pero en forma de apéndice al final del documento
-Es sabido que el propósito de una memoria de proyecto fin de carrera es exponer los procedimientos mediante los cuales se aborda un determinado tema de investigación, dar a conocer los frutos obtenidos en la ejecución de los mismos y alcanzar una serie de conclusiones a partir de esos resultados. Por tanto, la inclusión de un manual para el uso del software de representación de señales y espectros en frecuencia se aleja de las pretensiones convencionales de una memoria de \textsc{pfc}. No obstante, la aplicación informática se ha desarrollado durante el curso del proyecto y forma parte del mismo. Además, cabe la posibilidad de que suscitase interés en el lector con independencia del grueso central de la memoria. Teniendo ésto en consideración, se ha creído conveniente la adición del manual al documento pero en forma de apéndice al final de éste.\par
+Es sabido que el propósito de una memoria de proyecto fin de carrera es exponer los procedimientos mediante los cuales se aborda un determinado tema de investigación, dar a conocer los frutos obtenidos en la ejecución de los mismos y alcanzar una serie de conclusiones a partir de esos resultados. Por tanto, la inclusión de un manual de usuario del software de representación de señales y espectros en frecuencia se aleja de las pretensiones convencionales de una memoria de \textsc{pfc}. No obstante, la aplicación informática se ha desarrollado durante el curso del proyecto y forma parte del mismo. Además, cabe la posibilidad de que suscite interés en un público que encuentre de poca utilidad el resto del texto. Teniendo ésto en consideración, se ha creído conveniente la adición del manual al documento pero en forma de apéndice al final de éste.\par
 Este manual está destinado a todo aquel usuario interesado en la representación de señales eléctricas en el contexto que se ha expuesto anteriormente en el libro. En concreto, puede ser de especial interés para aquellos usuarios que deseen representar el espectro en frecuencia de una señal eléctrica en tiempo real, de forma que al mismo tiempo pueda visualizarse la señal correspondiente a dicho espectro.\par
-% Los objetivos que pretende esta guía son: en primer lugar, ofrecer de forma breve una visión general de la aplicación; en segundo lugar, proponer unas pautas para el correcto uso de la aplicación; y el tercer objetivo de este documento es servir como manual de consulta, en vistas a recordar cual es con detalle la funcionalidad de cada elemento de la interfaz gráfica de la aplicación. % dado que el uso de la aplicación se considera sencillo e intuitivo
-% brevemente, visión general - pautas para facilitar el aprendizaje / el proceso de adaptación del usuario a la aplicación - puesto que el uso es sencillo el verdadero propósito de la guía es servir de manual de consulta en caso de que se olvide algún detalle en cuanto al funcionamiento de la interfaz.
 Los objetivos que pretende esta guía son: en primer lugar, ofrecer una visión general de la aplicación que hace hincapié en el aspecto de la interfaz y en las posibilidades del software; en segundo lugar se dan unas pautas para facilitar el proceso de adaptación del usuario a la interfaz que muestra la aplicación; pero, puesto que el uso de la aplicación es sencillo, el verdadero propósito de esta guía es servir de manual de consulta que permita recordar en caso de olvido cual es con detalle la funcionalidad de los elementos que componen la interfaz de usuario.
 
 
 \section{Un vistazo general}
 
-En la figura --- puede observarse el aspecto general (justo después de ejecutarse y antes de ser utilizada) que muestra la aplicación de control. Como puede verse, se ha dividido la interfaz gráfica en distintos paneles en los que se reúnen los elementos de que consta esta interfaz. En el primer panel se observan los elementos que permiten controlar los parámetros de configuración de la tarjeta de adquisición. Un segundo panel contiene un monitor en el que se representan los resultados del proceso de adquisición en los modos numéricos o no visuales de funcionamiento de la aplicación. Además, un subpanel alberga los controles que permiten, por un lado, controlar el modo de funcionamiento y, por otro, el comportamiento de la función de representación. A continuación pueden observarse dos paneles que contienen los espacios de coordenadas destinados a alojar las representaciones de señal y espectro y varios grupos de controles, uno por cada espacio de coordenadas, cada uno de los cuales controla propiedades del espacio de coordenadas al que está sujeto. Por último, un quinto panel dispone de los mandos necesarios para habilitar o deshabilitar la representación de señal, espectro o ambos.
+En la figura \vref{fig:interface} puede observarse el aspecto general (justo después de ejecutarse y antes de ser utilizada) que muestra la aplicación de control. Como puede verse, se ha dividido la interfaz gráfica en distintos paneles en los que se reúnen los elementos de que consta esta interfaz. En el primer panel se observan los elementos que permiten controlar los parámetros de configuración de la tarjeta de adquisición. Un segundo panel contiene un monitor en el que se representan los resultados del proceso de adquisición en los modos numéricos o no visuales de funcionamiento de la aplicación. Además, un subpanel alberga los controles que permiten, por un lado, gobernar el modo de funcionamiento y, por otro, el comportamiento de la función de representación.
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics{aplicacion/83of.png}
+	\end{center}
+	\caption{Aspecto de la interfaz con controles y gráficos separados por paneles}
+	\label{fig:interface}
+\end{figure}
+
+A continuación pueden observarse dos paneles que contienen los espacios de coordenadas destinados a alojar las representaciones de señal y espectro y varios grupos de controles, uno por cada espacio de coordenadas, cada uno de los cuales controla propiedades del espacio de coordenadas al que está sujeto. Por último, un quinto panel dispone de los mandos necesarios para habilitar o deshabilitar la representación de señal, espectro o ambos.
 
 
 \subsection{Especificaciones técnicas y limitaciones}
@@ -28,27 +32,62 @@ A continuación se enumeran brevemente los requisitos necesarios para poder emple
 	\item Es necesaria una interfaz externa compatible con los conectores mini-\textsc{d} de la \kpci{}. Puede emplearse por ejemplo la caja de conexiones descrita en la \vref{subsec:connection-box}, en ese caso será necesaria al menos una sonda en la que, por lo menos, una de las terminaciones sea compatible con la caja de conexiones.
 \end{itemize}
 
-% \begin{table}
-% 	\centering
-% 	\begin{tabulary}{.9\textwidth}{>{\arraybackslash}L >{\arraybackslash}L}
-% 		\labelitemi\, Es necesario un \textsc{pc} funcionando sobre Microsoft Windows & \labelitemi\, Es necesario que en dicho \textsc{pc} se halle instalada la suite matemática \matlab{} \\
-% 		\labelitemi\, Es necesario que en dicho \textsc{pc} se halle instalada correctamente la \kpci{} & \labelitemi\, Los drivers de la \kpci{} proporcionados por el fabricante deben estar instalados en el \textsc{pc} \\
-% 		\labelitemi\, Son necesarios los archivos correspondientes a la aplicación de control, estos deben ubicarse en un directorio al que se tenga acceso desde \matlab{} & Son necesarias sondas
-% 	\end{tabulary}
-% 	\caption{Requisitos para el funcionamiento de la aplicación de control}
-% 	\label{tab:requirements}
-% \end{table}
+% Una vez reunidos todos estos requisitos puede ponerse en funcionamiento la aplicación.\par
+Como indica su título, este apartado se ha pensado además para indicar las limitaciones que muestra la aplicación de control. Desde el punto de vista de su origen estas limitaciones pueden dividirse en limitaciones derivadas del uso de la \kpci{} y en limitaciones introducidas por la propio software. Para una mayor información sobre las primeras puede consultarse de \vrefrange{sec:technical-features}{subsec:throughput} en el segundo capítulo. A destacar el comportamiento del rendimiento de la tarjeta que se verá reducido según se vayan añadiendo canales al objeto dispositivo.\par
+En cuanto a las limitaciones que introduce el software son las siguientes. Para empezar es destacable el hecho de que únicamente es posible controlar un canal de muestreo desde la aplicación de control. El canal controlado puede estar asociado a cualquier puerto físico de la tarjeta pero sólo se da acceso a un único canal por sesión. A esta limitación se debe añadir que desde el software es imposible crear o eliminar canales u objetos dispositivo.\par
+Por otro lado se da la incapacidad de modificar desde la utilidad propiedades de la configuración de la tarjeta que no vengan representadas por controles en la interfaz de usuario. Algunos de estos controles se deshabilitan durante la actividad de muestreo, se ha hecho así para impedir que se altere el valor de parámetros tales como la frecuencia de muestreo en tiempo real. En ocasiones es \matlab{} desde un nivel superior en la jerarquía del software el que impide que una de estas propiedades cambie al vuelo, en el resto de casos se ha hecho para evitar problemas de rendimiento experimentados durante pruebas de software.\par % Matlab lo impide porque son propiedades de la tarjeta y no del canal y podría afectar a canales activos
 
-% Windows, Matlab, kpci, sondas, drivers k, archivos aplicación
-% frecuencia máxima (considerando que se reduce - remitir al episodio de optimización de frecuencia), número máximo de canales simultáneos,
-% 
-% Si bien la aplicación de control de la \kpci{} forma parte del proyecto pues es necesaria en una etapa del mismo para poder ver de un vistazo el pulso acústico recibido y su espectro, no se considera un objetivo de la memoria explicar su funcionamiento. No por ello deja de ser interesante para algunos lectores, y siguiendo la premisa de exponer todo aquello en relación. %POR DIOS NO LEAS LO QUE PONE EN ESTE PÁRRAFO
-% Este manual está destinado a todo aquel usuario que desee emplear la solución propuesta en este proyecto fin de carrera a la necesidad de visualizar señales eléctricas y su respectivo espectro en frecuencia. Se entiende el uso de la aplicación en el contexto en el que se ha desarrollado, un \textsc{pc} funcionando sobre Microsoft Windows, en el que se encuentre instalada una copia de \matlab{}, en el que se tenga acceso a la propia aplicación de control y en el que se halle correctamente instalada una tarjeta de adquisición de señales \kpci{} de la casa \emph{Keithley}. Si se reúnen todos los elementos que conforman esta configuración 
-% Lo que se persigue es dar un vistazo general de la aplicación, proporcionar unas pautas para el correcto uso de la aplicación, si bien se es partícipe en la idea de que es lo suficientemente intuitiva como para no plantear ningún problema al público al que se encuentra destinada y, en último término, como documento de consulta, de hecho este es el principal objetivo del presente documento. Sin más preámbulos, una overview de la app.
-% La idea es facilitar 
-% Este manual está pensado para todo aquel usuario que desee emplear la aplicación de control y representación de señales desarrollada específicamente para este proyecto en un experimento de adquisición de señales. % destinado a...
-% 
-% 
-% \section{Características de la aplicación}
-% 
-% Este es un ejemplo de como utilizar la aplicación de control.
+
+\subsection{Instrucciones de uso}
+
+Aquí, en este apartado, se muestran los controles y sus funciones para que el usuario pueda comprender su funcionamiento. Para facilitar la búsqueda se ha procedido a agrupar las definiciones empleando como criterio la pertenencia a mismo panel, es decir, todos los controles que aparecen reunidos en un mismo panel en la interfaz de usuario se explican en un mismo cuadro.
+
+\begin{table}
+	\centering
+	\begin{tabular}{cl}
+		\toprule
+		Control & \multicolumn{1}{c}{Función} \\
+		\midrule
+		Canal & \multirow{3}{.7\textwidth}{Determina el puerto físico asociado al canal en uso. Se trata de un control desplegable que se expande mostrando todos los puertos seleccionables.} \\\\\\
+		\midrule
+		Frecuencia & \multirow{4}{.7\textwidth}{Permite ajustar la frecuencia de muestreo. La nueva frecuencia de muestreo se limita de forma automática de modo que se encuentre entre 1 KHz y la máxima frecuencia de muestreo permitida por la tarjeta.} \\\\\\\\
+		\midrule
+		Ganancia & \multirow{5}{.7\textwidth}{Ajusta el rango de amplificación del amplificador de instrumentación integrado en la tarjeta. Esto a su vez condiciona la amplitud de pico máxima de la señal que entra a la \kpci{}. Este es también un control desplegable y muestra el conjunto de ganancias posibles.} \\\\\\\\\\
+		\midrule
+		Rango & \multirow{5}{.7\textwidth}{Indicador que presenta el rango en el que debe mantenerse la amplitud de la señal que entra a la tarjeta para que el conversor analógico digital no sature dada una configuración de ganancia y método de adquisición. Puede consultarse el \vref{tab:acquisition-modes} al respecto.} \\\\\\\\\\
+		\midrule
+		Control \textsc{u/b} & \multirow{4}{.7\textwidth}{Controla el modo de adquisición en el proceso de muestreo. El modo de adquisición es en la \datx{} una propiedad del objeto dispositivo y no del canal.} \\\\\\\\
+		\midrule
+		Control \textsc{d/s} & \multirow{5}{.7\textwidth}{Permite configurar el modo de terminación correspondiente al canal que se controla. De configurarse como diferencial el listado de canales que muestra el desplegable \emph{Canal} se modifica para concordar con esta configuración.} \\\\\\\\\\
+		\bottomrule
+	\end{tabular}
+	\caption{Primer panel de controles}
+	\label{tab:first-panel}
+\end{table}
+
+El primer panel descrito en el \vref{tab:first-panel} alberga un panel secundario o subpanel en el que se encuentran ubicados dos controles más. Estos controles son el control \emph{on} y el control \emph{off} que respectivamente sirven para iniciar o detener el proceso de muestreo.\par
+El siguiente panel a la derecha con el nombre de \emph{medidas} muestra un indicador numérico verde en fondo negro que, una vez activado el proceso de muestreo, si la aplicación se encuentra funcionando en los modos \emph{valor único} o \emph{media}, presenta el valor que toma la señal en cada evento. Adicionalmente puede verse un panel más pequeño, \emph{tipo de medidas}, dentro de este panel. Los elementos que incorpora el subpanel \emph{tipo de medidas} vienen explicados en el \vref{tab:second-panel}.
+
+\begin{table}
+	\centering
+	\begin{tabular}{cl}
+		\toprule
+		Control & \multicolumn{1}{c}{Función} \\
+		\midrule
+		Tipo de medidas & \multirow{6}{.7\textwidth}{Representado por tres botones: \emph{valor único}, \emph{media}, y \emph{gráfica}; de los cuales sólo uno puede quedar pulsado al mismo tiempo. Gobierna el modo de funcionamiento del software de control. Los modos de funcionamiento de la aplicación de control se encuentran explicados al detalle en la \vref{subsec:working-modes}.} \\\\\\\\\\\\
+		\midrule
+		Ventana \textsc{fft} & \multirow{5}{.7\textwidth}{Determina la longitud en número de muestras de la ventana empleada para el cálculo de la \textsc{fft}. Este control se presenta en la forma de cuadro de texto editable. El valor introducido en el texto es redondeado a la siguiente potencia de dos.} \\\\\\\\\\
+		\midrule
+		División temporal & \multirow{14}{.7\textwidth}{Este mando está formado por dos controles desplegables. El primero de los cuales permite seleccionar un número de una secuencia que va de 1 a 400. El segundo por su parte sirve para seleccionar una escala de unidades: milisegundos o microsegundos. El propósito del conjunto es controlar la longitud temporal que representa el eje de coordenadas del espacio de coordenadas en el que se representa la señal. Esto que a priori parece no repercutir demasiado en el funcionamiento del software, adquiere una gran importancia dado que el software de control se ha diseñado para asemejarse en su modo de funcionamiento gráfico a un osciloscopio digital. Para más información sobre el funcionamiento de los osciloscopios digitales consúltese la \vref{subsec:representation-modes}.} \\\\\\\\\\\\\\\\\\\\\\\\\\\\ % uno de los factores de diseño. es un detalle sin importancia (inane) adquiere gran importancia dado que la aplicación de control refleja el funcionamiento de un osciloscopio digital.
+		\midrule
+		Cambio & \multirow{6}{.7\textwidth}{Inicialmente la \textsc{fft} de la señal se representa en el espacio de coordenadas más pequeño, arriba a la derecha en la interfaz de usuario, y la señal se representa en el espacio de coordenadas mayor. Mediante este mando es posible reubicar las representaciones de señal y transformada de Fourier.} \\\\\\\\\\\\
+		\bottomrule
+	\end{tabular}
+	\caption[Segundo panel de controles]{Segundo panel de controles incluido en el panel \emph{tipos de medida}}
+	\label{tab:second-panel}
+\end{table}
+
+Para terminar existe un panel adicional que incorpora los controles \emph{osciloscopio} y \emph{fft}. Sendos mandos permiten en el modo de funcionamiento gráfico habilitar o inhabilitar la representación de la señal y/o el cálculo y representación de la \textsc{fft} de la señal respectivamente. Asimismo, cada uno de los paneles en los que se sitúan los espacios de coordenadas está dotado de dos controles con una etiqueta que representa los signos matemáticos de la suma y la resta. Estos botones controlan la escala axial en relación con el eje de ordenadas en el espacio de coordenadas al que acompañan.
+
+
+\subsection{Modos de funcionamiento}\label{subsec:working-modes}
