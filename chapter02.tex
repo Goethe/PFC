@@ -1,5 +1,17 @@
 \chapter{Aplicación para el control de la tarjeta}
 
+\section{Consecuencias de emplear la kpci-3108}
+
+% Estas son un poco las competencias que debería tener la aplicación de control, aunque yo sé que los objetivos que se esperaban de la que se ha desarrollado con el proyecto abarcan éstas y algunas otras, en realidad no tanto, en lugar de almacenar presentar los datos. Sólo que es importante decir con detalle como se quieren representar.
+La consecuencia directa de emplear una tarjeta que necesita de un \textsc{pc} para funcionar y que no lo hace de forma autónoma es que se necesita de un software para el control de dicha tarjeta. El software de control debe encargarse de las siguientes tareas:
+
+\begin{itemize}
+	\item Controlar la sesión de adquisición. Iniciar y detener la sesión. Permitir al usuario modificar aspectos de la sesión como son los puertos empleados, la frecuencia de muestreo, la configuración de los modos de adquisición entre otros.
+	\item Dar formato a las muestras obtenidas para que estas puedan ser procesadas, almacenadas, manejadas por el usuario.
+	\item Recuperar las muestras desde los búffers del dispositivo y almacenarlas en la memoria secundaria del \textsc{pc} para que el usuario tenga acceso a ellas.
+\end{itemize}
+
+
 \section{Introducción}
 
 Desde los inicios de este proyecto lo que se ha pretendido es emplear un sistema de adquisición de señales como un osciloscopio digital. Para ello son necesarios la tarjeta de adquisición y un software que permita al usuario controlar el dispositivo desde una interfaz intuitiva y visualizar los resultados de forma sencilla.
