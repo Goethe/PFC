@@ -1,20 +1,32 @@
 \chapter{Aplicación para el control de la tarjeta}
 
-\section{Consecuencias de emplear la kpci-3108}
-
-% Estas son un poco las competencias que debería tener la aplicación de control, aunque yo sé que los objetivos que se esperaban de la que se ha desarrollado con el proyecto abarcan éstas y algunas otras, en realidad no tanto, en lugar de almacenar presentar los datos. Sólo que es importante decir con detalle como se quieren representar.
-La consecuencia directa de emplear una tarjeta que necesita de un \textsc{pc} para funcionar y que no lo hace de forma autónoma es que se necesita de un software para el control de dicha tarjeta. El software de control debe encargarse de las siguientes tareas:
-
-\begin{itemize}
-	\item Controlar la sesión de adquisición. Iniciar y detener la sesión. Permitir al usuario modificar aspectos de la sesión como son los puertos empleados, la frecuencia de muestreo, la configuración de los modos de adquisición entre otros.
-	\item Dar formato a las muestras obtenidas para que estas puedan ser procesadas, almacenadas, manejadas por el usuario.
-	\item Recuperar las muestras desde los búffers del dispositivo y almacenarlas en la memoria secundaria del \textsc{pc} para que el usuario tenga acceso a ellas.
-\end{itemize}
-
-
 \section{Introducción}
 
-Desde los inicios de este proyecto lo que se ha pretendido es emplear un sistema de adquisición de señales como un osciloscopio digital. Para ello son necesarios la tarjeta de adquisición y un software que permita al usuario controlar el dispositivo desde una interfaz intuitiva y visualizar los resultados de forma sencilla.
+% \section{Consecuencias de emplear la kpci-3108}
+% Estas son un poco las competencias que debería tener la aplicación de control, aunque yo sé que los objetivos que se esperaban de la que se ha desarrollado con el proyecto abarcan éstas y algunas otras, en realidad no tanto, en lugar de almacenar presentar los datos. Sólo que es importante decir con detalle como se quieren representar.
+% La consecuencia directa de emplear una tarjeta que necesita de un \textsc{pc} para funcionar y que no lo hace de forma autónoma es que se necesita de un software para el control de dicha tarjeta. El software de control debe encargarse de las siguientes tareas:
+
+% \begin{itemize}
+% 	\item Controlar la sesión de adquisición. Iniciar y detener la sesión. Permitir al usuario modificar aspectos de la sesión como son los puertos empleados, la frecuencia de muestreo, la configuración de los modos de adquisición entre otros.
+% 	\item Dar formato a las muestras obtenidas para que estas puedan ser procesadas, almacenadas, manejadas por el usuario.
+% 	\item Recuperar las muestras desde los búffers del dispositivo y almacenarlas en la memoria secundaria del \textsc{pc} para que el usuario tenga acceso a ellas.
+% \end{itemize}
+% Desde los inicios de este proyecto lo que se ha pretendido es emplear un sistema de adquisición de señales como un osciloscopio digital. Para ello son necesarios la tarjeta de adquisición y un software que permita al usuario controlar el dispositivo desde una interfaz intuitiva y visualizar los resultados de forma sencilla.
+La consecuencia directa de emplear la \kpci{} como instrumento principal en la adquisición de señales analógicas en contraposición con un dispositivo de adquisición autónomo que no requiera de un \textsc{pc} que lo gobierne, es la necesidad de un software de control que se ocupe entre otras de las siguientes tareas:
+
+\begin{itemize}
+	\item Iniciar y detener la sesión de adquisición.
+	\item Interactuar con los drivers de la tarjeta por medio del sistema operativo para controlar por voluntad del usuario parámetros de la sesión de adquisición como pueden ser, por ejemplo, puertos de entrada, modos de adquisición y terminación, o frecuencia de muestreo.
+	\item Realizar el mantenimiento de los buffers de la tarjeta de adquisición. Tarea que incluye dar formato a las muestras almacenadas en el o los buffers y trasladar las mismas a la memoria secundaria del \textsc{pc} para que de ese modo puedan ser posteriormente manipuladas.
+\end{itemize}
+
+Puesto que la aplicación de control es necesaria y lo es también el esfuerzo de realizarla se decide con anterioridad al proceso de creación diseñar el software de forma que pueda desarrollar competencias adicionales. Así, además de las tareas básicas el software de control se diseña para que pueda cumplir con los siguientes cometidos.
+
+\begin{itemize}
+	\item Mostrar en un visor el valor de las muestras resultantes de muestrear la señal a 4 muestras por segundo.
+	\item En un modo de funcionamiento diferente, mostrar en el mismo visor, cada cuarto de segundo aproximadamente, la media aritmética del valor de las muestras que de tiempo a recoger en dicho periodo a una frecuencia de muestreo especificada por el usuario.
+	\item Funcionando en un modo gráfico debe ser capaz de representar la señal y el espectro en frecuencia de la misma en dos espacios de coordenadas separados. A voluntad del usuario pueden ser habilitadas o deshabilitadas a voluntad del usuario cualquiera de estas dos representaciones o ambas.
+\end{itemize}
 
 
 \subsection{Funcionamiento de un osciloscopio}
