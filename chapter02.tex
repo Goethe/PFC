@@ -2,16 +2,6 @@
 
 \section{Introducción}
 
-% \section{Consecuencias de emplear la kpci-3108}
-% Estas son un poco las competencias que debería tener la aplicación de control, aunque yo sé que los objetivos que se esperaban de la que se ha desarrollado con el proyecto abarcan éstas y algunas otras, en realidad no tanto, en lugar de almacenar presentar los datos. Sólo que es importante decir con detalle como se quieren representar.
-% La consecuencia directa de emplear una tarjeta que necesita de un \textsc{pc} para funcionar y que no lo hace de forma autónoma es que se necesita de un software para el control de dicha tarjeta. El software de control debe encargarse de las siguientes tareas:
-
-% \begin{itemize}
-% 	\item Controlar la sesión de adquisición. Iniciar y detener la sesión. Permitir al usuario modificar aspectos de la sesión como son los puertos empleados, la frecuencia de muestreo, la configuración de los modos de adquisición entre otros.
-% 	\item Dar formato a las muestras obtenidas para que estas puedan ser procesadas, almacenadas, manejadas por el usuario.
-% 	\item Recuperar las muestras desde los búffers del dispositivo y almacenarlas en la memoria secundaria del \textsc{pc} para que el usuario tenga acceso a ellas.
-% \end{itemize}
-% Desde los inicios de este proyecto lo que se ha pretendido es emplear un sistema de adquisición de señales como un osciloscopio digital. Para ello son necesarios la tarjeta de adquisición y un software que permita al usuario controlar el dispositivo desde una interfaz intuitiva y visualizar los resultados de forma sencilla.
 La consecuencia directa de emplear la \kpci{} como instrumento principal en la adquisición de señales analógicas en contraposición con un dispositivo de adquisición autónomo que no requiera de un \textsc{pc} que lo gobierne, es la necesidad de un software de control que se ocupe entre otras de las siguientes tareas:
 
 \begin{itemize}
@@ -20,18 +10,18 @@ La consecuencia directa de emplear la \kpci{} como instrumento principal en la a
 	\item Realizar el mantenimiento de los buffers de la tarjeta de adquisición. Tarea que incluye dar formato a las muestras almacenadas en el o los buffers y trasladar las mismas a la memoria secundaria del \textsc{pc} para que de ese modo puedan ser posteriormente manipuladas.
 \end{itemize}
 
-Puesto que la aplicación de control es necesaria y lo es también el esfuerzo de realizarla se decide con anterioridad al proceso de creación diseñar el software de forma que pueda desarrollar competencias adicionales. Así, además de las tareas básicas el software de control se diseña para que pueda cumplir con los siguientes cometidos.
+La idea original consistía en dotar al software de control de una interfaz de usuario con la que controlar cómodamente todos estos aspectos de la sesión de adquisición. A partir de ahí y puesto que ha de hacerse un esfuerzo para desarrollar la aplicación de control se decide diseñar el software de forma que pueda desarrollar competencias adicionales. Así, además de las tareas básicas el software de control se diseña para que pueda cumplir con los siguientes cometidos.
 
 \begin{itemize}
 	\item Mostrar en un visor el valor de las muestras resultantes de muestrear la señal a 4 muestras por segundo.
-	\item En un modo de funcionamiento diferente, mostrar en el mismo visor, cada cuarto de segundo aproximadamente, la media aritmética del valor de las muestras que de tiempo a recoger en dicho periodo a una frecuencia de muestreo especificada por el usuario.
+	\item En un modo de funcionamiento diferente, mostrar en el mismo visor, cada cuarto de segundo aproximadamente, la media aritmética del valor de las muestras recogidas en dicho periodo a una frecuencia de muestreo especificada por el usuario.
 	\item Funcionando en un modo gráfico debe ser capaz de representar la señal y el espectro en frecuencia de la misma en dos espacios de coordenadas separados. A voluntad del usuario pueden ser habilitadas o deshabilitadas a voluntad del usuario cualquiera de estas dos representaciones o ambas.
 \end{itemize}
 
 
 \subsection{Funcionamiento de un osciloscopio}
 
-Como se ha mencionado, el modelo de funcionamiento utilizado como referencia en el desarrollo de la aplicación de control es el de un osciloscopio digital. Por ello, y en base a las conclusiones extraídas durante la realización de este proyecto, se ha creído conveniente explicar de forma breve como funcionan de manera habitual este tipo de osciloscopios.\par
+El modo gráfico toma como patrón los osciloscopios digitales, es decir, en el modo gráfico el software de control debe comportarse en cierta medida como un osciloscopio digital salvo por el hecho de que la representación de la señal debe acompañarse de una figura adicional que muestre el espectro del fragmento de señal que se ilustra en cada instante. Para comprender cómo se ha desarrollado el código que sostiene este aspecto del funcionamiento del software de control y en última instancia como funciona la aplicación gráfica en sí un buen comienzo es formarse una concepto general de cuál es comportamiento primitivo de los osciloscopios digitales. En base a las conclusiones extraídas durante la realización de este proyecto se considera ésta una buena idea, por eso en esta memoria se ha querido describir sin profundizar demasiado en los detalles cómo es el funcionamiento de los osciloscopios digitales.\par
 Los osciloscopios analógicos emplean un tubo de rayos catódicos y un monitor de fósforo para generar una imagen de la señal. El cursor que el tubo dibuja en el monitor lo va barriendo de izquierda a derecha con periodicidad, y su posición vertical refleja a cada momento el valor de tensión de la señal eléctrica que entra al osciloscopio. El monitor preserva durante breves instantes una traza del cursor y así se forma la imagen que representa a la señal.\par
 En la actualidad suelen emplearse osciloscopios digitales. El procedimiento que sigue un osciloscopio digital para representar señales es completamente diferente al que siguen los osciloscopios analógicos. No existe ningún cursor, se generan fotogramas de la señal en seguimiento\footnote{En realidad, los osciloscopios digitales modernos pueden representar por pantalla varias señales simultáneamente.}, imágenes completas que cubren la pantalla entera con un fragmento de señal, una vez aparece una imagen por pantalla permanece estática hasta que una nueva imagen la sustituye. La dimensión temporal de la representación determina en teoría cuanto debe esperar el osciloscopio desde que se muestra por pantalla una imagen hasta que se puede generar la siguiente. La espera resulta evidente puesto que la señal no se conoce de antemano, al contrario que ocurre con los osciloscopios analógicos que representan la señal en tiempo real, si se desea representar por pantalla un fragmento de la señal de una determinada duración el osciloscopio debe esperar hasta que transcurra dicho periodo de tiempo. En otras palabras, aparece un retardo que depende exclusivamente de la duración del fragmento de señal necesario para cubrir la ventana del osciloscopio, o lo que es lo mismo, el retardo es independiente de otros parámetros como son la velocidad de muestreo o la potencia de procesado del osciloscopio.\par
 Este modo de proceder tiene un inconveniente, el objetivo de un osciloscopio es mostrar en cada momento como es la forma de la señal, si el retardo introducido es demasiado alto el osciloscopio deja de ser eficaz pues la información que proporciona cada imagen es obsoleta. Problema que se ve agravado por la posibilidad de configurar el eje de tiempos. Así es, tanto los osciloscopios analógicos (variando la frecuencia de barrido del cursor) como los osciloscopios digitales, permiten que el usuario modifique la cantidad de tiempo que refleja el eje horizontal de la representación, pudiendo ser ésta mayor o menor. A efectos prácticos, en los osciloscopios digitales el tiempo abarcado por el eje temporal actúa como el inverso de la frecuencia de refresco del monitor, por tanto, cuanto mayor sea ese tiempo con mayor lentitud se sucederán las imágenes y habrá un mayor desfase entre la señal y la representación de ésta.
@@ -67,7 +57,7 @@ El \emph{modo convencional} de representación es algo más complicado. Como se ha
 
 \subsection{Elección del entorno de desarrollo}
 
-El lenguaje o, mejor dicho, plataforma que se ha empleado para el desarrollo del software de control es \matlab{}, la razón, su inmejorable compatibilidad con el hardware disponible. A partir de ahí, los componentes de \matlab{} que se han empleado para conseguir que el software de control gozase de las características previstas por los objetivos del proyecto son dos: el entorno de desarrollo de interfaces gráficas de usuario (\textsc{gui}) de \matlab{}, más conocido como \textsc{guide} (\emph{graphical user interface development environment}); y el \datx{} de \matlab{}. El primero de ellos se ha empleado para, como su nombre indica, crear la interfaz que comunica el dispositivo con el usuario. Esta comunicación se hace a través del segundo de los componentes mencionados, éste permite, mediante comandos de \matlab{} que pueden incluirse en rutinas o llamarse por separado, manejar el dispositivo ---convocarlo a muestrear, configurar sus propiedades--- y administra automáticamente los resultados almacenándolos en búffers situados en la memoria volátil del ordenador, haciéndolos de este modo accesibles al administrador de la tarjeta.
+El lenguaje o, mejor dicho, plataforma que se ha empleado para el desarrollo del software de control es \matlab{}, la razón, su inmejorable compatibilidad con el hardware disponible. A partir de ahí, los componentes de \matlab{} que se han empleado para conseguir que el software de control gozase de las características previstas en la etapa de diseño son dos: el entorno de desarrollo de interfaces gráficas de usuario (\textsc{gui}) de \matlab{}, más conocido como \textsc{guide} (\emph{graphical user interface development environment}); y el \datx{} de \matlab{}. El primero de ellos se ha empleado para, como su nombre indica, crear la interfaz que comunica el dispositivo con el usuario. Esta comunicación se hace a través del segundo de los componentes mencionados, éste permite, mediante comandos de \matlab{} que pueden incluirse en rutinas o llamarse por separado, manejar el dispositivo ---convocarlo a muestrear, configurar sus propiedades--- y administra automáticamente los resultados almacenándolos en búffers situados en la memoria volátil del ordenador, haciéndolos de este modo accesibles al administrador de la tarjeta.
 
 
 \subsection{Data Acquisition Toolbox}
@@ -78,7 +68,7 @@ En cuanto a la documentación adicional que el lector puede consultar a continuac
 
 \subsubsection{Componentes de la herramienta}
 
-Los elementos de \matlab{} que juegan un papel suficientemente importante en el funcionamiento de la \datx{} son los listados en el \vref{tab:toolbox-components}.
+Los elementos de \matlab{} que juegan un papel suficientemente importante en el funcionamiento de la \datx{} son los listados en el \ref{tab:toolbox-components}.
 
 \begin{table}[htbp]
 	\centering
@@ -138,6 +128,31 @@ Cada uno de los pasos se detalla en los puntos subsiguientes.
 % Utilizo la tabla para luego decir que como a mi me interesa la adquisición utilizare el comando analoginput nada más
 Para crear un objeto dispositivo, se debe llamar a la función de creación apropiada o constructor. Como se muestra en el \vref{tab:constructors}, los constructores reciben un nombre particular en función del tipo de objetos dispositivo que crean. Para iniciar una sesión de adquisición de datos analógicos es necesario un comando como el siguiente, \texttt{analoginput(`adaptador', ID)}.\par
 
+\begin{lstlisting}[float=htbp, frame=leftline, caption={[Método a seguir para crear un objeto dispositivo]Método que evalúa la existencia de un objeto dispositivo previo a la llamada de la aplicación, en caso positivo lo hereda para su uso posterior, de lo contrario crea uno nuevo}, label={tab:constructor-example}, linewidth=.95\textwidth]
+	handles.ai = [];
+	if ~isempty(daqfind)
+		oldObj = daqfind;
+		for i = 1:length(oldObj);
+			auxStr = daqhwinfo(oldObj(i));
+			auxNum = findstr(' ', auxStr.DeviceName) - 1;
+			if strcmp('KPCI-3108', ...
+				auxStr.DeviceName(1:auxNum)) && ...
+				strcmpi('analoginput', auxStr.SubsystemType);
+				handles.ai = oldObj(i);
+				warning('El dispositivo está en uso.');
+				break
+			end
+		end
+	end
+	if isempty(handles.ai)
+		try
+			handles.ai = analoginput('keithley');
+		catch
+			errordlg('No pudo crearse el manejador de dispositivo.');
+		end
+	end
+\end{lstlisting}
+
 \begin{table}[htbp]
 	\centering
 	\begin{tabular}{l >{\tt}l}
@@ -155,7 +170,7 @@ Para crear un objeto dispositivo, se debe llamar a la función de creación apropi
 	\label{tab:constructors}
 \end{table}
 
-El argumento \texttt{id} es un indicador de dispositivo hardware. Se trata de un argumento opcional para tarjetas de sonido con \texttt{id} 0. El argumento \texttt{adaptador} requiere el nombre del adaptador de dispositivo hardware. A continuación, en el \vref{tab:adaptors} se muestra una relación con los adaptadores de dispositivo cuyo uso es más frecuente y el nombre de adaptador que debe introducirse como argumento de la llamada a \texttt{analoginput}. Por conveniencia se ha añadido Keithley a esta lista.
+El argumento \texttt{id} es un indicador de dispositivo hardware. Se trata de un argumento opcional para tarjetas de sonido con \texttt{id} 0. El argumento \texttt{adaptador} requiere el nombre del adaptador de dispositivo hardware. A continuación, en el \ref{tab:adaptors} se muestra una relación con los adaptadores de dispositivo cuyo uso es más frecuente y el nombre de adaptador que debe introducirse como argumento de la llamada a \texttt{analoginput}. Por conveniencia se ha añadido Keithley a esta lista.
 
 \begin{table}[htbp]
 	\centering
@@ -287,6 +302,23 @@ Por ejemplo, los siguientes comandos configuran \texttt{objeto} de forma que la 
 	set(objeto, `StopFcn', @datadqcallback, objeto.Running)
 \end{lstlisting}
 
+Un segundo ejemplo, este extraído del código fuente de la aplicación de control muestra como pasar argumentos a la función de callback y cuál es la sintaxis de la definición de la misma.
+
+\begin{lstlisting}
+	set(handles.ai, 'TriggerType', 'Immediate', 'TimerFcn', '', ...
+		'SamplesAcquiredFcn', {@localDaqCallback, gcbo});
+				[...]
+	function localDaqCallback(obj, event, hObject)
+		handles = guidata(hObject);
+		EventType = event.Type;
+
+		switch lower(EventType)
+			case 'samplesacquired'
+				[...]
+			case 'timer'
+				[...]
+		end
+\end{lstlisting}
 
 \subsubsection{Suprimiendo y borrando las trazas de los objetos dispositivo}
 
