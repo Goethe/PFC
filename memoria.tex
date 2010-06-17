@@ -1,5 +1,5 @@
 \documentclass[a4paper, 12pt]{book}
-\includeonly{introduction, chapter01, chapter02, chapter03, appendixA}
+\includeonly{introduction, chapter01, chapter02, chapter03-01, appendixA}
 \usepackage[a4paper, BCOR1cm]{typearea}
 \usepackage[spanish, es-ucroman]{babel}
 \usepackage[format=hang, font=small, labelfont=bf, labelsep=endash, width=.9\textwidth]{caption}
@@ -8,11 +8,12 @@
 \usepackage[latin1]{inputenc}
 \usepackage[OT1]{fontenc}
 \usepackage[bf, sf]{titlesec}
+\usepackage{titlesec}
 \usepackage[nottoc]{tocbibind}
 \usepackage[spanish]{varioref}
 \usepackage{graphicx}
-\usepackage{amsfonts, amsmath, amssymb, calc, color, fancyhdr, hyperref, ifthen, listings, nextpage, textcase}
-\usepackage{array, booktabs, tabularx, tabulary, dcolumn, multirow, threeparttable}
+\usepackage{amsfonts, amsmath, amssymb, calc, color, fancyhdr, hyperref, ifthen, layouts, listings, nextpage, textcase}
+\usepackage{array, booktabs, tabularx, tabulary, dcolumn, multirow, oldstyle, threeparttable}
 \titleformat{\part}[display]{\centering\huge\sffamily\bfseries}{\partname\ \thepart}{.5\baselineskip}{}
 \hypersetup{%
 	pdftitle=Proceso de adquisición y tratamiento de señales de %
@@ -32,8 +33,11 @@
 }
 \lstloadlanguages{Matlab}
 \lstset{language=Matlab, extendedchars=true, breaklines, captionpos=b, %
-	morekeywords={strcmpi, warning, daqfind, daqhwinfo, try, catch, analoginput, errordlg} %
+	morekeywords={addchannel, analoginput, catch, datadqcallback, daqfind, daqhwinfo, errordlg, gcbo, getdata, %
+	guidata, localDaqCallback, peekdata, single_channel, start, stop, strcmpi, trigger, try, warning} %
 	}
+\lstdefinestyle{displayed}{float=htbp, frame=l, tabsize=5, framerule=1.2pt, abovecaptionskip=\medskipamount, %
+	rulecolor={\color[gray]{0.8}}, gobble=4, linewidth=.975\textwidth, xleftmargin=.05\textwidth}
 \cbcolor{red}
 \labelformat{equation}{ecuación~#1}
 \labelformat{figure}{figura~#1}
@@ -80,7 +84,7 @@
 
 \part{Ensayos no destructivos con ultrasonidos}
 
-\include{chapter03}
+\include{chapter03-01}
 
 \part*{Apéndices}
 

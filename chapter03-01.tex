@@ -307,31 +307,43 @@ A pesar del gran número de técnicas dedicadas a eliminar el ruido estructural, s
 
 \section{Técnicas de procesado por partición del espectro}
 
-Bajo el término <<técnicas de procesado por partición del espectro>>, en inglés \emph{Split Spectrum Processing Techniques} o simplemente \textsc{ssp}, se reúnen una serie de algoritmos cuya aplicación es la reducción del efecto del ruido estructural o de grano en los resultados de un \textsc{endus}.\par
-El principio en el que se fundamentan estas técnicas es similar al que rige las técnicas basadas en la diversidad convencionales, a partir de varias señales incorreladas entre sí se construye una señal cuya \textsc{snr} es considerablemente mejor que la \textsc{snr} de cualquiera de las señales primitivas por separado. Las técnicas de \textsc{ssp}, a diferencia de las técnicas basadas en la diversidad, obtienen sólo una seudo"=diversidad en frecuencia a partir de una única traza de la señal que se obtiene tras un \textsc{endus}.\par
-El procedimiento general consiste en aplicar una transformación sobre la traza que comprende dos pasos:
+Bajo el término <<técnicas de procesado por partición del espectro>>, en inglés \emph{Split Spectrum Processing Techniques}, o simplemente \textsc{ssp}, se reúnen una serie de algoritmos cuya aplicación es la reducción del efecto del ruido estructural o de grano en los resultados de un \textsc{endus}.\par
+El principio en el que se fundamentan estas técnicas es similar al que rige las técnicas de diversidad convencionales. A partir de varias señales incorreladas entre sí se construye una señal cuya \textsc{snr} es considerablemente mejor que la \textsc{snr} de cualquiera de las señales primitivas por separado. Las técnicas de \textsc{ssp}, a diferencia de las técnicas basadas en la diversidad, consiguen sólo una seudo"=diversidad en frecuencia a partir de una única traza de la señal que se obtiene tras un \textsc{endus}.\par
+Con frecuencia se obtienen buenos resultados empleando estas técnicas lo que, sumado a la sencillez con la que puede implementarse un experimento fundamentado en las mismas, recordando que no es requerida una redundancia real basada en la utilización de varias señales, las ha convertido en las técnicas más populares en el ámbito de los \textsc{endus}. A consecuencia de la reputación con la que se han visto revestidas recientemente numerosas investigaciones se han llevado a cabo en las décadas de los ochenta y los noventa, así como a principios de siglo, con el fin de mejorar en la medida de lo posible los buenos resultados que ya de por sí proporcionan las técnicas de \textsc{ssp}.\par
+El procedimiento (más detallado en el \ref{tab:ssp-features}) que por lo general sigue todo el conjunto de técnicas de \textsc{ssp} consiste en aplicar una transformación sobre la traza que comprende dos pasos:
 
 \begin{itemize}
 	\item El primero, dividir la traza en un número determinado de señales de banda estrecha, para lo que se emplea un banco de filtros.
 	\item En segundo lugar se reconstruye la traza, o más bien una versión de ésta con una \textsc{snr} mejorada, mediante un algoritmo de reconstrucción no lineal.
 \end{itemize}
 
-Las diferencias entre el carácter estadístico del ruido y de la señal procedente del defecto hacen que el procedimiento anterior conduzca al resultado deseado. Para concretar, la distribución de la energía del ruido no es equitativa en frecuencia de ahí que sea posible encontrar señales incorreladas en ruido mediante la división espectral que realiza el banco de filtros. Por otro lado, la linealidad que presenta la componente de la señal ---o alteración de la misma según sea el caso--- originada en la reflexión que se produce al encontrarse la onda acústica con el defecto conlleva que la muestra que identifica la presencia del defecto se encuentra en la misma posición en todas las trazas de banda estrecha. Los métodos de \textsc{ssp} aprovechan de manera implícita esta última característica de la traza por lo que son catalogados en la bibliografía como métodos que explotan la fase del defecto.\par
-% Este método es viable y conduce al objetivo deseado debido a las diferencias existentes entre el carácter estadístico de dos señales: el ruido y la parte de la onda acústica reflejada en el defecto que, una vez detectada por el transductor, constituye una porción de la señal eléctrica que se toma del segmento de recepción. Ésta última presenta una linealidad de fase que garantiza que la muestra que indica la presencia del defecto se encuentre en la misma posición en todas las trazas de banda estrecha. Las técnicas de \textsc{ssp} explotan de manera implícita esta característica de la señal que tiene origen en el defecto, por esta causa son catalogadas en la bibliografía como técnicas basadas en la fase del defecto. Por otro lado, la energía del ruido de grano no está equitativamente distribuida en frecuencia, la razón es que la atenuación originada por la dispersión en la onda ultrasónica es selectiva en frecuencia, cada banda de frecuencias se ve afectada de distinto modo por el medio. Dicho de otro modo, al reflejar más o menos unas determinadas frecuencias que otras, las partículas que conforman el medio, el ruido de grano, es decir, la suma de las reflexiones que detecta el transductor, no contiene por igual componentes de todas las frecuencias.
+Las diferencias entre el carácter estadístico del ruido y de la señal procedente del defecto hacen que el procedimiento anterior conduzca al resultado deseado. Para concretar, la distribución de la energía del ruido no es equitativa en frecuencia, de ahí que sea posible encontrar señales incorreladas en ruido mediante la división espectral que realiza el banco de filtros. Por otro lado, la linealidad que presenta la componente de la señal ---o alteración de la misma según sea el caso--- originada en la reflexión que se produce al encontrarse la onda acústica con el defecto conlleva que la muestra que identifica la presencia del defecto se encuentra en la misma posición en todas las trazas de banda estrecha. Los métodos de \textsc{ssp} aprovechan de manera implícita esta última característica de la traza para magnificar la componente de la señal que indica la presencia del defecto por lo que son catalogados en la bibliografía como métodos que explotan la fase del defecto.\par
 
-% El procedimiento general que se aplica a todas las técnicas de \textsc{ssp} consiste en dividir la traza de la señal obtenida en el \textsc{endus} en un número determinado de señales de banda estrecha, para lo que se emplea un banco de filtros. El siguiente paso radica en reconstruir la señal, o más bien una versión de ésta con una \textsc{snr} mejorada, mediante un algoritmo de reconstrucción no lineal. El método es viable debido a las diferencias existentes entre las propiedades estadísticas entre el ruido estructural y las alteraciones que el defecto provoca en el pulso ultrasónico original. Por un lado la energía del ruido de grano no está equitativamente distribuida en frecuencia, esto se encuentra justificado por el hecho de que la atenuación originada por la dispersión en la onda ultrasónica es selectiva en frecuencia, cada banda de frecuencias se ve afectada de distinto modo por el medio. Por otro lado está la linealidad en la fase de la señal que se refleja en el defecto, la porción que es detectada en el transductor, esto contribuye a que la muestra que indica la presencia del defecto en todas las señales de banda estrecha se encuentre en la misma posición, en otras palabras, en todas las señales de banda estrecha la muestra que identifica el defecto es la misma. Las técnicas de \textsc{ssp} explotan implícitamente esta característica de la señal procedente del defecto y a causa de esto se catalogan en la bibliografía como técnicas basadas en la fase del defecto.
+\begin{table}
+	\centering
+	\begin{tabulary}{.95\textwidth}{>{$(}c<{)$}Lr@{\hspace{6pt}}L}
+		\toprule
+		\multicolumn{2}{c}{Parámetros} & \multicolumn{2}{c}{Algoritmo} \\
+		\cmidrule(r){1-2}\cmidrule(l){3-4}
+		y & Señal a procesar & 1. & Generar del banco de filtros \\
+		f_\text{min} & Frecuencia inferior de corte del banco de filtros & 2. & Calcular la \textsc{fft} de $y$ \\
+		f_\text{max} & Frecuencia superior de corte del banco de filtros & 3. & Procesar el resultado obtenido en (2) con el banco de filtros \\
+		df & Separación entre filtros & 4. & Calcular la \textsc{ifft} de las trazas de banda estrecha \\
+		pb & Ancho de banda de los filtros & 5. & Normalizar la amplitud de las trazas de banda estrecha \\
+		h_f & Tipo de filtro empleado & 6. & Construir una única traza a partir de las trazas de banda estrecha normalizadas \\
+		\bottomrule
+	\end{tabulary}
+	\caption{Particularidades que en general se aplican a todos los algoritmos de \textsc{ssp}}
+	\label{tab:ssp-features}
+\end{table}
 
-% Se pueden obtener una conclusión a partir de este hecho, el proceso es más sencillo, no existe la necesidad de crear una redundancia real.
-% La coyuntura/El fenómeno que permite la implantación de singular técnica/técnicas no es otro que la linealidad de la fase en la aportación que el defecto realiza
-% La eficacia de estas técnicas no está siempre garantizada
-% 
-% SE PARECEN
-% Trabajan con una sola traza. Con la división en señales de banda estrecha se persigue obtener los beneficios que aportan las técnicas basadas en la diversidad, lo que se conoce como seudo"=diversidad. Todos siguen la misma mecánica.
-% SE DIFERENCIAN
-% El criterio para generar el banco de filtros. La forma en que se reconstruye la señal.
-% BENEFICIOS
-% Simplicidad, buenos resultados.
-% ¿POR QUÉ SE PUEDE APLICAR?
-% Explota la linealidad de fase de forma implícita
-% Posibilidad de obtener a partir de una misma traza señales incorreladas en ruido (de qué me sirve tener este tipo de señales). Seudo"-diversidad en frecuencia.
-% Debido a la linealidad de la fase en la señal recibida (ya sea la señal compuesta de ecos, o la transmitida), la muestra que revela la presencia del defecto en las señales de banda estrecha es siempre la misma, de ahí que la composición de la señal ulterior resulte en una señal en la que la contribución del defecto se ve magnificada con respecto al ruido.
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics{chapter03-07.pdf}
+	\end{center}
+	\caption{Esquema genérico que representa el espectro del banco de filtros frente al espectro del transductor}
+	\label{fig:filter-specter}
+\end{figure}
+
+% He hecho un corte del fichero aquí porque el realzado de sintaxis de Vim no interpreta correctamente el código que configura la disposición de las columnas en el entorno tabulado etiquetado con <<tab:ssp-features>>, en consecuencia considera todo el texto posterior incluido en una ecuación matemática y no resalta la ortografía.
+\input{chapter03-02}

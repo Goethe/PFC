@@ -15,13 +15,13 @@ La idea original consistía en dotar al software de control de una interfaz de us
 \begin{itemize}
 	\item Mostrar en un visor el valor de las muestras resultantes de muestrear la señal a 4 muestras por segundo.
 	\item En un modo de funcionamiento diferente, mostrar en el mismo visor, cada cuarto de segundo aproximadamente, la media aritmética del valor de las muestras recogidas en dicho periodo a una frecuencia de muestreo especificada por el usuario.
-	\item Funcionando en un modo gráfico debe ser capaz de representar la señal y el espectro en frecuencia de la misma en dos espacios de coordenadas separados. A voluntad del usuario pueden ser habilitadas o deshabilitadas a voluntad del usuario cualquiera de estas dos representaciones o ambas.
+	\item Funcionando en un modo gráfico debe ser capaz de representar la señal y el espectro en frecuencia de la misma en dos espacios de coordenadas separados. A voluntad del usuario pueden ser habilitadas o deshabilitadas cualquiera de estas dos representaciones o ambas.
 \end{itemize}
 
 
 \subsection{Funcionamiento de un osciloscopio}
 
-El modo gráfico toma como patrón los osciloscopios digitales, es decir, en el modo gráfico el software de control debe comportarse en cierta medida como un osciloscopio digital salvo por el hecho de que la representación de la señal debe acompañarse de una figura adicional que muestre el espectro del fragmento de señal que se ilustra en cada instante. Para comprender cómo se ha desarrollado el código que sostiene este aspecto del funcionamiento del software de control y en última instancia como funciona la aplicación gráfica en sí un buen comienzo es formarse una concepto general de cuál es comportamiento primitivo de los osciloscopios digitales. En base a las conclusiones extraídas durante la realización de este proyecto se considera ésta una buena idea, por eso en esta memoria se ha querido describir sin profundizar demasiado en los detalles cómo es el funcionamiento de los osciloscopios digitales.\par
+El modo gráfico toma como patrón los osciloscopios digitales, es decir, en el modo gráfico el software de control debe comportarse en cierta medida como un osciloscopio digital salvo por el hecho de que la representación de la señal debe acompañarse de una figura adicional que muestre el espectro del fragmento de señal que se ilustra en cada instante. Para comprender cómo se ha desarrollado el código que sostiene este aspecto del funcionamiento del software de control y en última instancia como funciona la aplicación gráfica en sí, un buen comienzo es formarse un concepto general de cuál es comportamiento de los osciloscopios digitales. En base a las conclusiones extraídas durante la realización de este proyecto se considera ésta una buena idea, por eso en esta memoria se ha querido describir sin profundizar demasiado en los detalles cómo es el funcionamiento de los osciloscopios digitales.\par
 Los osciloscopios analógicos emplean un tubo de rayos catódicos y un monitor de fósforo para generar una imagen de la señal. El cursor que el tubo dibuja en el monitor lo va barriendo de izquierda a derecha con periodicidad, y su posición vertical refleja a cada momento el valor de tensión de la señal eléctrica que entra al osciloscopio. El monitor preserva durante breves instantes una traza del cursor y así se forma la imagen que representa a la señal.\par
 En la actualidad suelen emplearse osciloscopios digitales. El procedimiento que sigue un osciloscopio digital para representar señales es completamente diferente al que siguen los osciloscopios analógicos. No existe ningún cursor, se generan fotogramas de la señal en seguimiento\footnote{En realidad, los osciloscopios digitales modernos pueden representar por pantalla varias señales simultáneamente.}, imágenes completas que cubren la pantalla entera con un fragmento de señal, una vez aparece una imagen por pantalla permanece estática hasta que una nueva imagen la sustituye. La dimensión temporal de la representación determina en teoría cuanto debe esperar el osciloscopio desde que se muestra por pantalla una imagen hasta que se puede generar la siguiente. La espera resulta evidente puesto que la señal no se conoce de antemano, al contrario que ocurre con los osciloscopios analógicos que representan la señal en tiempo real, si se desea representar por pantalla un fragmento de la señal de una determinada duración el osciloscopio debe esperar hasta que transcurra dicho periodo de tiempo. En otras palabras, aparece un retardo que depende exclusivamente de la duración del fragmento de señal necesario para cubrir la ventana del osciloscopio, o lo que es lo mismo, el retardo es independiente de otros parámetros como son la velocidad de muestreo o la potencia de procesado del osciloscopio.\par
 Este modo de proceder tiene un inconveniente, el objetivo de un osciloscopio es mostrar en cada momento como es la forma de la señal, si el retardo introducido es demasiado alto el osciloscopio deja de ser eficaz pues la información que proporciona cada imagen es obsoleta. Problema que se ve agravado por la posibilidad de configurar el eje de tiempos. Así es, tanto los osciloscopios analógicos (variando la frecuencia de barrido del cursor) como los osciloscopios digitales, permiten que el usuario modifique la cantidad de tiempo que refleja el eje horizontal de la representación, pudiendo ser ésta mayor o menor. A efectos prácticos, en los osciloscopios digitales el tiempo abarcado por el eje temporal actúa como el inverso de la frecuencia de refresco del monitor, por tanto, cuanto mayor sea ese tiempo con mayor lentitud se sucederán las imágenes y habrá un mayor desfase entre la señal y la representación de ésta.
@@ -47,9 +47,10 @@ Una vez visto cual es la frecuencia umbral a la que el dispositivo conmuta entre
 \subsubsection{Representación en modo convencional}
 
 El \emph{modo convencional} de representación es algo más complicado. Como se ha declarado con anterioridad en este mismo apartado, la representación convencional basa su funcionamiento en imágenes que muestran fragmentos de señal que cubren la dimensión temporal de la ventana del osciloscopio y que se suceden unas a otras con presteza. La idea que persigue este método es la de conseguir algo semejante a una película de la señal. Para ello, no es sólo suficiente con que aparezcan muchas imágenes por segundo en el monitor del osciloscopio, esas imágenes deben estar de algún modo relacionadas entre sí. Si las imágenes que aparecen en el monitor son de forma consecutiva muy diferentes es probable que no pueda discernirse nada claro, y de nada valdrá la representación.\par
-	Ahí es donde entra en juego el procesado y la función de disparo de un osciloscopio digital. Cuando un fragmento suficientemente largo como para cubrir la ventana de representación se digitaliza y se almacena en memoria, empieza el procesado digital del mismo. El propósito del procesado es, ente otras cosas, eliminar las posible componente en continua, averiguar información adicional de la señal en la medida de lo posible, como p.e. su valor de pico a pico, o implementar una función de disparo. La función de disparo del osciloscopio persigue alinear los ejes verticales de la ventana donde se representa con los cruces de la señal con respecto a un determinado valor de umbral que puede ser configurado por el usuario. La idea es alinear al menos el cruce más centrado de cada fragmento de señal con el eje de abscisas que corta en dos mitades la ventana. Para conseguirlo, durante el procesado se detectan todos los cortes de la señal con el umbral y después se desplaza el fragmento de señal para que el corte más centrado case con el eje de abscisas. Si la señal es periódica las variaciones entre un fotograma y el siguiente serán mínimas, puesto que ambos estarán alineados, y se simulará con éxito el movimiento.\par
-	No obstante, la necesidad de desplazar el fragmento de señal que va a representarse presenta un inconveniente importante. Para poder desplazar el fragmento de señal y que se cubra completamente la ventana del osciloscopio su duración, la del fragmento de señal digitalizado, debe ser superior al tiempo reflejado en el eje de tiempos de la ventana. De lo contrario la señal aparecerá truncada, se mostrará un espacio en blanco y, con una tasa de refresco alta, la visualización será confusa. Desplazar fragmentos de señal implica dos cosas: por un lado el osciloscopio debe esperar más tiempo para refrescar la pantalla, es decir, se reduce la tasa de refresco para una misma configuración del eje de tiempos; y por otro, al tener para representar un fragmento de señal de mayor duración que la reflejada por el eje temporal de la ventana parte del fragmento queda ahora fuera de la representación.\par
-	Este inconveniente se ve paliado por el hecho de que el modo convencional contempla en principio trabajar con señales de alta frecuencia. Estas señales cambian de forma tan rápida que de no ser por el disparo sería imposible observar los cambios. Por otro lado puede seleccionarse que información que se muestra por pantalla accionando un control de offset temporal o modificando el valor de umbral de disparo y, generalmente, la pérdida de información a causa del disparo no es significativa.
+Ahí es donde entra en juego el procesado y la función de disparo de un osciloscopio digital. Cuando un fragmento suficientemente largo como para cubrir la ventana de representación se digitaliza y se almacena en memoria, empieza el procesado digital del mismo. El propósito del procesado es, ente otras cosas, eliminar las posible componente en continua, averiguar información adicional de la señal en la medida de lo posible, como p.e. su valor de pico a pico, o implementar una función de disparo. La función de disparo del osciloscopio persigue alinear los ejes verticales de la ventana donde se representa con los cruces de la señal con respecto a un determinado valor de umbral que puede ser configurado por el usuario. La idea es alinear al menos el cruce más centrado de cada fragmento de señal con el eje de abscisas que corta en dos mitades la ventana. Para conseguirlo, durante el procesado se detectan todos los cortes de la señal con el umbral y después se desplaza el fragmento de señal para que el corte más centrado case con el eje de abscisas. Si la señal es periódica las variaciones entre un fotograma y el siguiente serán mínimas, puesto que ambos estarán alineados, y se simulará con éxito el movimiento.\par
+No obstante, la necesidad de desplazar el fragmento de señal que va a representarse presenta un inconveniente importante. Para poder desplazar el fragmento de señal y que se cubra completamente la ventana del osciloscopio su duración, la del fragmento de señal digitalizado, debe ser superior al tiempo reflejado en el eje de tiempos de la ventana. De lo contrario la señal aparecerá truncada, se mostrará un espacio en blanco y, con una tasa de refresco alta, la visualización será confusa. Desplazar fragmentos de señal implica dos cosas: por un lado el osciloscopio debe esperar más tiempo para refrescar la pantalla, es decir, se reduce la tasa de refresco para una misma configuración del eje de tiempos; y por otro, al tener para representar un fragmento de señal de mayor duración que la reflejada por el eje temporal de la ventana parte del fragmento queda ahora fuera de la representación.\par
+Este inconveniente se ve paliado por el hecho de que el modo convencional contempla en principio trabajar con señales de alta frecuencia. Estas señales cambian de forma tan rápida que de no ser por el disparo sería imposible observar los cambios. Por otro lado puede seleccionarse que información que se muestra por pantalla accionando un control de offset temporal o modificando el valor de umbral de disparo y, generalmente, la pérdida de información a causa del disparo no es significativa.
+%\vspace*{99pt}
 
 
 \section{Elaboración del software de control}
@@ -128,10 +129,12 @@ Cada uno de los pasos se detalla en los puntos subsiguientes.
 % Utilizo la tabla para luego decir que como a mi me interesa la adquisición utilizare el comando analoginput nada más
 Para crear un objeto dispositivo, se debe llamar a la función de creación apropiada o constructor. Como se muestra en el \vref{tab:constructors}, los constructores reciben un nombre particular en función del tipo de objetos dispositivo que crean. Para iniciar una sesión de adquisición de datos analógicos es necesario un comando como el siguiente, \texttt{analoginput(`adaptador', ID)}.\par
 
-\begin{lstlisting}[float=htbp, frame=leftline, caption={[Método a seguir para crear un objeto dispositivo]Método que evalúa la existencia de un objeto dispositivo previo a la llamada de la aplicación, en caso positivo lo hereda para su uso posterior, de lo contrario crea uno nuevo}, label={tab:constructor-example}, linewidth=.95\textwidth]
+\begin{lstlisting}[style=displayed, caption={[Método a seguir para crear un objeto dispositivo]Método que evalúa la existencia de un objeto dispositivo previo a la llamada de la aplicación, en caso positivo lo hereda para su uso posterior, de lo contrario crea uno nuevo}, label={tab:constructor-example}]
 	handles.ai = [];
+
 	if ~isempty(daqfind)
 		oldObj = daqfind;
+
 		for i = 1:length(oldObj);
 			auxStr = daqhwinfo(oldObj(i));
 			auxNum = findstr(' ', auxStr.DeviceName) - 1;
@@ -143,7 +146,9 @@ Para crear un objeto dispositivo, se debe llamar a la función de creación apropi
 				break
 			end
 		end
+
 	end
+
 	if isempty(handles.ai)
 		try
 			handles.ai = analoginput('keithley');
@@ -304,21 +309,27 @@ Por ejemplo, los siguientes comandos configuran \texttt{objeto} de forma que la 
 
 Un segundo ejemplo, este extraído del código fuente de la aplicación de control muestra como pasar argumentos a la función de callback y cuál es la sintaxis de la definición de la misma.
 
-\begin{lstlisting}
+\begin{lstlisting}[style=displayed, caption={Configuración de \emph{callback} para responder a eventos en la sesión de muestreo, la función de \emph{callback} recibe un argumento}]
 	set(handles.ai, 'TriggerType', 'Immediate', 'TimerFcn', '', ...
 		'SamplesAcquiredFcn', {@localDaqCallback, gcbo});
+
 				[...]
+
 	function localDaqCallback(obj, event, hObject)
 		handles = guidata(hObject);
 		EventType = event.Type;
 
 		switch lower(EventType)
 			case 'samplesacquired'
+
 				[...]
+
 			case 'timer'
+
 				[...]
+
 		end
-\end{lstlisting}
+\end{lstlisting}\vspace*{-20pt}
 
 \subsubsection{Suprimiendo y borrando las trazas de los objetos dispositivo}
 
