@@ -1,0 +1,12 @@
+# Ignore the working directory
+work
+referencias/ejemplos/*.pdf
+*.aux
+*.log
+*.cb
+*.cb2
+*.out
+*.toc
+*.swp
+*.lot
+*.lof

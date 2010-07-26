@@ -1,0 +1,79 @@
+\chapter{Pruebas y contenidos adicionales}
+
+Este apéndice no debe adjuntarse en el documento final, en el se anotarán ideas para modificar el contenido del grueso del documento y bases para generar los contenidos adicionales.
+
+
+\section{Configuración de página}
+
+La configuración actual se ha hecho utilizando el paquete \textsf{typearea} que forma parte del conjunto del \textsc{koma}-\textsc{s}cript. Las opciones más importantes que deben pasarse a este paquete son el tipo de papel (A4, A3, A5, letter,\dots) y el espacio de corrección necesario para evitar fallos en la encuadernación (\textsc{bcor} = \texttt{magnitud} o directamente \textsc{bcor}\texttt{magnitud}). Utilizando el paquete \textsf{layouts} pueden crearse figuras que representen la configuración de página actual.
+
+\newlength{\auxmm}
+\newlength{\auxin}
+\newlength{\auxpt}
+\setlength{\auxmm}{1mm}
+\setlength{\auxin}{1in}
+\setlength{\auxpt}{1pt}
+
+\begin{table}[htbp]
+	\centering
+	\printinunitsof{mm}\pagevalues
+	\hspace*{-22pt}\begin{tabular}{>{\raggedright}p{175pt} >{\raggedright\arraybackslash}p{140pt}}
+		1in = \printinunitsof{mm}\prntlen{\auxin} & 1pt = \printinunitsof{mm}\prntlen{\auxpt} \\
+		1mm = \printinunitsof{in}\prntlen{\auxmm} & 1mm = \printinunitsof{pt}\prntlen{\auxmm}
+	\end{tabular}
+	\caption[Valores actuales de la distribución de página]{Valores que completan el diagrama representado en la \vref{fig:layouts} sustituir la nomenclatura de referencia por los valores correspondientes}
+\end{table}
+
+El lector puede fijarse que se cumple la regla de construcción que aplica el paquete \textsf{typearea} en la que el margen inferior es dos veces el margen inferior, y que el margen interior de página ---una vez eliminado el centímetro (\textsc{bcor}\texttt{1cm}) que se deja para compensar el encuadernado--- es la mitad del margen exterior de página. De ese modo se crea una distribución de página en la que el margen interior de página de las páginas par e impar juntas es igual a cada uno de los márgenes exteriores de ambas páginas.
+
+\begin{figure}[htbp]
+	\pagediagram
+	\caption{Distribución del texto en las páginas de este documento}
+	\label{fig:layouts}
+\end{figure}
+
+\begin{figure}[htbp]\ContinuedFloat
+	\currentpage
+	\pagedesign
+	\caption[]{Continuación del \vref{fig:layouts}}
+\end{figure}
+
+
+\section{Gráficos con MetaPost}
+
+Anotaciones destinadas a obtener gráficos escalables de calidad empleando el paquete MetaPost para la creación de gráficos en PostScript.
+
+
+\subsection{Perspectiva isométrica}
+
+La perspectiva isométrica o caballera pueden, en teoría, conseguirse aplicando una transformación a los objetos protagonistas del gráfico, como circunferencias y cuadrados. Esta transformación puede almacenarse en una variable que se creará a tal efecto en el fichero \textsf{*.mp}. A diferencia de estas dos perspectivas, la perspectiva cónica no puede obtenerse de este modo ya que la proyección en el plano depende de la posición del espectador y de la posición del objeto proyectado.
+
+
+\subsection{El problema original de MetaPost}
+
+Originalmente decidí construir todos mis gráficos empleando para ello el paquete para gráficos MetaPost. Sin embargo los resultados que obtuve en el primer gráfico realizado (\vref{fig:termination-modes}) no fueron los esperados. Las líneas parecían romperse y cambiar de grosor donde era lo esperado, además la terminación redondeada de los trazos no presentaba la calidad suficiente.
+
+\begin{itemize}
+	\item El problema de los cambios de grosor lo resolví en Inkscape dibujando las líneas sin interrupción y dibujando sobre ellas los rectángulos con fondo relleno.
+	\item No obstante, no puedo aplicar la misma solución al empalme necesario entre las líneas y los conmutadores que permitían el paso de la señal.
+\end{itemize}
+
+Para el problema de la terminación redondeada, simplemente puedo emplear otro tipo de terminación para resolver el problema.
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics{chapter01-01.mps}
+	\end{center}
+	\caption{Figura correspondiente al diagrama \ref{fig:termination-modes} en la \pageref{fig:termination-modes} elaborado con MetaPost, versión corregida}
+	\label{fig:termination-modes-mps}
+\end{figure}
+
+
+\subsection{Ideas para la construcción de un switch}
+
+Según la \textsc{iec} el gráfico que representa un conmutador se forma a partir de dos líneas terminadas en circunferencias con fondo blanco de un diámetro aproximadamente igual a tres veces el grosor de las líneas. De una de esas circunferencias parte un fragmento de línea que en <<abierto>> planea sobre la segunda circunferencia y en <<cerrado>> se superpone a esta.\par
+Para recrear esta figura en MetaPost puede practicarse lo siguiente:
+
+\begin{enumerate}
+	\item Se define una circunferencia cuyo centro será una de las dos circunferencias con fondo blanco a las que he aludido antes. El radio de esta circunferencia debe ser la distancia que separa a las otras dos. El punto \texttt{t = 1} de esta circunferencia será el segundo punto del fragmento de línea cuando el conmutador se encuentre en estado abierto. En estado cerrado no se rompe la línea. En estado el fragmento de línea y la línea de que parte forman parte de una misma entidad. Las circunferencias con fondo blanco deben superponerse a las líneas.
+\end{enumerate}<++>

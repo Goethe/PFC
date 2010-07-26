@@ -1,0 +1,352 @@
+\chapter{Tarjeta de adquisición de señales}
+
+Uno de los objetivos que persigue este proyecto desde el comienzo es constituir un sistema de adquisición y procesado de señales. La idea es utilizar el sistema a la hora de afrontar la segunda parte del proyecto, o parte principal podría decirse, la experimentación con palmeras, con sus troncos y madera, para evaluar la efectividad de los ensayos no destructivos, de esos que emplean los ultrasonidos como herramienta de exploración. Es esta sección del documento la que se ocupa en la materia de retratar la experiencia de componer un instrumento que muestrea una señal analógica y proporciona una versión digital de la misma, forma que permite su posterior procesado, almacenamiento y representación.\par
+La tarjeta \kpci{} adquiere un gran protagonismo en el sistema de adquisición y procesado, constituye la base del mismo. Este dispositivo constituye el fundamento a partir del cual se construye el resto del sistema de medida, incluyendo no sólo la etapa de adquisición si no también las de acondicionamiento y detección, parte de sus capacidades las hereda el sistema, sus limitaciones deben tenerse en cuenta en la fase de diseño, de ahí la importancia de estudiar a conciencia su comportamiento. Además, la \kpci{}, disponer de ella, es una de las razones principales por las que se ha optado por desarrollar un sistema de adquisición propio, de propósito, sin tener en cuenta la principal razón, como es obvio, contar con un sistema diseñado a medida.\par
+Resulta primordial pues conocer las características de una pieza tan importante del conjunto, de hecho es el primer paso que se toma en la ejecución del proyecto, estudiar el aparato y averiguar hasta dónde alcanzan sus posibilidades. En la memoria del proyecto queda plasmado el interés que suscita la tarjeta desde un punto de vista práctico en relación con la síntesis de un sistema de adquisición y procesado puesto que se dedica un capítulo completo a tratar en clave técnica y de forma resumida cómo funciona la tarjeta y cuáles son sus propiedades más destacadas.
+
+
+\section{Características técnicas del hardware}\label{sec:technical-features}
+
+La tarjeta \kpci{} puede emplearse para la adquisición y conversión de señales analógicas en señales digitales, para sintetizar señales analógicas a partir de señales digitales previamente generadas o almacenadas, o ---gracias a sus 32 puertos digitales de propósito general--- trabajar con señales digitales.\par
+El primer bloque del sistema electrónico de medida propuesto, es decir el sistema de adquisición y procesado de señales, tan sólo requiere de la función de adquisición analógica de la tarjeta. Por ello, de entre todas las características del dispositivo, se ha creído conveniente resumir a continuación aquellas que tienen relación directa con dicha función. Para obtener información detallada sobre la relación que estos atributos guardan con el proceso de adquisición de señales analógicas en la tarjeta \kpci{}, recúrrase a la \vref{sec:functional-description}.
+
+\begin{itemize}
+	\item El módulo de adquisición analógica dispone de 16 puertos físicos.
+	\item La impedancia de entrada equivalente de cada puerto es aproximadamente igual a una capacidad de 200 pF en serie con una resistencia de valor inferior, pero aproximadamente igual, a 1 k$\Omega$.
+	\item En condiciones óptimas, es posible conseguir un rendimiento máximo de 100 KS/s (cien mil operaciones de conversión por segundo). Este valor está sujeto a un error relativo del $0.02\%$.
+	\item La resolución del conversor analógico digital es de 16 bits por muestra. El rango de amplitudes en el que opera depende de como esté configurado el modo de adquisición.% Este puede ser de 0 a 10 si el modo de adquisición es unipolar, o de -10 a 10 si es bipolar.
+	\item La cola de muestreo tiene capacidad para hasta 256 canales distintos. Cada uno de los cuales puede configurarse independientemente en términos de ganancia, frecuencia de muestreo, modo de adquisición o modo de terminación.
+	\item La ganancia, responsable en parte de la resolución con la que se cuantifica las muestras, puede tomar cada ciclo de reloj uno de entre 16 valores posibles. Véase el \vref{tab:acquisition-modes}.
+	% \item Soporte, tanto en el modo de adquisición y conversión como en el modo de síntesis, para disparo digital externo o controlado por software.
+	% \item Selección por software del flanco activo de disparo.
+	% \item Capacidad de interrumpir el muestreo tras un determinado número de ciclos después del disparo. La cantidad de ciclos puede controlarse por software.
+\end{itemize}
+
+
+\section{Descripción funcional}\label{sec:functional-description}
+
+Es necesario programar el comportamiento de la tarjeta de adquisición antes de ponerla en funcionamiento. Desde la cola de muestreo se controlan los principales aspectos del proceso de adquisición, como por ejemplo, en que instantes se encuentra activo.\par% La configuración correspondiente al proceso de adquisición analógica reside en su práctica totalidad en la cola de muestreo. Desde la cola se controlan los principales aspectos de este proceso, como por ejemplo, en que instantes se encuentra activo.\par
+La cola de muestreo, como su propio nombre indica, es una estructura de datos ordenada. Se encuentra almacenada en una memoria \textsc{ram} de 256 entradas que forma parte del hardware de la tarjeta. En el \vref{tab:sample-queue} puede verse una representación de un ejemplo de la cola de muestreo.\par
+
+\begin{table}[htbp]
+	\centering
+	\begin{threeparttable}
+	\begin{tabular}{lccccccccc}
+		\toprule
+		Posición en la cola & 1 & 2 & 3 & 4 %
+		& \multicolumn{2}{c}{$\cdots$} & 254 & 255 & 256 \\
+		\midrule
+		Número de canal & 15 & 15 & 02 & 02 %
+		& \multicolumn{2}{c}{$\cdots$} & 17 & 13 & 01 \\
+		Número de puerto\tnote{a, b} & 07 & 07 & 11 & 11 %
+		& \multicolumn{2}{c}{$\cdots$} & 07 & 09 & 01 \\
+		Ganancia & 1 & 1 & 40 & 40 %
+		& \multicolumn{2}{c}{$\cdots$} & 200 & 8 & 80 \\
+		Modo de adquisición\tnote{c} & $\pm$ & $\pm$ & $+$ & $+$ %
+		& \multicolumn{2}{c}{$\cdots$} & $\pm$ & $+$ & $\pm$ \\
+		Modo de terminación\tnote{d} & \textsc{d} & \textsc{d} & \textsc{ts} %
+		& \textsc{ts} & \multicolumn{2}{c}{$\cdots$} & \textsc{d} & \textsc{ts} %
+		& \textsc{ts} \\
+		\bottomrule
+	\end{tabular}
+	\begin{TableNotes}
+		\tnotetext{a}{Si el canal es diferencial el número de puerto identifica un par de puertos. Un canal diferencial no puede estar asociado a un número de puerto superior a 07.}
+		\tnotetext{b}{Dos canales pueden estar relacionados con los mismos puertos físicos.}
+		\tnotetext{c}{$\pm$ configuración bipolar; $+$ configuración unipolar}
+		\tnotetext{d}{\textsc{d} canal diferencial; \textsc{ts} canal monoterminal}
+	\end{TableNotes}
+	\end{threeparttable}
+	\caption{Ejemplo de cola de muestreo}
+	\label{tab:sample-queue}
+\end{table}
+
+Cada entrada en la memoria \textsc{ram} se identifica con una posición en la cola. Las posiciones en la cola pueden encontrarse vacías o estar ocupadas por un canal. Varias posiciones en la cola, consecutivas o no, pueden estar ocupadas por un mismo canal. Por tanto, la cola puede estar ocupada, como máximo, por 256 canales independientes.\par
+Las posiciones ocupadas contienen información correspondiente al canal y a los atributos asociados a este. Un canal es una entidad lógica que relaciona un puerto físico con un búffer de información y una serie de atributos. Durante el proceso de adquisición un puntero recorre las distintas posiciones de la cola, una a una y en orden. El canal activo, aquel que ocupa la posición a la que apunta el puntero en cada ciclo de reloj, determina tres cosas:
+
+\begin{itemize}
+	% \footnote{Por convenio se ha elegido hablar de una sola señal que entra al amplificador. Si se ha hecho esta elección, es porque si bien al amplificador pueden entrar una o dos señales simultáneamente desde sendos puertos, tal y como se verá más adelante, esto no supone otra diferencia para el proceso que la expuesta en la sección \vref{sec:termination-modes}
+	\item De qué puerto debe proceder la señal analógica\footnote{Por convenio se ha elegido hablar de una sola señal que entra al amplificador. Si se ha hecho esta elección, es porque si bien al amplificador pueden entrar una o dos señales simultáneamente, esto no supone otra diferencia para el proceso que la expuesta en la sección \vref{sec:termination-modes}. Es por ello, y para mantener la claridad, que se ha omitido esta posibilidad.} que llega al amplificador de instrumentación interno de la tarjeta.
+	\item Dónde, en qué búffer, debe almacenarse el valor resultante de muestrear y cuantificar esta señal.% las muestras cuantificadas resultantes del proceso.
+	\item Por último, los atributos asociados al canal: ganancia, modo de adquisición y modo de terminación; indican, respectivamente, cuál debe ser la ganancia del amplificador de instrumentación, cuál debe ser el rango de trabajo del conversor analógico digital, y qué se debe conectar a los terminales de entrada del amplificador de instrumentación. Se da más información al respecto en apartados subsiguientes.% la polaridad de las muestras y el número de terminales de entrada, uno o dos dependiendo de si la adquisición es diferencial o no, durante el ciclo actual.
+\end{itemize}
+
+Para concluir el apartado cabe remarcar lo siguiente. Es posible inferir dos cosas de esta mecánica de funcionamiento basada en la cola. Una de ellas es que el proceso de adquisición afecta a una sola señal cada vez. Y la segunda, que la frecuencia de muestreo ligada a un canal depende de dos factores, de la velocidad de la señal de reloj, y de la cantidad de veces que un canal aparece repetido en la cola.
+
+
+\subsection{Métodos de entrada}
+
+La \kpci{} permite dos modos de adquisición y dos modos de terminación. Aprender a diferenciar cuando es oportuno seleccionar entre cada uno de ellos beneficiará la calidad de la señal digital resultante.
+
+
+\subsubsection{Modos de adquisición}
+Una señal es bipolar cuando toma valores positivos y negativos. Por el contrario, se distingue a las señales unipolares porque todos sus valores mantienen la misma polaridad, ya sea ésta positiva o negativa. Para cada canal, debe configurarse el modo de adquisición como bipolar o unipolar\footnote{La tarjeta \kpci{} sólo admite señales unipolares de polaridad positiva.} atendiendo a la señal de interés.\par
+% El modo de adquisición unipolar presenta la ventaja de que en dicho modo prácticamente se duplica la resolución de las muestras. Manteniendo la ganancia, se reduce el rango de trabajo a la mitad. El paso correspondiente a una cuantificación de 16 bits se reduce de igual manera y, por tanto, aumenta la precisión.
+Si se sabe a ciencia cierta que la señal de entrada es unipolar debe emplearse el modo de adquisición unipolar. De ese modo, se duplica la resolución del conversor analógico digital.
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{>{\raggedleft}p{1.2cm}d{5.2}d{3.1}+d{3.1}}
+		\toprule
+		& \multicolumn{2}{c}{Bipolar} & \multicolumn{2}{c}{Unipolar} \\
+		\cmidrule(r){2-3}\cmidrule(l){4-5}
+		\multicolumn{1}{c}{Ganancia}
+		& \multicolumn{1}{c}{Rango ($\pm\text{V}$)} %
+		& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} %
+		& \multicolumn{1}{c}{Rango (V)} %
+		& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} \\
+		\midrule
+		1 & 10,0 & 305 & 0/$10,0$ & 153 \\
+		2 & 5,0 & 153 & 0/$5,0$ & 76 \\
+		4 & 2,5 & 76 & 0/$2,5$ & 38 \\
+		8 & 1,25 & 38 & 0/$1,25$ & 19 \\
+		10 & 1,0 & 31 & 0/$1,0$ & 15 \\
+		\\
+		& \multicolumn{2}{c}{Bipolar} & \multicolumn{2}{c}{Unipolar} \\
+		\cmidrule(r){2-3}\cmidrule(l){4-5}
+		\multicolumn{1}{c}{Ganancia}
+		& \multicolumn{1}{c}{Rango ($\pm\text{mV}$)} %
+		& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} %
+		& \multicolumn{1}{c}{Rango (mV)} %
+		& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} \\
+		\midrule
+		20 & 500 & 15 & 0/500 & 7,6 \\
+		40 & 250 & 7,6 & 0/250 & 3,8 \\
+		80 & 125 & 3,8 & 0/125 & 1,9 \\
+		100 & 100 & 3,1 & 0/100 & 1,5 \\
+		200 & 50 & 1,5 & 0/50 & 0,8 \\
+		400 & 25 & 0,8 & 0/25 & 0,4 \\
+		800 & 12,5 & 0,4 & 0/$12,5$ & 0,2 \\
+		\bottomrule
+	\end{tabular}
+	\caption{Relación entre ganancia, rango de trabajo y resolución según el modo de adquisición}
+	\label{tab:acquisition-modes}
+\end{table}
+
+
+\subsubsection{Modos de terminación}\label{sec:termination-modes}
+
+Internamente, la tarjeta \kpci{} emplea un amplificador de instrumentación diferencial. En principio este hecho implicaría que a cada canal se asociasen dos puertos físicos, uno por cada uno de los dos terminales de entrada del amplificador. No obstante, es posible configurar la tarjeta para que uno de los terminales del amplificador se conecte a masa. En ese caso, el terminal restante se conecta a un puerto físico.\par
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics{chapter01-01.pdf}
+	\end{center}
+	\caption{Figura que muestra el modo de terminación sencillo. La entrada superior del amplificador de instrumentación se conecta al puerto 9 y la entrada inferior se conecta a masa}
+	\label{fig:termination-modes}
+\end{figure}
+
+Para hacerlo, cabría pensar que es suficiente con modificar el atributo que controla el modo de terminación del canal correspondiente. Al contrario de lo que pudiera parecer, el modo de terminación es una propiedad que no es atribuible al canal, si no que se atribuye a un par de puertos\footnote{Aunque según las especificaciones del fabricante es posible configurar cada par de puertos para que opere según un modo de terminación independiente del resto, \matlab{} sólo admite un modo de terminación para el conjunto total de puertos.}. En concreto, el modo de terminación afecta a los pares de puertos compuestos por un primero de entre los puertos 0 y 7, y un segundo cuyo número de puerto es igual al del primero más 8. De ahí que todos los canales relacionados con el mismo par de puertos deban estar configurados con el mismo modo de terminación, una configuración distinta no está permitida.\par
+Los dos modos de terminación posibles se conocen como: diferencial, si es que la señal que entra en cada terminal del amplificador procede de cada uno de los puertos del par; sencillo, en caso de que uno de los terminales de entrada del amplificador se conecte a la referencia de tensión. En este documento se llama canal diferencial a los canales cuyo modo de terminación sea diferencial, y canal con un sólo terminal o monoterminal a aquellos para los que el modo de terminación es sencillo. \par
+Las ventajas que presenta el uso de uno u otro tipo de canales son comprensibles. Emplear canales con un sólo terminal permite aplicar el proceso de adquisición sobre un mayor número de señales simultáneamente. Por el contrario, utilizar canales diferenciales redunda en una mayor inmunidad frente al ruido. Además, los amplificadores diferenciales eliminan de forma inherente la componente en continua.\par
+\par
+
+
+\subsection{Rendimiento}\label{subsec:throughput}
+
+Se entiende como rendimiento la cantidad máxima de operaciones de conversión que el dispositivo puede realizar por unidad de tiempo. Para que una de estas operaciones contribuya a la medida de rendimiento debe superar un requisito de precisión.\par
+El rendimiento óptimo de la tarjeta \kpci{} especificado por el fabricante es de cien mil operaciones por segundo (100 KS/s). No obstante se advierte, para obtener este nivel de rendimiento es necesario alimentar la tarjeta con una fuente de tensión ideal. Además, es importante que exista adaptación de impedancias entre el circuito de alimentación y el puerto por el que se quiere introducir la señal. Aún en estas condiciones el valor proporcionado por la casa Keithley está sujeto a un error relativo máximo del $0.02\%$, el cual supone un error absoluto máximo de dos mil operaciones por segundo (2 KS/s).\par
+Es bien sabido, a través del teorema de Nyquist, que la frecuencia de muestreo con la que debe muestrearse una señal analógica para que esta pueda ser recuperada a partir de la versión digital obtenida en el proceso de muestreo debe ser mayor o igual al doble de la mayor de las frecuencias con las que oscila la señal original, siempre que esta sea periódica y se encuentre limitada en banda. No obstante, en la práctica, para poder elaborar una representación visual aceptable de señales que no se encuentren sujetas a tales limitaciones ---ancho de banda finito y periodicidad de la señal--- la frecuencia de muestreo debe estar en torno a unas cinco veces el límite superior de frecuencias correspondiente a la señal que desea representarse. Por este motivo el rendimiento del dispositivo de adquisición y por ende del sistema de adquisición y procesado que en éste se sustenta es un factor limitante que determina la frecuencia de oscilación máxima de la señales con las que dicho sistema trabaja. En este caso, considerando el montaje propuesto para el desarrollo de los experimentos que atañen a este proyecto, el rendimiento de la \kpci{} limita la frecuencia de operación de los transductores empleados y, en consecuencia, la profundidad de penetración de los pulsos ultrasónicos y, por consiguiente, el espesor máximo de las muestras empleadas en los experimentos. Esta relación surge inequívocamente de las conclusiones que se extraen de los desarrollos llevados a cabo en este mismo documento en la \ref{subsec:transducer-field} expuestas en parte en la \vref{subsec:quality-factors}.
+
+
+\subsubsection[Factores limitantes del rendimiento]{Amplificador de instrumentación y pérdida del rendimiento}
+
+El amplificador de instrumentación interno de la \kpci{} es de ganancia variable. Es posible configurar una ganancia distinta para cada canal. El propósito del amplificador es permitir al usuario modificar la amplitud de la señal que entra al conversor. La intención que se persigue es conseguir que la conversión se enfoque en los detalles de la señal que sean de mayor interés y se pierda la mínima información posible. Todo ello aún trabajando simultáneamente con múltiples señales cuyo rango de amplitudes es con frecuencia muy diferente.\par
+La desventaja que presenta esta configuración ---multiplexor -- amplificador de instrumentación -- conversor--- es una pérdida de rendimiento que se produce en situaciones determinadas a causa de la intervención del amplificador en la operación de adquisición.\par
+Cada ciclo de reloj cambia el canal activo y debe cambiar, si es oportuno, la señal que accede al amplificador. Este proceso no es inmediato. Tras conmutar el multiplexor que precede al amplificador, se da paso al puerto conveniente. No obstante, la señal que recibe el amplificador presenta, hasta transcurrido un determinado periodo de tiempo, una componente residual de la señal que se amplificó en el anterior ciclo de reloj. Transcurrido dicho periodo de tiempo la señal que entra al amplificador se ve libre de esa componente residual y se corresponde únicamente con la señal que entrega el multiplexor, se dice que se ha fijado la señal.\par
+Y es así como el amplificador es causa de pérdida de rendimiento, por medio de las componentes residuales. Si la conversión se realiza antes de fijar la señal, el conversor toma un valor de la señal corrompido por la componente residual de la señal precedente. Por tanto, la muestra resultante queda igualmente corrompida incluso hasta el punto de perder su validez. Las operaciones de conversión que tengan como resultado muestras inválidas sólo contribuyen a falsear la medida de rendimiento, haciendo que parezca mayor de lo que en realidad es.\par
+El fabricante da a entender que existe una solución de diseño que resuelve en parte el problema planteado por las componentes residuales. Esta solución consiste en alargar de forma deliberada la duración del ciclo de reloj, de esa forma se proporciona tiempo suficiente para fijar la señal. Sin embargo, esta solución presenta dos inconvenientes: no solventa el problema en la totalidad de los casos y es, asimismo, una forma de perder rendimiento. Lo cual conduce inevitablemente a una solución de compromiso, alargar el ciclo de reloj lo suficiente para que en la mayoría de los casos el efecto de las componentes residuales sobre la precisión de la conversión no invalide las muestras resultantes y se produzca, por tanto, una caída del rendimiento, sin que la duración del nuevo ciclo contribuya por sí misma a una pérdida notable de éste.\par
+
+
+\subsubsection{Optimización del rendimiento}
+
+Como se ha visto, la inclusión del amplificador en el diseño de la tarjeta es causa directa o indirecta de una pérdida de rendimiento. La magnitud de esa caída en el rendimiento depende de la configuración de la cola de muestreo y de la amplitud de la señal una vez llega ésta al dispositivo de adquisición.
+
+\begin{itemize}
+	\item Las señales cuya tensión absoluta se encuentra por debajo de los 100 mV al llegar a la \kpci{} sufren en mayor medida las consecuencias del empleo de un amplificador en la operación de conversión. En primer lugar la señal tarda más en fijarse de modo que el rendimiento se reduce a la mitad en las mejores condiciones, de 100 KS/s pasa a 50 KS/s. Esto es debido a que, al ser la amplitud de la señal y la del ruido comparables, especialmente después de que éste se vea reforzado por el efecto de las componentes residuales, se genera una mayor incertidumbre.\par
+	Por otro lado las señales que requieren que el amplificador opere con alta ganancia son las más perjudicadas por los problemas que causa el amplificador en configuraciones multiganancia, tal y como se explica a continuación.
+	\item Por lo general, el rendimiento se ve afectado de forma más pronunciada por el efecto de las componentes residuales en configuraciones multiganancia en las que se encadenan secuencias de canales con ganancia diferente. Una configuración multiganancia de la cola de muestreo implica que en diferentes ciclos de reloj el amplificador actúa con ganancias distintas. Eso con frecuencia significa que el rango en el que se encuentra comprendida la amplitud de las señales que están entrando al dispositivo de adquisición es diferente de una señal a otra. Cuando así ocurre puede sucederse en ocasiones que en ciclos de reloj consecutivos entren al amplificador dos señales de amplitud diferente, siendo la amplitud de la señal que ocupa el primer ciclo mucho mayor que la de la otra señal en el tiempo en el que ambas permanecen a la entrada del dispositivo. Por otro lado, parece lógico considerar que la componente residual asociada a una señal cuya amplitud sea predominantemente mayor que la de otra señal es de mayor amplitud inicial y mayor duración temporal que la asociada a la segunda señal. Por tanto si ocurre como se ha dicho y se tiene en cuenta la base probable que se ha propuesto, cuando la segunda de las señales se convierte en la señal activa la amplitud de la componente residual asociada a la primera de ellas puede ser suficiente, incluso, para enmascararla.\par No sólo eso, la amplitud de la señal que llega más tarde al amplificador puede ser, en términos absolutos, la mayor parte del tiempo, menor que la de la otra señal, al ser así lo más probable es que se amplifique empleando un mayor factor de ganancia. De ser así, la amplitud de la componente residual a la que se enfrenta esta señal puede provocar en el peor de los casos que el conversor sature y la pérdida de precisión sea mucho mayor. Sea cual sea el caso, es posible observar entonces, que en configuraciones multiganancia las muestras resultantes se obtienen de una conversión menos precisa, en especial si se trabaja con señales de pequeña amplitud ---tal y como se especificó en el punto anterior--- o si las ganancias configuradas en la cola de muestreo difieren mucho unas de otras. Aplicando la relación entre la validez de las muestras y el rendimiento de la que se habló anteriormente, la consecuencia de emplear configuraciones multiganancia es una mayor pérdida de rendimiento.
+	\item En configuraciones monoganancia el uso del amplificador supone una causa indirecta de la caída de rendimiento. El diseño del dispositivo de adquisición está pensado primordialmente para su uso en configuraciones multiganancia, de lo contrario la inclusión de un amplificador de ganancia variable en el esquemático de la tarjeta sería incomprensible. Por la misma razón, Keithley adopta una solución de diseño como la expuesta en el anterior apartado, para tratar de obtener un rendimiento óptimo en configuraciones multiganancia. Sin embargo, el efecto de las componentes residuales en configuraciones monoganancia es mínimo y la consecuente pérdida de rendimiento también lo es. Por tanto, una solución que consiste en alargar el ciclo de reloj resulta, en configuraciones monoganancia, innecesaria y perjudicial para el rendimiento.
+\end{itemize}
+
+Las acciones que el fabricante adopta para tratar de que el usuario obtenga el mayor rendimiento posible del dispositivo no se limitan a aplicar una solución de compromiso en el diseño de la duración del ciclo de reloj. En el manual de usuario se hacen una serie de recomendaciones de uso orientadas a conseguir este fin.\par
+Se proponen varias soluciones, la más trivial de las cuales pasa por preamplificar todas las señales que vayan a ser objeto del proceso de adquisición efectuado por la tarjeta consiguiendo que su amplitud varíe en un mismo rango. Si se hace así, es suficiente con emplear una configuración monoganancia para minimizar los efectos de las componentes residuales en el rendimiento. Además al preamplificar las señales, éstas presentan una mejor relación señal a ruido, es decir, son menos vulnerables al ruido. Aunque buena, esta solución no deja de ser trivial puesto que el amplificador de instrumentación de la tarjeta pierde toda funcionalidad y pasa a ser un estorbo en el proceso de adquisición.\par
+La solución de carácter práctico propuesta por Keithley radica configurar la cola de muestreo de forma <<sensata>>. Como se ha visto, en determinadas ocasiones una configuración inapropiada de la cola de muestreo puede inducir que la pérdida de rendimiento que provoca la inclusión del amplificador en el circuito de adquisición sea todavía mayor. Para evitar que esto ocurra y sacar el máximo partido del dispositivo se dan en el manual dos condiciones que de cumplirse garantizan que la cola se encuentre configurada de forma óptima en términos de rendimiento.
+
+\begin{itemize}
+	\item La primera consiste en agrupar canales con distinta ganancia en posiciones consecutivas de la cola, aún si al hacerlo se pierde el orden de muestreo definido en una primera instancia por el usuario. Si como se presupuso en el apartado anterior, comúnmente dos señales que requieren ser amplificadas con el mismo factor de ganancia varían en el mismo rango de amplitudes, en estas secuencias monoganancia las consecuencias de las componentes residuales en la precisión de la conversión son mínimas.
+	\item A pesar de emplear una configuración como la anterior, la aparición de saltos de ganancia en la cola de muestreo es todavía probable. Por ejemplo, en la transición entre dos secuencias monoganancia como las descritas arriba. El salto es aún más problemático si la transición se realiza para dar paso a una secuencia de ganancia mayor. El primer canal de esta secuencia sufre en mayor proporción los efectos de las componentes residuales y el rendimiento asociado al canal se ve reducido dramáticamente. Para minimizar el impacto que en determinados canales como éste tienen los problemas causados por el amplificador, es posible modificar la configuración de la cola para que dichos canales ocupen varias posiciones consecutivas. Esta segunda condición persigue dar más tiempo para que se fije la señal cuando los mencionados canales están activos. Para ello se necesitan posiciones vacías en la cola, posiciones que es posible obtener desalojando canales previamente configurados.
+\end{itemize}
+
+
+\section{Comunicación con el periférico}
+
+Para la interacción con dispositivos externos, la \kpci{} dispone de dos conectores formato mini-\textsc{d} de 36 terminales que cumplen con el estándar \textsc{ieee} 1284 de protocolos de comunicación en paralelo. Si se observa la tarjeta como el rectángulo que forma desde un punto de vista geométrico y observándola de frente, los conectores quedan ubicados en un lado de la tarjeta contiguo a aquel en el que se sitúa la conexión \textsc{pci}. Todo ello de forma que tras el montaje del periférico en la placa base los conectores quedan expuestos en la parte posterior de la carcasa en la que providencialmente debe encontrarse instalada dicha placa, tal y como es habitual en este tipo de dispositivos.\par
+
+\newsavebox{\auxbox}
+\sbox{\auxbox}{\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{chapter01-02.pdf}}
+\newlength{\auxheight}
+\setlength{\auxheight}{\ht\auxbox + 5pt}
+\newlength{\auxwidth}
+\setlength{\auxwidth}{\wd\auxbox - 5pt}
+
+\begin{figure}[htbp]
+	\centering
+	\subfloat[Conector etiquetado como ``analog'']{\vbox  to \auxheight{ %
+		\hbox to \auxwidth{
+			\hspace*{-7pt}\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{chapter01-02.pdf}} %
+	\vfil}}\qquad
+	\subfloat[Conector etiquetado como ``digital'']{\vbox to \auxheight{\vfil %
+		\hbox to \auxwidth{
+			\hspace*{-7pt}\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{chapter01-03.pdf}} %
+	\vfil}}
+ 	\caption{Esquema del panel de conexiones trasero de la \kpci{}}
+	\label{fig:ports}
+\end{figure}
+
+En la \ref{fig:ports} se etiqueta cada terminal según su ubicación relativa con respecto al conector y al resto de terminales en el mismo, para cada conector, mostrando la distribución definida por el fabricante. Las tablas describen el propósito de cada terminal y se especifica que tipo de señal debe circular por los mismos. % expuestas a continuación 
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
+		\toprule
+		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
+		\midrule
+		1 & ip5 & \multirow{12}{0.6\textwidth}{Bits digitales de entrada multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Base temporal para el contador/temporizador y/o entrada a \emph{gate} \\\item Reloj externo para conversiones A/D o D/A \\\item Disparador digital externo \\\item Entrada digital en el modo \emph{target-mode}}} \\
+		2 & ip3 & \\
+		3 & ip1 & \\
+		\\\\\\\\\\\\\\\\
+		\midrule
+		4 & op5 & \multirow{12}{0.6\textwidth}{Bits digitales de salida multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Salidas del contador/temporizador\\\item Salida del disparador\\\item Salida de control para accesorios\\\item Salida del reloj interno\\\item Salida digital en el modo \emph{target-mode}}} \\
+		5 & op3 & \\
+		6 & op1 & \\
+		\\\\\\\\\\\\\\\\
+		\midrule
+		7 & dgnd & \multicolumn{1}{c}{Tierra digital} \\
+		\midrule
+		8 & ch07 lo/ch15 & \multirow{4}{0.6\textwidth}{Entradas analógicas, cuya función depende del modo de terminación configurado: puerto asociado a un canal monoterminal o puerto bajo de un canal diferencial} \\
+		9 & ch06 lo/ch14 & \\
+		10 & ch05 lo/ch13 & \\
+		$\vdots$ & $\vdots$ & \\
+		15 & ch00 lo/ch08 & \\
+		\midrule
+		16 & {\upshape Sin conexión} & \\
+		\midrule
+		\multicolumn{1}{l}{17, 18} & agnd & Tierra analógica \\
+		\bottomrule
+	\end{tabular}
+	\caption{Relación entre los puertos y terminales que presenta el conector trasero de la \kpci{} etiquetado como \emph{analog}}
+	\label{tab:analog-ports}
+\end{table}
+
+\begin{table}[htbp]\ContinuedFloat
+	\centering
+	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
+		\toprule
+		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
+		\midrule
+		19 & ip4 & \multirow{12}{0.6\textwidth}{Bits digitales de entrada multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Base temporal para el contador/temporizador y/o entrada a \emph{gate} \\\item Reloj externo para conversiones A/D o D/A \\\item Disparador digital externo \\\item Entrada digital en el modo \emph{target-mode}}} \\
+		20 & ip2 & \\
+		21 & ip0 & \\
+		\\\\\\\\\\\\\\\\
+		\midrule
+		22 & op4 & \multirow{12}{0.6\textwidth}{Bits digitales de salida multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Salidas del contador/temporizador\\\item Salida del disparador\\\item Salida de control para accesorios\\\item Salida del reloj interno\\\item Salida digital en el modo \emph{target-mode}}} \\
+		22 & op2 & \\
+		21 & op0 & \\
+		\\\\\\\\\\\\\\\\
+		\midrule
+		25 & {\upshape +5 V} & \multirow{2}{0.6\textwidth}{Referencia de tensión de 5 voltios de corriente continua extraídos del bus \textsc{pci} del ordenador} \\
+		& & \\
+		\midrule
+		26 & ch07 hi & \multirow{3}{0.6\textwidth}{Entradas analógicas restantes, en el modo de terminación diferencial representan el puerto alto de un canal diferencial} \\
+		27 & ch06 hi & \\
+		28 & ch05 hi & \\
+		$\vdots$ & $\vdots$ & \\
+		33 & ch00 hi & \\
+		\midrule
+		34 & {\upshape +10 V} & \multirow{6}{.6\textwidth}{Entrada diseñada para proporcionar al dispositivo una referencia externa de precisión de 10 voltios mediante una fuente de alta impedancia de salida (La impedancia de entrada de este puerto es equivalente a una resistencia de 1 k$\Omega$ en serie con la impedancia de entrada de la fuente)} \\
+		\\\\\\\\\\
+		\bottomrule
+	\end{tabular}
+	\caption[]{Continuación del \vref{tab:analog-ports}}
+\end{table}
+
+\begin{table}[htbp]\ContinuedFloat
+	\centering
+	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
+		\toprule
+		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
+		\midrule
+		35 & dac1 & \multirow{2}{.6\textwidth}{Salida número 1 del conversor digital a analógico de la \kpci{}} \\
+		\\
+		\midrule
+		36 & dac0 & \multirow{2}{.6\textwidth}{Salida número 0 del conversor digital a analógico de la \kpci{}} \\
+		\\
+		\bottomrule
+	\end{tabular}
+	\caption[]{Continuación del \vref{tab:analog-ports}}
+\end{table}
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
+		\toprule
+		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
+		\midrule
+		1 & {\upshape Bit 0} & \multirow{6}{0.6\textwidth}{Canal 0 de bits de entrada/salida de propósito general (En la \kpci{} los bits digitales se agrupan de en ocho en ocho en canales. Los canales de este tipo puede configurarse para que los bits que lo integran se comporten como todo salidas o todo entradas)} \\
+		2 & {\upshape Bit 1} & \\
+		3 & {\upshape Bit 2} & \\
+		$\vdots$ & $\vdots$ & \\
+		8 & {\upshape Bit 7} & \\
+		\\
+		\midrule
+		9 & {\upshape Bit 8} & \multirow{2}{0.6\textwidth}{Canal 1 de bits de entrada/salida de propósito general} \\
+		10 & {\upshape Bit 9} & \\
+		11 & {\upshape Bit 10} & \\
+		$\vdots$ & $\vdots$ & \\
+		16 & {\upshape Bit 15} & \\
+		\midrule
+		\multicolumn{1}{l}{17, 18} & dgnd & Tierras digitales \\
+		\midrule
+		19 & {\upshape Bit 16} & \multirow{2}{0.6\textwidth}{Canal 2 de bits de entrada/salida de propósito general} \\
+		20 & {\upshape Bit 17} & \\
+		21 & {\upshape Bit 18} & \\
+		$\vdots$ & $\vdots$ & \\
+		26 & {\upshape Bit 23} & \\
+		\midrule
+		27 & {\upshape Bit 24} & \multirow{2}{0.6\textwidth}{Canal 3 de bits de entrada/salida de propósito general} \\
+		28 & {\upshape Bit 25} & \\
+		29 & {\upshape Bit 26} & \\
+		$\vdots$ & $\vdots$ & \\
+		34 & {\upshape Bit 31} & \\
+		\midrule
+		\multicolumn{1}{l}{35, 36} & {\upshape +5 V} & +5 \textsc{vdc} desde el bus del ordenador \\
+		\bottomrule
+	\end{tabular}
+	\caption{Relación entre los puertos y terminales que presenta el conector trasero de la \kpci{} etiquetado como \emph{digital}}
+	\label{tab:digital-ports}
+\end{table}
+
+
+\subsection{Desarrollo de una nueva interfaz}\label{subsec:connection-box}
+
+Por razones prácticas, la interfaz original de la \kpci{} basada en dos conectores mini-\textsc{d} no se acomoda a las necesidades que se prevé surgirán durante el desarrollo de las pruebas requeridas para la finalización de este proyecto de fin de carrera. En consecuencia, con el propósito de agilizar en la medida de lo posible la realización de estos ensayos, se decide ampliar la interfaz existente.\par
+Para ello se parte de dos extremos de cable terminados en un conector tipo macho y desprovistos de cubierta, de cada uno de los cuales surgen 36 hilos de cobre recubiertos de plástico flexible coloreado. El patrón de coloreado de las cubiertas individuales es único y no se repite en ninguno de los 36 hilos de que se compone cada extremo de cable. A partir de ahí, se identifica cada terminal de cada conector con el hilo de cobre correspondiente, relacionando las etiquetas que el fabricante pone a los terminales con el código de colores de la cubiertas individuales.\par
+Una vez recopilada esta información, se planea la construcción de una caja de conexiones. El diseño de la caja contempla que se equipe ésta con 72 conectores banana hembra soldados a los 72 hilos de cobre y que comunican con los terminales de los conectores mini-\textsc{d} en los que termina el otro extremo de los cables. Además se planifica la inclusión de cuatro conectores coaxiales con rosca con conexiones redundantes a las que se presupone son las cuatro puertas cuyo uso será más frecuente, las correspondientes al primer canal analógico diferencial y las tierras analógicas; para así facilitar el uso continuado de las mismas. Por último se decide etiquetar la caja de conexiones con marbetes que reproduzcan la nomenclatura visible en la \vref{fig:ports}.\par
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics{chapter01-04.jpg}
+	\end{center}
+	\caption{Plano de la caja de conexiones ya terminada}
+	\label{fig:connection-box}
+\end{figure}
+
+Puede observarse una representación de la caja de conexiones ya terminada en la \vref{fig:connection-box}. Así mismo se ha añadido un diagrama que representa dicha caja con mayor claridad en la \vref{fig:connection-diagram}.
+
+\begin{figure}[htbp]
+	\begin{center}
+		\includegraphics{chapter01-05.pdf}
+	\end{center}
+	\caption{Diagrama que representa la caja de conexiones}
+	\label{fig:connection-diagram}
+\end{figure}
