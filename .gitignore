@@ -10,3 +10,6 @@ referencias/ejemplos/*.pdf
 *.swp
 *.lot
 *.lof
+*.pdf
+*latexmk
+pictures/capitulo*

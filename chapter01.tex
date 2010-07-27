@@ -12,8 +12,8 @@ El primer bloque del sistema electrónico de medida propuesto, es decir el sistem
 
 \begin{itemize}
 	\item El módulo de adquisición analógica dispone de 16 puertos físicos.
-	\item La impedancia de entrada equivalente de cada puerto es aproximadamente igual a una capacidad de 200 pF en serie con una resistencia de valor inferior, pero aproximadamente igual, a 1 K$\Omega$.
-	\item En condiciones óptimas, es posible conseguir un rendimiento máximo de 100 KS/s (cien mil operaciones de conversión por segundo). Este valor está sujeto a un error relativo del $0.02 \%$.
+	\item La impedancia de entrada equivalente de cada puerto es aproximadamente igual a una capacidad de 200 pF en serie con una resistencia de valor inferior, pero aproximadamente igual, a 1 k$\Omega$.
+	\item En condiciones óptimas, es posible conseguir un rendimiento máximo de 100 KS/s (cien mil operaciones de conversión por segundo). Este valor está sujeto a un error relativo del $0.02\%$.
 	\item La resolución del conversor analógico digital es de 16 bits por muestra. El rango de amplitudes en el que opera depende de como esté configurado el modo de adquisición.% Este puede ser de 0 a 10 si el modo de adquisición es unipolar, o de -10 a 10 si es bipolar.
 	\item La cola de muestreo tiene capacidad para hasta 256 canales distintos. Cada uno de los cuales puede configurarse independientemente en términos de ganancia, frecuencia de muestreo, modo de adquisición o modo de terminación.
 	\item La ganancia, responsable en parte de la resolución con la que se cuantifica las muestras, puede tomar cada ciclo de reloj uno de entre 16 valores posibles. Véase el \vref{tab:acquisition-modes}.
@@ -129,7 +129,7 @@ Internamente, la tarjeta \kpci{} emplea un amplificador de instrumentación difer
 
 \begin{figure}[htbp]
 	\begin{center}
-		\includegraphics{chapter01-01.pdf}
+		\includegraphics{chapter01-01.mps}
 	\end{center}
 	\caption{Figura que muestra el modo de terminación sencillo. La entrada superior del amplificador de instrumentación se conecta al puerto 9 y la entrada inferior se conecta a masa}
 	\label{fig:termination-modes}
@@ -263,7 +263,7 @@ En la \ref{fig:ports} se etiqueta cada terminal según su ubicación relativa con 
 		$\vdots$ & $\vdots$ & \\
 		33 & ch00 hi & \\
 		\midrule
-		34 & {\upshape +10 V} & \multirow{6}{.6\textwidth}{Entrada diseñada para proporcionar al dispositivo una referencia externa de precisión de 10 voltios mediante una fuente de alta impedancia de salida (La impedancia de entrada de este puerto es equivalente a una resistencia de 1 K$\Omega$ en serie con la impedancia de entrada de la fuente)} \\
+		34 & {\upshape +10 V} & \multirow{6}{.6\textwidth}{Entrada diseñada para proporcionar al dispositivo una referencia externa de precisión de 10 voltios mediante una fuente de alta impedancia de salida (La impedancia de entrada de este puerto es equivalente a una resistencia de 1 k$\Omega$ en serie con la impedancia de entrada de la fuente)} \\
 		\\\\\\\\\\
 		\bottomrule
 	\end{tabular}
