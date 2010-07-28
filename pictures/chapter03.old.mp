@@ -77,10 +77,13 @@ drawarrow atb.c--reb.c cutbefore bpath atb cutafter bpath reb;
 drawarrow ata.c--ata.c + z11--disp.c - z11--disp.c cutbefore bpath ata cutafter bpath disp;
 drawarrow disp.c - z11--difb.c + z11--difb.c cutbefore bpath disp cutafter bpath difb;
 % drawarrow disp.c--difc.c cutbefore bpath disp cutafter bpath difc;
-draw disp.c--disp.c + z11 cutbefore bpath disp;
-draw disp.c + z11--disp.c + 2(z11) dashed withdots;
-draw difc.c - 2(z11)--difc.c - z11 dashed withdots;
-draw difc.c - z11--difc.c cutafter bpath difc;
+% ------------------------------------------------------------------
+% draw disp.c--disp.c + z11 cutbefore bpath disp;
+% draw disp.c + z11--disp.c + 2(z11) dashed withdots;
+% draw difc.c - 2(z11)--difc.c - z11 dashed withdots;
+% draw difc.c - z11--difc.c cutafter bpath difc;
+% ------------------------------------------------------------------
+draw disp.c--disp.c + z11--disp.c + z11 - 4(z12)--difc.c - 2(z11) + 4(z12)--difc.c - 2(z11)--difc.c cutbefore bpath disp cutafter bpath difc;
 % ------------------------------------------------------------------
 drawarrow difc.c--atc.c cutbefore bpath difc cutafter bpath atc;
 drawarrow atc.c--rec.c cutbefore bpath atc cutafter bpath rec;
