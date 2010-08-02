@@ -5,7 +5,7 @@ verbatimtex
 \fontsize{12pt}{14.4pt}\selectfont
 etex
 
-filenametemplate "%j-%2c.mps";
+filenametemplate "%j-%c.mps";
 
 input boxes
 
@@ -36,16 +36,16 @@ f5 = blanco;
 
 % ------------------------------------------------------------------
 % agarre
-% aimensiones de las barras
+% dimensiones de las barras
 c00 = v;		c01 = v;
 z00 = 1/2(-c00, -c01);	z01 = 1/2(c00, -c01);	
 z02 = 1/2(c00, c01);	z03 = 1/2(-c00, c01);	
 r0 = z00--z02;		r1 = z01--z03;
 % dimensiones del agarre y separación entre barras
 c02 = 3u;	c03 = v;	c04 = u;
-c05 = 0;	% Espacio adicional para el corte
-z04 = 1/2(-c02 - c05, -c03);	z05 = 1/2(c02 + c05, -c03);
-z06 = 1/2(c02 + c05, c03);	z07 = 1/2(-c02 - c05, c03);
+c05 = u/20;	% Espacio adicional para el corte
+z04 = 1/2(-c02, -c03);	z05 = 1/2(c02 - c05, -c03);
+z06 = 1/2(c02 - c05, c03);	z07 = 1/2(-c02, c03);
 r3 = z04--z05--z06--z07--cycle;
 for i = -1 upto c03/c04 + 1:
 	addto f0 doublepath r0 shifted (0, i*c04 - c03/2);
@@ -99,7 +99,7 @@ r5 := r5 shifted (-u/2, 0);
 addto f5 contour r7 withcolor white;
 addto f2 also f1;
 addto f2 doublepath r7;
-addto f3 contour r5 withcolor 0.6white;
+addto f3 contour r5; % withcolor 0.6white;
 addto f3 contour r4 withcolor white;
 addto f4 doublepath r4;
 draw f5 scaled escala shifted desplazamiento withpen n0;
@@ -121,7 +121,7 @@ path p[], q[][];
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
-l4 = pencircle scaled 0.5u;
+l3 = pencircle scaled 0.5u;
 d0 = currentpicture;
 d1 = currentpicture;
 pickup l1;
@@ -142,6 +142,7 @@ for i = 4.5v, 9v, 13.5v, 18v:
 	addto d1 doublepath q0.[i];
 endfor
 clip d1 to p1;
+draw d1 withpen l1; % withpen l3 withcolor 0.7white;
 % ------------------------------------------------------------------
 % curvas auxiliares
 a02 = he02 - u;		a03 = 3/4*4.5v;
@@ -192,10 +193,177 @@ fill bbox d3 withcolor white;	draw d3;
 fill bbox d4 withcolor white;	draw d4;
 fill bbox d5 withcolor white;	draw d5;
 label(btex Transductor etex, (a01, he02/3));
-draw d1 withpen l2 withcolor 0.7white;
 fill bbox d6 withcolor white;	draw d6;
 pickup l2;
 draw (0, 0)--(wi, 0)--(wi, he02)--(0, he02)--cycle;
+
+endfig;
+% ==================================================================
+
+
+
+% ==================================================================
+beginfig(2);
+numeric a[], i, j, k;
+picture d[];
+pen l[];
+path p[], q[][];
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+d0 = currentpicture;
+d1 = currentpicture;
+pickup l1;
+
+% ------------------------------------------------------------------
+% transductor izquierdo
+a00 = 1.5;	a01 = 17u;	a02 = he02/2;
+draw (0, a02)--(a01, a02);
+transductor(d0, a00, (a01, a02));
+% ------------------------------------------------------------------
+% transductor derecho
+a03 = wi - a01;
+draw (wi, a02)--(a03, a02);
+draw f5 xscaled -1 scaled a00 shifted (a03, a02) withpen l0;
+draw f2 xscaled -1 scaled a00 shifted (a03, a02) withpen l1;
+draw f3 xscaled -1 scaled a00 shifted (a03, a02) withpen l0;
+draw f0 xscaled -1 scaled a00 shifted (a03, a02) withpen l0;
+draw f4 xscaled -1 scaled a00 shifted (a03, a02) withpen l1;
+
+% ------------------------------------------------------------------
+% medio y acoplamiento
+z25 = z13 shifted (-u/2, 0) scaled 1.5 shifted (a01, a02);
+z26 = z19 shifted (-u/2, 0) scaled 1.5 shifted (a01, a02);
+z27 = (wi - x25, y25);		z28 = (wi - x26, y26);
+z29 = 1/2[z26, z25];		z30 = 1/2[z28, z27];
+z31 = 1/2[z30, z29];		z32 = 5/8[z30, z29];
+% espesor de la capa de acoplamiento y margen vertical
+a04 = 5u;			a05 = 5u;
+p1 = (x25 + a04, a05)--(x25, a05)--(x25, 2a02 - a05)-- %
+		(x25 + a04, 2a02 - a05);
+p2 = (x27 - a04, a05)--(x27, a05)--(x27, 2a02 - a05)-- %
+		(x27 - a04, 2a02 - a05);
+p3 = (x25 + a04, a05)--(x27 - a04, a05)--(x27 - a04, 2a02 - a05)-- %
+		(x25 + a04, 2a02 - a05)--cycle;
+pickup l0;
+draw p1 dashed evenly;		draw p2 dashed evenly;
+draw p3;
+
+% ------------------------------------------------------------------
+% defecto
+% dimensiones del rectángulo en el que el defecto se encierra
+a06 = 5u;		a07 = 8u;
+p4 = (-3a06/10, -a07/2)--(-2a06/5, 0)--(0, 2a07/5){dir 340}.. %
+		(2a06/5, a07/2);
+p5 = (-3a06/10, -a07/2)--(a06/10, -2a07/5)--(a06/2, -a07/10)-- % 
+		(2a06/5, a07/2);
+addto d1 doublepath p4;
+addto d1 doublepath (-3a06/10, -a07/2)--(a06/5, 0)--(2a06/5, a07/2);
+addto d1 doublepath p5;
+draw d1 shifted z32 shifted (a06/2, 0) withpen l1;
+d2 = d1 shifted (19a06/40, 0) shifted z32;
+p6 = p4 scaled 1.3 shifted (19a06/40, 0) shifted z32;
+p7 = p5 scaled 1.3 shifted (19a06/40, 0) shifted z32;
+% ------------------------------------------------------------------
+% flechas
+a08 = 2u;		a09 = ahlength;
+p8 = z29 shifted (u, 0)--z30 shifted (-u, 0);
+drawarrow p8 cutafter p6;	
+drawarrow p8 cutbefore p7;
+% ------------------------------------------------------------------
+% etiquetas
+d3 = thelabel.top(btex defecto etex, 1/4[z29, z30] %
+		shifted (0, 2a08));
+d4 = thelabel.top(btex forward scattering etex, 23/32[z29, z30] %
+		shifted (0, a08));
+d5 = thelabel.llft(btex \begin{tabular}{r@{ }l}--- & medio\\ %
+	- - & acoplamiento\end{tabular} etex, (wi - 2u, he02 - 2u));
+drawarrow 1/2[urcorner d3, lrcorner d3] shifted (u/2, 0){right}.. %
+		1/2[ulcorner d2, urcorner d2] dashed evenly;
+fill bbox d4 withcolor white;		draw d4;
+fill bbox d5 withcolor white;		draw d5;
+draw bbox d5;				draw d3;
+% ------------------------------------------------------------------
+% marco
+pickup l2;
+draw (0, 0)--(wi, 0)--(wi, he02)--(0, he02)--cycle;
+
+endfig;
+% ==================================================================
+
+
+
+% ==================================================================
+beginfig(3);
+numeric a[], i, j, k;
+picture d[];
+pen l[];
+path p[], q[][];
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+d0 = currentpicture;
+d1 = currentpicture;
+pickup l1;
+
+% ------------------------------------------------------------------
+% transductor izquierdo
+a00 = 1.5;	a01 = 17u;	a02 = he02/2;
+draw (0, a02)--(a01, a02);
+transductor(d0, a00, (a01, a02));
+% ------------------------------------------------------------------
+% medio y acoplamiento
+z25 = z13 shifted (-u/2, 0) scaled 1.5 shifted (a01, a02);
+z26 = z19 shifted (-u/2, 0) scaled 1.5 shifted (a01, a02);
+z27 = (wi - x25, y25);		z28 = (wi - x26, y26);
+z29 = 1/2[z26, z25];		z30 = 1/2[z28, z27];
+z31 = 1/2[z30, z29];		z32 = 5/8[z30, z29];
+% espesor de la capa de acoplamiento y margen vertical
+a03 = 5u;			a04 = 5u;
+p1 = (x25 + a03, a04)--(x25, a04)--(x25, 2a02 - a04)-- %
+		(x25 + a03, 2a02 - a04);
+p2 = (x27 - a03, a04)--(x27, a04)--(x27, 2a02 - a04)-- %
+		(x27 - a03, 2a02 - a04);
+p3 = (x25 + a03, a04)--(x27 - a03, a04)--(x27 - a03, 2a02 - a04)-- %
+		(x25 + a03, 2a02 - a04)--cycle;
+pickup l0;
+draw p1 dashed evenly;		draw p2 dashed evenly;
+draw p3;
+
+% ------------------------------------------------------------------
+% defecto
+% dimensiones del rectángulo en el que el defecto se encierra
+a05 = 5u;		a06 = 8u;
+p4 = (-3a05/10, -a06/2)--(-2a05/5, 0)--(0, 2a06/5){dir 340}.. %
+		(2a05/5, a06/2);
+addto d1 doublepath p4;
+addto d1 doublepath (-3a05/10, -a06/2)--(a05/5, 0)--(2a05/5, a06/2);
+addto d1 doublepath (-3a05/10, -a06/2)--(a05/10, -2a06/5)-- %
+	(a05/2, -a06/10)--(2a05/5, a06/2);
+draw d1 shifted z32 shifted (a05/2, 0) withpen l1;
+p5 = p4 scaled 1.3 shifted (19a05/40, 0) shifted z32;
+% ------------------------------------------------------------------
+% flechas
+a07 = 2u;		a08 = ahlength;
+p6 = z29 shifted (u, a07)--z30 shifted (-u, a07);
+p7 = p6 shifted (0, -2a07);
+drawarrow p6 cutafter p5;	
+drawarrow reverse p7 cutbefore p5;
+% ------------------------------------------------------------------
+% etiquetas
+d2 = thelabel.llft(btex \begin{tabular}{r@{ }l}--- & medio\\ %
+	- - & acoplamiento\end{tabular} etex, (wi - 2u, he02 - 2u));
+label.bot(btex backward scattering etex, 3/8[z29, z30] %
+		shifted (0, -2a07));
+fill bbox d2 withcolor white;		draw d2;
+draw bbox d2;
+% ------------------------------------------------------------------
+% marco
+pickup l2;
+draw (0, 0)--(wi, 0)--(wi, he02)--(0, he02)--cycle;
+
 endfig;
 % ==================================================================
 
@@ -302,7 +470,7 @@ path p[], q[][];
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
-l4 = pencircle scaled 0.5u;
+l3 = pencircle scaled 0.5u;
 d0 = currentpicture;
 d1 = currentpicture;
 d2 = currentpicture;
@@ -327,7 +495,7 @@ for i = 4.5v, 9v, 13.5v, 18v:
 	addto d1 doublepath q0.[i];
 endfor
 clip d1 to p1;
-draw d1 withpen l2 withcolor 0.7white;
+draw d1 withpen l1; % withpen l3 withcolor 0.7white;
 
 % ------------------------------------------------------------------
 % matriz de reflectores

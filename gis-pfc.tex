@@ -1,5 +1,5 @@
 \documentclass[a4paper, 12pt]{book}
-\includeonly{introduction, chapter01, chapter02, chapter03-01, appendixA, appendixB}
+\includeonly{gis-pfc-pro, gis-pfc-ch1, gis-pfc-ch2, gis-pfc-ch3-1, gis-pfc-appa, gis-pfc-appb}
 \usepackage[a4paper, BCOR1cm]{typearea}
 \usepackage[spanish, es-ucroman]{babel}
 \usepackage[format=hang, font=small, labelfont=bf, labelsep=endash, width=.9\textwidth]{caption}
@@ -71,7 +71,7 @@
 
 \listoffigures
 
-\include{introduction}
+\include{gis-pfc-pro}
 
 \fancyhf{}
 \fancyhead[RO, LE]{\sffamily\bfseries\thepage}
@@ -85,13 +85,13 @@
 
 \part{Sistema de adquisición y procesado de señales}
 
-\include{chapter01}
+\include{gis-pfc-ch1}
 
-\include{chapter02}
+\include{gis-pfc-ch2}
 
 \part{Ensayos no destructivos con ultrasonidos}
 
-\include{chapter03-01}
+\include{gis-pfc-ch3-1}
 
 \part*{Apéndices}
 
@@ -99,10 +99,10 @@
 \renewcommand\thepage{\thechapter.\arabic{page}}
 \appendix
 
-\include{appendixA}
+\include{gis-pfc-appa}
 
 \setcounter{page}{1}
-\include{appendixB}
+\include{gis-pfc-appb}
 
 \backmatter
 

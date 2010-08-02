@@ -28,7 +28,7 @@ El primer bloque del sistema electrónico de medida propuesto, es decir el sistem
 Es necesario programar el comportamiento de la tarjeta de adquisición antes de ponerla en funcionamiento. Desde la cola de muestreo se controlan los principales aspectos del proceso de adquisición, como por ejemplo, en que instantes se encuentra activo.\par% La configuración correspondiente al proceso de adquisición analógica reside en su práctica totalidad en la cola de muestreo. Desde la cola se controlan los principales aspectos de este proceso, como por ejemplo, en que instantes se encuentra activo.\par
 La cola de muestreo, como su propio nombre indica, es una estructura de datos ordenada. Se encuentra almacenada en una memoria \textsc{ram} de 256 entradas que forma parte del hardware de la tarjeta. En el \vref{tab:sample-queue} puede verse una representación de un ejemplo de la cola de muestreo.\par
 
-\begin{table}[htbp]
+\begin{table}
 	\centering
 	\begin{threeparttable}
 	\begin{tabular}{lccccccccc}
@@ -83,7 +83,7 @@ Una señal es bipolar cuando toma valores positivos y negativos. Por el contrario
 % El modo de adquisición unipolar presenta la ventaja de que en dicho modo prácticamente se duplica la resolución de las muestras. Manteniendo la ganancia, se reduce el rango de trabajo a la mitad. El paso correspondiente a una cuantificación de 16 bits se reduce de igual manera y, por tanto, aumenta la precisión.
 Si se sabe a ciencia cierta que la señal de entrada es unipolar debe emplearse el modo de adquisición unipolar. De ese modo, se duplica la resolución del conversor analógico digital.
 
-\begin{table}[htbp]
+\begin{table}
 	\centering
 	\begin{tabular}{>{\raggedleft}p{1.2cm}d{5.2}d{3.1}+d{3.1}}
 		\toprule
@@ -127,9 +127,9 @@ Si se sabe a ciencia cierta que la señal de entrada es unipolar debe emplearse e
 
 Internamente, la tarjeta \kpci{} emplea un amplificador de instrumentación diferencial. En principio este hecho implicaría que a cada canal se asociasen dos puertos físicos, uno por cada uno de los dos terminales de entrada del amplificador. No obstante, es posible configurar la tarjeta para que uno de los terminales del amplificador se conecte a masa. En ese caso, el terminal restante se conecta a un puerto físico.\par
 
-\begin{figure}[htbp]
+\begin{figure}
 	\begin{center}
-		\includegraphics[scale=1, keepaspectratio=true]{chapter01-01.mps}
+		\includegraphics[scale=1, keepaspectratio=true]{gis-pfc-ch1-1.mps}
 	\end{center}
 	\caption{Figura que muestra el modo de terminación sencillo. La entrada superior del amplificador de instrumentación se conecta al puerto 9 y la entrada inferior se conecta a masa}
 	\label{fig:termination-modes}
@@ -183,21 +183,21 @@ La solución de carácter práctico propuesta por Keithley radica configurar la col
 Para la interacción con dispositivos externos, la \kpci{} dispone de dos conectores formato mini-\textsc{d} de 36 terminales que cumplen con el estándar \textsc{ieee} 1284 de protocolos de comunicación en paralelo. Si se observa la tarjeta como el rectángulo que forma desde un punto de vista geométrico y observándola de frente, los conectores quedan ubicados en un lado de la tarjeta contiguo a aquel en el que se sitúa la conexión \textsc{pci}. Todo ello de forma que tras el montaje del periférico en la placa base los conectores quedan expuestos en la parte posterior de la carcasa en la que providencialmente debe encontrarse instalada dicha placa, tal y como es habitual en este tipo de dispositivos.\par
 
 \newsavebox{\auxbox}
-\sbox{\auxbox}{\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{chapter01-02.pdf}}
+\sbox{\auxbox}{\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{gis-pfc-ch1-2.pdf}}
 \newlength{\auxheight}
 \setlength{\auxheight}{\ht\auxbox + 5pt}
 \newlength{\auxwidth}
 \setlength{\auxwidth}{\wd\auxbox - 5pt}
 
-\begin{figure}[htbp]
+\begin{figure}
 	\centering
 	\subfloat[Conector etiquetado como ``analog'']{\vbox  to \auxheight{ %
 		\hbox to \auxwidth{
-			\hspace*{-7pt}\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{chapter01-02.pdf}} %
+			\hspace*{-7pt}\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{gis-pfc-ch1-2.pdf}} %
 	\vfil}}\qquad
 	\subfloat[Conector etiquetado como ``digital'']{\vbox to \auxheight{\vfil %
 		\hbox to \auxwidth{
-			\hspace*{-7pt}\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{chapter01-03.pdf}} %
+			\hspace*{-7pt}\includegraphics[height=.3\textheight, keepaspectratio=true, angle=90]{gis-pfc-ch1-3.pdf}} %
 	\vfil}}
  	\caption{Esquema del panel de conexiones trasero de la \kpci{}}
 	\label{fig:ports}
@@ -205,7 +205,7 @@ Para la interacción con dispositivos externos, la \kpci{} dispone de dos conecto
 
 En la \ref{fig:ports} se etiqueta cada terminal según su ubicación relativa con respecto al conector y al resto de terminales en el mismo, para cada conector, mostrando la distribución definida por el fabricante. Las tablas describen el propósito de cada terminal y se especifica que tipo de señal debe circular por los mismos. % expuestas a continuación 
 
-\begin{table}[htbp]
+\begin{table}
 	\centering
 	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
 		\toprule
@@ -238,7 +238,7 @@ En la \ref{fig:ports} se etiqueta cada terminal según su ubicación relativa con 
 	\label{tab:analog-ports}
 \end{table}
 
-\begin{table}[htbp]\ContinuedFloat
+\begin{table}\ContinuedFloat
 	\centering
 	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
 		\toprule
@@ -270,7 +270,7 @@ En la \ref{fig:ports} se etiqueta cada terminal según su ubicación relativa con 
 	\caption[]{Continuación del \vref{tab:analog-ports}}
 \end{table}
 
-\begin{table}[htbp]\ContinuedFloat
+\begin{table}\ContinuedFloat
 	\centering
 	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
 		\toprule
@@ -286,7 +286,7 @@ En la \ref{fig:ports} se etiqueta cada terminal según su ubicación relativa con 
 	\caption[]{Continuación del \vref{tab:analog-ports}}
 \end{table}
 
-\begin{table}[htbp]
+\begin{table}
 	\centering
 	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
 		\toprule
@@ -333,20 +333,20 @@ Por razones prácticas, la interfaz original de la \kpci{} basada en dos conector
 Para ello se parte de dos extremos de cable terminados en un conector tipo macho y desprovistos de cubierta, de cada uno de los cuales surgen 36 hilos de cobre recubiertos de plástico flexible coloreado. El patrón de coloreado de las cubiertas individuales es único y no se repite en ninguno de los 36 hilos de que se compone cada extremo de cable. A partir de ahí, se identifica cada terminal de cada conector con el hilo de cobre correspondiente, relacionando las etiquetas que el fabricante pone a los terminales con el código de colores de la cubiertas individuales.\par
 Una vez recopilada esta información, se planea la construcción de una caja de conexiones. El diseño de la caja contempla que se equipe ésta con 72 conectores banana hembra soldados a los 72 hilos de cobre y que comunican con los terminales de los conectores mini-\textsc{d} en los que termina el otro extremo de los cables. Además se planifica la inclusión de cuatro conectores coaxiales con rosca con conexiones redundantes a las que se presupone son las cuatro puertas cuyo uso será más frecuente, las correspondientes al primer canal analógico diferencial y las tierras analógicas; para así facilitar el uso continuado de las mismas. Por último se decide etiquetar la caja de conexiones con marbetes que reproduzcan la nomenclatura visible en la \vref{fig:ports}.\par
 
-\begin{figure}[htbp]
+\begin{figure}
 	\begin{center}
-		\includegraphics{chapter01-04.jpg}
+		\includegraphics{gis-pfc-ch1-4.jpg}
 	\end{center}
 	\caption{Plano de la caja de conexiones ya terminada}
 	\label{fig:connection-box}
 \end{figure}
 
-Puede observarse una representación de la caja de conexiones ya terminada en la \vref{fig:connection-box}. Así mismo se ha añadido un diagrama que representa dicha caja con mayor claridad en la \vref{fig:connection-diagram}.
+Puede observarse una representación de la caja de conexiones ya terminada en la \vref{fig:connection-box}.% Así mismo se ha añadido un diagrama que representa dicha caja con mayor claridad en la \vref{fig:connection-diagram}.
 
-\begin{figure}[htbp]
-	\begin{center}
-		\includegraphics{chapter01-05.pdf}
-	\end{center}
-	\caption{Diagrama que representa la caja de conexiones}
-	\label{fig:connection-diagram}
-\end{figure}
+% \begin{figure}
+% 	\begin{center}
+% 		\includegraphics{gis-pfc-ch1-5.pdf}
+% 	\end{center}
+% 	\caption{Diagrama que representa la caja de conexiones}
+% 	\label{fig:connection-diagram}
+% \end{figure}

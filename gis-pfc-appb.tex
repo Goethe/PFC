@@ -14,7 +14,7 @@ La configuración actual se ha hecho utilizando el paquete \textsf{typearea} que 
 \setlength{\auxin}{1in}
 \setlength{\auxpt}{1pt}
 
-\begin{table}[htbp]
+\begin{table}
 	\centering
 	\printinunitsof{mm}\pagevalues
 	\hspace*{-22pt}\begin{tabular}{>{\raggedright}p{175pt} >{\raggedright\arraybackslash}p{140pt}}
@@ -26,13 +26,13 @@ La configuración actual se ha hecho utilizando el paquete \textsf{typearea} que 
 
 El lector puede fijarse que se cumple la regla de construcción que aplica el paquete \textsf{typearea} en la que el margen inferior es dos veces el margen inferior, y que el margen interior de página ---una vez eliminado el centímetro (\textsc{bcor}\texttt{1cm}) que se deja para compensar el encuadernado--- es la mitad del margen exterior de página. De ese modo se crea una distribución de página en la que el margen interior de página de las páginas par e impar juntas es igual a cada uno de los márgenes exteriores de ambas páginas.
 
-\begin{figure}[htbp]
+\begin{figure}
 	\pagediagram
 	\caption{Distribución del texto en las páginas de este documento}
 	\label{fig:layouts}
 \end{figure}
 
-\begin{figure}[htbp]\ContinuedFloat
+\begin{figure}\ContinuedFloat
 	\currentpage
 	\pagedesign
 	\caption[]{Continuación del \vref{fig:layouts}}

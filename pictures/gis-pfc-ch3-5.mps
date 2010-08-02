@@ -2,10 +2,10 @@
 %%BoundingBox: -1 -1 341 192 
 %%HiResBoundingBox: -0.49608 -0.49608 340.65294 191.83432 
 %%Creator: MetaPost 1.208
-%%CreationDate: 2010.07.30:2108
+%%CreationDate: 2010.08.02:1310
 %%Pages: 1
 %*Font: cmmi12 11.95517 11.95517 0d:80800000000201010000081011cc
-%*Font: cmr12 11.95517 11.95517 0d:8200001800000b8085000bcdf794
+%*Font: cmr12 11.95517 11.95517 0d:8200001880000b8085000feff7b5
 %%BeginProlog
 %%EndProlog
 %%Page: 1 1
@@ -57,8 +57,7 @@ newpath 13.6417 90.21245 moveto
 20.92632 100.0263 17.86887 99.26216 18.42519 101.33842 curveto
 16.92166 100.63731 15.20149 100.56087 13.6417 101.12581 curveto
  closepath stroke
- 0.6 0.6 0.6 setrgbcolor 0 0.42519
- dtransform truncate idtransform setlinewidth pop
+ 0 0.42519 dtransform truncate idtransform setlinewidth pop
 newpath 71.57466 76.5353 moveto
 75.82663 79.72427 lineto
 75.82663 111.61398 lineto
@@ -79,8 +78,8 @@ newpath 22.67712 80.78725 moveto
  closepath
 gsave fill grestore stroke
 gsave newpath 56.69281 74.40932 moveto
-69.44872 74.40932 lineto
-69.44872 116.92894 lineto
+69.3424 74.40932 lineto
+69.3424 116.92894 lineto
 56.69281 116.92894 lineto
  closepath clip
  0 0 0 setrgbcolor
@@ -155,8 +154,6 @@ gsave newpath 236.6925 191.33826 moveto
 340.15686 0 lineto
 340.15686 191.33824 lineto
  closepath clip
- 0.7 0.7 0.7 setrgbcolor 0 0.99214
- dtransform truncate idtransform setlinewidth pop
 newpath 109.13368 95.66913 moveto
 109.13368 112.58524 102.41278 128.80647 90.4522 140.76706 curveto
 78.49161 152.72765 62.27037 159.44855 45.35426 159.44855 curveto

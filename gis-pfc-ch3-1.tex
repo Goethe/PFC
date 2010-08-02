@@ -48,9 +48,9 @@ Más allá del campo cercano encontramos el campo lejano. En el campo lejano el fr
 	\label{eq:angulo-divergencia}
 \end{equation}
 
-\begin{figure}[htbp]
+\begin{figure}
 	\begin{center}
-		\includegraphics{chapter03-01.mps}
+		\includegraphics{gis-pfc-ch3-1.mps}
 	\end{center}
 	\caption{Diagrama simplificado que muestra el campo acústico generado por un transductor cilíndrico}
 	\label{fig:transceiver}
@@ -64,10 +64,10 @@ Para finalizar este punto cabe mencionarse que el transductor es responsable de 
 
 Atendiendo a la situación del receptor en los ensayos no destructivos mediante ultrasonidos se distinguen dos técnicas: la técnica de pulso"=eco y la técnica de transmisión. En la técnica de pulso"=eco el receptor suele encontrarse cercano al emisor, de hecho es frecuente que un mismo transductor haga las veces de emisor y receptor. Por el contrario en la técnica de transmisión el receptor se coloca alineado en el eje del emisor pero en el extremo opuesto del material inspeccionado.\par
 
-\begin{figure}[htbp]
+\begin{figure}
 	\begin{center}
-		\subfloat[Inspección ultrasónica por transmisión]{\includegraphics{chapter03-02.pdf}} \\
-		\subfloat[Inspección ultrasónica por pulso"=eco]{\includegraphics{chapter03-03.pdf}}
+		\subfloat[Inspección ultrasónica por transmisión]{\includegraphics{gis-pfc-ch3-2.mps}}\bigskip\par
+		\subfloat[Inspección ultrasónica por pulso"=eco]{\includegraphics{gis-pfc-ch3-3.mps}}
 	\end{center}
 	\caption{Diferencias en cuanto al número y posición de los transductores según la técnica empleada en una evaluación mediante ultrasonidos}
 	\label{fig:tecnicas}
@@ -159,9 +159,9 @@ Finalmente, la presión $p_R$ se traduce en una señal eléctrica en bornes del tra
 
 Por consiguiente el proceso de emisión"=recepción en el que se fundamentan los \textsc{endus} puede describirse mediante la respuesta impulsional en cascada de todos los fenómenos descritos.
 
-\begin{figure}[htbp]
+\begin{figure}
 	\begin{center}
-		\includegraphics[scale=1, keepaspectratio=true]{chapter03-04.mps}
+		\includegraphics[scale=1, keepaspectratio=true]{gis-pfc-ch3-4.mps}
 	\end{center}
 	\caption{Diagrama de bloques que representa el proceso de emisión"=recepción y todos los elementos que en el intervienen (considerando el modelo propuesto)}
 	\label{fig:emision-recepcion}
@@ -232,9 +232,9 @@ El coeficiente de absorción depende del cuadrado de la frecuencia a la que oscil
 
 El coeficiente de dispersión de un material no homogéneo de naturaleza granulosa puede estimarse de forma teórica asumiendo que los granos en el medio forman una matriz tridimensional de pequeños reflectores o granos esféricos, tal y como se muestra en la figura \vref{fig:matriz}. Asumiendo este modelo, puede obtenerse la respuesta global del medio obteniendo la respuesta de un reflector e integrando a todo el volumen el resultado obtenido para un solo grano.
 
-\begin{figure}[htbp]
+\begin{figure}
 	\begin{center}
-		\includegraphics[scale=1, keepaspectratio=true]{chapter03-05.mps}
+		\includegraphics[scale=1, keepaspectratio=true]{gis-pfc-ch3-5.mps}
 	\end{center}
 	\caption{Modelo de pequeños receptores para estimación del coeficiente de dispersión}
 	\label{fig:matriz}
@@ -270,9 +270,9 @@ Mediante esta expresión y la \vref{eq:atenuacion-independiente-profundidad}, apl
 	\label{eq:atenuacion-por-dispersion-regiones2}
 \end{equation}}
 
-\begin{figure}[htbp]
+\begin{figure}
 	\begin{center}
-		\includegraphics{chapter03-06.pdf}
+		\includegraphics{gis-pfc-ch3-6.pdf}
 	\end{center}
 	\caption{Representación del coeficiente de atenuación que muestra su comportamiento en las distintas regiones del material}
 	\label{fig:coeficiente-atenuacion}
@@ -337,13 +337,13 @@ Las diferencias entre el carácter estadístico del ruido y de la señal procedente
 	\label{tab:ssp-features}
 \end{table}
 
-\begin{figure}[htbp]
+\begin{figure}
 	\begin{center}
-		\includegraphics{chapter03-07.pdf}
+		\includegraphics{gis-pfc-ch3-7.pdf}
 	\end{center}
 	\caption{Esquema genérico que representa el espectro del banco de filtros frente al espectro del transductor}
 	\label{fig:filter-specter}
 \end{figure}
 
 % He hecho un corte del fichero aquí porque el realzado de sintaxis de Vim no interpreta correctamente el código que configura la disposición de las columnas en el entorno tabulado etiquetado con <<tab:ssp-features>>, en consecuencia considera todo el texto posterior incluido en una ecuación matemática y no resalta la ortografía.
-\input{chapter03-02}
+\input{gis-pfc-ch3-2}

@@ -78,7 +78,7 @@ En cuanto a la documentación adicional que el lector puede consultar a continuac
 
 Los elementos de \matlab{} que juegan un papel suficientemente importante en el funcionamiento de la \datx{} son los listados en el \ref{tab:toolbox-components}.
 
-\begin{table}[htbp]
+\begin{table}
 	\centering
 	\begin{tabulary}{.9\textwidth}{C L}
 		\toprule
@@ -95,9 +95,9 @@ Los elementos de \matlab{} que juegan un papel suficientemente importante en el 
 	\label{tab:toolbox-components}
 \end{table}
 
-\begin{figure}[htbp]
+\begin{figure}
 	\begin{center}
-		\includegraphics[height=.5\textheight, keepaspectratio=true]{chapter02-01.pdf}
+		\includegraphics[height=.5\textheight, keepaspectratio=true]{gis-pfc-ch2-1.pdf}
 	\end{center}
 	\caption{Elementos que intervienen en el funcionamiento de la \datx{}}
 	\label{fig:toolbox-components}
@@ -107,9 +107,9 @@ Los elementos de \matlab{} que juegan un papel suficientemente importante en el 
 
 Los objetos dispositivo permiten el acceso a subsistemas específicos del hardware. Los objetos dispositivo soportados por la \datx{} son los objetos de entrada analógica o \emph{analog imput objects} (\textsc{ai}), los objetos de salida analógica o \emph{analog output objects} (\textsc{ao}) y los objetos de entrada/salida digital o \emph{digital \textsc{i/o} objects} (\textsc{dio}).
 
-\begin{figure}[htbp]
+\begin{figure}
 	\begin{center}
-		\includegraphics{chapter02-02.pdf}
+		\includegraphics{gis-pfc-ch2-2.pdf}
 	\end{center}
 	\caption{Grafo que representa la comunicación entre los subsistemas del hardware y los objetos dispositivo}
 	\label{fig:subsystems-objects}
@@ -165,7 +165,7 @@ Para crear un objeto dispositivo, se debe llamar a la función de creación apropi
 	end
 \end{lstlisting}
 
-\begin{table}[htbp]
+\begin{table}
 	\centering
 	\begin{tabular}{l >{\tt}l}
 		\toprule
@@ -184,7 +184,7 @@ Para crear un objeto dispositivo, se debe llamar a la función de creación apropi
 
 El argumento \texttt{id} es un indicador de dispositivo hardware. Se trata de un argumento opcional para tarjetas de sonido con \texttt{id} 0. El argumento \texttt{adaptador} requiere el nombre del adaptador de dispositivo hardware. A continuación, en el \ref{tab:adaptors} se muestra una relación con los adaptadores de dispositivo cuyo uso es más frecuente y el nombre de adaptador que debe introducirse como argumento de la llamada a \texttt{analoginput}. Por conveniencia se ha añadido Keithley a esta lista.
 
-\begin{table}[htbp]
+\begin{table}
 	\centering
 	\begin{tabular}{l >{\tt\qquad}l}
 		\toprule
@@ -260,7 +260,7 @@ La adquisición de datos puede dividirse en tres tareas básicas: iniciar el objet
 La función que se utiliza para iniciar un objeto dispositivo es la función \texttt{start}, p.e. para iniciar el objeto dispositivo \texttt{objeto} habría que llamar a la función de esta forma \texttt{start(objeto)}. Tras iniciar un objeto su propiedad \textsf{Running} pasa de manera automática al valor \textsf{On}.\par
 No obstante haber iniciado el dispositivo, este no empieza a registrar datos hasta que no ocurre un trigger o disparo. Hay diversos tipos de trigger, en el \vref{tab:triggers} se muestran aquellos soportados por todos los dispositivos. Tras un trigger el dispositivo hardware inicia la adquisición de datos y la propiedad \textsf{Logging} del objeto dispositivo asociado conmuta al estado \textsf{On}.
 
-\begin{table}[htbp]
+\begin{table}
 	\centering
 	\begin{threeparttable}
 	\begin{tabulary}{.9\linewidth}{>{\sf}c L}
