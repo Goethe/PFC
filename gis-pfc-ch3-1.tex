@@ -20,32 +20,32 @@ La energía acústica que se propaga por un medio se manifiesta en forma de presió
 
 \begin{equation}
 	p = Z\cdot v
-	\label{eq:presion-acustica}
+	\label{eq:acuospressure}
 \end{equation}
 
 Ecuación en la que $v$ representa la velocidad de vibración y $Z$ la impedancia acústica. La impedancia acústica es una medida de con que resistencia se oponen los elementos de masa de un medio a la vibración provocada por las ondas acústicas, en ningún caso da una relación de la resistencia con la que el medio se opone a la propagación de la onda acústica. Es una constante del medio que aumenta con la cohesión de sus moléculas, y puede expresarse en función de la densidad $\rho_0$ y de la velocidad de propagación de las ondas ultrasónicas en dicho medio $c$.
 
 \begin{equation}
 	Z = \rho_0\cdot c
-	\label{eq:impedancia-acustica}
+	\label{eq:Zacoustic}
 \end{equation}
 
 
-\subsection{Campo acústico generado por un transductor}\label{subsec:transducer-field}
+\subsection{Campo acústico generado por un transductor}\label{subsec:field}
 
-La excitación eléctrica de un transductor produce una onda de presión que se propaga en el medio siguiendo las leyes físicas de la propagación de ondas y, en particular, los principios de superposición de Huygens\footnote{El tratamiento que se da en esta sección a los transductores de ultrasonidos es similar al que la teoría de antenas da a las antenas de apertura conocidas como bocinas. Para un mayor detalle consultar el texto de Stutzman y Thiele.}. Se denomina campo acústico a la distribución temporal y espacial de la presión acústica a la que se someten las partículas materiales del medio en el que se propagan las ondas acústicas. Las características del campo acústico dependen principalmente de aspectos geométricos del transductor.\par
+La excitación eléctrica de un transductor produce una onda de presión que se propaga en el medio siguiendo las leyes físicas de la propagación de ondas y, en particular, los principios de superposición de Huygens\footnote{El tratamiento que se da en esta sección a los transductores de ultrasonidos es similar al que la teoría de antenas da a las antenas de apertura conocidas como bocinas. Para un mayor detalle consultar el texto de Stutzman y Thiele, \cite{stutzman1997atd}.}. Se denomina campo acústico a la distribución temporal y espacial de la presión acústica a la que se someten las partículas materiales del medio en el que se propagan las ondas acústicas. Las características del campo acústico dependen principalmente de aspectos geométricos del transductor.\par
 La región del campo acústico más próxima al transductor se conoce como campo próximo o cercano. También recibe el nombre de campo de interferencia debido a que en esa región el campo está constituido por máximos y mínimos que surgen como resultado de las interferencias que se producen entre las señales originadas en los distintos puntos del transductor. El máximo principal del campo acústico delimita la región de campo próximo. La longitud de esta región puede calcularse a partir del diámetro del transductor $D$, o en su defecto a partir de la dimensión principal de este.
 
 \begin{equation}
 	L_0 = \frac{D^2}{4\lambda}
-	\label{eq:longitud-campo-cercano}
+	\label{eq:nearfield}
 \end{equation}
 
 Más allá del campo cercano encontramos el campo lejano. En el campo lejano el frente de ondas de la radiación acústica empieza a divergir. Se llama ángulo de divergencia del haz a la razón con la que el haz se expande y se emplea el símbolo $\gamma_0$ para representarla. Puede calcularse $\gamma_0$ a partir de la siguiente expresión.
 
 \begin{equation}
 	\sin{\gamma_0} = 1.2\cdot\frac{\lambda}{D}
-	\label{eq:angulo-divergencia}
+	\label{eq:Adivergence}
 \end{equation}
 
 \begin{figure}
@@ -57,10 +57,10 @@ Más allá del campo cercano encontramos el campo lejano. En el campo lejano el fr
 \end{figure}
 
 En la \vref{fig:transceiver} el lector puede observar una representación del campo acústico generado por un transductor de ultrasonidos cilíndrico. Puede observarse la forma geométrica del campo próximo tal y como se ha considerado en este documento: un cilindro de radio igual al del transductor y altura $L_0$. En el interior del cilindro el campo acústico permanece constante y en el exterior el campo es nulo. A continuación se ilustra como el frente de ondas diverge en el campo lejano. La figura empleada para representar el campo lejano es un tronco de cono en cuyo interior el campo acústico iría incrementando de la superficie al eje.\par
-Para finalizar este punto cabe mencionarse que el transductor es responsable de que una determinada región de los materiales inspeccionados no pueda ser caracterizada mediante el uso de ultrasonidos. La razón es que tras emitir un pulso acústico un transductor no cesa inmediatamente de vibrar, si no que lo sigue haciendo durante cierto tiempo a su frecuencia natural de oscilación con un factor de amortiguamiento que depende de factores constructivos. A la región del material que no puede ser inspeccionada se la conoce como zona muerta o zona ciega. La zona ciega de un material empieza en la superficie que está en contacto con el transductor y su profundidad depende de la duración de los pulsos acústicos. % Durante dicho intervalo el transductor no puede emplearse como receptor y los ecos provenientes del medio se pierden.
+Para finalizar este punto cabe mencionarse que el transductor es responsable de que una determinada región de los materiales inspeccionados no pueda ser caracterizada mediante el uso de ultrasonidos. La razón es que tras emitir un pulso acústico un transductor no cesa inmediatamente de vibrar, si no que lo sigue haciendo durante cierto tiempo a su frecuencia natural de oscilación con un factor de amortiguamiento que depende de factores constructivos. A la región del material que no puede ser inspeccionada se la conoce como zona muerta o zona ciega. La zona ciega de un material empieza en la superficie que está en contacto con el transductor y su profundidad depende de la duración de los pulsos acústicos.
 
 
-\subsection{Técnicas empleadas en las inspecciones ultrasónicas}\label{subsec:tecnicas}
+\subsection{Técnicas empleadas en las inspecciones ultrasónicas}\label{subsec:technics}
 
 Atendiendo a la situación del receptor en los ensayos no destructivos mediante ultrasonidos se distinguen dos técnicas: la técnica de pulso"=eco y la técnica de transmisión. En la técnica de pulso"=eco el receptor suele encontrarse cercano al emisor, de hecho es frecuente que un mismo transductor haga las veces de emisor y receptor. Por el contrario en la técnica de transmisión el receptor se coloca alineado en el eje del emisor pero en el extremo opuesto del material inspeccionado.\par
 
@@ -70,20 +70,20 @@ Atendiendo a la situación del receptor en los ensayos no destructivos mediante u
 		\subfloat[Inspección ultrasónica por pulso"=eco]{\includegraphics{gis-pfc-ch3-3.mps}}
 	\end{center}
 	\caption{Diferencias en cuanto al número y posición de los transductores según la técnica empleada en una evaluación mediante ultrasonidos}
-	\label{fig:tecnicas}
+	\label{fig:technics}
 \end{figure}
 
 Al propagarse un pulso acústico por el medio, parte de éste se refleja al encontrarse con discontinuidades en la impedancia acústica, otra parte seguirá avanzando hasta atravesar el material o verse completamente atenuada. La señal que capta el receptor depende de su ubicación. De este modo la señal recibida cuando la técnica empleada es la de pulso"=eco es la suma de los pulsos reflejados o ecos. Si la técnica utilizada es la técnica de transmisión se percibe el pulso original, modificado por haber atravesado el medio. La información que contiene la señal recibida es, por tanto, diferente.\par
 La técnica de pulso"=eco se centra en el estudio de la amplitud, forma y posición temporal de los ecos. La técnica de transmisión por su parte observa posibles cambios de velocidad en el pulso acústico y mide la atenuación que éste experimenta al pasar a través del medio. La información que proporciona el estudio de los ecos es más rica pero también más compleja. Por consiguiente la elección de una u otra técnica está supeditada no sólo a las posibilidades de inspección que ofrece el medio, si no también al tipo de información que se pretende obtener con el ensayo.
 
 
-\subsection{Parámetros de calidad en una inspección}\label{subsec:quality-factors}
+\subsection{Parámetros de calidad en una inspección}\label{subsec:quality}
 
 Los parámetros de calidad proporcionan una medida cualitativa de la bondad de un ensayo. Los más empleados son resolución, linealidad y relación señal a ruido.\par
 En ensayos no destructivos la resolución es la distancia mínima (o una medida en relación con ésta) a la que deben encontrarse dos singularidades cercanas para que ambas sean detectadas distinguiéndose una de la otra. Se hace distinción entre resolución axial y resolución lateral. La primera alude a la distancia que debe haber entre dos singularidades alineadas en la dirección longitudinal de propagación de las ondas acústicas, la segunda a la que debe haber entre singularidades que se encuentren dispuestas en una línea normal a esa dirección.\par
 Atendiendo a la definición de resolución que se ha proporcionado, se considera que la resolución es mejor si la distancia mínima disminuye y peor si ésta aumenta. Teniendo esto en cuenta, para mejorar la resolución axial de un sistema es necesario emplear dispositivos de banda ancha y emitir pulsos estrechos de alta frecuencia. La frecuencia de los pulsos acústicos está limitada por el espesor del medio, a medida que aumenta la frecuencia disminuye la profundidad de penetración del pulso, resulta pues conveniente adoptar una solución de compromiso.\par
 La resolución lateral depende también de la frecuencia del pulso, es mejor a medida que aumenta la frecuencia puesto que disminuye la longitud de onda. Además depende del diámetro de los transductores, es peor cuanto más anchos son éstos. Y en la región de campo lejano, la resolución lateral empeora a medida que aumenta la profundidad.\par
-El comportamiento de la resolución lateral con respecto al diámetro del transductor y la frecuencia del pulso acústico transmitido, descrito en el párrafo anterior puede deducirse de las ecuaciones \eqref{eq:longitud-campo-cercano} y \eqref{eq:angulo-divergencia}. Puede observarse que, a medida que aumenta la frecuencia y disminuye la longitud de onda del pulso, aumenta la longitud de la región de campo cercano. En dicha región el campo acústico se encuentra contenido en un cilindro de radio el del transductor, como ya se ha mencionado, y a partir de ahí empieza a divergir según una razón que disminuye con la longitud de onda. Para una mejor resolución es pertinente que la región activa del campo ultrasónico sea lo más estrecha posible, de ese modo se evita en la medida de lo posible que dos anomalías cercanas queden cubiertas por el haz en un mismo evento de la secuencia de barrido. Por tanto, se confirma por medio de estas ecuaciones los beneficios en términos de resolución que redundan del uso de transductores de diámetro estrecho y de pulsos ultrasónicos de alta frecuencia.\par
+El comportamiento de la resolución lateral con respecto al diámetro del transductor y la frecuencia del pulso acústico transmitido, descrito en el párrafo anterior puede deducirse de las ecuaciones \eqref{eq:nearfield} y \eqref{eq:Adivergence}. Puede observarse que, a medida que aumenta la frecuencia y disminuye la longitud de onda del pulso, aumenta la longitud de la región de campo cercano. En dicha región el campo acústico se encuentra contenido en un cilindro de radio el del transductor, como ya se ha mencionado, y a partir de ahí empieza a divergir según una razón que disminuye con la longitud de onda. Para una mejor resolución es pertinente que la región activa del campo ultrasónico sea lo más estrecha posible, de ese modo se evita en la medida de lo posible que dos anomalías cercanas queden cubiertas por el haz en un mismo evento de la secuencia de barrido. Por tanto, se confirma por medio de estas ecuaciones los beneficios en términos de resolución que redundan del uso de transductores de diámetro estrecho y de pulsos ultrasónicos de alta frecuencia.\par
 La definición y comportamiento de linealidad y relación señal a ruido son los habituales en términos de sistemas electrónicos, por eso se entiende que el lector tiene una noción al respecto y no se dan más aclaraciones en este apartado.
 
 
@@ -97,7 +97,7 @@ En ensayos no destructivos mediante ultrasonidos, la señal de interés y el \emph
 \subsection{Fundamentos físicos del ruido estructural}
 
 El ruido estructural es una consecuencia directa de la dispersión. Cuando un frente de ondas incide sobre una partícula de tamaño comparable a su longitud de onda, la energía que transporta se dispersa por la acción de esa partícula. Dicha partícula actúa como un reflector esférico y selectivo en frecuencia ---afectando más a las altas frecuencias\footnote{Según la relación $c = \lambda\cdot f$, si se mantiene $c$, a medida que aumenta $f$ disminuirá la longitud de onda y, por tanto, el tamaño de la partícula con respecto a la longitud de onda aumentará.}--- que refleja la señal en todas direcciones. De este modo, aquellos materiales que contienen un número considerable de partículas susceptibles de interferir del modo descrito en la propagación de un determinado frente de ondas, son considerados materiales dispersivos.\par
-En el caso de un frente de ondas acústicas que incide sobre un determinado material dispersivo, la energía que tras el proceso de reflexión se propaga en sentido contrario al sentido de propagación del frente de ondas se conoce como \emph{back-scattering}. Por su parte, la energía perturbada por la acción del reflector que continúa propagándose en el mismo sentido suele denominarse \emph{forward-scattering}. En los \textsc{endus} dependiendo de la técnica empleada es uno u otro tipo de dispersión el que causa un mayor deterioro de los resultados: si la técnica empleada es de pulso"=eco, el \emph{back-scattering} será el más perjudicial; si, por el contrario, se está empleando la técnica de transmisión, será el \emph{forward-scattering} el más nocivo para el proceso.\par
+En el caso de un frente de ondas acústicas que incide sobre un determinado material dispersivo, la energía que tras el proceso de reflexión se propaga en sentido contrario al sentido de propagación del frente de ondas se conoce como \emph{back-scattering}. Por su parte, la energía perturbada por la acción del reflector que continúa propagándose en el mismo sentido suele denominarse \emph{forward-scattering}. En los \sig{endus} dependiendo de la técnica empleada es uno u otro tipo de dispersión el que causa un mayor deterioro de los resultados: si la técnica empleada es de pulso"=eco, el \emph{back-scattering} será el más perjudicial; si, por el contrario, se está empleando la técnica de transmisión, será el \emph{forward-scattering} el más nocivo para el proceso.\par
 Para poder estudiar el efecto del ruido estructural en las inspecciones ultrasónicas de forma adecuada es necesario caracterizar el proceso de emisión"=recepción que se da en un ensayo mediante ultrasonidos desde el punto de vista de la respuesta al impulso o régimen transitorio.
 
 
@@ -108,7 +108,7 @@ Supóngase un transductor de perfil arbitrario, al excitarse con un pulso eléctri
 
 \begin{equation}
 	v(t) = h_{te}(t)\otimes u(t)
-	\label{eq:emisor}
+	\label{eq:emiter}
 \end{equation}
 
 La respuesta impulsiva electrodinámica en emisión, $h_{te}(t)$ depende del circuito electrónico empleado para excitar el transductor y de los parámetros de diseño de este último.\par
@@ -116,15 +116,15 @@ La presión en un punto situado en el eje $y$ y a una distancia $z$ del transduct
 
 \begin{equation}
 	p(z, t) = \rho\,\frac{\partial}{\partial t}\left\{v(t)\otimes h_{m}(z, t)\right\}
-	\label{eq:presion-difraccion}
+	\label{eq:diffracpressure}
 \end{equation}
 
-Siendo $\rho$ la densidad del medio por la que se propaga la onda acústica y $h_{m}(z, t)$ la respuesta al impulso en el medio de propagación considerando la difracción que se produce en dicho medio.\par% a la difracción en el medio de propagación.
+Siendo $\rho$ la densidad del medio por la que se propaga la onda acústica y $h_{m}(z, t)$ la respuesta al impulso en el medio de propagación considerando la difracción que se produce en dicho medio.\par
 La propagación de una onda acústica se ve sometida a fenómenos de difracción propios de la naturaleza ondulatoria de la radiación acústica y fenómenos de atenuación a consecuencia de la interacción con el medio. De cara al estudio de la propagación de la onda estos fenómenos pueden tratarse por separado. Por un lado se considera el efecto de la difracción sobre la onda en un medio homogéneo y sin pérdidas, y por otro la atenuación que induce el medio. Esta aproximación mantiene su validez siempre que el estudio afecte a una región del campo muy próxima al transductor. Si se considera esta aproximación, y se tiene $h_d(z, t)$, la respuesta al impulso en un medio homogéneo y sin pérdidas a la difracción, y $a(z, t)$, la atenuación atribuida al medio; puede descomponerse la respuesta al impulso en el medio de propagación a la difracción en esos dos términos:
 
 \begin{equation}
 	h_m(z, t) = h_d(z, t)\otimes a(z, t)
-	\label{eq:descomposicion-difraccion}
+	\label{eq:diffraction}
 \end{equation}
 
 La atenuación es selectiva en frecuencia y ello se asocia a los siguientes aspectos derivados de la existencia de una macro y una micro"=estructura en el material:
@@ -138,7 +138,7 @@ La expresión que define la atenuación sufrida por la onda acústica toma la sigui
 
 \begin{equation}
 	A(z, \omega) = e^{\int^z_0 -\alpha(z, \omega)dz} 
-	\label{eq:atenuacion}
+	\label{eq:loss}
 \end{equation}
 
 Cuando la onda acústica incide sobre un reflector, las características de éste determinan la relación entre la onda incidente y la reflejada. Esta relación viene dada por la función de reflectividad, $h_r(t)$, que depende de la frecuencia de la onda de presión. Si la reflexión que se produce al llegar la onda hasta la partícula es especular, $h_r(t)$ coincide con una delta de Dirac ponderada.\par
@@ -146,7 +146,7 @@ Como consecuencia de la reflexión, una señal distinta de la emitida por el trans
 
 \begin{equation}
 	p_R(z, t) = p(z, t)\otimes h_r(t)\otimes h_m(z, t)
-	\label{eq:potencia-recibida}
+	\label{eq:recpressure}
 \end{equation}
 
 Del mismo modo, parte de la señal reflejada avanza en el mismo sentido de propagación que la onda incidente. Si no es dispersada completamente en el medio avanza hasta atravesar el material por completo. En ese caso, si es la técnica de transmisión la técnica empleada, una presión semejante a $p_R(z, t)$ se produce en la cara del transductor que se encuentra al otro extremo del material. La función de reflectividad no varía, tan sólo cambia la distancia que debe atravesar el frente de ondas hasta alcanzar el transductor y, por tanto, es diferente la contribución de la respuesta al impulso en el medio a la difracción, $h_m(z^\prime, t)$ en el segundo trayecto.\par
@@ -154,48 +154,48 @@ Finalmente, la presión $p_R$ se traduce en una señal eléctrica en bornes del tra
 
 \begin{equation}
 	y(t) = h_{tr}(t)\otimes p_R(z, t)
-	\label{eq:receptor}
+	\label{eq:receiver}
 \end{equation}
 
-Por consiguiente el proceso de emisión"=recepción en el que se fundamentan los \textsc{endus} puede describirse mediante la respuesta impulsional en cascada de todos los fenómenos descritos.
+Por consiguiente el proceso de emisión"=recepción en el que se fundamentan los \sig{endus} puede describirse mediante la respuesta impulsional en cascada de todos los fenómenos descritos.
+
+\begin{equation}
+	y(t) = \rho_0\frac{\partial}{\partial t}\left\{u(t)\otimes h_{te}(t)\otimes h_d(z, t)\otimes a(z, t)\otimes h_r(t)\otimes h_d(z, t)\otimes a(z, t)\otimes h_{tr}(t)\right\}
+	\label{eq:emirec}
+\end{equation}
+
+La figura \vref{fig:emirecmodel} muestra un diagrama de bloques que representa el proceso de emisión"=recepción y todos los fenómenos que en el intervienen según el modelo empleado en este documento. La función de transferencia del sistema puede obtenerse de modo sencillo aplicando el teorema de la convolución.
 
 \begin{figure}
 	\begin{center}
 		\includegraphics[scale=1, keepaspectratio=true]{gis-pfc-ch3-4.mps}
 	\end{center}
 	\caption{Diagrama de bloques que representa el proceso de emisión"=recepción y todos los elementos que en el intervienen (considerando el modelo propuesto)}
-	\label{fig:emision-recepcion}
+	\label{fig:emirecmodel}
 \end{figure}
 
 \begin{equation}
-	y(t) = \rho_0\frac{\partial}{\partial t}\left\{u(t)\otimes h_{te}(t)\otimes h_d(z, t)\otimes a(z, t)\otimes h_r(t)\otimes h_d(z, t)\otimes a(z, t)\otimes h_{tr}(t)\right\}
-	\label{eq:emision-recepcion}
-\end{equation}
-
-La figura \vref{fig:emision-recepcion} muestra un diagrama de bloques que representa el proceso de emisión"=recepción y todos los fenómenos que en el intervienen según el modelo empleado en este documento. La función de transferencia del sistema puede obtenerse de modo sencillo aplicando el teorema de la convolución.
-
-\begin{equation}
 	Y(\omega) = j\omega\rho_0\cdot U(\omega)\cdot H_{te}(\omega)\cdot H^2_d(z, \omega)\cdot A^2(z, \omega)\cdot H_r(\omega)\cdot H_{tr}(\omega)
-	\label{eq:funcion-transferencia}
+	\label{eq:transference}
 \end{equation}
 
-Aprovechando la linealidad del sistema se agrupan los términos de la función de transferencia en \vref{eq:funcion-transferencia-agrupada}, para que el resultado quede en función de la respuesta electromecánica del transductor, $X(\omega)$, y de la respuesta espacial al impulso, $H(z, \omega)$.
+Aprovechando la linealidad del sistema se agrupan los términos de la función de transferencia en \vref{eq:groupedtransference}, para que el resultado quede en función de la respuesta electromecánica del transductor, $X(\omega)$, y de la respuesta espacial al impulso, $H(z, \omega)$.
 
 \begin{equation}
 	Y(\omega) = X(\omega)\cdot H(z, \omega)\cdot A^2(z, \omega)
-	\label{eq:funcion-transferencia-agrupada}
+	\label{eq:groupedtransference}
 \end{equation}
 
 \begin{equation}
 	X(\omega) = j\omega\rho_0\cdot U(\omega)\cdot H_{te}(\omega)\cdot H_{tr}(\omega)
-	\label{eq:respuesta-transductor}
+	\label{eq:transducer}
 \end{equation}
 
 Siendo esta última, la respuesta espacial al impulso, función de la posición del reflector y de su forma, o lo que es lo mismo, de las funciones de reflectividad y difracción.
 
 \begin{equation}
 	H(z, \omega) = H^2_d(z, \omega)\cdot H_r(\omega)
-	\label{eq:respuesta-espacial}
+	\label{eq:spacialresponse}
 \end{equation}
 
 Al agrupar de este modo la función de transferencia se establece de forma explícita la separación entre los procesos de difracción y atenuación. Además es posible establecer nuevas separaciones: dejando por un lado los efectos debidos a los transductores y electrónica de acondicionamiento, $X(\omega)$; por otro la influencia del medio en la onda que se propaga, es decir, la atenuación, $A(z, \omega)$; y, finalmente, por otro los efectos de la propagación y la interacción con el reflector, $H(z, \omega)$.
@@ -207,10 +207,10 @@ La atenuación es el fenómeno en el que se manifiesta la influencia del medio en 
 
 \begin{equation}
 	A(z, \omega) = e^{-\alpha(\omega)\cdot z}
-	\label{eq:atenuacion-independiente-profundidad}
+	\label{eq:independentloss}
 \end{equation}
 
-Donde, como se anticipó en \vref{eq:atenuacion}, $\alpha(\omega)$ es el coeficiente de atenuación.\par
+Donde, como se anticipó en \vref{eq:loss}, $\alpha(\omega)$ es el coeficiente de atenuación.\par
 Cuando el material por el que se propaga la onda es no homogéneo, la atenuación se debe a dos fenómenos:
 
 \begin{description}
@@ -222,7 +222,7 @@ En el coeficiente de atenuación global vienen reflejadas las acciones que sobre 
 
 \begin{equation}
 	\alpha(\omega) = \alpha_a(\omega) + \alpha_s(\omega)
-	\label{eq:coeficiente-atenuacion}
+	\label{eq:losscoefficient}
 \end{equation}
 
 El coeficiente de absorción depende del cuadrado de la frecuencia a la que oscila el frente de ondas, $\alpha_a(\omega) = a_1\omega^2$. Siendo $a_1$ la constante de absorción del material. Por su parte, $\alpha_s(\omega)$ depende del tamaño, forma, orientación y distribución de los granos en el medio, aunque también de la frecuencia como se muestra a continuación.
@@ -230,21 +230,21 @@ El coeficiente de absorción depende del cuadrado de la frecuencia a la que oscil
 
 \subsubsection{Estimación del coeficiente de dispersión para un material dispersivo de naturaleza granulosa}
 
-El coeficiente de dispersión de un material no homogéneo de naturaleza granulosa puede estimarse de forma teórica asumiendo que los granos en el medio forman una matriz tridimensional de pequeños reflectores o granos esféricos, tal y como se muestra en la figura \vref{fig:matriz}. Asumiendo este modelo, puede obtenerse la respuesta global del medio obteniendo la respuesta de un reflector e integrando a todo el volumen el resultado obtenido para un solo grano.
+El coeficiente de dispersión de un material no homogéneo de naturaleza granulosa puede estimarse de forma teórica asumiendo que los granos en el medio forman una matriz tridimensional de pequeños reflectores o granos esféricos, tal y como se muestra en la figura \vref{fig:matrix}. Asumiendo este modelo, puede obtenerse la respuesta global del medio obteniendo la respuesta de un reflector e integrando a todo el volumen el resultado obtenido para un solo grano.
 
 \begin{figure}
 	\begin{center}
 		\includegraphics[scale=1, keepaspectratio=true]{gis-pfc-ch3-5.mps}
 	\end{center}
 	\caption{Modelo de pequeños receptores para estimación del coeficiente de dispersión}
-	\label{fig:matriz}
+	\label{fig:matrix}
 \end{figure}
 
-La \vref{eq:dispersor} es una aproximación de la respuesta espacial al impulso de un solo dispersor cuando sobre el incide un frente de ondas ultrasónicas longitudinales plano. En esta ecuación se han empleado: $k$, constante que depende de la geometría del reflector; la frecuencia angular a la que oscila el frente de ondas, $\omega$; $c_l$, o velocidad a la que se propaga el frente de ondas; $V$ volumen del dispersor; y $z$ distancia entre éste y el transductor.
+La \vref{eq:disperser} es una aproximación de la respuesta espacial al impulso de un solo dispersor cuando sobre el incide un frente de ondas ultrasónicas longitudinales plano. En esta ecuación se han empleado: $k$, constante que depende de la geometría del reflector; la frecuencia angular a la que oscila el frente de ondas, $\omega$; $c_l$, o velocidad a la que se propaga el frente de ondas; $V$ volumen del dispersor; y $z$ distancia entre éste y el transductor.
 
 \begin{equation}
 	H_s(z, \omega) = k\,\frac{V\omega^2}{zc^2_l}\,e^{-j2\omega z/c}
-	\label{eq:dispersor}
+	\label{eq:disperser}
 \end{equation}
 
 De $H_s(z, \omega)$ se deduce que la onda reflejada es dependiente de la frecuencia angular de oscilación. De hecho, se manifiestan las propiedades de filtro paso bajo que muestra la partícula. Si el reflector es de tamaño muy superior a la longitud de onda de la radiación acústica, la dependencia de $H_s(z, \omega)$ con $\omega$ es en la práctica despreciable, y sólo dependería de la geometría del reflector.\par
@@ -253,10 +253,10 @@ Puede escribirse una expresión de la atenuación causada por la dispersión si se 
 
 \begin{equation}
 	A_s(z, \omega) = e^{-s_1D^3\omega^4z}
-	\label{eq:atenuacion-por-dispersion}
+	\label{eq:dispersionloss}
 \end{equation}
 
-Mediante esta expresión y la \vref{eq:atenuacion-independiente-profundidad}, aplicando la \vref{eq:coeficiente-atenuacion}, es posible calcular el coeficiente de atenuación debido a la dispersión, $\alpha_s$, en la región de Rayleigh, en la que $D\ll\lambda$. Empleando deducciones semejantes puede obtenerse el coeficiente de atenuación en distintas situaciones de tamaño de grano y longitud de onda.
+Mediante esta expresión y la \vref{eq:independentloss}, aplicando la \vref{eq:losscoefficient}, es posible calcular el coeficiente de atenuación debido a la dispersión, $\alpha_s$, en la región de Rayleigh, en la que $D\ll\lambda$. Empleando deducciones semejantes puede obtenerse el coeficiente de atenuación en distintas situaciones de tamaño de grano y longitud de onda.
 
 {\setlength{\extrarowheight}{0.5ex}
 \begin{equation}
@@ -267,7 +267,7 @@ Mediante esta expresión y la \vref{eq:atenuacion-independiente-profundidad}, apl
 		s_3/D & D>\lambda & \text{(Región de difusión)}
 	\end{array}
 	\right.
-	\label{eq:atenuacion-por-dispersion-regiones2}
+	\label{eq:dispersionlossreg}
 \end{equation}}
 
 \begin{figure}
@@ -275,10 +275,10 @@ Mediante esta expresión y la \vref{eq:atenuacion-independiente-profundidad}, apl
 		\includegraphics{gis-pfc-ch3-6.pdf}
 	\end{center}
 	\caption{Representación del coeficiente de atenuación que muestra su comportamiento en las distintas regiones del material}
-	\label{fig:coeficiente-atenuacion}
+	\label{fig:losscoefficient}
 \end{figure}
 
-Para finalizar este apartado, en la figura \vref{fig:coeficiente-atenuacion} se muestra una representación del coeficiente de atenuación, en concreto del cociente $\alpha/f^2$, con respecto al cuadrado de la frecuencia. En la gráfica es posible apreciar el comportamiento del coeficiente de dispersión en cada una de las regiones descritas, y como el término que introduce la absorción es de valor constante con la frecuencia. La región de difusión muestra una atenuación abrupta que responde a una exponencial decreciente descrita por la expresión $s_3/(Df^2)$.
+Para finalizar este apartado, en la figura \vref{fig:losscoefficient} se muestra una representación del coeficiente de atenuación, en concreto del cociente $\alpha/f^2$, con respecto al cuadrado de la frecuencia. En la gráfica es posible apreciar el comportamiento del coeficiente de dispersión en cada una de las regiones descritas, y como el término que introduce la absorción es de valor constante con la frecuencia. La región de difusión muestra una atenuación abrupta que responde a una exponencial decreciente descrita por la expresión $s_3/(Df^2)$.
 
 
 \subsubsection{Limitaciones impuestas por la dispersión en los ensayos ultrasónicos}
@@ -291,33 +291,33 @@ La dispersión, debido a que es el causante del ruido estructural, no puede contr
 \subsection{Algoritmos utilizados para la reducción del ruido estructural}
 
 Dejando a un lado las técnicas empleadas en la eliminación de ruido incoherente aleatorio, ineficaces por completo contra el ruido estructural, existe un conjunto de métodos orientados a combatir este tipo de ruido.\par
-Las técnicas empleadas con mayor frecuencia con el objeto de conseguir mayor \textsc{snr} en entornos en los que la presencia de ruido estructural es notable son aquellas que aprovechan la diversidad de información hallada al trabajar con señales incorreladas entre sí. Estas técnicas tratan de obtener una señal con una mayor \textsc{snr} a partir de la composición de varias señales generadas mediante un mismo mecanismo pero de forma que la medida de correlación entre cada una de ellas sea pobre. Los métodos empleados más a menudo con tal propósito son:
+Las técnicas empleadas con mayor frecuencia con el objeto de conseguir mayor \sig{snr} en entornos en los que la presencia de ruido estructural es notable son aquellas que aprovechan la diversidad de información hallada al trabajar con señales incorreladas entre sí. Estas técnicas tratan de obtener una señal con una mayor \sig{snr} a partir de la composición de varias señales generadas mediante un mismo mecanismo pero de forma que la medida de correlación entre cada una de ellas sea pobre. Los métodos empleados más a menudo con tal propósito son:
 
 \begin{itemize}
 	\item Las técnicas que explotan la diversidad espacial, en las que básicamente se repite el mismo experimento variando cada vez la orientación de los transductores implicados en el mismo.
 	\item Y las técnicas de diversidad frecuencial, manteniendo la posición de los transductores se repite el experimento utilizando señales situadas en una banda espectral diferente unas de otras.
 \end{itemize}
 
-Este tipo de técnicas consiguen mejorar de forma considerable la \textsc{snr} en inspecciones ultrasónicas, no obstante presentan una serie de inconvenientes que las hacen inapropiadas en determinadas situaciones. Por un lado, las técnicas de diversidad espacial se ven obstaculizadas con frecuencia por las dimensiones y forma de las piezas evaluadas, siendo en ocasiones imposible emplearlas. En cuanto a las técnicas de diversidad en frecuencia, los transductores empleados en inspecciones ultrasónicas actúan por lo común en una banda no lo bastante ancha como para poder dividirla en un gran número de subbandas y así poder emitir suficientes señales acústicas repartidas por el espectro de frecuencias. Para poder emplear una técnica así serían necesarios varios transductores que emitiesen en bandas de frecuencia señales acústicas con ancho de banda controlado y que todos estuviesen situados en la misma posición.\par
+Este tipo de técnicas consiguen mejorar de forma considerable la \sig{snr} en inspecciones ultrasónicas, no obstante presentan una serie de inconvenientes que las hacen inapropiadas en determinadas situaciones. Por un lado, las técnicas de diversidad espacial se ven obstaculizadas con frecuencia por las dimensiones y forma de las piezas evaluadas, siendo en ocasiones imposible emplearlas. En cuanto a las técnicas de diversidad en frecuencia, los transductores empleados en inspecciones ultrasónicas actúan por lo común en una banda no lo bastante ancha como para poder dividirla en un gran número de subbandas y así poder emitir suficientes señales acústicas repartidas por el espectro de frecuencias. Para poder emplear una técnica así serían necesarios varios transductores que emitiesen en bandas de frecuencia señales acústicas con ancho de banda controlado y que todos estuviesen situados en la misma posición.\par
 La dificultad que conlleva implementar las técnicas anteriormente descritas ha contribuido a la proliferación de técnicas que a partir de una única traza sacan partido de las diferencias estadísticas que existen entre la señal que procede de un defecto y el ruido estructural.\par
-Dentro de esta categoría el algoritmo que ha alcanzado un éxito mayor y en consecuencia se ha convertido en el paradigma de las técnicas de reducción de ruido estructural se conoce como técnica de partición espectral o del inglés \emph{Split Spectrum Processing} (\textsc{ssp}) y fue en inicio propuesto por Vernon Newhouse en 1982. El algoritmo está basado en la explotación de la seudo"=diversidad frecuencial que existe entre las diferentes trazas de banda estrecha que se obtienen al descomponer con un banco de filtros paso banda la señal resultante tras un ensayo. No obstante los excelentes resultados encontrados utilizando esta técnica, la gran sensibilidad que muestra el algoritmo a la sintonía de los principales parámetros que definen su comportamiento lo convierten en escasamente robusto. A consecuencia de esto han aparecido numerosas publicaciones que se circunscriben a proporcionar configuraciones del algoritmo que proporcionen resultados óptimos, alternativamente aparecen también variaciones del \textsc{ssp} que persiguen mejorarlo.\par
-A pesar de su éxito, el \textsc{ssp} no es el único método empleado con el objetivo de sustraer el ruido de grano de la señal de interés de un \textsc{endus}. Otros trabajos incluyen, la estimación de máxima verosimilitud, técnicas de filtrado paso"=banda que eliminan la mitad superior del espectro de la señal, técnicas tiempo"=frecuencia como son la transformada de Wigner"=Ville o las Wavelet, técnicas que sacan partido de la información que aporta el retardo de grupo, técnicas no lineales y, finalmente, técnicas de ruido residual.\par
+Dentro de esta categoría el algoritmo que ha alcanzado un éxito mayor y en consecuencia se ha convertido en el paradigma de las técnicas de reducción de ruido estructural se conoce como técnica de partición espectral o del inglés \emph{Split Spectrum Processing} (\psig{ssp}) y fue en inicio propuesto por Vernon Newhouse en 1982. El algoritmo está basado en la explotación de la seudo"=diversidad frecuencial que existe entre las diferentes trazas de banda estrecha que se obtienen al descomponer con un banco de filtros paso banda la señal resultante tras un ensayo. No obstante los excelentes resultados encontrados utilizando esta técnica, la gran sensibilidad que muestra el algoritmo a la sintonía de los principales parámetros que definen su comportamiento lo convierten en escasamente robusto. A consecuencia de esto han aparecido numerosas publicaciones que se circunscriben a proporcionar configuraciones del algoritmo que proporcionen resultados óptimos, alternativamente aparecen también variaciones del \sig{ssp} que persiguen mejorarlo.\par
+A pesar de su éxito, el \sig{ssp} no es el único método empleado con el objetivo de sustraer el ruido de grano de la señal de interés de un \sig{endus}. Otros trabajos incluyen, la estimación de máxima verosimilitud, técnicas de filtrado paso"=banda que eliminan la mitad superior del espectro de la señal, técnicas tiempo"=frecuencia como son la transformada de Wigner"=Ville o las Wavelet, técnicas que sacan partido de la información que aporta el retardo de grupo, técnicas no lineales y, finalmente, técnicas de ruido residual.\par
 A pesar del gran número de técnicas dedicadas a eliminar el ruido estructural, son pocos los trabajos orientados a establecer una relación entre ellas, a compararlas, a clasificarlas según su comportamiento en distintos tipos de materiales o a justificar por qué el uso de una u otra técnica.
 
 
 \section{Técnicas de procesado por partición del espectro}
 
-Bajo el término <<técnicas de procesado por partición del espectro>>, en inglés \emph{Split Spectrum Processing Techniques}, o simplemente \textsc{ssp}, se reúnen una serie de algoritmos cuya aplicación es la reducción del efecto del ruido estructural o de grano en los resultados de un \textsc{endus}.\par
-El principio en el que se fundamentan estas técnicas es similar al que rige las técnicas de diversidad convencionales. A partir de varias señales incorreladas entre sí se construye una señal cuya \textsc{snr} es considerablemente mejor que la \textsc{snr} de cualquiera de las señales primitivas por separado. Las técnicas de \textsc{ssp}, a diferencia de las técnicas basadas en la diversidad, consiguen sólo una seudo"=diversidad en frecuencia a partir de una única traza de la señal que se obtiene tras un \textsc{endus}.\par
-Con frecuencia se obtienen buenos resultados empleando estas técnicas lo que, sumado a la sencillez con la que puede implementarse un experimento fundamentado en las mismas, recordando que no es requerida una redundancia real basada en la utilización de varias señales, las ha convertido en las técnicas más populares en el ámbito de los \textsc{endus}. A consecuencia de la reputación con la que se han visto revestidas recientemente numerosas investigaciones se han llevado a cabo en las décadas de los ochenta y los noventa, así como a principios de siglo, con el fin de mejorar en la medida de lo posible los buenos resultados que ya de por sí proporcionan las técnicas de \textsc{ssp}.\par
-El procedimiento (más detallado en el \ref{tab:ssp-features}) que por lo general sigue todo el conjunto de técnicas de \textsc{ssp} consiste en aplicar una transformación sobre la traza que comprende dos pasos:
+Bajo el término <<técnicas de procesado por partición del espectro>>, en inglés \emph{Split Spectrum Processing Techniques}, o simplemente \psig{ssp}, se reúnen una serie de algoritmos cuya aplicación es la reducción del efecto del ruido estructural o de grano en los resultados de un \sig{endus}.\par
+El principio en el que se fundamentan estas técnicas es similar al que rige las técnicas de diversidad convencionales. A partir de varias señales incorreladas entre sí se construye una señal cuya \sig{snr} es considerablemente mejor que la \sig{snr} de cualquiera de las señales primitivas por separado. Las técnicas de \sig{ssp}, a diferencia de las técnicas basadas en la diversidad, consiguen sólo una seudo"=diversidad en frecuencia a partir de una única traza de la señal que se obtiene tras un \sig{endus}.\par
+Con frecuencia se obtienen buenos resultados empleando estas técnicas lo que, sumado a la sencillez con la que puede implementarse un experimento fundamentado en las mismas, recordando que no es requerida una redundancia real basada en la utilización de varias señales, las ha convertido en las técnicas más populares en el ámbito de los \sig{endus}. A consecuencia de la reputación con la que se han visto revestidas recientemente numerosas investigaciones se han llevado a cabo en las décadas de los ochenta y los noventa, así como a principios de siglo, con el fin de mejorar en la medida de lo posible los buenos resultados que ya de por sí proporcionan las técnicas de \sig{ssp}.\par
+El procedimiento (más detallado en el \ref{tab:sspfeatures}) que por lo general sigue todo el conjunto de técnicas de \sig{ssp} consiste en aplicar una transformación sobre la traza que comprende dos pasos:
 
 \begin{itemize}
 	\item El primero, dividir la traza en un número determinado de señales de banda estrecha, para lo que se emplea un banco de filtros.
-	\item En segundo lugar se reconstruye la traza, o más bien una versión de ésta con una \textsc{snr} mejorada, mediante un algoritmo de reconstrucción no lineal.
+	\item En segundo lugar se reconstruye la traza, o más bien una versión de ésta con una \sig{snr} mejorada, mediante un algoritmo de reconstrucción no lineal.
 \end{itemize}
 
-Las diferencias entre el carácter estadístico del ruido y de la señal procedente del defecto hacen que el procedimiento anterior conduzca al resultado deseado. Para concretar, la distribución de la energía del ruido no es equitativa en frecuencia, de ahí que sea posible encontrar señales incorreladas en ruido mediante la división espectral que realiza el banco de filtros. Por otro lado, la linealidad que presenta la componente de la señal ---o alteración de la misma según sea el caso--- originada en la reflexión que se produce al encontrarse la onda acústica con el defecto conlleva que la muestra que identifica la presencia del defecto se encuentra en la misma posición en todas las trazas de banda estrecha. Los métodos de \textsc{ssp} aprovechan de manera implícita esta última característica de la traza para magnificar la componente de la señal que indica la presencia del defecto por lo que son catalogados en la bibliografía como métodos que explotan la fase del defecto.\par
+Las diferencias entre el carácter estadístico del ruido y de la señal procedente del defecto hacen que el procedimiento anterior conduzca al resultado deseado. Para concretar, la distribución de la energía del ruido no es equitativa en frecuencia, de ahí que sea posible encontrar señales incorreladas en ruido mediante la división espectral que realiza el banco de filtros. Por otro lado, la linealidad que presenta la componente de la señal ---o alteración de la misma según sea el caso--- originada en la reflexión que se produce al encontrarse la onda acústica con el defecto conlleva que la muestra que identifica la presencia del defecto se encuentra en la misma posición en todas las trazas de banda estrecha. Los métodos de \sig{ssp} aprovechan de manera implícita esta última característica de la traza para magnificar la componente de la señal que indica la presencia del defecto por lo que son catalogados en la bibliografía como métodos que explotan la fase del defecto.\par
 
 \begin{table}
 	\centering
@@ -326,15 +326,15 @@ Las diferencias entre el carácter estadístico del ruido y de la señal procedente
 		\multicolumn{2}{c}{Parámetros} & \multicolumn{2}{c}{Algoritmo} \\
 		\cmidrule(r){1-2}\cmidrule(l){3-4}
 		y & Señal a procesar & 1. & Generar del banco de filtros \\
-		f_\text{min} & Frecuencia inferior de corte del banco de filtros & 2. & Calcular la \textsc{fft} de $y$ \\
+		f_\text{min} & Frecuencia inferior de corte del banco de filtros & 2. & Calcular la \sig{fft} de $y$ \\
 		f_\text{max} & Frecuencia superior de corte del banco de filtros & 3. & Procesar el resultado obtenido en (2) con el banco de filtros \\
-		df & Separación entre filtros & 4. & Calcular la \textsc{ifft} de las trazas de banda estrecha \\
+		df & Separación entre filtros & 4. & Calcular la \sig{ifft} de las trazas de banda estrecha \\
 		pb & Ancho de banda de los filtros & 5. & Normalizar la amplitud de las trazas de banda estrecha \\
 		h_f & Tipo de filtro empleado & 6. & Construir una única traza a partir de las trazas de banda estrecha normalizadas \\
 		\bottomrule
 	\end{tabulary}
-	\caption{Particularidades que en general se aplican a todos los algoritmos de \textsc{ssp}}
-	\label{tab:ssp-features}
+	\caption{Particularidades que en general se aplican a todos los algoritmos de \sig{ssp}}
+	\label{tab:sspfeatures}
 \end{table}
 
 \begin{figure}
@@ -342,8 +342,8 @@ Las diferencias entre el carácter estadístico del ruido y de la señal procedente
 		\includegraphics{gis-pfc-ch3-7.pdf}
 	\end{center}
 	\caption{Esquema genérico que representa el espectro del banco de filtros frente al espectro del transductor}
-	\label{fig:filter-specter}
+	\label{fig:filter}
 \end{figure}
 
-% He hecho un corte del fichero aquí porque el realzado de sintaxis de Vim no interpreta correctamente el código que configura la disposición de las columnas en el entorno tabulado etiquetado con <<tab:ssp-features>>, en consecuencia considera todo el texto posterior incluido en una ecuación matemática y no resalta la ortografía.
+% He hecho un corte del fichero aquí porque el realzado de sintaxis de Vim no interpreta correctamente el código que configura la disposición de las columnas en el entorno tabulado etiquetado con <<tab:sspfeatures>>, en consecuencia considera todo el texto posterior incluido en una ecuación matemática y no resalta la ortografía.
 \input{gis-pfc-ch3-2}

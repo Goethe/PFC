@@ -1,9 +1,10 @@
 \documentclass[a4paper, 12pt]{book}
 \includeonly{gis-pfc-pro, gis-pfc-ch1, gis-pfc-ch2, gis-pfc-ch3-1, gis-pfc-appa, gis-pfc-appb}
-\usepackage[a4paper, BCOR1cm]{typearea}
-\usepackage[spanish, es-ucroman]{babel}
+\usepackage[paper=a4, BCOR1cm]{typearea}
+\usepackage[english, spanish, es-ucroman]{babel}
 \usepackage[format=hang, font=small, labelfont=bf, labelsep=endash, width=.9\textwidth]{caption}
-\usepackage[listofformat=subsimple, format=hang, labelfont=footnotesize, textfont={it, footnotesize}]{subfig}
+\usepackage[listofformat=subsimple, format=hang, labelfont=footnotesize, %
+	textfont={it, footnotesize}]{subfig}
 \usepackage[color]{changebar}
 \usepackage[latin1]{inputenc}
 \usepackage[OT1]{fontenc}
@@ -12,15 +13,18 @@
 \usepackage[nottoc]{tocbibind}
 \usepackage[spanish]{varioref}
 \usepackage{graphicx}
-\usepackage{amsfonts, amsmath, amssymb, calc, color, fancyhdr, hyperref, ifthen, layouts, listings, nextpage, textcase}
-\usepackage{array, booktabs, tabularx, tabulary, dcolumn, multirow, oldstyle, threeparttable}
-\titleformat{\part}[display]{\centering\huge\sffamily\bfseries}{\partname\ \thepart}{.5\baselineskip}{}
+\usepackage{amsfonts, amsmath, amssymb, calc, color, fancyhdr, hyperref, ifthen, layouts, %
+	listings, nextpage, textcase}
+\usepackage{array, booktabs, tabularx, tabulary, dcolumn, multirow, threeparttable}
+\usepackage[fixlanguage, noisbn]{babelbib}
+\titleformat{\part}[display]{\centering\huge\sffamily\bfseries}{\partname\ \thepart}%
+	{.5\baselineskip}{}
 \hypersetup{%
 	pdftitle=Proceso de adquisición y tratamiento de señales de %
 	ultrasonidos, pdfauthor=José Ramón Gisbert Valls, pdfcreator=Vim 7.2,%
 	pdfstartview=FitH, colorlinks=true, pdfdisplaydoctitle=true,%
 	naturalnames=true, breaklinks=true, linkcolor=black,%
-	bookmarksopen=true, bookmarksopenlevel=1
+	citecolor=black, bookmarksopen=true, bookmarksopenlevel=1
 }
 \fancypagestyle{plain}{%
 	\fancyhf{}
@@ -28,11 +32,13 @@
 }
 \lstloadlanguages{Matlab}
 \lstset{language=Matlab, extendedchars=true, breaklines, captionpos=b, %
-	morekeywords={addchannel, analoginput, catch, datadqcallback, daqfind, daqhwinfo, errordlg, gcbo, getdata, %
-	guidata, localDaqCallback, peekdata, single_channel, start, stop, strcmpi, trigger, try, warning} %
+	morekeywords={addchannel, analoginput, catch, datadqcallback, %
+	daqfind, daqhwinfo, errordlg, gcbo, getdata, guidata, localDaqCallback, %
+	peekdata, single_channel, start, stop, strcmpi, trigger, try, warning} %
 	}
-\lstdefinestyle{displayed}{float=htbp, frame=l, tabsize=5, framerule=1.2pt, abovecaptionskip=\medskipamount, %
-	rulecolor={\color[gray]{0.8}}, gobble=4, linewidth=.975\textwidth, xleftmargin=.05\textwidth}
+\lstdefinestyle{displayed}{float=htbp, frame=l, tabsize=5, framerule=1.2pt, %
+	abovecaptionskip=\medskipamount, rulecolor={\color[gray]{0.8}}, gobble=4, %
+	linewidth=.975\textwidth, xleftmargin=.05\textwidth}
 \cbcolor{red}
 \labelformat{equation}{ecuación~#1}
 \labelformat{figure}{figura~#1}
@@ -46,13 +52,35 @@
 \graphicspath{{./pictures/}{../pictures/}}
 \DeclareCaptionLabelFormat{cont}{#1~#2\alph{ContinuedFloat}}
 \captionsetup[ContinuedFloat]{labelformat=cont}
-\newcommand\matlab{\textsc{matlab}}
-\newcommand\kpci{\textsc{kpci}-3108}
-\newcommand\datx{\emph{Data Acquisition Toolbox}}
+\selectbiblanguage{spanish}
+\setbtxfallbacklanguage{english}
+% Se aplica el siguiente convenio tipográfico a la primera aparición de una sigla.
+\newcommand\psig[1]{\emph{\MakeTextUppercase{#1}}}
+% Se aplica el siguiente convenio tipográfico a siglas.
+\newcommand\sig[1]{\textsc{\MakeTextLowercase{#1}}}
+% Se aplica el siguiente convenio tipográfico a funciones.
+\newcommand\func[1]{\texttt{#1}}
+% Se aplica el siguiente convenio a argumentos de función distintos de propiedades.
+\newcommand\argu[1]{\texttt{#1}}
+% Se aplica el siguiente convenio tipográfico a propiedades.
+\newcommand\prop[1]{\textsf{#1}}
+% Se aplica el siguiente convenio a atributos de propiedades.
+\newcommand\atr[1]{\textsf{#1}}
+% Se aplica el siguiente convenio tipográfico a nombres de canal o puerto.
+\newcommand\can[1]{\sig{#1}}
+\newcommand\matlab{\sig{MATLAB}}
+\newcommand\kpci{\sig{KPCI}-3108}
+\newcommand\datx{\sig{DAT}}
+\newcommand\gui{\sig{GUI}}
+\newcommand\guide{\sig{GUIDE}}
+\newcommand\pc{\sig{pc}}
+\newcommand\ram{\sig{ram}}
 \newcommand\iscurrentchapter[1]{\ifthenelse{\equal{#1}{\thechapter}}{  en el Capítulo~#1}}
 \newcommand\miniit[1]{\begin{itemize} #1 \end{itemize}}
-\newcommand\tnotetext[2]{\item\hspace*{-5pt}\raisebox{.7ex}{\fontsize{7pt}{8.4pt}\selectfont\normalfont #1}{\footnotesize #2}}
-\newenvironment{TableNotes}{\begin{tablenotes}\vspace{\footnotesep}\footnoterule\vspace{.2ex}}{\end{tablenotes}}
+\newcommand\tnotetext[2]{\item\hspace*{-5pt}\raisebox{.7ex}%
+	{\fontsize{7pt}{8.4pt}\selectfont\normalfont #1}{\footnotesize #2}}
+\newenvironment{TableNotes}{\begin{tablenotes}\vspace{\footnotesep}%
+	\footnoterule\vspace{.2ex}}{\end{tablenotes}}
 \renewcommand\cleardoublepage{\cleartooddpage[\thispagestyle{empty}]}
 \newcolumntype{d}[1]{D{,}{,}{#1}}
 \newcolumntype{+}{D{/}{\mbox{\ --\ }}{5}}
@@ -95,15 +123,27 @@
 
 \part*{Apéndices}
 
+\newcounter{totalpages}
+\setcounter{totalpages}{\value{page}}
 \setcounter{page}{1}
 \renewcommand\thepage{\thechapter.\arabic{page}}
 \appendix
 
 \include{gis-pfc-appa}
 
+\addtocounter{totalpages}{\value{page}}
+\addtocounter{totalpages}{-1}
 \setcounter{page}{1}
 \include{gis-pfc-appb}
 
 \backmatter
+
+\addtocounter{totalpages}{\value{page}}
+\addtocounter{totalpages}{-1}
+\setcounter{page}{\value{totalpages}}
+\renewcommand\thepage{\arabic{page}}
+\nocite{mittelbach2004lc, stutzman1997atd, garcia2000mrsr}
+\bibliographystyle{bababbrv-lf}
+\bibliography{gis-pfc}
 
 \end{document}

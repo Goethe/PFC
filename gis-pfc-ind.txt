@@ -1,0 +1,24 @@
+				ÍNDICE DE MATERIAS
+
+canal (definición)
+cola de muestreo (definición, ejemplo)
+puerto
+modo diferencial
+modo sencillo
+canal diferencial
+canal monoterminal
+amplificador de instrumentación
+conversor analógico digitual
+presión acústica
+impedancia acústica
+respuesta al impulso del (medio, transductores)
+ruido estructural o de grano
+ruido coherente
+ruido incorrelado
+resolución
+campo lejano
+campo próximo
+ensayos no destructivos (ENDUS, palabra clave)
+ultrasonidos (palabra clave)
+funciones de MATLAB (start, stop, get, set)
+propiedades de la herramienta de adquisición de datos (h. d. a. d. d.) o (d. a. t.)
