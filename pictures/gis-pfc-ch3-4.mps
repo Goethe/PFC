@@ -2,7 +2,7 @@
 %%BoundingBox: 3 -96 354 189 
 %%HiResBoundingBox: 3.64793 -95.8988 353.18968 188.5019 
 %%Creator: MetaPost 1.208
-%%CreationDate: 2010.08.02:1310
+%%CreationDate: 2010.08.25:1719
 %%Pages: 1
 %*Font: cmmi12 11.95517 11.95517 0d:80000000000201010000081011cc
 %*Font: cmr12 11.95517 11.95517 13:800006200002e0014003fbfdec4
@@ -416,14 +416,15 @@ newpath 63.05705 29.87709 moveto
 gsave fill grestore stroke
 newpath 229.28119 136.07759 moveto
 244.61838 136.07759 lineto
-244.6184 82.212 lineto
-262.989 82.212 lineto stroke
-newpath 259.29343 80.68121 moveto
-262.989 82.212 lineto
-259.29343 83.7428 lineto
+244.6184 85.20454 lineto
+262.989 85.20454 lineto stroke
+newpath 259.29343 83.67375 moveto
+262.989 85.20454 lineto
+259.29343 86.73534 lineto
  closepath
 gsave fill grestore stroke
-newpath 244.6184 82.212 moveto
+newpath 262.989 79.21947 moveto
+244.6184 79.21947 lineto
 244.61838 28.3464 lineto
 232.0057 28.3464 lineto stroke
 newpath 235.70119 29.87717 moveto
@@ -437,6 +438,11 @@ newpath 293.61403 82.212 moveto
 76.20276 -7.56398 lineto
 76.20276 -79.38478 lineto
 121.1016 -79.38478 lineto stroke
+newpath 117.40582 -80.91566 moveto
+121.1016 -79.38478 lineto
+117.40582 -77.8539 lineto
+ closepath
+gsave fill grestore stroke
 newpath 166.0364 -79.38478 moveto
 191.19199 -79.38478 lineto stroke
 newpath 187.49646 -80.91556 moveto

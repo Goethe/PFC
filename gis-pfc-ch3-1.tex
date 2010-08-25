@@ -328,7 +328,7 @@ Las diferencias entre el carácter estadístico del ruido y de la señal procedente
 		y & Señal a procesar & 1. & Generar del banco de filtros \\
 		f_\text{min} & Frecuencia inferior de corte del banco de filtros & 2. & Calcular la \sig{fft} de $y$ \\
 		f_\text{max} & Frecuencia superior de corte del banco de filtros & 3. & Procesar el resultado obtenido en (2) con el banco de filtros \\
-		df & Separación entre filtros & 4. & Calcular la \sig{ifft} de las trazas de banda estrecha \\
+		\Delta f & Separación entre filtros & 4. & Calcular la \sig{ifft} de las trazas de banda estrecha \\
 		pb & Ancho de banda de los filtros & 5. & Normalizar la amplitud de las trazas de banda estrecha \\
 		h_f & Tipo de filtro empleado & 6. & Construir una única traza a partir de las trazas de banda estrecha normalizadas \\
 		\bottomrule
@@ -339,9 +339,9 @@ Las diferencias entre el carácter estadístico del ruido y de la señal procedente
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch3-7.pdf}
+		\includegraphics{gis-pfc-ch3-7.mps}
 	\end{center}
-	\caption{Esquema genérico que representa el espectro del banco de filtros frente al espectro del transductor}
+	\caption[Parámetros de configuración del banco de filtros]{Representación esquemática en la que pueden observarse los parámetros empleados en la configuración del banco de filtros comparados con el espectro de la señal de audio}
 	\label{fig:filter}
 \end{figure}
 

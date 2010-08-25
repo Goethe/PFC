@@ -8,6 +8,7 @@ etex
 filenametemplate "%j-%c.mps";
 
 input boxes
+input graph
 
 u = 1mm;
 v = 10mm;
@@ -382,25 +383,35 @@ pickup l1;
 
 z10 = (1.5v, v);
 
-boxit.ata(btex $a(z, t)$ etex);		boxit.atb(btex $a(z, t)$ etex);
-boxit.atc(btex $a(z^\prime, t)$ etex);	boxit.difa(btex $h_d(z, t)$ etex);
-boxit.difb(btex $h_d(z, t)$ etex);	boxit.difc(btex $h_d(z^\prime, t)$ etex);
-boxit.ema(btex $h_{te}(t)$ etex);	boxit.reb(btex $h_{tr}(t)$ etex);
-boxit.rec(btex $h_{tr}(t)$ etex);	boxit.disp(btex $h_r(t)$ etex);
-boxit.hma();				boxit.hmb();
+boxit.ata(btex $a(z, t)$ etex);
+boxit.atb(btex $a(z, t)$ etex);
+boxit.atc(btex $a(z^\prime, t)$ etex);
+boxit.difa(btex $h_d(z, t)$ etex);
+boxit.difb(btex $h_d(z, t)$ etex);
+boxit.difc(btex $h_d(z^\prime, t)$ etex);
+boxit.ema(btex $h_{te}(t)$ etex);
+boxit.reb(btex $h_{tr}(t)$ etex);
+boxit.rec(btex $h_{tr}(t)$ etex);
+boxit.disp(btex $h_r(t)$ etex);
+boxit.hma();
+boxit.hmb();
 boxit.hmc();
 reb.c = z10;
 z11 = (reb.ne - reb.nw);		z12 = (reb.ne - reb.se);
 atb.c = reb.c + 3(z11);			difb.c = atb.c + 2(z11);
 ema.c = reb.c + 6(z12);			ata.c = difb.c + 6(z12);
-difa.c = atb.c + 6(z12);		disp.c = difb.c + 2(z11) + 3(z12);
+difa.c = atb.c + 6(z12);
+disp.c = difb.c + 2(z11) + 3(z12);
 % difc.c = disp.c + 2(z11);		atc.c = difc.c + 2(z11);
 % difc.c = atb.c + 2(z11) - 6(z12);	atc.c = difc.c + 2(z11);
 difc.c = atb.c - 6(z12);		atc.c = difc.c + 2(z11);
 rec.c = atc.c + 3(z11);
-hma.sw = difa.c - 9/10(z11) - 9/10(z12);hma.ne = ata.c + 9/10(z11) + 29/10(z12);
-hmb.sw = atb.c - 9/10(z11) - 9/10(z12);	hmb.ne = difb.c + 9/10(z11) + 29/10(z12);
-hmc.sw = difc.c - 9/10(z11) - 9/10(z12);hmc.ne = atc.c + 9/10(z11) + 29/10(z12);
+hma.sw = difa.c - 9/10(z11) - 9/10(z12);
+hma.ne = ata.c + 9/10(z11) + 29/10(z12);
+hmb.sw = atb.c - 9/10(z11) - 9/10(z12);
+hmb.ne = difb.c + 9/10(z11) + 29/10(z12);
+hmc.sw = difc.c - 9/10(z11) - 9/10(z12);
+hmc.ne = atc.c + 9/10(z11) + 29/10(z12);
 drawboxed(reb);				drawboxed(atb);
 drawboxed(difb);			drawboxed(ema);
 drawboxed(ata);				drawboxed(difa);
@@ -426,13 +437,17 @@ label.top(btex $p(z, t)$ etex, disp.nw - z11);
 p10 = reb.c--atb.c;			p11 = ema.c--difa.c;
 p12 = ema.c - z11--ema.c;		p13 = reb.c - z11--reb.c;
 p14 = rec.c--rec.c + z11;
-z21 = p10 intersectionpoint bpath hmb;	z22 = p10 intersectionpoint bpath reb;
-z23 = p11 intersectionpoint bpath hma;	z24 = p11 intersectionpoint bpath ema;
-z25 = p12 intersectionpoint bpath ema;	z26 = p13 intersectionpoint bpath reb;
+z21 = p10 intersectionpoint bpath hmb;
+z22 = p10 intersectionpoint bpath reb;
+z23 = p11 intersectionpoint bpath hma;
+z24 = p11 intersectionpoint bpath ema;
+z25 = p12 intersectionpoint bpath ema;
+z26 = p13 intersectionpoint bpath reb;
 z27 = p14 intersectionpoint bpath rec;
 label.bot(btex $p_R(z, t)$ etex, 1/2[z21, z22]);
 label.top(btex $v(t)$ etex, 1/2[z23, z24]);
-label.llft(btex $u(t)$ etex, z25);	label.llft(btex $y(t)$ etex, z26);
+label.llft(btex $u(t)$ etex, z25);
+label.llft(btex $y(t)$ etex, z26);
 label.lrt(btex $y^\prime(t)$ etex, z27);
 drawarrow ema.c - z11--ema.c cutafter bpath ema;
 drawarrow reb.c--reb.c - z11 cutbefore bpath reb;
@@ -441,8 +456,10 @@ drawarrow ema.c--difa.c cutbefore bpath ema cutafter bpath difa;
 drawarrow difa.c--ata.c cutbefore bpath difa cutafter bpath ata;
 drawarrow difb.c--atb.c cutbefore bpath difb cutafter bpath atb;
 drawarrow atb.c--reb.c cutbefore bpath atb cutafter bpath reb;
-drawarrow ata.c--ata.c + z11--disp.c - z11--disp.c cutbefore bpath ata cutafter bpath disp;
-drawarrow disp.c - z11--difb.c + z11--difb.c cutbefore bpath disp cutafter bpath difb;
+drawarrow ata.c--ata.c + z11--disp.c + z12/6 - z11--disp.c + z12/6 %
+	cutbefore bpath ata cutafter bpath disp;
+drawarrow disp.c - z12/6--disp.c - z11 - z12/6--difb.c + z11--difb.c %
+	cutbefore bpath disp cutafter bpath difb;
 % drawarrow disp.c--difc.c cutbefore bpath disp cutafter bpath difc;
 % ------------------------------------------------------------------
 % draw disp.c--disp.c + z11 cutbefore bpath disp;
@@ -450,7 +467,9 @@ drawarrow disp.c - z11--difb.c + z11--difb.c cutbefore bpath disp cutafter bpath
 % draw difc.c - 2(z11)--difc.c - z11 dashed withdots;
 % draw difc.c - z11--difc.c cutafter bpath difc;
 % ------------------------------------------------------------------
-draw disp.c--disp.c + z11--disp.c + z11 - 4(z12)--difc.c - 2(z11) + 4(z12)--difc.c - 2(z11)--difc.c cutbefore bpath disp cutafter bpath difc;
+drawarrow disp.c--disp.c + z11--disp.c + z11 - 4(z12)--difc.c - %
+	2(z11) + 4(z12)--difc.c - 2(z11)--difc.c %
+	cutbefore bpath disp cutafter bpath difc;
 % ------------------------------------------------------------------
 drawarrow difc.c--atc.c cutbefore bpath difc cutafter bpath atc;
 drawarrow atc.c--rec.c cutbefore bpath atc cutafter bpath rec;
@@ -488,8 +507,8 @@ z25 = whatever[z13, z13 + (2v, -v)] = whatever[z19, z19 + (2v, v)];
 z26 = z25 shifted (a01, he02/2) shifted (-u/2, 0);
 % p1 = z26 + (he02, he02/2)--z26--z26 + (he02, -he02/2){right}.. %
 % 		{left}cycle;
-p1 = z26 + (he02, he02/2)--z26--z26 + (he02, -he02/2)--(wi, 0) %
-		--(wi, he02)--cycle;
+p1 = z26 + (he02, he02/2)--z26--z26 + (he02, -he02/2)--(wi, 0)-- %
+	(wi, he02)--cycle;
 for i = 4.5v, 9v, 13.5v, 18v:
 	q0.[i] = fullcircle scaled i shifted z26;
 	addto d1 doublepath q0.[i];
@@ -539,7 +558,8 @@ d3 = thelabel(btex $\lambda$ etex, z26 shifted (3.375v, 0));
 fill bbox d3 withcolor white;
 draw d3;
 % etiqueta de la matriz de reflectores
-d04 = thelabel.llft(btex Matriz de reflectores etex, (wi - 3u, he02 - 2.5u));
+d04 = thelabel.llft(btex Matriz de reflectores etex, %
+	(wi - 3u, he02 - 2.5u));
 fill bbox d04 withcolor white;
 draw d04;
 % marco
@@ -548,6 +568,169 @@ draw (0, 0)--(wi, 0)--(wi, he02)--(0, he02)--cycle;
 pickup l1;
 
 endfig;
+% ==================================================================
+
+
+
+% ==================================================================
+beginfig(7);
+numeric a[], b[], i, j, k;
+picture d[];
+pen l[];
+path p[], q[][];
+string defaultfontold;
+b00 = mexp(256);
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+d0 = currentpicture;
+d1 = currentpicture;
+pickup l1;
+
+% ------------------------------------------------------------------
+% espectro
+a00 = 4wi/5;		a01 = 4he01/5;		a02 = 2a00/5;
+a03 = infinity;
+p0 = (-a00/2, 0){dir 315}..tension a03 and 1.. %
+	{dir 15}(-a02/2, a01)--(a02/2, a01){dir 345}.. %
+	tension 1 and a03..{dir 45}(a00/2, 0);
+draw p0 shifted (wi/2, 0);
+% ------------------------------------------------------------------
+% banco de filtros
+a04 = 7a01/8;
+p1 = (-wi/2, a04)--(0, a04);	p2 = (0, a04)--(wi/2, a04);
+z00 = p0 intersectionpoint p1;
+z01 = p0 intersectionpoint p2;
+z02 = z00 shifted (wi/2, 0);	z03 = z01 shifted (wi/2, 0);
+% defino Af, b, y la amplitud del filtro
+a05 = a00/3;	a06 = a05/3;	a07 = 9a01/20;
+% a05 = (x01 - x00)/2;	a06 = a05/3;	a07 = 9a01/20;
+a08 = 3a05/5;
+p3 = (-a05/2, 0){right}..tension 5..{right}(-a06/2, a07)-- %
+	(a06/2, a07){right}..tension 5..{right}(a05/2, 0);
+pickup l2;
+for i = x02, x02 + a08, x03:
+	draw p3 shifted (i, 0);
+endfor
+pickup l1;
+% ------------------------------------------------------------------
+% rectas auxiliares
+a09 = 4.5u;	a10 = u;
+z04 = (x02, a01 + a09);		z05 = (x03, a01 + a09);
+z06 = 1/2[z04, z05];
+draw z02 shifted (0, a10)--z04;	draw z03 shifted (0, a10)--z05;
+drawdblarrow z04 shifted (a10, -a10)--z05 shifted -(a10, a10);
+d2 = thelabel(btex $B$ etex, z06 shifted (0, -a10));
+fill bbox d2 withcolor white;	draw d2;
+a11 = a07 + a04 - a01;
+% a11 = 7a07/8;
+p4 = p1 shifted (0, a11 - a04);	p5 = p2 shifted (0, a11 - a04);
+z07 = p3 intersectionpoint p4;	z08 = p3 intersectionpoint p5;
+z09 = (x02 + x07 + a08, y07 + 2a10);
+z10 = (x02 + x08 + a08, y08 + 2a10);
+z11 = (x02 + x07 + a08, a07 + a09);
+z12 = (x02 + x08 + a08, a07 + a09);
+z13 = 1/2[z11, z12];
+draw z09--z11;			draw z10--z12;
+drawdblarrow z11 shifted (a10, -a10)--z12 shifted -(a10, a10);
+d3 = thelabel(btex $b$ etex, z13 shifted (0, -a10));
+fill bbox d3 withcolor white;	draw d3;
+a12 = a08/5;
+z14 = 1/2[(x02 + a08, a07/2), (x03, a07/2)];
+pickup l3;
+draw z14 shifted (-a12, 0)--z14 shifted (a12, 0) dashed %
+	withdots scaled 1.5;
+pickup l1;
+% ------------------------------------------------------------------
+% marcas de grafo
+a13 = 2.5u;		a14 = 3u;
+draw (x02, 0)--(x02, a13);	draw (x03, 0)--(x03, a13);
+draw (x02 + a08, 0)--(x02 + a08, a13);
+label(btex $f_1$ etex, (x02, -a14));
+label(btex $f_2 = f_1 + \Delta f$ etex, (x02 + a08, -a14));
+label(btex $f_n = f_1 + k\Delta f$ etex, (x03, -a14));
+% ------------------------------------------------------------------
+% marco
+draw (0, -0.1u)--(wi, -0.1u);
+
+endfig;
+
+% ==================================================================
+
+
+
+% ==================================================================
+beginfig(8);
+numeric a[], b[], i, j, k;
+picture d[];
+pen l[];
+path p[], q[][];
+string defaultfontold;
+b00 = mexp(256);
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+d0 = currentpicture;
+d1 = currentpicture;
+pickup l1;
+save ahlength, ahangle, defaultfont;
+
+% ------------------------------------------------------------------
+% grafo
+draw begingraph(wi, he01);
+% ------------------------------------------------------------------
+% espectro
+	a00 = 7.5 * b00;		a01 = 200;
+	setrange(whatever,-a00 , whatever,whatever);
+	p0 = (0, -a00)..{right}(a01/5, 0)--(4a01/5, 0){right}..(a01, -a00);
+	gdraw p0;
+% ------------------------------------------------------------------
+% banco de filtros
+	p1 = (0, -3)--(a01/2, -3);	p2 = (a01/2, -3)--(a01, -3);
+	z00 = p0 intersectionpoint p1;
+	z01 = p0 intersectionpoint p2;
+	a02 = (x01 - x00)/4;	a03 = 4a02/6;	a04 = 10;
+	a05 = 8a02/6;
+	p3 = (-a02, -a00){right}..{right}(-a03/2, a04 - a00)-- %
+		(a03/2, a04 - a00){right}..{right}(a02, -a00);
+	pickup l2;
+	for i = x00, x00 + a05, x01:
+		gdraw p3 shifted (i, 0);
+	endfor
+	pickup l1;
+% ------------------------------------------------------------------
+% marcas de grafo
+	d20 = thelabel(btex $f_1$ etex, (0, 0));
+	d21 = thelabel(btex $f_2 = f_1 + \Delta f$ etex, (0, 0));
+	d22 = thelabel(btex $f_n = f_1 + k\Delta f$ etex, (0, 0));
+	itick.bot(d20, x00);
+	itick.bot(d21, x00 + a05);
+	itick.bot(d22, x01);
+% ------------------------------------------------------------------
+% rectas auxiliares
+	z02 = z00 shifted (0, 4.5);	z03 = z01 shifted (0, 4.5);
+	z04 = 1/2[z02, z03];
+	gdraw z00 shifted (0, 0.5)--z02;
+	gdraw z01 shifted (0, 0.5)--z03;
+ 	gdraw z02 shifted (2, -0.5)--z03 shifted -(2, 0.5);
+ 	glabel(btex $B$ etex, z04);
+% 	gdraw (x00, -a00 + 1)--(x00, a04 - a00 + 1) dashed evenly %
+% 	       scaled 2;
+% 	gdraw (x01, -a00 + 1)--(x01, a04 - a00 + 1) dashed evenly %
+% 	       scaled 2;
+% 	gdraw (x00, -a00)--z00--z01--(x01, -a00) %
+% 		dashed evenly withcolor red;
+% ------------------------------------------------------------------
+% marco
+	frame.bot;
+% 	ahlength := 3u;	ahangle := 15;
+% 	drawdblarrow (0, he01)--(0, 0)--(wi, 0);
+	endgraph;
+
+endfig;
+% 
 % ==================================================================
 
 
