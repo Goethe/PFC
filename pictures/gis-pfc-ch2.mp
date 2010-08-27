@@ -7,12 +7,18 @@ etex
 
 filenametemplate "%j-%c.mps";
 
-input boxes
+newinternal u,v;
+u := 1mm;
+v := 10mm;
 
-u = 1mm;
-v = 10mm;
+input boxes
+input gis-pfc
+
 wi = 12v;
 he01 = 9v;	he02 = 6.75v;
+
+ahlength := 2u;	ahangle := 20;
+ahinset := 5/100;
 
 
 
@@ -28,9 +34,9 @@ l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
-d0 = currentpicture;
-d1 = currentpicture;
-d2 = currentpicture;
+d0 = nullpicture;
+d1 = nullpicture;
+d2 = nullpicture;
 pickup l1;
 
 % ------------------------------------------------------------------
@@ -79,7 +85,7 @@ z01 = center p2;
 t2 = identity transformed t0 shifted (0, 0.4wi - a07/2);
 draw p2 transformed t2;
 label(btex \textsc{matlab} etex, z01 transformed t2);
-drawdblarrow center p0 transformed t0--center p2 transformed t2 %
+drawdblgisarrow center p0 transformed t0--center p2 transformed t2 %
 	cutbefore p0 transformed t0 cutafter p2 transformed t2;
 z02 = 1/2[(0, 0.6wi + a01/2), (a00, wi - a07)];
 label.rt(btex Comandos y datos interactivos etex, z02);
@@ -90,7 +96,7 @@ label.rt(btex Comandos y datos interactivos etex, z02);
 t3 = identity transformed t0 shifted (0, a07/2 - 0.4wi);
 draw p2 transformed t3;
 label(btex Drivers etex, z01 transformed t3);
-drawdblarrow center p0 transformed t0--center p2 transformed t3 %
+drawdblgisarrow center p0 transformed t0--center p2 transformed t3 %
 	cutbefore p0 transformed t0 cutafter p2 transformed t3;
 z03 = 1/2[(0, 0.6wi - a01/2), (a00, 0.2wi + a07)];
 label.rt(btex Propiedades, datos y eventos etex, z03);
@@ -119,7 +125,7 @@ addto d1 doublepath p6 shifted 1/2(a06 - a11, -a08 - a10/2);
 t4 = identity transformed t3 shifted (0, a01/2 - 0.4wi);
 draw d1 transformed t4 withpen l1;
 label(btex Hardware etex, z01 transformed t4);
-drawdblarrow center p2 transformed t3--center p3 transformed t4 %
+drawdblgisarrow center p2 transformed t3--center p3 transformed t4 %
 	cutbefore p2 transformed t3 cutafter p3 transformed t4;
 z04 = 1/2[(a00, 0.2wi), (0, a01/2 + a07/2 + a10 - 0.2wi)];
 label.rt(btex Propiedades, datos y eventos etex, z04);
@@ -136,7 +142,7 @@ t5 = identity transformed t1 shifted (0, 2a05) %
 	shifted (he01/2, 0);
 t6 = identity transformed t5 shifted (-he01/2, 0);
 z05 = center d2;
-drawarrow z00 transformed t6--z05 transformed t5 %
+drawgisarrow z00 transformed t6--z05 transformed t5 %
 	cutbefore p1 transformed t6 cutafter p8 transformed t5;
 label(btex \begin{tabular}{c} Archivo \\ %
 	en disco \end{tabular} etex, z05 transformed t5 %
@@ -152,10 +158,10 @@ z08 = aa.c + 3z07/2;		a15 = y07/3;
 drawboxed(aa);
 p9 = bpath aa;			draw p9 shifted 1.5z07;
 label(btex Sensores etex, z08);
-drawarrow aa.c--aa.c shifted (-he01/4, 0)-- %
+drawgisarrow aa.c--aa.c shifted (-he01/4, 0)-- %
 	aa.c shifted (-he01/4, a15)--aa.c shifted (-he01/2, a15) %
 	cutbefore bpath aa cutafter p3 transformed t4;
-drawarrow z08--z08 shifted (-he01/2, 0) cutbefore bpath aa %
+drawgisarrow z08--z08 shifted (-he01/2, 0) cutbefore bpath aa %
 	shifted 1.5z07 cutafter p3 transformed t4;
 
 endfig;
@@ -175,9 +181,9 @@ l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
-d0 = currentpicture;
-d1 = currentpicture;
-d2 = currentpicture;
+d0 = nullpicture;
+d1 = nullpicture;
+d2 = nullpicture;
 pickup l1;
 
 % ------------------------------------------------------------------
@@ -223,7 +229,7 @@ for i = 0 upto a07 - 1:
 		shifted ((i + 1) * a09 + i*a08, 0);
 	z[2][i] = center q[1][i];
 	draw q[0][i];	draw q[1][i];
-	drawdblarrow z[1][i]--z[2][i] cutbefore q[0][i] %
+	drawdblgisarrow z[1][i]--z[2][i] cutbefore q[0][i] %
 		cutafter q[1][i];
 endfor
 label(btex \begin{tabular}{c} Subsistema \\ \textsc{ai} %
@@ -247,11 +253,10 @@ d4 = thelabel(btex \begin{tabular}{c} Objetos \\ dispositivo %
 	\end{tabular} etex, (wi, 4a02 - 3a01/2));
 p5 = (a00 + a03/3 + 2u, 0)--(a00 + a03/3 + 2u, he02);
 draw d3;		draw d4;
-drawarrow (wi, a01/2)--(a00/2, a01/2) cutbefore bbox d3 %
+drawgisarrow (wi, a01/2)--(a00/2, a01/2) cutbefore bbox d3 %
 		cutafter p5;
-drawarrow (wi, 4a02 - 3a01/2)--(a00/2, 4a02 - 3a01/2) %
+drawgisarrow (wi, 4a02 - 3a01/2)--(a00/2, 4a02 - 3a01/2) %
 		cutbefore bbox d4 cutafter p5;
-show (urcorner d3)/u;
 
 endfig;
 % ==================================================================

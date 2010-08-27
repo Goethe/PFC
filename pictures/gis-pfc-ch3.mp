@@ -7,13 +7,19 @@ etex
 
 filenametemplate "%j-%c.mps";
 
+newinternal u, v;
+u := 1mm;
+v := 10mm;
+
 input boxes
 input graph
+input gis-pfc
 
-u = 1mm;
-v = 10mm;
 wi = 12v;
 he01 = 9v;	he02 = 6.75v;
+
+ahlength := 2u;	ahangle := 20;
+ahinset := 5/100;
 
 
 
@@ -44,7 +50,7 @@ z02 = 1/2(c00, c01);	z03 = 1/2(-c00, c01);
 r0 = z00--z02;		r1 = z01--z03;
 % dimensiones del agarre y separación entre barras
 c02 = 3u;	c03 = v;	c04 = u;
-c05 = u/20;	% Espacio adicional para el corte
+c05 = u/100;	% Espacio adicional para el corte
 z04 = 1/2(-c02, -c03);	z05 = 1/2(c02 - c05, -c03);
 z06 = 1/2(c02 - c05, c03);	z07 = 1/2(-c02, c03);
 r3 = z04--z05--z06--z07--cycle;
@@ -123,8 +129,8 @@ l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
-d0 = currentpicture;
-d1 = currentpicture;
+d0 = nullpicture;
+d1 = nullpicture;
 pickup l1;
 
 % ------------------------------------------------------------------
@@ -189,7 +195,7 @@ d5 = thelabel.lft(btex Campo pr\'oximo etex, %
 d6 = thelabel(btex Campo lejano etex, %
 	       1/2[(x26 + a03 + 2u, a04), (wi, a04)]);
 label.rt(btex $D$ etex, z36);
-drawdblarrow p9;	drawdblarrow p10;	drawdblarrow p11;
+drawdblgisarrow p9;	drawdblgisarrow p10;	drawdblgisarrow p11;
 fill bbox d3 withcolor white;	draw d3;
 fill bbox d4 withcolor white;	draw d4;
 fill bbox d5 withcolor white;	draw d5;
@@ -213,8 +219,8 @@ l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
-d0 = currentpicture;
-d1 = currentpicture;
+d0 = nullpicture;
+d1 = nullpicture;
 pickup l1;
 
 % ------------------------------------------------------------------
@@ -270,8 +276,8 @@ p7 = p5 scaled 1.3 shifted (19a06/40, 0) shifted z32;
 % flechas
 a08 = 2u;		a09 = ahlength;
 p8 = z29 shifted (u, 0)--z30 shifted (-u, 0);
-drawarrow p8 cutafter p6;	
-drawarrow p8 cutbefore p7;
+drawgisarrow p8 cutafter p6;	
+drawgisarrow p8 cutbefore p7;
 % ------------------------------------------------------------------
 % etiquetas
 d3 = thelabel.top(btex defecto etex, 1/4[z29, z30] %
@@ -280,7 +286,7 @@ d4 = thelabel.top(btex forward scattering etex, 23/32[z29, z30] %
 		shifted (0, a08));
 d5 = thelabel.llft(btex \begin{tabular}{r@{ }l}--- & medio\\ %
 	- - & acoplamiento\end{tabular} etex, (wi - 2u, he02 - 2u));
-drawarrow 1/2[urcorner d3, lrcorner d3] shifted (u/2, 0){right}.. %
+drawgisarrow 1/2[urcorner d3, lrcorner d3] shifted (u/2, 0){right}.. %
 		1/2[ulcorner d2, urcorner d2] dashed evenly;
 fill bbox d4 withcolor white;		draw d4;
 fill bbox d5 withcolor white;		draw d5;
@@ -305,8 +311,8 @@ l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
-d0 = currentpicture;
-d1 = currentpicture;
+d0 = nullpicture;
+d1 = nullpicture;
 pickup l1;
 
 % ------------------------------------------------------------------
@@ -350,8 +356,8 @@ p5 = p4 scaled 1.3 shifted (19a05/40, 0) shifted z32;
 a07 = 2u;		a08 = ahlength;
 p6 = z29 shifted (u, a07)--z30 shifted (-u, a07);
 p7 = p6 shifted (0, -2a07);
-drawarrow p6 cutafter p5;	
-drawarrow reverse p7 cutbefore p5;
+drawgisarrow p6 cutafter p5;	
+drawgisarrow reverse p7 cutbefore p5;
 % ------------------------------------------------------------------
 % etiquetas
 d2 = thelabel.llft(btex \begin{tabular}{r@{ }l}--- & medio\\ %
@@ -449,30 +455,30 @@ label.top(btex $v(t)$ etex, 1/2[z23, z24]);
 label.llft(btex $u(t)$ etex, z25);
 label.llft(btex $y(t)$ etex, z26);
 label.lrt(btex $y^\prime(t)$ etex, z27);
-drawarrow ema.c - z11--ema.c cutafter bpath ema;
-drawarrow reb.c--reb.c - z11 cutbefore bpath reb;
-drawarrow rec.c--rec.c + z11 cutbefore bpath rec;
-drawarrow ema.c--difa.c cutbefore bpath ema cutafter bpath difa;
-drawarrow difa.c--ata.c cutbefore bpath difa cutafter bpath ata;
-drawarrow difb.c--atb.c cutbefore bpath difb cutafter bpath atb;
-drawarrow atb.c--reb.c cutbefore bpath atb cutafter bpath reb;
-drawarrow ata.c--ata.c + z11--disp.c + z12/6 - z11--disp.c + z12/6 %
+drawgisarrow ema.c - z11--ema.c cutafter bpath ema;
+drawgisarrow reb.c--reb.c - z11 cutbefore bpath reb;
+drawgisarrow rec.c--rec.c + z11 cutbefore bpath rec;
+drawgisarrow ema.c--difa.c cutbefore bpath ema cutafter bpath difa;
+drawgisarrow difa.c--ata.c cutbefore bpath difa cutafter bpath ata;
+drawgisarrow difb.c--atb.c cutbefore bpath difb cutafter bpath atb;
+drawgisarrow atb.c--reb.c cutbefore bpath atb cutafter bpath reb;
+drawgisarrow ata.c--ata.c + z11--disp.c + z12/6 - z11--disp.c + z12/6 %
 	cutbefore bpath ata cutafter bpath disp;
-drawarrow disp.c - z12/6--disp.c - z11 - z12/6--difb.c + z11--difb.c %
+drawgisarrow disp.c - z12/6--disp.c - z11 - z12/6--difb.c + z11--difb.c %
 	cutbefore bpath disp cutafter bpath difb;
-% drawarrow disp.c--difc.c cutbefore bpath disp cutafter bpath difc;
+% drawgisarrow disp.c--difc.c cutbefore bpath disp cutafter bpath difc;
 % ------------------------------------------------------------------
 % draw disp.c--disp.c + z11 cutbefore bpath disp;
 % draw disp.c + z11--disp.c + 2(z11) dashed withdots;
 % draw difc.c - 2(z11)--difc.c - z11 dashed withdots;
 % draw difc.c - z11--difc.c cutafter bpath difc;
 % ------------------------------------------------------------------
-drawarrow disp.c--disp.c + z11--disp.c + z11 - 4(z12)--difc.c - %
+drawgisarrow disp.c--disp.c + z11--disp.c + z11 - 4(z12)--difc.c - %
 	2(z11) + 4(z12)--difc.c - 2(z11)--difc.c %
 	cutbefore bpath disp cutafter bpath difc;
 % ------------------------------------------------------------------
-drawarrow difc.c--atc.c cutbefore bpath difc cutafter bpath atc;
-drawarrow atc.c--rec.c cutbefore bpath atc cutafter bpath rec;
+drawgisarrow difc.c--atc.c cutbefore bpath difc cutafter bpath atc;
+drawgisarrow atc.c--rec.c cutbefore bpath atc cutafter bpath rec;
 % ------------------------------------------------------------------
 
 endfig;
@@ -490,9 +496,9 @@ l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
-d0 = currentpicture;
-d1 = currentpicture;
-d2 = currentpicture;
+d0 = nullpicture;
+d1 = nullpicture;
+d2 = nullpicture;
 pickup l1;
 
 % ------------------------------------------------------------------
@@ -553,7 +559,7 @@ draw d2 shifted (wi - a08, 0) withpen l1;
 % radio de la primera circunferencia 2.25, radio de la segunda 4.5
 % si sumo 1/8 al primero y resto 1/8 (la misma cantidad) al segundo
 % obtengo 2.375 y 4.375
-drawdblarrow z26 shifted (2.375v, 0)--z26 shifted (4.375v, 0);
+drawdblgisarrow z26 shifted (2.375v, 0)--z26 shifted (4.375v, 0);
 d3 = thelabel(btex $\lambda$ etex, z26 shifted (3.375v, 0));
 fill bbox d3 withcolor white;
 draw d3;
@@ -584,8 +590,8 @@ l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
-d0 = currentpicture;
-d1 = currentpicture;
+d0 = nullpicture;
+d1 = nullpicture;
 pickup l1;
 
 % ------------------------------------------------------------------
@@ -620,7 +626,7 @@ a09 = 4.5u;	a10 = u;
 z04 = (x02, a01 + a09);		z05 = (x03, a01 + a09);
 z06 = 1/2[z04, z05];
 draw z02 shifted (0, a10)--z04;	draw z03 shifted (0, a10)--z05;
-drawdblarrow z04 shifted (a10, -a10)--z05 shifted -(a10, a10);
+drawdblgisarrow z04 shifted (a10, -a10)--z05 shifted -(a10, a10);
 d2 = thelabel(btex $B$ etex, z06 shifted (0, -a10));
 fill bbox d2 withcolor white;	draw d2;
 a11 = a07 + a04 - a01;
@@ -633,7 +639,7 @@ z11 = (x02 + x07 + a08, a07 + a09);
 z12 = (x02 + x08 + a08, a07 + a09);
 z13 = 1/2[z11, z12];
 draw z09--z11;			draw z10--z12;
-drawdblarrow z11 shifted (a10, -a10)--z12 shifted -(a10, a10);
+drawdblgisarrow z11 shifted (a10, -a10)--z12 shifted -(a10, a10);
 d3 = thelabel(btex $b$ etex, z13 shifted (0, -a10));
 fill bbox d3 withcolor white;	draw d3;
 a12 = a08/5;
@@ -656,279 +662,6 @@ draw (0, -0.1u)--(wi, -0.1u);
 
 endfig;
 
-% ==================================================================
-
-
-
-% ==================================================================
-beginfig(8);
-numeric a[], b[], i, j, k;
-picture d[];
-pen l[];
-path p[], q[][];
-string defaultfontold;
-b00 = mexp(256);
-l0 = pencircle scaled 0.15u;
-l1 = pencircle scaled 0.25u;
-l2 = pencircle scaled 0.35u;
-l3 = pencircle scaled 0.5u;
-d0 = currentpicture;
-d1 = currentpicture;
-pickup l1;
-save ahlength, ahangle, defaultfont;
-
-% ------------------------------------------------------------------
-% grafo
-draw begingraph(wi, he01);
-% ------------------------------------------------------------------
-% espectro
-	a00 = 7.5 * b00;		a01 = 200;
-	setrange(whatever,-a00 , whatever,whatever);
-	p0 = (0, -a00)..{right}(a01/5, 0)--(4a01/5, 0){right}..(a01, -a00);
-	gdraw p0;
-% ------------------------------------------------------------------
-% banco de filtros
-	p1 = (0, -3)--(a01/2, -3);	p2 = (a01/2, -3)--(a01, -3);
-	z00 = p0 intersectionpoint p1;
-	z01 = p0 intersectionpoint p2;
-	a02 = (x01 - x00)/4;	a03 = 4a02/6;	a04 = 10;
-	a05 = 8a02/6;
-	p3 = (-a02, -a00){right}..{right}(-a03/2, a04 - a00)-- %
-		(a03/2, a04 - a00){right}..{right}(a02, -a00);
-	pickup l2;
-	for i = x00, x00 + a05, x01:
-		gdraw p3 shifted (i, 0);
-	endfor
-	pickup l1;
-% ------------------------------------------------------------------
-% marcas de grafo
-	d20 = thelabel(btex $f_1$ etex, (0, 0));
-	d21 = thelabel(btex $f_2 = f_1 + \Delta f$ etex, (0, 0));
-	d22 = thelabel(btex $f_n = f_1 + k\Delta f$ etex, (0, 0));
-	itick.bot(d20, x00);
-	itick.bot(d21, x00 + a05);
-	itick.bot(d22, x01);
-% ------------------------------------------------------------------
-% rectas auxiliares
-	z02 = z00 shifted (0, 4.5);	z03 = z01 shifted (0, 4.5);
-	z04 = 1/2[z02, z03];
-	gdraw z00 shifted (0, 0.5)--z02;
-	gdraw z01 shifted (0, 0.5)--z03;
- 	gdraw z02 shifted (2, -0.5)--z03 shifted -(2, 0.5);
- 	glabel(btex $B$ etex, z04);
-% 	gdraw (x00, -a00 + 1)--(x00, a04 - a00 + 1) dashed evenly %
-% 	       scaled 2;
-% 	gdraw (x01, -a00 + 1)--(x01, a04 - a00 + 1) dashed evenly %
-% 	       scaled 2;
-% 	gdraw (x00, -a00)--z00--z01--(x01, -a00) %
-% 		dashed evenly withcolor red;
-% ------------------------------------------------------------------
-% marco
-	frame.bot;
-% 	ahlength := 3u;	ahangle := 15;
-% 	drawdblarrow (0, he01)--(0, 0)--(wi, 0);
-	endgraph;
-
-endfig;
-% 
-% ==================================================================
-
-
-
-% ==================================================================
-% beginfig(51);
-% picture d[];
-% path p[];
-% pen b[];
-% numeric a[];
-% b00 = pencircle scaled 0.25u;
-% b01 = pencircle scaled 0.35u;
-% b02 = pencircle scaled 0.5u;
-% pickup b00;
-% 
-% z00 = (0, 0);	z01 = (2v, 0);
-% z02 = v*(2, 2);	z03 = (0, 2v);
-% draw z00--z01--z02--z03--cycle;
-% draw z00--z02;	draw z01--z03;
-% draw 1/2[z01,z00]--1/2[z03,z02];
-% draw 1/2[z03,z00]--1/2[z02,z01];
-% draw fullcircle scaled 2v shifted (v, v) withcolor blue;
-% z04 = (v, 0) rotated 225;
-% draw z00--z04--z04 shifted (0, 2v)--z03--cycle;
-% p00 = z04--z03;	p01 = z04 shifted (0, 2v)--z00;
-% draw p00;	draw p01;
-% draw 1/2[z03,z00]--1/2[z03,z00] shifted z04;
-% draw 1/2[z04,z00]--1/2[z04,z00] shifted (z03 - z00);
-% z05 = (v, 0) rotated 135;
-% p02 = z05 shifted (-x05, v)--z05 shifted (-x05, v) shifted z04;
-% p03 = z04 shifted (-x04, v)--z04 shifted (-x04, v) shifted z04;
-% draw z05 shifted (v, v)--p02 withcolor red;
-% draw z04 shifted (v, v)--p03 withcolor red;
-% z06 = p00 intersectiontimes p02;
-% z07 = p01 intersectiontimes p03;
-% z08 = p00 intersectiontimes p03;
-% z09 = p01 intersectiontimes p02;
-% z10 = point x06 of p00;	z11 = point x08 of p00;
-% z12 = point x07 of p01;	z13 = point x09 of p01;
-% p04 = z10--z11;	p05 = z12--z13;
-% a00 = abs(z11 - z10);	a01 = abs(z13 - z12);
-% z14 = z03 - z04;	a02 = angle z14;
-% p06 = fullcircle xscaled a00 yscaled a01 rotated a02;
-% draw p06 shifted 1/2[z04,z03] withcolor blue;
-% d00 = currentpicture;
-% draw d00 reflectedabout(v*(-2, 2.15), v*(2.15, 2.15));
-% 
-% endfig;
-% ==================================================================
-
-
-
-% ==================================================================
-% beginfig(52);
-% picture d[];
-% path p[];
-% pen b[];
-% numeric a[];
-% b00 = pencircle scaled 0.25u;
-% b01 = pencircle scaled 0.35u;
-% b02 = pencircle scaled 0.5u;
-% pickup b00;
-% 
-% z00 = (0, 0);	z01 = (2v, 0);
-% z02 = v*(2, 2);	z03 = (0, 2v);
-% draw z00--z01--z02--z03--cycle;
-% draw z00--z02;	draw z01--z03;
-% draw 1/2[z01,z00]--1/2[z03,z02];
-% draw 1/2[z03,z00]--1/2[z02,z01];
-% draw fullcircle scaled 2v shifted (v, v) withcolor blue;
-% z04 = (4/3v, 0) rotated 225;
-% draw z00--z04--z04 shifted (0, 2v)--z03--cycle;
-% p00 = z04--z03;	p01 = z04 shifted (0, 2v)--z00;
-% draw p00;	draw p01;
-% draw 1/2[z03,z00]--1/2[z03,z00] shifted z04;
-% draw 1/2[z04,z00]--1/2[z04,z00] shifted (z03 - z00);
-% z05 = (v, 0) rotated 135;
-% z15 = (v, 0) rotated 225;
-% p02 = z05 shifted (-x05, v)--z05 shifted (-x05, v) shifted z04;
-% p03 = z15 shifted (-x15, v)--z15 shifted (-x15, v) shifted z04;
-% draw z05 shifted (v, v)--p02 withcolor red;
-% draw z15 shifted (v, v)--p03 withcolor red;
-% z06 = p00 intersectiontimes p02;
-% z07 = p01 intersectiontimes p03;
-% z08 = p00 intersectiontimes p03;
-% z09 = p01 intersectiontimes p02;
-% z10 = point x06 of p00;	z11 = point x08 of p00;
-% z12 = point x07 of p01;	z13 = point x09 of p01;
-% p04 = z10--z11;	p05 = z12--z13;
-% a00 = abs(z11 - z10);	a01 = abs(z13 - z12);
-% z14 = z03 - z04;	a02 = angle z14;
-% p06 = fullcircle xscaled a00 yscaled a01 rotated a02;
-% draw p06 shifted 1/2[z04,z03] dashed evenly withcolor blue;
-% draw 1/2[z00,z04]..z12..1/2[z00,z03]..z10..1/2[z03,z04 shifted (0, 2v)]..z13..1/2[z00,z03] shifted z04..z11..cycle dashed evenly withcolor red;
-% draw 1/2[z00,z04]{dir 45}..z12..1/2[z00,z03]{up}..z10..1/2[z03,z04 shifted (0, 2v)]{dir 225}..z13..1/2[z00,z03] shifted z04{down}..z11..cycle withcolor green;
-% d00 = currentpicture;
-% draw d00 reflectedabout(v*(-2, 2.15), v*(2.15, 2.15));
-% draw 1/2[z00,z04]{dir 45}..z12..1/2[z00,z03]{up}..z10..1/2[z03,z04 shifted (0, 2v)]{dir 225}..z13..1/2[z00,z03] shifted z04{down}..z11..cycle shifted -1/2[z00,z03 + z04] shifted (3.15v, 2.15v);
-% 
-% endfig;
-% ==================================================================
-
-
-
-% ==================================================================
-% beginfig(5);
-% path p[], q[][];
-% picture d[];
-% pen b[];
-% numeric a[];
-% b00 = pencircle scaled 0.25u;
-% b01 = pencircle scaled 0.35u;
-% b02 = pencircle scaled 0.5u;
-% b03 = pencircle scaled 0.15u;
-% pickup b00;
-% 
-% ------------------------------------------------------------------
-% sensor
-% d00 = currentpicture;
-% d01 = currentpicture;
-% d02 = currentpicture;
-% d03 = currentpicture;
-% p16 = (0, 0)--(wi, 0)--(wi, he02)--(0, he02)--cycle;
-% pickup b01;
-% draw p16;
-% pickup b00;
-% p00 = (0, 0)--(1.5v, 1.5v);
-% p01 = (0, 1.5v)--(1.5v, 0);
-% for i=0 upto 10:
-% 	addto d00 doublepath p00 shifted (0, 1.5i*u) withpen b03;
-% 	addto d00 doublepath p01 shifted (0, -1.5i*u) withpen b03;
-% endfor
-% for i=1 upto 2:
-% 	addto d00 doublepath p00 shifted (i*1.5u, 0) withpen b03;
-% 	addto d00 doublepath p01 shifted (i*1.5u, 0) withpen b03;
-% endfor
-% p02 = (0, 0)--(4.5u, 0)--(4.5u, 1.5v)--(0, 1.5v)--cycle;
-% clip d00 to p02;
-% p03 = (0, 2.25u){down}..(3u, 3u/4)..{dir 340}(12u, 0)--(16.5u, 0)--(18u, 3u/4){up}..{up}(18u, 14.25u)--(16.5u, 15u)--(12u, 15u){dir 200}..(3u, 14.25u)..(0, 12.75u){down}--cycle;
-% p04 = (0, 3u/4)..(u, 15u/8)--(u, 13.125u)..(0, 14.25u)--cycle;
-% p06 = (0, 0)--(v, 0) rotated 75;
-% for i = 0 upto 5:
-% 	addto d01 doublepath p06 shifted (0.25u, 0) shifted (2i*u, 0) withpen b00;
-% endfor
-% p07 = (0, 0.125u)..for i=0 upto 3: {dir 295}(0.25u + 2i*u, 0){dir 25}.. endfor (6.5u, 0.125u)--(6.5u, 3.625u){dir 205}.. for i=2 downto 0: {dir 75}(1.25u + 2i*u, 3.75u){dir 205}.. endfor (0, 3.625u)--cycle;
-% clip d01 to p07;
-% fill p04 shifted (26u, he02/2 - 7.5u) withcolor 0.6white;
-% draw (0, he02/2)--(7.5u, he02/2);
-% fill p07 shifted (5u, he02/2 - 1.875u) withcolor white;
-% draw d01 shifted (5u, he02/2 - 1.875u);
-% draw p07 shifted (5u, he02/2 - 1.875u);
-% fill p03 shifted (8u, he02/2 - 7.5u) withcolor white;
-% draw p03 shifted (8u, he02/2 - 7.5u);
-% draw d00 shifted (20u, he02/2 - 7.5u);
-% 
-% ------------------------------------------------------------------
-% frentes de ondas
-% z00 = whatever[(u, 13.125u),(u + 2v, 13.125u + v)] = whatever[(u, 15u/8),(u + 2v, 15u/8 - v)];
-% p08 = z00 + (10v, 5v)--z00--z00 + (10v, -5v){right}..{left}cycle;
-% p09 = p08 shifted (0, -y00) shifted (26u, he02/2);
-% for i = 1 upto 3:
-% 	q00.[i] = fullcircle scaled v scaled 4.5i shifted (26.5u + x00, he02/2);
-% 	addto d02 doublepath q00.[i] withpen b00;
-% endfor
-% clip d02 to p09;
-% draw d02 withcolor blue;
-% z01 = (26.5u + x00, he02/2) + (2.375v, 0);
-% drawdblarrow z01--z01 shifted (2v, 0);
-% d05 = thelabel(btex $\lambda$ etex, 1/2[z01,z01 + (2v, 0)]);
-% fill bbox d05 withcolor white;	draw d05;
-% 
-% ------------------------------------------------------------------
-% matriz de reflectores
-% p13 = fullcircle scaled 2u;
-% p14 = (0, he02/24)--(0, 5he02/24);
-% p15 = (he02/24, 0)--(5he02/24, 0);
-% a00 = 6;	a01 = 5;
-% for i = 1 upto a00:
-% 	for j = 0 upto a01:
-% 		q[i][j] = p13 shifted (j*he02/4, (i - 1)*he02/4);
-%  		q[i][j + a01 + 1] = p14 shifted (j*he02/4, (i - 1)*he02/4);
-% 		q[i][j + 2a01 + 2] = p15 shifted (j*he02/4, (i - 1)*he02/4);
-% 		addto d03 doublepath q[i][j] withpen b00;
-% 		if i < a00:
-% 	 		addto d03 doublepath q[i][j + a01 + 1] withpen b00;
-% 		fi
-% 		if j < a01:
-% 			addto d03 doublepath q[i][j + 2a01 + 2] withpen b00;
-% 		fi
-% 	endfor
-% endfor
-% p17 = p16 shifted (11he02/16 - wi, he02/8);
-% clip d03 to p17;
-% draw d03 shifted (wi - 11he02/16, -he02/8);
-% d04 = thelabel.llft(btex Matriz de reflectores etex, (wi - 3u, he02 - 2.5u));
-% fill bbox d04 withcolor white;	draw d04;
-% clip currentpicture to (-u, -u)--(wi + u, -u)--(wi + u, he02 + u)--(-u, he02 + u)--cycle;
-% endfig;
 % ==================================================================
 
 

@@ -7,10 +7,17 @@ etex
 
 filenametemplate "%j-%c.mps";
 
-u = 1mm;
-v = 10mm;
+newinternal u, v;
+u := 1mm;
+v := 10mm;
+
+input gis-pfc
+
 wi = 12v;
 he01 = 9v;	he02 = 6.75v;
+
+ahlength := 2u;	ahangle := 20;
+ahinset := 5/100;
 
 
 
@@ -103,7 +110,7 @@ draw z11--z11 - z10;
 draw z11--z11 shifted (1.15v, 0);
 fill p11 shifted z11 shifted (1.15v, 0) withcolor white;
 draw p11 shifted z11 shifted (1.15v, 0);
-drawarrow z11 shifted (0, v)--z11 shifted (1.15v, v);
+drawgisarrow z11 shifted (0, v)--z11 shifted (1.15v, v);
 label.top(btex {\scshape a/d} etex, z11 shifted (1.15v/2, v));
 label.bot(btex {\scshape agnd} etex, z11 - z10 - (0, 0.5v));
 fill p10 shifted (z11 - z10 + (0, 0.5u)) withcolor white;
@@ -165,5 +172,34 @@ endfig;
 % ==================================================================
 
 
+
+% ==================================================================
+beginfig(2);
+
+numeric a[], i, j, k;
+picture d[];
+pen l[];
+path p[], q[][];
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+d0 = nullpicture;
+d1 = nullpicture;
+pickup l1;
+
+% ------------------------------------------------------------------
+% transductor
+pickup l2;
+draw (0, 0)--(wi, 0)--(wi, he02)--(0, he02)--cycle;
+d2 = transductor(1.5, (0, 0));
+d3 = transductor(3.5, (5v, 5v));
+draw d2;
+draw bbox d2 withcolor red;
+draw ulcorner d2--llcorner d2 withcolor blue dashed evenly;
+
+
+endfig;
+% ==================================================================
 
 end

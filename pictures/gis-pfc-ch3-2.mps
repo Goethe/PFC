@@ -2,7 +2,7 @@
 %%BoundingBox: -1 -1 341 192 
 %%HiResBoundingBox: -0.49608 -0.49608 340.65294 191.83432 
 %%Creator: MetaPost 1.208
-%%CreationDate: 2010.08.25:1719
+%%CreationDate: 2010.08.27:1239
 %%Pages: 1
 %*Font: cmr12 11.95517 11.95517 13:80000020000080004002fb7dec4
 %%BeginProlog
@@ -314,26 +314,29 @@ newpath 149.35011 84.33057 moveto
 159.27136 107.00769 lineto stroke
  0 0.42519 dtransform truncate idtransform setlinewidth pop
 newpath 78.66127 95.66913 moveto
-145.87666 95.66913 lineto stroke
-newpath 142.18123 94.1384 moveto
+140.49112 95.66913 lineto stroke
+newpath 140.29315 94.68462 moveto
 145.87666 95.66913 lineto
-142.18123 97.19986 lineto
+140.29315 96.65364 lineto
+140.57224 95.66913 lineto
  closepath
 gsave fill grestore stroke
 newpath 162.15251 95.66913 moveto
-261.49559 95.66913 lineto stroke
-newpath 257.79977 94.13823 moveto
+256.10977 95.66913 lineto stroke
+newpath 255.91245 94.68468 moveto
 261.49559 95.66913 lineto
-257.79977 97.20003 lineto
+255.91245 96.65358 lineto
+256.19153 95.66913 lineto
  closepath
 gsave fill grestore stroke
  [3 3 ] 0 setdash
 newpath 142.41655 114.15878 moveto
-147.30872 114.15878 151.77902 111.3886 153.9564 107.00769 curveto stroke
+145.45908 114.15878 148.33844 113.08733 150.60454 111.22331 curveto stroke
  [] 0 setdash
-newpath 150.56973 109.13614 moveto
-151.78395 108.61551 152.92851 107.90347 153.9564 107.00769 curveto
-153.86302 108.36795 153.5572 109.68076 153.06677 110.90747 curveto
+newpath 149.66899 110.71709 moveto
+151.32617 109.8304 152.79845 108.57669 153.9564 107.00769 curveto
+153.40489 108.87811 152.4502 110.55977 151.19621 111.95976 curveto
+150.66562 111.17279 lineto
  closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor

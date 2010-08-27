@@ -2,7 +2,7 @@
 %%BoundingBox: -1 -14 341 221 
 %%HiResBoundingBox: -0.35434 -13.81732 340.5112 220.10007 
 %%Creator: MetaPost 1.208
-%%CreationDate: 2010.08.25:1719
+%%CreationDate: 2010.08.27:1239
 %%Pages: 1
 %*Font: cmmi12 11.95517 11.95517 0d:808000000002050100000c5211cc
 %*Font: cmr8 7.97011 7.97011 30:e
@@ -36,16 +36,18 @@ newpath 89.0405 181.4163 moveto
 newpath 251.11636 181.4163 moveto
 251.11636 216.85 lineto stroke
  0 0.70866 dtransform truncate idtransform setlinewidth pop
-newpath 91.87514 214.01537 moveto
-248.28172 214.01537 lineto stroke
-newpath 244.58632 212.48465 moveto
+newpath 97.26164 214.01537 moveto
+242.89636 214.01537 lineto stroke
+newpath 242.69974 213.03113 moveto
 248.28172 214.01537 lineto
-244.58632 215.54608 lineto
+242.69974 214.9996 lineto
+242.9788 214.01537 lineto
  closepath
 gsave fill grestore stroke
-newpath 95.57054 215.54608 moveto
+newpath 97.45712 214.9996 moveto
 91.87514 214.01537 lineto
-95.57054 212.48465 lineto
+97.45712 213.03113 lineto
+97.17805 214.01537 lineto
  closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
@@ -63,16 +65,18 @@ newpath 117.90596 71.9994 moveto
 newpath 169.02522 71.9994 moveto
 169.02522 104.59824 lineto stroke
  0 0.70866 dtransform truncate idtransform setlinewidth pop
-newpath 120.7406 101.7636 moveto
-166.19058 101.7636 lineto stroke
-newpath 162.49493 100.23277 moveto
+newpath 126.12642 101.7636 moveto
+160.80476 101.7636 lineto stroke
+newpath 160.6073 100.77913 moveto
 166.19058 101.7636 lineto
-162.49493 103.29442 lineto
+160.6073 102.74806 lineto
+160.88647 101.7636 lineto
  closepath
 gsave fill grestore stroke
-newpath 124.43625 103.29442 moveto
+newpath 126.32388 102.74806 moveto
 120.7406 101.7636 lineto
-124.43625 100.23277 lineto
+126.32388 100.77913 lineto
+126.04471 101.7636 lineto
  closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor

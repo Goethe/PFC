@@ -1,17 +1,18 @@
 OBJ = gis-pfc.tex gis-pfc-pro.tex gis-pfc-ch1.tex gis-pfc-ch2.tex \
       gis-pfc-ch3-1.tex gis-pfc-ch3-2.tex gis-pfc-appa.tex gis-pfc-appb.tex
-MAIN = gis-pfc.pdf
-PRMAIN = gis-pfc.tex
 AUX = gis-pfc.aux
-BIB = gis-pfc.bib
 BBL = gis-pfc.bbl
-PL = pdflatex
+BIB = gis-pfc.bib
+MAIN = gis-pfc.pdf
+PICS = pictures/gis-pfc-ch?-?.mps
+PRMAIN = gis-pfc.tex
 BT = bibtex
-DAT = $(shell date +%Y%m%d%k%M)
+PL = pdflatex
 TCH = touch
+DAT = $(shell date +%Y%m%d%k%M)
 TCHO = -amt
 
-$(MAIN) : $(OBJ) $(BIB) $(BBL)
+$(MAIN) : $(OBJ) $(BIB) $(BBL) $(PICS)
 	$(PL) $(PRMAIN)
 	$(PL) $(PRMAIN) > /dev/null
 	$(TCH) $(TCHO) $(DAT) $(AUX)

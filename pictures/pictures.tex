@@ -9,6 +9,7 @@
 \newcommand\texto{Este manual está destinado a todo aquel usuario interesado en la representación de señales eléctricas en el contexto que se ha expuesto anteriormente en el libro. En concreto, puede ser de especial interés para aquellos usuarios que deseen representar el espectro en frecuencia de una señal eléctrica en tiempo real, de forma que al mismo tiempo pueda visualizarse la señal correspondiente a dicho espectro.}
 \begin{document}
 
+
 \maketitle{}
 
 \begin{abstract}
@@ -17,61 +18,61 @@
 
 \listoffigures
 
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics{gis-pfc-ch1-1.mps}
-% 	\end{center}
-% 	\caption[Ejemplo de modo de terminación]{Ejemplo que muestra una posible configuración de modo de terminación para la tarjeta de adquisición}
-% 	\label{fig:termmodes}
-% \end{figure}
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch1-1.mps}
+	\end{center}
+	\caption[Ejemplo de modo de terminación]{Ejemplo que muestra una posible configuración de modo de terminación para la tarjeta de adquisición}
+	\label{fig:termmodes}
+\end{figure}
 
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics{gis-pfc-ch2-1.mps}
-% 	\end{center}
-% 	\caption{Componentes de la \textsc{dat}}
-% 	\label{fig:dat}
-% \end{figure}
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch2-1.mps}
+	\end{center}
+	\caption{Componentes de la \textsc{dat}}
+	\label{fig:dat}
+\end{figure}
 
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics{gis-pfc-ch2-2.mps}
-% 	\end{center}
-% 	\caption{Tipos de objeto dispositivo}
-% 	\label{fig:devobject}
-% \end{figure}
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch2-2.mps}
+	\end{center}
+	\caption{Tipos de objeto dispositivo}
+	\label{fig:devobject}
+\end{figure}
 
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics{gis-pfc-ch3-1.mps}
-% 	\end{center}
-% 	\caption{Campo generado por un transductor}
-% 	\label{fig:field}
-% \end{figure}
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-1.mps}
+	\end{center}
+	\caption{Campo generado por un transductor}
+	\label{fig:field}
+\end{figure}
 
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics{gis-pfc-ch3-2.mps}
-% 	\end{center}
-% 	\caption{\textsc{endus} por transmisión}
-% 	\label{fig:transmission}
-% \end{figure}
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-2.mps}
+	\end{center}
+	\caption{\textsc{endus} por transmisión}
+	\label{fig:transmission}
+\end{figure}
 
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics{gis-pfc-ch3-3.mps}
-% 	\end{center}
-% 	\caption{\textsc{endus} por pulso"=eco}
-% 	\label{fig:pulse}
-% \end{figure}
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-3.mps}
+	\end{center}
+	\caption{\textsc{endus} por pulso"=eco}
+	\label{fig:pulse}
+\end{figure}
 
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics{gis-pfc-ch3-4.mps}
-% 	\end{center}
-% 	\caption[Modelo de emisión"=transmisión]{Diagrama de bloques que muestra el modelo empleado para calcular la respuesta al impulso de emisión"=recepción}
-% 	\label{fig:model}
-% \end{figure}
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-4.mps}
+	\end{center}
+	\caption[Modelo de emisión"=transmisión]{Diagrama de bloques que muestra el modelo empleado para calcular la respuesta al impulso de emisión"=recepción}
+	\label{fig:model}
+\end{figure}
 
 \begin{figure}
 	\begin{center}
@@ -81,34 +82,35 @@
 	\label{fig:matrix}
 \end{figure}
 
-% \begin{figure}
-% 	\begin{center}
-% 		\includegraphics{palm-trees-01.mps}
-% 	\end{center}
-% 	\caption[Ejemplo de gráfica]{Ejemplo de gráfica con dimensiones de 120 mm de largo por 90 mm de alto}
-% 	\label{fig:graphics-1}
-% \end{figure}
-
-\newsavebox{\txbox}
-\sbox{\txbox}{\includegraphics[draft=true]{gis-pfc-ch3-1.mps}}
-\newsavebox{\gxbox}
-\sbox{\gxbox}{\includegraphics[draft=true]{gis-pfc-ch3-7.mps}}
-\newlength{\txwidth}
-\setlength{\txwidth}{4pt + \wd\txbox - \wd\gxbox}
-
 \begin{figure}
 	\begin{center}
-		\hspace*{\txwidth}\includegraphics{gis-pfc-ch3-7.mps}
+		\includegraphics{gis-pfc-ch3-7.mps}
 	\end{center}
 	\caption[Parámetros del banco de filtros]{Representación esquematizada en el que se identifican los parámetros de la \textsc{fft} y su relación con respecto a la señal}
 	\label{fig:filter}
 \end{figure}
 
+\newsavebox{\txbox}
+\sbox{\txbox}{\includegraphics[draft=true]{gis-pfc-ch3-7.mps}}
+\newsavebox{\gxbox}
+\sbox{\gxbox}{\includegraphics[draft=true]{palm-trees-01.mps}}
+\newlength{\txwidth}
+\setlength{\txwidth}{4pt + \wd\txbox - \wd\gxbox}
+
+% \begin{figure}
+% 	\begin{center}
+% 		\hspace*{\txwidth}\includegraphics{palm-trees-01.mps}
+% 	\end{center}
+% 	\caption[Ejemplo de gráfica]{Ejemplo de gráfica con dimensiones de 120 mm de largo por 90 mm de alto}
+% 	\label{fig:palmone}
+% \end{figure}
+
 \begin{figure}
 	\begin{center}
-		\hspace*{\txwidth}\includegraphics{gis-pfc-ch3-8.mps}
+		\includegraphics{gis-pfc-ch1-2.mps}
 	\end{center}
-	\caption[Parámetros del banco de filtros]{Representación esquematizada en el que se identifican los parámetros de la \textsc{fft} y su relación con respecto a la señal}
-	\label{fig:filter2}
+	\caption{Pruebas para determinar si la definición de las macros se ha hecho con corrección}
+	\label{fig:test}
 \end{figure}
+
 \end{document}

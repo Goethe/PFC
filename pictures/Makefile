@@ -1,3 +1,4 @@
+LIB = gis-pfc.mp
 CH1 = gis-pfc-ch1-?.mps
 CH2 = gis-pfc-ch2-?.mps
 CH3 = gis-pfc-ch3-?.mps
@@ -11,17 +12,17 @@ PRMAIN = pictures.tex
 PL = pdflatex
 MP = mpost
 
-$(MAIN) : $(PRMAIN) $(SRC) $(OBJ)
+$(MAIN) : $(PRMAIN) $(SRC) $(OBJ) $(LIB)
 	$(PL) $(PRMAIN)
 	$(PL) $(PRMAIN) > /dev/null
 
-$(CH1) : $(CH1SRC)
+$(CH1) : $(CH1SRC) $(LIB)
 	$(MP) $(CH1SRC)
 
-$(CH2) : $(CH2SRC)
+$(CH2) : $(CH2SRC) $(LIB)
 	$(MP) $(CH2SRC)
 
-$(CH3) : $(CH3SRC)
+$(CH3) : $(CH3SRC) $(LIB)
 	$(MP) $(CH3SRC)
 
 .PHONY: clean

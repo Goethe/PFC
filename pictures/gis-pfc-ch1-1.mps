@@ -2,7 +2,7 @@
 %%BoundingBox: -12 -6 350 204 
 %%HiResBoundingBox: -11.92926 -5.3134 349.79128 203.98273 
 %%Creator: MetaPost 1.208
-%%CreationDate: 2010.08.25:1615
+%%CreationDate: 2010.08.27:1239
 %%Pages: 1
 %*Font: cmr12 11.95517 11.95517 2b:8e2e0004608002625d641
 %*Font: cmsy10 11.95514 9.96265 00:8
@@ -309,10 +309,11 @@ newpath 349.43694 160.68112 moveto
 349.21289 159.57654 349.43694 160.11725 349.43694 160.68112 curveto closepath
  stroke
 newpath 314.71275 189.02753 moveto
-347.31094 189.02753 lineto stroke
-newpath 343.6153 187.4967 moveto
+341.92499 189.02753 lineto stroke
+newpath 341.72765 188.04305 moveto
 347.31094 189.02753 lineto
-343.6153 190.55835 lineto
+341.72765 190.01201 lineto
+342.00682 189.02753 lineto
  closepath
 gsave fill grestore stroke
 320.3087 195.01633 moveto

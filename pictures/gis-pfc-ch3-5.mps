@@ -2,7 +2,7 @@
 %%BoundingBox: -1 -1 341 192 
 %%HiResBoundingBox: -0.49608 -0.49608 340.65294 191.83432 
 %%Creator: MetaPost 1.208
-%%CreationDate: 2010.08.25:1719
+%%CreationDate: 2010.08.27:1239
 %%Pages: 1
 %*Font: cmmi12 11.95517 11.95517 0d:80800000000201010000081011cc
 %*Font: cmr12 11.95517 11.95517 0d:8200001880000b8085000feff7b5
@@ -539,16 +539,18 @@ newpath 256.44637 175.3934 moveto
 newpath 304.28093 175.3934 moveto
 304.28093 207.28311 lineto stroke
 grestore
-newpath 112.67697 95.66913 moveto
-169.36978 95.66913 lineto stroke
-newpath 165.67424 94.13835 moveto
+newpath 118.06285 95.66913 moveto
+163.98433 95.66913 lineto stroke
+newpath 163.78632 94.68463 moveto
 169.36978 95.66913 lineto
-165.67424 97.1999 lineto
+163.78632 96.65363 lineto
+164.06549 95.66913 lineto
  closepath
 gsave fill grestore stroke
-newpath 116.37251 97.1999 moveto
+newpath 118.26044 96.65363 moveto
 112.67697 95.66913 lineto
-116.37251 94.13835 lineto
+118.26044 94.68463 lineto
+117.98126 95.66913 lineto
  closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor

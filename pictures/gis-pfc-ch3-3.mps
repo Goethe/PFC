@@ -2,7 +2,7 @@
 %%BoundingBox: -1 -1 341 192 
 %%HiResBoundingBox: -0.49608 -0.49608 340.65294 191.83432 
 %%Creator: MetaPost 1.208
-%%CreationDate: 2010.08.25:1719
+%%CreationDate: 2010.08.27:1239
 %%Pages: 1
 %*Font: cmr12 11.95517 11.95517 13:80000020000080004003fbfdec4
 %%BeginProlog
@@ -177,17 +177,19 @@ newpath 149.35011 84.33057 moveto
 159.27136 107.00769 lineto stroke
  0 0.42519 dtransform truncate idtransform setlinewidth pop
 newpath 78.66127 101.33841 moveto
-149.41972 101.33841 lineto stroke
-newpath 145.72398 99.80754 moveto
+144.03423 101.33841 lineto stroke
+newpath 143.83644 100.35394 moveto
 149.41972 101.33841 lineto
-145.72398 102.86928 lineto
+143.83644 102.32288 lineto
+144.11562 101.33841 lineto
  closepath
 gsave fill grestore stroke
 newpath 146.58528 89.99985 moveto
-78.66127 89.99985 lineto stroke
-newpath 82.35641 91.53046 moveto
+84.04659 89.99985 lineto stroke
+newpath 84.24442 90.9843 moveto
 78.66127 89.99985 lineto
-82.35641 88.46924 lineto
+84.24442 89.0154 lineto
+83.96533 89.99985 lineto
  closepath
 gsave fill grestore stroke
 95.26929 73.02837 moveto
