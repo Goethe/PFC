@@ -24,104 +24,8 @@ ahinset := 5/100;
 
 
 % ==================================================================
-def transductor(expr blanco, escala, desplazamiento) =
-numeric c[];
-pen n[];
-picture f[];
-path r[];
-n0 = pencircle scaled 0.15u;
-n1 = pencircle scaled 0.25u;
-n2 = pencircle scaled 0.35u;
-n4 = pencircle scaled 0.5u;
-f0 = blanco;
-f1 = blanco;
-f2 = blanco;
-f3 = blanco;
-f4 = blanco;
-f5 = blanco;
-
-
-% ------------------------------------------------------------------
-% agarre
-% dimensiones de las barras
-c00 = v;		c01 = v;
-z00 = 1/2(-c00, -c01);	z01 = 1/2(c00, -c01);	
-z02 = 1/2(c00, c01);	z03 = 1/2(-c00, c01);	
-r0 = z00--z02;		r1 = z01--z03;
-% dimensiones del agarre y separación entre barras
-c02 = 3u;	c03 = v;	c04 = u;
-c05 = u/100;	% Espacio adicional para el corte
-z04 = 1/2(-c02, -c03);	z05 = 1/2(c02 - c05, -c03);
-z06 = 1/2(c02 - c05, c03);	z07 = 1/2(-c02, c03);
-r3 = z04--z05--z06--z07--cycle;
-for i = -1 upto c03/c04 + 1:
-	addto f0 doublepath r0 shifted (0, i*c04 - c03/2);
-	addto f0 doublepath r1 shifted (0, i*c04 - c03/2);
-endfor
-clip f0 to r3;
-
-% ------------------------------------------------------------------
-% contorno del transistor
-% dimensiones del transistor
-c06 = v;				c07 = 4c02;
-z08 = (-c07/2, -7c06/20);		z14 = (x08, -y08);
-z09 = (-c07/3, -9c06/20);		z15 = (x09, -y09);
-z10 = (c07/6, -c06/2);			z16 = (x10, -y10);
-z11 = (x10 + c02, -c06/2);		z17 = (x11, -y11);
-z12 = (x11 + c07/12, -9c06/20);		z18 = (x12, -y12);
-z13 = (x11 + 2c07/12, -15c06/40);	z19 = (x13, -y13);
-r4 = z08{down}..z09..{dir 340}z10--z11--z12{up}.. %
-		{up}z18--z17--z16{dir 200}..z15..z14{down}--cycle;
-r5 = z12..z13--z19..z18--cycle;
-
-% ------------------------------------------------------------------
-% tornillo
-% dimensiones e inclinación de las barras
-c08 = 8u;	c09 = 75;
-r6 = (-c08/2, 0)--(c08/2, 0);	r6 := r6 rotated c09;
-% dimensiones del tornillo (alto, ancho, separación entre barras y offset)
-c10 = c08/3;	c11 = 2.5u;	c12 = 1.25u;	c13 = c11/5;
-for i = 0 upto c11/c12:
-	addto f1 doublepath r6 shifted (i*c12 - c11/2, 0);
-endfor
-z20 = 1/2(-3c13 - c11, c13/5 - c10);	z21 = (-x20, y20);
-z22 = -z20;				z23 = (x20, -y20);
-r7 = z20.. %
-	for i=0 upto c11/c12: %
-		{dir 295}(i*c12 + x20 + 3c13/4, -c10/2){dir 25}.. % 
-	endfor %
-	z21--z22{dir 205}.. %
-	for i=c11/c12 - 1 downto -1: %
-		{dir 75}(i*c12 + 3c13/4, c10/2){dir 205}.. %
-	endfor %
-	z23--cycle;
-clip f1 to r7;
-
-% ------------------------------------------------------------------
-% transductor completo
-f0 := f0 shifted (x10 + (x11 - x10)/2, 0);
-f1 := f1 shifted (-c07/2 - c11/20, 0);
-r7 := r7 shifted (-c07/2 - c11/20, 0);
-r5 := r5 shifted (-u/2, 0);
-addto f5 contour r7 withcolor white;
-addto f2 also f1;
-addto f2 doublepath r7;
-addto f3 contour r5; % withcolor 0.6white;
-addto f3 contour r4 withcolor white;
-addto f4 doublepath r4;
-draw f5 scaled escala shifted desplazamiento withpen n0;
-draw f2 scaled escala shifted desplazamiento withpen n1;
-draw f3 scaled escala shifted desplazamiento withpen n0;
-draw f0 scaled escala shifted desplazamiento withpen n0;
-draw f4 scaled escala shifted desplazamiento withpen n1
-enddef;
-% ==================================================================
-
-
-
-% ==================================================================
 beginfig(1);
-numeric a[], i, j, k;
+numeric a[], i, j, k, x[], y[];
 picture d[];
 pen l[];
 path p[], q[][];
@@ -129,7 +33,6 @@ l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
-d0 = nullpicture;
 d1 = nullpicture;
 pickup l1;
 
@@ -137,40 +40,41 @@ pickup l1;
 % transductor
 a00 = 1.5;	a01 = 17u;
 draw (0, he02/2)--(a01, he02/2);
-transductor(d0, a00, (a01, he02/2));
+d0 = transductor(a00, (a01, he02/2));
 % ------------------------------------------------------------------
 % frente de ondas
-z25 = whatever[z13, z13 + (2v, -v)] = whatever[z19, z19 + (2v, v)];
-z26 = z25 shifted (a01, he02/2) shifted (-u/2, 0);
-p1 = z26 + (he02, he02/2)--z26--z26 + (he02, -he02/2)--(wi, 0) %
+draw d0;
+a02 = a00 * v/8;
+z00 = lrcorner d0 shifted (0, a02);
+z01 = urcorner d0 shifted (0, -a02);
+z02 = whatever[z00, z00 + (2v, -v)] = whatever[z01, z01 + (2v, v)];
+p1 = z02 + (he02, he02/2)--z02--z02 + (he02, -he02/2)--(wi, 0) %
 		--(wi, he02)--cycle;
 for i = 4.5v, 9v, 13.5v, 18v:
-	q0.[i] = fullcircle scaled i shifted z26;
+	q0.[i] = fullcircle scaled i shifted z02;
 	addto d1 doublepath q0.[i];
 endfor
 clip d1 to p1;
 draw d1 withpen l1; % withpen l3 withcolor 0.7white;
 % ------------------------------------------------------------------
 % curvas auxiliares
-a02 = he02 - u;		a03 = 3/4*4.5v;
-a04 = he02/8;		a05 = he02 - a04;
-a06 = angle(2v, v);	a07 = 5/4*9v;
-z27 = z13 shifted (-u/2, 0) scaled 1.5 shifted (a01, he02/2);
-z28 = z19 shifted (-u/2, 0) scaled 1.5 shifted (a01, he02/2);
-z29 = z26 + (a02, a02/2);	z30 = z26 + (a02, -a02/2);
-z31 = (a02, a02/2) rotated -a06 shifted z27;
-z32 = (a02, -a02/2) rotated a06 shifted z28;
+a03 = he02 - u;		a04 = 3/4*4.5v;
+a05 = he02/8;		a06 = he02 - a05;
+a07 = angle(2v, v);	a08 = 5/4*9v;
+z05 = z02 + (a03, a03/2);	z06 = z02 + (a03, -a03/2);
+z07 = (a03, a03/2) rotated -a07 shifted z00;
+z08 = (a03, -a03/2) rotated a07 shifted z01;
 % rectas diagonales
-p2 = z26--z29;	p3 = z26--z30;
+p2 = z02--z05;	p3 = z02--z06;
 % recta que corta las diagonales
-p4 = z27--z28;
+p4 = z00--z01;
 % rectas horizontales
-% p5 = z27--z31;	p6 = z28--z32;
-p5 = z27--(wi - u, y27);	p6 = z28--(wi - u, y28);
+% p5 = z00--z31;	p6 = z01--z32;
+p5 = z00--(wi - u, y00);	p6 = z01--(wi - u, y01);
 % auxiliar que marca el inicio del campo
-p7 = z28--z28 shifted (0, a05 - a04/2 - y28);
+p7 = z01--z01 shifted (0, a06 - a05/2 - y01);
 % frontera entre campo cercano y campo lejano
-p8 = (x26 + a03, a05 + a04/2)--(x26 + a03, a04/2);
+p8 = (x02 + a04, a06 + a05/2)--(x02 + a04, a05/2);
 draw p2 cutbefore p4 dashed evenly scaled 2 shifted (u, 0);
 draw p3 cutbefore p4 dashed evenly scaled 2 shifted (u, 0);
 draw p5 dashed evenly scaled 2 shifted (u, 0);
@@ -179,22 +83,22 @@ draw p7 dashed evenly scaled 2 shifted (u, 0);
 draw p8 dashed evenly scaled 2 shifted (u, 0);
 % ------------------------------------------------------------------
 % etiquetas y marco
-p9 = (x28 + u, a05 - a04/2)--(x26 + a03 - u, a05 - a04/2);
-p10 = fullcircle scaled a07 shifted z26 %
+p9 = (x01 + u, a06 - a05/2)--(x02 + a04 - u, a06 - a05/2);
+p10 = fullcircle scaled a08 shifted z02 %
 		cutbefore p6 shifted (0, u/2) %
 		cutafter p2 shifted (u, 0);
-z33 = point 0.5 length p9 of p9;
-z34 = point 0.5 length p10 of p10;
-z35 = point 0 of p10;
-p11 = z35 shifted (0, -u)--z35 shifted (0, y27 - y28);
-z36 = point 0.5 length p11 of p11;
-d3 = thelabel(btex $L_0$ etex, z33);
-d4 = thelabel(btex $\gamma_0$ etex, z34);
+z09 = point 0.5 length p9 of p9;
+z10 = point 0.5 length p10 of p10;
+z11 = point 0 of p10;
+p11 = z11 shifted (0, -u)--z11 shifted (0, y00 - y01);
+z12 = point 0.5 length p11 of p11;
+d3 = thelabel(btex $L_0$ etex, z09);
+d4 = thelabel(btex $\gamma_0$ etex, z10);
 d5 = thelabel.lft(btex Campo pr\'oximo etex, %
-	       (x26 + a03 - 2u, a04));
+	       (x02 + a04 - 2u, a05));
 d6 = thelabel(btex Campo lejano etex, %
-	       1/2[(x26 + a03 + 2u, a04), (wi, a04)]);
-label.rt(btex $D$ etex, z36);
+	       1/2[(x02 + a04 + 2u, a05), (wi, a05)]);
+label.rt(btex $D$ etex, z12);
 drawdblgisarrow p9;	drawdblgisarrow p10;	drawdblgisarrow p11;
 fill bbox d3 withcolor white;	draw d3;
 fill bbox d4 withcolor white;	draw d4;
@@ -219,7 +123,6 @@ l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
-d0 = nullpicture;
 d1 = nullpicture;
 pickup l1;
 
@@ -227,32 +130,30 @@ pickup l1;
 % transductor izquierdo
 a00 = 1.5;	a01 = 17u;	a02 = he02/2;
 draw (0, a02)--(a01, a02);
-transductor(d0, a00, (a01, a02));
+d0 = transductor(a00, (a01, a02));
+draw d0;
 % ------------------------------------------------------------------
 % transductor derecho
 a03 = wi - a01;
 draw (wi, a02)--(a03, a02);
-draw f5 xscaled -1 scaled a00 shifted (a03, a02) withpen l0;
-draw f2 xscaled -1 scaled a00 shifted (a03, a02) withpen l1;
-draw f3 xscaled -1 scaled a00 shifted (a03, a02) withpen l0;
-draw f0 xscaled -1 scaled a00 shifted (a03, a02) withpen l0;
-draw f4 xscaled -1 scaled a00 shifted (a03, a02) withpen l1;
+draw d0 xscaled -1 shifted (a03 + a01, 0);
 
 % ------------------------------------------------------------------
 % medio y acoplamiento
-z25 = z13 shifted (-u/2, 0) scaled 1.5 shifted (a01, a02);
-z26 = z19 shifted (-u/2, 0) scaled 1.5 shifted (a01, a02);
-z27 = (wi - x25, y25);		z28 = (wi - x26, y26);
-z29 = 1/2[z26, z25];		z30 = 1/2[z28, z27];
-z31 = 1/2[z30, z29];		z32 = 5/8[z30, z29];
+a04 = a00 * v/8;
+z00 = lrcorner d0 shifted (0, a04);
+z01 = urcorner d0 shifted (0, -a04);
+z02 = (wi - x00, y00);		z03 = (wi - x01, y01);
+z04 = 1/2[z01, z00];		z05 = 1/2[z03, z02];
+z06 = 1/2[z05, z04];		z07 = 5/8[z05, z04];
 % espesor de la capa de acoplamiento y margen vertical
-a04 = 5u;			a05 = 5u;
-p1 = (x25 + a04, a05)--(x25, a05)--(x25, 2a02 - a05)-- %
-		(x25 + a04, 2a02 - a05);
-p2 = (x27 - a04, a05)--(x27, a05)--(x27, 2a02 - a05)-- %
-		(x27 - a04, 2a02 - a05);
-p3 = (x25 + a04, a05)--(x27 - a04, a05)--(x27 - a04, 2a02 - a05)-- %
-		(x25 + a04, 2a02 - a05)--cycle;
+a05 = 5u;			a06 = 5u;
+p1 = (x00 + a05, a06)--(x00, a06)--(x00, 2a02 - a06)-- %
+		(x00 + a05, 2a02 - a06);
+p2 = (x02 - a05, a06)--(x02, a06)--(x02, 2a02 - a06)-- %
+		(x02 - a05, 2a02 - a06);
+p3 = (x00 + a05, a06)--(x02 - a05, a06)--(x02 - a05, 2a02 - a06)-- %
+		(x00 + a05, 2a02 - a06)--cycle;
 pickup l0;
 draw p1 dashed evenly;		draw p2 dashed evenly;
 draw p3;
@@ -260,30 +161,30 @@ draw p3;
 % ------------------------------------------------------------------
 % defecto
 % dimensiones del rectángulo en el que el defecto se encierra
-a06 = 5u;		a07 = 8u;
-p4 = (-3a06/10, -a07/2)--(-2a06/5, 0)--(0, 2a07/5){dir 340}.. %
-		(2a06/5, a07/2);
-p5 = (-3a06/10, -a07/2)--(a06/10, -2a07/5)--(a06/2, -a07/10)-- % 
-		(2a06/5, a07/2);
+a07 = 5u;		a08 = 8u;
+p4 = (-3a07/10, -a08/2)--(-2a07/5, 0)--(0, 2a08/5){dir 340}.. %
+		(2a07/5, a08/2);
+p5 = (-3a07/10, -a08/2)--(a07/10, -2a08/5)--(a07/2, -a08/10)-- % 
+		(2a07/5, a08/2);
 addto d1 doublepath p4;
-addto d1 doublepath (-3a06/10, -a07/2)--(a06/5, 0)--(2a06/5, a07/2);
+addto d1 doublepath (-3a07/10, -a08/2)--(a07/5, 0)--(2a07/5, a08/2);
 addto d1 doublepath p5;
-draw d1 shifted z32 shifted (a06/2, 0) withpen l1;
-d2 = d1 shifted (19a06/40, 0) shifted z32;
-p6 = p4 scaled 1.3 shifted (19a06/40, 0) shifted z32;
-p7 = p5 scaled 1.3 shifted (19a06/40, 0) shifted z32;
+draw d1 shifted z07 shifted (a07/2, 0) withpen l1;
+d2 = d1 shifted (19a07/40, 0) shifted z07;
+p6 = p4 scaled 1.3 shifted (19a07/40, 0) shifted z07;
+p7 = p5 scaled 1.3 shifted (19a07/40, 0) shifted z07;
 % ------------------------------------------------------------------
 % flechas
-a08 = 2u;		a09 = ahlength;
-p8 = z29 shifted (u, 0)--z30 shifted (-u, 0);
+a09 = 2u;		a10 = ahlength;
+p8 = z04 shifted (u, 0)--z05 shifted (-u, 0);
 drawgisarrow p8 cutafter p6;	
 drawgisarrow p8 cutbefore p7;
 % ------------------------------------------------------------------
 % etiquetas
-d3 = thelabel.top(btex defecto etex, 1/4[z29, z30] %
-		shifted (0, 2a08));
-d4 = thelabel.top(btex forward scattering etex, 23/32[z29, z30] %
-		shifted (0, a08));
+d3 = thelabel.top(btex defecto etex, 1/4[z04, z05] %
+		shifted (0, 2a09));
+d4 = thelabel.top(btex forward scattering etex, 23/32[z04, z05] %
+		shifted (0, a09));
 d5 = thelabel.llft(btex \begin{tabular}{r@{ }l}--- & medio\\ %
 	- - & acoplamiento\end{tabular} etex, (wi - 2u, he02 - 2u));
 drawgisarrow 1/2[urcorner d3, lrcorner d3] shifted (u/2, 0){right}.. %
@@ -311,30 +212,31 @@ l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
-d0 = nullpicture;
 d1 = nullpicture;
 pickup l1;
 
 % ------------------------------------------------------------------
-% transductor izquierdo
+% transductor
 a00 = 1.5;	a01 = 17u;	a02 = he02/2;
 draw (0, a02)--(a01, a02);
-transductor(d0, a00, (a01, a02));
+d0 = transductor(a00, (a01, a02));
+draw d0;
 % ------------------------------------------------------------------
 % medio y acoplamiento
-z25 = z13 shifted (-u/2, 0) scaled 1.5 shifted (a01, a02);
-z26 = z19 shifted (-u/2, 0) scaled 1.5 shifted (a01, a02);
-z27 = (wi - x25, y25);		z28 = (wi - x26, y26);
-z29 = 1/2[z26, z25];		z30 = 1/2[z28, z27];
-z31 = 1/2[z30, z29];		z32 = 5/8[z30, z29];
+a03 = a00 * v/8;
+z00 = lrcorner d0 shifted (0, a04);
+z01 = urcorner d0 shifted (0, -a04);
+z02 = (wi - x00, y00);		z03 = (wi - x01, y01);
+z04 = 1/2[z01, z00];		z05 = 1/2[z03, z02];
+z06 = 1/2[z05, z04];		z07 = 5/8[z05, z04];
 % espesor de la capa de acoplamiento y margen vertical
-a03 = 5u;			a04 = 5u;
-p1 = (x25 + a03, a04)--(x25, a04)--(x25, 2a02 - a04)-- %
-		(x25 + a03, 2a02 - a04);
-p2 = (x27 - a03, a04)--(x27, a04)--(x27, 2a02 - a04)-- %
-		(x27 - a03, 2a02 - a04);
-p3 = (x25 + a03, a04)--(x27 - a03, a04)--(x27 - a03, 2a02 - a04)-- %
-		(x25 + a03, 2a02 - a04)--cycle;
+a04 = 5u;			a05 = 5u;
+p1 = (x00 + a04, a05)--(x00, a05)--(x00, 2a02 - a05)-- %
+		(x00 + a04, 2a02 - a05);
+p2 = (x02 - a04, a05)--(x02, a05)--(x02, 2a02 - a05)-- %
+		(x02 - a04, 2a02 - a05);
+p3 = (x00 + a04, a05)--(x02 - a04, a05)--(x02 - a04, 2a02 - a05)-- %
+		(x00 + a04, 2a02 - a05)--cycle;
 pickup l0;
 draw p1 dashed evenly;		draw p2 dashed evenly;
 draw p3;
@@ -342,28 +244,28 @@ draw p3;
 % ------------------------------------------------------------------
 % defecto
 % dimensiones del rectángulo en el que el defecto se encierra
-a05 = 5u;		a06 = 8u;
-p4 = (-3a05/10, -a06/2)--(-2a05/5, 0)--(0, 2a06/5){dir 340}.. %
-		(2a05/5, a06/2);
+a06 = 5u;		a07 = 8u;
+p4 = (-3a06/10, -a07/2)--(-2a06/5, 0)--(0, 2a07/5){dir 340}.. %
+		(2a06/5, a07/2);
 addto d1 doublepath p4;
-addto d1 doublepath (-3a05/10, -a06/2)--(a05/5, 0)--(2a05/5, a06/2);
-addto d1 doublepath (-3a05/10, -a06/2)--(a05/10, -2a06/5)-- %
-	(a05/2, -a06/10)--(2a05/5, a06/2);
-draw d1 shifted z32 shifted (a05/2, 0) withpen l1;
-p5 = p4 scaled 1.3 shifted (19a05/40, 0) shifted z32;
+addto d1 doublepath (-3a06/10, -a07/2)--(a06/5, 0)--(2a06/5, a07/2);
+addto d1 doublepath (-3a06/10, -a07/2)--(a06/10, -2a07/5)-- %
+	(a06/2, -a07/10)--(2a06/5, a07/2);
+draw d1 shifted z07 shifted (a06/2, 0) withpen l1;
+p5 = p4 scaled 1.3 shifted (19a06/40, 0) shifted z07;
 % ------------------------------------------------------------------
 % flechas
-a07 = 2u;		a08 = ahlength;
-p6 = z29 shifted (u, a07)--z30 shifted (-u, a07);
-p7 = p6 shifted (0, -2a07);
+a08 = 2u;		a09 = ahlength;
+p6 = z04 shifted (u, a08)--z05 shifted (-u, a08);
+p7 = p6 shifted (0, -2a08);
 drawgisarrow p6 cutafter p5;	
 drawgisarrow reverse p7 cutbefore p5;
 % ------------------------------------------------------------------
 % etiquetas
 d2 = thelabel.llft(btex \begin{tabular}{r@{ }l}--- & medio\\ %
 	- - & acoplamiento\end{tabular} etex, (wi - 2u, he02 - 2u));
-label.bot(btex backward scattering etex, 3/8[z29, z30] %
-		shifted (0, -2a07));
+label.bot(btex backward scattering etex, 3/8[z04, z05] %
+		shifted (0, -2a08));
 fill bbox d2 withcolor white;		draw d2;
 draw bbox d2;
 % ------------------------------------------------------------------
@@ -496,7 +398,6 @@ l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
-d0 = nullpicture;
 d1 = nullpicture;
 d2 = nullpicture;
 pickup l1;
@@ -505,18 +406,19 @@ pickup l1;
 % transductor
 a00 = 1.5;	a01 = 17u;
 draw (0, he02/2)--(7.5u, he02/2);
-transductor(d0, a00, (a01, he02/2));
+d0 = transductor(a00, (a01, he02/2));
+draw d0;
 
 % ------------------------------------------------------------------
 % frente de ondas
-z25 = whatever[z13, z13 + (2v, -v)] = whatever[z19, z19 + (2v, v)];
-z26 = z25 shifted (a01, he02/2) shifted (-u/2, 0);
-% p1 = z26 + (he02, he02/2)--z26--z26 + (he02, -he02/2){right}.. %
-% 		{left}cycle;
-p1 = z26 + (he02, he02/2)--z26--z26 + (he02, -he02/2)--(wi, 0)-- %
+a02 = a00 * v/8;
+z00 = lrcorner d0 shifted (0, a02);
+z01 = urcorner d0 shifted (0, -a02);
+z02 = whatever[z00, z00 + (2v, -v)] = whatever[z01, z01 + (2v, v)];
+p1 = z02 + (he02, he02/2)--z02--z02 + (he02, -he02/2)--(wi, 0)-- %
 	(wi, he02)--cycle;
 for i = 4.5v, 9v, 13.5v, 18v:
-	q0.[i] = fullcircle scaled i shifted z26;
+	q0.[i] = fullcircle scaled i shifted z02;
 	addto d1 doublepath q0.[i];
 endfor
 clip d1 to p1;
@@ -527,31 +429,31 @@ draw d1 withpen l1; % withpen l3 withcolor 0.7white;
 % separación entre reflectores de 1/4he02 longitud de la barra
 % 1/6he02, luego (1/4 - 1/6)he02 = 2he02/24, un espacio de he02/24 a
 % cada lado de la barra; (1/6 + 1/24)he02 = 5/24he02
-a02 = he02/24;		a03 = he02/12;
-a04 = 2a02 + 2a03;	a05 = wi/4;	a06 = 2;
+a03 = he02/24;		a04 = he02/12;
+a05 = 2a03 + 2a04;	a06 = wi/4;	a07 = 2;
 p2 = fullcircle scaled 2u;
-p3 = (0, -a03)--(0, a03);
-p4 = (-a03, 0)--(a03, 0);
-for i = 0 upto he02/a04:
+p3 = (0, -a04)--(0, a04);
+p4 = (-a04, 0)--(a04, 0);
+for i = 0 upto he02/a05:
 	for j = 0 upto 2:
-		q[i][j] = p3 shifted (j*a04, i*a04);
+		q[i][j] = p3 shifted (j*a05, i*a05);
 		addto d2 doublepath q[i][j];
-		if (i*a04 + a04/2) < he02:
-			q[i][j + a06 + 1] = %
-			  p4 shifted (j*a04 + a04/2, i*a04 + a04/2);
-			addto d2 doublepath q[i][j + a06 + 1];
-			q[i][j + 2a06 + 2] = %
-			  p2 shifted (j*a04, i*a04 + a04/2);
-			addto d2 contour q[i][j + 2a06 + 2] %
+		if (i*a05 + a05/2) < he02:
+			q[i][j + a07 + 1] = %
+			  p4 shifted (j*a05 + a05/2, i*a05 + a05/2);
+			addto d2 doublepath q[i][j + a07 + 1];
+			q[i][j + 2a07 + 2] = %
+			  p2 shifted (j*a05, i*a05 + a05/2);
+			addto d2 contour q[i][j + 2a07 + 2] %
 			  withcolor white;
-			addto d2 doublepath q[i][j + 2a06 + 2];
+			addto d2 doublepath q[i][j + 2a07 + 2];
  		fi
  	endfor
 endfor
-a07 = -1.5u;		a08 = a04 * (3/4 + a06);
-p5 = (a07, 0)--(a08, 0)--(a08, he02)--(a07, he02)--cycle;
+a08 = -1.5u;		a09 = a05 * (3/4 + a07);
+p5 = (a08, 0)--(a09, 0)--(a09, he02)--(a08, he02)--cycle;
 clip d2 to p5;
-draw d2 shifted (wi - a08, 0) withpen l1;
+draw d2 shifted (wi - a09, 0) withpen l1;
 
 % ------------------------------------------------------------------
 % etiquetas y marco
@@ -559,15 +461,15 @@ draw d2 shifted (wi - a08, 0) withpen l1;
 % radio de la primera circunferencia 2.25, radio de la segunda 4.5
 % si sumo 1/8 al primero y resto 1/8 (la misma cantidad) al segundo
 % obtengo 2.375 y 4.375
-drawdblgisarrow z26 shifted (2.375v, 0)--z26 shifted (4.375v, 0);
-d3 = thelabel(btex $\lambda$ etex, z26 shifted (3.375v, 0));
+drawdblgisarrow z02 shifted (2.375v, 0)--z02 shifted (4.375v, 0);
+d3 = thelabel(btex $\lambda$ etex, z02 shifted (3.375v, 0));
 fill bbox d3 withcolor white;
 draw d3;
 % etiqueta de la matriz de reflectores
-d04 = thelabel.llft(btex Matriz de reflectores etex, %
+d4 = thelabel.llft(btex Matriz de reflectores etex, %
 	(wi - 3u, he02 - 2.5u));
-fill bbox d04 withcolor white;
-draw d04;
+fill bbox d4 withcolor white;
+draw d4;
 % marco
 pickup l2;
 draw (0, 0)--(wi, 0)--(wi, he02)--(0, he02)--cycle;

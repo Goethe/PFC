@@ -173,33 +173,4 @@ endfig;
 
 
 
-% ==================================================================
-beginfig(2);
-
-numeric a[], i, j, k;
-picture d[];
-pen l[];
-path p[], q[][];
-l0 = pencircle scaled 0.15u;
-l1 = pencircle scaled 0.25u;
-l2 = pencircle scaled 0.35u;
-l3 = pencircle scaled 0.5u;
-d0 = nullpicture;
-d1 = nullpicture;
-pickup l1;
-
-% ------------------------------------------------------------------
-% transductor
-pickup l2;
-draw (0, 0)--(wi, 0)--(wi, he02)--(0, he02)--cycle;
-d2 = transductor(1.5, (0, 0));
-d3 = transductor(3.5, (5v, 5v));
-draw d2;
-draw bbox d2 withcolor red;
-draw ulcorner d2--llcorner d2 withcolor blue dashed evenly;
-
-
-endfig;
-% ==================================================================
-
 end
