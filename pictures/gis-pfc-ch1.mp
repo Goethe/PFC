@@ -51,7 +51,7 @@ d1 = conmutadorC(u, (0, 0));
 d2 = conmutadorT(u, (0, 0));
 p0 = bbox d2;
 begingroup
-	interim bboxmargin := 0; p1 = bbox d0;
+	interim bboxmargin := 0; p1 = bbox d0 scaled 19/20;
 endgroup;
 % switch, ancho total (si no me equivoco 27/2 * escala)
 a05 = xpart(urcorner d0 - ulcorner d0);
@@ -150,6 +150,7 @@ draw (a26, a23)--(a27, a23);	draw (a26, a24)--(a27, a24);
 draw d2 shifted (a20, a21);	draw d2 shifted (a20, a22);
 pickup l2;
 draw p0 shifted (a20, a21);	draw p0 shifted (a20, a22);
+pickup l1;
 
 % ------------------------------------------------------------------
 % amplificador de instrumentación
@@ -168,8 +169,8 @@ begingroup
 endgroup;
 p10 = z07 shifted (a08, a28/2)--z07 shifted (a29 - a08, a28/2);
 z09 = point (length p10)/2 of p10;
-drawgisarrow z07--z08 shifted (0, -v);
 % dibujo todos los elementos definidos previamente
+drawgisarrow z07--z08 shifted (0, -v);
 draw z07--z07 shifted (a29, 0);
 pickup l0;
 fill p7 withcolor white;
@@ -177,8 +178,8 @@ fill fullcircle scaled (3u/2) shifted z07 shifted (a29, 0) %
 	withcolor white;
 pickup l2; 
 draw p7; 			
-draw fullcircle scaled (3u/2) shifted z07 shifted (a29, 0);
 pickup l1;
+draw fullcircle scaled (3u/2) shifted z07 shifted (a29, 0);
 draw d7;
 begingroup
 	interim ahlength := 2u; drawgisarrow p10;

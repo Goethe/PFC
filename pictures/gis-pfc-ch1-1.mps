@@ -1,8 +1,8 @@
 %!PS
 %%BoundingBox: -14 -14 351 191 
-%%HiResBoundingBox: -13.76854 -13.6268 350.22003 190.1812 
+%%HiResBoundingBox: -13.76854 -13.6268 350.0783 190.1812 
 %%Creator: MetaPost 1.208
-%%CreationDate: 2010.08.31:1818
+%%CreationDate: 2010.09.01:1233
 %%Pages: 1
 %*Font: cmr12 11.95517 11.95517 2b:8e2e0004608002625d641
 %*Font: cmsy10 11.95514 9.96265 00:8
@@ -21,15 +21,15 @@ newpath 249.86148 177.16504 moveto
 228.60168 134.64543 lineto
 249.86148 134.64543 lineto stroke
  1 1 1 setrgbcolor
-newpath 8.14958 8.14958 moveto
-35.78734 8.14958 lineto
-35.78734 23.52753 lineto
-8.14958 23.52753 lineto
+newpath 8.2736 8.2736 moveto
+34.52939 8.2736 lineto
+34.52939 22.8826 lineto
+8.2736 22.8826 lineto
  closepath fill
-newpath 189.80254 8.14958 moveto
-217.44029 8.14958 lineto
-217.44029 23.52753 lineto
-189.80254 23.52753 lineto
+newpath 189.92656 8.2736 moveto
+216.18234 8.2736 lineto
+216.18234 22.8826 lineto
+189.92656 22.8826 lineto
  closepath fill
 newpath 57.5759 0.65979 moveto
 98.09149 0.65979 lineto
@@ -178,15 +178,15 @@ newpath 116.42683 85.03922 moveto
 114.86472 82.91322 115.40543 83.13727 115.80411 83.53595 curveto
 116.20279 83.93463 116.42683 84.47534 116.42683 85.03922 curveto closepath fill
  1 1 1 setrgbcolor
-newpath 8.14958 82.5589 moveto
-35.78734 82.5589 lineto
-35.78734 97.93684 lineto
-8.14958 97.93684 lineto
+newpath 8.2736 82.68292 moveto
+34.52939 82.68292 lineto
+34.52939 97.29192 lineto
+8.2736 97.29192 lineto
  closepath fill
-newpath 189.80254 82.5589 moveto
-217.44029 82.5589 lineto
-217.44029 97.93684 lineto
-189.80254 97.93684 lineto
+newpath 189.92656 82.68292 moveto
+216.18234 82.68292 lineto
+216.18234 97.29192 lineto
+189.92656 97.29192 lineto
  closepath fill
 newpath 57.5759 75.0691 moveto
 98.09149 75.0691 lineto
@@ -359,15 +359,15 @@ newpath 230.72768 134.64543 moveto
 newpath 0 134.64543 moveto
 228.60168 134.64543 lineto stroke
  1 1 1 setrgbcolor
-newpath 8.14958 132.16512 moveto
-35.78734 132.16512 lineto
-35.78734 147.54306 lineto
-8.14958 147.54306 lineto
+newpath 8.2736 132.28914 moveto
+34.52939 132.28914 lineto
+34.52939 146.89813 lineto
+8.2736 146.89813 lineto
  closepath fill
-newpath 189.80254 132.16512 moveto
-217.44029 132.16512 lineto
-217.44029 147.54306 lineto
-189.80254 147.54306 lineto
+newpath 189.92656 132.28914 moveto
+216.18234 132.28914 lineto
+216.18234 146.89813 lineto
+189.92656 146.89813 lineto
  closepath fill
 newpath 57.5759 124.67532 moveto
 98.09149 124.67532 lineto
@@ -706,10 +706,10 @@ newpath 244.6758 114.65279 moveto
 275.65143 139.12575 lineto
 244.6758 139.12575 lineto
  closepath stroke
- 0.99214 0 dtransform exch truncate exch idtransform pop setlinewidth
+ 0.70866 0 dtransform exch truncate exch idtransform pop setlinewidth
 newpath 304.57616 148.14906 moveto
 304.57616 114.37895 lineto stroke
- 0 0.99214 dtransform truncate idtransform setlinewidth pop
+ 0 0.70866 dtransform truncate idtransform setlinewidth pop
 newpath 302.60724 114.77348 moveto
 304.57616 103.60709 lineto
 306.54507 114.77348 lineto
@@ -733,11 +733,12 @@ newpath 349.72395 148.14906 moveto
 348.16183 146.02307 348.70255 146.24712 349.10123 146.6458 curveto
 349.49991 147.04448 349.72395 147.58519 349.72395 148.14906 curveto closepath
  fill
- 0 0 0 setrgbcolor
+ 0 0 0 setrgbcolor 0 0.99214 dtransform truncate idtransform setlinewidth pop
 newpath 282.81418 121.07213 moveto
 336.96803 148.14906 lineto
 282.81418 175.226 lineto
  closepath stroke
+ 0 0.70866 dtransform truncate idtransform setlinewidth pop
 newpath 349.72395 148.14906 moveto
 349.72395 148.71294 349.49991 149.25365 349.10123 149.65233 curveto
 348.70255 150.05101 348.16183 150.27505 347.59796 150.27505 curveto
@@ -750,7 +751,6 @@ newpath 349.72395 148.14906 moveto
  stroke
 299.10335 145.07726 moveto
 (ai) cmcsc10 11.95514 fshow
- 0 0.70866 dtransform truncate idtransform setlinewidth pop
 newpath 315.20605 175.226 moveto
 331.58234 175.226 lineto stroke
 newpath 331.38492 174.24155 moveto
