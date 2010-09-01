@@ -12,7 +12,7 @@ interim bboxmargin := 0;
 n0 = pencircle scaled 0.15u;
 n1 = pencircle scaled 0.25u;
 n2 = pencircle scaled 0.35u;
-n4 = pencircle scaled 0.5u;
+n3 = pencircle scaled 0.5u;
 f0 = nullpicture;
 f1 = nullpicture;
 f2 = nullpicture;
@@ -20,7 +20,6 @@ f3 = nullpicture;
 f4 = nullpicture;
 f5 = nullpicture;
 f6 = nullpicture;
-
 
 % ------------------------------------------------------------------
 % agarre
@@ -104,9 +103,165 @@ enddef;
 
 
 
+% ==================================================================
+def conmutadorC (expr escala, desplazamiento)=
+begingroup
+save c,n,f,r,x,y;
+numeric c[],x[],y[]; pen n[]; picture f[]; path r[];
+interim bboxmargin := 0;
+n0 = pencircle scaled 0.15u;
+n1 = pencircle scaled 0.25u;
+n2 = pencircle scaled 0.35u;
+n3 = pencircle scaled 0.5u;
+f0 = nullpicture;
+
+% ------------------------------------------------------------------
+% constantes: radio conectores, distancia entre estos y longitud de
+% la patilla
+c00 = 3/2;		c01 = 5;		c02 = c01 + 2c00;
+c03 = c02 + c00/2;
+r0 = fullcircle scaled c00;
+z00 = (0, 0);		z01 = (c02, 0);
+z02 = halfcircle scaled 2c02 intersectionpoint r0 shifted z01;
+c04 = angle z02;
+r1 = z00--(c03, 0);
+addto f0 doublepath r1 rotated c04 scaled escala %
+	shifted desplazamiento withpen n2;
+addto f0 contour r0 scaled escala shifted desplazamiento %
+	withcolor white withpen n0;
+addto f0 doublepath r0 scaled escala shifted desplazamiento %
+	withpen n1;
+addto f0 contour r0 shifted z01 scaled escala %
+	shifted desplazamiento withcolor white withpen n0;
+addto f0 doublepath r0 shifted z01 scaled escala %
+	shifted desplazamiento withpen n1;
+
+% ------------------------------------------------------------------
+% cierro la definición
+(f0)
+endgroup
+
+enddef;
+% ==================================================================
+
+
+
+% ==================================================================
+def conmutadorA (expr escala, desplazamiento)=
+begingroup
+save c,n,f,r,x,y;
+numeric c[],x[],y[]; pen n[]; picture f[]; path r[];
+interim bboxmargin := 0;
+n0 = pencircle scaled 0.15u;
+n1 = pencircle scaled 0.25u;
+n2 = pencircle scaled 0.35u;
+n3 = pencircle scaled 0.5u;
+f0 = nullpicture;
+
+% ------------------------------------------------------------------
+% constantes: radio conectores, distancia entre estos y longitud de
+% la patilla
+c00 = 3/2;		c01 = 5;		c02 = c01 + 2c00;
+c03 = c02 + c00/2;
+r0 = fullcircle scaled c00;
+z00 = (0, 0);		z01 = (c02, 0);
+c04 = 30;
+r1 = z00--(c03, 0);
+addto f0 doublepath r1 rotated c04 scaled escala %
+	shifted desplazamiento withpen n2;
+addto f0 contour r0 scaled escala shifted desplazamiento %
+	withcolor white withpen n0;
+addto f0 doublepath r0 scaled escala shifted desplazamiento %
+	withpen n1;
+addto f0 contour r0 shifted z01 scaled escala %
+	shifted desplazamiento withcolor white withpen n0;
+addto f0 doublepath r0 shifted z01 scaled escala %
+	shifted desplazamiento withpen n1;
+
+% ------------------------------------------------------------------
+% cierro la definición
+(f0)
+endgroup
+
+enddef;
+% ==================================================================
+
+
+
+% ==================================================================
+def conmutadorT (expr escala, desplazamiento)=
+begingroup
+save c,n,f,r,x,y;
+numeric c[],x[],y[]; pen n[]; picture f[]; path r[];
+interim bboxmargin := 0;
+n0 = pencircle scaled 0.15u;
+n1 = pencircle scaled 0.25u;
+n2 = pencircle scaled 0.35u;
+n3 = pencircle scaled 0.5u;
+f0 = nullpicture;
+
+% ------------------------------------------------------------------
+% constantes: radio conectores, distancia entre estos y longitud de
+% la patilla
+c00 = 3/2;			c01 = 5;
+c02 = c01 + 2c00;		c03 = c02 + c00/2;
+r0 = fullcircle scaled c00;
+z00 = (0, 0);			c04 = 20;
+z01 = (c02, 0) rotated c04;	z02 = (0, 2c02*sind c04);
+z03 = fullcircle scaled 2c02 intersectionpoint %
+	halfcircle scaled -c00 shifted z01;
+c05 = angle z03;
+r1 = z00--(c03, 0);
+addto f0 doublepath r1 rotated c05 scaled -1 shifted z01 %
+	scaled escala shifted desplazamiento withpen n2;
+addto f0 contour r0 scaled escala shifted desplazamiento %
+	withcolor white withpen n0;
+addto f0 doublepath r0 scaled escala shifted desplazamiento %
+	withpen n1;
+addto f0 contour r0 shifted z01 scaled escala %
+	shifted desplazamiento withcolor white withpen n0;
+addto f0 doublepath r0 shifted z01 scaled escala %
+	shifted desplazamiento withpen n1;
+addto f0 contour r0 shifted z02 scaled escala %
+	shifted desplazamiento withcolor white withpen n0;
+addto f0 doublepath r0 shifted z02 scaled escala %
+	shifted desplazamiento withpen n1;
+
+% ------------------------------------------------------------------
+% cierro la definición
+(f0)
+endgroup
+
+enddef;
+% ==================================================================
+
+
+
+% ==================================================================
+def amplificador =
+begingroup
+save r,x,y;
+numeric x[],y[]; path r[];
+
+z00 = whatever[(0, 1/2), (2, -1/2)] = %
+	whatever [(0, -1/2), (2, 1/2)]; 
+r0 = (0, -1/2)--z00--(0, 1/2)--cycle;
+
+(r0)
+endgroup
+
+enddef;
+% ==================================================================
+
+
+
+% ==================================================================
+% redefino la forma en que se dibujan las flechas
 newinternal ahinset;
 ahinset := 0; % The arrowhead's inset must have a value between 0 and 1
-% ==================================================================
+
+
+
 vardef carpth expr p =
 	save q,r,e,i,j,qq,pp; path i,j,k,q,r; pair e,qq[];
 	numeric pp[];

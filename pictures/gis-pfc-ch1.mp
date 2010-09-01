@@ -11,6 +11,7 @@ newinternal u, v;
 u := 1mm;
 v := 10mm;
 
+input boxes
 input gis-pfc
 
 wi = 12v;
@@ -23,150 +24,172 @@ ahinset := 5/100;
 
 % ==================================================================
 beginfig(1);
-
-path p[];
-transform t[];
+numeric a[];
 picture d[];
-pen b[];
-bboxmargin := u;
-b00 = pencircle scaled 0.25u;
-b01 = pencircle scaled 0.5;
-b02 = pencircle scaled 0.5u;
-pickup b00;
-
-z00 = (0, 0);	z01 = v*(12, 0);
-z02 = v*(12, 6.75);z03 = v*(0, 6.75);
-
-p00 = z00--z01--z02--z03--cycle;
-% draw p00 withcolor blue;
+pen l[];
+path p[], q[][];
+transform t[];
+ahlength := 4u;	ahangle := 20;
+ahinset := 5/100;
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+pickup l1;
 
 % ------------------------------------------------------------------
-% líneas centrales
-z04 = (7.5u, 0) rotated 160;
-z05 = (7.5u, 0) rotated 20;
-p02 = z04--z00--(5.5v, 0)--z05 shifted (5.5v, 0);
-for i=7.5u,5.25v: draw p02 shifted (1.25v, i); endfor
-p03 = z04--z00--(6.75v, 0);
-draw p03 shifted (1.25v, 3.375v);
-% ------------------------------------------------------------------
-
-% ------------------------------------------------------------------
-% detalles
-p10 = (-2.5u, 0)--(2.5u, 0)--(0, -4u)--cycle;
-p11 = fullcircle scaled 1.5u;
-z10 = (0, 6.6v - 5.25v - 2y04);
-draw (4v, 3.375v)--(4v, 3.375v) shifted -z10;
-fill p10 shifted (4v, 3.5v) shifted -z10 withcolor white;
-draw p10 shifted (4v, 3.5v) shifted -z10;
-fill p11 shifted (4v, 3.375v);
-fill p11 shifted (8.5v, 5.25v);
-for i = 3.375v,5.25v:
-	for j = 0,8v:
-		fill p11 shifted (j, i);
-	endfor
-endfor
-p12 = (5u + x05/2, 1.25v)--(5u + x05/2, 2.875v);
-for i = z00,(6.25v, 0): draw p12 shifted i withpen b02 dashed withdots scaled 2; endfor
-label(btex Multiplexador etex, (5u + x05/2, 0));
-label(btex Multiplexador etex, (6.75v + x05/2, 0));
-% ------------------------------------------------------------------
-
-% ------------------------------------------------------------------
-% líneas externas
-draw (5u, 7.5u)--(0, 7.5u)--(0, 6.6v)--(9v, 6.6v);
-draw (7.5v, 7.5u)--(8v, 7.5u)--(8v, 5.25v);
-for i=5.25v,3.375v: draw (0, i)--(5u, i); endfor
-draw (7.5v, 5.25v)--(9v, 5.25v);
-% ------------------------------------------------------------------
-
-% ------------------------------------------------------------------
-% switches previos al AI
-p06 = z00--z10--z10 shifted (0.5v, 0);
-p07 = z00--z05--z05 shifted (0.5v, 0);
-p08 = z00--(x05 + 0.5v, 0)--(x05 + 0.5v, 2y05 + 0.5v)--(0, 2y05 + 0.5v)--cycle;
-for i = 5.25v,3.9v:
-	draw p06 shifted (8.5v, i);
-	draw p07 shifted (9v, i + y10);
-	draw p08 shifted (8.75v, i + y10 - 0.25v);
-	fill p11 shifted (9v + x05, i + 1.35v - y05) withcolor white;
-	draw p11 shifted (9v + x05, i + 1.35v - y05);
-	for j = 2y05,0:
-		fill p11 shifted (9v, i + 1.35v - j) withcolor white;
-		draw p11 shifted (9v, i + 1.35v - j);
-	endfor
-endfor
-fill p10 shifted (8.5v, 5.25v + 1.25u - 2y05 - y10) withcolor white;
-draw p10 shifted (8.5v, 5.25v + 1.25u - 2y05 - y10);
-% ------------------------------------------------------------------
-
-% ------------------------------------------------------------------
-% amplificador de instrumentación
-p09 = z00--(0, y10 + 2y05 + 5u)--(2.5v - x05, y10/2 + y05 + 2.5u)--cycle;
-d03 = thelabel.rt(btex $+$ etex, (0, 4.5u));
-addto d03 also thelabel.rt(btex $-$ etex, (0, y10 + 2y05 + 0.5u));
-addto d03 also thelabel(btex {\scshape ai} etex, (6u, y10/2 + y05 + 2.5u));
-z11 = center p09 shifted (9.5v + x05, 5v - y05);
-draw z11--z11 - z10;
-draw z11--z11 shifted (1.15v, 0);
-fill p11 shifted z11 shifted (1.15v, 0) withcolor white;
-draw p11 shifted z11 shifted (1.15v, 0);
-drawgisarrow z11 shifted (0, v)--z11 shifted (1.15v, v);
-label.top(btex {\scshape a/d} etex, z11 shifted (1.15v/2, v));
-label.bot(btex {\scshape agnd} etex, z11 - z10 - (0, 0.5v));
-fill p10 shifted (z11 - z10 + (0, 0.5u)) withcolor white;
-draw p10 shifted (z11 - z10 + (0, 0.5u));
-fill p09 shifted (9.5v + x05, 5v - y05) withcolor white;
-draw p09 shifted (9.5v + x05, 5v - y05);
-draw d03 shifted (9.5v + x05, 5v - y05);
-% ------------------------------------------------------------------
-
-% ------------------------------------------------------------------
-% switch de 8 puertas
-p04 = (2.5u, 3.5u)--(1.5v, 3.5u)--(1.5v, 5.75v)--(2.5u, 5.75v)--cycle;
-draw p04;	draw p04 shifted (6.25v, 0);
-% ------------------------------------------------------------------
-
-% ------------------------------------------------------------------
-% puntos switches
-for i=5.25v,3.375v,7.5u:
-	for j=5u,1.25v,6.75v,7.5v:
-		fill p11 shifted (j, i) withcolor white;
-		draw p11 shifted (j, i);
-	endfor
-endfor
-% ------------------------------------------------------------------
-
-% ------------------------------------------------------------------
+% constantes
+% alturas
+a00 = 15u/4;		a01 = 3v;
+a02 = 9v/2 + 5u/2;	a03 = 11v/2;
+a04 = 6v + 5u/2;
+% switch, diferencias de altura entre terminales en T
+z00 = (8u, 0) rotated 20;
+% switches
+d0 = conmutadorA(u, (0, 0));
+d1 = conmutadorC(u, (0, 0));
+d2 = conmutadorT(u, (0, 0));
+p0 = bbox d2;
+begingroup
+	interim bboxmargin := 0; p1 = bbox d0;
+endgroup;
+% switch, ancho total (si no me equivoco 27/2 * escala)
+a05 = xpart(urcorner d0 - ulcorner d0);
 % cajas de señal
-d00 = thelabel.top(btex Se\~nal etex, (0, 0));
-z06 = llcorner d00;	z07 = lrcorner d00;
-addto d00 also thelabel.bot(btex $+$ etex, z06);
-addto d00 also thelabel.bot(btex $-$ etex, z07);
-p05 = bbox d00;
-for i=5.25v,3.375v,7.5u:
-	fill p05 shifted (2.85v, i) withcolor white;
-	draw p05 shifted (2.85v, i);
-	draw d00 shifted (2.85v, i);
-endfor
-fill p05 shifted (5.15v, 3.375v) withcolor white;
-draw p05 shifted (5.15v, 3.375v);
-draw d00 shifted (5.15v, 3.375v);
+d3 = thelabel.top(btex Se\~nal etex, (0, 0));
+z01 = llcorner d3;	z02 = lrcorner d3;
+addto d3 also thelabel.bot(btex $+$ etex, z01);
+addto d3 also thelabel.bot(btex $-$ etex, z02);
+p2 = bbox d3;
+% caja de señal, ancho total
+a06 = xpart(urcorner d3 - ulcorner d3);
+% posición etiquetas
+z03 = 1/2[ulcorner d3, urcorner d3] + %
+	5/8(ulcorner d3 - llcorner d3);
+% ajuste para centrar las etiquetas
+d4 = thelabel(btex 00 Lo/08 Hi etex, (0, 0));
+d5 = thelabel(btex 00 Hi etex, (0, 0));
+a07 = 11/20;			x04 = 0;
+(whatever, y04) = a07*(llcorner d5 - llcorner d4);
+% resto de anchos
+a08 = 15u/4;		a09 = a08/2;
+a10 = xpart(urcorner p0 - ulcorner p0);
+a11 = a06;		a12 = 6a08 + 2a05 + 2a06 + a11;
+a13 = 3u/2;		a14 = a13/2;
+a15 = a14/3;
+% puntos clave
+a16 = a05 + a08;	a17 = a05 + a06/2 + 3a08;
+a18 = a12 - a17;	a19 = a12 - a16;
+a20 = a12 + 2a08;
+
 % ------------------------------------------------------------------
+% primera parte conmutada
+% dibujo las líneas centrales, los switches y las cajas de señal
+p3 = fullcircle scaled (a13);
+p4 = (0, 0)--(a09 + a05, 0)--(a09 + a05, a03)--(0, a03)--cycle;
+p5 = (a09/2 + a05/2, 3a00)--(a09/2 + a05/2, a01 - 3a00/2);
+d6 = thelabel.bot(btex Multiplexador etex, (a09/2 + a05/2, 0));
+draw (a20, a04)--(0, a04)--(0, a00)--(a08, a00)-- %
+	(a12 - a08, a00)--(a12, a00)--(a12, a02)--(a20, a02);
+for i = a00, a01, a02:
+	if not(i = a00):
+		pickup l3;
+		fill p3 shifted (0, i);
+		fill p3 shifted (a12, i);
+		pickup l1;
+		draw (0, i)--(a12, i);
+	fi
+	if i = a01: fill p3 shifted (a12/2, i); fi
+	pickup l0;
+	fill p1 shifted (a08, i) withcolor white;
+	fill p1 shifted (a19 + a09/2 - a15, i) withcolor white;
+	fill p2 shifted (a17, i) withcolor white;
+	if i = a01:
+		fill p2 shifted (a18, i) %
+			withcolor white; fi
+	pickup l1;
+	draw d0 xscaled -1 shifted (a16 - a13 - a15, i);
+	draw d3 shifted (a17, i);
+	if i = a01:
+		draw d1 shifted (a19 + a09/2 - a15, i);
+		draw d3 shifted (a18, i);
+		drawgisarrow (a12/2, i)-- %
+			(a12/2, i - v);
+	else :
+		draw d0 shifted (a19 + a09/2 - a15, i);
+	fi
+	pickup l2;
+	draw p2 shifted (a17, i);
+	if i = a01: draw p2 shifted (a18, i); fi
+endfor
+for i = (3a09/2 - a14), (a19 + a14 - a09):
+	draw p4 shifted (i, 0);
+	draw p5 shifted (i, 0) dashed withdots scaled 2;
+	draw d6 shifted (i, 0);
+endfor
 
 % ------------------------------------------------------------------
 % etiquetas
-z08 = 1/2[ulcorner d00, urcorner d00] + 1/1.6(ulcorner d00 - llcorner d00);
-d01 = thelabel(btex 00 Lo/08 Hi etex, z00);
-d02 = thelabel(btex 00 Hi etex, z00);
-(whatever, y09) = 0.55(llcorner d02 - llcorner d01);
-z09 = (0,  y09);
-label(btex 00 Lo/08 Hi etex, z08 shifted (5.15v, 5.25v));
-label(btex 01 Lo/09 Hi etex, z08 shifted (5.15v, 3.375v));
-label(btex 07 Lo/15 Hi etex, z08 shifted (5.15v, 7.5u));
-label(btex 00 Hi etex, z08 + z09 shifted (2.85v, 5.25v));
-label(btex 01 Hi etex, z08 + z09 shifted (2.85v, 3.375v));
-label(btex 07 Hi etex, z08 + z09 shifted (2.85v, 7.5u));
+label(btex 00 Lo/08 Hi etex, z03 shifted (a18, a02));
+label(btex 01 Lo/09 Hi etex, z03 shifted (a18, a01));
+label(btex 07 Lo/15 Hi etex, z03 shifted (a18, a00));
+label(btex 00 Hi etex, z03 + z04 shifted (a17, a02));
+label(btex 01 Hi etex, z03 + z04 shifted (a17, a01));
+label(btex 07 Hi etex, z03 + z04 shifted (a17, a00));
+
 % ------------------------------------------------------------------
+% segunda parte conmutada
+pickup l1;
+a21 = a04 - 2y00;		a22 = a02 - 2y00;
+a23 = a21 + y00;		a24 = a22 + y00;
+a25 = a20 - a08;		a26 = a20 + a05 - a09;
+a27 = a26 + a08;
+draw (a20, a21)--(a25, a21)--(a25, a02);
+drawgisarrow (a20, a22)--(a25, a22)--(a25, a22 - v);
+draw (a26, a23)--(a27, a23);	draw (a26, a24)--(a27, a24);
+draw d2 shifted (a20, a21);	draw d2 shifted (a20, a22);
+pickup l2;
+draw p0 shifted (a20, a21);	draw p0 shifted (a20, a22);
+
+% ------------------------------------------------------------------
+% amplificador de instrumentación
+% defininciones
+z06 = 1/2[(a27, a23), (a27, a24)];
+p6 = amplificador;
+a28 = a23 - a24 + 3y00/2;
+a29 = a28/2 + 3a09;
+p7 = p6 scaled a28 shifted z06;
+z07 = center p7 shifted (-a09, 0);
+p8 = z07--z07 shifted (0, -3v);
+z08 = p8 intersectionpoint p7;
+d7 = thelabel(btex \textsc{ai} etex, z07);
+begingroup
+	interim bboxmargin := 3u; p9 = bbox d7;
+endgroup;
+p10 = z07 shifted (a08, a28/2)--z07 shifted (a29 - a08, a28/2);
+z09 = point (length p10)/2 of p10;
+drawgisarrow z07--z08 shifted (0, -v);
+% dibujo todos los elementos definidos previamente
+draw z07--z07 shifted (a29, 0);
+pickup l0;
+fill p7 withcolor white;
+fill fullcircle scaled (3u/2) shifted z07 shifted (a29, 0) %
+	withcolor white;
+pickup l2; 
+draw p7; 			
+draw fullcircle scaled (3u/2) shifted z07 shifted (a29, 0);
+pickup l1;
+draw d7;
+begingroup
+	interim ahlength := 2u; drawgisarrow p10;
+endgroup;
+
+% ------------------------------------------------------------------
+% etiquetas
+label(btex $+$ etex, ulcorner p9);
+label(btex $-$ etex, llcorner p9);
+label.top(btex \textsc{a/d} etex, z09);
+label.bot(btex \textsc{agnd} etex, z08 shifted (0, -25u/2));
 
 endfig;
 % ==================================================================

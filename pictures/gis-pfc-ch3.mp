@@ -41,6 +41,7 @@ pickup l1;
 a00 = 1.5;	a01 = 17u;
 draw (0, he02/2)--(a01, he02/2);
 d0 = transductor(a00, (a01, he02/2));
+
 % ------------------------------------------------------------------
 % frente de ondas
 draw d0;
@@ -56,6 +57,7 @@ for i = 4.5v, 9v, 13.5v, 18v:
 endfor
 clip d1 to p1;
 draw d1 withpen l1; % withpen l3 withcolor 0.7white;
+
 % ------------------------------------------------------------------
 % curvas auxiliares
 a03 = he02 - u;		a04 = 3/4*4.5v;
@@ -81,6 +83,7 @@ draw p5 dashed evenly scaled 2 shifted (u, 0);
 draw p6 dashed evenly scaled 2 shifted (u, 0);
 draw p7 dashed evenly scaled 2 shifted (u, 0);
 draw p8 dashed evenly scaled 2 shifted (u, 0);
+
 % ------------------------------------------------------------------
 % etiquetas y marco
 p9 = (x01 + u, a06 - a05/2)--(x02 + a04 - u, a06 - a05/2);
@@ -132,6 +135,7 @@ a00 = 1.5;	a01 = 17u;	a02 = he02/2;
 draw (0, a02)--(a01, a02);
 d0 = transductor(a00, (a01, a02));
 draw d0;
+
 % ------------------------------------------------------------------
 % transductor derecho
 a03 = wi - a01;
@@ -173,12 +177,14 @@ draw d1 shifted z07 shifted (a07/2, 0) withpen l1;
 d2 = d1 shifted (19a07/40, 0) shifted z07;
 p6 = p4 scaled 1.3 shifted (19a07/40, 0) shifted z07;
 p7 = p5 scaled 1.3 shifted (19a07/40, 0) shifted z07;
+
 % ------------------------------------------------------------------
 % flechas
 a09 = 2u;		a10 = ahlength;
 p8 = z04 shifted (u, 0)--z05 shifted (-u, 0);
 drawgisarrow p8 cutafter p6;	
 drawgisarrow p8 cutbefore p7;
+
 % ------------------------------------------------------------------
 % etiquetas
 d3 = thelabel.top(btex defecto etex, 1/4[z04, z05] %
@@ -192,6 +198,7 @@ drawgisarrow 1/2[urcorner d3, lrcorner d3] shifted (u/2, 0){right}.. %
 fill bbox d4 withcolor white;		draw d4;
 fill bbox d5 withcolor white;		draw d5;
 draw bbox d5;				draw d3;
+
 % ------------------------------------------------------------------
 % marco
 pickup l2;
@@ -221,6 +228,7 @@ a00 = 1.5;	a01 = 17u;	a02 = he02/2;
 draw (0, a02)--(a01, a02);
 d0 = transductor(a00, (a01, a02));
 draw d0;
+
 % ------------------------------------------------------------------
 % medio y acoplamiento
 a03 = a00 * v/8;
@@ -253,6 +261,7 @@ addto d1 doublepath (-3a06/10, -a07/2)--(a06/10, -2a07/5)-- %
 	(a06/2, -a07/10)--(2a06/5, a07/2);
 draw d1 shifted z07 shifted (a06/2, 0) withpen l1;
 p5 = p4 scaled 1.3 shifted (19a06/40, 0) shifted z07;
+
 % ------------------------------------------------------------------
 % flechas
 a08 = 2u;		a09 = ahlength;
@@ -260,6 +269,7 @@ p6 = z04 shifted (u, a08)--z05 shifted (-u, a08);
 p7 = p6 shifted (0, -2a08);
 drawgisarrow p6 cutafter p5;	
 drawgisarrow reverse p7 cutbefore p5;
+
 % ------------------------------------------------------------------
 % etiquetas
 d2 = thelabel.llft(btex \begin{tabular}{r@{ }l}--- & medio\\ %
@@ -268,6 +278,7 @@ label.bot(btex backward scattering etex, 3/8[z04, z05] %
 		shifted (0, -2a08));
 fill bbox d2 withcolor white;		draw d2;
 draw bbox d2;
+
 % ------------------------------------------------------------------
 % marco
 pickup l2;
@@ -369,18 +380,22 @@ drawgisarrow ata.c--ata.c + z11--disp.c + z12/6 - z11--disp.c + z12/6 %
 drawgisarrow disp.c - z12/6--disp.c - z11 - z12/6--difb.c + z11--difb.c %
 	cutbefore bpath disp cutafter bpath difb;
 % drawgisarrow disp.c--difc.c cutbefore bpath disp cutafter bpath difc;
+
 % ------------------------------------------------------------------
 % draw disp.c--disp.c + z11 cutbefore bpath disp;
 % draw disp.c + z11--disp.c + 2(z11) dashed withdots;
 % draw difc.c - 2(z11)--difc.c - z11 dashed withdots;
 % draw difc.c - z11--difc.c cutafter bpath difc;
+
 % ------------------------------------------------------------------
 drawgisarrow disp.c--disp.c + z11--disp.c + z11 - 4(z12)--difc.c - %
 	2(z11) + 4(z12)--difc.c - 2(z11)--difc.c %
 	cutbefore bpath disp cutafter bpath difc;
+
 % ------------------------------------------------------------------
 drawgisarrow difc.c--atc.c cutbefore bpath difc cutafter bpath atc;
 drawgisarrow atc.c--rec.c cutbefore bpath atc cutafter bpath rec;
+
 % ------------------------------------------------------------------
 
 endfig;
@@ -486,12 +501,14 @@ numeric a[], b[], i, j, k;
 picture d[];
 pen l[];
 path p[], q[][];
-string defaultfontold;
-b00 = mexp(256);
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
+l4 = pensquare scaled 0.15u;
+l5 = pensquare scaled 0.25u;
+l6 = pensquare scaled 0.35u;
+l7 = pensquare scaled 0.5u;
 d0 = nullpicture;
 d1 = nullpicture;
 pickup l1;
@@ -504,6 +521,7 @@ p0 = (-a00/2, 0){dir 315}..tension a03 and 1.. %
 	{dir 15}(-a02/2, a01)--(a02/2, a01){dir 345}.. %
 	tension 1 and a03..{dir 45}(a00/2, 0);
 draw p0 shifted (wi/2, 0);
+
 % ------------------------------------------------------------------
 % banco de filtros
 a04 = 7a01/8;
@@ -517,11 +535,12 @@ a05 = a00/3;	a06 = a05/3;	a07 = 9a01/20;
 a08 = 3a05/5;
 p3 = (-a05/2, 0){right}..tension 5..{right}(-a06/2, a07)-- %
 	(a06/2, a07){right}..tension 5..{right}(a05/2, 0);
-pickup l2;
+pickup l6;
 for i = x02, x02 + a08, x03:
 	draw p3 shifted (i, 0);
 endfor
 pickup l1;
+
 % ------------------------------------------------------------------
 % rectas auxiliares
 a09 = 4.5u;	a10 = u;
@@ -550,6 +569,7 @@ pickup l3;
 draw z14 shifted (-a12, 0)--z14 shifted (a12, 0) dashed %
 	withdots scaled 1.5;
 pickup l1;
+
 % ------------------------------------------------------------------
 % marcas de grafo
 a13 = 2.5u;		a14 = 3u;
@@ -558,12 +578,13 @@ draw (x02 + a08, 0)--(x02 + a08, a13);
 label(btex $f_1$ etex, (x02, -a14));
 label(btex $f_2 = f_1 + \Delta f$ etex, (x02 + a08, -a14));
 label(btex $f_n = f_1 + k\Delta f$ etex, (x03, -a14));
+
 % ------------------------------------------------------------------
 % marco
-draw (0, -0.1u)--(wi, -0.1u);
+pickup l5;
+draw (0, -u/10)--(wi, -u/10);
 
 endfig;
-
 % ==================================================================
 
 

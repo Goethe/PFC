@@ -132,7 +132,7 @@ Cada uno de los pasos se detalla en los puntos subsiguientes.
 
 \subsubsection{Crear el objeto dispositivo}
 
-Para crear un objeto dispositivo, se debe llamar a la función de creación apropiada o constructor. Como se muestra en el \vref{tab:constructors}, los constructores reciben un nombre particular en función del tipo de objetos dispositivo que crean. Para iniciar una sesión de adquisición de datos analógicos es necesario un comando como el siguiente, \func{analoginput(`adaptador', ID)}. Un ejemplo extraído del código fuente de la aplicación de control muestra cómo hacerlo en el código \ref{cod:Cconstructor}.\par
+Para crear un objeto dispositivo, se debe llamar a la función de creación apropiada o constructor. Como se muestra en el \vref{tab:constructors}, los constructores reciben un nombre particular en función del tipo de objetos dispositivo que crean. Para iniciar una sesión de adquisición de datos analógicos es necesario un comando como el siguiente, \func{analoginput(`adaptador', ID)}. Un ejemplo extraído del código fuente de la aplicación de control muestra cómo hacerlo en el código \ref{cod:constructor}.\par
 
 \begin{table}
 	\centering
@@ -151,7 +151,7 @@ Para crear un objeto dispositivo, se debe llamar a la función de creación apropi
 	\label{tab:constructors}
 \end{table}
 
-\begin{lstlisting}[style=displayed, caption={[Método a seguir para crear un objeto dispositivo]Método que evalúa la existencia de un objeto dispositivo previo a la llamada de la aplicación, en caso positivo lo hereda para su uso posterior, de lo contrario crea uno nuevo}, label={cod:Cconstructor}]
+\begin{lstlisting}[style=displayed, caption={[Método a seguir para crear un objeto dispositivo]Método que evalúa la existencia de un objeto dispositivo previo a la llamada de la aplicación, en caso positivo lo hereda para su uso posterior, de lo contrario crea uno nuevo}, label={cod:constructor}, name=osciloscope]
 	handles.ai = [];
 
 	if ~isempty(daqfind)
@@ -312,9 +312,9 @@ Por ejemplo, los siguientes comandos configuran \func{objeto} de forma que la fu
 	set(objeto, `StopFcn', @datadqcallback, objeto.Running)
 \end{lstlisting}
 
-Un segundo ejemplo, este extraído del código fuente de la aplicación de control muestra como pasar argumentos a la función de callback y cuál es la sintaxis de la definición de la misma.
+Un segundo ejemplo, este extraído del código fuente de la aplicación de control muestra como pasar argumentos a la función de callback y cuál es la sintaxis de la definición de la misma en el fragmento de código \ref{cod:callback}.\bigskip
 
-\begin{lstlisting}[style=displayed, caption={Configuración de \emph{callback} para responder a eventos en la sesión de muestreo, la función de \emph{callback} recibe un argumento}]
+\begin{lstlisting}[style=displayed, caption={Configuración de \emph{callback} para responder a eventos en la sesión de muestreo, la función de \emph{callback} recibe un argumento}, label={cod:callback}, name=osciloscope]
 	set(handles.ai, 'TriggerType', 'Immediate', 'TimerFcn', '', ...
 		'SamplesAcquiredFcn', {@localDaqCallback, gcbo});
 
@@ -334,7 +334,7 @@ Un segundo ejemplo, este extraído del código fuente de la aplicación de control 
 				[...]
 
 		end
-\end{lstlisting}\vspace*{-20pt}
+\end{lstlisting}
 
 \subsubsection{Suprimiendo y borrando las trazas de los objetos dispositivo}
 

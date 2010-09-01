@@ -62,7 +62,6 @@ endfor
 
 % ------------------------------------------------------------------
 % etiquetas en la caja principal
-
 label( %
 	btex \begin{tabular}{c} Adaptadores \\ %
 	de hardware \end{tabular} etex, %
