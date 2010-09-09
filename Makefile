@@ -3,7 +3,7 @@ SRC = gis-pfc-pro.tex gis-pfc-ch1.tex gis-pfc-ch2.tex gis-pfc-ch3-1.tex \
 BIB = gis-pfc.bib
 MAIN = gis-pfc.pdf
 MAINSRC = gis-pfc.tex
-PICS = pictures/gis-pfc-ch?-?.mps
+PICS = pictures/gis-pfc-ch?-?.mps pictures/application/83of.png
 LM = latexmk
 LMOPTS = -pdf
 LMFORCE = -fg
@@ -14,10 +14,10 @@ $(MAIN) : $(MAINSRC) $(SRC) $(BIB) $(PICS)
 
 .PHONY: clean, cleanall, force, verbose
 force :
-	$(LM) $(LMOPTS) $(LMFORCE)
+	$(LM) $(LMOPTS) $(LMFORCE) $(MAINSRC)
 
 verbose :
-	$(LM) $(LMOPTS)
+	$(LM) $(LMOPTS) $(MAINSRC)
 
 clean :
 	$(LM) -c

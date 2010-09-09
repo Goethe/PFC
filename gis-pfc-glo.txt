@@ -27,3 +27,5 @@ Ensayo no destructivo			ENDUS
 Relación Señal a Ruido			SNR
 Fast Fourier Transform			FFT
 Inverse FFT				IFFT
+aproximadamente				aprox.
+voltios eficaces			Vef
