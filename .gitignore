@@ -12,6 +12,7 @@
 *.blg
 *latexmk
 gis-pfc.pdf
+gis-pfc.fdb_latexmk
 pictures/work
 !pictures/*.pdf
 pictures/pictures.pdf

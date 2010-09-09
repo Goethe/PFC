@@ -1,7 +1,7 @@
 \chapter{Diseño del dispositivo de ultrasonidos}
 
 
-\section{Introducción teórica a las inspecciones mediante ultrasonidos}
+\section{Introducción teórica a las inspecciones mediante ultrasonidos}\label{sec:theory}
 
 
 \subsection{Fundamentos de ultrasonidos}
@@ -83,11 +83,11 @@ Los parámetros de calidad proporcionan una medida cualitativa de la bondad de un
 En ensayos no destructivos la resolución es la distancia mínima (o una medida en relación con ésta) a la que deben encontrarse dos singularidades cercanas para que ambas sean detectadas distinguiéndose una de la otra. Se hace distinción entre resolución axial y resolución lateral. La primera alude a la distancia que debe haber entre dos singularidades alineadas en la dirección longitudinal de propagación de las ondas acústicas, la segunda a la que debe haber entre singularidades que se encuentren dispuestas en una línea normal a esa dirección.\par
 Atendiendo a la definición de resolución que se ha proporcionado, se considera que la resolución es mejor si la distancia mínima disminuye y peor si ésta aumenta. Teniendo esto en cuenta, para mejorar la resolución axial de un sistema es necesario emplear dispositivos de banda ancha y emitir pulsos estrechos de alta frecuencia. La frecuencia de los pulsos acústicos está limitada por el espesor del medio, a medida que aumenta la frecuencia disminuye la profundidad de penetración del pulso, resulta pues conveniente adoptar una solución de compromiso.\par
 La resolución lateral depende también de la frecuencia del pulso, es mejor a medida que aumenta la frecuencia puesto que disminuye la longitud de onda. Además depende del diámetro de los transductores, es peor cuanto más anchos son éstos. Y en la región de campo lejano, la resolución lateral empeora a medida que aumenta la profundidad.\par
-El comportamiento de la resolución lateral con respecto al diámetro del transductor y la frecuencia del pulso acústico transmitido, descrito en el párrafo anterior puede deducirse de las ecuaciones \eqref{eq:nearfield} y \eqref{eq:Adivergence}. Puede observarse que, a medida que aumenta la frecuencia y disminuye la longitud de onda del pulso, aumenta la longitud de la región de campo cercano. En dicha región el campo acústico se encuentra contenido en un cilindro de radio el del transductor, como ya se ha mencionado, y a partir de ahí empieza a divergir según una razón que disminuye con la longitud de onda. Para una mejor resolución es pertinente que la región activa del campo ultrasónico sea lo más estrecha posible, de ese modo se evita en la medida de lo posible que dos anomalías cercanas queden cubiertas por el haz en un mismo evento de la secuencia de barrido. Por tanto, se confirma por medio de estas ecuaciones los beneficios en términos de resolución que redundan del uso de transductores de diámetro estrecho y de pulsos ultrasónicos de alta frecuencia.\par
+El comportamiento de la resolución lateral con respecto al diámetro del transductor y la frecuencia del pulso acústico transmitido, descrito en el párrafo anterior puede deducirse de las ecuaciones \cref{eq:nearfield,eq:Adivergence}. Puede observarse que, a medida que aumenta la frecuencia y disminuye la longitud de onda del pulso, aumenta la longitud de la región de campo cercano. En dicha región el campo acústico se encuentra contenido en un cilindro de radio el del transductor, como ya se ha mencionado, y a partir de ahí empieza a divergir según una razón que disminuye con la longitud de onda. Para una mejor resolución es pertinente que la región activa del campo ultrasónico sea lo más estrecha posible, de ese modo se evita en la medida de lo posible que dos anomalías cercanas queden cubiertas por el haz en un mismo evento de la secuencia de barrido. Por tanto, se confirma por medio de estas ecuaciones los beneficios en términos de resolución que redundan del uso de transductores de diámetro estrecho y de pulsos ultrasónicos de alta frecuencia.\par
 La definición y comportamiento de linealidad y relación señal a ruido son los habituales en términos de sistemas electrónicos, por eso se entiende que el lector tiene una noción al respecto y no se dan más aclaraciones en este apartado.
 
 
-\subsection{El problema del ruido en las inspecciones}
+\subsection{El problema del ruido en las inspecciones}\label{subsec:noise}
 
 La principal limitación en las inspecciones ultrasónicas es el ruido. Los ensayos de este tipo se ven afectados generalmente por varias fuentes de ruido. Según su naturaleza estadística el ruido perjudica en mayor o menor medida los resultados de un ensayo. Cuanto más se asemeje el ruido a la señal desde el punto de vista estadístico más la perjudicará y más difícil será contrarrestar su efecto. El \emph{ruido incoherente aleatorio} tiene, como su propio nombre indica, un origen aleatorio, y en consecuencia no está relacionado con la señal. Por el contrario, los mecanismos que originan el \emph{ruido coherente} son con frecuencia los mismos que dan lugar a la señal de interés, y de ahí que exista una fuerte relación entre el carácter estadístico de ambas señales.\par
 Entre los exponentes más comunes de ruido incoherente aleatorio encontramos el \emph{ruido gaussiano} y el \emph{ruido impulsivo}. El primero es inherente a los equipos electrónicos y su origen es térmico, el segundo tiene origen en las interferencias electromagnéticas causadas por equipos eléctricos situados en las proximidades del sistema empleado para el ensayo. Este tipo de ruido puede ser combatido sin dificultad con técnicas bien conocidas como son: el promediado temporal de señales, el filtrado paso-banda, la autocorrelación o las técnicas de compresión de pulsos, en el caso del ruido gaussiano; y algoritmos de filtrado no lineal, en el caso del ruido impulsivo.\par
@@ -164,7 +164,7 @@ Por consiguiente el proceso de emisión"=recepción en el que se fundamentan los \
 	\label{eq:emirec}
 \end{equation}
 
-La figura \vref{fig:emirecmodel} muestra un diagrama de bloques que representa el proceso de emisión"=recepción y todos los fenómenos que en el intervienen según el modelo empleado en este documento. La función de transferencia del sistema puede obtenerse de modo sencillo aplicando el teorema de la convolución.
+La \vref{fig:emirecmodel} muestra un diagrama de bloques que representa el proceso de emisión"=recepción y todos los fenómenos que en el intervienen según el modelo empleado en este documento. La función de transferencia del sistema puede obtenerse de modo sencillo aplicando el teorema de la convolución.
 
 \begin{figure}
 	\begin{center}
@@ -179,7 +179,7 @@ La figura \vref{fig:emirecmodel} muestra un diagrama de bloques que representa e
 	\label{eq:transference}
 \end{equation}
 
-Aprovechando la linealidad del sistema se agrupan los términos de la función de transferencia en \vref{eq:groupedtransference}, para que el resultado quede en función de la respuesta electromecánica del transductor, $X(\omega)$, y de la respuesta espacial al impulso, $H(z, \omega)$.
+Aprovechando la linealidad del sistema se agrupan los términos de la función de transferencia en \eqref{eq:groupedtransference}, para que el resultado quede en función de la respuesta electromecánica del transductor, $X(\omega)$, y de la respuesta espacial al impulso, $H(z, \omega)$.
 
 \begin{equation}
 	Y(\omega) = X(\omega)\cdot H(z, \omega)\cdot A^2(z, \omega)
@@ -210,7 +210,7 @@ La atenuación es el fenómeno en el que se manifiesta la influencia del medio en 
 	\label{eq:independentloss}
 \end{equation}
 
-Donde, como se anticipó en \vref{eq:loss}, $\alpha(\omega)$ es el coeficiente de atenuación.\par
+Donde, como se anticipó en \eqref{eq:loss}, $\alpha(\omega)$ es el coeficiente de atenuación.\par
 Cuando el material por el que se propaga la onda es no homogéneo, la atenuación se debe a dos fenómenos:
 
 \begin{description}
@@ -230,7 +230,7 @@ El coeficiente de absorción depende del cuadrado de la frecuencia a la que oscil
 
 \subsubsection{Estimación del coeficiente de dispersión para un material dispersivo de naturaleza granulosa}
 
-El coeficiente de dispersión de un material no homogéneo de naturaleza granulosa puede estimarse de forma teórica asumiendo que los granos en el medio forman una matriz tridimensional de pequeños reflectores o granos esféricos, tal y como se muestra en la figura \vref{fig:matrix}. Asumiendo este modelo, puede obtenerse la respuesta global del medio obteniendo la respuesta de un reflector e integrando a todo el volumen el resultado obtenido para un solo grano.
+El coeficiente de dispersión de un material no homogéneo de naturaleza granulosa puede estimarse de forma teórica asumiendo que los granos en el medio forman una matriz tridimensional de pequeños reflectores o granos esféricos, tal y como se muestra en la \vref{fig:matrix}. Asumiendo este modelo, puede obtenerse la respuesta global del medio obteniendo la respuesta de un reflector e integrando a todo el volumen el resultado obtenido para un solo grano.
 
 \begin{figure}
 	\begin{center}
@@ -256,7 +256,7 @@ Puede escribirse una expresión de la atenuación causada por la dispersión si se 
 	\label{eq:dispersionloss}
 \end{equation}
 
-Mediante esta expresión y la \vref{eq:independentloss}, aplicando la \vref{eq:losscoefficient}, es posible calcular el coeficiente de atenuación debido a la dispersión, $\alpha_s$, en la región de Rayleigh, en la que $D\ll\lambda$. Empleando deducciones semejantes puede obtenerse el coeficiente de atenuación en distintas situaciones de tamaño de grano y longitud de onda.
+Mediante esta expresión y la \cref{eq:independentloss}, aplicando la \cref{eq:losscoefficient}, es posible calcular el coeficiente de atenuación debido a la dispersión, $\alpha_s$, en la región de Rayleigh, en la que $D\ll\lambda$. Empleando deducciones semejantes puede obtenerse el coeficiente de atenuación en distintas situaciones de tamaño de grano y longitud de onda.
 
 {\setlength{\extrarowheight}{0.5ex}
 \begin{equation}
@@ -278,7 +278,7 @@ Mediante esta expresión y la \vref{eq:independentloss}, aplicando la \vref{eq:lo
 	\label{fig:losscoefficient}
 \end{figure}
 
-Para finalizar este apartado, en la figura \vref{fig:losscoefficient} se muestra una representación del coeficiente de atenuación, en concreto del cociente $\alpha/f^2$, con respecto al cuadrado de la frecuencia. En la gráfica es posible apreciar el comportamiento del coeficiente de dispersión en cada una de las regiones descritas, y como el término que introduce la absorción es de valor constante con la frecuencia. La región de difusión muestra una atenuación abrupta que responde a una exponencial decreciente descrita por la expresión $s_3/(Df^2)$.
+Para finalizar este apartado, en la \vref{fig:losscoefficient} se muestra una representación del coeficiente de atenuación, en concreto del cociente $\alpha/f^2$, con respecto al cuadrado de la frecuencia. En la gráfica es posible apreciar el comportamiento del coeficiente de dispersión en cada una de las regiones descritas, y como el término que introduce la absorción es de valor constante con la frecuencia. La región de difusión muestra una atenuación abrupta que responde a una exponencial decreciente descrita por la expresión $s_3/(Df^2)$.
 
 
 \subsubsection{Limitaciones impuestas por la dispersión en los ensayos ultrasónicos}
@@ -310,7 +310,7 @@ A pesar del gran número de técnicas dedicadas a eliminar el ruido estructural, s
 Bajo el término <<técnicas de procesado por partición del espectro>>, en inglés \emph{Split Spectrum Processing Techniques}, o simplemente \psig{ssp}, se reúnen una serie de algoritmos cuya aplicación es la reducción del efecto del ruido estructural o de grano en los resultados de un \sig{endus}.\par
 El principio en el que se fundamentan estas técnicas es similar al que rige las técnicas de diversidad convencionales. A partir de varias señales incorreladas entre sí se construye una señal cuya \sig{snr} es considerablemente mejor que la \sig{snr} de cualquiera de las señales primitivas por separado. Las técnicas de \sig{ssp}, a diferencia de las técnicas basadas en la diversidad, consiguen sólo una seudo"=diversidad en frecuencia a partir de una única traza de la señal que se obtiene tras un \sig{endus}.\par
 Con frecuencia se obtienen buenos resultados empleando estas técnicas lo que, sumado a la sencillez con la que puede implementarse un experimento fundamentado en las mismas, recordando que no es requerida una redundancia real basada en la utilización de varias señales, las ha convertido en las técnicas más populares en el ámbito de los \sig{endus}. A consecuencia de la reputación con la que se han visto revestidas recientemente numerosas investigaciones se han llevado a cabo en las décadas de los ochenta y los noventa, así como a principios de siglo, con el fin de mejorar en la medida de lo posible los buenos resultados que ya de por sí proporcionan las técnicas de \sig{ssp}.\par
-El procedimiento (más detallado en el \ref{tab:sspfeatures}) que por lo general sigue todo el conjunto de técnicas de \sig{ssp} consiste en aplicar una transformación sobre la traza que comprende dos pasos:
+El procedimiento (más detallado en el \cref{tab:sspfeatures}) que por lo general sigue todo el conjunto de técnicas de \sig{ssp} consiste en aplicar una transformación sobre la traza que comprende dos pasos:
 
 \begin{itemize}
 	\item El primero, dividir la traza en un número determinado de señales de banda estrecha, para lo que se emplea un banco de filtros.

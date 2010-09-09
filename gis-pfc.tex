@@ -9,22 +9,22 @@
 \usepackage[latin1]{inputenc}
 \usepackage[OT1]{fontenc}
 \usepackage[bf, sf]{titlesec}
-\usepackage{titlesec}
 \usepackage[nottoc]{tocbibind}
 \usepackage[spanish]{varioref}
-\usepackage{graphicx}
+\usepackage[draft]{graphicx}
 \usepackage{amsfonts, amsmath, amssymb, calc, color, fancyhdr, hyperref, ifthen, layouts, %
 	listings, nextpage, textcase}
 \usepackage{array, booktabs, tabularx, tabulary, dcolumn, multirow, threeparttable}
 \usepackage[fixlanguage, noisbn]{babelbib}
+\usepackage[spanish]{cleveref}
 \titleformat{\part}[display]{\centering\huge\sffamily\bfseries}{\partname\ \thepart}%
 	{.5\baselineskip}{}
 \hypersetup{%
 	pdftitle=Proceso de adquisición y tratamiento de señales de %
 	ultrasonidos, pdfauthor=José Ramón Gisbert Valls, pdfcreator=Vim 7.2,%
 	pdfstartview=FitH, colorlinks=true, pdfdisplaydoctitle=true,%
-	naturalnames=true, breaklinks=true, linkcolor=black,%
-	citecolor=black, bookmarksopen=true, bookmarksopenlevel=1
+	linkcolor=black, citecolor=black, bookmarksopen=true, bookmarksopenlevel=1, %
+	urlcolor=black
 }
 \fancypagestyle{plain}{%
 	\fancyhf{}
@@ -37,18 +37,12 @@
 	peekdata, single_channel, start, stop, strcmpi, trigger, try, warning} %
 	}
 \lstdefinestyle{displayed}{float=tpbh, frame=l, tabsize=5, framerule=1.2pt, %
-	abovecaptionskip=\medskipamount, rulecolor={\color[gray]{0.8}}, gobble=4, %
+	abovecaptionskip=\medskipamount, gobble=4, %
 	linewidth=.975\textwidth, xleftmargin=.05\textwidth}
+\crefname{lstlisting}{fragmento de código}{fragmentos de código}
+\crefname{subsection}{subapartado}{subapartados}
+\crefname{subsubsection}{subapartado}{subapartados}
 \cbcolor{red}
-\labelformat{equation}{ecuación~#1}
-\labelformat{figure}{figura~#1}
-\labelformat{section}{sección~#1}
-\labelformat{subsection}{sección~#1}
-\labelformat{subsubsection}{sección~#1}
-\labelformat{table}{cuadro~#1}
-\labelformat{footnote}{#1\protect\iscurrentchapter{\thechapter}}
-% \setkeys{Gin}{width=.8\textwidth}
-% \setkeys{Gin}{scale=1, keepaspectratio=true}
 \graphicspath{{./pictures/}{../pictures/}}
 \DeclareCaptionLabelFormat{cont}{#1~#2\alph{ContinuedFloat}}
 \captionsetup[ContinuedFloat]{labelformat=cont}

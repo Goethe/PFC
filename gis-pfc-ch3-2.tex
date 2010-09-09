@@ -1,4 +1,4 @@
-La eficacia de las técnicas de \sig{ssp} no está garantizada, depende en gran parte de dos de los parámetros listados en el \ref{tab:sspfeatures}.
+La eficacia de las técnicas de \sig{ssp} no está garantizada, depende en gran parte de dos de los parámetros listados en el \cref{tab:sspfeatures}.
 
 \begin{itemize}
 	\item Por un lado está la configuración del banco de filtros, a destacar dos aspectos:
@@ -24,3 +24,82 @@ Por otro lado Karpur afirma en otro de sus estudios, esta vez apoyándose en la e
 Otros estudios utilizan la información relativa a la distribución espectral de la \sig{snr}, obtenida mediante algoritmos como el del histograma espectral o a partir de estadísticos del retardo de grupo como p.e. la entropía móvil, para determinar cuál es la región del espectro de la señal en la que es óptimo aplicar el filtrado.\par
 En cuanto a los algoritmos de reconstrucción J.\,Saniie llega a la conclusión, en su trabajo de 1991 en el que estudia los filtros de orden aplicados como algoritmos de composición, de que los mejores resultados se obtienen cuando la señal proviniente del defecto y el ruido estructural están estadísticamente separados en un determinado cuantil. Dependiendo de las distribuciones de probabilidad del ruido y del defecto, resulta apropiado emplear algoritmos de mínimos, mediana o máximos del ensamble, aunque por lo general el algoritmo de mínimos es el que mejores resultados proporciona.\par
 Por su parte M.\,G.\,Gustafsson propone una variante en el conjunto de las técnicas de \sig{ssp} en la que, basándose en la teoría bayesiana de detección y a partir de la información de la señal y el ruido coherente, pueden encontrarse todos los parámetros necesarios para aplicar la técnica de \sig{ssp}. El nombre que recibe usualmente esta variante es técnica de \sig{ssp} con detección óptima.
+
+
+\section{Diseño del instrumento de medida}
+
+Esta sección está dedicada al proceso de diseño que se lleva a cabo para implementar mediante los recursos disponibles la instrumentación electrónica que junto con la tarjeta de adquisición y el software de control forman parte del aparato empleado en las mediciones efectuadas durante este proyecto fin de carrera.\par
+En apartados posteriores se observa que este primer diseño carece de las propiedades requeridas en los experimentos programados, pero igualmente se ha decidido incorporar a la memoria las notas correspondientes a esta fase del proyecto por considerar que al tratar una disciplina distinta con respecto al resto del documento \mbox{---diseño} e implementación de instrumentación electrónica--- enriquecen el contenido del mismo.
+
+
+\subsection{Tipos de ensayo programados}
+
+Es la naturaleza de los experimentos la que dictamina cuales deben ser las características del instrumento de medida. Sin olvidar el propósito primero de este proyecto ---determinar un método efectivo para la detección de defectos en madera de palmera empleando para ello ensayos no destructivos con señales de ultrasonidos--- se programan dos tipos de prueba:
+
+\begin{itemize}
+	\item Por un lado, pruebas de laboratorio con madera de palmera talada y preparada.
+	\item Por otro, pruebas de campo con palmeras en un entorno natural, no siendo necesario que las palmeras sean silvestres, pudiendo encontrarse plantadas en un jardín o espacio similar.
+\end{itemize}
+
+Se escoge la técnica de transmisión, en defecto de la técnica de pulso"=eco, para la realización de los ensayos. El equipo disponible al inicio del trabajo experimental varía en función de la prueba: para los experimentos de laboratorio se cuenta con un sistema de adquisición como el conformado por el conjunto de la tarjeta de adquisición, un ordenador, el software de control y la caja de conexiones; y para las pruebas de campo con un osciloscopio. En ambos tipos de prueba deben emplearse también dos transductores, uno en transmisión y otro en recepción, junto con sus respectivos circuitos acondicionadores.
+
+
+\subsection{Requisitos del instrumento de medida}
+
+Para justificar cuales son los requisitos de las etapas acondicionadoras que preceden al transmisor y el receptor de ultrasonidos, y cuales los requisitos de los propios transductores, se recuerda aquí de forma resumida al lector una serie de conclusiones a las que se ha llegado a lo largo de la sección anterior (la \cref{sec:theory} con inicio en la \vpageref{sec:theory}).\par
+Los tres parámetros cruciales en el desempeño de un \sig{endus} son: la resolución, tanto axial como lateral; la profundidad de penetración; y la relación señal a ruido.
+
+\begin{itemize}
+	\item La resolución viene determinada principalmente por el tamaño y el tipo de transductores empleados. Cuanto mayor sea el ancho de banda de los transductores y menores sus dimensiones, se alcanzarán mejores resoluciones. Asimismo, una buena resolución depende de la forma y frecuencia de los pulsos ultrasónicos, siendo mejor cuanto más estrecho sea el pulso y mayor su frecuencia.
+	\item La profundidad de penetración, factor determinante en los experimentos realizados para este proyecto, depende fundamentalmente de la potencia transmitida en cada pulso y de su frecuencia de oscilación, siendo mayor cuanto mayor sean estos dos parámetros.
+	\item Sin embargo, la consecución de una buena relación señal a ruido está reñida con una buena profundidad de penetración. El ruido estructural, principal factor limitante de la relación señal a ruido, se agrava a medida que aumenta la frecuencia o la potencia del pulso ultrasónico. Para poder realizar ensayos capaces de detectar defectos en el medio a profundidades razonables sin sufrir en exceso los efectos del ruido de grano es determinante aplicar un buen algoritmo para la reducción del ruido.
+\end{itemize}
+
+Por supuesto, la calidad de un ensayo exige buenas configuraciones de estos tres parámetros. Sin embargo, y dado que los ensayos realizados para el proyecto no requieren la detección precisa del defecto, si no sólo su detección, una buena resolución no sería exigible aunque sí deseable. Por el contrario, el material objeto de este estudio es la madera de palmera, puesto que desde la planificación del proyecto se preven pruebas de campo en palmeras vivas, y además se opta por emplear la técnica de transmisión (léase el \cref{subsec:technics}), resulta imprescindible trabajar con una buena profundidad de penetración, de forma que la señal de ultrasonidos sea capaz, al menos, de atravesar el tronco de las palmeras.\par
+En base a los requisitos establecidos por las características de los ensayos se extraen las necesidades de potencia y frecuencia que deben cubrir los transductores y los circuitos acondicionadores, así como el resto de instrumentos utilizados.\par
+
+
+\paragraph{Requisitos de frecuencia.}
+
+La frecuencia de las señales ultrasónicas empleadas en ensayos no destructivos oscila generalmente entre los 20 kHz y los 25 MHz. Sin embargo, existen límites prácticos que impiden trabajar en un rango de frecuencias tan amplio. En primer lugar, el precio de los transductores aumenta significativamente a medida que aumenta su ancho de banda, la posibilidad de emitir pulsos de alta frecuencia también encarece el precio de estos dispositivos\footnote{Es habitual encontrar sensores que trabajan a frecuencias entorno a los 20 kHz por un precio entorno a las \mbox{5 \pounds{}}, mientras que sensores que funcionan a 300 kHz pueden costar aproximadamente unas \mbox{300 \pounds{}} (referencia extraída de la página web \href{http://uk.farnell.com}{uk.farnell.com})}. Por otro lado, la banda de paso de las etapas de acondicionamiento, la frecuencia máxima obtenible de la fuente de alimentación, y la frecuencia de muestreo máxima del instrumento de adquisición, limitan la frecuencia de la señal de ultrasonidos. \par
+Obviamente, es el límite más restrictivo el que se aplica. En este caso, el límite más restrictivo lo imponen los transductores y la tarjeta de adquisición. Los transductores a los que se ha tenido acceso en el desarrollo del proyecto son de bajo coste y su frecuencia de oscilación natural se ubica en los 20 kHz, podría decirse que en el límite inferior de la banda de frecuencias empleada en los \sig{endus}. Por su parte, la tarjeta de adquisición ofrece en condiciones óptimas una tasa de muestreo de 100 KS/s. Lo que implica que, para su correcta visualización en el dispositivo de adquisición empleado en el laboratorio, la frecuencia de la señal analógica que se muestrea debe encontrarse alrededor de los 20 kHz.\par
+Quizá el lector haya advertido que esta relación ---frecuencia de muestreo unas cinco veces superior a la frecuencia de la señal analógica--- supera con creces lo establecido por el teorema de Nyquist, $f_s = 2\Delta f$. Esto es debido a que el objetivo del muestreo es visualizar en el monitor del ordenador la forma de la señal a partir de la reconstrucción que \matlab{} hace de las muestras. Al contrario de lo que ocurre con el teorema de Nyquist"=Shannon, que determina la frecuencia de muestreo mínima para que una señal analógica pueda ser recuperada a partir de sus muestras no cuantificadas sin pérdida de información, para percibir la forma de una señal en una reconstrucción arbitraria de la misma realizada partiendo de sus muestras cuantificadas la frecuencia de muestreo necesaria debe ser muy superior a la indicada por el teorema.
+
+
+\paragraph{Requisitos de potencia.}
+
+Puesto que la frecuencia de oscilación de los pulsos ultrasónicos está limitada a los 20 kHz por los motivos prácticos citados en el apartado anterior, y dada la necesidad de una profundidad de penetración notable, los requisitos en cuanto a la potencia que debe manejarse en las etapas de transmisión y recepción se encuentran muy restringidos.\par
+Para suplir las carencias que los transductores tienen en frecuencia es lógico recurrir a señales de mayor potencia, sin embargo el precio reducido de los dispositivos empleados también limita su capacidad de emitir señales de alta potencia. De ese modo la única solución accesible consiste en exprimir al máximo el transmisor y utilizar en recepción un amplificador de instrumentación cuyo factor de ganancia sea muy elevado.\par
+Esta solución, que en una primera instancia parece adecuada, presenta no obstante importantes inconvenientes, de entre los cuales destaca la baja calidad de relación señal a ruido que proporciona.\par
+En principio, el uso de señales de elevada potencia que oscilan a bajas frecuencias es propicio para evitar las complicaciones que en un ensayo introduce el ruido de grano. Si bien la señal que emite el transductor de la sección de transmisión no es de una potencia considerable, las bajas frecuencias a las que oscila garantizan que se consiga en parte este objetivo.\par
+No obstante no es el ruido de grano el más perjudicial en esta configuración. Los transductores de ultrasonidos son transductores piezoeléctricos y, por tanto, el sensor empleado en recepción se engloba en la categoría de los sensores generadores. Es decir, que en respuesta a una actividad ultrasónica genera una determinada señal eléctrica. La frecuencia y amplitud de la señal eléctrica que proporciona el sensor dependen de la señal acústica detectada. Y, si como ocurre en este caso, la señal ultrasónica que alcanza el sensor es muy tenue, la señal eléctrica correspondiente muestra un recorrido de tensión muy reducido. De tal forma que incluso puede ser comparable al ruido presente a la entrada del circuito de adquisición o a otras señales indeseadas.\par
+Por consiguiente, es, en la sección de recepción, el ruido electrónico procedente de la etapa de acondicionamiento el más significativo y el de más difícil solución. Por tres razones que se detallan a continuación.
+
+\begin{itemize}
+	\item En primer lugar, debido a que la procedencia del ruido nada tiene que ver con la interacción de la señal acústica con el medio, las técnicas de postprocesado cuyo objetivo es eliminar el ruido procedente del entorno no son aplicables.
+	\item En principio, es posible aplicar las técnicas destinadas a reducir la presencia de ruido gaussiano vistas en el \cref{subsec:noise}. Sin embargo, con dificultad pueden obtenerse mejoras aceptables de la \sig{snr} en circunstancias como las aquí expuestas.
+	\item Otra posible solución podría encontrarse al abordar el problema desde el prisma de la teoría de la instrumentación electrónica. Esta teoría ha mostrado ser eficaz resolviendo problemas similares en el acondicionamiento de sensores de múltiples tipos. Pueden citarse como ejemplo: el uso del puente de Wheatstone en el acondicionamiento de sensores resistivos, circuito que elimina la componente de señal invariante que introduce el divisor de tensión; o la utilización de células isotermas y fuentes de corriente dependientes de la temperatura para eliminar la componente de señal que generan las uniones de un termopar con los cables de medida.\par
+		No obstante dadas las características del sensor y de la señal que genera la aplicación de una solución semejante es ciertamente difícil.
+\end{itemize}
+
+
+\subsection[Requisitos de la etapa de transmisión]{Requisitos concretos aplicables a la etapa de acondicionamiento en transmisión}
+
+Para implementar la solución alcanzada en el apartado anterior, los circuitos acondicionadores.
+Como se ha mencionado en el apartado anterior, debe exprimirse al máximo el transductor.
+% DEBERÍA HABLAR SOBRE LOS REQUISITOS QUE SE APLICAN A LOS CIRCUITOS ACONDICIONADORES TAMBIÉN
+% Podría llamar a unos nuevos subapartados, requisitos concretos de la etapa de acondicionamiento en transmisión/recepción.
+% La etapa de transmisión debe proporcionar una señal que alimente al transductor, señal de 40 kHz de amplitud variable, controlada por el usuario (control por tensión).
+% La etapa de recepción debe cargar adecuadamente el sensor, amplificar la señal procedente de éste (por tanto, la banda amplificada debe encontrarse centrada en la frecuencia de resonancia del sensor, en los 20 kHz), y en principio debe evitarse la distorsión en la fase lo que perjudicaría los resultados de una hipotética aplicación de técnicas de postprocesado como la \sig{ssp}
+% El razonamiento para obtener las condiciones de diseño de la etapa de acondicionamiento en recepción es similar si no bien el inverso. La banda de paso de amplificación debe ser la misma (desde los 10 hasta aproximadamente los 40 kHz) y la ganancia la máxima que pueda obtenerse sin distorsión ---especialmente de la fase---, debido fundamentalmente a que se trabaja con señales muy atenuadas y a que se preve trabajar en la fase de post"=adquisición con técnicas de \textsc{ssp}.
+
+
+\subsection{Recursos disponibles al inicio de la etapa de diseño}
+
+% Este proyecto, no siendo ninguna excepción, cuenta desde sus inicios con un presupuesto limitado. De igual forma el acceso a componentes electrónicos es limitado. Esta es una de las razones que se suma a la elección de una frecuencia de trabajo de 20 kHz. La elección 
+
+
+\subsection{Valoración preliminar}
+
+A la vista de los requisitos que exige una aplicación como la propuesta en este proyecto, las necesidades que surgen durante su diseño y los medios y recursos disponibles, parece previsible un fracaso en el desarrollo de la parte experimental de este \sig{pfc}. Pese a todo, y puesto que el coste de implementar los circuitos y realizar las pruebas es en la práctica nulo, se decide proseguir con los experimentos ya que el fin del proyecto es obtener un resultado, sea este válido o inútil.
+% Se intuye en este punto que las medidas no podrán llevarse a cabo, más que eso se intuye que difícilmente podrán llevarse a cabo las medidas previstas con el equipo disponible.

@@ -22,7 +22,7 @@ La idea original consistía en dotar al software de control de una interfaz de us
 \subsection{Funcionamiento de un osciloscopio}
 
 El propósito de este segundo capítulo es guiar al lector en el proceso de elaboración y prueba del software de control. Como se ha mencionado anteriormente, en el proceso de diseño previo a la programación del software se decide incluir en la aplicación un modo de funcionamiento que permita representar la forma de la señal y su espectro en frecuencia. Una parte importante del código fuente del software de control lo ocupan las rutinas con las que se implementa dicho modo de funcionamiento. Además, la influencia que ejerce este conjunto de rutinas sobre el resto es notable. De hecho, del resto de funciones, muchas se han escrito a partir de éste núcleo de código, acomodándose a él.\par
-Muchas de las ideas que han resultado ser imprescindibles para llevar a término el proceso de desarrollo del software se han obtenido tras observar el comportamiento de un osciloscopio de laboratorio. Una serie de conceptos que han influido en la forma y estructura del código fuente final. La elección de un osciloscopio digital como modelo es intencionada ya que desde un principio lo que se persigue es obtener unas prestaciones similares, prestaciones que se observan en el resultado final (véase el apéndice \vref{chap:apendixA}).\par
+Muchas de las ideas que han resultado ser imprescindibles para llevar a término el proceso de desarrollo del software se han obtenido tras observar el comportamiento de un osciloscopio de laboratorio. Una serie de conceptos que han influido en la forma y estructura del código fuente final. La elección de un osciloscopio digital como modelo es intencionada ya que desde un principio lo que se persigue es obtener unas prestaciones similares, prestaciones que se observan en el resultado final (véase el \vref{chap:apendixA}).\par
 Por todo ello, para comprender como se ha ido desarrollando el software, para entender como funciona la aplicación de usuario, es conveniente conocer las claves que se siguieron durante el curso de su desarrollo, en definitiva, las pautas de comportamiento de un osciloscopio. De una forma resumida se expone aquí un texto en relación con dicha materia para que el lector pueda llegar a estas conclusiones.
 
 
@@ -75,7 +75,7 @@ En cuanto a la documentación adicional que el lector puede consultar a continuac
 
 \subsubsection{Componentes de la herramienta}
 
-Los elementos de \matlab{} que juegan un papel suficientemente importante en el funcionamiento de la \datx{} son los listados en el \ref{tab:toolcomp}. El diagrama representado en la \vref{fig:toolcomp} muestra las interdependencias que existen entre los elementos que aparecen en dicho cuadro.
+Los elementos de \matlab{} que juegan un papel suficientemente importante en el funcionamiento de la \datx{} son los listados en el \cref{tab:toolcomp}. El diagrama representado en la \vref{fig:toolcomp} muestra las interdependencias que existen entre los elementos que aparecen en dicho cuadro.
 
 \begin{table}
 	\centering
@@ -132,7 +132,7 @@ Cada uno de los pasos se detalla en los puntos subsiguientes.
 
 \subsubsection{Crear el objeto dispositivo}
 
-Para crear un objeto dispositivo, se debe llamar a la función de creación apropiada o constructor. Como se muestra en el \vref{tab:constructors}, los constructores reciben un nombre particular en función del tipo de objetos dispositivo que crean. Para iniciar una sesión de adquisición de datos analógicos es necesario un comando como el siguiente, \func{analoginput(`adaptador', ID)}. Un ejemplo extraído del código fuente de la aplicación de control muestra cómo hacerlo en el código \ref{cod:constructor}.\par
+Para crear un objeto dispositivo, se debe llamar a la función de creación apropiada o constructor. Como se muestra en el \vref{tab:constructors}, los constructores reciben un nombre particular en función del tipo de objetos dispositivo que crean. Para iniciar una sesión de adquisición de datos analógicos es necesario un comando como el siguiente, \func{analoginput(`adaptador', ID)}. Un ejemplo extraído del código fuente de la aplicación de control muestra cómo hacerlo en el \cref{cod:constructor}.\par
 
 \begin{table}
 	\centering
@@ -151,7 +151,7 @@ Para crear un objeto dispositivo, se debe llamar a la función de creación apropi
 	\label{tab:constructors}
 \end{table}
 
-\begin{lstlisting}[style=displayed, caption={[Método a seguir para crear un objeto dispositivo]Método que evalúa la existencia de un objeto dispositivo previo a la llamada de la aplicación, en caso positivo lo hereda para su uso posterior, de lo contrario crea uno nuevo}, label={cod:constructor}, name=osciloscope]
+\begin{lstlisting}[style=displayed, caption={[Método a seguir para crear un objeto dispositivo]Método que evalúa la existencia de un objeto dispositivo previo a la llamada de la aplicación, en caso positivo lo hereda para su uso posterior, de lo contrario crea uno nuevo}, label={cod:constructor}]
 	handles.ai = [];
 
 	if ~isempty(daqfind)
@@ -180,7 +180,7 @@ Para crear un objeto dispositivo, se debe llamar a la función de creación apropi
 	end
 \end{lstlisting}
 
-El argumento \func{id} es un indicador de dispositivo hardware. Se trata de un argumento opcional para tarjetas de sonido con \func{id} 0. El argumento \func{adaptador} requiere el nombre del adaptador de dispositivo hardware. A continuación, en el \ref{tab:adaptors} se muestra una relación con los adaptadores de dispositivo cuyo uso es más frecuente y el nombre de adaptador que debe introducirse como argumento de la llamada a \func{analoginput}. Por conveniencia se ha añadido Keithley a esta lista.
+El argumento \func{id} es un indicador de dispositivo hardware. Se trata de un argumento opcional para tarjetas de sonido con \func{id} 0. El argumento \func{adaptador} requiere el nombre del adaptador de dispositivo hardware. A continuación, en el \cref{tab:adaptors} se muestra una relación con los adaptadores de dispositivo cuyo uso es más frecuente y el nombre de adaptador que debe introducirse como argumento de la llamada a \func{analoginput}. Por conveniencia se ha añadido Keithley a esta lista.
 
 \begin{table}
 	\centering
@@ -312,9 +312,9 @@ Por ejemplo, los siguientes comandos configuran \func{objeto} de forma que la fu
 	set(objeto, `StopFcn', @datadqcallback, objeto.Running)
 \end{lstlisting}
 
-Un segundo ejemplo, este extraído del código fuente de la aplicación de control muestra como pasar argumentos a la función de callback y cuál es la sintaxis de la definición de la misma en el fragmento de código \ref{cod:callback}.\bigskip
+Un segundo ejemplo, este extraído del código fuente de la aplicación de control muestra como pasar argumentos a la función de callback y cuál es la sintaxis de la definición de la misma en el \cref{cod:callback}.
 
-\begin{lstlisting}[style=displayed, caption={Configuración de \emph{callback} para responder a eventos en la sesión de muestreo, la función de \emph{callback} recibe un argumento}, label={cod:callback}, name=osciloscope]
+\begin{lstlisting}[style=displayed, caption={Configuración de \emph{callback} para responder a eventos en la sesión de muestreo, la función de \emph{callback} recibe un argumento}, label={cod:callback}]
 	set(handles.ai, 'TriggerType', 'Immediate', 'TimerFcn', '', ...
 		'SamplesAcquiredFcn', {@localDaqCallback, gcbo});
 
@@ -349,11 +349,11 @@ Si se suprime un objeto dispositivo del espacio de trabajo de \matlab{} no deja 
 
 \section{Prueba de funcionamiento}\label{sec:working-test}
 
-En el apartado anterior se han dado las claves necesarias para desarrollar un software como el empleado en este proyecto, no obstante, en este documento no se contempla entrar con mayor detalle en el código desarrollado más allá de lo que hasta ahora se ha hecho. Para obtener mayor información sobre las características y funcionalidades de la aplicación desarrollada el lector puede remitirse al apéndice \vref{chap:apendixA}, en el cual se ha desarrollado lo que podría considerarse un manual de usuario para dicha aplicación.\par
+En el apartado anterior se han dado las claves necesarias para desarrollar un software como el empleado en este proyecto, no obstante, en este documento no se contempla entrar con mayor detalle en el código desarrollado más allá de lo que hasta ahora se ha hecho. Para obtener mayor información sobre las características y funcionalidades de la aplicación desarrollada el lector puede remitirse al \vref{chap:apendixA}, en el cual se ha desarrollado lo que podría considerarse un manual de usuario para dicha aplicación.\par
 Para comprobar el buen funcionamiento del dispositivo de adquisición analógica y, en general, del sistema de representación de señales, se ha diseñado un experimento que pretende evaluar el comportamiento del conjunto por medio de la comparación, utilizando como referencia un osciloscopio de laboratorio.\par
 % El párrafo de abajo es complicado de leer y no da una idea clara de lo que quiero expresar. Más o menos lo que hago es aprovechar el montaje que hago para la prueba y matar dos pájaros de un tiro, certificar que el aparato funciona y dejar por escrito los pasos que deben seguirse al realizar cualquier experimento con el mismo. No creo que sea la mejor idea. Puedo utilizar algún artículo de la web de Tom's Hardware como muestra de como tengo que exponer el experimento: una introducción en la que digo lo que estoy evaluando del aparato (si pueden manejarse de tanta frecuencia, que formas reconoce, como funciona el trigger en distintas situaciones de offset y desfase.. .); después debo dar una tabla con la configuración básica de los experimentos (tipos de señales empleadas, frecuencias, referencias a las fuentes, quizá sondas.. .); características vistas en los experimentos del dispositivo y de la referencia; conclusiones que se extraen.
 % Tom da también, entre la intro y la configuración de la prueba, una breve descripción de las placas y una comparación de las mismas (puertos disponibles de tal tipo, controladores de lo otro.. .) quizá pueda hacer algo parecido, decir cuantas sondas pueden conectarse al osciloscopio, velocidades de muestreo, y ese tipo de cosas.
-Para completar esta parte del documento se ha considerado conveniente la inclusión de éste apartado cuyo objetivo es cubrir desde un punto de vista práctico cual es el procedimiento a seguir durante una prueba que se realice mediante el sistema propuesto en este \textsc{pfc} y cuales son los resultados de dicha prueba en comparación con los de un osciloscopio de laboratorio. La opción elegida para dar fin a tal propósito es la de documentar un ejercicio estándar a modo de ejemplo práctico.\par
+Para completar esta parte del documento se ha considerado conveniente la inclusión de éste apartado cuyo objetivo es cubrir desde un punto de vista práctico cual es el procedimiento a seguir durante una prueba que se realice mediante el sistema propuesto en este \sig{pfc} y cuales son los resultados de dicha prueba en comparación con los de un osciloscopio de laboratorio. La opción elegida para dar fin a tal propósito es la de documentar un ejercicio estándar a modo de ejemplo práctico.\par
 
 
 \subsection{Montaje del dispositivo de medida}
@@ -361,7 +361,7 @@ Para completar esta parte del documento se ha considerado conveniente la inclusi
 Puede completarse el montaje del sistema siguiendo un sencillo procedimiento que contempla una serie de pasos expuestos a continuación.
 
 \begin{enumerate}
-	\item En primer lugar debe conectarse la interfaz ampliada desarrollada para el proyecto (véase la \vref{subsec:conbox}) a los dos conectores mini-\textsc{d} provistos por la \kpci{}. Los dos conectores deben encontrarse en la parte posterior de la carcasa del ordenador al que se haya conectado la tarjeta. Los conectores hembra de la tarjeta y los conectores macho de los cables de la caja de conexiones están etiquetados con las palabras \emph{analog} y \emph{digital}, deben conectarse los cables de forma que las etiquetas en los conectores coincidan.
+	\item En primer lugar debe conectarse la interfaz ampliada desarrollada para el proyecto (véase el \vref{subsec:conbox}) a los dos conectores mini-\sig{d} provistos por la \kpci{}. Los dos conectores deben encontrarse en la parte posterior de la carcasa del ordenador al que se haya conectado la tarjeta. Los conectores hembra de la tarjeta y los conectores macho de los cables de la caja de conexiones están etiquetados con las palabras \emph{analog} y \emph{digital}, deben conectarse los cables de forma que las etiquetas en los conectores coincidan.
 	\item Después es necesario establecer conexiones entre las fuentes de las señales que se quiera intervengan en el proceso de adquisición analógica y la caja de conexiones. Para ello se recomienda emplear sondas terminadas por un lado en conector macho banana o coaxial y por otro en conector de tipo cocodrilo. La terminación en conector de tipo banana o coaxial debe insertarse en uno de los conectores tipo hembra que la caja de conexiones dispone a tal efecto, por ejemplo, en el conector que comunica con el puerto analógico \can{ch00} de la tarjeta\footnote{Se recomienda en cualquier caso emplear los puertos analógicos \can{ch00} y \can{ch08} de la \kpci{} ya sea desde la interfaz banana o desde la interfaz coaxial.}. Y la terminación en cocodrilo a la fuente de la señal analógica de interés.
 	\item Tras el paso anterior debe encenderse el ordenador y, una vez se ha accedido al sistema, lanzar \matlab{}.
 	\item Por último, ya en la consola de \matlab{}, acceder al directorio en el que se encuentren los archivos \func{single-channel.m} y \func{single-channel.fig} y lanzar la aplicación de control.
