@@ -76,6 +76,7 @@ Lo que en última instancia significa que, con ninguna de las posibles soluciones
 \subsection{Recursos disponibles al inicio de la etapa de diseño}
 
 Para la implementación del instrumental electrónico se dispone inicialmente de dos transductores ultrasónicos, uno destinado a funcionar como transistor y otro que realiza el papel de receptor. Ambos transductores manufacturados por el mismo fabricante y de una misma gama, con características similares. En el \vref{tab:transducers} se muestran las principales propiedades de ambos transductores.\par
+Además, el fabricante proporciona en la ficha técnica la respuesta característica del transmisor a un pulso rectangular. La curva, que puede observarse en la \cref{fig:response}, se asemeja a un pulso gaussiano que modula a una sinusoide de frecuencia igual a la frecuencia de resonancia del transductor. Esta respuesta a señales pulsadas de pulsos rectangulares hace que este tipo de transductor sea muy apropiado para su uso en \sig{endus}.\par
 En cuanto a su aspecto y dimensiones, los transductores se encuentran protegidos por un encapsulado plástico de color negro, pudiendo distinguir el transmisor gracias a un punto blanco situado en la pared exterior del encapsulado. Las dimensiones de los dos transductores coinciden, y son las mostradas en la figura esquemática \ref{fig:transducer}.
 
 \begin{table}
@@ -90,25 +91,36 @@ En cuanto a su aspecto y dimensiones, los transductores se encuentran protegidos
 			Sensibilidad en transmisión\tnote{a} & 110 dB & -- \\
 			Sensibilidad en recepción\tnote{b} & -- & -70 dB \\
 			Frecuencia de resonancia (kHz) & $40 \pm 1$ & $40 \pm 1$ \\
-			Ancho del lóbulo principal (aprox.) & 60º & -- \\
+			Ancho del lóbulo principal & 60\,º & -- \\
 			Tensión de alimentación máxima\tnote{c} & 10 Vef & -- \\
-			Impedancia\tnote{d}\ (k$\Omega$, aprox.) & $0.7$ & 30 \\
+			Máxima potencia admitida\tnote{d} & 200 m\!Wef & \\
+			Impedancia\tnote{e} & $700\ \Omega$ & $30\ \text{k}\Omega$ \\
 			Capacidad (nF) & $2 \pm 20\%$ & $2 \pm 20\%$ \\
-			Tiempo de subida del pulso & $700 \mu\text{s}$ & -- \\
+			Tiempo de subida del pulso & $700\ \mu\text{s}$ & -- \\
 			Tensión máxima admitida en modo pulsado & 20 V & -- \\
 			Rango de temperatura de funcionamiento (ºC) & (-20, 60) & (-20, 60) \\
 			\bottomrule
 		\end{tabular}
 		\begin{TableNotes}
-			\tnotetext{a}{Decibelios medidos con respecto a una referencia de 200 pbar a 30 cm cuando el transmisor se alimenta con una tensión eficaz de 10 Vef.}
+			\tnotetext{a}{Decibelios medidos con respecto a una referencia de 200 nbar a 30 cm cuando el transmisor se alimenta con una tensión eficaz de 10 Vef.}
 			\tnotetext{b}{Decibelios medidos con respecto a una referencia de 1 V/$\mu\text{bar}$.}
-			\tnotetext{c}{Se emplea en este documento el símbolo Vef como sinónimo de la unidad de potencial eléctrico en corriente alterna, \emph{voltios eficaces}.}
-			\tnotetext{d}{En transmisión esta magnitud representa la impedancia de entrada equivalente del transductor. En recepción, por el contrario, representa la impedancia de salida del transductor.}
+			\tnotetext{c}{Esta es la tensión máxima que el transductor admite cuando se alimenta de forma continuada con una señal de alterna.}
+% 			\tnotetext{d}{Se emplea en este documento el símbolo Vef como sinónimo de la unidad de potencial eléctrico en corriente alterna, \emph{voltios eficaces}. Del mismo modo se utiliza Wef, \emph{vatios eficaces}, como unidad de potencia eficaz.}
+			\tnotetext{d}{Se refiere a la potencia máxima que el transductor puede disipar en modo pulsado, es decir, cuando la alimentación es interrumpida y periódica.}
+			\tnotetext{e}{En transmisión esta magnitud representa la impedancia de entrada equivalente del transductor. En recepción, por el contrario, representa la impedancia de salida del transductor.}
 		\end{TableNotes}
 	\end{threeparttable}
-	\caption{Características de los transductores empleados en el dispositivo de medida}
+	\caption{Características de los transductores empleados en el dispositivo de medida (se proporcionan los valores típicos para cada propiedad)}
 	\label{tab:transducers}
 \end{table}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-1.mps}
+	\end{center}
+	\caption{Respuesta del transmisor a un pulso rectangular}
+	\label{fig:response}
+\end{figure}
 
 \begin{figure}
 	\begin{center}
@@ -118,7 +130,7 @@ En cuanto a su aspecto y dimensiones, los transductores se encuentran protegidos
 	\label{fig:transducer}
 \end{figure}
 
-El resto de componentes empleados en la implementación de las etapas de acondicionamiento se encontraban disponibles en el laboratorio de teoría de la señal en el que esta tarea se lleva a cabo. Entre ellos cabe destacar el \sig{TL}082, un amplificador operacional de propósito general cuyas prestaciones superan ampliamente a las ofrecidas por el clásico $\mu$\sig{A}741 en términos de banda de frecuencias amplificada. Mientras que el $\mu$\sig{A}741 convencional mantiene su máxima ganancia para señales de entrada de frecuencia alrededor de los 7 kHz, el amplificador empleado consigue amplificar con su máximo factor de ganancia señales que oscilan con frecuencias máximas de 90 kHz. Es imprescindible disponer de un amplificador que conserve su ganancia por encima de los 40 kHz, ya que esta es la frecuencia de resonancia de los transductores, y la frecuencia de trabajo seleccionada para el dispositivo de medida.
+El resto de componentes empleados en la implementación de las etapas de acondicionamiento se encontraban disponibles en el laboratorio de teoría de la señal en el que esta tarea se lleva a cabo. Entre ellos cabe destacar el \sig{TL}082, un amplificador operacional de propósito general cuyas prestaciones superan ampliamente a las ofrecidas por el clásico \AOUA{} en términos de banda de frecuencias amplificada. Mientras que el \AOUA{} convencional mantiene su máxima ganancia para señales de entrada de frecuencia alrededor de los 7 kHz, el amplificador empleado consigue amplificar con su máximo factor de ganancia señales que oscilan con frecuencias máximas de 90 kHz. Es imprescindible disponer de un amplificador que conserve su ganancia por encima de los 40 kHz, ya que esta es la frecuencia de resonancia de los transductores, y la frecuencia de trabajo seleccionada para el dispositivo de medida.
 
 
 \subsection{Solución adoptada}\label{subsec:solution}
@@ -129,10 +141,6 @@ El resto de componentes empleados en la implementación de las etapas de acondici
 A la vista de los requisitos que exige una aplicación como la propuesta en este proyecto, las necesidades que surgen durante su diseño y los medios y recursos disponibles, parece previsible un fracaso en el desarrollo de la parte experimental de este \sig{pfc}. Pese a todo, y puesto que el coste de implementar los circuitos y realizar las pruebas es en la práctica suficientemente reducido, se decide proseguir con los experimentos ya que el verdadero fin del proyecto es obtener una serie de resultados, sean estos los esperados o no, y de estos deducir una serie de conclusiones.\par
 En el momento en el que se desarrolla esta fase del proyecto se contempla la posibilidad de inferir dos conclusiones distintas a partir de los resultados: si los resultados no son buenos, determinar cuáles son en realidad los requisitos que deben cumplirse para poder aplicar los \sig{endus} de manera efectiva en la detección de defectos en madera de palmera, y sabiendo esto justificar la ausencia de resultados válidos; y, en el caso contrario, en caso de que los resultados fueran satisfactorios, verificar la validez de aplicar este método con un mismo propósito y en unas condiciones similares.\par
 Posteriormente, tal como se relata en la {\color{red}sección ??} se tiene acceso a unos transductores distintos, que por su modo de funcionamiento permiten llevar a cabo de modo satisfactorio las pruebas programadas.
-% Y de este resultado deducir la validez de aplicar el método propuesto al inicio del proyecto, y los requisitos que deben cumplirse para poder ponerlo en práctica de forma efectiva.
-% Y de este resultado deducir los requisitos que deben cumplirse para poder poner en práctica de forma efectiva el método propuesto al inicio del proyecto ---\sig{endus}, y \sig{ssp} para la corrección de ruido de grano---, y la validez que (éste, el método, este en sí, el método en sí, el propio método) tiene en la detección de defectos en palmeras. % en práctica de forma efectiva.la validez de aplicar el método propuesto al inicio del proyecto, y los requisitos que deben 
-% Y de estos resultados deducir dos cosas:
-% Pese al contratiempo que supone no contar con el instrumental necesario para realizar las pruebas se decide continuar con el proyecto con la intención de averiguar si con el equipo disponible es posible obtener resultados válidos.
 
 
 \subsubsection{Montaje seleccionado}
@@ -151,11 +159,23 @@ Por consiguiente, es, en la sección de recepción, el ruido electrónico procedent
 \end{itemize}
 
 
-\subsubsection{Requisitos concretos aplicables a la etapa de acondicionamiento en transmisión} % [Requisitos de la etapa de transmisión]
+\subsection{Diseño de la etapa de transmisión} % {Requisitos concretos aplicables a la etapa de acondicionamiento en transmisión} % [Requisitos de la etapa de transmisión]
 
-Consultando el \vref{tab:transducers} puede observarse cuales son las características de la señal de alimentación que debe proporcionar la etapa de acondicionamiento en transmisión. En las pruebas de laboratorio basta con emplear el generador de señales y si se requiere un pequeño amplificador de ganancia moderada. Por ejemplo, el generador dispuesto para el proyecto proporciona una señal con valor de pico a pico máximo de 10 voltios pico"=pico (en adelante Vpp). Puesto que va a emplearse el transmisor en modo pulsado la ganancia del amplificador debe ser de 2 V/V, ganancia que puede obtenerse fácilmente con un amplificador monoetapa basado en un amplificador operacional de propósito general.\par
-Para las pruebas de campo se diseña un circuito capaz de emitir una señal pulsada, de pulsos rectangulares, que pueda ser alimentado con una pila de 9 V, una pila de 12 V o una fuente de alimentación. Este circuito se basa en el multivibrador integrado 555 y el transistor de uso común \sig{q2n222}.\par
-El 555 en su configuración astable es capaz de producir una señal periódica de pulsos rectangulares cuyo ancho depende de la configuración de la red temporal a la que se conecta el integrado. Además tiene la capacidad de permanecer en reposo mientras se mantiene activada la puerta de reset (activa a nivel bajo). La configuración propuesta se muestra en la \vref{fig:traconditioner}, y los valores de tiempos y frecuencia correspondientes a ésta pueden verse a continuación en el \cref{tab:traconditioner}.\par
+Los requisitos de la etapa de transmisión pueden obtenerse al juzgar por un lado los límites del transductor de ultrasonidos que se emplea como transmisor y por otro las especificaciones que debe cumplir la señal acústica transmitida.\par
+En \sig{endus}, la técnica de transmisión exige una señal pulsada como la que proporciona el transmisor cuando es alimentado por un pulso rectangular. Por otro lado, una de las condiciones de diseño consiste en emitir a la máxima potencia posible. La señal acústica es emitida por el transmisor de ultrasonidos, por consiguiente la potencia de esta señal depende de los límites del transductor y de como se encuentra alimentado.\par
+% Estoy hablando de las características de la señal de alimentación, porqué no hacer una subsubsección hablando del tema. Es decir, a partir de los datos que tengo razono como debe ser la señal de alimentación y luego digo como la implemento.
+Consultando el \vref{tab:transducers} puede observarse que la máxima potencia que puede disipar el transductor es de 200 m\!Wef en modo pulsado. Puesto que la impedancia de entrada típica interna del transductor es de $700\ \Omega$ pueden calcularse de forma sencilla valores para la potencia instantánea y, a partir de este último dato, el nivel de tensión máximo con el que debe alimentarse el transductor. Para realizar estos cálculos, primero debe fijarse otro parámetro: la forma de la señal de alimentación y sus características temporales.\par
+% ¿Por qué elijo una señal pulsada? Porque así se generan pulsos de forma automática sin necesidad de presionar ningún botón, ni realizar ninguna otra acción. Esto es bueno porque me ahorro interruptores que quizá deban ser reemplazados en el futuro por perder parte de sus cualidades. El periodo con el que se generan los pulsos no debería ser demasiado corto, lo que impediría explotar al máximo el transductor, y debe permitirme seguir los cambios de señal en el monitor del osciloscopio.
+Resulta conveniente elegir una señal pulsada para la alimentación, en concreto un tren de pulsos rectangulares, dado el comportamiento del transductor frente a este tipo de pulsos. En cuanto al ciclo de trabajo por conveniencia se elige, respectivamente: la duración del estado alto, 375 $\mu$s, equivalente a 15 periodos de la portadora; y una frecuencia de aproximadamente 1 Hz. % Una frecuencia tan baja permite un seguimiento visual de la señal, de ese modo es posible congelar el osciloscopio manualmente y eso simplifica el proceso de medida.\par
+% Consultando el \vref{tab:transducers} puede observarse que la máxima tensión admitida por el transductor en modo pulsado es de 20 V, y la máxima potencia que puede disipar es de 200 mW. Por lo tanto, la corriente de la señal de alimentación debe limitarse a 10 mA, algo que puede lograrse mediante una carga adicional. En cuanto a la duración de los pulsos y el periodo de la señal pulsada, por conveniencia se elige respectivamente un tiempo de 375 $\mu$s, equivalente a 15 periodos de la portadora, y una frecuencia de $1/4$ Hz. Una frecuencia tan baja permite un seguimiento visual de la señal, de ese modo es posible disparar el osciloscopio manualmente y eso simplifica el proceso de medida.\par
+% Consultando el \vref{tab:transducers} y la \cref{fig:response} puede deducirse cuales son las características de la señal de alimentación que debe proporcionar la etapa de acondicionamiento en transmisión. Al emplear la técnica de transmisión es necesario que la señal que emite el transductor sea una señal pulsada
+En las pruebas de laboratorio basta con emplear el generador de señales y, si se requiere, un pequeño amplificador de ganancia moderada. Por ejemplo, el generador dispuesto para el proyecto proporciona una señal con valor de pico a pico máximo de 10 voltios pico"=pico (en adelante Vpp), puesto que va a emplearse el transmisor en modo pulsado, la ganancia del amplificador debe ser de 2 V/V. Ganancia que puede obtenerse fácilmente con un amplificador monoetapa basado en un amplificador operacional de propósito general.\par
+Para las pruebas de campo se diseña un circuito capaz de emitir una señal pulsada, de pulsos rectangulares, que pueda ser alimentado con la misma fuente de alimentación con la que es alimentado el acondicionador de la sección de recepción. De ese modo se evita el consumo extra que el generador de señales hace de la batería al mismo tiempo que se transporta un equipo menos. El circuito mencionado se basa en el temporizador integrado 555, concretamente en el integrado 556 que contiene dos 555 en un mismo encapsulado, y el amplificador de uso común \AOUA{}.\par
+El 555 en su configuración como multivibrador astable es capaz de producir una señal periódica de pulsos rectangulares en los que la duración del estado alto y del estado bajo ---y, por tanto, del periodo--- dependen de la configuración de la red temporal a la que se conecta el circuito. Además tiene la capacidad de permanecer en reposo mientras se mantiene activada la puerta de reset (activa a nivel bajo). El ciclo de trabajo de la señal que genera el 555 es siempre superior al 50\% lo que implica que para lograr una señal como la que se necesita para alimentar al transmisor es necesario otro 555, en este caso en la configuración de multivibrador monoestable.\par
+En su configuración monoestable, el 555 es capaz de generar pulsos rectangulares de duración muy precisa. El inicio del pulso lo provoca una caída del nivel en la puerta de disparo por debajo del umbral de comparación que establece la tensión de alimentación, en concreto el umbral se establece en una tensión equivalente a un tercio de Vcc. Es decir que el circuito es activo a nivel bajo. Por otro lado, la duración del pulso viene definida por la red RC que se conecta a los terminales del integrado.\par
+% Aquí tengo que hablar del amplificador que hago con el uA741, (con el BJT es imposible, Vbe es muy superior a 10 mVpp), y de como cargo la salida de este con el transductor y una resistencia adicional para que la corriente en bornes del transmisor no supere los 10 mA.
+% En el párrafo a continuación tengo que decir que en el cuadro aparecen también los valores de consumo del circuito y, si acaso, debo decir porque no puedo alimentarlo con una pila.
+La configuración propuesta se muestra en la \vref{fig:traconditioner}, y los valores de tiempos y frecuencia correspondientes a ésta pueden verse a continuación en el \cref{tab:traconditioner}.\par
 
 \begin{figure}
 	\begin{center}
@@ -175,7 +195,6 @@ El 555 en su configuración astable es capaz de producir una señal periódica de p
 	\label{tab:traconditioner}
 \end{table}
 
-Por su parte el \sig{q2n222} se emplea como también puede observarse en la \cref{fig:traconditioner} como amplificador de corriente.
 % DEBERÍA HABLAR SOBRE LOS REQUISITOS QUE SE APLICAN A LOS CIRCUITOS ACONDICIONADORES TAMBIÉN
 % Podría llamar a unos nuevos subapartados, requisitos concretos de la etapa de acondicionamiento en transmisión/recepción.
 % La etapa de transmisión debe proporcionar una señal que alimente al transductor, señal de 40 kHz de amplitud variable, controlada por el usuario (control por tensión).
