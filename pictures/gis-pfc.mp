@@ -240,14 +240,89 @@ enddef;
 % ==================================================================
 def amplificador =
 begingroup
-save r,x,y;
-numeric x[],y[]; path r[];
+save r;
+path r[];
 
-z00 = whatever[(0, 1/2), (2, -1/2)] = %
-	whatever [(0, -1/2), (2, 1/2)]; 
-r0 = (0, -1/2)--z00--(0, 1/2)--cycle;
+r0 = (0, -1/2)--(1, 0)--(0, 1/2)--cycle;
 
 (r0)
+endgroup
+
+enddef;
+% ==================================================================
+
+
+
+% ==================================================================
+def resistencia =
+begingroup
+save c,r;
+numeric c[]; path r[];
+
+c0 = sqrt(3)/8;
+r0 = (-1/2, 0)--(-3/8, c0)--(-1/8, -c0)--(1/8, c0)-- %
+	(3/8, -c0)--(1/2, 0);
+
+(r0)
+endgroup
+
+enddef;
+% ==================================================================
+
+
+
+% ==================================================================
+def condensador =
+begingroup
+save f;
+picture f[];
+
+f0 = nullpicture;
+addto f0 doublepath (-1/8, -1/2)--(-1/8, 1/2);
+addto f0 doublepath (1/8, -1/2)--(1/8, 1/2);
+
+(f0)
+endgroup
+
+enddef;
+% ==================================================================
+
+
+
+% ==================================================================
+def tierra =
+begingroup
+save c,f;
+numeric c[]; picture f[];
+
+c0 = sqrt(3)/4;
+f0 = nullpicture;
+addto f0 doublepath (-1/2, 0)--(1/2, 0);
+addto f0 doublepath (-1/2 + c0/4, -1/4)--(1/2 - c0/4, -1/4);
+addto f0 doublepath (-1/2 + c0/2, -1/2)--(1/2 - c0/2, -1/2);
+
+(f0)
+endgroup
+
+enddef;
+% ==================================================================
+
+
+
+% ==================================================================
+def trtrsimplificado =
+begingroup
+save c,f;
+numeric c[]; picture f[];
+
+c0 = cosd(30)*sind(30)/2;
+f0 = nullpicture;
+addto f0 doublepath (-1/2, -1/2)--(0, -1/2)--(0, 1/2)-- %
+	(-1/2, 1/2)--cycle;
+addto f0 doublepath (0, -1/2)--(1/2, -1/2 - c0)-- %
+	(1/2, 1/2 + c0)--(0, 1/2);
+
+(f0)
 endgroup
 
 enddef;

@@ -41,12 +41,12 @@ Es la naturaleza de los experimentos la que dictamina cuales deben ser las carac
 	\item Por otro, pruebas de campo con palmeras en un entorno natural, no siendo necesario que las palmeras sean silvestres, pudiendo encontrarse plantadas en un jardín o espacio similar.
 \end{itemize}
 
-Se escoge la técnica de transmisión, en defecto de la técnica de pulso"=eco, para la realización de los ensayos. El equipo disponible al inicio del trabajo experimental varía en función de la prueba: para los experimentos de laboratorio se cuenta con un sistema de adquisición como el conformado por el conjunto de la tarjeta de adquisición, un ordenador, el software de control y la caja de conexiones; y para las pruebas de campo con un osciloscopio. En ambos tipos de prueba deben emplearse también dos transductores, uno en transmisión y otro en recepción, junto con sus respectivos circuitos acondicionadores.
+Se escoge la técnica de transmisión, en defecto de la técnica de pulso"=eco, para la realización de los ensayos. El equipo disponible al inicio del trabajo experimental varía en función de la prueba: para los experimentos de laboratorio se cuenta con un sistema de adquisición como el conformado por el conjunto de la tarjeta de adquisición, un ordenador, el software de control y la caja de conexiones; y para las pruebas de campo con un osciloscopio y una fuente de alimentación, ambos alimentados con una batería. En ambos tipos de prueba deben emplearse también dos transductores, uno en transmisión y otro en recepción, junto con sus respectivos circuitos acondicionadores.
 
 
 \subsection{Requisitos del instrumento de medida}
 
-Para justificar cuales son los requisitos de las etapas acondicionadoras que preceden al transmisor y el receptor de ultrasonidos, y cuales los requisitos de los propios transductores, se recuerda aquí de forma resumida al lector una serie de conclusiones a las que se ha llegado a lo largo de la sección anterior (la \cref{sec:theory} con inicio en la \vpageref{sec:theory}).\par
+Para justificar cuales son los requisitos aplicables a los transductores y a las etapas acondicionadoras que los preceden, se recuerda aquí de forma resumida al lector una serie de conclusiones a las que se ha llegado a lo largo de la sección anterior (la \cref{sec:theory} con inicio en la \vpageref{sec:theory}).\par
 Los tres parámetros cruciales en el desempeño de un \sig{endus} son: la resolución, tanto axial como lateral; la profundidad de penetración; y la relación señal a ruido.
 
 \begin{itemize}
@@ -161,6 +161,12 @@ Por consiguiente, es, en la sección de recepción, el ruido electrónico procedent
 
 \subsection{Diseño de la etapa de transmisión} % {Requisitos concretos aplicables a la etapa de acondicionamiento en transmisión} % [Requisitos de la etapa de transmisión]
 
+El propósito del circuito acondicionador de la etapa de transmisión es proporcionar una señal de alimentación que se ajuste a las limitaciones del transductor y a los requisitos especificados en la etapa anterior de la fase de diseño.
+
+
+\subsubsection{La señal de alimentación}
+
+Las especificaciones 
 Los requisitos de la etapa de transmisión pueden obtenerse al juzgar por un lado los límites del transductor de ultrasonidos que se emplea como transmisor y por otro las especificaciones que debe cumplir la señal acústica transmitida.\par
 En \sig{endus}, la técnica de transmisión exige una señal pulsada como la que proporciona el transmisor cuando es alimentado por un pulso rectangular. Por otro lado, una de las condiciones de diseño consiste en emitir a la máxima potencia posible. La señal acústica es emitida por el transmisor de ultrasonidos, por consiguiente la potencia de esta señal depende de los límites del transductor y de como se encuentra alimentado.\par
 % Estoy hablando de las características de la señal de alimentación, porqué no hacer una subsubsección hablando del tema. Es decir, a partir de los datos que tengo razono como debe ser la señal de alimentación y luego digo como la implemento.

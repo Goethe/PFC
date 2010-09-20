@@ -27,4 +27,4 @@ $(CH3) : $(CH3SRC) $(LIB)
 
 .PHONY: clean
 clean :
-	@rm -f *.log *.out *.toc *.lot *.lof *.aux *.mpx *.mps *.pdf
+	@rm -f *.log *.out *.toc *.lot *.lof *.aux *.mpx *.mps *.pdf mpxerr.tex

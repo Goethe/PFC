@@ -19,6 +19,7 @@ he01 = 9v;	he02 = 6.75v;
 
 ahlength := 2u;	ahangle := 20;
 ahinset := 5/100;
+linejoin := mitered;
 
 
 

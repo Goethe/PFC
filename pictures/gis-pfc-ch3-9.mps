@@ -1,0 +1,142 @@
+%!PS
+%%BoundingBox: -1 -14 341 144 
+%%HiResBoundingBox: -0.35434 -13.48528 340.5112 143.85802 
+%%Creator: MetaPost 1.208
+%%CreationDate: 2010.09.20:1655
+%%Pages: 1
+%*Font: cmsy10 11.95514 9.96265 00:8
+%*Font: cmmi12 11.95517 11.95517 0d:808000000002070115400e5211cc
+%*Font: cmr12 11.95517 11.95517 01:8008200001a9ff88b8085000feff7b5
+%*Font: cmmi8 7.97011 7.97011 48:8020006c0e28
+%%BeginProlog
+%%EndProlog
+%%Page: 1 1
+ 0 0 0 setrgbcolor
+newpath -0.35434 0.07088 moveto
+-0.35434 -0.6378 lineto
+0.35434 -0.6378 lineto
+335.1236 -0.6378 lineto
+335.1236 0.07088 lineto
+334.41492 0.07088 lineto
+ closepath fill
+newpath 334.22076 -0.91333 moveto
+334.22076 -1.62201 lineto
+334.92944 -1.62201 lineto
+340.5112 -0.6378 lineto
+340.5112 0.07088 lineto
+334.92944 1.05508 lineto
+334.22076 1.05508 lineto
+334.22076 0.3464 lineto
+334.49979 -0.6378 lineto
+334.49979 0.07088 lineto
+ closepath fill
+newpath 334.22076 -0.91333 moveto
+334.92944 -1.62201 lineto
+335.20847 -0.6378 lineto
+335.20847 0.07088 lineto
+334.92944 1.05508 lineto
+334.22076 0.3464 lineto
+339.80252 -0.6378 lineto
+339.80252 0.07088 lineto
+ closepath fill
+newpath 169.72409 -0.35434 moveto
+170.43277 -0.35434 lineto
+170.43277 0.35434 lineto
+170.43277 138.47137 lineto
+169.72409 138.47137 lineto
+169.72409 137.7627 lineto
+ closepath fill
+newpath 170.70851 137.56636 moveto
+171.41719 137.56636 lineto
+171.41719 138.27504 lineto
+170.43277 143.85802 lineto
+169.72409 143.85802 lineto
+168.73967 138.27504 lineto
+168.73967 137.56636 lineto
+169.44835 137.56636 lineto
+170.43277 137.84546 lineto
+169.72409 137.84546 lineto
+ closepath fill
+newpath 170.70851 137.56636 moveto
+171.41719 138.27504 lineto
+170.43277 138.55414 lineto
+169.72409 138.55414 lineto
+168.73967 138.27504 lineto
+169.44835 137.56636 lineto
+170.43277 143.14934 lineto
+169.72409 143.14934 lineto
+ closepath fill
+175.01306 132.43729 moveto
+(u) cmmi12 11.95517 fshow
+181.67546 132.43729 moveto
+(\() cmr12 11.95517 fshow
+186.22786 132.43729 moveto
+(t) cmmi12 11.95517 fshow
+190.45496 132.43729 moveto
+(\)) cmr12 11.95517 fshow
+newpath 56.33847 -0.35434 moveto
+57.04715 -0.35434 lineto
+57.04715 0.35434 lineto
+57.04715 7.44095 lineto
+56.33847 7.44095 lineto
+56.33847 6.73227 lineto
+ closepath fill
+newpath 113.03128 -0.35434 moveto
+113.73996 -0.35434 lineto
+113.73996 0.35434 lineto
+113.73996 7.44095 lineto
+113.03128 7.44095 lineto
+113.03128 6.73227 lineto
+ closepath fill
+newpath 226.4169 -0.35434 moveto
+227.12558 -0.35434 lineto
+227.12558 0.35434 lineto
+227.12558 7.44095 lineto
+226.4169 7.44095 lineto
+226.4169 6.73227 lineto
+ closepath fill
+newpath 283.10971 -0.35434 moveto
+283.81839 -0.35434 lineto
+283.81839 0.35434 lineto
+283.81839 7.44095 lineto
+283.10971 7.44095 lineto
+283.10971 6.73227 lineto
+ closepath fill
+47.80016 -12.09047 moveto
+(\000) cmsy10 11.95514 fshow
+57.09865 -12.09047 moveto
+(T) cmmi12 11.95517 fshow
+167.15193 -12.35612 moveto
+(0) cmr12 11.95517 fshow
+279.22064 -12.58862 moveto
+(T) cmmi12 11.95517 fshow
+ 0 0.99214 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+ 1 setlinecap 1 setlinejoin 10 setmiterlimit
+newpath 28.3464 0 moveto
+56.69281 0 lineto
+56.69281 0 lineto
+56.69281 95.66913 lineto
+82.85872 95.66913 lineto
+82.85872 0 lineto
+170.07843 0 lineto
+170.07843 95.66913 lineto
+196.24434 95.66913 lineto
+196.24434 0 lineto
+283.46405 0 lineto
+283.46405 95.66913 lineto
+309.62996 95.66913 lineto
+309.62996 0 lineto
+311.81046 0 lineto stroke
+155.9727 97.76912 moveto
+(P) cmmi12 11.95517 fshow
+199.24434 -11.69197 moveto
+(T) cmmi12 11.95517 fshow
+206.10533 -13.48528 moveto
+(H) cmmi8 7.97011 fshow
+ [0 7.5 ] 3.75 setdash
+newpath 14.1732 47.83456 moveto
+42.5196 47.83456 lineto stroke
+newpath 316.71657 47.83456 moveto
+336.61356 47.83456 lineto stroke
+showpage
+%%EOF
