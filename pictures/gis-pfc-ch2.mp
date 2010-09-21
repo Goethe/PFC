@@ -20,6 +20,7 @@ he01 = 9v;	he02 = 6.75v;
 ahlength := 2u;	ahangle := 20;
 ahinset := 5/100;
 linejoin := mitered;
+linecap := butt;
 
 
 
@@ -39,6 +40,7 @@ d0 = nullpicture;
 d1 = nullpicture;
 d2 = nullpicture;
 pickup l1;
+interim bboxmargin := u;
 
 % ------------------------------------------------------------------
 % caja principal
@@ -51,8 +53,10 @@ a02 = 0.5he01;		a03 = a01/5;
 a04 = (a00 - a02)/2;	a05 = a01/(a01/a03 - 1);
 p0 = 1/2(-a00, -a01)--1/2(a00, -a01)--1/2(a00, a01)-- %
 	1/2(-a00, a01)--cycle;
+p10 = bbox p0;
 p1 = 1/2(-a02, -a03)--1/2(a02, -a03)--1/2(a02, a03)-- %
 	1/2(-a02, a03)--cycle;
+p11 = bbox p1;
 z00 = center p1;
 t0 = identity shifted (a00/2, 0.6wi);
 t1 = identity transformed t0 shifted (0, a04 - 2a03 - a05);
@@ -81,12 +85,13 @@ label(btex \emph{Data Acquisition Toolbox} etex, %
 a06 = a00/2;		a07 = a03;
 p2 = 1/2(-a06, -a07)--1/2(a06, -a07)--1/2(a06, a07)-- %
 	1/2(-a06, a07)--cycle;
+p12 = bbox p2;
 z01 = center p2;
 t2 = identity transformed t0 shifted (0, 0.4wi - a07/2);
 draw p2 transformed t2;
 label(btex \textsc{matlab} etex, z01 transformed t2);
 drawdblgisarrow center p0 transformed t0--center p2 transformed t2 %
-	cutbefore p0 transformed t0 cutafter p2 transformed t2;
+	cutbefore p10 transformed t0 cutafter p12 transformed t2;
 z02 = 1/2[(0, 0.6wi + a01/2), (a00, wi - a07)];
 label.rt(btex Comandos y datos interactivos etex, z02);
 
@@ -97,7 +102,7 @@ t3 = identity transformed t0 shifted (0, a07/2 - 0.4wi);
 draw p2 transformed t3;
 label(btex Drivers etex, z01 transformed t3);
 drawdblgisarrow center p0 transformed t0--center p2 transformed t3 %
-	cutbefore p0 transformed t0 cutafter p2 transformed t3;
+	cutbefore p10 transformed t0 cutafter p12 transformed t3;
 z03 = 1/2[(0, 0.6wi - a01/2), (a00, 0.2wi + a07)];
 label.rt(btex Propiedades, datos y eventos etex, z03);
 
@@ -108,6 +113,7 @@ a08 = 4a07/5;		a09 = 6a07/5;
 a10 = a09 - a08;	a11 = 2a06/5;
 p3 = 1/2(-a06, -a08)--1/2(a06, -a08)--1/2(a06, a08)-- %
 	1/2(-a06, a08);
+p13 = bbox p3;
 p4 = 1/2(-a06, -a09)--1/2(-a06, a09)--1/2(-a06 - 2a10/3, a09);
 addto d1 doublepath p3;		addto d1 doublepath p4;
 % conector PCI
@@ -126,7 +132,7 @@ t4 = identity transformed t3 shifted (0, a01/2 - 0.4wi);
 draw d1 transformed t4 withpen l1;
 label(btex Hardware etex, z01 transformed t4);
 drawdblgisarrow center p2 transformed t3--center p3 transformed t4 %
-	cutbefore p2 transformed t3 cutafter p3 transformed t4;
+	cutbefore p12 transformed t3 cutafter p13 transformed t4;
 z04 = 1/2[(a00, 0.2wi), (0, a01/2 + a07/2 + a10 - 0.2wi)];
 label.rt(btex Propiedades, datos y eventos etex, z04);
 
@@ -136,6 +142,7 @@ a13 = 2a07;		a14 = a03/2;
 p7 = fullcircle xscaled a13 yscaled a14;
 p8 = 1/2(-a13, 2a14)--subpath (4, 8) of p7 shifted (0, -a14)-- %
 	1/2(a13, 2a14);
+p18 = bbox p8;
 addto d2 doublepath p8;
 addto d2 doublepath p7 shifted (0, a14);
 t5 = identity transformed t1 shifted (0, 2a05) %
@@ -143,7 +150,7 @@ t5 = identity transformed t1 shifted (0, 2a05) %
 t6 = identity transformed t5 shifted (-he01/2, 0);
 z05 = center d2;
 drawgisarrow z00 transformed t6--z05 transformed t5 %
-	cutbefore p1 transformed t6 cutafter p8 transformed t5;
+	cutbefore p11 transformed t6 cutafter p18 transformed t5;
 label(btex \begin{tabular}{c} Archivo \\ %
 	en disco \end{tabular} etex, z05 transformed t5 %
 	shifted (0, -a14/2));
@@ -157,12 +164,13 @@ z06 = (aa.ne - aa.nw);		z07 = (aa.ne - aa.se);
 z08 = aa.c + 3z07/2;		a15 = y07/3;
 drawboxed(aa);
 p9 = bpath aa;			draw p9 shifted 1.5z07;
+p19 = bbox p9;
 label(btex Sensores etex, z08);
 drawgisarrow aa.c--aa.c shifted (-he01/4, 0)-- %
 	aa.c shifted (-he01/4, a15)--aa.c shifted (-he01/2, a15) %
-	cutbefore bpath aa cutafter p3 transformed t4;
-drawgisarrow z08--z08 shifted (-he01/2, 0) cutbefore bpath aa %
-	shifted 1.5z07 cutafter p3 transformed t4;
+	cutbefore p19 cutafter p13 transformed t4;
+drawgisarrow z08--z08 shifted (-he01/2, 0) cutbefore p19 %
+	shifted 1.5z07 cutafter p13 transformed t4;
 
 endfig;
 % ==================================================================
@@ -185,6 +193,7 @@ d0 = nullpicture;
 d1 = nullpicture;
 d2 = nullpicture;
 pickup l1;
+interim bboxmargin := u;
 
 % ------------------------------------------------------------------
 % hardware
@@ -228,9 +237,11 @@ for i = 0 upto a07 - 1:
 	q[1][i] = p4 transformed t2 
 		shifted ((i + 1) * a09 + i*a08, 0);
 	z[2][i] = center q[1][i];
+	q[2][i] = bbox q[0][i];
+	q[3][i] = bbox q[1][i];
 	draw q[0][i];	draw q[1][i];
-	drawdblgisarrow z[1][i]--z[2][i] cutbefore q[0][i] %
-		cutafter q[1][i];
+	drawdblgisarrow z[1][i]--z[2][i] cutbefore q[2][i] %
+		cutafter q[3][i];
 endfor
 label(btex \begin{tabular}{c} Subsistema \\ \textsc{ai} %
 	\end{tabular} etex, z[1][0]);

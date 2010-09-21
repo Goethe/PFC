@@ -21,6 +21,7 @@ he01 = 9v;	he02 = 6.75v;
 ahlength := 2u;	ahangle := 20;
 ahinset := 5/100;
 linejoin := mitered;
+linecap := butt;
 
 
 
@@ -89,12 +90,12 @@ draw p8 dashed evenly scaled 2 shifted (u, 0);
 % etiquetas y marco
 p9 = (x01 + u, a06 - a05/2)--(x02 + a04 - u, a06 - a05/2);
 p10 = fullcircle scaled a08 shifted z02 %
-		cutbefore p6 shifted (0, u/2) %
-		cutafter p2 shifted (u, 0);
+		cutbefore p6 shifted (0, u) %
+		cutafter p2 shifted (3u, 0);
 z09 = point 0.5 length p9 of p9;
 z10 = point 0.5 length p10 of p10;
 z11 = point 0 of p10;
-p11 = z11 shifted (0, -u)--z11 shifted (0, y00 - y01);
+p11 = z11 shifted (u/10, -2u)--z11 shifted (u/10, y00 - y01);
 z12 = point 0.5 length p11 of p11;
 d3 = thelabel(btex $L_0$ etex, z09);
 d4 = thelabel(btex $\gamma_0$ etex, z10);
@@ -292,6 +293,7 @@ endfig;
 
 % ==================================================================
 beginfig(4);
+numeric a[];
 pen l[];
 path p[];
 transform t[];
@@ -299,8 +301,38 @@ l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
+l4 = pensquare scaled 0.5u;
 pickup l1;
+interim bboxmargin := u;
 
+%-------------------------------------------------------------------
+% defino una caja que envuelve en cierto sentido a una flecha
+vardef arrowbox expr p =
+	save q,e,i,qq,pp; path i[],q; pair e,qq[];
+	numeric pp[];
+	e = point length p of p;
+	q = gobble(p shifted -e %
+		cutafter makepath(pencircle scaled 2ahlength))
+		cuttings;
+	qq0 = point 0 of (q rotated .5ahangle);
+	qq1 = point 0 of (q rotated -.5ahangle);
+	(pp0, whatever) = q intersectiontimes (qq0--qq1);
+	i0 = subpath (pp0, length q) of q;
+	qq2 = point 0 of i0;
+	i1 = i0 shifted -qq2 shifted qq0;
+	i2 = i0 shifted -qq2 shifted qq1;
+	qq3 = point length i1 of i1 scaled 11/4;
+	qq4 = point length i2 of i2 scaled 11/4;
+	i3 = p shifted qq3;
+	i4 = p shifted qq4;
+	i5 = point length i3 of i3--point length i4 of i4;
+	i6 = point 0 of i4--point 0 of i3--cycle;
+	% la solución final no es correcta pero da el pego
+	(i3--point length i4 of i4--reverse i4--cycle)
+enddef;
+
+%-------------------------------------------------------------------
+% resto del gráfico
 z10 = (1.5v, v);
 
 boxit.ata(btex $a(z, t)$ etex);
@@ -322,8 +354,6 @@ atb.c = reb.c + 3(z11);			difb.c = atb.c + 2(z11);
 ema.c = reb.c + 6(z12);			ata.c = difb.c + 6(z12);
 difa.c = atb.c + 6(z12);
 disp.c = difb.c + 2(z11) + 3(z12);
-% difc.c = disp.c + 2(z11);		atc.c = difc.c + 2(z11);
-% difc.c = atb.c + 2(z11) - 6(z12);	atc.c = difc.c + 2(z11);
 difc.c = atb.c - 6(z12);		atc.c = difc.c + 2(z11);
 rec.c = atc.c + 3(z11);
 hma.sw = difa.c - 9/10(z11) - 9/10(z12);
@@ -337,9 +367,9 @@ drawboxed(difb);			drawboxed(ema);
 drawboxed(ata);				drawboxed(difa);
 drawboxed(disp);			drawboxed(difc);
 drawboxed(atc);				drawboxed(rec);
-draw bpath hma dashed evenly;
-draw bpath hmb dashed evenly;
-draw bpath hmc dashed evenly;
+draw bpath hma dashed evenly scaled 6/5 shifted (1/4, 0);
+draw bpath hmb dashed evenly scaled 6/5 shifted (-7/4, 0);
+draw bpath hmc dashed evenly scaled 6/5 shifted (1/4, 0);
 label.top(btex Atenuaci\'on etex, 1/2[ata.nw, ata.ne]);
 label.top(btex Atenuaci\'on etex, 1/2[atb.nw, atb.ne]);
 label.top(btex Atenuaci\'on etex, 1/2[atc.nw, atc.ne]);
@@ -366,38 +396,42 @@ z26 = p13 intersectionpoint bpath reb;
 z27 = p14 intersectionpoint bpath rec;
 label.bot(btex $p_R(z, t)$ etex, 1/2[z21, z22]);
 label.top(btex $v(t)$ etex, 1/2[z23, z24]);
-label.llft(btex $u(t)$ etex, z25);
-label.llft(btex $y(t)$ etex, z26);
-label.lrt(btex $y^\prime(t)$ etex, z27);
-drawgisarrow ema.c - z11--ema.c cutafter bpath ema;
-drawgisarrow reb.c--reb.c - z11 cutbefore bpath reb;
-drawgisarrow rec.c--rec.c + z11 cutbefore bpath rec;
-drawgisarrow ema.c--difa.c cutbefore bpath ema cutafter bpath difa;
-drawgisarrow difa.c--ata.c cutbefore bpath difa cutafter bpath ata;
-drawgisarrow difb.c--atb.c cutbefore bpath difb cutafter bpath atb;
-drawgisarrow atb.c--reb.c cutbefore bpath atb cutafter bpath reb;
-drawgisarrow ata.c--ata.c + z11--disp.c + z12/6 - z11--disp.c + z12/6 %
-	cutbefore bpath ata cutafter bpath disp;
-drawgisarrow disp.c - z12/6--disp.c - z11 - z12/6--difb.c + z11--difb.c %
-	cutbefore bpath disp cutafter bpath difb;
-% drawgisarrow disp.c--difc.c cutbefore bpath disp cutafter bpath difc;
-
-% ------------------------------------------------------------------
-% draw disp.c--disp.c + z11 cutbefore bpath disp;
-% draw disp.c + z11--disp.c + 2(z11) dashed withdots;
-% draw difc.c - 2(z11)--difc.c - z11 dashed withdots;
-% draw difc.c - z11--difc.c cutafter bpath difc;
-
-% ------------------------------------------------------------------
-drawgisarrow disp.c--disp.c + z11--disp.c + z11 - 4(z12)--difc.c - %
+a0 = u;
+label.llft(btex $u(t)$ etex, z25 shifted (-a0, -a0));
+label.llft(btex $y(t)$ etex, z26 shifted (-a0, -a0));
+label.lrt(btex $y^\prime(t)$ etex, z27 shifted (a0, -a0));
+p0 = bbox bpath ema;			p1 = bbox bpath reb;
+p2 = bbox bpath rec;			p3 = bbox bpath difa;
+p4 = bbox bpath difb;			p5 = bbox bpath ata;
+p6 = bbox bpath atb;			p7 = bbox bpath disp;
+p8 = bbox bpath difc;			p9 = bbox bpath atc;
+p15 = ema.c--difa.c cutbefore p0 cutafter p3;
+p16 = atb.c--reb.c cutbefore p6 cutafter p1;
+p17 = ata.c--ata.c + z11--disp.c + z12/6 - z11--disp.c + z12/6 %
+	cutbefore p5 cutafter p7;
+p18 = disp.c - z12/6--disp.c - z11 - z12/6--difb.c + z11--difb.c %
+	cutbefore p7 cutafter p4;
+p19 = disp.c--disp.c + z11--disp.c + z11 - 4(z12)--difc.c - %
 	2(z11) + 4(z12)--difc.c - 2(z11)--difc.c %
-	cutbefore bpath disp cutafter bpath difc;
-
-% ------------------------------------------------------------------
-drawgisarrow difc.c--atc.c cutbefore bpath difc cutafter bpath atc;
-drawgisarrow atc.c--rec.c cutbefore bpath atc cutafter bpath rec;
-
-% ------------------------------------------------------------------
+	cutbefore p7 cutafter p8;
+p20 = atc.c--rec.c cutbefore p9 cutafter p2;
+drawgisarrow ema.c - z11--ema.c cutafter p0;
+drawgisarrow reb.c--reb.c - z11 cutbefore p1;
+drawgisarrow rec.c--rec.c + z11 cutbefore p2;
+drawgisarrow difa.c--ata.c cutbefore p3 cutafter p5;
+drawgisarrow difb.c--atb.c cutbefore p4 cutafter p6;
+drawgisarrow difc.c--atc.c cutbefore p8 cutafter p9;
+pickup l4;
+fill arrowbox p15 withcolor white;
+fill arrowbox p16 withcolor white;
+fill arrowbox p17 withcolor white;
+fill arrowbox p18 withcolor white;
+fill arrowbox p19 withcolor white;
+fill arrowbox p20 withcolor white;
+pickup l1;
+drawgisarrow p15;			drawgisarrow p16;
+drawgisarrow p17;			drawgisarrow p18;
+drawgisarrow p19;			drawgisarrow p20;
 
 endfig;
 % ==================================================================
@@ -631,7 +665,7 @@ addto d1 also thelabel.lft(btex \textsc{tri}(2) 8 etex, (-a05, a04/2 - 7a03));
 d0 = thelabel(btex \textsc{ne556} etex, center p0);
 addto d1 also d0 rotated 90;
 addto d1 doublepath p0 withpen l2;
-addto d1 doublepath p1 yscaled -1 shifted (0, a04/2);
+addto d1 doublepath p1 yscaled -1 shifted (0, a04/2) withpen l1;
 % centro del temporizador
 z00 = (a02/2 + 6a03, 6a03);
 draw d1 shifted z00;
@@ -867,6 +901,7 @@ drawgisarrow p0 shifted (5a05/4, 2a01/5);
 drawgisarrow p1 shifted (a05/2, a01/2 - a07);
 
 draw begingraph(a00, a01);
+	interim linejoin := rounded;
 	Gneedfr_ := false;
 	setrange(-5a04/2, -a03, 3a04/2, a03);
 	gdraw "e.d" dashed evenly;

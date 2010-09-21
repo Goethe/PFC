@@ -260,8 +260,9 @@ save c,r;
 numeric c[]; path r[];
 
 c0 = sqrt(3)/8;
-r0 = (-1/2, 0)--(-3/8, c0)--(-1/8, -c0)--(1/8, c0)-- %
-	(3/8, -c0)--(1/2, 0);
+c1 = 1/50;
+r0 = (-1/2 - c1, 0)--(-1/2, 0)--(-3/8, c0)--(-1/8, -c0)-- %
+	(1/8, c0)--(3/8, -c0)--(1/2, 0)--(1/2 + c1, 0);
 
 (r0)
 endgroup
@@ -337,19 +338,6 @@ ahinset := 0; % The arrowhead's inset must have a value between 0 and 1
 
 
 
-vardef carpth expr p =
-	save q,r,e,i,j,qq,pp; path i,j,k,q,r; pair e,qq[];
-	numeric pp[];
-	e = point length p of p;
-	r = gobble(p shifted -e %
-		cutafter makepath(pencircle scaled 2ahlength))
-		cuttings;
-	i = q rotated .5ahangle & reverse q rotated -.5ahangle;
-	j = i scaled 0.25mm;
-	pp0 = point (length i)/2 of i;
-	pp1 = point (length j)/2 of j;
-enddef;
-
 vardef arrowhead expr p =
 	save q,e,i,qq,pp; path i,q; pair e,qq[];
 	numeric pp;
@@ -367,12 +355,12 @@ vardef arrowhead expr p =
 enddef;
 
 vardef arpth expr p =
-	save q,e; path q[]; pair e[];
-	e0 = point length p of p;
-	q0 = gobble(p shifted -e0 cutbefore makepath %
+	save q,e; path q[]; pair e;
+	e = point length p of p;
+	q0 = gobble(p shifted -e cutbefore makepath %
 		(pencircle scaled (2ahlength*(1 - ahinset))))
 		cuttings;
-	q1 = q0 shifted e0;
+	q1 = q0 shifted e;
 	(q1)
 enddef;
 

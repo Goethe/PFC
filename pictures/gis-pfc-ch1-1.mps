@@ -2,7 +2,7 @@
 %%BoundingBox: -14 -14 351 191 
 %%HiResBoundingBox: -13.76854 -13.6268 350.0783 190.1812 
 %%Creator: MetaPost 1.208
-%%CreationDate: 2010.09.01:1233
+%%CreationDate: 2010.09.21:0941
 %%Pages: 1
 %*Font: cmr12 11.95517 11.95517 2b:8e2e0004608002625d641
 %*Font: cmsy10 11.95514 9.96265 00:8
@@ -11,7 +11,7 @@
 %%EndProlog
 %%Page: 1 1
  0 0 0 setrgbcolor 0 0.70866 dtransform truncate idtransform setlinewidth pop
- [] 0 setdash 1 setlinecap 1 setlinejoin 10 setmiterlimit
+ [] 0 setdash 0 setlinecap 0 setlinejoin 10 setmiterlimit
 newpath 249.86148 177.16504 moveto
 0 177.16504 lineto
 0 10.6299 lineto
