@@ -293,39 +293,50 @@ pickup l1;
 a00 = 3u/2;			a01 = 500;
 z00 = (0, 0);			z01 = (50a00, 40a00);
 z02 = (57a00, 47a00);
-a02 = wi/a01;			a03 = 360/a01;
-a04 = 3y01/8;			a05 = (he02 - y01)/2;
-a06 = 5;			a07 = 87x01/100;
-a08 = x01 - a07;
 d0 = osciloscopio(a00, z00);
-p0 = (a08/2, -y01)--(a07 + a08/2, -y01)--(a07 + a08/2, y01)-- %
-	(a08/2, y01)--cycle;
-p1 = (0, 0) for i = 1 upto a01 :
-	--(i*a02, a04*sind(a06*a03*i)) endfor cutbefore p0 %
-		cutafter p0;
-draw d0 shifted (wi/2, 26a00);
-pickup l2;
-draw p1 shifted (wi/2 - x01/2, 26a00);
+draw d0 shifted (wi/2, y02/2);
 
 % ------------------------------------------------------------------
-% sinusoide que entra al osciloscopio
+% curvas auxiliares para delimitar la imagen de la señal
+p0 = (-x01/2, -y01/2)--(x01/2, -y01/2)--(x01/2, y01/2)-- %
+	(-x01/2, y01/2)--cycle;
+a02 = 8wi/10;
+p1 = (-a02/2, -y01/2)--(a02/2, -y01/2)--(a02/2, y01/2)-- %
+	(-a02/2, y01/2)--cycle;
+pickup l2;
 
+% ------------------------------------------------------------------
+% señal que entra al osciloscopio
+a03 = 34a00;
+% cortes por cero de la señal
+a04 = -(2*mlog(50/99))/(3*mlog(99));
+a05 = 2/3 - (mlog(50/99))/(3*mlog(99));
+a06 = a03 * a04;		a07 = a03 * a05;
+p2 = sierra scaled a03;
+p3 = p2 shifted (-3a03/2, -a03/2) -- p2 shifted (-a03/2, -a03/2) %
+	-- p2 shifted (a03/2, -a03/2) -- %
+	p2 shifted (3a03/2, -a03/2);
+p4 = p3 shifted (a03/4, 0) cutbefore p1 cutafter p1;
+p5 = p3 shifted (a03/2 - a06, 0) xscaled -1 cutbefore p0 %
+	cutafter p0;
+draw p5 shifted (wi/2, y02/2);
 
-% Tengo que representar en esta figura, la señal (en principio una
-% sinusoide) tal y como se concibe tras el acondicionador de
-% recepción, y después una versión disparada de la misma en la
-% ventana del osciloscopio. Con disparada me refiero centrada en el
-% origen. En la parte que representa a la señal «libre» tengo que
-% marcar que trozo coge el osciloscopio, que trozo descarta, y que
-% trozo se pierde durante el procesado. También cabría representar
-% la inversión que se produce en la señal (que no tiene por que
-% ocurrir en los osciloscopios de laboratorio, pero que se produce
-% en el osciloscopio que yo he diseñado)
+% ------------------------------------------------------------------
+% ejes auxiliares
+a08 = 17wi/20;			a09 = 7he01/5;
+a10 = 3y01/8;			a11 = 19y01/20;
+p6 = (-a08/2, 0)--(a08/2, 0);
+p7 = (0, -a11/2)--(0, a11/2);
+draw p4 shifted (wi/2, a09);
+pickup l1;
+drawgisarrow p6 shifted (wi/2, a09 - a10);
+draw p6 shifted (wi/2, a09) dashed evenly;
+drawgisarrow p7 shifted (3*(wi - a08)/4, a09 + y01/40);
 
 % ------------------------------------------------------------------
 % marco
 pickup l2;
-draw (0, 0)--(wi, 0)--(wi, 2he02)--(0, 2he02)--cycle;
+% draw (0, 0)--(wi, 0)--(wi, 2he02)--(0, 2he02)--cycle;
 
 endfig;
 % ==================================================================

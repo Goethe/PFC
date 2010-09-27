@@ -1,6445 +1,7003 @@
 %!PS
-%%BoundingBox: -1 -1 341 384 
-%%HiResBoundingBox: -0.49608 -0.49608 340.65294 383.17256 
+%%BoundingBox: 25 -1 315 443 
+%%HiResBoundingBox: 25.15742 -0.2126 314.99944 442.55841 
 %%Creator: MetaPost 1.208
-%%CreationDate: 2010.09.27:1227
+%%CreationDate: 2010.09.27:2040
 %%Pages: 1
 %%BeginProlog
 %%EndProlog
 %%Page: 1 1
  0 0 0 setrgbcolor 0 0.42519 dtransform truncate idtransform setlinewidth pop
  [] 0 setdash 0 setlinejoin 10 setmiterlimit
-newpath 51.02332 10.62991 moveto
-289.13354 10.62991 lineto
-290.30768 10.62991 291.25954 11.58177 291.25954 12.7559 curveto
-291.25954 208.34645 lineto
-291.25954 209.52058 290.30768 210.47244 289.13354 210.47244 curveto
-51.02332 210.47244 lineto
-49.84918 210.47244 48.89732 209.52058 48.89732 208.34645 curveto
-48.89732 12.7559 lineto
-48.89732 11.58177 49.84918 10.62991 51.02332 10.62991 curveto closepath
+newpath 51.02332 0 moveto
+289.13354 0 lineto
+290.30768 0 291.25954 0.95186 291.25954 2.12599 curveto
+291.25954 197.71654 lineto
+291.25954 198.89067 290.30768 199.84253 289.13354 199.84253 curveto
+51.02332 199.84253 lineto
+49.84918 199.84253 48.89732 198.89067 48.89732 197.71654 curveto
+48.89732 2.12599 lineto
+48.89732 0.95186 49.84918 0 51.02332 0 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 51.02332 12.7559 moveto
-289.13354 12.7559 lineto
-289.13354 208.34645 lineto
-51.02332 208.34645 lineto
+newpath 51.02332 2.12599 moveto
+289.13354 2.12599 lineto
+289.13354 197.71654 lineto
+51.02332 197.71654 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor 0 0.70866 dtransform truncate idtransform setlinewidth pop
-newpath 63.77922 25.51181 moveto
-276.37764 25.51181 lineto
-276.37764 195.59055 lineto
-63.77922 195.59055 lineto
+newpath 63.77922 14.8819 moveto
+276.37764 14.8819 lineto
+276.37764 184.96063 lineto
+63.77922 184.96063 lineto
  closepath stroke
  0 setlinecap
-newpath 63.77922 29.76378 moveto
-65.9052 29.76378 lineto stroke
-newpath 63.77922 34.01575 moveto
-65.9052 34.01575 lineto stroke
-newpath 63.77922 38.26772 moveto
-65.9052 38.26772 lineto stroke
-newpath 63.77922 42.51968 moveto
-65.9052 42.51968 lineto stroke
-newpath 63.77922 46.77165 moveto
-65.9052 46.77165 lineto stroke
-newpath 63.77922 51.02362 moveto
-65.9052 51.02362 lineto stroke
-newpath 63.77922 55.27559 moveto
-65.9052 55.27559 lineto stroke
-newpath 63.77922 59.52756 moveto
-65.9052 59.52756 lineto stroke
-newpath 63.77922 63.77953 moveto
-65.9052 63.77953 lineto stroke
-newpath 63.77922 68.0315 moveto
-65.9052 68.0315 lineto stroke
-newpath 63.77922 72.28346 moveto
-65.9052 72.28346 lineto stroke
-newpath 63.77922 76.53543 moveto
-65.9052 76.53543 lineto stroke
-newpath 63.77922 80.7874 moveto
-65.9052 80.7874 lineto stroke
-newpath 63.77922 85.03937 moveto
-65.9052 85.03937 lineto stroke
-newpath 63.77922 89.29134 moveto
-65.9052 89.29134 lineto stroke
-newpath 63.77922 93.5433 moveto
-65.9052 93.5433 lineto stroke
-newpath 63.77922 97.79527 moveto
-65.9052 97.79527 lineto stroke
-newpath 63.77922 102.04724 moveto
-65.9052 102.04724 lineto stroke
-newpath 63.77922 106.29921 moveto
-65.9052 106.29921 lineto stroke
-newpath 63.77922 110.55118 moveto
-65.9052 110.55118 lineto stroke
-newpath 63.77922 114.80315 moveto
-65.9052 114.80315 lineto stroke
-newpath 63.77922 119.05511 moveto
-65.9052 119.05511 lineto stroke
-newpath 63.77922 123.30708 moveto
-65.9052 123.30708 lineto stroke
-newpath 63.77922 127.55905 moveto
-65.9052 127.55905 lineto stroke
-newpath 63.77922 131.81102 moveto
-65.9052 131.81102 lineto stroke
-newpath 63.77922 136.06299 moveto
-65.9052 136.06299 lineto stroke
-newpath 63.77922 140.31496 moveto
-65.9052 140.31496 lineto stroke
-newpath 63.77922 144.56693 moveto
-65.9052 144.56693 lineto stroke
-newpath 63.77922 148.8189 moveto
-65.9052 148.8189 lineto stroke
-newpath 63.77922 153.07086 moveto
-65.9052 153.07086 lineto stroke
-newpath 63.77922 157.32283 moveto
-65.9052 157.32283 lineto stroke
-newpath 63.77922 161.5748 moveto
-65.9052 161.5748 lineto stroke
-newpath 63.77922 165.82677 moveto
-65.9052 165.82677 lineto stroke
-newpath 63.77922 170.07874 moveto
-65.9052 170.07874 lineto stroke
-newpath 63.77922 174.3307 moveto
-65.9052 174.3307 lineto stroke
-newpath 63.77922 178.58267 moveto
-65.9052 178.58267 lineto stroke
-newpath 63.77922 182.83464 moveto
-65.9052 182.83464 lineto stroke
-newpath 63.77922 187.08661 moveto
-65.9052 187.08661 lineto stroke
-newpath 63.77922 191.33858 moveto
-65.9052 191.33858 lineto stroke
-newpath 274.25166 29.76378 moveto
-276.37764 29.76378 lineto stroke
-newpath 274.25166 34.01575 moveto
-276.37764 34.01575 lineto stroke
-newpath 274.25166 38.26772 moveto
-276.37764 38.26772 lineto stroke
-newpath 274.25166 42.51968 moveto
-276.37764 42.51968 lineto stroke
-newpath 274.25166 46.77165 moveto
-276.37764 46.77165 lineto stroke
-newpath 274.25166 51.02362 moveto
-276.37764 51.02362 lineto stroke
-newpath 274.25166 55.27559 moveto
-276.37764 55.27559 lineto stroke
-newpath 274.25166 59.52756 moveto
-276.37764 59.52756 lineto stroke
-newpath 274.25166 63.77953 moveto
-276.37764 63.77953 lineto stroke
-newpath 274.25166 68.0315 moveto
-276.37764 68.0315 lineto stroke
-newpath 274.25166 72.28346 moveto
-276.37764 72.28346 lineto stroke
-newpath 274.25166 76.53543 moveto
-276.37764 76.53543 lineto stroke
-newpath 274.25166 80.7874 moveto
-276.37764 80.7874 lineto stroke
-newpath 274.25166 85.03937 moveto
-276.37764 85.03937 lineto stroke
-newpath 274.25166 89.29134 moveto
-276.37764 89.29134 lineto stroke
-newpath 274.25166 93.5433 moveto
-276.37764 93.5433 lineto stroke
-newpath 274.25166 97.79527 moveto
-276.37764 97.79527 lineto stroke
-newpath 274.25166 102.04724 moveto
-276.37764 102.04724 lineto stroke
-newpath 274.25166 106.29921 moveto
-276.37764 106.29921 lineto stroke
-newpath 274.25166 110.55118 moveto
-276.37764 110.55118 lineto stroke
-newpath 274.25166 114.80315 moveto
-276.37764 114.80315 lineto stroke
-newpath 274.25166 119.05511 moveto
-276.37764 119.05511 lineto stroke
-newpath 274.25166 123.30708 moveto
-276.37764 123.30708 lineto stroke
-newpath 274.25166 127.55905 moveto
-276.37764 127.55905 lineto stroke
-newpath 274.25166 131.81102 moveto
-276.37764 131.81102 lineto stroke
-newpath 274.25166 136.06299 moveto
-276.37764 136.06299 lineto stroke
-newpath 274.25166 140.31496 moveto
-276.37764 140.31496 lineto stroke
-newpath 274.25166 144.56693 moveto
-276.37764 144.56693 lineto stroke
-newpath 274.25166 148.8189 moveto
-276.37764 148.8189 lineto stroke
-newpath 274.25166 153.07086 moveto
-276.37764 153.07086 lineto stroke
-newpath 274.25166 157.32283 moveto
-276.37764 157.32283 lineto stroke
-newpath 274.25166 161.5748 moveto
-276.37764 161.5748 lineto stroke
-newpath 274.25166 165.82677 moveto
-276.37764 165.82677 lineto stroke
-newpath 274.25166 170.07874 moveto
-276.37764 170.07874 lineto stroke
-newpath 274.25166 174.3307 moveto
-276.37764 174.3307 lineto stroke
-newpath 274.25166 178.58267 moveto
-276.37764 178.58267 lineto stroke
-newpath 274.25166 182.83464 moveto
-276.37764 182.83464 lineto stroke
-newpath 274.25166 187.08661 moveto
-276.37764 187.08661 lineto stroke
-newpath 274.25166 191.33858 moveto
-276.37764 191.33858 lineto stroke
+newpath 63.77922 19.13387 moveto
+65.9052 19.13387 lineto stroke
+newpath 63.77922 23.38583 moveto
+65.9052 23.38583 lineto stroke
+newpath 63.77922 27.6378 moveto
+65.9052 27.6378 lineto stroke
+newpath 63.77922 31.88977 moveto
+65.9052 31.88977 lineto stroke
+newpath 63.77922 36.14174 moveto
+65.9052 36.14174 lineto stroke
+newpath 63.77922 40.3937 moveto
+65.9052 40.3937 lineto stroke
+newpath 63.77922 44.64568 moveto
+65.9052 44.64568 lineto stroke
+newpath 63.77922 48.89764 moveto
+65.9052 48.89764 lineto stroke
+newpath 63.77922 53.14961 moveto
+65.9052 53.14961 lineto stroke
+newpath 63.77922 57.40158 moveto
+65.9052 57.40158 lineto stroke
+newpath 63.77922 61.65355 moveto
+65.9052 61.65355 lineto stroke
+newpath 63.77922 65.90552 moveto
+65.9052 65.90552 lineto stroke
+newpath 63.77922 70.15749 moveto
+65.9052 70.15749 lineto stroke
+newpath 63.77922 74.40945 moveto
+65.9052 74.40945 lineto stroke
+newpath 63.77922 78.66142 moveto
+65.9052 78.66142 lineto stroke
+newpath 63.77922 82.91339 moveto
+65.9052 82.91339 lineto stroke
+newpath 63.77922 87.16536 moveto
+65.9052 87.16536 lineto stroke
+newpath 63.77922 91.41733 moveto
+65.9052 91.41733 lineto stroke
+newpath 63.77922 95.6693 moveto
+65.9052 95.6693 lineto stroke
+newpath 63.77922 99.92126 moveto
+65.9052 99.92126 lineto stroke
+newpath 63.77922 104.17323 moveto
+65.9052 104.17323 lineto stroke
+newpath 63.77922 108.4252 moveto
+65.9052 108.4252 lineto stroke
+newpath 63.77922 112.67717 moveto
+65.9052 112.67717 lineto stroke
+newpath 63.77922 116.92914 moveto
+65.9052 116.92914 lineto stroke
+newpath 63.77922 121.1811 moveto
+65.9052 121.1811 lineto stroke
+newpath 63.77922 125.43307 moveto
+65.9052 125.43307 lineto stroke
+newpath 63.77922 129.68504 moveto
+65.9052 129.68504 lineto stroke
+newpath 63.77922 133.93701 moveto
+65.9052 133.93701 lineto stroke
+newpath 63.77922 138.18898 moveto
+65.9052 138.18898 lineto stroke
+newpath 63.77922 142.44095 moveto
+65.9052 142.44095 lineto stroke
+newpath 63.77922 146.69292 moveto
+65.9052 146.69292 lineto stroke
+newpath 63.77922 150.94489 moveto
+65.9052 150.94489 lineto stroke
+newpath 63.77922 155.19685 moveto
+65.9052 155.19685 lineto stroke
+newpath 63.77922 159.44882 moveto
+65.9052 159.44882 lineto stroke
+newpath 63.77922 163.70079 moveto
+65.9052 163.70079 lineto stroke
+newpath 63.77922 167.95276 moveto
+65.9052 167.95276 lineto stroke
+newpath 63.77922 172.20473 moveto
+65.9052 172.20473 lineto stroke
+newpath 63.77922 176.4567 moveto
+65.9052 176.4567 lineto stroke
+newpath 63.77922 180.70866 moveto
+65.9052 180.70866 lineto stroke
+newpath 274.25166 19.13387 moveto
+276.37764 19.13387 lineto stroke
+newpath 274.25166 23.38583 moveto
+276.37764 23.38583 lineto stroke
+newpath 274.25166 27.6378 moveto
+276.37764 27.6378 lineto stroke
+newpath 274.25166 31.88977 moveto
+276.37764 31.88977 lineto stroke
+newpath 274.25166 36.14174 moveto
+276.37764 36.14174 lineto stroke
+newpath 274.25166 40.3937 moveto
+276.37764 40.3937 lineto stroke
+newpath 274.25166 44.64568 moveto
+276.37764 44.64568 lineto stroke
+newpath 274.25166 48.89764 moveto
+276.37764 48.89764 lineto stroke
+newpath 274.25166 53.14961 moveto
+276.37764 53.14961 lineto stroke
+newpath 274.25166 57.40158 moveto
+276.37764 57.40158 lineto stroke
+newpath 274.25166 61.65355 moveto
+276.37764 61.65355 lineto stroke
+newpath 274.25166 65.90552 moveto
+276.37764 65.90552 lineto stroke
+newpath 274.25166 70.15749 moveto
+276.37764 70.15749 lineto stroke
+newpath 274.25166 74.40945 moveto
+276.37764 74.40945 lineto stroke
+newpath 274.25166 78.66142 moveto
+276.37764 78.66142 lineto stroke
+newpath 274.25166 82.91339 moveto
+276.37764 82.91339 lineto stroke
+newpath 274.25166 87.16536 moveto
+276.37764 87.16536 lineto stroke
+newpath 274.25166 91.41733 moveto
+276.37764 91.41733 lineto stroke
+newpath 274.25166 95.6693 moveto
+276.37764 95.6693 lineto stroke
+newpath 274.25166 99.92126 moveto
+276.37764 99.92126 lineto stroke
+newpath 274.25166 104.17323 moveto
+276.37764 104.17323 lineto stroke
+newpath 274.25166 108.4252 moveto
+276.37764 108.4252 lineto stroke
+newpath 274.25166 112.67717 moveto
+276.37764 112.67717 lineto stroke
+newpath 274.25166 116.92914 moveto
+276.37764 116.92914 lineto stroke
+newpath 274.25166 121.1811 moveto
+276.37764 121.1811 lineto stroke
+newpath 274.25166 125.43307 moveto
+276.37764 125.43307 lineto stroke
+newpath 274.25166 129.68504 moveto
+276.37764 129.68504 lineto stroke
+newpath 274.25166 133.93701 moveto
+276.37764 133.93701 lineto stroke
+newpath 274.25166 138.18898 moveto
+276.37764 138.18898 lineto stroke
+newpath 274.25166 142.44095 moveto
+276.37764 142.44095 lineto stroke
+newpath 274.25166 146.69292 moveto
+276.37764 146.69292 lineto stroke
+newpath 274.25166 150.94489 moveto
+276.37764 150.94489 lineto stroke
+newpath 274.25166 155.19685 moveto
+276.37764 155.19685 lineto stroke
+newpath 274.25166 159.44882 moveto
+276.37764 159.44882 lineto stroke
+newpath 274.25166 163.70079 moveto
+276.37764 163.70079 lineto stroke
+newpath 274.25166 167.95276 moveto
+276.37764 167.95276 lineto stroke
+newpath 274.25166 172.20473 moveto
+276.37764 172.20473 lineto stroke
+newpath 274.25166 176.4567 moveto
+276.37764 176.4567 lineto stroke
+newpath 274.25166 180.70866 moveto
+276.37764 180.70866 lineto stroke
  0.70866 0 dtransform exch truncate exch idtransform pop setlinewidth
-newpath 68.03119 25.51181 moveto
-68.03119 27.63779 lineto stroke
-newpath 72.28316 25.51181 moveto
-72.28316 27.63779 lineto stroke
-newpath 76.53513 25.51181 moveto
-76.53513 27.63779 lineto stroke
-newpath 80.7871 25.51181 moveto
-80.7871 27.63779 lineto stroke
-newpath 85.03906 25.51181 moveto
-85.03906 27.63779 lineto stroke
-newpath 89.29103 25.51181 moveto
-89.29103 27.63779 lineto stroke
-newpath 93.543 25.51181 moveto
-93.543 27.63779 lineto stroke
-newpath 97.79497 25.51181 moveto
-97.79497 27.63779 lineto stroke
-newpath 102.04694 25.51181 moveto
-102.04694 27.63779 lineto stroke
-newpath 106.2989 25.51181 moveto
-106.2989 27.63779 lineto stroke
-newpath 110.55087 25.51181 moveto
-110.55087 27.63779 lineto stroke
-newpath 114.80284 25.51181 moveto
-114.80284 27.63779 lineto stroke
-newpath 119.05481 25.51181 moveto
-119.05481 27.63779 lineto stroke
-newpath 123.30678 25.51181 moveto
-123.30678 27.63779 lineto stroke
-newpath 127.55875 25.51181 moveto
-127.55875 27.63779 lineto stroke
-newpath 131.81071 25.51181 moveto
-131.81071 27.63779 lineto stroke
-newpath 136.06268 25.51181 moveto
-136.06268 27.63779 lineto stroke
-newpath 140.31465 25.51181 moveto
-140.31465 27.63779 lineto stroke
-newpath 144.56662 25.51181 moveto
-144.56662 27.63779 lineto stroke
-newpath 148.81859 25.51181 moveto
-148.81859 27.63779 lineto stroke
-newpath 153.07056 25.51181 moveto
-153.07056 27.63779 lineto stroke
-newpath 157.32253 25.51181 moveto
-157.32253 27.63779 lineto stroke
-newpath 161.5745 25.51181 moveto
-161.5745 27.63779 lineto stroke
-newpath 165.82646 25.51181 moveto
-165.82646 27.63779 lineto stroke
-newpath 170.07843 25.51181 moveto
-170.07843 27.63779 lineto stroke
-newpath 174.3304 25.51181 moveto
-174.3304 27.63779 lineto stroke
-newpath 178.58237 25.51181 moveto
-178.58237 27.63779 lineto stroke
-newpath 182.83434 25.51181 moveto
-182.83434 27.63779 lineto stroke
-newpath 187.0863 25.51181 moveto
-187.0863 27.63779 lineto stroke
-newpath 191.33827 25.51181 moveto
-191.33827 27.63779 lineto stroke
-newpath 195.59024 25.51181 moveto
-195.59024 27.63779 lineto stroke
-newpath 199.84221 25.51181 moveto
-199.84221 27.63779 lineto stroke
-newpath 204.09418 25.51181 moveto
-204.09418 27.63779 lineto stroke
-newpath 208.34615 25.51181 moveto
-208.34615 27.63779 lineto stroke
-newpath 212.59811 25.51181 moveto
-212.59811 27.63779 lineto stroke
-newpath 216.85008 25.51181 moveto
-216.85008 27.63779 lineto stroke
-newpath 221.10205 25.51181 moveto
-221.10205 27.63779 lineto stroke
-newpath 225.35402 25.51181 moveto
-225.35402 27.63779 lineto stroke
-newpath 229.60599 25.51181 moveto
-229.60599 27.63779 lineto stroke
-newpath 233.85796 25.51181 moveto
-233.85796 27.63779 lineto stroke
-newpath 238.10992 25.51181 moveto
-238.10992 27.63779 lineto stroke
-newpath 242.3619 25.51181 moveto
-242.3619 27.63779 lineto stroke
-newpath 246.61386 25.51181 moveto
-246.61386 27.63779 lineto stroke
-newpath 250.86583 25.51181 moveto
-250.86583 27.63779 lineto stroke
-newpath 255.1178 25.51181 moveto
-255.1178 27.63779 lineto stroke
-newpath 259.36977 25.51181 moveto
-259.36977 27.63779 lineto stroke
-newpath 263.62173 25.51181 moveto
-263.62173 27.63779 lineto stroke
-newpath 267.8737 25.51181 moveto
-267.8737 27.63779 lineto stroke
-newpath 272.12567 25.51181 moveto
-272.12567 27.63779 lineto stroke
-newpath 68.03119 193.46457 moveto
-68.03119 195.59055 lineto stroke
-newpath 72.28316 193.46457 moveto
-72.28316 195.59055 lineto stroke
-newpath 76.53513 193.46457 moveto
-76.53513 195.59055 lineto stroke
-newpath 80.7871 193.46457 moveto
-80.7871 195.59055 lineto stroke
-newpath 85.03906 193.46457 moveto
-85.03906 195.59055 lineto stroke
-newpath 89.29103 193.46457 moveto
-89.29103 195.59055 lineto stroke
-newpath 93.543 193.46457 moveto
-93.543 195.59055 lineto stroke
-newpath 97.79497 193.46457 moveto
-97.79497 195.59055 lineto stroke
-newpath 102.04694 193.46457 moveto
-102.04694 195.59055 lineto stroke
-newpath 106.2989 193.46457 moveto
-106.2989 195.59055 lineto stroke
-newpath 110.55087 193.46457 moveto
-110.55087 195.59055 lineto stroke
-newpath 114.80284 193.46457 moveto
-114.80284 195.59055 lineto stroke
-newpath 119.05481 193.46457 moveto
-119.05481 195.59055 lineto stroke
-newpath 123.30678 193.46457 moveto
-123.30678 195.59055 lineto stroke
-newpath 127.55875 193.46457 moveto
-127.55875 195.59055 lineto stroke
-newpath 131.81071 193.46457 moveto
-131.81071 195.59055 lineto stroke
-newpath 136.06268 193.46457 moveto
-136.06268 195.59055 lineto stroke
-newpath 140.31465 193.46457 moveto
-140.31465 195.59055 lineto stroke
-newpath 144.56662 193.46457 moveto
-144.56662 195.59055 lineto stroke
-newpath 148.81859 193.46457 moveto
-148.81859 195.59055 lineto stroke
-newpath 153.07056 193.46457 moveto
-153.07056 195.59055 lineto stroke
-newpath 157.32253 193.46457 moveto
-157.32253 195.59055 lineto stroke
-newpath 161.5745 193.46457 moveto
-161.5745 195.59055 lineto stroke
-newpath 165.82646 193.46457 moveto
-165.82646 195.59055 lineto stroke
-newpath 170.07843 193.46457 moveto
-170.07843 195.59055 lineto stroke
-newpath 174.3304 193.46457 moveto
-174.3304 195.59055 lineto stroke
-newpath 178.58237 193.46457 moveto
-178.58237 195.59055 lineto stroke
-newpath 182.83434 193.46457 moveto
-182.83434 195.59055 lineto stroke
-newpath 187.0863 193.46457 moveto
-187.0863 195.59055 lineto stroke
-newpath 191.33827 193.46457 moveto
-191.33827 195.59055 lineto stroke
-newpath 195.59024 193.46457 moveto
-195.59024 195.59055 lineto stroke
-newpath 199.84221 193.46457 moveto
-199.84221 195.59055 lineto stroke
-newpath 204.09418 193.46457 moveto
-204.09418 195.59055 lineto stroke
-newpath 208.34615 193.46457 moveto
-208.34615 195.59055 lineto stroke
-newpath 212.59811 193.46457 moveto
-212.59811 195.59055 lineto stroke
-newpath 216.85008 193.46457 moveto
-216.85008 195.59055 lineto stroke
-newpath 221.10205 193.46457 moveto
-221.10205 195.59055 lineto stroke
-newpath 225.35402 193.46457 moveto
-225.35402 195.59055 lineto stroke
-newpath 229.60599 193.46457 moveto
-229.60599 195.59055 lineto stroke
-newpath 233.85796 193.46457 moveto
-233.85796 195.59055 lineto stroke
-newpath 238.10992 193.46457 moveto
-238.10992 195.59055 lineto stroke
-newpath 242.3619 193.46457 moveto
-242.3619 195.59055 lineto stroke
-newpath 246.61386 193.46457 moveto
-246.61386 195.59055 lineto stroke
-newpath 250.86583 193.46457 moveto
-250.86583 195.59055 lineto stroke
-newpath 255.1178 193.46457 moveto
-255.1178 195.59055 lineto stroke
-newpath 259.36977 193.46457 moveto
-259.36977 195.59055 lineto stroke
-newpath 263.62173 193.46457 moveto
-263.62173 195.59055 lineto stroke
-newpath 267.8737 193.46457 moveto
-267.8737 195.59055 lineto stroke
-newpath 272.12567 193.46457 moveto
-272.12567 195.59055 lineto stroke
+newpath 68.03119 14.8819 moveto
+68.03119 17.00787 lineto stroke
+newpath 72.28316 14.8819 moveto
+72.28316 17.00787 lineto stroke
+newpath 76.53513 14.8819 moveto
+76.53513 17.00787 lineto stroke
+newpath 80.7871 14.8819 moveto
+80.7871 17.00787 lineto stroke
+newpath 85.03906 14.8819 moveto
+85.03906 17.00787 lineto stroke
+newpath 89.29103 14.8819 moveto
+89.29103 17.00787 lineto stroke
+newpath 93.543 14.8819 moveto
+93.543 17.00787 lineto stroke
+newpath 97.79497 14.8819 moveto
+97.79497 17.00787 lineto stroke
+newpath 102.04694 14.8819 moveto
+102.04694 17.00787 lineto stroke
+newpath 106.2989 14.8819 moveto
+106.2989 17.00787 lineto stroke
+newpath 110.55087 14.8819 moveto
+110.55087 17.00787 lineto stroke
+newpath 114.80284 14.8819 moveto
+114.80284 17.00787 lineto stroke
+newpath 119.05481 14.8819 moveto
+119.05481 17.00787 lineto stroke
+newpath 123.30678 14.8819 moveto
+123.30678 17.00787 lineto stroke
+newpath 127.55875 14.8819 moveto
+127.55875 17.00787 lineto stroke
+newpath 131.81071 14.8819 moveto
+131.81071 17.00787 lineto stroke
+newpath 136.06268 14.8819 moveto
+136.06268 17.00787 lineto stroke
+newpath 140.31465 14.8819 moveto
+140.31465 17.00787 lineto stroke
+newpath 144.56662 14.8819 moveto
+144.56662 17.00787 lineto stroke
+newpath 148.81859 14.8819 moveto
+148.81859 17.00787 lineto stroke
+newpath 153.07056 14.8819 moveto
+153.07056 17.00787 lineto stroke
+newpath 157.32253 14.8819 moveto
+157.32253 17.00787 lineto stroke
+newpath 161.5745 14.8819 moveto
+161.5745 17.00787 lineto stroke
+newpath 165.82646 14.8819 moveto
+165.82646 17.00787 lineto stroke
+newpath 170.07843 14.8819 moveto
+170.07843 17.00787 lineto stroke
+newpath 174.3304 14.8819 moveto
+174.3304 17.00787 lineto stroke
+newpath 178.58237 14.8819 moveto
+178.58237 17.00787 lineto stroke
+newpath 182.83434 14.8819 moveto
+182.83434 17.00787 lineto stroke
+newpath 187.0863 14.8819 moveto
+187.0863 17.00787 lineto stroke
+newpath 191.33827 14.8819 moveto
+191.33827 17.00787 lineto stroke
+newpath 195.59024 14.8819 moveto
+195.59024 17.00787 lineto stroke
+newpath 199.84221 14.8819 moveto
+199.84221 17.00787 lineto stroke
+newpath 204.09418 14.8819 moveto
+204.09418 17.00787 lineto stroke
+newpath 208.34615 14.8819 moveto
+208.34615 17.00787 lineto stroke
+newpath 212.59811 14.8819 moveto
+212.59811 17.00787 lineto stroke
+newpath 216.85008 14.8819 moveto
+216.85008 17.00787 lineto stroke
+newpath 221.10205 14.8819 moveto
+221.10205 17.00787 lineto stroke
+newpath 225.35402 14.8819 moveto
+225.35402 17.00787 lineto stroke
+newpath 229.60599 14.8819 moveto
+229.60599 17.00787 lineto stroke
+newpath 233.85796 14.8819 moveto
+233.85796 17.00787 lineto stroke
+newpath 238.10992 14.8819 moveto
+238.10992 17.00787 lineto stroke
+newpath 242.3619 14.8819 moveto
+242.3619 17.00787 lineto stroke
+newpath 246.61386 14.8819 moveto
+246.61386 17.00787 lineto stroke
+newpath 250.86583 14.8819 moveto
+250.86583 17.00787 lineto stroke
+newpath 255.1178 14.8819 moveto
+255.1178 17.00787 lineto stroke
+newpath 259.36977 14.8819 moveto
+259.36977 17.00787 lineto stroke
+newpath 263.62173 14.8819 moveto
+263.62173 17.00787 lineto stroke
+newpath 267.8737 14.8819 moveto
+267.8737 17.00787 lineto stroke
+newpath 272.12567 14.8819 moveto
+272.12567 17.00787 lineto stroke
+newpath 68.03119 182.83466 moveto
+68.03119 184.96063 lineto stroke
+newpath 72.28316 182.83466 moveto
+72.28316 184.96063 lineto stroke
+newpath 76.53513 182.83466 moveto
+76.53513 184.96063 lineto stroke
+newpath 80.7871 182.83466 moveto
+80.7871 184.96063 lineto stroke
+newpath 85.03906 182.83466 moveto
+85.03906 184.96063 lineto stroke
+newpath 89.29103 182.83466 moveto
+89.29103 184.96063 lineto stroke
+newpath 93.543 182.83466 moveto
+93.543 184.96063 lineto stroke
+newpath 97.79497 182.83466 moveto
+97.79497 184.96063 lineto stroke
+newpath 102.04694 182.83466 moveto
+102.04694 184.96063 lineto stroke
+newpath 106.2989 182.83466 moveto
+106.2989 184.96063 lineto stroke
+newpath 110.55087 182.83466 moveto
+110.55087 184.96063 lineto stroke
+newpath 114.80284 182.83466 moveto
+114.80284 184.96063 lineto stroke
+newpath 119.05481 182.83466 moveto
+119.05481 184.96063 lineto stroke
+newpath 123.30678 182.83466 moveto
+123.30678 184.96063 lineto stroke
+newpath 127.55875 182.83466 moveto
+127.55875 184.96063 lineto stroke
+newpath 131.81071 182.83466 moveto
+131.81071 184.96063 lineto stroke
+newpath 136.06268 182.83466 moveto
+136.06268 184.96063 lineto stroke
+newpath 140.31465 182.83466 moveto
+140.31465 184.96063 lineto stroke
+newpath 144.56662 182.83466 moveto
+144.56662 184.96063 lineto stroke
+newpath 148.81859 182.83466 moveto
+148.81859 184.96063 lineto stroke
+newpath 153.07056 182.83466 moveto
+153.07056 184.96063 lineto stroke
+newpath 157.32253 182.83466 moveto
+157.32253 184.96063 lineto stroke
+newpath 161.5745 182.83466 moveto
+161.5745 184.96063 lineto stroke
+newpath 165.82646 182.83466 moveto
+165.82646 184.96063 lineto stroke
+newpath 170.07843 182.83466 moveto
+170.07843 184.96063 lineto stroke
+newpath 174.3304 182.83466 moveto
+174.3304 184.96063 lineto stroke
+newpath 178.58237 182.83466 moveto
+178.58237 184.96063 lineto stroke
+newpath 182.83434 182.83466 moveto
+182.83434 184.96063 lineto stroke
+newpath 187.0863 182.83466 moveto
+187.0863 184.96063 lineto stroke
+newpath 191.33827 182.83466 moveto
+191.33827 184.96063 lineto stroke
+newpath 195.59024 182.83466 moveto
+195.59024 184.96063 lineto stroke
+newpath 199.84221 182.83466 moveto
+199.84221 184.96063 lineto stroke
+newpath 204.09418 182.83466 moveto
+204.09418 184.96063 lineto stroke
+newpath 208.34615 182.83466 moveto
+208.34615 184.96063 lineto stroke
+newpath 212.59811 182.83466 moveto
+212.59811 184.96063 lineto stroke
+newpath 216.85008 182.83466 moveto
+216.85008 184.96063 lineto stroke
+newpath 221.10205 182.83466 moveto
+221.10205 184.96063 lineto stroke
+newpath 225.35402 182.83466 moveto
+225.35402 184.96063 lineto stroke
+newpath 229.60599 182.83466 moveto
+229.60599 184.96063 lineto stroke
+newpath 233.85796 182.83466 moveto
+233.85796 184.96063 lineto stroke
+newpath 238.10992 182.83466 moveto
+238.10992 184.96063 lineto stroke
+newpath 242.3619 182.83466 moveto
+242.3619 184.96063 lineto stroke
+newpath 246.61386 182.83466 moveto
+246.61386 184.96063 lineto stroke
+newpath 250.86583 182.83466 moveto
+250.86583 184.96063 lineto stroke
+newpath 255.1178 182.83466 moveto
+255.1178 184.96063 lineto stroke
+newpath 259.36977 182.83466 moveto
+259.36977 184.96063 lineto stroke
+newpath 263.62173 182.83466 moveto
+263.62173 184.96063 lineto stroke
+newpath 267.8737 182.83466 moveto
+267.8737 184.96063 lineto stroke
+newpath 272.12567 182.83466 moveto
+272.12567 184.96063 lineto stroke
  0 0.70866 dtransform truncate idtransform setlinewidth pop
-newpath 169.01544 29.76378 moveto
-171.14142 29.76378 lineto stroke
-newpath 169.01544 34.01575 moveto
-171.14142 34.01575 lineto stroke
-newpath 169.01544 38.26772 moveto
-171.14142 38.26772 lineto stroke
-newpath 169.01544 42.51968 moveto
-171.14142 42.51968 lineto stroke
-newpath 169.01544 46.77165 moveto
-171.14142 46.77165 lineto stroke
-newpath 169.01544 51.02362 moveto
-171.14142 51.02362 lineto stroke
-newpath 169.01544 55.27559 moveto
-171.14142 55.27559 lineto stroke
-newpath 169.01544 59.52756 moveto
-171.14142 59.52756 lineto stroke
-newpath 169.01544 63.77953 moveto
-171.14142 63.77953 lineto stroke
-newpath 169.01544 68.0315 moveto
-171.14142 68.0315 lineto stroke
-newpath 169.01544 72.28346 moveto
-171.14142 72.28346 lineto stroke
-newpath 169.01544 76.53543 moveto
-171.14142 76.53543 lineto stroke
-newpath 169.01544 80.7874 moveto
-171.14142 80.7874 lineto stroke
-newpath 169.01544 85.03937 moveto
-171.14142 85.03937 lineto stroke
-newpath 169.01544 89.29134 moveto
-171.14142 89.29134 lineto stroke
-newpath 169.01544 93.5433 moveto
-171.14142 93.5433 lineto stroke
-newpath 169.01544 97.79527 moveto
-171.14142 97.79527 lineto stroke
-newpath 169.01544 102.04724 moveto
-171.14142 102.04724 lineto stroke
-newpath 169.01544 106.29921 moveto
-171.14142 106.29921 lineto stroke
+newpath 169.01544 19.13387 moveto
+171.14142 19.13387 lineto stroke
+newpath 169.01544 23.38583 moveto
+171.14142 23.38583 lineto stroke
+newpath 169.01544 27.6378 moveto
+171.14142 27.6378 lineto stroke
+newpath 169.01544 31.88977 moveto
+171.14142 31.88977 lineto stroke
+newpath 169.01544 36.14174 moveto
+171.14142 36.14174 lineto stroke
+newpath 169.01544 40.3937 moveto
+171.14142 40.3937 lineto stroke
+newpath 169.01544 44.64568 moveto
+171.14142 44.64568 lineto stroke
+newpath 169.01544 48.89764 moveto
+171.14142 48.89764 lineto stroke
+newpath 169.01544 53.14961 moveto
+171.14142 53.14961 lineto stroke
+newpath 169.01544 57.40158 moveto
+171.14142 57.40158 lineto stroke
+newpath 169.01544 61.65355 moveto
+171.14142 61.65355 lineto stroke
+newpath 169.01544 65.90552 moveto
+171.14142 65.90552 lineto stroke
+newpath 169.01544 70.15749 moveto
+171.14142 70.15749 lineto stroke
+newpath 169.01544 74.40945 moveto
+171.14142 74.40945 lineto stroke
+newpath 169.01544 78.66142 moveto
+171.14142 78.66142 lineto stroke
+newpath 169.01544 82.91339 moveto
+171.14142 82.91339 lineto stroke
+newpath 169.01544 87.16536 moveto
+171.14142 87.16536 lineto stroke
+newpath 169.01544 91.41733 moveto
+171.14142 91.41733 lineto stroke
+newpath 169.01544 95.6693 moveto
+171.14142 95.6693 lineto stroke
  0.70866 0 dtransform exch truncate exch idtransform pop setlinewidth
-newpath 68.03119 109.48819 moveto
-68.03119 111.61417 lineto stroke
-newpath 72.28316 109.48819 moveto
-72.28316 111.61417 lineto stroke
-newpath 76.53513 109.48819 moveto
-76.53513 111.61417 lineto stroke
-newpath 80.7871 109.48819 moveto
-80.7871 111.61417 lineto stroke
-newpath 85.03906 109.48819 moveto
-85.03906 111.61417 lineto stroke
-newpath 89.29103 109.48819 moveto
-89.29103 111.61417 lineto stroke
-newpath 93.543 109.48819 moveto
-93.543 111.61417 lineto stroke
-newpath 97.79497 109.48819 moveto
-97.79497 111.61417 lineto stroke
-newpath 102.04694 109.48819 moveto
-102.04694 111.61417 lineto stroke
-newpath 106.2989 109.48819 moveto
-106.2989 111.61417 lineto stroke
-newpath 110.55087 109.48819 moveto
-110.55087 111.61417 lineto stroke
-newpath 114.80284 109.48819 moveto
-114.80284 111.61417 lineto stroke
-newpath 119.05481 109.48819 moveto
-119.05481 111.61417 lineto stroke
-newpath 123.30678 109.48819 moveto
-123.30678 111.61417 lineto stroke
-newpath 127.55875 109.48819 moveto
-127.55875 111.61417 lineto stroke
-newpath 131.81071 109.48819 moveto
-131.81071 111.61417 lineto stroke
-newpath 136.06268 109.48819 moveto
-136.06268 111.61417 lineto stroke
-newpath 140.31465 109.48819 moveto
-140.31465 111.61417 lineto stroke
-newpath 144.56662 109.48819 moveto
-144.56662 111.61417 lineto stroke
-newpath 148.81859 109.48819 moveto
-148.81859 111.61417 lineto stroke
-newpath 153.07056 109.48819 moveto
-153.07056 111.61417 lineto stroke
-newpath 157.32253 109.48819 moveto
-157.32253 111.61417 lineto stroke
-newpath 161.5745 109.48819 moveto
-161.5745 111.61417 lineto stroke
-newpath 165.82646 109.48819 moveto
-165.82646 111.61417 lineto stroke
+newpath 68.03119 98.85828 moveto
+68.03119 100.98425 lineto stroke
+newpath 72.28316 98.85828 moveto
+72.28316 100.98425 lineto stroke
+newpath 76.53513 98.85828 moveto
+76.53513 100.98425 lineto stroke
+newpath 80.7871 98.85828 moveto
+80.7871 100.98425 lineto stroke
+newpath 85.03906 98.85828 moveto
+85.03906 100.98425 lineto stroke
+newpath 89.29103 98.85828 moveto
+89.29103 100.98425 lineto stroke
+newpath 93.543 98.85828 moveto
+93.543 100.98425 lineto stroke
+newpath 97.79497 98.85828 moveto
+97.79497 100.98425 lineto stroke
+newpath 102.04694 98.85828 moveto
+102.04694 100.98425 lineto stroke
+newpath 106.2989 98.85828 moveto
+106.2989 100.98425 lineto stroke
+newpath 110.55087 98.85828 moveto
+110.55087 100.98425 lineto stroke
+newpath 114.80284 98.85828 moveto
+114.80284 100.98425 lineto stroke
+newpath 119.05481 98.85828 moveto
+119.05481 100.98425 lineto stroke
+newpath 123.30678 98.85828 moveto
+123.30678 100.98425 lineto stroke
+newpath 127.55875 98.85828 moveto
+127.55875 100.98425 lineto stroke
+newpath 131.81071 98.85828 moveto
+131.81071 100.98425 lineto stroke
+newpath 136.06268 98.85828 moveto
+136.06268 100.98425 lineto stroke
+newpath 140.31465 98.85828 moveto
+140.31465 100.98425 lineto stroke
+newpath 144.56662 98.85828 moveto
+144.56662 100.98425 lineto stroke
+newpath 148.81859 98.85828 moveto
+148.81859 100.98425 lineto stroke
+newpath 153.07056 98.85828 moveto
+153.07056 100.98425 lineto stroke
+newpath 157.32253 98.85828 moveto
+157.32253 100.98425 lineto stroke
+newpath 161.5745 98.85828 moveto
+161.5745 100.98425 lineto stroke
+newpath 165.82646 98.85828 moveto
+165.82646 100.98425 lineto stroke
  0 0.70866 dtransform truncate idtransform setlinewidth pop
-newpath 169.01544 114.80315 moveto
-171.14142 114.80315 lineto stroke
-newpath 169.01544 119.05511 moveto
-171.14142 119.05511 lineto stroke
-newpath 169.01544 123.30708 moveto
-171.14142 123.30708 lineto stroke
-newpath 169.01544 127.55905 moveto
-171.14142 127.55905 lineto stroke
-newpath 169.01544 131.81102 moveto
-171.14142 131.81102 lineto stroke
-newpath 169.01544 136.06299 moveto
-171.14142 136.06299 lineto stroke
-newpath 169.01544 140.31496 moveto
-171.14142 140.31496 lineto stroke
-newpath 169.01544 144.56693 moveto
-171.14142 144.56693 lineto stroke
-newpath 169.01544 148.8189 moveto
-171.14142 148.8189 lineto stroke
-newpath 169.01544 153.07086 moveto
-171.14142 153.07086 lineto stroke
-newpath 169.01544 157.32283 moveto
-171.14142 157.32283 lineto stroke
-newpath 169.01544 161.5748 moveto
-171.14142 161.5748 lineto stroke
-newpath 169.01544 165.82677 moveto
-171.14142 165.82677 lineto stroke
-newpath 169.01544 170.07874 moveto
-171.14142 170.07874 lineto stroke
-newpath 169.01544 174.3307 moveto
-171.14142 174.3307 lineto stroke
-newpath 169.01544 178.58267 moveto
-171.14142 178.58267 lineto stroke
-newpath 169.01544 182.83464 moveto
-171.14142 182.83464 lineto stroke
-newpath 169.01544 187.08661 moveto
-171.14142 187.08661 lineto stroke
-newpath 169.01544 191.33858 moveto
-171.14142 191.33858 lineto stroke
+newpath 169.01544 104.17323 moveto
+171.14142 104.17323 lineto stroke
+newpath 169.01544 108.4252 moveto
+171.14142 108.4252 lineto stroke
+newpath 169.01544 112.67717 moveto
+171.14142 112.67717 lineto stroke
+newpath 169.01544 116.92914 moveto
+171.14142 116.92914 lineto stroke
+newpath 169.01544 121.1811 moveto
+171.14142 121.1811 lineto stroke
+newpath 169.01544 125.43307 moveto
+171.14142 125.43307 lineto stroke
+newpath 169.01544 129.68504 moveto
+171.14142 129.68504 lineto stroke
+newpath 169.01544 133.93701 moveto
+171.14142 133.93701 lineto stroke
+newpath 169.01544 138.18898 moveto
+171.14142 138.18898 lineto stroke
+newpath 169.01544 142.44095 moveto
+171.14142 142.44095 lineto stroke
+newpath 169.01544 146.69292 moveto
+171.14142 146.69292 lineto stroke
+newpath 169.01544 150.94489 moveto
+171.14142 150.94489 lineto stroke
+newpath 169.01544 155.19685 moveto
+171.14142 155.19685 lineto stroke
+newpath 169.01544 159.44882 moveto
+171.14142 159.44882 lineto stroke
+newpath 169.01544 163.70079 moveto
+171.14142 163.70079 lineto stroke
+newpath 169.01544 167.95276 moveto
+171.14142 167.95276 lineto stroke
+newpath 169.01544 172.20473 moveto
+171.14142 172.20473 lineto stroke
+newpath 169.01544 176.4567 moveto
+171.14142 176.4567 lineto stroke
+newpath 169.01544 180.70866 moveto
+171.14142 180.70866 lineto stroke
  0.70866 0 dtransform exch truncate exch idtransform pop setlinewidth
-newpath 174.3304 109.48819 moveto
-174.3304 111.61417 lineto stroke
-newpath 178.58237 109.48819 moveto
-178.58237 111.61417 lineto stroke
-newpath 182.83434 109.48819 moveto
-182.83434 111.61417 lineto stroke
-newpath 187.0863 109.48819 moveto
-187.0863 111.61417 lineto stroke
-newpath 191.33827 109.48819 moveto
-191.33827 111.61417 lineto stroke
-newpath 195.59024 109.48819 moveto
-195.59024 111.61417 lineto stroke
-newpath 199.84221 109.48819 moveto
-199.84221 111.61417 lineto stroke
-newpath 204.09418 109.48819 moveto
-204.09418 111.61417 lineto stroke
-newpath 208.34615 109.48819 moveto
-208.34615 111.61417 lineto stroke
-newpath 212.59811 109.48819 moveto
-212.59811 111.61417 lineto stroke
-newpath 216.85008 109.48819 moveto
-216.85008 111.61417 lineto stroke
-newpath 221.10205 109.48819 moveto
-221.10205 111.61417 lineto stroke
-newpath 225.35402 109.48819 moveto
-225.35402 111.61417 lineto stroke
-newpath 229.60599 109.48819 moveto
-229.60599 111.61417 lineto stroke
-newpath 233.85796 109.48819 moveto
-233.85796 111.61417 lineto stroke
-newpath 238.10992 109.48819 moveto
-238.10992 111.61417 lineto stroke
-newpath 242.3619 109.48819 moveto
-242.3619 111.61417 lineto stroke
-newpath 246.61386 109.48819 moveto
-246.61386 111.61417 lineto stroke
-newpath 250.86583 109.48819 moveto
-250.86583 111.61417 lineto stroke
-newpath 255.1178 109.48819 moveto
-255.1178 111.61417 lineto stroke
-newpath 259.36977 109.48819 moveto
-259.36977 111.61417 lineto stroke
-newpath 263.62173 109.48819 moveto
-263.62173 111.61417 lineto stroke
-newpath 267.8737 109.48819 moveto
-267.8737 111.61417 lineto stroke
-newpath 272.12567 109.48819 moveto
-272.12567 111.61417 lineto stroke
-newpath 85.39343 29.76378 moveto
-85.39343 29.85773 85.35606 29.9479 85.28963 30.01434 curveto
-85.22319 30.08078 85.13301 30.11815 85.03906 30.11815 curveto
-84.94511 30.11815 84.85493 30.08078 84.7885 30.01434 curveto
-84.72206 29.9479 84.6847 29.85773 84.6847 29.76378 curveto
-84.6847 29.66983 84.72206 29.57965 84.7885 29.51321 curveto
-84.85493 29.44678 84.94511 29.40941 85.03906 29.40941 curveto
-85.13301 29.40941 85.22319 29.44678 85.28963 29.51321 curveto
-85.35606 29.57965 85.39343 29.66983 85.39343 29.76378 curveto closepath fill
-newpath 106.65327 29.76378 moveto
-106.65327 29.85773 106.6159 29.9479 106.54947 30.01434 curveto
-106.48303 30.08078 106.39285 30.11815 106.2989 30.11815 curveto
-106.20496 30.11815 106.11478 30.08078 106.04834 30.01434 curveto
-105.9819 29.9479 105.94453 29.85773 105.94453 29.76378 curveto
-105.94453 29.66983 105.9819 29.57965 106.04834 29.51321 curveto
-106.11478 29.44678 106.20496 29.40941 106.2989 29.40941 curveto
-106.39285 29.40941 106.48303 29.44678 106.54947 29.51321 curveto
-106.6159 29.57965 106.65327 29.66983 106.65327 29.76378 curveto closepath fill
-newpath 127.91312 29.76378 moveto
-127.91312 29.85773 127.87575 29.9479 127.80931 30.01434 curveto
-127.74287 30.08078 127.6527 30.11815 127.55875 30.11815 curveto
-127.4648 30.11815 127.37462 30.08078 127.30818 30.01434 curveto
-127.24174 29.9479 127.20438 29.85773 127.20438 29.76378 curveto
-127.20438 29.66983 127.24174 29.57965 127.30818 29.51321 curveto
-127.37462 29.44678 127.4648 29.40941 127.55875 29.40941 curveto
-127.6527 29.40941 127.74287 29.44678 127.80931 29.51321 curveto
-127.87575 29.57965 127.91312 29.66983 127.91312 29.76378 curveto closepath fill
-newpath 149.17296 29.76378 moveto
-149.17296 29.85773 149.13559 29.9479 149.06915 30.01434 curveto
-149.00272 30.08078 148.91254 30.11815 148.81859 30.11815 curveto
-148.72464 30.11815 148.63446 30.08078 148.56802 30.01434 curveto
-148.50159 29.9479 148.46422 29.85773 148.46422 29.76378 curveto
-148.46422 29.66983 148.50159 29.57965 148.56802 29.51321 curveto
-148.63446 29.44678 148.72464 29.40941 148.81859 29.40941 curveto
-148.91254 29.40941 149.00272 29.44678 149.06915 29.51321 curveto
-149.13559 29.57965 149.17296 29.66983 149.17296 29.76378 curveto closepath fill
-newpath 191.69264 29.76378 moveto
-191.69264 29.85773 191.65527 29.9479 191.58884 30.01434 curveto
-191.5224 30.08078 191.43222 30.11815 191.33827 30.11815 curveto
-191.24432 30.11815 191.15414 30.08078 191.0877 30.01434 curveto
-191.02127 29.9479 190.9839 29.85773 190.9839 29.76378 curveto
-190.9839 29.66983 191.02127 29.57965 191.0877 29.51321 curveto
-191.15414 29.44678 191.24432 29.40941 191.33827 29.40941 curveto
-191.43222 29.40941 191.5224 29.44678 191.58884 29.51321 curveto
-191.65527 29.57965 191.69264 29.66983 191.69264 29.76378 curveto closepath fill
-newpath 212.95248 29.76378 moveto
-212.95248 29.85773 212.91512 29.9479 212.84868 30.01434 curveto
-212.78224 30.08078 212.69206 30.11815 212.59811 30.11815 curveto
-212.50417 30.11815 212.41399 30.08078 212.34755 30.01434 curveto
-212.28111 29.9479 212.24374 29.85773 212.24374 29.76378 curveto
-212.24374 29.66983 212.28111 29.57965 212.34755 29.51321 curveto
-212.41399 29.44678 212.50417 29.40941 212.59811 29.40941 curveto
-212.69206 29.40941 212.78224 29.44678 212.84868 29.51321 curveto
-212.91512 29.57965 212.95248 29.66983 212.95248 29.76378 curveto closepath fill
-newpath 234.21233 29.76378 moveto
-234.21233 29.85773 234.17496 29.9479 234.10852 30.01434 curveto
-234.04208 30.08078 233.9519 30.11815 233.85796 30.11815 curveto
-233.764 30.11815 233.67383 30.08078 233.60739 30.01434 curveto
-233.54095 29.9479 233.50359 29.85773 233.50359 29.76378 curveto
-233.50359 29.66983 233.54095 29.57965 233.60739 29.51321 curveto
-233.67383 29.44678 233.764 29.40941 233.85796 29.40941 curveto
-233.9519 29.40941 234.04208 29.44678 234.10852 29.51321 curveto
-234.17496 29.57965 234.21233 29.66983 234.21233 29.76378 curveto closepath fill
-newpath 255.47217 29.76378 moveto
-255.47217 29.85773 255.4348 29.9479 255.36836 30.01434 curveto
-255.30193 30.08078 255.21175 30.11815 255.1178 30.11815 curveto
-255.02385 30.11815 254.93367 30.08078 254.86723 30.01434 curveto
-254.8008 29.9479 254.76343 29.85773 254.76343 29.76378 curveto
-254.76343 29.66983 254.8008 29.57965 254.86723 29.51321 curveto
-254.93367 29.44678 255.02385 29.40941 255.1178 29.40941 curveto
-255.21175 29.40941 255.30193 29.44678 255.36836 29.51321 curveto
-255.4348 29.57965 255.47217 29.66983 255.47217 29.76378 curveto closepath fill
-newpath 85.39343 34.01575 moveto
-85.39343 34.1097 85.35606 34.19987 85.28963 34.26631 curveto
-85.22319 34.33275 85.13301 34.37012 85.03906 34.37012 curveto
-84.94511 34.37012 84.85493 34.33275 84.7885 34.26631 curveto
-84.72206 34.19987 84.6847 34.1097 84.6847 34.01575 curveto
-84.6847 33.9218 84.72206 33.83162 84.7885 33.76518 curveto
-84.85493 33.69875 84.94511 33.66138 85.03906 33.66138 curveto
-85.13301 33.66138 85.22319 33.69875 85.28963 33.76518 curveto
-85.35606 33.83162 85.39343 33.9218 85.39343 34.01575 curveto closepath fill
-newpath 106.65327 34.01575 moveto
-106.65327 34.1097 106.6159 34.19987 106.54947 34.26631 curveto
-106.48303 34.33275 106.39285 34.37012 106.2989 34.37012 curveto
-106.20496 34.37012 106.11478 34.33275 106.04834 34.26631 curveto
-105.9819 34.19987 105.94453 34.1097 105.94453 34.01575 curveto
-105.94453 33.9218 105.9819 33.83162 106.04834 33.76518 curveto
-106.11478 33.69875 106.20496 33.66138 106.2989 33.66138 curveto
-106.39285 33.66138 106.48303 33.69875 106.54947 33.76518 curveto
-106.6159 33.83162 106.65327 33.9218 106.65327 34.01575 curveto closepath fill
-newpath 127.91312 34.01575 moveto
-127.91312 34.1097 127.87575 34.19987 127.80931 34.26631 curveto
-127.74287 34.33275 127.6527 34.37012 127.55875 34.37012 curveto
-127.4648 34.37012 127.37462 34.33275 127.30818 34.26631 curveto
-127.24174 34.19987 127.20438 34.1097 127.20438 34.01575 curveto
-127.20438 33.9218 127.24174 33.83162 127.30818 33.76518 curveto
-127.37462 33.69875 127.4648 33.66138 127.55875 33.66138 curveto
-127.6527 33.66138 127.74287 33.69875 127.80931 33.76518 curveto
-127.87575 33.83162 127.91312 33.9218 127.91312 34.01575 curveto closepath fill
-newpath 149.17296 34.01575 moveto
-149.17296 34.1097 149.13559 34.19987 149.06915 34.26631 curveto
-149.00272 34.33275 148.91254 34.37012 148.81859 34.37012 curveto
-148.72464 34.37012 148.63446 34.33275 148.56802 34.26631 curveto
-148.50159 34.19987 148.46422 34.1097 148.46422 34.01575 curveto
-148.46422 33.9218 148.50159 33.83162 148.56802 33.76518 curveto
-148.63446 33.69875 148.72464 33.66138 148.81859 33.66138 curveto
-148.91254 33.66138 149.00272 33.69875 149.06915 33.76518 curveto
-149.13559 33.83162 149.17296 33.9218 149.17296 34.01575 curveto closepath fill
-newpath 191.69264 34.01575 moveto
-191.69264 34.1097 191.65527 34.19987 191.58884 34.26631 curveto
-191.5224 34.33275 191.43222 34.37012 191.33827 34.37012 curveto
-191.24432 34.37012 191.15414 34.33275 191.0877 34.26631 curveto
-191.02127 34.19987 190.9839 34.1097 190.9839 34.01575 curveto
-190.9839 33.9218 191.02127 33.83162 191.0877 33.76518 curveto
-191.15414 33.69875 191.24432 33.66138 191.33827 33.66138 curveto
-191.43222 33.66138 191.5224 33.69875 191.58884 33.76518 curveto
-191.65527 33.83162 191.69264 33.9218 191.69264 34.01575 curveto closepath fill
-newpath 212.95248 34.01575 moveto
-212.95248 34.1097 212.91512 34.19987 212.84868 34.26631 curveto
-212.78224 34.33275 212.69206 34.37012 212.59811 34.37012 curveto
-212.50417 34.37012 212.41399 34.33275 212.34755 34.26631 curveto
-212.28111 34.19987 212.24374 34.1097 212.24374 34.01575 curveto
-212.24374 33.9218 212.28111 33.83162 212.34755 33.76518 curveto
-212.41399 33.69875 212.50417 33.66138 212.59811 33.66138 curveto
-212.69206 33.66138 212.78224 33.69875 212.84868 33.76518 curveto
-212.91512 33.83162 212.95248 33.9218 212.95248 34.01575 curveto closepath fill
-newpath 234.21233 34.01575 moveto
-234.21233 34.1097 234.17496 34.19987 234.10852 34.26631 curveto
-234.04208 34.33275 233.9519 34.37012 233.85796 34.37012 curveto
-233.764 34.37012 233.67383 34.33275 233.60739 34.26631 curveto
-233.54095 34.19987 233.50359 34.1097 233.50359 34.01575 curveto
-233.50359 33.9218 233.54095 33.83162 233.60739 33.76518 curveto
-233.67383 33.69875 233.764 33.66138 233.85796 33.66138 curveto
-233.9519 33.66138 234.04208 33.69875 234.10852 33.76518 curveto
-234.17496 33.83162 234.21233 33.9218 234.21233 34.01575 curveto closepath fill
-newpath 255.47217 34.01575 moveto
-255.47217 34.1097 255.4348 34.19987 255.36836 34.26631 curveto
-255.30193 34.33275 255.21175 34.37012 255.1178 34.37012 curveto
-255.02385 34.37012 254.93367 34.33275 254.86723 34.26631 curveto
-254.8008 34.19987 254.76343 34.1097 254.76343 34.01575 curveto
-254.76343 33.9218 254.8008 33.83162 254.86723 33.76518 curveto
-254.93367 33.69875 255.02385 33.66138 255.1178 33.66138 curveto
-255.21175 33.66138 255.30193 33.69875 255.36836 33.76518 curveto
-255.4348 33.83162 255.47217 33.9218 255.47217 34.01575 curveto closepath fill
-newpath 85.39343 38.26772 moveto
-85.39343 38.36166 85.35606 38.45184 85.28963 38.51828 curveto
-85.22319 38.58472 85.13301 38.62209 85.03906 38.62209 curveto
-84.94511 38.62209 84.85493 38.58472 84.7885 38.51828 curveto
-84.72206 38.45184 84.6847 38.36166 84.6847 38.26772 curveto
-84.6847 38.17377 84.72206 38.08359 84.7885 38.01715 curveto
-84.85493 37.95071 84.94511 37.91335 85.03906 37.91335 curveto
-85.13301 37.91335 85.22319 37.95071 85.28963 38.01715 curveto
-85.35606 38.08359 85.39343 38.17377 85.39343 38.26772 curveto closepath fill
-newpath 106.65327 38.26772 moveto
-106.65327 38.36166 106.6159 38.45184 106.54947 38.51828 curveto
-106.48303 38.58472 106.39285 38.62209 106.2989 38.62209 curveto
-106.20496 38.62209 106.11478 38.58472 106.04834 38.51828 curveto
-105.9819 38.45184 105.94453 38.36166 105.94453 38.26772 curveto
-105.94453 38.17377 105.9819 38.08359 106.04834 38.01715 curveto
-106.11478 37.95071 106.20496 37.91335 106.2989 37.91335 curveto
-106.39285 37.91335 106.48303 37.95071 106.54947 38.01715 curveto
-106.6159 38.08359 106.65327 38.17377 106.65327 38.26772 curveto closepath fill
-newpath 127.91312 38.26772 moveto
-127.91312 38.36166 127.87575 38.45184 127.80931 38.51828 curveto
-127.74287 38.58472 127.6527 38.62209 127.55875 38.62209 curveto
-127.4648 38.62209 127.37462 38.58472 127.30818 38.51828 curveto
-127.24174 38.45184 127.20438 38.36166 127.20438 38.26772 curveto
-127.20438 38.17377 127.24174 38.08359 127.30818 38.01715 curveto
-127.37462 37.95071 127.4648 37.91335 127.55875 37.91335 curveto
-127.6527 37.91335 127.74287 37.95071 127.80931 38.01715 curveto
-127.87575 38.08359 127.91312 38.17377 127.91312 38.26772 curveto closepath fill
-newpath 149.17296 38.26772 moveto
-149.17296 38.36166 149.13559 38.45184 149.06915 38.51828 curveto
-149.00272 38.58472 148.91254 38.62209 148.81859 38.62209 curveto
-148.72464 38.62209 148.63446 38.58472 148.56802 38.51828 curveto
-148.50159 38.45184 148.46422 38.36166 148.46422 38.26772 curveto
-148.46422 38.17377 148.50159 38.08359 148.56802 38.01715 curveto
-148.63446 37.95071 148.72464 37.91335 148.81859 37.91335 curveto
-148.91254 37.91335 149.00272 37.95071 149.06915 38.01715 curveto
-149.13559 38.08359 149.17296 38.17377 149.17296 38.26772 curveto closepath fill
-newpath 191.69264 38.26772 moveto
-191.69264 38.36166 191.65527 38.45184 191.58884 38.51828 curveto
-191.5224 38.58472 191.43222 38.62209 191.33827 38.62209 curveto
-191.24432 38.62209 191.15414 38.58472 191.0877 38.51828 curveto
-191.02127 38.45184 190.9839 38.36166 190.9839 38.26772 curveto
-190.9839 38.17377 191.02127 38.08359 191.0877 38.01715 curveto
-191.15414 37.95071 191.24432 37.91335 191.33827 37.91335 curveto
-191.43222 37.91335 191.5224 37.95071 191.58884 38.01715 curveto
-191.65527 38.08359 191.69264 38.17377 191.69264 38.26772 curveto closepath fill
-newpath 212.95248 38.26772 moveto
-212.95248 38.36166 212.91512 38.45184 212.84868 38.51828 curveto
-212.78224 38.58472 212.69206 38.62209 212.59811 38.62209 curveto
-212.50417 38.62209 212.41399 38.58472 212.34755 38.51828 curveto
-212.28111 38.45184 212.24374 38.36166 212.24374 38.26772 curveto
-212.24374 38.17377 212.28111 38.08359 212.34755 38.01715 curveto
-212.41399 37.95071 212.50417 37.91335 212.59811 37.91335 curveto
-212.69206 37.91335 212.78224 37.95071 212.84868 38.01715 curveto
-212.91512 38.08359 212.95248 38.17377 212.95248 38.26772 curveto closepath fill
-newpath 234.21233 38.26772 moveto
-234.21233 38.36166 234.17496 38.45184 234.10852 38.51828 curveto
-234.04208 38.58472 233.9519 38.62209 233.85796 38.62209 curveto
-233.764 38.62209 233.67383 38.58472 233.60739 38.51828 curveto
-233.54095 38.45184 233.50359 38.36166 233.50359 38.26772 curveto
-233.50359 38.17377 233.54095 38.08359 233.60739 38.01715 curveto
-233.67383 37.95071 233.764 37.91335 233.85796 37.91335 curveto
-233.9519 37.91335 234.04208 37.95071 234.10852 38.01715 curveto
-234.17496 38.08359 234.21233 38.17377 234.21233 38.26772 curveto closepath fill
-newpath 255.47217 38.26772 moveto
-255.47217 38.36166 255.4348 38.45184 255.36836 38.51828 curveto
-255.30193 38.58472 255.21175 38.62209 255.1178 38.62209 curveto
-255.02385 38.62209 254.93367 38.58472 254.86723 38.51828 curveto
-254.8008 38.45184 254.76343 38.36166 254.76343 38.26772 curveto
-254.76343 38.17377 254.8008 38.08359 254.86723 38.01715 curveto
-254.93367 37.95071 255.02385 37.91335 255.1178 37.91335 curveto
-255.21175 37.91335 255.30193 37.95071 255.36836 38.01715 curveto
-255.4348 38.08359 255.47217 38.17377 255.47217 38.26772 curveto closepath fill
-newpath 85.39343 42.51968 moveto
-85.39343 42.61363 85.35606 42.70381 85.28963 42.77025 curveto
-85.22319 42.83669 85.13301 42.87405 85.03906 42.87405 curveto
-84.94511 42.87405 84.85493 42.83669 84.7885 42.77025 curveto
-84.72206 42.70381 84.6847 42.61363 84.6847 42.51968 curveto
-84.6847 42.42574 84.72206 42.33556 84.7885 42.26912 curveto
-84.85493 42.20268 84.94511 42.16531 85.03906 42.16531 curveto
-85.13301 42.16531 85.22319 42.20268 85.28963 42.26912 curveto
-85.35606 42.33556 85.39343 42.42574 85.39343 42.51968 curveto closepath fill
-newpath 106.65327 42.51968 moveto
-106.65327 42.61363 106.6159 42.70381 106.54947 42.77025 curveto
-106.48303 42.83669 106.39285 42.87405 106.2989 42.87405 curveto
-106.20496 42.87405 106.11478 42.83669 106.04834 42.77025 curveto
-105.9819 42.70381 105.94453 42.61363 105.94453 42.51968 curveto
-105.94453 42.42574 105.9819 42.33556 106.04834 42.26912 curveto
-106.11478 42.20268 106.20496 42.16531 106.2989 42.16531 curveto
-106.39285 42.16531 106.48303 42.20268 106.54947 42.26912 curveto
-106.6159 42.33556 106.65327 42.42574 106.65327 42.51968 curveto closepath fill
-newpath 127.91312 42.51968 moveto
-127.91312 42.61363 127.87575 42.70381 127.80931 42.77025 curveto
-127.74287 42.83669 127.6527 42.87405 127.55875 42.87405 curveto
-127.4648 42.87405 127.37462 42.83669 127.30818 42.77025 curveto
-127.24174 42.70381 127.20438 42.61363 127.20438 42.51968 curveto
-127.20438 42.42574 127.24174 42.33556 127.30818 42.26912 curveto
-127.37462 42.20268 127.4648 42.16531 127.55875 42.16531 curveto
-127.6527 42.16531 127.74287 42.20268 127.80931 42.26912 curveto
-127.87575 42.33556 127.91312 42.42574 127.91312 42.51968 curveto closepath fill
-newpath 149.17296 42.51968 moveto
-149.17296 42.61363 149.13559 42.70381 149.06915 42.77025 curveto
-149.00272 42.83669 148.91254 42.87405 148.81859 42.87405 curveto
-148.72464 42.87405 148.63446 42.83669 148.56802 42.77025 curveto
-148.50159 42.70381 148.46422 42.61363 148.46422 42.51968 curveto
-148.46422 42.42574 148.50159 42.33556 148.56802 42.26912 curveto
-148.63446 42.20268 148.72464 42.16531 148.81859 42.16531 curveto
-148.91254 42.16531 149.00272 42.20268 149.06915 42.26912 curveto
-149.13559 42.33556 149.17296 42.42574 149.17296 42.51968 curveto closepath fill
-newpath 191.69264 42.51968 moveto
-191.69264 42.61363 191.65527 42.70381 191.58884 42.77025 curveto
-191.5224 42.83669 191.43222 42.87405 191.33827 42.87405 curveto
-191.24432 42.87405 191.15414 42.83669 191.0877 42.77025 curveto
-191.02127 42.70381 190.9839 42.61363 190.9839 42.51968 curveto
-190.9839 42.42574 191.02127 42.33556 191.0877 42.26912 curveto
-191.15414 42.20268 191.24432 42.16531 191.33827 42.16531 curveto
-191.43222 42.16531 191.5224 42.20268 191.58884 42.26912 curveto
-191.65527 42.33556 191.69264 42.42574 191.69264 42.51968 curveto closepath fill
-newpath 212.95248 42.51968 moveto
-212.95248 42.61363 212.91512 42.70381 212.84868 42.77025 curveto
-212.78224 42.83669 212.69206 42.87405 212.59811 42.87405 curveto
-212.50417 42.87405 212.41399 42.83669 212.34755 42.77025 curveto
-212.28111 42.70381 212.24374 42.61363 212.24374 42.51968 curveto
-212.24374 42.42574 212.28111 42.33556 212.34755 42.26912 curveto
-212.41399 42.20268 212.50417 42.16531 212.59811 42.16531 curveto
-212.69206 42.16531 212.78224 42.20268 212.84868 42.26912 curveto
-212.91512 42.33556 212.95248 42.42574 212.95248 42.51968 curveto closepath fill
-newpath 234.21233 42.51968 moveto
-234.21233 42.61363 234.17496 42.70381 234.10852 42.77025 curveto
-234.04208 42.83669 233.9519 42.87405 233.85796 42.87405 curveto
-233.764 42.87405 233.67383 42.83669 233.60739 42.77025 curveto
-233.54095 42.70381 233.50359 42.61363 233.50359 42.51968 curveto
-233.50359 42.42574 233.54095 42.33556 233.60739 42.26912 curveto
-233.67383 42.20268 233.764 42.16531 233.85796 42.16531 curveto
-233.9519 42.16531 234.04208 42.20268 234.10852 42.26912 curveto
-234.17496 42.33556 234.21233 42.42574 234.21233 42.51968 curveto closepath fill
-newpath 255.47217 42.51968 moveto
-255.47217 42.61363 255.4348 42.70381 255.36836 42.77025 curveto
-255.30193 42.83669 255.21175 42.87405 255.1178 42.87405 curveto
-255.02385 42.87405 254.93367 42.83669 254.86723 42.77025 curveto
-254.8008 42.70381 254.76343 42.61363 254.76343 42.51968 curveto
-254.76343 42.42574 254.8008 42.33556 254.86723 42.26912 curveto
-254.93367 42.20268 255.02385 42.16531 255.1178 42.16531 curveto
-255.21175 42.16531 255.30193 42.20268 255.36836 42.26912 curveto
-255.4348 42.33556 255.47217 42.42574 255.47217 42.51968 curveto closepath fill
-newpath 85.39343 46.77165 moveto
-85.39343 46.8656 85.35606 46.95578 85.28963 47.02222 curveto
-85.22319 47.08865 85.13301 47.12602 85.03906 47.12602 curveto
-84.94511 47.12602 84.85493 47.08865 84.7885 47.02222 curveto
-84.72206 46.95578 84.6847 46.8656 84.6847 46.77165 curveto
-84.6847 46.6777 84.72206 46.58752 84.7885 46.52109 curveto
-84.85493 46.45465 84.94511 46.41728 85.03906 46.41728 curveto
-85.13301 46.41728 85.22319 46.45465 85.28963 46.52109 curveto
-85.35606 46.58752 85.39343 46.6777 85.39343 46.77165 curveto closepath fill
-newpath 106.65327 46.77165 moveto
-106.65327 46.8656 106.6159 46.95578 106.54947 47.02222 curveto
-106.48303 47.08865 106.39285 47.12602 106.2989 47.12602 curveto
-106.20496 47.12602 106.11478 47.08865 106.04834 47.02222 curveto
-105.9819 46.95578 105.94453 46.8656 105.94453 46.77165 curveto
-105.94453 46.6777 105.9819 46.58752 106.04834 46.52109 curveto
-106.11478 46.45465 106.20496 46.41728 106.2989 46.41728 curveto
-106.39285 46.41728 106.48303 46.45465 106.54947 46.52109 curveto
-106.6159 46.58752 106.65327 46.6777 106.65327 46.77165 curveto closepath fill
-newpath 127.91312 46.77165 moveto
-127.91312 46.8656 127.87575 46.95578 127.80931 47.02222 curveto
-127.74287 47.08865 127.6527 47.12602 127.55875 47.12602 curveto
-127.4648 47.12602 127.37462 47.08865 127.30818 47.02222 curveto
-127.24174 46.95578 127.20438 46.8656 127.20438 46.77165 curveto
-127.20438 46.6777 127.24174 46.58752 127.30818 46.52109 curveto
-127.37462 46.45465 127.4648 46.41728 127.55875 46.41728 curveto
-127.6527 46.41728 127.74287 46.45465 127.80931 46.52109 curveto
-127.87575 46.58752 127.91312 46.6777 127.91312 46.77165 curveto closepath fill
-newpath 149.17296 46.77165 moveto
-149.17296 46.8656 149.13559 46.95578 149.06915 47.02222 curveto
-149.00272 47.08865 148.91254 47.12602 148.81859 47.12602 curveto
-148.72464 47.12602 148.63446 47.08865 148.56802 47.02222 curveto
-148.50159 46.95578 148.46422 46.8656 148.46422 46.77165 curveto
-148.46422 46.6777 148.50159 46.58752 148.56802 46.52109 curveto
-148.63446 46.45465 148.72464 46.41728 148.81859 46.41728 curveto
-148.91254 46.41728 149.00272 46.45465 149.06915 46.52109 curveto
-149.13559 46.58752 149.17296 46.6777 149.17296 46.77165 curveto closepath fill
-newpath 191.69264 46.77165 moveto
-191.69264 46.8656 191.65527 46.95578 191.58884 47.02222 curveto
-191.5224 47.08865 191.43222 47.12602 191.33827 47.12602 curveto
-191.24432 47.12602 191.15414 47.08865 191.0877 47.02222 curveto
-191.02127 46.95578 190.9839 46.8656 190.9839 46.77165 curveto
-190.9839 46.6777 191.02127 46.58752 191.0877 46.52109 curveto
-191.15414 46.45465 191.24432 46.41728 191.33827 46.41728 curveto
-191.43222 46.41728 191.5224 46.45465 191.58884 46.52109 curveto
-191.65527 46.58752 191.69264 46.6777 191.69264 46.77165 curveto closepath fill
-newpath 212.95248 46.77165 moveto
-212.95248 46.8656 212.91512 46.95578 212.84868 47.02222 curveto
-212.78224 47.08865 212.69206 47.12602 212.59811 47.12602 curveto
-212.50417 47.12602 212.41399 47.08865 212.34755 47.02222 curveto
-212.28111 46.95578 212.24374 46.8656 212.24374 46.77165 curveto
-212.24374 46.6777 212.28111 46.58752 212.34755 46.52109 curveto
-212.41399 46.45465 212.50417 46.41728 212.59811 46.41728 curveto
-212.69206 46.41728 212.78224 46.45465 212.84868 46.52109 curveto
-212.91512 46.58752 212.95248 46.6777 212.95248 46.77165 curveto closepath fill
-newpath 234.21233 46.77165 moveto
-234.21233 46.8656 234.17496 46.95578 234.10852 47.02222 curveto
-234.04208 47.08865 233.9519 47.12602 233.85796 47.12602 curveto
-233.764 47.12602 233.67383 47.08865 233.60739 47.02222 curveto
-233.54095 46.95578 233.50359 46.8656 233.50359 46.77165 curveto
-233.50359 46.6777 233.54095 46.58752 233.60739 46.52109 curveto
-233.67383 46.45465 233.764 46.41728 233.85796 46.41728 curveto
-233.9519 46.41728 234.04208 46.45465 234.10852 46.52109 curveto
-234.17496 46.58752 234.21233 46.6777 234.21233 46.77165 curveto closepath fill
-newpath 255.47217 46.77165 moveto
-255.47217 46.8656 255.4348 46.95578 255.36836 47.02222 curveto
-255.30193 47.08865 255.21175 47.12602 255.1178 47.12602 curveto
-255.02385 47.12602 254.93367 47.08865 254.86723 47.02222 curveto
-254.8008 46.95578 254.76343 46.8656 254.76343 46.77165 curveto
-254.76343 46.6777 254.8008 46.58752 254.86723 46.52109 curveto
-254.93367 46.45465 255.02385 46.41728 255.1178 46.41728 curveto
-255.21175 46.41728 255.30193 46.45465 255.36836 46.52109 curveto
-255.4348 46.58752 255.47217 46.6777 255.47217 46.77165 curveto closepath fill
-newpath 85.39343 51.02362 moveto
-85.39343 51.11757 85.35606 51.20775 85.28963 51.27419 curveto
-85.22319 51.34062 85.13301 51.37799 85.03906 51.37799 curveto
-84.94511 51.37799 84.85493 51.34062 84.7885 51.27419 curveto
-84.72206 51.20775 84.6847 51.11757 84.6847 51.02362 curveto
-84.6847 50.92967 84.72206 50.8395 84.7885 50.77306 curveto
-84.85493 50.70662 84.94511 50.66925 85.03906 50.66925 curveto
-85.13301 50.66925 85.22319 50.70662 85.28963 50.77306 curveto
-85.35606 50.8395 85.39343 50.92967 85.39343 51.02362 curveto closepath fill
-newpath 106.65327 51.02362 moveto
-106.65327 51.11757 106.6159 51.20775 106.54947 51.27419 curveto
-106.48303 51.34062 106.39285 51.37799 106.2989 51.37799 curveto
-106.20496 51.37799 106.11478 51.34062 106.04834 51.27419 curveto
-105.9819 51.20775 105.94453 51.11757 105.94453 51.02362 curveto
-105.94453 50.92967 105.9819 50.8395 106.04834 50.77306 curveto
-106.11478 50.70662 106.20496 50.66925 106.2989 50.66925 curveto
-106.39285 50.66925 106.48303 50.70662 106.54947 50.77306 curveto
-106.6159 50.8395 106.65327 50.92967 106.65327 51.02362 curveto closepath fill
-newpath 127.91312 51.02362 moveto
-127.91312 51.11757 127.87575 51.20775 127.80931 51.27419 curveto
-127.74287 51.34062 127.6527 51.37799 127.55875 51.37799 curveto
-127.4648 51.37799 127.37462 51.34062 127.30818 51.27419 curveto
-127.24174 51.20775 127.20438 51.11757 127.20438 51.02362 curveto
-127.20438 50.92967 127.24174 50.8395 127.30818 50.77306 curveto
-127.37462 50.70662 127.4648 50.66925 127.55875 50.66925 curveto
-127.6527 50.66925 127.74287 50.70662 127.80931 50.77306 curveto
-127.87575 50.8395 127.91312 50.92967 127.91312 51.02362 curveto closepath fill
-newpath 149.17296 51.02362 moveto
-149.17296 51.11757 149.13559 51.20775 149.06915 51.27419 curveto
-149.00272 51.34062 148.91254 51.37799 148.81859 51.37799 curveto
-148.72464 51.37799 148.63446 51.34062 148.56802 51.27419 curveto
-148.50159 51.20775 148.46422 51.11757 148.46422 51.02362 curveto
-148.46422 50.92967 148.50159 50.8395 148.56802 50.77306 curveto
-148.63446 50.70662 148.72464 50.66925 148.81859 50.66925 curveto
-148.91254 50.66925 149.00272 50.70662 149.06915 50.77306 curveto
-149.13559 50.8395 149.17296 50.92967 149.17296 51.02362 curveto closepath fill
-newpath 191.69264 51.02362 moveto
-191.69264 51.11757 191.65527 51.20775 191.58884 51.27419 curveto
-191.5224 51.34062 191.43222 51.37799 191.33827 51.37799 curveto
-191.24432 51.37799 191.15414 51.34062 191.0877 51.27419 curveto
-191.02127 51.20775 190.9839 51.11757 190.9839 51.02362 curveto
-190.9839 50.92967 191.02127 50.8395 191.0877 50.77306 curveto
-191.15414 50.70662 191.24432 50.66925 191.33827 50.66925 curveto
-191.43222 50.66925 191.5224 50.70662 191.58884 50.77306 curveto
-191.65527 50.8395 191.69264 50.92967 191.69264 51.02362 curveto closepath fill
-newpath 212.95248 51.02362 moveto
-212.95248 51.11757 212.91512 51.20775 212.84868 51.27419 curveto
-212.78224 51.34062 212.69206 51.37799 212.59811 51.37799 curveto
-212.50417 51.37799 212.41399 51.34062 212.34755 51.27419 curveto
-212.28111 51.20775 212.24374 51.11757 212.24374 51.02362 curveto
-212.24374 50.92967 212.28111 50.8395 212.34755 50.77306 curveto
-212.41399 50.70662 212.50417 50.66925 212.59811 50.66925 curveto
-212.69206 50.66925 212.78224 50.70662 212.84868 50.77306 curveto
-212.91512 50.8395 212.95248 50.92967 212.95248 51.02362 curveto closepath fill
-newpath 234.21233 51.02362 moveto
-234.21233 51.11757 234.17496 51.20775 234.10852 51.27419 curveto
-234.04208 51.34062 233.9519 51.37799 233.85796 51.37799 curveto
-233.764 51.37799 233.67383 51.34062 233.60739 51.27419 curveto
-233.54095 51.20775 233.50359 51.11757 233.50359 51.02362 curveto
-233.50359 50.92967 233.54095 50.8395 233.60739 50.77306 curveto
-233.67383 50.70662 233.764 50.66925 233.85796 50.66925 curveto
-233.9519 50.66925 234.04208 50.70662 234.10852 50.77306 curveto
-234.17496 50.8395 234.21233 50.92967 234.21233 51.02362 curveto closepath fill
-newpath 255.47217 51.02362 moveto
-255.47217 51.11757 255.4348 51.20775 255.36836 51.27419 curveto
-255.30193 51.34062 255.21175 51.37799 255.1178 51.37799 curveto
-255.02385 51.37799 254.93367 51.34062 254.86723 51.27419 curveto
-254.8008 51.20775 254.76343 51.11757 254.76343 51.02362 curveto
-254.76343 50.92967 254.8008 50.8395 254.86723 50.77306 curveto
-254.93367 50.70662 255.02385 50.66925 255.1178 50.66925 curveto
-255.21175 50.66925 255.30193 50.70662 255.36836 50.77306 curveto
-255.4348 50.8395 255.47217 50.92967 255.47217 51.02362 curveto closepath fill
-newpath 85.39343 55.27559 moveto
-85.39343 55.36954 85.35606 55.45972 85.28963 55.52615 curveto
-85.22319 55.59259 85.13301 55.62996 85.03906 55.62996 curveto
-84.94511 55.62996 84.85493 55.59259 84.7885 55.52615 curveto
-84.72206 55.45972 84.6847 55.36954 84.6847 55.27559 curveto
-84.6847 55.18164 84.72206 55.09146 84.7885 55.02502 curveto
-84.85493 54.95859 84.94511 54.92122 85.03906 54.92122 curveto
-85.13301 54.92122 85.22319 54.95859 85.28963 55.02502 curveto
-85.35606 55.09146 85.39343 55.18164 85.39343 55.27559 curveto closepath fill
-newpath 106.65327 55.27559 moveto
-106.65327 55.36954 106.6159 55.45972 106.54947 55.52615 curveto
-106.48303 55.59259 106.39285 55.62996 106.2989 55.62996 curveto
-106.20496 55.62996 106.11478 55.59259 106.04834 55.52615 curveto
-105.9819 55.45972 105.94453 55.36954 105.94453 55.27559 curveto
-105.94453 55.18164 105.9819 55.09146 106.04834 55.02502 curveto
-106.11478 54.95859 106.20496 54.92122 106.2989 54.92122 curveto
-106.39285 54.92122 106.48303 54.95859 106.54947 55.02502 curveto
-106.6159 55.09146 106.65327 55.18164 106.65327 55.27559 curveto closepath fill
-newpath 127.91312 55.27559 moveto
-127.91312 55.36954 127.87575 55.45972 127.80931 55.52615 curveto
-127.74287 55.59259 127.6527 55.62996 127.55875 55.62996 curveto
-127.4648 55.62996 127.37462 55.59259 127.30818 55.52615 curveto
-127.24174 55.45972 127.20438 55.36954 127.20438 55.27559 curveto
-127.20438 55.18164 127.24174 55.09146 127.30818 55.02502 curveto
-127.37462 54.95859 127.4648 54.92122 127.55875 54.92122 curveto
-127.6527 54.92122 127.74287 54.95859 127.80931 55.02502 curveto
-127.87575 55.09146 127.91312 55.18164 127.91312 55.27559 curveto closepath fill
-newpath 149.17296 55.27559 moveto
-149.17296 55.36954 149.13559 55.45972 149.06915 55.52615 curveto
-149.00272 55.59259 148.91254 55.62996 148.81859 55.62996 curveto
-148.72464 55.62996 148.63446 55.59259 148.56802 55.52615 curveto
-148.50159 55.45972 148.46422 55.36954 148.46422 55.27559 curveto
-148.46422 55.18164 148.50159 55.09146 148.56802 55.02502 curveto
-148.63446 54.95859 148.72464 54.92122 148.81859 54.92122 curveto
-148.91254 54.92122 149.00272 54.95859 149.06915 55.02502 curveto
-149.13559 55.09146 149.17296 55.18164 149.17296 55.27559 curveto closepath fill
-newpath 191.69264 55.27559 moveto
-191.69264 55.36954 191.65527 55.45972 191.58884 55.52615 curveto
-191.5224 55.59259 191.43222 55.62996 191.33827 55.62996 curveto
-191.24432 55.62996 191.15414 55.59259 191.0877 55.52615 curveto
-191.02127 55.45972 190.9839 55.36954 190.9839 55.27559 curveto
-190.9839 55.18164 191.02127 55.09146 191.0877 55.02502 curveto
-191.15414 54.95859 191.24432 54.92122 191.33827 54.92122 curveto
-191.43222 54.92122 191.5224 54.95859 191.58884 55.02502 curveto
-191.65527 55.09146 191.69264 55.18164 191.69264 55.27559 curveto closepath fill
-newpath 212.95248 55.27559 moveto
-212.95248 55.36954 212.91512 55.45972 212.84868 55.52615 curveto
-212.78224 55.59259 212.69206 55.62996 212.59811 55.62996 curveto
-212.50417 55.62996 212.41399 55.59259 212.34755 55.52615 curveto
-212.28111 55.45972 212.24374 55.36954 212.24374 55.27559 curveto
-212.24374 55.18164 212.28111 55.09146 212.34755 55.02502 curveto
-212.41399 54.95859 212.50417 54.92122 212.59811 54.92122 curveto
-212.69206 54.92122 212.78224 54.95859 212.84868 55.02502 curveto
-212.91512 55.09146 212.95248 55.18164 212.95248 55.27559 curveto closepath fill
-newpath 234.21233 55.27559 moveto
-234.21233 55.36954 234.17496 55.45972 234.10852 55.52615 curveto
-234.04208 55.59259 233.9519 55.62996 233.85796 55.62996 curveto
-233.764 55.62996 233.67383 55.59259 233.60739 55.52615 curveto
-233.54095 55.45972 233.50359 55.36954 233.50359 55.27559 curveto
-233.50359 55.18164 233.54095 55.09146 233.60739 55.02502 curveto
-233.67383 54.95859 233.764 54.92122 233.85796 54.92122 curveto
-233.9519 54.92122 234.04208 54.95859 234.10852 55.02502 curveto
-234.17496 55.09146 234.21233 55.18164 234.21233 55.27559 curveto closepath fill
-newpath 255.47217 55.27559 moveto
-255.47217 55.36954 255.4348 55.45972 255.36836 55.52615 curveto
-255.30193 55.59259 255.21175 55.62996 255.1178 55.62996 curveto
-255.02385 55.62996 254.93367 55.59259 254.86723 55.52615 curveto
-254.8008 55.45972 254.76343 55.36954 254.76343 55.27559 curveto
-254.76343 55.18164 254.8008 55.09146 254.86723 55.02502 curveto
-254.93367 54.95859 255.02385 54.92122 255.1178 54.92122 curveto
-255.21175 54.92122 255.30193 54.95859 255.36836 55.02502 curveto
-255.4348 55.09146 255.47217 55.18164 255.47217 55.27559 curveto closepath fill
-newpath 85.39343 59.52756 moveto
-85.39343 59.6215 85.35606 59.71169 85.28963 59.77812 curveto
-85.22319 59.84456 85.13301 59.88193 85.03906 59.88193 curveto
-84.94511 59.88193 84.85493 59.84456 84.7885 59.77812 curveto
-84.72206 59.71169 84.6847 59.6215 84.6847 59.52756 curveto
-84.6847 59.43361 84.72206 59.34343 84.7885 59.277 curveto
-84.85493 59.21056 84.94511 59.17319 85.03906 59.17319 curveto
-85.13301 59.17319 85.22319 59.21056 85.28963 59.277 curveto
-85.35606 59.34343 85.39343 59.43361 85.39343 59.52756 curveto closepath fill
-newpath 106.65327 59.52756 moveto
-106.65327 59.6215 106.6159 59.71169 106.54947 59.77812 curveto
-106.48303 59.84456 106.39285 59.88193 106.2989 59.88193 curveto
-106.20496 59.88193 106.11478 59.84456 106.04834 59.77812 curveto
-105.9819 59.71169 105.94453 59.6215 105.94453 59.52756 curveto
-105.94453 59.43361 105.9819 59.34343 106.04834 59.277 curveto
-106.11478 59.21056 106.20496 59.17319 106.2989 59.17319 curveto
-106.39285 59.17319 106.48303 59.21056 106.54947 59.277 curveto
-106.6159 59.34343 106.65327 59.43361 106.65327 59.52756 curveto closepath fill
-newpath 127.91312 59.52756 moveto
-127.91312 59.6215 127.87575 59.71169 127.80931 59.77812 curveto
-127.74287 59.84456 127.6527 59.88193 127.55875 59.88193 curveto
-127.4648 59.88193 127.37462 59.84456 127.30818 59.77812 curveto
-127.24174 59.71169 127.20438 59.6215 127.20438 59.52756 curveto
-127.20438 59.43361 127.24174 59.34343 127.30818 59.277 curveto
-127.37462 59.21056 127.4648 59.17319 127.55875 59.17319 curveto
-127.6527 59.17319 127.74287 59.21056 127.80931 59.277 curveto
-127.87575 59.34343 127.91312 59.43361 127.91312 59.52756 curveto closepath fill
-newpath 149.17296 59.52756 moveto
-149.17296 59.6215 149.13559 59.71169 149.06915 59.77812 curveto
-149.00272 59.84456 148.91254 59.88193 148.81859 59.88193 curveto
-148.72464 59.88193 148.63446 59.84456 148.56802 59.77812 curveto
-148.50159 59.71169 148.46422 59.6215 148.46422 59.52756 curveto
-148.46422 59.43361 148.50159 59.34343 148.56802 59.277 curveto
-148.63446 59.21056 148.72464 59.17319 148.81859 59.17319 curveto
-148.91254 59.17319 149.00272 59.21056 149.06915 59.277 curveto
-149.13559 59.34343 149.17296 59.43361 149.17296 59.52756 curveto closepath fill
-newpath 191.69264 59.52756 moveto
-191.69264 59.6215 191.65527 59.71169 191.58884 59.77812 curveto
-191.5224 59.84456 191.43222 59.88193 191.33827 59.88193 curveto
-191.24432 59.88193 191.15414 59.84456 191.0877 59.77812 curveto
-191.02127 59.71169 190.9839 59.6215 190.9839 59.52756 curveto
-190.9839 59.43361 191.02127 59.34343 191.0877 59.277 curveto
-191.15414 59.21056 191.24432 59.17319 191.33827 59.17319 curveto
-191.43222 59.17319 191.5224 59.21056 191.58884 59.277 curveto
-191.65527 59.34343 191.69264 59.43361 191.69264 59.52756 curveto closepath fill
-newpath 212.95248 59.52756 moveto
-212.95248 59.6215 212.91512 59.71169 212.84868 59.77812 curveto
-212.78224 59.84456 212.69206 59.88193 212.59811 59.88193 curveto
-212.50417 59.88193 212.41399 59.84456 212.34755 59.77812 curveto
-212.28111 59.71169 212.24374 59.6215 212.24374 59.52756 curveto
-212.24374 59.43361 212.28111 59.34343 212.34755 59.277 curveto
-212.41399 59.21056 212.50417 59.17319 212.59811 59.17319 curveto
-212.69206 59.17319 212.78224 59.21056 212.84868 59.277 curveto
-212.91512 59.34343 212.95248 59.43361 212.95248 59.52756 curveto closepath fill
-newpath 234.21233 59.52756 moveto
-234.21233 59.6215 234.17496 59.71169 234.10852 59.77812 curveto
-234.04208 59.84456 233.9519 59.88193 233.85796 59.88193 curveto
-233.764 59.88193 233.67383 59.84456 233.60739 59.77812 curveto
-233.54095 59.71169 233.50359 59.6215 233.50359 59.52756 curveto
-233.50359 59.43361 233.54095 59.34343 233.60739 59.277 curveto
-233.67383 59.21056 233.764 59.17319 233.85796 59.17319 curveto
-233.9519 59.17319 234.04208 59.21056 234.10852 59.277 curveto
-234.17496 59.34343 234.21233 59.43361 234.21233 59.52756 curveto closepath fill
-newpath 255.47217 59.52756 moveto
-255.47217 59.6215 255.4348 59.71169 255.36836 59.77812 curveto
-255.30193 59.84456 255.21175 59.88193 255.1178 59.88193 curveto
-255.02385 59.88193 254.93367 59.84456 254.86723 59.77812 curveto
-254.8008 59.71169 254.76343 59.6215 254.76343 59.52756 curveto
-254.76343 59.43361 254.8008 59.34343 254.86723 59.277 curveto
-254.93367 59.21056 255.02385 59.17319 255.1178 59.17319 curveto
-255.21175 59.17319 255.30193 59.21056 255.36836 59.277 curveto
-255.4348 59.34343 255.47217 59.43361 255.47217 59.52756 curveto closepath fill
-newpath 85.39343 63.77953 moveto
-85.39343 63.87347 85.35606 63.96365 85.28963 64.03009 curveto
-85.22319 64.09653 85.13301 64.1339 85.03906 64.1339 curveto
-84.94511 64.1339 84.85493 64.09653 84.7885 64.03009 curveto
-84.72206 63.96365 84.6847 63.87347 84.6847 63.77953 curveto
-84.6847 63.68558 84.72206 63.5954 84.7885 63.52896 curveto
-84.85493 63.46252 84.94511 63.42516 85.03906 63.42516 curveto
-85.13301 63.42516 85.22319 63.46252 85.28963 63.52896 curveto
-85.35606 63.5954 85.39343 63.68558 85.39343 63.77953 curveto closepath fill
-newpath 106.65327 63.77953 moveto
-106.65327 63.87347 106.6159 63.96365 106.54947 64.03009 curveto
-106.48303 64.09653 106.39285 64.1339 106.2989 64.1339 curveto
-106.20496 64.1339 106.11478 64.09653 106.04834 64.03009 curveto
-105.9819 63.96365 105.94453 63.87347 105.94453 63.77953 curveto
-105.94453 63.68558 105.9819 63.5954 106.04834 63.52896 curveto
-106.11478 63.46252 106.20496 63.42516 106.2989 63.42516 curveto
-106.39285 63.42516 106.48303 63.46252 106.54947 63.52896 curveto
-106.6159 63.5954 106.65327 63.68558 106.65327 63.77953 curveto closepath fill
-newpath 127.91312 63.77953 moveto
-127.91312 63.87347 127.87575 63.96365 127.80931 64.03009 curveto
-127.74287 64.09653 127.6527 64.1339 127.55875 64.1339 curveto
-127.4648 64.1339 127.37462 64.09653 127.30818 64.03009 curveto
-127.24174 63.96365 127.20438 63.87347 127.20438 63.77953 curveto
-127.20438 63.68558 127.24174 63.5954 127.30818 63.52896 curveto
-127.37462 63.46252 127.4648 63.42516 127.55875 63.42516 curveto
-127.6527 63.42516 127.74287 63.46252 127.80931 63.52896 curveto
-127.87575 63.5954 127.91312 63.68558 127.91312 63.77953 curveto closepath fill
-newpath 149.17296 63.77953 moveto
-149.17296 63.87347 149.13559 63.96365 149.06915 64.03009 curveto
-149.00272 64.09653 148.91254 64.1339 148.81859 64.1339 curveto
-148.72464 64.1339 148.63446 64.09653 148.56802 64.03009 curveto
-148.50159 63.96365 148.46422 63.87347 148.46422 63.77953 curveto
-148.46422 63.68558 148.50159 63.5954 148.56802 63.52896 curveto
-148.63446 63.46252 148.72464 63.42516 148.81859 63.42516 curveto
-148.91254 63.42516 149.00272 63.46252 149.06915 63.52896 curveto
-149.13559 63.5954 149.17296 63.68558 149.17296 63.77953 curveto closepath fill
-newpath 191.69264 63.77953 moveto
-191.69264 63.87347 191.65527 63.96365 191.58884 64.03009 curveto
-191.5224 64.09653 191.43222 64.1339 191.33827 64.1339 curveto
-191.24432 64.1339 191.15414 64.09653 191.0877 64.03009 curveto
-191.02127 63.96365 190.9839 63.87347 190.9839 63.77953 curveto
-190.9839 63.68558 191.02127 63.5954 191.0877 63.52896 curveto
-191.15414 63.46252 191.24432 63.42516 191.33827 63.42516 curveto
-191.43222 63.42516 191.5224 63.46252 191.58884 63.52896 curveto
-191.65527 63.5954 191.69264 63.68558 191.69264 63.77953 curveto closepath fill
-newpath 212.95248 63.77953 moveto
-212.95248 63.87347 212.91512 63.96365 212.84868 64.03009 curveto
-212.78224 64.09653 212.69206 64.1339 212.59811 64.1339 curveto
-212.50417 64.1339 212.41399 64.09653 212.34755 64.03009 curveto
-212.28111 63.96365 212.24374 63.87347 212.24374 63.77953 curveto
-212.24374 63.68558 212.28111 63.5954 212.34755 63.52896 curveto
-212.41399 63.46252 212.50417 63.42516 212.59811 63.42516 curveto
-212.69206 63.42516 212.78224 63.46252 212.84868 63.52896 curveto
-212.91512 63.5954 212.95248 63.68558 212.95248 63.77953 curveto closepath fill
-newpath 234.21233 63.77953 moveto
-234.21233 63.87347 234.17496 63.96365 234.10852 64.03009 curveto
-234.04208 64.09653 233.9519 64.1339 233.85796 64.1339 curveto
-233.764 64.1339 233.67383 64.09653 233.60739 64.03009 curveto
-233.54095 63.96365 233.50359 63.87347 233.50359 63.77953 curveto
-233.50359 63.68558 233.54095 63.5954 233.60739 63.52896 curveto
-233.67383 63.46252 233.764 63.42516 233.85796 63.42516 curveto
-233.9519 63.42516 234.04208 63.46252 234.10852 63.52896 curveto
-234.17496 63.5954 234.21233 63.68558 234.21233 63.77953 curveto closepath fill
-newpath 255.47217 63.77953 moveto
-255.47217 63.87347 255.4348 63.96365 255.36836 64.03009 curveto
-255.30193 64.09653 255.21175 64.1339 255.1178 64.1339 curveto
-255.02385 64.1339 254.93367 64.09653 254.86723 64.03009 curveto
-254.8008 63.96365 254.76343 63.87347 254.76343 63.77953 curveto
-254.76343 63.68558 254.8008 63.5954 254.86723 63.52896 curveto
-254.93367 63.46252 255.02385 63.42516 255.1178 63.42516 curveto
-255.21175 63.42516 255.30193 63.46252 255.36836 63.52896 curveto
-255.4348 63.5954 255.47217 63.68558 255.47217 63.77953 curveto closepath fill
-newpath 85.39343 68.0315 moveto
-85.39343 68.12544 85.35606 68.21562 85.28963 68.28206 curveto
-85.22319 68.3485 85.13301 68.38586 85.03906 68.38586 curveto
-84.94511 68.38586 84.85493 68.3485 84.7885 68.28206 curveto
-84.72206 68.21562 84.6847 68.12544 84.6847 68.0315 curveto
-84.6847 67.93755 84.72206 67.84737 84.7885 67.78093 curveto
-84.85493 67.7145 84.94511 67.67712 85.03906 67.67712 curveto
-85.13301 67.67712 85.22319 67.7145 85.28963 67.78093 curveto
-85.35606 67.84737 85.39343 67.93755 85.39343 68.0315 curveto closepath fill
-newpath 106.65327 68.0315 moveto
-106.65327 68.12544 106.6159 68.21562 106.54947 68.28206 curveto
-106.48303 68.3485 106.39285 68.38586 106.2989 68.38586 curveto
-106.20496 68.38586 106.11478 68.3485 106.04834 68.28206 curveto
-105.9819 68.21562 105.94453 68.12544 105.94453 68.0315 curveto
-105.94453 67.93755 105.9819 67.84737 106.04834 67.78093 curveto
-106.11478 67.7145 106.20496 67.67712 106.2989 67.67712 curveto
-106.39285 67.67712 106.48303 67.7145 106.54947 67.78093 curveto
-106.6159 67.84737 106.65327 67.93755 106.65327 68.0315 curveto closepath fill
-newpath 127.91312 68.0315 moveto
-127.91312 68.12544 127.87575 68.21562 127.80931 68.28206 curveto
-127.74287 68.3485 127.6527 68.38586 127.55875 68.38586 curveto
-127.4648 68.38586 127.37462 68.3485 127.30818 68.28206 curveto
-127.24174 68.21562 127.20438 68.12544 127.20438 68.0315 curveto
-127.20438 67.93755 127.24174 67.84737 127.30818 67.78093 curveto
-127.37462 67.7145 127.4648 67.67712 127.55875 67.67712 curveto
-127.6527 67.67712 127.74287 67.7145 127.80931 67.78093 curveto
-127.87575 67.84737 127.91312 67.93755 127.91312 68.0315 curveto closepath fill
-newpath 149.17296 68.0315 moveto
-149.17296 68.12544 149.13559 68.21562 149.06915 68.28206 curveto
-149.00272 68.3485 148.91254 68.38586 148.81859 68.38586 curveto
-148.72464 68.38586 148.63446 68.3485 148.56802 68.28206 curveto
-148.50159 68.21562 148.46422 68.12544 148.46422 68.0315 curveto
-148.46422 67.93755 148.50159 67.84737 148.56802 67.78093 curveto
-148.63446 67.7145 148.72464 67.67712 148.81859 67.67712 curveto
-148.91254 67.67712 149.00272 67.7145 149.06915 67.78093 curveto
-149.13559 67.84737 149.17296 67.93755 149.17296 68.0315 curveto closepath fill
-newpath 191.69264 68.0315 moveto
-191.69264 68.12544 191.65527 68.21562 191.58884 68.28206 curveto
-191.5224 68.3485 191.43222 68.38586 191.33827 68.38586 curveto
-191.24432 68.38586 191.15414 68.3485 191.0877 68.28206 curveto
-191.02127 68.21562 190.9839 68.12544 190.9839 68.0315 curveto
-190.9839 67.93755 191.02127 67.84737 191.0877 67.78093 curveto
-191.15414 67.7145 191.24432 67.67712 191.33827 67.67712 curveto
-191.43222 67.67712 191.5224 67.7145 191.58884 67.78093 curveto
-191.65527 67.84737 191.69264 67.93755 191.69264 68.0315 curveto closepath fill
-newpath 212.95248 68.0315 moveto
-212.95248 68.12544 212.91512 68.21562 212.84868 68.28206 curveto
-212.78224 68.3485 212.69206 68.38586 212.59811 68.38586 curveto
-212.50417 68.38586 212.41399 68.3485 212.34755 68.28206 curveto
-212.28111 68.21562 212.24374 68.12544 212.24374 68.0315 curveto
-212.24374 67.93755 212.28111 67.84737 212.34755 67.78093 curveto
-212.41399 67.7145 212.50417 67.67712 212.59811 67.67712 curveto
-212.69206 67.67712 212.78224 67.7145 212.84868 67.78093 curveto
-212.91512 67.84737 212.95248 67.93755 212.95248 68.0315 curveto closepath fill
-newpath 234.21233 68.0315 moveto
-234.21233 68.12544 234.17496 68.21562 234.10852 68.28206 curveto
-234.04208 68.3485 233.9519 68.38586 233.85796 68.38586 curveto
-233.764 68.38586 233.67383 68.3485 233.60739 68.28206 curveto
-233.54095 68.21562 233.50359 68.12544 233.50359 68.0315 curveto
-233.50359 67.93755 233.54095 67.84737 233.60739 67.78093 curveto
-233.67383 67.7145 233.764 67.67712 233.85796 67.67712 curveto
-233.9519 67.67712 234.04208 67.7145 234.10852 67.78093 curveto
-234.17496 67.84737 234.21233 67.93755 234.21233 68.0315 curveto closepath fill
-newpath 255.47217 68.0315 moveto
-255.47217 68.12544 255.4348 68.21562 255.36836 68.28206 curveto
-255.30193 68.3485 255.21175 68.38586 255.1178 68.38586 curveto
-255.02385 68.38586 254.93367 68.3485 254.86723 68.28206 curveto
-254.8008 68.21562 254.76343 68.12544 254.76343 68.0315 curveto
-254.76343 67.93755 254.8008 67.84737 254.86723 67.78093 curveto
-254.93367 67.7145 255.02385 67.67712 255.1178 67.67712 curveto
-255.21175 67.67712 255.30193 67.7145 255.36836 67.78093 curveto
-255.4348 67.84737 255.47217 67.93755 255.47217 68.0315 curveto closepath fill
-newpath 85.39343 72.28346 moveto
-85.39343 72.37741 85.35606 72.46759 85.28963 72.53403 curveto
-85.22319 72.60046 85.13301 72.63783 85.03906 72.63783 curveto
-84.94511 72.63783 84.85493 72.60046 84.7885 72.53403 curveto
-84.72206 72.46759 84.6847 72.37741 84.6847 72.28346 curveto
-84.6847 72.18951 84.72206 72.09933 84.7885 72.0329 curveto
-84.85493 71.96646 84.94511 71.9291 85.03906 71.9291 curveto
-85.13301 71.9291 85.22319 71.96646 85.28963 72.0329 curveto
-85.35606 72.09933 85.39343 72.18951 85.39343 72.28346 curveto closepath fill
-newpath 106.65327 72.28346 moveto
-106.65327 72.37741 106.6159 72.46759 106.54947 72.53403 curveto
-106.48303 72.60046 106.39285 72.63783 106.2989 72.63783 curveto
-106.20496 72.63783 106.11478 72.60046 106.04834 72.53403 curveto
-105.9819 72.46759 105.94453 72.37741 105.94453 72.28346 curveto
-105.94453 72.18951 105.9819 72.09933 106.04834 72.0329 curveto
-106.11478 71.96646 106.20496 71.9291 106.2989 71.9291 curveto
-106.39285 71.9291 106.48303 71.96646 106.54947 72.0329 curveto
-106.6159 72.09933 106.65327 72.18951 106.65327 72.28346 curveto closepath fill
-newpath 127.91312 72.28346 moveto
-127.91312 72.37741 127.87575 72.46759 127.80931 72.53403 curveto
-127.74287 72.60046 127.6527 72.63783 127.55875 72.63783 curveto
-127.4648 72.63783 127.37462 72.60046 127.30818 72.53403 curveto
-127.24174 72.46759 127.20438 72.37741 127.20438 72.28346 curveto
-127.20438 72.18951 127.24174 72.09933 127.30818 72.0329 curveto
-127.37462 71.96646 127.4648 71.9291 127.55875 71.9291 curveto
-127.6527 71.9291 127.74287 71.96646 127.80931 72.0329 curveto
-127.87575 72.09933 127.91312 72.18951 127.91312 72.28346 curveto closepath fill
-newpath 149.17296 72.28346 moveto
-149.17296 72.37741 149.13559 72.46759 149.06915 72.53403 curveto
-149.00272 72.60046 148.91254 72.63783 148.81859 72.63783 curveto
-148.72464 72.63783 148.63446 72.60046 148.56802 72.53403 curveto
-148.50159 72.46759 148.46422 72.37741 148.46422 72.28346 curveto
-148.46422 72.18951 148.50159 72.09933 148.56802 72.0329 curveto
-148.63446 71.96646 148.72464 71.9291 148.81859 71.9291 curveto
-148.91254 71.9291 149.00272 71.96646 149.06915 72.0329 curveto
-149.13559 72.09933 149.17296 72.18951 149.17296 72.28346 curveto closepath fill
-newpath 191.69264 72.28346 moveto
-191.69264 72.37741 191.65527 72.46759 191.58884 72.53403 curveto
-191.5224 72.60046 191.43222 72.63783 191.33827 72.63783 curveto
-191.24432 72.63783 191.15414 72.60046 191.0877 72.53403 curveto
-191.02127 72.46759 190.9839 72.37741 190.9839 72.28346 curveto
-190.9839 72.18951 191.02127 72.09933 191.0877 72.0329 curveto
-191.15414 71.96646 191.24432 71.9291 191.33827 71.9291 curveto
-191.43222 71.9291 191.5224 71.96646 191.58884 72.0329 curveto
-191.65527 72.09933 191.69264 72.18951 191.69264 72.28346 curveto closepath fill
-newpath 212.95248 72.28346 moveto
-212.95248 72.37741 212.91512 72.46759 212.84868 72.53403 curveto
-212.78224 72.60046 212.69206 72.63783 212.59811 72.63783 curveto
-212.50417 72.63783 212.41399 72.60046 212.34755 72.53403 curveto
-212.28111 72.46759 212.24374 72.37741 212.24374 72.28346 curveto
-212.24374 72.18951 212.28111 72.09933 212.34755 72.0329 curveto
-212.41399 71.96646 212.50417 71.9291 212.59811 71.9291 curveto
-212.69206 71.9291 212.78224 71.96646 212.84868 72.0329 curveto
-212.91512 72.09933 212.95248 72.18951 212.95248 72.28346 curveto closepath fill
-newpath 234.21233 72.28346 moveto
-234.21233 72.37741 234.17496 72.46759 234.10852 72.53403 curveto
-234.04208 72.60046 233.9519 72.63783 233.85796 72.63783 curveto
-233.764 72.63783 233.67383 72.60046 233.60739 72.53403 curveto
-233.54095 72.46759 233.50359 72.37741 233.50359 72.28346 curveto
-233.50359 72.18951 233.54095 72.09933 233.60739 72.0329 curveto
-233.67383 71.96646 233.764 71.9291 233.85796 71.9291 curveto
-233.9519 71.9291 234.04208 71.96646 234.10852 72.0329 curveto
-234.17496 72.09933 234.21233 72.18951 234.21233 72.28346 curveto closepath fill
-newpath 255.47217 72.28346 moveto
-255.47217 72.37741 255.4348 72.46759 255.36836 72.53403 curveto
-255.30193 72.60046 255.21175 72.63783 255.1178 72.63783 curveto
-255.02385 72.63783 254.93367 72.60046 254.86723 72.53403 curveto
-254.8008 72.46759 254.76343 72.37741 254.76343 72.28346 curveto
-254.76343 72.18951 254.8008 72.09933 254.86723 72.0329 curveto
-254.93367 71.96646 255.02385 71.9291 255.1178 71.9291 curveto
-255.21175 71.9291 255.30193 71.96646 255.36836 72.0329 curveto
-255.4348 72.09933 255.47217 72.18951 255.47217 72.28346 curveto closepath fill
-newpath 85.39343 76.53543 moveto
-85.39343 76.62938 85.35606 76.71956 85.28963 76.786 curveto
-85.22319 76.85243 85.13301 76.8898 85.03906 76.8898 curveto
-84.94511 76.8898 84.85493 76.85243 84.7885 76.786 curveto
-84.72206 76.71956 84.6847 76.62938 84.6847 76.53543 curveto
-84.6847 76.44148 84.72206 76.3513 84.7885 76.28487 curveto
-84.85493 76.21843 84.94511 76.18106 85.03906 76.18106 curveto
-85.13301 76.18106 85.22319 76.21843 85.28963 76.28487 curveto
-85.35606 76.3513 85.39343 76.44148 85.39343 76.53543 curveto closepath fill
-newpath 106.65327 76.53543 moveto
-106.65327 76.62938 106.6159 76.71956 106.54947 76.786 curveto
-106.48303 76.85243 106.39285 76.8898 106.2989 76.8898 curveto
-106.20496 76.8898 106.11478 76.85243 106.04834 76.786 curveto
-105.9819 76.71956 105.94453 76.62938 105.94453 76.53543 curveto
-105.94453 76.44148 105.9819 76.3513 106.04834 76.28487 curveto
-106.11478 76.21843 106.20496 76.18106 106.2989 76.18106 curveto
-106.39285 76.18106 106.48303 76.21843 106.54947 76.28487 curveto
-106.6159 76.3513 106.65327 76.44148 106.65327 76.53543 curveto closepath fill
-newpath 127.91312 76.53543 moveto
-127.91312 76.62938 127.87575 76.71956 127.80931 76.786 curveto
-127.74287 76.85243 127.6527 76.8898 127.55875 76.8898 curveto
-127.4648 76.8898 127.37462 76.85243 127.30818 76.786 curveto
-127.24174 76.71956 127.20438 76.62938 127.20438 76.53543 curveto
-127.20438 76.44148 127.24174 76.3513 127.30818 76.28487 curveto
-127.37462 76.21843 127.4648 76.18106 127.55875 76.18106 curveto
-127.6527 76.18106 127.74287 76.21843 127.80931 76.28487 curveto
-127.87575 76.3513 127.91312 76.44148 127.91312 76.53543 curveto closepath fill
-newpath 149.17296 76.53543 moveto
-149.17296 76.62938 149.13559 76.71956 149.06915 76.786 curveto
-149.00272 76.85243 148.91254 76.8898 148.81859 76.8898 curveto
-148.72464 76.8898 148.63446 76.85243 148.56802 76.786 curveto
-148.50159 76.71956 148.46422 76.62938 148.46422 76.53543 curveto
-148.46422 76.44148 148.50159 76.3513 148.56802 76.28487 curveto
-148.63446 76.21843 148.72464 76.18106 148.81859 76.18106 curveto
-148.91254 76.18106 149.00272 76.21843 149.06915 76.28487 curveto
-149.13559 76.3513 149.17296 76.44148 149.17296 76.53543 curveto closepath fill
-newpath 191.69264 76.53543 moveto
-191.69264 76.62938 191.65527 76.71956 191.58884 76.786 curveto
-191.5224 76.85243 191.43222 76.8898 191.33827 76.8898 curveto
-191.24432 76.8898 191.15414 76.85243 191.0877 76.786 curveto
-191.02127 76.71956 190.9839 76.62938 190.9839 76.53543 curveto
-190.9839 76.44148 191.02127 76.3513 191.0877 76.28487 curveto
-191.15414 76.21843 191.24432 76.18106 191.33827 76.18106 curveto
-191.43222 76.18106 191.5224 76.21843 191.58884 76.28487 curveto
-191.65527 76.3513 191.69264 76.44148 191.69264 76.53543 curveto closepath fill
-newpath 212.95248 76.53543 moveto
-212.95248 76.62938 212.91512 76.71956 212.84868 76.786 curveto
-212.78224 76.85243 212.69206 76.8898 212.59811 76.8898 curveto
-212.50417 76.8898 212.41399 76.85243 212.34755 76.786 curveto
-212.28111 76.71956 212.24374 76.62938 212.24374 76.53543 curveto
-212.24374 76.44148 212.28111 76.3513 212.34755 76.28487 curveto
-212.41399 76.21843 212.50417 76.18106 212.59811 76.18106 curveto
-212.69206 76.18106 212.78224 76.21843 212.84868 76.28487 curveto
-212.91512 76.3513 212.95248 76.44148 212.95248 76.53543 curveto closepath fill
-newpath 234.21233 76.53543 moveto
-234.21233 76.62938 234.17496 76.71956 234.10852 76.786 curveto
-234.04208 76.85243 233.9519 76.8898 233.85796 76.8898 curveto
-233.764 76.8898 233.67383 76.85243 233.60739 76.786 curveto
-233.54095 76.71956 233.50359 76.62938 233.50359 76.53543 curveto
-233.50359 76.44148 233.54095 76.3513 233.60739 76.28487 curveto
-233.67383 76.21843 233.764 76.18106 233.85796 76.18106 curveto
-233.9519 76.18106 234.04208 76.21843 234.10852 76.28487 curveto
-234.17496 76.3513 234.21233 76.44148 234.21233 76.53543 curveto closepath fill
-newpath 255.47217 76.53543 moveto
-255.47217 76.62938 255.4348 76.71956 255.36836 76.786 curveto
-255.30193 76.85243 255.21175 76.8898 255.1178 76.8898 curveto
-255.02385 76.8898 254.93367 76.85243 254.86723 76.786 curveto
-254.8008 76.71956 254.76343 76.62938 254.76343 76.53543 curveto
-254.76343 76.44148 254.8008 76.3513 254.86723 76.28487 curveto
-254.93367 76.21843 255.02385 76.18106 255.1178 76.18106 curveto
-255.21175 76.18106 255.30193 76.21843 255.36836 76.28487 curveto
-255.4348 76.3513 255.47217 76.44148 255.47217 76.53543 curveto closepath fill
-newpath 85.39343 80.7874 moveto
-85.39343 80.88135 85.35606 80.97153 85.28963 81.03796 curveto
-85.22319 81.1044 85.13301 81.14177 85.03906 81.14177 curveto
-84.94511 81.14177 84.85493 81.1044 84.7885 81.03796 curveto
-84.72206 80.97153 84.6847 80.88135 84.6847 80.7874 curveto
-84.6847 80.69345 84.72206 80.60327 84.7885 80.53683 curveto
-84.85493 80.4704 84.94511 80.43303 85.03906 80.43303 curveto
-85.13301 80.43303 85.22319 80.4704 85.28963 80.53683 curveto
-85.35606 80.60327 85.39343 80.69345 85.39343 80.7874 curveto closepath fill
-newpath 106.65327 80.7874 moveto
-106.65327 80.88135 106.6159 80.97153 106.54947 81.03796 curveto
-106.48303 81.1044 106.39285 81.14177 106.2989 81.14177 curveto
-106.20496 81.14177 106.11478 81.1044 106.04834 81.03796 curveto
-105.9819 80.97153 105.94453 80.88135 105.94453 80.7874 curveto
-105.94453 80.69345 105.9819 80.60327 106.04834 80.53683 curveto
-106.11478 80.4704 106.20496 80.43303 106.2989 80.43303 curveto
-106.39285 80.43303 106.48303 80.4704 106.54947 80.53683 curveto
-106.6159 80.60327 106.65327 80.69345 106.65327 80.7874 curveto closepath fill
-newpath 127.91312 80.7874 moveto
-127.91312 80.88135 127.87575 80.97153 127.80931 81.03796 curveto
-127.74287 81.1044 127.6527 81.14177 127.55875 81.14177 curveto
-127.4648 81.14177 127.37462 81.1044 127.30818 81.03796 curveto
-127.24174 80.97153 127.20438 80.88135 127.20438 80.7874 curveto
-127.20438 80.69345 127.24174 80.60327 127.30818 80.53683 curveto
-127.37462 80.4704 127.4648 80.43303 127.55875 80.43303 curveto
-127.6527 80.43303 127.74287 80.4704 127.80931 80.53683 curveto
-127.87575 80.60327 127.91312 80.69345 127.91312 80.7874 curveto closepath fill
-newpath 149.17296 80.7874 moveto
-149.17296 80.88135 149.13559 80.97153 149.06915 81.03796 curveto
-149.00272 81.1044 148.91254 81.14177 148.81859 81.14177 curveto
-148.72464 81.14177 148.63446 81.1044 148.56802 81.03796 curveto
-148.50159 80.97153 148.46422 80.88135 148.46422 80.7874 curveto
-148.46422 80.69345 148.50159 80.60327 148.56802 80.53683 curveto
-148.63446 80.4704 148.72464 80.43303 148.81859 80.43303 curveto
-148.91254 80.43303 149.00272 80.4704 149.06915 80.53683 curveto
-149.13559 80.60327 149.17296 80.69345 149.17296 80.7874 curveto closepath fill
-newpath 191.69264 80.7874 moveto
-191.69264 80.88135 191.65527 80.97153 191.58884 81.03796 curveto
-191.5224 81.1044 191.43222 81.14177 191.33827 81.14177 curveto
-191.24432 81.14177 191.15414 81.1044 191.0877 81.03796 curveto
-191.02127 80.97153 190.9839 80.88135 190.9839 80.7874 curveto
-190.9839 80.69345 191.02127 80.60327 191.0877 80.53683 curveto
-191.15414 80.4704 191.24432 80.43303 191.33827 80.43303 curveto
-191.43222 80.43303 191.5224 80.4704 191.58884 80.53683 curveto
-191.65527 80.60327 191.69264 80.69345 191.69264 80.7874 curveto closepath fill
-newpath 212.95248 80.7874 moveto
-212.95248 80.88135 212.91512 80.97153 212.84868 81.03796 curveto
-212.78224 81.1044 212.69206 81.14177 212.59811 81.14177 curveto
-212.50417 81.14177 212.41399 81.1044 212.34755 81.03796 curveto
-212.28111 80.97153 212.24374 80.88135 212.24374 80.7874 curveto
-212.24374 80.69345 212.28111 80.60327 212.34755 80.53683 curveto
-212.41399 80.4704 212.50417 80.43303 212.59811 80.43303 curveto
-212.69206 80.43303 212.78224 80.4704 212.84868 80.53683 curveto
-212.91512 80.60327 212.95248 80.69345 212.95248 80.7874 curveto closepath fill
-newpath 234.21233 80.7874 moveto
-234.21233 80.88135 234.17496 80.97153 234.10852 81.03796 curveto
-234.04208 81.1044 233.9519 81.14177 233.85796 81.14177 curveto
-233.764 81.14177 233.67383 81.1044 233.60739 81.03796 curveto
-233.54095 80.97153 233.50359 80.88135 233.50359 80.7874 curveto
-233.50359 80.69345 233.54095 80.60327 233.60739 80.53683 curveto
-233.67383 80.4704 233.764 80.43303 233.85796 80.43303 curveto
-233.9519 80.43303 234.04208 80.4704 234.10852 80.53683 curveto
-234.17496 80.60327 234.21233 80.69345 234.21233 80.7874 curveto closepath fill
-newpath 255.47217 80.7874 moveto
-255.47217 80.88135 255.4348 80.97153 255.36836 81.03796 curveto
-255.30193 81.1044 255.21175 81.14177 255.1178 81.14177 curveto
-255.02385 81.14177 254.93367 81.1044 254.86723 81.03796 curveto
-254.8008 80.97153 254.76343 80.88135 254.76343 80.7874 curveto
-254.76343 80.69345 254.8008 80.60327 254.86723 80.53683 curveto
-254.93367 80.4704 255.02385 80.43303 255.1178 80.43303 curveto
-255.21175 80.43303 255.30193 80.4704 255.36836 80.53683 curveto
-255.4348 80.60327 255.47217 80.69345 255.47217 80.7874 curveto closepath fill
-newpath 85.39343 85.03937 moveto
-85.39343 85.13332 85.35606 85.2235 85.28963 85.28993 curveto
-85.22319 85.35637 85.13301 85.39374 85.03906 85.39374 curveto
-84.94511 85.39374 84.85493 85.35637 84.7885 85.28993 curveto
-84.72206 85.2235 84.6847 85.13332 84.6847 85.03937 curveto
-84.6847 84.94542 84.72206 84.85524 84.7885 84.7888 curveto
-84.85493 84.72237 84.94511 84.685 85.03906 84.685 curveto
-85.13301 84.685 85.22319 84.72237 85.28963 84.7888 curveto
-85.35606 84.85524 85.39343 84.94542 85.39343 85.03937 curveto closepath fill
-newpath 106.65327 85.03937 moveto
-106.65327 85.13332 106.6159 85.2235 106.54947 85.28993 curveto
-106.48303 85.35637 106.39285 85.39374 106.2989 85.39374 curveto
-106.20496 85.39374 106.11478 85.35637 106.04834 85.28993 curveto
-105.9819 85.2235 105.94453 85.13332 105.94453 85.03937 curveto
-105.94453 84.94542 105.9819 84.85524 106.04834 84.7888 curveto
-106.11478 84.72237 106.20496 84.685 106.2989 84.685 curveto
-106.39285 84.685 106.48303 84.72237 106.54947 84.7888 curveto
-106.6159 84.85524 106.65327 84.94542 106.65327 85.03937 curveto closepath fill
-newpath 127.91312 85.03937 moveto
-127.91312 85.13332 127.87575 85.2235 127.80931 85.28993 curveto
-127.74287 85.35637 127.6527 85.39374 127.55875 85.39374 curveto
-127.4648 85.39374 127.37462 85.35637 127.30818 85.28993 curveto
-127.24174 85.2235 127.20438 85.13332 127.20438 85.03937 curveto
-127.20438 84.94542 127.24174 84.85524 127.30818 84.7888 curveto
-127.37462 84.72237 127.4648 84.685 127.55875 84.685 curveto
-127.6527 84.685 127.74287 84.72237 127.80931 84.7888 curveto
-127.87575 84.85524 127.91312 84.94542 127.91312 85.03937 curveto closepath fill
-newpath 149.17296 85.03937 moveto
-149.17296 85.13332 149.13559 85.2235 149.06915 85.28993 curveto
-149.00272 85.35637 148.91254 85.39374 148.81859 85.39374 curveto
-148.72464 85.39374 148.63446 85.35637 148.56802 85.28993 curveto
-148.50159 85.2235 148.46422 85.13332 148.46422 85.03937 curveto
-148.46422 84.94542 148.50159 84.85524 148.56802 84.7888 curveto
-148.63446 84.72237 148.72464 84.685 148.81859 84.685 curveto
-148.91254 84.685 149.00272 84.72237 149.06915 84.7888 curveto
-149.13559 84.85524 149.17296 84.94542 149.17296 85.03937 curveto closepath fill
-newpath 191.69264 85.03937 moveto
-191.69264 85.13332 191.65527 85.2235 191.58884 85.28993 curveto
-191.5224 85.35637 191.43222 85.39374 191.33827 85.39374 curveto
-191.24432 85.39374 191.15414 85.35637 191.0877 85.28993 curveto
-191.02127 85.2235 190.9839 85.13332 190.9839 85.03937 curveto
-190.9839 84.94542 191.02127 84.85524 191.0877 84.7888 curveto
-191.15414 84.72237 191.24432 84.685 191.33827 84.685 curveto
-191.43222 84.685 191.5224 84.72237 191.58884 84.7888 curveto
-191.65527 84.85524 191.69264 84.94542 191.69264 85.03937 curveto closepath fill
-newpath 212.95248 85.03937 moveto
-212.95248 85.13332 212.91512 85.2235 212.84868 85.28993 curveto
-212.78224 85.35637 212.69206 85.39374 212.59811 85.39374 curveto
-212.50417 85.39374 212.41399 85.35637 212.34755 85.28993 curveto
-212.28111 85.2235 212.24374 85.13332 212.24374 85.03937 curveto
-212.24374 84.94542 212.28111 84.85524 212.34755 84.7888 curveto
-212.41399 84.72237 212.50417 84.685 212.59811 84.685 curveto
-212.69206 84.685 212.78224 84.72237 212.84868 84.7888 curveto
-212.91512 84.85524 212.95248 84.94542 212.95248 85.03937 curveto closepath fill
-newpath 234.21233 85.03937 moveto
-234.21233 85.13332 234.17496 85.2235 234.10852 85.28993 curveto
-234.04208 85.35637 233.9519 85.39374 233.85796 85.39374 curveto
-233.764 85.39374 233.67383 85.35637 233.60739 85.28993 curveto
-233.54095 85.2235 233.50359 85.13332 233.50359 85.03937 curveto
-233.50359 84.94542 233.54095 84.85524 233.60739 84.7888 curveto
-233.67383 84.72237 233.764 84.685 233.85796 84.685 curveto
-233.9519 84.685 234.04208 84.72237 234.10852 84.7888 curveto
-234.17496 84.85524 234.21233 84.94542 234.21233 85.03937 curveto closepath fill
-newpath 255.47217 85.03937 moveto
-255.47217 85.13332 255.4348 85.2235 255.36836 85.28993 curveto
-255.30193 85.35637 255.21175 85.39374 255.1178 85.39374 curveto
-255.02385 85.39374 254.93367 85.35637 254.86723 85.28993 curveto
-254.8008 85.2235 254.76343 85.13332 254.76343 85.03937 curveto
-254.76343 84.94542 254.8008 84.85524 254.86723 84.7888 curveto
-254.93367 84.72237 255.02385 84.685 255.1178 84.685 curveto
-255.21175 84.685 255.30193 84.72237 255.36836 84.7888 curveto
-255.4348 84.85524 255.47217 84.94542 255.47217 85.03937 curveto closepath fill
-newpath 85.39343 89.29134 moveto
-85.39343 89.38528 85.35606 89.47546 85.28963 89.5419 curveto
-85.22319 89.60834 85.13301 89.6457 85.03906 89.6457 curveto
-84.94511 89.6457 84.85493 89.60834 84.7885 89.5419 curveto
-84.72206 89.47546 84.6847 89.38528 84.6847 89.29134 curveto
-84.6847 89.19739 84.72206 89.10721 84.7885 89.04077 curveto
-84.85493 88.97433 84.94511 88.93697 85.03906 88.93697 curveto
-85.13301 88.93697 85.22319 88.97433 85.28963 89.04077 curveto
-85.35606 89.10721 85.39343 89.19739 85.39343 89.29134 curveto closepath fill
-newpath 106.65327 89.29134 moveto
-106.65327 89.38528 106.6159 89.47546 106.54947 89.5419 curveto
-106.48303 89.60834 106.39285 89.6457 106.2989 89.6457 curveto
-106.20496 89.6457 106.11478 89.60834 106.04834 89.5419 curveto
-105.9819 89.47546 105.94453 89.38528 105.94453 89.29134 curveto
-105.94453 89.19739 105.9819 89.10721 106.04834 89.04077 curveto
-106.11478 88.97433 106.20496 88.93697 106.2989 88.93697 curveto
-106.39285 88.93697 106.48303 88.97433 106.54947 89.04077 curveto
-106.6159 89.10721 106.65327 89.19739 106.65327 89.29134 curveto closepath fill
-newpath 127.91312 89.29134 moveto
-127.91312 89.38528 127.87575 89.47546 127.80931 89.5419 curveto
-127.74287 89.60834 127.6527 89.6457 127.55875 89.6457 curveto
-127.4648 89.6457 127.37462 89.60834 127.30818 89.5419 curveto
-127.24174 89.47546 127.20438 89.38528 127.20438 89.29134 curveto
-127.20438 89.19739 127.24174 89.10721 127.30818 89.04077 curveto
-127.37462 88.97433 127.4648 88.93697 127.55875 88.93697 curveto
-127.6527 88.93697 127.74287 88.97433 127.80931 89.04077 curveto
-127.87575 89.10721 127.91312 89.19739 127.91312 89.29134 curveto closepath fill
-newpath 149.17296 89.29134 moveto
-149.17296 89.38528 149.13559 89.47546 149.06915 89.5419 curveto
-149.00272 89.60834 148.91254 89.6457 148.81859 89.6457 curveto
-148.72464 89.6457 148.63446 89.60834 148.56802 89.5419 curveto
-148.50159 89.47546 148.46422 89.38528 148.46422 89.29134 curveto
-148.46422 89.19739 148.50159 89.10721 148.56802 89.04077 curveto
-148.63446 88.97433 148.72464 88.93697 148.81859 88.93697 curveto
-148.91254 88.93697 149.00272 88.97433 149.06915 89.04077 curveto
-149.13559 89.10721 149.17296 89.19739 149.17296 89.29134 curveto closepath fill
-newpath 191.69264 89.29134 moveto
-191.69264 89.38528 191.65527 89.47546 191.58884 89.5419 curveto
-191.5224 89.60834 191.43222 89.6457 191.33827 89.6457 curveto
-191.24432 89.6457 191.15414 89.60834 191.0877 89.5419 curveto
-191.02127 89.47546 190.9839 89.38528 190.9839 89.29134 curveto
-190.9839 89.19739 191.02127 89.10721 191.0877 89.04077 curveto
-191.15414 88.97433 191.24432 88.93697 191.33827 88.93697 curveto
-191.43222 88.93697 191.5224 88.97433 191.58884 89.04077 curveto
-191.65527 89.10721 191.69264 89.19739 191.69264 89.29134 curveto closepath fill
-newpath 212.95248 89.29134 moveto
-212.95248 89.38528 212.91512 89.47546 212.84868 89.5419 curveto
-212.78224 89.60834 212.69206 89.6457 212.59811 89.6457 curveto
-212.50417 89.6457 212.41399 89.60834 212.34755 89.5419 curveto
-212.28111 89.47546 212.24374 89.38528 212.24374 89.29134 curveto
-212.24374 89.19739 212.28111 89.10721 212.34755 89.04077 curveto
-212.41399 88.97433 212.50417 88.93697 212.59811 88.93697 curveto
-212.69206 88.93697 212.78224 88.97433 212.84868 89.04077 curveto
-212.91512 89.10721 212.95248 89.19739 212.95248 89.29134 curveto closepath fill
-newpath 234.21233 89.29134 moveto
-234.21233 89.38528 234.17496 89.47546 234.10852 89.5419 curveto
-234.04208 89.60834 233.9519 89.6457 233.85796 89.6457 curveto
-233.764 89.6457 233.67383 89.60834 233.60739 89.5419 curveto
-233.54095 89.47546 233.50359 89.38528 233.50359 89.29134 curveto
-233.50359 89.19739 233.54095 89.10721 233.60739 89.04077 curveto
-233.67383 88.97433 233.764 88.93697 233.85796 88.93697 curveto
-233.9519 88.93697 234.04208 88.97433 234.10852 89.04077 curveto
-234.17496 89.10721 234.21233 89.19739 234.21233 89.29134 curveto closepath fill
-newpath 255.47217 89.29134 moveto
-255.47217 89.38528 255.4348 89.47546 255.36836 89.5419 curveto
-255.30193 89.60834 255.21175 89.6457 255.1178 89.6457 curveto
-255.02385 89.6457 254.93367 89.60834 254.86723 89.5419 curveto
-254.8008 89.47546 254.76343 89.38528 254.76343 89.29134 curveto
-254.76343 89.19739 254.8008 89.10721 254.86723 89.04077 curveto
-254.93367 88.97433 255.02385 88.93697 255.1178 88.93697 curveto
-255.21175 88.93697 255.30193 88.97433 255.36836 89.04077 curveto
-255.4348 89.10721 255.47217 89.19739 255.47217 89.29134 curveto closepath fill
-newpath 85.39343 93.5433 moveto
-85.39343 93.63725 85.35606 93.72743 85.28963 93.79387 curveto
-85.22319 93.8603 85.13301 93.89767 85.03906 93.89767 curveto
-84.94511 93.89767 84.85493 93.8603 84.7885 93.79387 curveto
-84.72206 93.72743 84.6847 93.63725 84.6847 93.5433 curveto
-84.6847 93.44936 84.72206 93.35918 84.7885 93.29274 curveto
-84.85493 93.2263 84.94511 93.18893 85.03906 93.18893 curveto
-85.13301 93.18893 85.22319 93.2263 85.28963 93.29274 curveto
-85.35606 93.35918 85.39343 93.44936 85.39343 93.5433 curveto closepath fill
-newpath 106.65327 93.5433 moveto
-106.65327 93.63725 106.6159 93.72743 106.54947 93.79387 curveto
-106.48303 93.8603 106.39285 93.89767 106.2989 93.89767 curveto
-106.20496 93.89767 106.11478 93.8603 106.04834 93.79387 curveto
-105.9819 93.72743 105.94453 93.63725 105.94453 93.5433 curveto
-105.94453 93.44936 105.9819 93.35918 106.04834 93.29274 curveto
-106.11478 93.2263 106.20496 93.18893 106.2989 93.18893 curveto
-106.39285 93.18893 106.48303 93.2263 106.54947 93.29274 curveto
-106.6159 93.35918 106.65327 93.44936 106.65327 93.5433 curveto closepath fill
-newpath 127.91312 93.5433 moveto
-127.91312 93.63725 127.87575 93.72743 127.80931 93.79387 curveto
-127.74287 93.8603 127.6527 93.89767 127.55875 93.89767 curveto
-127.4648 93.89767 127.37462 93.8603 127.30818 93.79387 curveto
-127.24174 93.72743 127.20438 93.63725 127.20438 93.5433 curveto
-127.20438 93.44936 127.24174 93.35918 127.30818 93.29274 curveto
-127.37462 93.2263 127.4648 93.18893 127.55875 93.18893 curveto
-127.6527 93.18893 127.74287 93.2263 127.80931 93.29274 curveto
-127.87575 93.35918 127.91312 93.44936 127.91312 93.5433 curveto closepath fill
-newpath 149.17296 93.5433 moveto
-149.17296 93.63725 149.13559 93.72743 149.06915 93.79387 curveto
-149.00272 93.8603 148.91254 93.89767 148.81859 93.89767 curveto
-148.72464 93.89767 148.63446 93.8603 148.56802 93.79387 curveto
-148.50159 93.72743 148.46422 93.63725 148.46422 93.5433 curveto
-148.46422 93.44936 148.50159 93.35918 148.56802 93.29274 curveto
-148.63446 93.2263 148.72464 93.18893 148.81859 93.18893 curveto
-148.91254 93.18893 149.00272 93.2263 149.06915 93.29274 curveto
-149.13559 93.35918 149.17296 93.44936 149.17296 93.5433 curveto closepath fill
-newpath 191.69264 93.5433 moveto
-191.69264 93.63725 191.65527 93.72743 191.58884 93.79387 curveto
-191.5224 93.8603 191.43222 93.89767 191.33827 93.89767 curveto
-191.24432 93.89767 191.15414 93.8603 191.0877 93.79387 curveto
-191.02127 93.72743 190.9839 93.63725 190.9839 93.5433 curveto
-190.9839 93.44936 191.02127 93.35918 191.0877 93.29274 curveto
-191.15414 93.2263 191.24432 93.18893 191.33827 93.18893 curveto
-191.43222 93.18893 191.5224 93.2263 191.58884 93.29274 curveto
-191.65527 93.35918 191.69264 93.44936 191.69264 93.5433 curveto closepath fill
-newpath 212.95248 93.5433 moveto
-212.95248 93.63725 212.91512 93.72743 212.84868 93.79387 curveto
-212.78224 93.8603 212.69206 93.89767 212.59811 93.89767 curveto
-212.50417 93.89767 212.41399 93.8603 212.34755 93.79387 curveto
-212.28111 93.72743 212.24374 93.63725 212.24374 93.5433 curveto
-212.24374 93.44936 212.28111 93.35918 212.34755 93.29274 curveto
-212.41399 93.2263 212.50417 93.18893 212.59811 93.18893 curveto
-212.69206 93.18893 212.78224 93.2263 212.84868 93.29274 curveto
-212.91512 93.35918 212.95248 93.44936 212.95248 93.5433 curveto closepath fill
-newpath 234.21233 93.5433 moveto
-234.21233 93.63725 234.17496 93.72743 234.10852 93.79387 curveto
-234.04208 93.8603 233.9519 93.89767 233.85796 93.89767 curveto
-233.764 93.89767 233.67383 93.8603 233.60739 93.79387 curveto
-233.54095 93.72743 233.50359 93.63725 233.50359 93.5433 curveto
-233.50359 93.44936 233.54095 93.35918 233.60739 93.29274 curveto
-233.67383 93.2263 233.764 93.18893 233.85796 93.18893 curveto
-233.9519 93.18893 234.04208 93.2263 234.10852 93.29274 curveto
-234.17496 93.35918 234.21233 93.44936 234.21233 93.5433 curveto closepath fill
-newpath 255.47217 93.5433 moveto
-255.47217 93.63725 255.4348 93.72743 255.36836 93.79387 curveto
-255.30193 93.8603 255.21175 93.89767 255.1178 93.89767 curveto
-255.02385 93.89767 254.93367 93.8603 254.86723 93.79387 curveto
-254.8008 93.72743 254.76343 93.63725 254.76343 93.5433 curveto
-254.76343 93.44936 254.8008 93.35918 254.86723 93.29274 curveto
-254.93367 93.2263 255.02385 93.18893 255.1178 93.18893 curveto
-255.21175 93.18893 255.30193 93.2263 255.36836 93.29274 curveto
-255.4348 93.35918 255.47217 93.44936 255.47217 93.5433 curveto closepath fill
-newpath 85.39343 97.79527 moveto
-85.39343 97.88922 85.35606 97.9794 85.28963 98.04584 curveto
-85.22319 98.11227 85.13301 98.14964 85.03906 98.14964 curveto
-84.94511 98.14964 84.85493 98.11227 84.7885 98.04584 curveto
-84.72206 97.9794 84.6847 97.88922 84.6847 97.79527 curveto
-84.6847 97.70132 84.72206 97.61115 84.7885 97.54471 curveto
-84.85493 97.47827 84.94511 97.4409 85.03906 97.4409 curveto
-85.13301 97.4409 85.22319 97.47827 85.28963 97.54471 curveto
-85.35606 97.61115 85.39343 97.70132 85.39343 97.79527 curveto closepath fill
-newpath 106.65327 97.79527 moveto
-106.65327 97.88922 106.6159 97.9794 106.54947 98.04584 curveto
-106.48303 98.11227 106.39285 98.14964 106.2989 98.14964 curveto
-106.20496 98.14964 106.11478 98.11227 106.04834 98.04584 curveto
-105.9819 97.9794 105.94453 97.88922 105.94453 97.79527 curveto
-105.94453 97.70132 105.9819 97.61115 106.04834 97.54471 curveto
-106.11478 97.47827 106.20496 97.4409 106.2989 97.4409 curveto
-106.39285 97.4409 106.48303 97.47827 106.54947 97.54471 curveto
-106.6159 97.61115 106.65327 97.70132 106.65327 97.79527 curveto closepath fill
-newpath 127.91312 97.79527 moveto
-127.91312 97.88922 127.87575 97.9794 127.80931 98.04584 curveto
-127.74287 98.11227 127.6527 98.14964 127.55875 98.14964 curveto
-127.4648 98.14964 127.37462 98.11227 127.30818 98.04584 curveto
-127.24174 97.9794 127.20438 97.88922 127.20438 97.79527 curveto
-127.20438 97.70132 127.24174 97.61115 127.30818 97.54471 curveto
-127.37462 97.47827 127.4648 97.4409 127.55875 97.4409 curveto
-127.6527 97.4409 127.74287 97.47827 127.80931 97.54471 curveto
-127.87575 97.61115 127.91312 97.70132 127.91312 97.79527 curveto closepath fill
-newpath 149.17296 97.79527 moveto
-149.17296 97.88922 149.13559 97.9794 149.06915 98.04584 curveto
-149.00272 98.11227 148.91254 98.14964 148.81859 98.14964 curveto
-148.72464 98.14964 148.63446 98.11227 148.56802 98.04584 curveto
-148.50159 97.9794 148.46422 97.88922 148.46422 97.79527 curveto
-148.46422 97.70132 148.50159 97.61115 148.56802 97.54471 curveto
-148.63446 97.47827 148.72464 97.4409 148.81859 97.4409 curveto
-148.91254 97.4409 149.00272 97.47827 149.06915 97.54471 curveto
-149.13559 97.61115 149.17296 97.70132 149.17296 97.79527 curveto closepath fill
-newpath 191.69264 97.79527 moveto
-191.69264 97.88922 191.65527 97.9794 191.58884 98.04584 curveto
-191.5224 98.11227 191.43222 98.14964 191.33827 98.14964 curveto
-191.24432 98.14964 191.15414 98.11227 191.0877 98.04584 curveto
-191.02127 97.9794 190.9839 97.88922 190.9839 97.79527 curveto
-190.9839 97.70132 191.02127 97.61115 191.0877 97.54471 curveto
-191.15414 97.47827 191.24432 97.4409 191.33827 97.4409 curveto
-191.43222 97.4409 191.5224 97.47827 191.58884 97.54471 curveto
-191.65527 97.61115 191.69264 97.70132 191.69264 97.79527 curveto closepath fill
-newpath 212.95248 97.79527 moveto
-212.95248 97.88922 212.91512 97.9794 212.84868 98.04584 curveto
-212.78224 98.11227 212.69206 98.14964 212.59811 98.14964 curveto
-212.50417 98.14964 212.41399 98.11227 212.34755 98.04584 curveto
-212.28111 97.9794 212.24374 97.88922 212.24374 97.79527 curveto
-212.24374 97.70132 212.28111 97.61115 212.34755 97.54471 curveto
-212.41399 97.47827 212.50417 97.4409 212.59811 97.4409 curveto
-212.69206 97.4409 212.78224 97.47827 212.84868 97.54471 curveto
-212.91512 97.61115 212.95248 97.70132 212.95248 97.79527 curveto closepath fill
-newpath 234.21233 97.79527 moveto
-234.21233 97.88922 234.17496 97.9794 234.10852 98.04584 curveto
-234.04208 98.11227 233.9519 98.14964 233.85796 98.14964 curveto
-233.764 98.14964 233.67383 98.11227 233.60739 98.04584 curveto
-233.54095 97.9794 233.50359 97.88922 233.50359 97.79527 curveto
-233.50359 97.70132 233.54095 97.61115 233.60739 97.54471 curveto
-233.67383 97.47827 233.764 97.4409 233.85796 97.4409 curveto
-233.9519 97.4409 234.04208 97.47827 234.10852 97.54471 curveto
-234.17496 97.61115 234.21233 97.70132 234.21233 97.79527 curveto closepath fill
-newpath 255.47217 97.79527 moveto
-255.47217 97.88922 255.4348 97.9794 255.36836 98.04584 curveto
-255.30193 98.11227 255.21175 98.14964 255.1178 98.14964 curveto
-255.02385 98.14964 254.93367 98.11227 254.86723 98.04584 curveto
-254.8008 97.9794 254.76343 97.88922 254.76343 97.79527 curveto
-254.76343 97.70132 254.8008 97.61115 254.86723 97.54471 curveto
-254.93367 97.47827 255.02385 97.4409 255.1178 97.4409 curveto
-255.21175 97.4409 255.30193 97.47827 255.36836 97.54471 curveto
-255.4348 97.61115 255.47217 97.70132 255.47217 97.79527 curveto closepath fill
-newpath 85.39343 102.04724 moveto
-85.39343 102.14119 85.35606 102.23137 85.28963 102.2978 curveto
-85.22319 102.36424 85.13301 102.40161 85.03906 102.40161 curveto
-84.94511 102.40161 84.85493 102.36424 84.7885 102.2978 curveto
-84.72206 102.23137 84.6847 102.14119 84.6847 102.04724 curveto
-84.6847 101.9533 84.72206 101.86311 84.7885 101.79668 curveto
-84.85493 101.73024 84.94511 101.69287 85.03906 101.69287 curveto
-85.13301 101.69287 85.22319 101.73024 85.28963 101.79668 curveto
-85.35606 101.86311 85.39343 101.9533 85.39343 102.04724 curveto closepath fill
-newpath 106.65327 102.04724 moveto
-106.65327 102.14119 106.6159 102.23137 106.54947 102.2978 curveto
-106.48303 102.36424 106.39285 102.40161 106.2989 102.40161 curveto
-106.20496 102.40161 106.11478 102.36424 106.04834 102.2978 curveto
-105.9819 102.23137 105.94453 102.14119 105.94453 102.04724 curveto
-105.94453 101.9533 105.9819 101.86311 106.04834 101.79668 curveto
-106.11478 101.73024 106.20496 101.69287 106.2989 101.69287 curveto
-106.39285 101.69287 106.48303 101.73024 106.54947 101.79668 curveto
-106.6159 101.86311 106.65327 101.9533 106.65327 102.04724 curveto closepath
- fill
-newpath 127.91312 102.04724 moveto
-127.91312 102.14119 127.87575 102.23137 127.80931 102.2978 curveto
-127.74287 102.36424 127.6527 102.40161 127.55875 102.40161 curveto
-127.4648 102.40161 127.37462 102.36424 127.30818 102.2978 curveto
-127.24174 102.23137 127.20438 102.14119 127.20438 102.04724 curveto
-127.20438 101.9533 127.24174 101.86311 127.30818 101.79668 curveto
-127.37462 101.73024 127.4648 101.69287 127.55875 101.69287 curveto
-127.6527 101.69287 127.74287 101.73024 127.80931 101.79668 curveto
-127.87575 101.86311 127.91312 101.9533 127.91312 102.04724 curveto closepath
- fill
-newpath 149.17296 102.04724 moveto
-149.17296 102.14119 149.13559 102.23137 149.06915 102.2978 curveto
-149.00272 102.36424 148.91254 102.40161 148.81859 102.40161 curveto
-148.72464 102.40161 148.63446 102.36424 148.56802 102.2978 curveto
-148.50159 102.23137 148.46422 102.14119 148.46422 102.04724 curveto
-148.46422 101.9533 148.50159 101.86311 148.56802 101.79668 curveto
-148.63446 101.73024 148.72464 101.69287 148.81859 101.69287 curveto
-148.91254 101.69287 149.00272 101.73024 149.06915 101.79668 curveto
-149.13559 101.86311 149.17296 101.9533 149.17296 102.04724 curveto closepath
- fill
-newpath 191.69264 102.04724 moveto
-191.69264 102.14119 191.65527 102.23137 191.58884 102.2978 curveto
-191.5224 102.36424 191.43222 102.40161 191.33827 102.40161 curveto
-191.24432 102.40161 191.15414 102.36424 191.0877 102.2978 curveto
-191.02127 102.23137 190.9839 102.14119 190.9839 102.04724 curveto
-190.9839 101.9533 191.02127 101.86311 191.0877 101.79668 curveto
-191.15414 101.73024 191.24432 101.69287 191.33827 101.69287 curveto
-191.43222 101.69287 191.5224 101.73024 191.58884 101.79668 curveto
-191.65527 101.86311 191.69264 101.9533 191.69264 102.04724 curveto closepath
- fill
-newpath 212.95248 102.04724 moveto
-212.95248 102.14119 212.91512 102.23137 212.84868 102.2978 curveto
-212.78224 102.36424 212.69206 102.40161 212.59811 102.40161 curveto
-212.50417 102.40161 212.41399 102.36424 212.34755 102.2978 curveto
-212.28111 102.23137 212.24374 102.14119 212.24374 102.04724 curveto
-212.24374 101.9533 212.28111 101.86311 212.34755 101.79668 curveto
-212.41399 101.73024 212.50417 101.69287 212.59811 101.69287 curveto
-212.69206 101.69287 212.78224 101.73024 212.84868 101.79668 curveto
-212.91512 101.86311 212.95248 101.9533 212.95248 102.04724 curveto closepath
- fill
-newpath 234.21233 102.04724 moveto
-234.21233 102.14119 234.17496 102.23137 234.10852 102.2978 curveto
-234.04208 102.36424 233.9519 102.40161 233.85796 102.40161 curveto
-233.764 102.40161 233.67383 102.36424 233.60739 102.2978 curveto
-233.54095 102.23137 233.50359 102.14119 233.50359 102.04724 curveto
-233.50359 101.9533 233.54095 101.86311 233.60739 101.79668 curveto
-233.67383 101.73024 233.764 101.69287 233.85796 101.69287 curveto
-233.9519 101.69287 234.04208 101.73024 234.10852 101.79668 curveto
-234.17496 101.86311 234.21233 101.9533 234.21233 102.04724 curveto closepath
- fill
-newpath 255.47217 102.04724 moveto
-255.47217 102.14119 255.4348 102.23137 255.36836 102.2978 curveto
-255.30193 102.36424 255.21175 102.40161 255.1178 102.40161 curveto
-255.02385 102.40161 254.93367 102.36424 254.86723 102.2978 curveto
-254.8008 102.23137 254.76343 102.14119 254.76343 102.04724 curveto
-254.76343 101.9533 254.8008 101.86311 254.86723 101.79668 curveto
-254.93367 101.73024 255.02385 101.69287 255.1178 101.69287 curveto
-255.21175 101.69287 255.30193 101.73024 255.36836 101.79668 curveto
-255.4348 101.86311 255.47217 101.9533 255.47217 102.04724 curveto closepath
- fill
-newpath 85.39343 106.29921 moveto
-85.39343 106.39316 85.35606 106.48334 85.28963 106.54977 curveto
-85.22319 106.61621 85.13301 106.65358 85.03906 106.65358 curveto
-84.94511 106.65358 84.85493 106.61621 84.7885 106.54977 curveto
-84.72206 106.48334 84.6847 106.39316 84.6847 106.29921 curveto
-84.6847 106.20526 84.72206 106.11508 84.7885 106.04865 curveto
-84.85493 105.98221 84.94511 105.94484 85.03906 105.94484 curveto
-85.13301 105.94484 85.22319 105.98221 85.28963 106.04865 curveto
-85.35606 106.11508 85.39343 106.20526 85.39343 106.29921 curveto closepath fill
-newpath 106.65327 106.29921 moveto
-106.65327 106.39316 106.6159 106.48334 106.54947 106.54977 curveto
-106.48303 106.61621 106.39285 106.65358 106.2989 106.65358 curveto
-106.20496 106.65358 106.11478 106.61621 106.04834 106.54977 curveto
-105.9819 106.48334 105.94453 106.39316 105.94453 106.29921 curveto
-105.94453 106.20526 105.9819 106.11508 106.04834 106.04865 curveto
-106.11478 105.98221 106.20496 105.94484 106.2989 105.94484 curveto
-106.39285 105.94484 106.48303 105.98221 106.54947 106.04865 curveto
-106.6159 106.11508 106.65327 106.20526 106.65327 106.29921 curveto closepath
- fill
-newpath 127.91312 106.29921 moveto
-127.91312 106.39316 127.87575 106.48334 127.80931 106.54977 curveto
-127.74287 106.61621 127.6527 106.65358 127.55875 106.65358 curveto
-127.4648 106.65358 127.37462 106.61621 127.30818 106.54977 curveto
-127.24174 106.48334 127.20438 106.39316 127.20438 106.29921 curveto
-127.20438 106.20526 127.24174 106.11508 127.30818 106.04865 curveto
-127.37462 105.98221 127.4648 105.94484 127.55875 105.94484 curveto
-127.6527 105.94484 127.74287 105.98221 127.80931 106.04865 curveto
-127.87575 106.11508 127.91312 106.20526 127.91312 106.29921 curveto closepath
- fill
-newpath 149.17296 106.29921 moveto
-149.17296 106.39316 149.13559 106.48334 149.06915 106.54977 curveto
-149.00272 106.61621 148.91254 106.65358 148.81859 106.65358 curveto
-148.72464 106.65358 148.63446 106.61621 148.56802 106.54977 curveto
-148.50159 106.48334 148.46422 106.39316 148.46422 106.29921 curveto
-148.46422 106.20526 148.50159 106.11508 148.56802 106.04865 curveto
-148.63446 105.98221 148.72464 105.94484 148.81859 105.94484 curveto
-148.91254 105.94484 149.00272 105.98221 149.06915 106.04865 curveto
-149.13559 106.11508 149.17296 106.20526 149.17296 106.29921 curveto closepath
- fill
-newpath 191.69264 106.29921 moveto
-191.69264 106.39316 191.65527 106.48334 191.58884 106.54977 curveto
-191.5224 106.61621 191.43222 106.65358 191.33827 106.65358 curveto
-191.24432 106.65358 191.15414 106.61621 191.0877 106.54977 curveto
-191.02127 106.48334 190.9839 106.39316 190.9839 106.29921 curveto
-190.9839 106.20526 191.02127 106.11508 191.0877 106.04865 curveto
-191.15414 105.98221 191.24432 105.94484 191.33827 105.94484 curveto
-191.43222 105.94484 191.5224 105.98221 191.58884 106.04865 curveto
-191.65527 106.11508 191.69264 106.20526 191.69264 106.29921 curveto closepath
- fill
-newpath 212.95248 106.29921 moveto
-212.95248 106.39316 212.91512 106.48334 212.84868 106.54977 curveto
-212.78224 106.61621 212.69206 106.65358 212.59811 106.65358 curveto
-212.50417 106.65358 212.41399 106.61621 212.34755 106.54977 curveto
-212.28111 106.48334 212.24374 106.39316 212.24374 106.29921 curveto
-212.24374 106.20526 212.28111 106.11508 212.34755 106.04865 curveto
-212.41399 105.98221 212.50417 105.94484 212.59811 105.94484 curveto
-212.69206 105.94484 212.78224 105.98221 212.84868 106.04865 curveto
-212.91512 106.11508 212.95248 106.20526 212.95248 106.29921 curveto closepath
- fill
-newpath 234.21233 106.29921 moveto
-234.21233 106.39316 234.17496 106.48334 234.10852 106.54977 curveto
-234.04208 106.61621 233.9519 106.65358 233.85796 106.65358 curveto
-233.764 106.65358 233.67383 106.61621 233.60739 106.54977 curveto
-233.54095 106.48334 233.50359 106.39316 233.50359 106.29921 curveto
-233.50359 106.20526 233.54095 106.11508 233.60739 106.04865 curveto
-233.67383 105.98221 233.764 105.94484 233.85796 105.94484 curveto
-233.9519 105.94484 234.04208 105.98221 234.10852 106.04865 curveto
-234.17496 106.11508 234.21233 106.20526 234.21233 106.29921 curveto closepath
- fill
-newpath 255.47217 106.29921 moveto
-255.47217 106.39316 255.4348 106.48334 255.36836 106.54977 curveto
-255.30193 106.61621 255.21175 106.65358 255.1178 106.65358 curveto
-255.02385 106.65358 254.93367 106.61621 254.86723 106.54977 curveto
-254.8008 106.48334 254.76343 106.39316 254.76343 106.29921 curveto
-254.76343 106.20526 254.8008 106.11508 254.86723 106.04865 curveto
-254.93367 105.98221 255.02385 105.94484 255.1178 105.94484 curveto
-255.21175 105.94484 255.30193 105.98221 255.36836 106.04865 curveto
-255.4348 106.11508 255.47217 106.20526 255.47217 106.29921 curveto closepath
- fill
-newpath 68.38556 46.77165 moveto
-68.38556 46.8656 68.34819 46.95578 68.28175 47.02222 curveto
-68.21532 47.08865 68.12514 47.12602 68.03119 47.12602 curveto
-67.93724 47.12602 67.84706 47.08865 67.78062 47.02222 curveto
-67.71419 46.95578 67.67682 46.8656 67.67682 46.77165 curveto
-67.67682 46.6777 67.71419 46.58752 67.78062 46.52109 curveto
-67.84706 46.45465 67.93724 46.41728 68.03119 46.41728 curveto
-68.12514 46.41728 68.21532 46.45465 68.28175 46.52109 curveto
-68.34819 46.58752 68.38556 46.6777 68.38556 46.77165 curveto closepath fill
-newpath 68.38556 68.0315 moveto
-68.38556 68.12544 68.34819 68.21562 68.28175 68.28206 curveto
-68.21532 68.3485 68.12514 68.38586 68.03119 68.38586 curveto
-67.93724 68.38586 67.84706 68.3485 67.78062 68.28206 curveto
-67.71419 68.21562 67.67682 68.12544 67.67682 68.0315 curveto
-67.67682 67.93755 67.71419 67.84737 67.78062 67.78093 curveto
-67.84706 67.7145 67.93724 67.67712 68.03119 67.67712 curveto
-68.12514 67.67712 68.21532 67.7145 68.28175 67.78093 curveto
-68.34819 67.84737 68.38556 67.93755 68.38556 68.0315 curveto closepath fill
-newpath 68.38556 89.29134 moveto
-68.38556 89.38528 68.34819 89.47546 68.28175 89.5419 curveto
-68.21532 89.60834 68.12514 89.6457 68.03119 89.6457 curveto
-67.93724 89.6457 67.84706 89.60834 67.78062 89.5419 curveto
-67.71419 89.47546 67.67682 89.38528 67.67682 89.29134 curveto
-67.67682 89.19739 67.71419 89.10721 67.78062 89.04077 curveto
-67.84706 88.97433 67.93724 88.93697 68.03119 88.93697 curveto
-68.12514 88.93697 68.21532 88.97433 68.28175 89.04077 curveto
-68.34819 89.10721 68.38556 89.19739 68.38556 89.29134 curveto closepath fill
-newpath 68.38556 131.81102 moveto
-68.38556 131.90497 68.34819 131.99515 68.28175 132.06158 curveto
-68.21532 132.12802 68.12514 132.16539 68.03119 132.16539 curveto
-67.93724 132.16539 67.84706 132.12802 67.78062 132.06158 curveto
-67.71419 131.99515 67.67682 131.90497 67.67682 131.81102 curveto
-67.67682 131.71707 67.71419 131.62689 67.78062 131.56046 curveto
-67.84706 131.49402 67.93724 131.45665 68.03119 131.45665 curveto
-68.12514 131.45665 68.21532 131.49402 68.28175 131.56046 curveto
-68.34819 131.62689 68.38556 131.71707 68.38556 131.81102 curveto closepath fill
-newpath 68.38556 153.07086 moveto
-68.38556 153.16481 68.34819 153.25499 68.28175 153.32143 curveto
-68.21532 153.38786 68.12514 153.42523 68.03119 153.42523 curveto
-67.93724 153.42523 67.84706 153.38786 67.78062 153.32143 curveto
-67.71419 153.25499 67.67682 153.16481 67.67682 153.07086 curveto
-67.67682 152.97691 67.71419 152.88673 67.78062 152.8203 curveto
-67.84706 152.75386 67.93724 152.71649 68.03119 152.71649 curveto
-68.12514 152.71649 68.21532 152.75386 68.28175 152.8203 curveto
-68.34819 152.88673 68.38556 152.97691 68.38556 153.07086 curveto closepath fill
-newpath 68.38556 174.3307 moveto
-68.38556 174.42465 68.34819 174.51483 68.28175 174.58127 curveto
-68.21532 174.6477 68.12514 174.68507 68.03119 174.68507 curveto
-67.93724 174.68507 67.84706 174.6477 67.78062 174.58127 curveto
-67.71419 174.51483 67.67682 174.42465 67.67682 174.3307 curveto
-67.67682 174.23676 67.71419 174.14658 67.78062 174.08014 curveto
-67.84706 174.0137 67.93724 173.97633 68.03119 173.97633 curveto
-68.12514 173.97633 68.21532 174.0137 68.28175 174.08014 curveto
-68.34819 174.14658 68.38556 174.23676 68.38556 174.3307 curveto closepath fill
-newpath 72.63753 46.77165 moveto
-72.63753 46.8656 72.60016 46.95578 72.53372 47.02222 curveto
-72.46729 47.08865 72.3771 47.12602 72.28316 47.12602 curveto
-72.18921 47.12602 72.09903 47.08865 72.0326 47.02222 curveto
-71.96616 46.95578 71.92879 46.8656 71.92879 46.77165 curveto
-71.92879 46.6777 71.96616 46.58752 72.0326 46.52109 curveto
-72.09903 46.45465 72.18921 46.41728 72.28316 46.41728 curveto
-72.3771 46.41728 72.46729 46.45465 72.53372 46.52109 curveto
-72.60016 46.58752 72.63753 46.6777 72.63753 46.77165 curveto closepath fill
-newpath 72.63753 68.0315 moveto
-72.63753 68.12544 72.60016 68.21562 72.53372 68.28206 curveto
-72.46729 68.3485 72.3771 68.38586 72.28316 68.38586 curveto
-72.18921 68.38586 72.09903 68.3485 72.0326 68.28206 curveto
-71.96616 68.21562 71.92879 68.12544 71.92879 68.0315 curveto
-71.92879 67.93755 71.96616 67.84737 72.0326 67.78093 curveto
-72.09903 67.7145 72.18921 67.67712 72.28316 67.67712 curveto
-72.3771 67.67712 72.46729 67.7145 72.53372 67.78093 curveto
-72.60016 67.84737 72.63753 67.93755 72.63753 68.0315 curveto closepath fill
-newpath 72.63753 89.29134 moveto
-72.63753 89.38528 72.60016 89.47546 72.53372 89.5419 curveto
-72.46729 89.60834 72.3771 89.6457 72.28316 89.6457 curveto
-72.18921 89.6457 72.09903 89.60834 72.0326 89.5419 curveto
-71.96616 89.47546 71.92879 89.38528 71.92879 89.29134 curveto
-71.92879 89.19739 71.96616 89.10721 72.0326 89.04077 curveto
-72.09903 88.97433 72.18921 88.93697 72.28316 88.93697 curveto
-72.3771 88.93697 72.46729 88.97433 72.53372 89.04077 curveto
-72.60016 89.10721 72.63753 89.19739 72.63753 89.29134 curveto closepath fill
-newpath 72.63753 131.81102 moveto
-72.63753 131.90497 72.60016 131.99515 72.53372 132.06158 curveto
-72.46729 132.12802 72.3771 132.16539 72.28316 132.16539 curveto
-72.18921 132.16539 72.09903 132.12802 72.0326 132.06158 curveto
-71.96616 131.99515 71.92879 131.90497 71.92879 131.81102 curveto
-71.92879 131.71707 71.96616 131.62689 72.0326 131.56046 curveto
-72.09903 131.49402 72.18921 131.45665 72.28316 131.45665 curveto
-72.3771 131.45665 72.46729 131.49402 72.53372 131.56046 curveto
-72.60016 131.62689 72.63753 131.71707 72.63753 131.81102 curveto closepath fill
-newpath 72.63753 153.07086 moveto
-72.63753 153.16481 72.60016 153.25499 72.53372 153.32143 curveto
-72.46729 153.38786 72.3771 153.42523 72.28316 153.42523 curveto
-72.18921 153.42523 72.09903 153.38786 72.0326 153.32143 curveto
-71.96616 153.25499 71.92879 153.16481 71.92879 153.07086 curveto
-71.92879 152.97691 71.96616 152.88673 72.0326 152.8203 curveto
-72.09903 152.75386 72.18921 152.71649 72.28316 152.71649 curveto
-72.3771 152.71649 72.46729 152.75386 72.53372 152.8203 curveto
-72.60016 152.88673 72.63753 152.97691 72.63753 153.07086 curveto closepath fill
-newpath 72.63753 174.3307 moveto
-72.63753 174.42465 72.60016 174.51483 72.53372 174.58127 curveto
-72.46729 174.6477 72.3771 174.68507 72.28316 174.68507 curveto
-72.18921 174.68507 72.09903 174.6477 72.0326 174.58127 curveto
-71.96616 174.51483 71.92879 174.42465 71.92879 174.3307 curveto
-71.92879 174.23676 71.96616 174.14658 72.0326 174.08014 curveto
-72.09903 174.0137 72.18921 173.97633 72.28316 173.97633 curveto
-72.3771 173.97633 72.46729 174.0137 72.53372 174.08014 curveto
-72.60016 174.14658 72.63753 174.23676 72.63753 174.3307 curveto closepath fill
-newpath 76.8895 46.77165 moveto
-76.8895 46.8656 76.85213 46.95578 76.78569 47.02222 curveto
-76.71925 47.08865 76.62907 47.12602 76.53513 47.12602 curveto
-76.44118 47.12602 76.351 47.08865 76.28456 47.02222 curveto
-76.21812 46.95578 76.18076 46.8656 76.18076 46.77165 curveto
-76.18076 46.6777 76.21812 46.58752 76.28456 46.52109 curveto
-76.351 46.45465 76.44118 46.41728 76.53513 46.41728 curveto
-76.62907 46.41728 76.71925 46.45465 76.78569 46.52109 curveto
-76.85213 46.58752 76.8895 46.6777 76.8895 46.77165 curveto closepath fill
-newpath 76.8895 68.0315 moveto
-76.8895 68.12544 76.85213 68.21562 76.78569 68.28206 curveto
-76.71925 68.3485 76.62907 68.38586 76.53513 68.38586 curveto
-76.44118 68.38586 76.351 68.3485 76.28456 68.28206 curveto
-76.21812 68.21562 76.18076 68.12544 76.18076 68.0315 curveto
-76.18076 67.93755 76.21812 67.84737 76.28456 67.78093 curveto
-76.351 67.7145 76.44118 67.67712 76.53513 67.67712 curveto
-76.62907 67.67712 76.71925 67.7145 76.78569 67.78093 curveto
-76.85213 67.84737 76.8895 67.93755 76.8895 68.0315 curveto closepath fill
-newpath 76.8895 89.29134 moveto
-76.8895 89.38528 76.85213 89.47546 76.78569 89.5419 curveto
-76.71925 89.60834 76.62907 89.6457 76.53513 89.6457 curveto
-76.44118 89.6457 76.351 89.60834 76.28456 89.5419 curveto
-76.21812 89.47546 76.18076 89.38528 76.18076 89.29134 curveto
-76.18076 89.19739 76.21812 89.10721 76.28456 89.04077 curveto
-76.351 88.97433 76.44118 88.93697 76.53513 88.93697 curveto
-76.62907 88.93697 76.71925 88.97433 76.78569 89.04077 curveto
-76.85213 89.10721 76.8895 89.19739 76.8895 89.29134 curveto closepath fill
-newpath 76.8895 131.81102 moveto
-76.8895 131.90497 76.85213 131.99515 76.78569 132.06158 curveto
-76.71925 132.12802 76.62907 132.16539 76.53513 132.16539 curveto
-76.44118 132.16539 76.351 132.12802 76.28456 132.06158 curveto
-76.21812 131.99515 76.18076 131.90497 76.18076 131.81102 curveto
-76.18076 131.71707 76.21812 131.62689 76.28456 131.56046 curveto
-76.351 131.49402 76.44118 131.45665 76.53513 131.45665 curveto
-76.62907 131.45665 76.71925 131.49402 76.78569 131.56046 curveto
-76.85213 131.62689 76.8895 131.71707 76.8895 131.81102 curveto closepath fill
-newpath 76.8895 153.07086 moveto
-76.8895 153.16481 76.85213 153.25499 76.78569 153.32143 curveto
-76.71925 153.38786 76.62907 153.42523 76.53513 153.42523 curveto
-76.44118 153.42523 76.351 153.38786 76.28456 153.32143 curveto
-76.21812 153.25499 76.18076 153.16481 76.18076 153.07086 curveto
-76.18076 152.97691 76.21812 152.88673 76.28456 152.8203 curveto
-76.351 152.75386 76.44118 152.71649 76.53513 152.71649 curveto
-76.62907 152.71649 76.71925 152.75386 76.78569 152.8203 curveto
-76.85213 152.88673 76.8895 152.97691 76.8895 153.07086 curveto closepath fill
-newpath 76.8895 174.3307 moveto
-76.8895 174.42465 76.85213 174.51483 76.78569 174.58127 curveto
-76.71925 174.6477 76.62907 174.68507 76.53513 174.68507 curveto
-76.44118 174.68507 76.351 174.6477 76.28456 174.58127 curveto
-76.21812 174.51483 76.18076 174.42465 76.18076 174.3307 curveto
-76.18076 174.23676 76.21812 174.14658 76.28456 174.08014 curveto
-76.351 174.0137 76.44118 173.97633 76.53513 173.97633 curveto
-76.62907 173.97633 76.71925 174.0137 76.78569 174.08014 curveto
-76.85213 174.14658 76.8895 174.23676 76.8895 174.3307 curveto closepath fill
-newpath 81.14146 46.77165 moveto
-81.14146 46.8656 81.1041 46.95578 81.03766 47.02222 curveto
-80.97122 47.08865 80.88104 47.12602 80.7871 47.12602 curveto
-80.69315 47.12602 80.60297 47.08865 80.53653 47.02222 curveto
-80.4701 46.95578 80.43272 46.8656 80.43272 46.77165 curveto
-80.43272 46.6777 80.4701 46.58752 80.53653 46.52109 curveto
-80.60297 46.45465 80.69315 46.41728 80.7871 46.41728 curveto
-80.88104 46.41728 80.97122 46.45465 81.03766 46.52109 curveto
-81.1041 46.58752 81.14146 46.6777 81.14146 46.77165 curveto closepath fill
-newpath 81.14146 68.0315 moveto
-81.14146 68.12544 81.1041 68.21562 81.03766 68.28206 curveto
-80.97122 68.3485 80.88104 68.38586 80.7871 68.38586 curveto
-80.69315 68.38586 80.60297 68.3485 80.53653 68.28206 curveto
-80.4701 68.21562 80.43272 68.12544 80.43272 68.0315 curveto
-80.43272 67.93755 80.4701 67.84737 80.53653 67.78093 curveto
-80.60297 67.7145 80.69315 67.67712 80.7871 67.67712 curveto
-80.88104 67.67712 80.97122 67.7145 81.03766 67.78093 curveto
-81.1041 67.84737 81.14146 67.93755 81.14146 68.0315 curveto closepath fill
-newpath 81.14146 89.29134 moveto
-81.14146 89.38528 81.1041 89.47546 81.03766 89.5419 curveto
-80.97122 89.60834 80.88104 89.6457 80.7871 89.6457 curveto
-80.69315 89.6457 80.60297 89.60834 80.53653 89.5419 curveto
-80.4701 89.47546 80.43272 89.38528 80.43272 89.29134 curveto
-80.43272 89.19739 80.4701 89.10721 80.53653 89.04077 curveto
-80.60297 88.97433 80.69315 88.93697 80.7871 88.93697 curveto
-80.88104 88.93697 80.97122 88.97433 81.03766 89.04077 curveto
-81.1041 89.10721 81.14146 89.19739 81.14146 89.29134 curveto closepath fill
-newpath 81.14146 131.81102 moveto
-81.14146 131.90497 81.1041 131.99515 81.03766 132.06158 curveto
-80.97122 132.12802 80.88104 132.16539 80.7871 132.16539 curveto
-80.69315 132.16539 80.60297 132.12802 80.53653 132.06158 curveto
-80.4701 131.99515 80.43272 131.90497 80.43272 131.81102 curveto
-80.43272 131.71707 80.4701 131.62689 80.53653 131.56046 curveto
-80.60297 131.49402 80.69315 131.45665 80.7871 131.45665 curveto
-80.88104 131.45665 80.97122 131.49402 81.03766 131.56046 curveto
-81.1041 131.62689 81.14146 131.71707 81.14146 131.81102 curveto closepath fill
-newpath 81.14146 153.07086 moveto
-81.14146 153.16481 81.1041 153.25499 81.03766 153.32143 curveto
-80.97122 153.38786 80.88104 153.42523 80.7871 153.42523 curveto
-80.69315 153.42523 80.60297 153.38786 80.53653 153.32143 curveto
-80.4701 153.25499 80.43272 153.16481 80.43272 153.07086 curveto
-80.43272 152.97691 80.4701 152.88673 80.53653 152.8203 curveto
-80.60297 152.75386 80.69315 152.71649 80.7871 152.71649 curveto
-80.88104 152.71649 80.97122 152.75386 81.03766 152.8203 curveto
-81.1041 152.88673 81.14146 152.97691 81.14146 153.07086 curveto closepath fill
-newpath 81.14146 174.3307 moveto
-81.14146 174.42465 81.1041 174.51483 81.03766 174.58127 curveto
-80.97122 174.6477 80.88104 174.68507 80.7871 174.68507 curveto
-80.69315 174.68507 80.60297 174.6477 80.53653 174.58127 curveto
-80.4701 174.51483 80.43272 174.42465 80.43272 174.3307 curveto
-80.43272 174.23676 80.4701 174.14658 80.53653 174.08014 curveto
-80.60297 174.0137 80.69315 173.97633 80.7871 173.97633 curveto
-80.88104 173.97633 80.97122 174.0137 81.03766 174.08014 curveto
-81.1041 174.14658 81.14146 174.23676 81.14146 174.3307 curveto closepath fill
-newpath 85.39343 46.77165 moveto
-85.39343 46.8656 85.35606 46.95578 85.28963 47.02222 curveto
-85.22319 47.08865 85.13301 47.12602 85.03906 47.12602 curveto
-84.94511 47.12602 84.85493 47.08865 84.7885 47.02222 curveto
-84.72206 46.95578 84.6847 46.8656 84.6847 46.77165 curveto
-84.6847 46.6777 84.72206 46.58752 84.7885 46.52109 curveto
-84.85493 46.45465 84.94511 46.41728 85.03906 46.41728 curveto
-85.13301 46.41728 85.22319 46.45465 85.28963 46.52109 curveto
-85.35606 46.58752 85.39343 46.6777 85.39343 46.77165 curveto closepath fill
-newpath 85.39343 68.0315 moveto
-85.39343 68.12544 85.35606 68.21562 85.28963 68.28206 curveto
-85.22319 68.3485 85.13301 68.38586 85.03906 68.38586 curveto
-84.94511 68.38586 84.85493 68.3485 84.7885 68.28206 curveto
-84.72206 68.21562 84.6847 68.12544 84.6847 68.0315 curveto
-84.6847 67.93755 84.72206 67.84737 84.7885 67.78093 curveto
-84.85493 67.7145 84.94511 67.67712 85.03906 67.67712 curveto
-85.13301 67.67712 85.22319 67.7145 85.28963 67.78093 curveto
-85.35606 67.84737 85.39343 67.93755 85.39343 68.0315 curveto closepath fill
-newpath 85.39343 89.29134 moveto
-85.39343 89.38528 85.35606 89.47546 85.28963 89.5419 curveto
-85.22319 89.60834 85.13301 89.6457 85.03906 89.6457 curveto
-84.94511 89.6457 84.85493 89.60834 84.7885 89.5419 curveto
-84.72206 89.47546 84.6847 89.38528 84.6847 89.29134 curveto
-84.6847 89.19739 84.72206 89.10721 84.7885 89.04077 curveto
-84.85493 88.97433 84.94511 88.93697 85.03906 88.93697 curveto
-85.13301 88.93697 85.22319 88.97433 85.28963 89.04077 curveto
-85.35606 89.10721 85.39343 89.19739 85.39343 89.29134 curveto closepath fill
-newpath 85.39343 131.81102 moveto
-85.39343 131.90497 85.35606 131.99515 85.28963 132.06158 curveto
-85.22319 132.12802 85.13301 132.16539 85.03906 132.16539 curveto
-84.94511 132.16539 84.85493 132.12802 84.7885 132.06158 curveto
-84.72206 131.99515 84.6847 131.90497 84.6847 131.81102 curveto
-84.6847 131.71707 84.72206 131.62689 84.7885 131.56046 curveto
-84.85493 131.49402 84.94511 131.45665 85.03906 131.45665 curveto
-85.13301 131.45665 85.22319 131.49402 85.28963 131.56046 curveto
-85.35606 131.62689 85.39343 131.71707 85.39343 131.81102 curveto closepath fill
-newpath 85.39343 153.07086 moveto
-85.39343 153.16481 85.35606 153.25499 85.28963 153.32143 curveto
-85.22319 153.38786 85.13301 153.42523 85.03906 153.42523 curveto
-84.94511 153.42523 84.85493 153.38786 84.7885 153.32143 curveto
-84.72206 153.25499 84.6847 153.16481 84.6847 153.07086 curveto
-84.6847 152.97691 84.72206 152.88673 84.7885 152.8203 curveto
-84.85493 152.75386 84.94511 152.71649 85.03906 152.71649 curveto
-85.13301 152.71649 85.22319 152.75386 85.28963 152.8203 curveto
-85.35606 152.88673 85.39343 152.97691 85.39343 153.07086 curveto closepath fill
-newpath 85.39343 174.3307 moveto
-85.39343 174.42465 85.35606 174.51483 85.28963 174.58127 curveto
-85.22319 174.6477 85.13301 174.68507 85.03906 174.68507 curveto
-84.94511 174.68507 84.85493 174.6477 84.7885 174.58127 curveto
-84.72206 174.51483 84.6847 174.42465 84.6847 174.3307 curveto
-84.6847 174.23676 84.72206 174.14658 84.7885 174.08014 curveto
-84.85493 174.0137 84.94511 173.97633 85.03906 173.97633 curveto
-85.13301 173.97633 85.22319 174.0137 85.28963 174.08014 curveto
-85.35606 174.14658 85.39343 174.23676 85.39343 174.3307 curveto closepath fill
-newpath 89.6454 46.77165 moveto
-89.6454 46.8656 89.60803 46.95578 89.5416 47.02222 curveto
-89.47516 47.08865 89.38498 47.12602 89.29103 47.12602 curveto
-89.19708 47.12602 89.1069 47.08865 89.04047 47.02222 curveto
-88.97403 46.95578 88.93666 46.8656 88.93666 46.77165 curveto
-88.93666 46.6777 88.97403 46.58752 89.04047 46.52109 curveto
-89.1069 46.45465 89.19708 46.41728 89.29103 46.41728 curveto
-89.38498 46.41728 89.47516 46.45465 89.5416 46.52109 curveto
-89.60803 46.58752 89.6454 46.6777 89.6454 46.77165 curveto closepath fill
-newpath 89.6454 68.0315 moveto
-89.6454 68.12544 89.60803 68.21562 89.5416 68.28206 curveto
-89.47516 68.3485 89.38498 68.38586 89.29103 68.38586 curveto
-89.19708 68.38586 89.1069 68.3485 89.04047 68.28206 curveto
-88.97403 68.21562 88.93666 68.12544 88.93666 68.0315 curveto
-88.93666 67.93755 88.97403 67.84737 89.04047 67.78093 curveto
-89.1069 67.7145 89.19708 67.67712 89.29103 67.67712 curveto
-89.38498 67.67712 89.47516 67.7145 89.5416 67.78093 curveto
-89.60803 67.84737 89.6454 67.93755 89.6454 68.0315 curveto closepath fill
-newpath 89.6454 89.29134 moveto
-89.6454 89.38528 89.60803 89.47546 89.5416 89.5419 curveto
-89.47516 89.60834 89.38498 89.6457 89.29103 89.6457 curveto
-89.19708 89.6457 89.1069 89.60834 89.04047 89.5419 curveto
-88.97403 89.47546 88.93666 89.38528 88.93666 89.29134 curveto
-88.93666 89.19739 88.97403 89.10721 89.04047 89.04077 curveto
-89.1069 88.97433 89.19708 88.93697 89.29103 88.93697 curveto
-89.38498 88.93697 89.47516 88.97433 89.5416 89.04077 curveto
-89.60803 89.10721 89.6454 89.19739 89.6454 89.29134 curveto closepath fill
-newpath 89.6454 131.81102 moveto
-89.6454 131.90497 89.60803 131.99515 89.5416 132.06158 curveto
-89.47516 132.12802 89.38498 132.16539 89.29103 132.16539 curveto
-89.19708 132.16539 89.1069 132.12802 89.04047 132.06158 curveto
-88.97403 131.99515 88.93666 131.90497 88.93666 131.81102 curveto
-88.93666 131.71707 88.97403 131.62689 89.04047 131.56046 curveto
-89.1069 131.49402 89.19708 131.45665 89.29103 131.45665 curveto
-89.38498 131.45665 89.47516 131.49402 89.5416 131.56046 curveto
-89.60803 131.62689 89.6454 131.71707 89.6454 131.81102 curveto closepath fill
-newpath 89.6454 153.07086 moveto
-89.6454 153.16481 89.60803 153.25499 89.5416 153.32143 curveto
-89.47516 153.38786 89.38498 153.42523 89.29103 153.42523 curveto
-89.19708 153.42523 89.1069 153.38786 89.04047 153.32143 curveto
-88.97403 153.25499 88.93666 153.16481 88.93666 153.07086 curveto
-88.93666 152.97691 88.97403 152.88673 89.04047 152.8203 curveto
-89.1069 152.75386 89.19708 152.71649 89.29103 152.71649 curveto
-89.38498 152.71649 89.47516 152.75386 89.5416 152.8203 curveto
-89.60803 152.88673 89.6454 152.97691 89.6454 153.07086 curveto closepath fill
-newpath 89.6454 174.3307 moveto
-89.6454 174.42465 89.60803 174.51483 89.5416 174.58127 curveto
-89.47516 174.6477 89.38498 174.68507 89.29103 174.68507 curveto
-89.19708 174.68507 89.1069 174.6477 89.04047 174.58127 curveto
-88.97403 174.51483 88.93666 174.42465 88.93666 174.3307 curveto
-88.93666 174.23676 88.97403 174.14658 89.04047 174.08014 curveto
-89.1069 174.0137 89.19708 173.97633 89.29103 173.97633 curveto
-89.38498 173.97633 89.47516 174.0137 89.5416 174.08014 curveto
-89.60803 174.14658 89.6454 174.23676 89.6454 174.3307 curveto closepath fill
-newpath 93.89737 46.77165 moveto
-93.89737 46.8656 93.86 46.95578 93.79356 47.02222 curveto
-93.72713 47.08865 93.63695 47.12602 93.543 47.12602 curveto
-93.44905 47.12602 93.35887 47.08865 93.29243 47.02222 curveto
-93.226 46.95578 93.18863 46.8656 93.18863 46.77165 curveto
-93.18863 46.6777 93.226 46.58752 93.29243 46.52109 curveto
-93.35887 46.45465 93.44905 46.41728 93.543 46.41728 curveto
-93.63695 46.41728 93.72713 46.45465 93.79356 46.52109 curveto
-93.86 46.58752 93.89737 46.6777 93.89737 46.77165 curveto closepath fill
-newpath 93.89737 68.0315 moveto
-93.89737 68.12544 93.86 68.21562 93.79356 68.28206 curveto
-93.72713 68.3485 93.63695 68.38586 93.543 68.38586 curveto
-93.44905 68.38586 93.35887 68.3485 93.29243 68.28206 curveto
-93.226 68.21562 93.18863 68.12544 93.18863 68.0315 curveto
-93.18863 67.93755 93.226 67.84737 93.29243 67.78093 curveto
-93.35887 67.7145 93.44905 67.67712 93.543 67.67712 curveto
-93.63695 67.67712 93.72713 67.7145 93.79356 67.78093 curveto
-93.86 67.84737 93.89737 67.93755 93.89737 68.0315 curveto closepath fill
-newpath 93.89737 89.29134 moveto
-93.89737 89.38528 93.86 89.47546 93.79356 89.5419 curveto
-93.72713 89.60834 93.63695 89.6457 93.543 89.6457 curveto
-93.44905 89.6457 93.35887 89.60834 93.29243 89.5419 curveto
-93.226 89.47546 93.18863 89.38528 93.18863 89.29134 curveto
-93.18863 89.19739 93.226 89.10721 93.29243 89.04077 curveto
-93.35887 88.97433 93.44905 88.93697 93.543 88.93697 curveto
-93.63695 88.93697 93.72713 88.97433 93.79356 89.04077 curveto
-93.86 89.10721 93.89737 89.19739 93.89737 89.29134 curveto closepath fill
-newpath 93.89737 131.81102 moveto
-93.89737 131.90497 93.86 131.99515 93.79356 132.06158 curveto
-93.72713 132.12802 93.63695 132.16539 93.543 132.16539 curveto
-93.44905 132.16539 93.35887 132.12802 93.29243 132.06158 curveto
-93.226 131.99515 93.18863 131.90497 93.18863 131.81102 curveto
-93.18863 131.71707 93.226 131.62689 93.29243 131.56046 curveto
-93.35887 131.49402 93.44905 131.45665 93.543 131.45665 curveto
-93.63695 131.45665 93.72713 131.49402 93.79356 131.56046 curveto
-93.86 131.62689 93.89737 131.71707 93.89737 131.81102 curveto closepath fill
-newpath 93.89737 153.07086 moveto
-93.89737 153.16481 93.86 153.25499 93.79356 153.32143 curveto
-93.72713 153.38786 93.63695 153.42523 93.543 153.42523 curveto
-93.44905 153.42523 93.35887 153.38786 93.29243 153.32143 curveto
-93.226 153.25499 93.18863 153.16481 93.18863 153.07086 curveto
-93.18863 152.97691 93.226 152.88673 93.29243 152.8203 curveto
-93.35887 152.75386 93.44905 152.71649 93.543 152.71649 curveto
-93.63695 152.71649 93.72713 152.75386 93.79356 152.8203 curveto
-93.86 152.88673 93.89737 152.97691 93.89737 153.07086 curveto closepath fill
-newpath 93.89737 174.3307 moveto
-93.89737 174.42465 93.86 174.51483 93.79356 174.58127 curveto
-93.72713 174.6477 93.63695 174.68507 93.543 174.68507 curveto
-93.44905 174.68507 93.35887 174.6477 93.29243 174.58127 curveto
-93.226 174.51483 93.18863 174.42465 93.18863 174.3307 curveto
-93.18863 174.23676 93.226 174.14658 93.29243 174.08014 curveto
-93.35887 174.0137 93.44905 173.97633 93.543 173.97633 curveto
-93.63695 173.97633 93.72713 174.0137 93.79356 174.08014 curveto
-93.86 174.14658 93.89737 174.23676 93.89737 174.3307 curveto closepath fill
-newpath 98.14934 46.77165 moveto
-98.14934 46.8656 98.11197 46.95578 98.04553 47.02222 curveto
-97.9791 47.08865 97.88892 47.12602 97.79497 47.12602 curveto
-97.70102 47.12602 97.61084 47.08865 97.5444 47.02222 curveto
-97.47797 46.95578 97.4406 46.8656 97.4406 46.77165 curveto
-97.4406 46.6777 97.47797 46.58752 97.5444 46.52109 curveto
-97.61084 46.45465 97.70102 46.41728 97.79497 46.41728 curveto
-97.88892 46.41728 97.9791 46.45465 98.04553 46.52109 curveto
-98.11197 46.58752 98.14934 46.6777 98.14934 46.77165 curveto closepath fill
-newpath 98.14934 68.0315 moveto
-98.14934 68.12544 98.11197 68.21562 98.04553 68.28206 curveto
-97.9791 68.3485 97.88892 68.38586 97.79497 68.38586 curveto
-97.70102 68.38586 97.61084 68.3485 97.5444 68.28206 curveto
-97.47797 68.21562 97.4406 68.12544 97.4406 68.0315 curveto
-97.4406 67.93755 97.47797 67.84737 97.5444 67.78093 curveto
-97.61084 67.7145 97.70102 67.67712 97.79497 67.67712 curveto
-97.88892 67.67712 97.9791 67.7145 98.04553 67.78093 curveto
-98.11197 67.84737 98.14934 67.93755 98.14934 68.0315 curveto closepath fill
-newpath 98.14934 89.29134 moveto
-98.14934 89.38528 98.11197 89.47546 98.04553 89.5419 curveto
-97.9791 89.60834 97.88892 89.6457 97.79497 89.6457 curveto
-97.70102 89.6457 97.61084 89.60834 97.5444 89.5419 curveto
-97.47797 89.47546 97.4406 89.38528 97.4406 89.29134 curveto
-97.4406 89.19739 97.47797 89.10721 97.5444 89.04077 curveto
-97.61084 88.97433 97.70102 88.93697 97.79497 88.93697 curveto
-97.88892 88.93697 97.9791 88.97433 98.04553 89.04077 curveto
-98.11197 89.10721 98.14934 89.19739 98.14934 89.29134 curveto closepath fill
-newpath 98.14934 131.81102 moveto
-98.14934 131.90497 98.11197 131.99515 98.04553 132.06158 curveto
-97.9791 132.12802 97.88892 132.16539 97.79497 132.16539 curveto
-97.70102 132.16539 97.61084 132.12802 97.5444 132.06158 curveto
-97.47797 131.99515 97.4406 131.90497 97.4406 131.81102 curveto
-97.4406 131.71707 97.47797 131.62689 97.5444 131.56046 curveto
-97.61084 131.49402 97.70102 131.45665 97.79497 131.45665 curveto
-97.88892 131.45665 97.9791 131.49402 98.04553 131.56046 curveto
-98.11197 131.62689 98.14934 131.71707 98.14934 131.81102 curveto closepath fill
-newpath 98.14934 153.07086 moveto
-98.14934 153.16481 98.11197 153.25499 98.04553 153.32143 curveto
-97.9791 153.38786 97.88892 153.42523 97.79497 153.42523 curveto
-97.70102 153.42523 97.61084 153.38786 97.5444 153.32143 curveto
-97.47797 153.25499 97.4406 153.16481 97.4406 153.07086 curveto
-97.4406 152.97691 97.47797 152.88673 97.5444 152.8203 curveto
-97.61084 152.75386 97.70102 152.71649 97.79497 152.71649 curveto
-97.88892 152.71649 97.9791 152.75386 98.04553 152.8203 curveto
-98.11197 152.88673 98.14934 152.97691 98.14934 153.07086 curveto closepath fill
-newpath 98.14934 174.3307 moveto
-98.14934 174.42465 98.11197 174.51483 98.04553 174.58127 curveto
-97.9791 174.6477 97.88892 174.68507 97.79497 174.68507 curveto
-97.70102 174.68507 97.61084 174.6477 97.5444 174.58127 curveto
-97.47797 174.51483 97.4406 174.42465 97.4406 174.3307 curveto
-97.4406 174.23676 97.47797 174.14658 97.5444 174.08014 curveto
-97.61084 174.0137 97.70102 173.97633 97.79497 173.97633 curveto
-97.88892 173.97633 97.9791 174.0137 98.04553 174.08014 curveto
-98.11197 174.14658 98.14934 174.23676 98.14934 174.3307 curveto closepath fill
-newpath 102.4013 46.77165 moveto
-102.4013 46.8656 102.36394 46.95578 102.2975 47.02222 curveto
-102.23106 47.08865 102.14088 47.12602 102.04694 47.12602 curveto
-101.95299 47.12602 101.86281 47.08865 101.79637 47.02222 curveto
-101.72993 46.95578 101.69257 46.8656 101.69257 46.77165 curveto
-101.69257 46.6777 101.72993 46.58752 101.79637 46.52109 curveto
-101.86281 46.45465 101.95299 46.41728 102.04694 46.41728 curveto
-102.14088 46.41728 102.23106 46.45465 102.2975 46.52109 curveto
-102.36394 46.58752 102.4013 46.6777 102.4013 46.77165 curveto closepath fill
-newpath 102.4013 68.0315 moveto
-102.4013 68.12544 102.36394 68.21562 102.2975 68.28206 curveto
-102.23106 68.3485 102.14088 68.38586 102.04694 68.38586 curveto
-101.95299 68.38586 101.86281 68.3485 101.79637 68.28206 curveto
-101.72993 68.21562 101.69257 68.12544 101.69257 68.0315 curveto
-101.69257 67.93755 101.72993 67.84737 101.79637 67.78093 curveto
-101.86281 67.7145 101.95299 67.67712 102.04694 67.67712 curveto
-102.14088 67.67712 102.23106 67.7145 102.2975 67.78093 curveto
-102.36394 67.84737 102.4013 67.93755 102.4013 68.0315 curveto closepath fill
-newpath 102.4013 89.29134 moveto
-102.4013 89.38528 102.36394 89.47546 102.2975 89.5419 curveto
-102.23106 89.60834 102.14088 89.6457 102.04694 89.6457 curveto
-101.95299 89.6457 101.86281 89.60834 101.79637 89.5419 curveto
-101.72993 89.47546 101.69257 89.38528 101.69257 89.29134 curveto
-101.69257 89.19739 101.72993 89.10721 101.79637 89.04077 curveto
-101.86281 88.97433 101.95299 88.93697 102.04694 88.93697 curveto
-102.14088 88.93697 102.23106 88.97433 102.2975 89.04077 curveto
-102.36394 89.10721 102.4013 89.19739 102.4013 89.29134 curveto closepath fill
-newpath 102.4013 131.81102 moveto
-102.4013 131.90497 102.36394 131.99515 102.2975 132.06158 curveto
-102.23106 132.12802 102.14088 132.16539 102.04694 132.16539 curveto
-101.95299 132.16539 101.86281 132.12802 101.79637 132.06158 curveto
-101.72993 131.99515 101.69257 131.90497 101.69257 131.81102 curveto
-101.69257 131.71707 101.72993 131.62689 101.79637 131.56046 curveto
-101.86281 131.49402 101.95299 131.45665 102.04694 131.45665 curveto
-102.14088 131.45665 102.23106 131.49402 102.2975 131.56046 curveto
-102.36394 131.62689 102.4013 131.71707 102.4013 131.81102 curveto closepath
- fill
-newpath 102.4013 153.07086 moveto
-102.4013 153.16481 102.36394 153.25499 102.2975 153.32143 curveto
-102.23106 153.38786 102.14088 153.42523 102.04694 153.42523 curveto
-101.95299 153.42523 101.86281 153.38786 101.79637 153.32143 curveto
-101.72993 153.25499 101.69257 153.16481 101.69257 153.07086 curveto
-101.69257 152.97691 101.72993 152.88673 101.79637 152.8203 curveto
-101.86281 152.75386 101.95299 152.71649 102.04694 152.71649 curveto
-102.14088 152.71649 102.23106 152.75386 102.2975 152.8203 curveto
-102.36394 152.88673 102.4013 152.97691 102.4013 153.07086 curveto closepath
- fill
-newpath 102.4013 174.3307 moveto
-102.4013 174.42465 102.36394 174.51483 102.2975 174.58127 curveto
-102.23106 174.6477 102.14088 174.68507 102.04694 174.68507 curveto
-101.95299 174.68507 101.86281 174.6477 101.79637 174.58127 curveto
-101.72993 174.51483 101.69257 174.42465 101.69257 174.3307 curveto
-101.69257 174.23676 101.72993 174.14658 101.79637 174.08014 curveto
-101.86281 174.0137 101.95299 173.97633 102.04694 173.97633 curveto
-102.14088 173.97633 102.23106 174.0137 102.2975 174.08014 curveto
-102.36394 174.14658 102.4013 174.23676 102.4013 174.3307 curveto closepath fill
-newpath 106.65327 46.77165 moveto
-106.65327 46.8656 106.6159 46.95578 106.54947 47.02222 curveto
-106.48303 47.08865 106.39285 47.12602 106.2989 47.12602 curveto
-106.20496 47.12602 106.11478 47.08865 106.04834 47.02222 curveto
-105.9819 46.95578 105.94453 46.8656 105.94453 46.77165 curveto
-105.94453 46.6777 105.9819 46.58752 106.04834 46.52109 curveto
-106.11478 46.45465 106.20496 46.41728 106.2989 46.41728 curveto
-106.39285 46.41728 106.48303 46.45465 106.54947 46.52109 curveto
-106.6159 46.58752 106.65327 46.6777 106.65327 46.77165 curveto closepath fill
-newpath 106.65327 68.0315 moveto
-106.65327 68.12544 106.6159 68.21562 106.54947 68.28206 curveto
-106.48303 68.3485 106.39285 68.38586 106.2989 68.38586 curveto
-106.20496 68.38586 106.11478 68.3485 106.04834 68.28206 curveto
-105.9819 68.21562 105.94453 68.12544 105.94453 68.0315 curveto
-105.94453 67.93755 105.9819 67.84737 106.04834 67.78093 curveto
-106.11478 67.7145 106.20496 67.67712 106.2989 67.67712 curveto
-106.39285 67.67712 106.48303 67.7145 106.54947 67.78093 curveto
-106.6159 67.84737 106.65327 67.93755 106.65327 68.0315 curveto closepath fill
-newpath 106.65327 89.29134 moveto
-106.65327 89.38528 106.6159 89.47546 106.54947 89.5419 curveto
-106.48303 89.60834 106.39285 89.6457 106.2989 89.6457 curveto
-106.20496 89.6457 106.11478 89.60834 106.04834 89.5419 curveto
-105.9819 89.47546 105.94453 89.38528 105.94453 89.29134 curveto
-105.94453 89.19739 105.9819 89.10721 106.04834 89.04077 curveto
-106.11478 88.97433 106.20496 88.93697 106.2989 88.93697 curveto
-106.39285 88.93697 106.48303 88.97433 106.54947 89.04077 curveto
-106.6159 89.10721 106.65327 89.19739 106.65327 89.29134 curveto closepath fill
-newpath 106.65327 131.81102 moveto
-106.65327 131.90497 106.6159 131.99515 106.54947 132.06158 curveto
-106.48303 132.12802 106.39285 132.16539 106.2989 132.16539 curveto
-106.20496 132.16539 106.11478 132.12802 106.04834 132.06158 curveto
-105.9819 131.99515 105.94453 131.90497 105.94453 131.81102 curveto
-105.94453 131.71707 105.9819 131.62689 106.04834 131.56046 curveto
-106.11478 131.49402 106.20496 131.45665 106.2989 131.45665 curveto
-106.39285 131.45665 106.48303 131.49402 106.54947 131.56046 curveto
-106.6159 131.62689 106.65327 131.71707 106.65327 131.81102 curveto closepath
- fill
-newpath 106.65327 153.07086 moveto
-106.65327 153.16481 106.6159 153.25499 106.54947 153.32143 curveto
-106.48303 153.38786 106.39285 153.42523 106.2989 153.42523 curveto
-106.20496 153.42523 106.11478 153.38786 106.04834 153.32143 curveto
-105.9819 153.25499 105.94453 153.16481 105.94453 153.07086 curveto
-105.94453 152.97691 105.9819 152.88673 106.04834 152.8203 curveto
-106.11478 152.75386 106.20496 152.71649 106.2989 152.71649 curveto
-106.39285 152.71649 106.48303 152.75386 106.54947 152.8203 curveto
-106.6159 152.88673 106.65327 152.97691 106.65327 153.07086 curveto closepath
- fill
-newpath 106.65327 174.3307 moveto
-106.65327 174.42465 106.6159 174.51483 106.54947 174.58127 curveto
-106.48303 174.6477 106.39285 174.68507 106.2989 174.68507 curveto
-106.20496 174.68507 106.11478 174.6477 106.04834 174.58127 curveto
-105.9819 174.51483 105.94453 174.42465 105.94453 174.3307 curveto
-105.94453 174.23676 105.9819 174.14658 106.04834 174.08014 curveto
-106.11478 174.0137 106.20496 173.97633 106.2989 173.97633 curveto
-106.39285 173.97633 106.48303 174.0137 106.54947 174.08014 curveto
-106.6159 174.14658 106.65327 174.23676 106.65327 174.3307 curveto closepath
- fill
-newpath 110.90524 46.77165 moveto
-110.90524 46.8656 110.86787 46.95578 110.80144 47.02222 curveto
-110.735 47.08865 110.64482 47.12602 110.55087 47.12602 curveto
-110.45692 47.12602 110.36674 47.08865 110.30031 47.02222 curveto
-110.23387 46.95578 110.1965 46.8656 110.1965 46.77165 curveto
-110.1965 46.6777 110.23387 46.58752 110.30031 46.52109 curveto
-110.36674 46.45465 110.45692 46.41728 110.55087 46.41728 curveto
-110.64482 46.41728 110.735 46.45465 110.80144 46.52109 curveto
-110.86787 46.58752 110.90524 46.6777 110.90524 46.77165 curveto closepath fill
-newpath 110.90524 68.0315 moveto
-110.90524 68.12544 110.86787 68.21562 110.80144 68.28206 curveto
-110.735 68.3485 110.64482 68.38586 110.55087 68.38586 curveto
-110.45692 68.38586 110.36674 68.3485 110.30031 68.28206 curveto
-110.23387 68.21562 110.1965 68.12544 110.1965 68.0315 curveto
-110.1965 67.93755 110.23387 67.84737 110.30031 67.78093 curveto
-110.36674 67.7145 110.45692 67.67712 110.55087 67.67712 curveto
-110.64482 67.67712 110.735 67.7145 110.80144 67.78093 curveto
-110.86787 67.84737 110.90524 67.93755 110.90524 68.0315 curveto closepath fill
-newpath 110.90524 89.29134 moveto
-110.90524 89.38528 110.86787 89.47546 110.80144 89.5419 curveto
-110.735 89.60834 110.64482 89.6457 110.55087 89.6457 curveto
-110.45692 89.6457 110.36674 89.60834 110.30031 89.5419 curveto
-110.23387 89.47546 110.1965 89.38528 110.1965 89.29134 curveto
-110.1965 89.19739 110.23387 89.10721 110.30031 89.04077 curveto
-110.36674 88.97433 110.45692 88.93697 110.55087 88.93697 curveto
-110.64482 88.93697 110.735 88.97433 110.80144 89.04077 curveto
-110.86787 89.10721 110.90524 89.19739 110.90524 89.29134 curveto closepath fill
-newpath 110.90524 131.81102 moveto
-110.90524 131.90497 110.86787 131.99515 110.80144 132.06158 curveto
-110.735 132.12802 110.64482 132.16539 110.55087 132.16539 curveto
-110.45692 132.16539 110.36674 132.12802 110.30031 132.06158 curveto
-110.23387 131.99515 110.1965 131.90497 110.1965 131.81102 curveto
-110.1965 131.71707 110.23387 131.62689 110.30031 131.56046 curveto
-110.36674 131.49402 110.45692 131.45665 110.55087 131.45665 curveto
-110.64482 131.45665 110.735 131.49402 110.80144 131.56046 curveto
-110.86787 131.62689 110.90524 131.71707 110.90524 131.81102 curveto closepath
- fill
-newpath 110.90524 153.07086 moveto
-110.90524 153.16481 110.86787 153.25499 110.80144 153.32143 curveto
-110.735 153.38786 110.64482 153.42523 110.55087 153.42523 curveto
-110.45692 153.42523 110.36674 153.38786 110.30031 153.32143 curveto
-110.23387 153.25499 110.1965 153.16481 110.1965 153.07086 curveto
-110.1965 152.97691 110.23387 152.88673 110.30031 152.8203 curveto
-110.36674 152.75386 110.45692 152.71649 110.55087 152.71649 curveto
-110.64482 152.71649 110.735 152.75386 110.80144 152.8203 curveto
-110.86787 152.88673 110.90524 152.97691 110.90524 153.07086 curveto closepath
- fill
-newpath 110.90524 174.3307 moveto
-110.90524 174.42465 110.86787 174.51483 110.80144 174.58127 curveto
-110.735 174.6477 110.64482 174.68507 110.55087 174.68507 curveto
-110.45692 174.68507 110.36674 174.6477 110.30031 174.58127 curveto
-110.23387 174.51483 110.1965 174.42465 110.1965 174.3307 curveto
-110.1965 174.23676 110.23387 174.14658 110.30031 174.08014 curveto
-110.36674 174.0137 110.45692 173.97633 110.55087 173.97633 curveto
-110.64482 173.97633 110.735 174.0137 110.80144 174.08014 curveto
-110.86787 174.14658 110.90524 174.23676 110.90524 174.3307 curveto closepath
- fill
-newpath 115.15721 46.77165 moveto
-115.15721 46.8656 115.11984 46.95578 115.0534 47.02222 curveto
-114.98697 47.08865 114.89679 47.12602 114.80284 47.12602 curveto
-114.7089 47.12602 114.61871 47.08865 114.55228 47.02222 curveto
-114.48584 46.95578 114.44847 46.8656 114.44847 46.77165 curveto
-114.44847 46.6777 114.48584 46.58752 114.55228 46.52109 curveto
-114.61871 46.45465 114.7089 46.41728 114.80284 46.41728 curveto
-114.89679 46.41728 114.98697 46.45465 115.0534 46.52109 curveto
-115.11984 46.58752 115.15721 46.6777 115.15721 46.77165 curveto closepath fill
-newpath 115.15721 68.0315 moveto
-115.15721 68.12544 115.11984 68.21562 115.0534 68.28206 curveto
-114.98697 68.3485 114.89679 68.38586 114.80284 68.38586 curveto
-114.7089 68.38586 114.61871 68.3485 114.55228 68.28206 curveto
-114.48584 68.21562 114.44847 68.12544 114.44847 68.0315 curveto
-114.44847 67.93755 114.48584 67.84737 114.55228 67.78093 curveto
-114.61871 67.7145 114.7089 67.67712 114.80284 67.67712 curveto
-114.89679 67.67712 114.98697 67.7145 115.0534 67.78093 curveto
-115.11984 67.84737 115.15721 67.93755 115.15721 68.0315 curveto closepath fill
-newpath 115.15721 89.29134 moveto
-115.15721 89.38528 115.11984 89.47546 115.0534 89.5419 curveto
-114.98697 89.60834 114.89679 89.6457 114.80284 89.6457 curveto
-114.7089 89.6457 114.61871 89.60834 114.55228 89.5419 curveto
-114.48584 89.47546 114.44847 89.38528 114.44847 89.29134 curveto
-114.44847 89.19739 114.48584 89.10721 114.55228 89.04077 curveto
-114.61871 88.97433 114.7089 88.93697 114.80284 88.93697 curveto
-114.89679 88.93697 114.98697 88.97433 115.0534 89.04077 curveto
-115.11984 89.10721 115.15721 89.19739 115.15721 89.29134 curveto closepath fill
-newpath 115.15721 131.81102 moveto
-115.15721 131.90497 115.11984 131.99515 115.0534 132.06158 curveto
-114.98697 132.12802 114.89679 132.16539 114.80284 132.16539 curveto
-114.7089 132.16539 114.61871 132.12802 114.55228 132.06158 curveto
-114.48584 131.99515 114.44847 131.90497 114.44847 131.81102 curveto
-114.44847 131.71707 114.48584 131.62689 114.55228 131.56046 curveto
-114.61871 131.49402 114.7089 131.45665 114.80284 131.45665 curveto
-114.89679 131.45665 114.98697 131.49402 115.0534 131.56046 curveto
-115.11984 131.62689 115.15721 131.71707 115.15721 131.81102 curveto closepath
- fill
-newpath 115.15721 153.07086 moveto
-115.15721 153.16481 115.11984 153.25499 115.0534 153.32143 curveto
-114.98697 153.38786 114.89679 153.42523 114.80284 153.42523 curveto
-114.7089 153.42523 114.61871 153.38786 114.55228 153.32143 curveto
-114.48584 153.25499 114.44847 153.16481 114.44847 153.07086 curveto
-114.44847 152.97691 114.48584 152.88673 114.55228 152.8203 curveto
-114.61871 152.75386 114.7089 152.71649 114.80284 152.71649 curveto
-114.89679 152.71649 114.98697 152.75386 115.0534 152.8203 curveto
-115.11984 152.88673 115.15721 152.97691 115.15721 153.07086 curveto closepath
- fill
-newpath 115.15721 174.3307 moveto
-115.15721 174.42465 115.11984 174.51483 115.0534 174.58127 curveto
-114.98697 174.6477 114.89679 174.68507 114.80284 174.68507 curveto
-114.7089 174.68507 114.61871 174.6477 114.55228 174.58127 curveto
-114.48584 174.51483 114.44847 174.42465 114.44847 174.3307 curveto
-114.44847 174.23676 114.48584 174.14658 114.55228 174.08014 curveto
-114.61871 174.0137 114.7089 173.97633 114.80284 173.97633 curveto
-114.89679 173.97633 114.98697 174.0137 115.0534 174.08014 curveto
-115.11984 174.14658 115.15721 174.23676 115.15721 174.3307 curveto closepath
- fill
-newpath 119.40918 46.77165 moveto
-119.40918 46.8656 119.37181 46.95578 119.30537 47.02222 curveto
-119.23894 47.08865 119.14876 47.12602 119.05481 47.12602 curveto
-118.96086 47.12602 118.87068 47.08865 118.80424 47.02222 curveto
-118.73781 46.95578 118.70044 46.8656 118.70044 46.77165 curveto
-118.70044 46.6777 118.73781 46.58752 118.80424 46.52109 curveto
-118.87068 46.45465 118.96086 46.41728 119.05481 46.41728 curveto
-119.14876 46.41728 119.23894 46.45465 119.30537 46.52109 curveto
-119.37181 46.58752 119.40918 46.6777 119.40918 46.77165 curveto closepath fill
-newpath 119.40918 68.0315 moveto
-119.40918 68.12544 119.37181 68.21562 119.30537 68.28206 curveto
-119.23894 68.3485 119.14876 68.38586 119.05481 68.38586 curveto
-118.96086 68.38586 118.87068 68.3485 118.80424 68.28206 curveto
-118.73781 68.21562 118.70044 68.12544 118.70044 68.0315 curveto
-118.70044 67.93755 118.73781 67.84737 118.80424 67.78093 curveto
-118.87068 67.7145 118.96086 67.67712 119.05481 67.67712 curveto
-119.14876 67.67712 119.23894 67.7145 119.30537 67.78093 curveto
-119.37181 67.84737 119.40918 67.93755 119.40918 68.0315 curveto closepath fill
-newpath 119.40918 89.29134 moveto
-119.40918 89.38528 119.37181 89.47546 119.30537 89.5419 curveto
-119.23894 89.60834 119.14876 89.6457 119.05481 89.6457 curveto
-118.96086 89.6457 118.87068 89.60834 118.80424 89.5419 curveto
-118.73781 89.47546 118.70044 89.38528 118.70044 89.29134 curveto
-118.70044 89.19739 118.73781 89.10721 118.80424 89.04077 curveto
-118.87068 88.97433 118.96086 88.93697 119.05481 88.93697 curveto
-119.14876 88.93697 119.23894 88.97433 119.30537 89.04077 curveto
-119.37181 89.10721 119.40918 89.19739 119.40918 89.29134 curveto closepath fill
-newpath 119.40918 131.81102 moveto
-119.40918 131.90497 119.37181 131.99515 119.30537 132.06158 curveto
-119.23894 132.12802 119.14876 132.16539 119.05481 132.16539 curveto
-118.96086 132.16539 118.87068 132.12802 118.80424 132.06158 curveto
-118.73781 131.99515 118.70044 131.90497 118.70044 131.81102 curveto
-118.70044 131.71707 118.73781 131.62689 118.80424 131.56046 curveto
-118.87068 131.49402 118.96086 131.45665 119.05481 131.45665 curveto
-119.14876 131.45665 119.23894 131.49402 119.30537 131.56046 curveto
-119.37181 131.62689 119.40918 131.71707 119.40918 131.81102 curveto closepath
- fill
-newpath 119.40918 153.07086 moveto
-119.40918 153.16481 119.37181 153.25499 119.30537 153.32143 curveto
-119.23894 153.38786 119.14876 153.42523 119.05481 153.42523 curveto
-118.96086 153.42523 118.87068 153.38786 118.80424 153.32143 curveto
-118.73781 153.25499 118.70044 153.16481 118.70044 153.07086 curveto
-118.70044 152.97691 118.73781 152.88673 118.80424 152.8203 curveto
-118.87068 152.75386 118.96086 152.71649 119.05481 152.71649 curveto
-119.14876 152.71649 119.23894 152.75386 119.30537 152.8203 curveto
-119.37181 152.88673 119.40918 152.97691 119.40918 153.07086 curveto closepath
- fill
-newpath 119.40918 174.3307 moveto
-119.40918 174.42465 119.37181 174.51483 119.30537 174.58127 curveto
-119.23894 174.6477 119.14876 174.68507 119.05481 174.68507 curveto
-118.96086 174.68507 118.87068 174.6477 118.80424 174.58127 curveto
-118.73781 174.51483 118.70044 174.42465 118.70044 174.3307 curveto
-118.70044 174.23676 118.73781 174.14658 118.80424 174.08014 curveto
-118.87068 174.0137 118.96086 173.97633 119.05481 173.97633 curveto
-119.14876 173.97633 119.23894 174.0137 119.30537 174.08014 curveto
-119.37181 174.14658 119.40918 174.23676 119.40918 174.3307 curveto closepath
- fill
-newpath 123.66115 46.77165 moveto
-123.66115 46.8656 123.62378 46.95578 123.55734 47.02222 curveto
-123.4909 47.08865 123.40073 47.12602 123.30678 47.12602 curveto
-123.21283 47.12602 123.12265 47.08865 123.05621 47.02222 curveto
-122.98978 46.95578 122.95241 46.8656 122.95241 46.77165 curveto
-122.95241 46.6777 122.98978 46.58752 123.05621 46.52109 curveto
-123.12265 46.45465 123.21283 46.41728 123.30678 46.41728 curveto
-123.40073 46.41728 123.4909 46.45465 123.55734 46.52109 curveto
-123.62378 46.58752 123.66115 46.6777 123.66115 46.77165 curveto closepath fill
-newpath 123.66115 68.0315 moveto
-123.66115 68.12544 123.62378 68.21562 123.55734 68.28206 curveto
-123.4909 68.3485 123.40073 68.38586 123.30678 68.38586 curveto
-123.21283 68.38586 123.12265 68.3485 123.05621 68.28206 curveto
-122.98978 68.21562 122.95241 68.12544 122.95241 68.0315 curveto
-122.95241 67.93755 122.98978 67.84737 123.05621 67.78093 curveto
-123.12265 67.7145 123.21283 67.67712 123.30678 67.67712 curveto
-123.40073 67.67712 123.4909 67.7145 123.55734 67.78093 curveto
-123.62378 67.84737 123.66115 67.93755 123.66115 68.0315 curveto closepath fill
-newpath 123.66115 89.29134 moveto
-123.66115 89.38528 123.62378 89.47546 123.55734 89.5419 curveto
-123.4909 89.60834 123.40073 89.6457 123.30678 89.6457 curveto
-123.21283 89.6457 123.12265 89.60834 123.05621 89.5419 curveto
-122.98978 89.47546 122.95241 89.38528 122.95241 89.29134 curveto
-122.95241 89.19739 122.98978 89.10721 123.05621 89.04077 curveto
-123.12265 88.97433 123.21283 88.93697 123.30678 88.93697 curveto
-123.40073 88.93697 123.4909 88.97433 123.55734 89.04077 curveto
-123.62378 89.10721 123.66115 89.19739 123.66115 89.29134 curveto closepath fill
-newpath 123.66115 131.81102 moveto
-123.66115 131.90497 123.62378 131.99515 123.55734 132.06158 curveto
-123.4909 132.12802 123.40073 132.16539 123.30678 132.16539 curveto
-123.21283 132.16539 123.12265 132.12802 123.05621 132.06158 curveto
-122.98978 131.99515 122.95241 131.90497 122.95241 131.81102 curveto
-122.95241 131.71707 122.98978 131.62689 123.05621 131.56046 curveto
-123.12265 131.49402 123.21283 131.45665 123.30678 131.45665 curveto
-123.40073 131.45665 123.4909 131.49402 123.55734 131.56046 curveto
-123.62378 131.62689 123.66115 131.71707 123.66115 131.81102 curveto closepath
- fill
-newpath 123.66115 153.07086 moveto
-123.66115 153.16481 123.62378 153.25499 123.55734 153.32143 curveto
-123.4909 153.38786 123.40073 153.42523 123.30678 153.42523 curveto
-123.21283 153.42523 123.12265 153.38786 123.05621 153.32143 curveto
-122.98978 153.25499 122.95241 153.16481 122.95241 153.07086 curveto
-122.95241 152.97691 122.98978 152.88673 123.05621 152.8203 curveto
-123.12265 152.75386 123.21283 152.71649 123.30678 152.71649 curveto
-123.40073 152.71649 123.4909 152.75386 123.55734 152.8203 curveto
-123.62378 152.88673 123.66115 152.97691 123.66115 153.07086 curveto closepath
- fill
-newpath 123.66115 174.3307 moveto
-123.66115 174.42465 123.62378 174.51483 123.55734 174.58127 curveto
-123.4909 174.6477 123.40073 174.68507 123.30678 174.68507 curveto
-123.21283 174.68507 123.12265 174.6477 123.05621 174.58127 curveto
-122.98978 174.51483 122.95241 174.42465 122.95241 174.3307 curveto
-122.95241 174.23676 122.98978 174.14658 123.05621 174.08014 curveto
-123.12265 174.0137 123.21283 173.97633 123.30678 173.97633 curveto
-123.40073 173.97633 123.4909 174.0137 123.55734 174.08014 curveto
-123.62378 174.14658 123.66115 174.23676 123.66115 174.3307 curveto closepath
- fill
-newpath 127.91312 46.77165 moveto
-127.91312 46.8656 127.87575 46.95578 127.80931 47.02222 curveto
-127.74287 47.08865 127.6527 47.12602 127.55875 47.12602 curveto
-127.4648 47.12602 127.37462 47.08865 127.30818 47.02222 curveto
-127.24174 46.95578 127.20438 46.8656 127.20438 46.77165 curveto
-127.20438 46.6777 127.24174 46.58752 127.30818 46.52109 curveto
-127.37462 46.45465 127.4648 46.41728 127.55875 46.41728 curveto
-127.6527 46.41728 127.74287 46.45465 127.80931 46.52109 curveto
-127.87575 46.58752 127.91312 46.6777 127.91312 46.77165 curveto closepath fill
-newpath 127.91312 68.0315 moveto
-127.91312 68.12544 127.87575 68.21562 127.80931 68.28206 curveto
-127.74287 68.3485 127.6527 68.38586 127.55875 68.38586 curveto
-127.4648 68.38586 127.37462 68.3485 127.30818 68.28206 curveto
-127.24174 68.21562 127.20438 68.12544 127.20438 68.0315 curveto
-127.20438 67.93755 127.24174 67.84737 127.30818 67.78093 curveto
-127.37462 67.7145 127.4648 67.67712 127.55875 67.67712 curveto
-127.6527 67.67712 127.74287 67.7145 127.80931 67.78093 curveto
-127.87575 67.84737 127.91312 67.93755 127.91312 68.0315 curveto closepath fill
-newpath 127.91312 89.29134 moveto
-127.91312 89.38528 127.87575 89.47546 127.80931 89.5419 curveto
-127.74287 89.60834 127.6527 89.6457 127.55875 89.6457 curveto
-127.4648 89.6457 127.37462 89.60834 127.30818 89.5419 curveto
-127.24174 89.47546 127.20438 89.38528 127.20438 89.29134 curveto
-127.20438 89.19739 127.24174 89.10721 127.30818 89.04077 curveto
-127.37462 88.97433 127.4648 88.93697 127.55875 88.93697 curveto
-127.6527 88.93697 127.74287 88.97433 127.80931 89.04077 curveto
-127.87575 89.10721 127.91312 89.19739 127.91312 89.29134 curveto closepath fill
-newpath 127.91312 131.81102 moveto
-127.91312 131.90497 127.87575 131.99515 127.80931 132.06158 curveto
-127.74287 132.12802 127.6527 132.16539 127.55875 132.16539 curveto
-127.4648 132.16539 127.37462 132.12802 127.30818 132.06158 curveto
-127.24174 131.99515 127.20438 131.90497 127.20438 131.81102 curveto
-127.20438 131.71707 127.24174 131.62689 127.30818 131.56046 curveto
-127.37462 131.49402 127.4648 131.45665 127.55875 131.45665 curveto
-127.6527 131.45665 127.74287 131.49402 127.80931 131.56046 curveto
-127.87575 131.62689 127.91312 131.71707 127.91312 131.81102 curveto closepath
- fill
-newpath 127.91312 153.07086 moveto
-127.91312 153.16481 127.87575 153.25499 127.80931 153.32143 curveto
-127.74287 153.38786 127.6527 153.42523 127.55875 153.42523 curveto
-127.4648 153.42523 127.37462 153.38786 127.30818 153.32143 curveto
-127.24174 153.25499 127.20438 153.16481 127.20438 153.07086 curveto
-127.20438 152.97691 127.24174 152.88673 127.30818 152.8203 curveto
-127.37462 152.75386 127.4648 152.71649 127.55875 152.71649 curveto
-127.6527 152.71649 127.74287 152.75386 127.80931 152.8203 curveto
-127.87575 152.88673 127.91312 152.97691 127.91312 153.07086 curveto closepath
- fill
-newpath 127.91312 174.3307 moveto
-127.91312 174.42465 127.87575 174.51483 127.80931 174.58127 curveto
-127.74287 174.6477 127.6527 174.68507 127.55875 174.68507 curveto
-127.4648 174.68507 127.37462 174.6477 127.30818 174.58127 curveto
-127.24174 174.51483 127.20438 174.42465 127.20438 174.3307 curveto
-127.20438 174.23676 127.24174 174.14658 127.30818 174.08014 curveto
-127.37462 174.0137 127.4648 173.97633 127.55875 173.97633 curveto
-127.6527 173.97633 127.74287 174.0137 127.80931 174.08014 curveto
-127.87575 174.14658 127.91312 174.23676 127.91312 174.3307 curveto closepath
- fill
-newpath 132.16508 46.77165 moveto
-132.16508 46.8656 132.12772 46.95578 132.06128 47.02222 curveto
-131.99484 47.08865 131.90466 47.12602 131.81071 47.12602 curveto
-131.71677 47.12602 131.62659 47.08865 131.56015 47.02222 curveto
-131.49371 46.95578 131.45634 46.8656 131.45634 46.77165 curveto
-131.45634 46.6777 131.49371 46.58752 131.56015 46.52109 curveto
-131.62659 46.45465 131.71677 46.41728 131.81071 46.41728 curveto
-131.90466 46.41728 131.99484 46.45465 132.06128 46.52109 curveto
-132.12772 46.58752 132.16508 46.6777 132.16508 46.77165 curveto closepath fill
-newpath 132.16508 68.0315 moveto
-132.16508 68.12544 132.12772 68.21562 132.06128 68.28206 curveto
-131.99484 68.3485 131.90466 68.38586 131.81071 68.38586 curveto
-131.71677 68.38586 131.62659 68.3485 131.56015 68.28206 curveto
-131.49371 68.21562 131.45634 68.12544 131.45634 68.0315 curveto
-131.45634 67.93755 131.49371 67.84737 131.56015 67.78093 curveto
-131.62659 67.7145 131.71677 67.67712 131.81071 67.67712 curveto
-131.90466 67.67712 131.99484 67.7145 132.06128 67.78093 curveto
-132.12772 67.84737 132.16508 67.93755 132.16508 68.0315 curveto closepath fill
-newpath 132.16508 89.29134 moveto
-132.16508 89.38528 132.12772 89.47546 132.06128 89.5419 curveto
-131.99484 89.60834 131.90466 89.6457 131.81071 89.6457 curveto
-131.71677 89.6457 131.62659 89.60834 131.56015 89.5419 curveto
-131.49371 89.47546 131.45634 89.38528 131.45634 89.29134 curveto
-131.45634 89.19739 131.49371 89.10721 131.56015 89.04077 curveto
-131.62659 88.97433 131.71677 88.93697 131.81071 88.93697 curveto
-131.90466 88.93697 131.99484 88.97433 132.06128 89.04077 curveto
-132.12772 89.10721 132.16508 89.19739 132.16508 89.29134 curveto closepath fill
-newpath 132.16508 131.81102 moveto
-132.16508 131.90497 132.12772 131.99515 132.06128 132.06158 curveto
-131.99484 132.12802 131.90466 132.16539 131.81071 132.16539 curveto
-131.71677 132.16539 131.62659 132.12802 131.56015 132.06158 curveto
-131.49371 131.99515 131.45634 131.90497 131.45634 131.81102 curveto
-131.45634 131.71707 131.49371 131.62689 131.56015 131.56046 curveto
-131.62659 131.49402 131.71677 131.45665 131.81071 131.45665 curveto
-131.90466 131.45665 131.99484 131.49402 132.06128 131.56046 curveto
-132.12772 131.62689 132.16508 131.71707 132.16508 131.81102 curveto closepath
- fill
-newpath 132.16508 153.07086 moveto
-132.16508 153.16481 132.12772 153.25499 132.06128 153.32143 curveto
-131.99484 153.38786 131.90466 153.42523 131.81071 153.42523 curveto
-131.71677 153.42523 131.62659 153.38786 131.56015 153.32143 curveto
-131.49371 153.25499 131.45634 153.16481 131.45634 153.07086 curveto
-131.45634 152.97691 131.49371 152.88673 131.56015 152.8203 curveto
-131.62659 152.75386 131.71677 152.71649 131.81071 152.71649 curveto
-131.90466 152.71649 131.99484 152.75386 132.06128 152.8203 curveto
-132.12772 152.88673 132.16508 152.97691 132.16508 153.07086 curveto closepath
- fill
-newpath 132.16508 174.3307 moveto
-132.16508 174.42465 132.12772 174.51483 132.06128 174.58127 curveto
-131.99484 174.6477 131.90466 174.68507 131.81071 174.68507 curveto
-131.71677 174.68507 131.62659 174.6477 131.56015 174.58127 curveto
-131.49371 174.51483 131.45634 174.42465 131.45634 174.3307 curveto
-131.45634 174.23676 131.49371 174.14658 131.56015 174.08014 curveto
-131.62659 174.0137 131.71677 173.97633 131.81071 173.97633 curveto
-131.90466 173.97633 131.99484 174.0137 132.06128 174.08014 curveto
-132.12772 174.14658 132.16508 174.23676 132.16508 174.3307 curveto closepath
- fill
-newpath 136.41705 46.77165 moveto
-136.41705 46.8656 136.37968 46.95578 136.31325 47.02222 curveto
-136.24681 47.08865 136.15663 47.12602 136.06268 47.12602 curveto
-135.96873 47.12602 135.87856 47.08865 135.81212 47.02222 curveto
-135.74568 46.95578 135.70831 46.8656 135.70831 46.77165 curveto
-135.70831 46.6777 135.74568 46.58752 135.81212 46.52109 curveto
-135.87856 46.45465 135.96873 46.41728 136.06268 46.41728 curveto
-136.15663 46.41728 136.24681 46.45465 136.31325 46.52109 curveto
-136.37968 46.58752 136.41705 46.6777 136.41705 46.77165 curveto closepath fill
-newpath 136.41705 68.0315 moveto
-136.41705 68.12544 136.37968 68.21562 136.31325 68.28206 curveto
-136.24681 68.3485 136.15663 68.38586 136.06268 68.38586 curveto
-135.96873 68.38586 135.87856 68.3485 135.81212 68.28206 curveto
-135.74568 68.21562 135.70831 68.12544 135.70831 68.0315 curveto
-135.70831 67.93755 135.74568 67.84737 135.81212 67.78093 curveto
-135.87856 67.7145 135.96873 67.67712 136.06268 67.67712 curveto
-136.15663 67.67712 136.24681 67.7145 136.31325 67.78093 curveto
-136.37968 67.84737 136.41705 67.93755 136.41705 68.0315 curveto closepath fill
-newpath 136.41705 89.29134 moveto
-136.41705 89.38528 136.37968 89.47546 136.31325 89.5419 curveto
-136.24681 89.60834 136.15663 89.6457 136.06268 89.6457 curveto
-135.96873 89.6457 135.87856 89.60834 135.81212 89.5419 curveto
-135.74568 89.47546 135.70831 89.38528 135.70831 89.29134 curveto
-135.70831 89.19739 135.74568 89.10721 135.81212 89.04077 curveto
-135.87856 88.97433 135.96873 88.93697 136.06268 88.93697 curveto
-136.15663 88.93697 136.24681 88.97433 136.31325 89.04077 curveto
-136.37968 89.10721 136.41705 89.19739 136.41705 89.29134 curveto closepath fill
-newpath 136.41705 131.81102 moveto
-136.41705 131.90497 136.37968 131.99515 136.31325 132.06158 curveto
-136.24681 132.12802 136.15663 132.16539 136.06268 132.16539 curveto
-135.96873 132.16539 135.87856 132.12802 135.81212 132.06158 curveto
-135.74568 131.99515 135.70831 131.90497 135.70831 131.81102 curveto
-135.70831 131.71707 135.74568 131.62689 135.81212 131.56046 curveto
-135.87856 131.49402 135.96873 131.45665 136.06268 131.45665 curveto
-136.15663 131.45665 136.24681 131.49402 136.31325 131.56046 curveto
-136.37968 131.62689 136.41705 131.71707 136.41705 131.81102 curveto closepath
- fill
-newpath 136.41705 153.07086 moveto
-136.41705 153.16481 136.37968 153.25499 136.31325 153.32143 curveto
-136.24681 153.38786 136.15663 153.42523 136.06268 153.42523 curveto
-135.96873 153.42523 135.87856 153.38786 135.81212 153.32143 curveto
-135.74568 153.25499 135.70831 153.16481 135.70831 153.07086 curveto
-135.70831 152.97691 135.74568 152.88673 135.81212 152.8203 curveto
-135.87856 152.75386 135.96873 152.71649 136.06268 152.71649 curveto
-136.15663 152.71649 136.24681 152.75386 136.31325 152.8203 curveto
-136.37968 152.88673 136.41705 152.97691 136.41705 153.07086 curveto closepath
- fill
-newpath 136.41705 174.3307 moveto
-136.41705 174.42465 136.37968 174.51483 136.31325 174.58127 curveto
-136.24681 174.6477 136.15663 174.68507 136.06268 174.68507 curveto
-135.96873 174.68507 135.87856 174.6477 135.81212 174.58127 curveto
-135.74568 174.51483 135.70831 174.42465 135.70831 174.3307 curveto
-135.70831 174.23676 135.74568 174.14658 135.81212 174.08014 curveto
-135.87856 174.0137 135.96873 173.97633 136.06268 173.97633 curveto
-136.15663 173.97633 136.24681 174.0137 136.31325 174.08014 curveto
-136.37968 174.14658 136.41705 174.23676 136.41705 174.3307 curveto closepath
- fill
-newpath 140.66902 46.77165 moveto
-140.66902 46.8656 140.63165 46.95578 140.56522 47.02222 curveto
-140.49878 47.08865 140.4086 47.12602 140.31465 47.12602 curveto
-140.2207 47.12602 140.13052 47.08865 140.06409 47.02222 curveto
-139.99765 46.95578 139.96028 46.8656 139.96028 46.77165 curveto
-139.96028 46.6777 139.99765 46.58752 140.06409 46.52109 curveto
-140.13052 46.45465 140.2207 46.41728 140.31465 46.41728 curveto
-140.4086 46.41728 140.49878 46.45465 140.56522 46.52109 curveto
-140.63165 46.58752 140.66902 46.6777 140.66902 46.77165 curveto closepath fill
-newpath 140.66902 68.0315 moveto
-140.66902 68.12544 140.63165 68.21562 140.56522 68.28206 curveto
-140.49878 68.3485 140.4086 68.38586 140.31465 68.38586 curveto
-140.2207 68.38586 140.13052 68.3485 140.06409 68.28206 curveto
-139.99765 68.21562 139.96028 68.12544 139.96028 68.0315 curveto
-139.96028 67.93755 139.99765 67.84737 140.06409 67.78093 curveto
-140.13052 67.7145 140.2207 67.67712 140.31465 67.67712 curveto
-140.4086 67.67712 140.49878 67.7145 140.56522 67.78093 curveto
-140.63165 67.84737 140.66902 67.93755 140.66902 68.0315 curveto closepath fill
-newpath 140.66902 89.29134 moveto
-140.66902 89.38528 140.63165 89.47546 140.56522 89.5419 curveto
-140.49878 89.60834 140.4086 89.6457 140.31465 89.6457 curveto
-140.2207 89.6457 140.13052 89.60834 140.06409 89.5419 curveto
-139.99765 89.47546 139.96028 89.38528 139.96028 89.29134 curveto
-139.96028 89.19739 139.99765 89.10721 140.06409 89.04077 curveto
-140.13052 88.97433 140.2207 88.93697 140.31465 88.93697 curveto
-140.4086 88.93697 140.49878 88.97433 140.56522 89.04077 curveto
-140.63165 89.10721 140.66902 89.19739 140.66902 89.29134 curveto closepath fill
-newpath 140.66902 131.81102 moveto
-140.66902 131.90497 140.63165 131.99515 140.56522 132.06158 curveto
-140.49878 132.12802 140.4086 132.16539 140.31465 132.16539 curveto
-140.2207 132.16539 140.13052 132.12802 140.06409 132.06158 curveto
-139.99765 131.99515 139.96028 131.90497 139.96028 131.81102 curveto
-139.96028 131.71707 139.99765 131.62689 140.06409 131.56046 curveto
-140.13052 131.49402 140.2207 131.45665 140.31465 131.45665 curveto
-140.4086 131.45665 140.49878 131.49402 140.56522 131.56046 curveto
-140.63165 131.62689 140.66902 131.71707 140.66902 131.81102 curveto closepath
- fill
-newpath 140.66902 153.07086 moveto
-140.66902 153.16481 140.63165 153.25499 140.56522 153.32143 curveto
-140.49878 153.38786 140.4086 153.42523 140.31465 153.42523 curveto
-140.2207 153.42523 140.13052 153.38786 140.06409 153.32143 curveto
-139.99765 153.25499 139.96028 153.16481 139.96028 153.07086 curveto
-139.96028 152.97691 139.99765 152.88673 140.06409 152.8203 curveto
-140.13052 152.75386 140.2207 152.71649 140.31465 152.71649 curveto
-140.4086 152.71649 140.49878 152.75386 140.56522 152.8203 curveto
-140.63165 152.88673 140.66902 152.97691 140.66902 153.07086 curveto closepath
- fill
-newpath 140.66902 174.3307 moveto
-140.66902 174.42465 140.63165 174.51483 140.56522 174.58127 curveto
-140.49878 174.6477 140.4086 174.68507 140.31465 174.68507 curveto
-140.2207 174.68507 140.13052 174.6477 140.06409 174.58127 curveto
-139.99765 174.51483 139.96028 174.42465 139.96028 174.3307 curveto
-139.96028 174.23676 139.99765 174.14658 140.06409 174.08014 curveto
-140.13052 174.0137 140.2207 173.97633 140.31465 173.97633 curveto
-140.4086 173.97633 140.49878 174.0137 140.56522 174.08014 curveto
-140.63165 174.14658 140.66902 174.23676 140.66902 174.3307 curveto closepath
- fill
-newpath 144.92099 46.77165 moveto
-144.92099 46.8656 144.88362 46.95578 144.81718 47.02222 curveto
-144.75075 47.08865 144.66057 47.12602 144.56662 47.12602 curveto
-144.47267 47.12602 144.38249 47.08865 144.31606 47.02222 curveto
-144.24962 46.95578 144.21225 46.8656 144.21225 46.77165 curveto
-144.21225 46.6777 144.24962 46.58752 144.31606 46.52109 curveto
-144.38249 46.45465 144.47267 46.41728 144.56662 46.41728 curveto
-144.66057 46.41728 144.75075 46.45465 144.81718 46.52109 curveto
-144.88362 46.58752 144.92099 46.6777 144.92099 46.77165 curveto closepath fill
-newpath 144.92099 68.0315 moveto
-144.92099 68.12544 144.88362 68.21562 144.81718 68.28206 curveto
-144.75075 68.3485 144.66057 68.38586 144.56662 68.38586 curveto
-144.47267 68.38586 144.38249 68.3485 144.31606 68.28206 curveto
-144.24962 68.21562 144.21225 68.12544 144.21225 68.0315 curveto
-144.21225 67.93755 144.24962 67.84737 144.31606 67.78093 curveto
-144.38249 67.7145 144.47267 67.67712 144.56662 67.67712 curveto
-144.66057 67.67712 144.75075 67.7145 144.81718 67.78093 curveto
-144.88362 67.84737 144.92099 67.93755 144.92099 68.0315 curveto closepath fill
-newpath 144.92099 89.29134 moveto
-144.92099 89.38528 144.88362 89.47546 144.81718 89.5419 curveto
-144.75075 89.60834 144.66057 89.6457 144.56662 89.6457 curveto
-144.47267 89.6457 144.38249 89.60834 144.31606 89.5419 curveto
-144.24962 89.47546 144.21225 89.38528 144.21225 89.29134 curveto
-144.21225 89.19739 144.24962 89.10721 144.31606 89.04077 curveto
-144.38249 88.97433 144.47267 88.93697 144.56662 88.93697 curveto
-144.66057 88.93697 144.75075 88.97433 144.81718 89.04077 curveto
-144.88362 89.10721 144.92099 89.19739 144.92099 89.29134 curveto closepath fill
-newpath 144.92099 131.81102 moveto
-144.92099 131.90497 144.88362 131.99515 144.81718 132.06158 curveto
-144.75075 132.12802 144.66057 132.16539 144.56662 132.16539 curveto
-144.47267 132.16539 144.38249 132.12802 144.31606 132.06158 curveto
-144.24962 131.99515 144.21225 131.90497 144.21225 131.81102 curveto
-144.21225 131.71707 144.24962 131.62689 144.31606 131.56046 curveto
-144.38249 131.49402 144.47267 131.45665 144.56662 131.45665 curveto
-144.66057 131.45665 144.75075 131.49402 144.81718 131.56046 curveto
-144.88362 131.62689 144.92099 131.71707 144.92099 131.81102 curveto closepath
- fill
-newpath 144.92099 153.07086 moveto
-144.92099 153.16481 144.88362 153.25499 144.81718 153.32143 curveto
-144.75075 153.38786 144.66057 153.42523 144.56662 153.42523 curveto
-144.47267 153.42523 144.38249 153.38786 144.31606 153.32143 curveto
-144.24962 153.25499 144.21225 153.16481 144.21225 153.07086 curveto
-144.21225 152.97691 144.24962 152.88673 144.31606 152.8203 curveto
-144.38249 152.75386 144.47267 152.71649 144.56662 152.71649 curveto
-144.66057 152.71649 144.75075 152.75386 144.81718 152.8203 curveto
-144.88362 152.88673 144.92099 152.97691 144.92099 153.07086 curveto closepath
- fill
-newpath 144.92099 174.3307 moveto
-144.92099 174.42465 144.88362 174.51483 144.81718 174.58127 curveto
-144.75075 174.6477 144.66057 174.68507 144.56662 174.68507 curveto
-144.47267 174.68507 144.38249 174.6477 144.31606 174.58127 curveto
-144.24962 174.51483 144.21225 174.42465 144.21225 174.3307 curveto
-144.21225 174.23676 144.24962 174.14658 144.31606 174.08014 curveto
-144.38249 174.0137 144.47267 173.97633 144.56662 173.97633 curveto
-144.66057 173.97633 144.75075 174.0137 144.81718 174.08014 curveto
-144.88362 174.14658 144.92099 174.23676 144.92099 174.3307 curveto closepath
- fill
-newpath 149.17296 46.77165 moveto
-149.17296 46.8656 149.13559 46.95578 149.06915 47.02222 curveto
-149.00272 47.08865 148.91254 47.12602 148.81859 47.12602 curveto
-148.72464 47.12602 148.63446 47.08865 148.56802 47.02222 curveto
-148.50159 46.95578 148.46422 46.8656 148.46422 46.77165 curveto
-148.46422 46.6777 148.50159 46.58752 148.56802 46.52109 curveto
-148.63446 46.45465 148.72464 46.41728 148.81859 46.41728 curveto
-148.91254 46.41728 149.00272 46.45465 149.06915 46.52109 curveto
-149.13559 46.58752 149.17296 46.6777 149.17296 46.77165 curveto closepath fill
-newpath 149.17296 68.0315 moveto
-149.17296 68.12544 149.13559 68.21562 149.06915 68.28206 curveto
-149.00272 68.3485 148.91254 68.38586 148.81859 68.38586 curveto
-148.72464 68.38586 148.63446 68.3485 148.56802 68.28206 curveto
-148.50159 68.21562 148.46422 68.12544 148.46422 68.0315 curveto
-148.46422 67.93755 148.50159 67.84737 148.56802 67.78093 curveto
-148.63446 67.7145 148.72464 67.67712 148.81859 67.67712 curveto
-148.91254 67.67712 149.00272 67.7145 149.06915 67.78093 curveto
-149.13559 67.84737 149.17296 67.93755 149.17296 68.0315 curveto closepath fill
-newpath 149.17296 89.29134 moveto
-149.17296 89.38528 149.13559 89.47546 149.06915 89.5419 curveto
-149.00272 89.60834 148.91254 89.6457 148.81859 89.6457 curveto
-148.72464 89.6457 148.63446 89.60834 148.56802 89.5419 curveto
-148.50159 89.47546 148.46422 89.38528 148.46422 89.29134 curveto
-148.46422 89.19739 148.50159 89.10721 148.56802 89.04077 curveto
-148.63446 88.97433 148.72464 88.93697 148.81859 88.93697 curveto
-148.91254 88.93697 149.00272 88.97433 149.06915 89.04077 curveto
-149.13559 89.10721 149.17296 89.19739 149.17296 89.29134 curveto closepath fill
-newpath 149.17296 131.81102 moveto
-149.17296 131.90497 149.13559 131.99515 149.06915 132.06158 curveto
-149.00272 132.12802 148.91254 132.16539 148.81859 132.16539 curveto
-148.72464 132.16539 148.63446 132.12802 148.56802 132.06158 curveto
-148.50159 131.99515 148.46422 131.90497 148.46422 131.81102 curveto
-148.46422 131.71707 148.50159 131.62689 148.56802 131.56046 curveto
-148.63446 131.49402 148.72464 131.45665 148.81859 131.45665 curveto
-148.91254 131.45665 149.00272 131.49402 149.06915 131.56046 curveto
-149.13559 131.62689 149.17296 131.71707 149.17296 131.81102 curveto closepath
- fill
-newpath 149.17296 153.07086 moveto
-149.17296 153.16481 149.13559 153.25499 149.06915 153.32143 curveto
-149.00272 153.38786 148.91254 153.42523 148.81859 153.42523 curveto
-148.72464 153.42523 148.63446 153.38786 148.56802 153.32143 curveto
-148.50159 153.25499 148.46422 153.16481 148.46422 153.07086 curveto
-148.46422 152.97691 148.50159 152.88673 148.56802 152.8203 curveto
-148.63446 152.75386 148.72464 152.71649 148.81859 152.71649 curveto
-148.91254 152.71649 149.00272 152.75386 149.06915 152.8203 curveto
-149.13559 152.88673 149.17296 152.97691 149.17296 153.07086 curveto closepath
- fill
-newpath 149.17296 174.3307 moveto
-149.17296 174.42465 149.13559 174.51483 149.06915 174.58127 curveto
-149.00272 174.6477 148.91254 174.68507 148.81859 174.68507 curveto
-148.72464 174.68507 148.63446 174.6477 148.56802 174.58127 curveto
-148.50159 174.51483 148.46422 174.42465 148.46422 174.3307 curveto
-148.46422 174.23676 148.50159 174.14658 148.56802 174.08014 curveto
-148.63446 174.0137 148.72464 173.97633 148.81859 173.97633 curveto
-148.91254 173.97633 149.00272 174.0137 149.06915 174.08014 curveto
-149.13559 174.14658 149.17296 174.23676 149.17296 174.3307 curveto closepath
- fill
-newpath 153.42493 46.77165 moveto
-153.42493 46.8656 153.38756 46.95578 153.32112 47.02222 curveto
-153.25468 47.08865 153.1645 47.12602 153.07056 47.12602 curveto
-152.97661 47.12602 152.88643 47.08865 152.81999 47.02222 curveto
-152.75356 46.95578 152.71619 46.8656 152.71619 46.77165 curveto
-152.71619 46.6777 152.75356 46.58752 152.81999 46.52109 curveto
-152.88643 46.45465 152.97661 46.41728 153.07056 46.41728 curveto
-153.1645 46.41728 153.25468 46.45465 153.32112 46.52109 curveto
-153.38756 46.58752 153.42493 46.6777 153.42493 46.77165 curveto closepath fill
-newpath 153.42493 68.0315 moveto
-153.42493 68.12544 153.38756 68.21562 153.32112 68.28206 curveto
-153.25468 68.3485 153.1645 68.38586 153.07056 68.38586 curveto
-152.97661 68.38586 152.88643 68.3485 152.81999 68.28206 curveto
-152.75356 68.21562 152.71619 68.12544 152.71619 68.0315 curveto
-152.71619 67.93755 152.75356 67.84737 152.81999 67.78093 curveto
-152.88643 67.7145 152.97661 67.67712 153.07056 67.67712 curveto
-153.1645 67.67712 153.25468 67.7145 153.32112 67.78093 curveto
-153.38756 67.84737 153.42493 67.93755 153.42493 68.0315 curveto closepath fill
-newpath 153.42493 89.29134 moveto
-153.42493 89.38528 153.38756 89.47546 153.32112 89.5419 curveto
-153.25468 89.60834 153.1645 89.6457 153.07056 89.6457 curveto
-152.97661 89.6457 152.88643 89.60834 152.81999 89.5419 curveto
-152.75356 89.47546 152.71619 89.38528 152.71619 89.29134 curveto
-152.71619 89.19739 152.75356 89.10721 152.81999 89.04077 curveto
-152.88643 88.97433 152.97661 88.93697 153.07056 88.93697 curveto
-153.1645 88.93697 153.25468 88.97433 153.32112 89.04077 curveto
-153.38756 89.10721 153.42493 89.19739 153.42493 89.29134 curveto closepath fill
-newpath 153.42493 131.81102 moveto
-153.42493 131.90497 153.38756 131.99515 153.32112 132.06158 curveto
-153.25468 132.12802 153.1645 132.16539 153.07056 132.16539 curveto
-152.97661 132.16539 152.88643 132.12802 152.81999 132.06158 curveto
-152.75356 131.99515 152.71619 131.90497 152.71619 131.81102 curveto
-152.71619 131.71707 152.75356 131.62689 152.81999 131.56046 curveto
-152.88643 131.49402 152.97661 131.45665 153.07056 131.45665 curveto
-153.1645 131.45665 153.25468 131.49402 153.32112 131.56046 curveto
-153.38756 131.62689 153.42493 131.71707 153.42493 131.81102 curveto closepath
- fill
-newpath 153.42493 153.07086 moveto
-153.42493 153.16481 153.38756 153.25499 153.32112 153.32143 curveto
-153.25468 153.38786 153.1645 153.42523 153.07056 153.42523 curveto
-152.97661 153.42523 152.88643 153.38786 152.81999 153.32143 curveto
-152.75356 153.25499 152.71619 153.16481 152.71619 153.07086 curveto
-152.71619 152.97691 152.75356 152.88673 152.81999 152.8203 curveto
-152.88643 152.75386 152.97661 152.71649 153.07056 152.71649 curveto
-153.1645 152.71649 153.25468 152.75386 153.32112 152.8203 curveto
-153.38756 152.88673 153.42493 152.97691 153.42493 153.07086 curveto closepath
- fill
-newpath 153.42493 174.3307 moveto
-153.42493 174.42465 153.38756 174.51483 153.32112 174.58127 curveto
-153.25468 174.6477 153.1645 174.68507 153.07056 174.68507 curveto
-152.97661 174.68507 152.88643 174.6477 152.81999 174.58127 curveto
-152.75356 174.51483 152.71619 174.42465 152.71619 174.3307 curveto
-152.71619 174.23676 152.75356 174.14658 152.81999 174.08014 curveto
-152.88643 174.0137 152.97661 173.97633 153.07056 173.97633 curveto
-153.1645 173.97633 153.25468 174.0137 153.32112 174.08014 curveto
-153.38756 174.14658 153.42493 174.23676 153.42493 174.3307 curveto closepath
- fill
-newpath 157.6769 46.77165 moveto
-157.6769 46.8656 157.63953 46.95578 157.57309 47.02222 curveto
-157.50665 47.08865 157.41647 47.12602 157.32253 47.12602 curveto
-157.22858 47.12602 157.1384 47.08865 157.07196 47.02222 curveto
-157.00552 46.95578 156.96815 46.8656 156.96815 46.77165 curveto
-156.96815 46.6777 157.00552 46.58752 157.07196 46.52109 curveto
-157.1384 46.45465 157.22858 46.41728 157.32253 46.41728 curveto
-157.41647 46.41728 157.50665 46.45465 157.57309 46.52109 curveto
-157.63953 46.58752 157.6769 46.6777 157.6769 46.77165 curveto closepath fill
-newpath 157.6769 68.0315 moveto
-157.6769 68.12544 157.63953 68.21562 157.57309 68.28206 curveto
-157.50665 68.3485 157.41647 68.38586 157.32253 68.38586 curveto
-157.22858 68.38586 157.1384 68.3485 157.07196 68.28206 curveto
-157.00552 68.21562 156.96815 68.12544 156.96815 68.0315 curveto
-156.96815 67.93755 157.00552 67.84737 157.07196 67.78093 curveto
-157.1384 67.7145 157.22858 67.67712 157.32253 67.67712 curveto
-157.41647 67.67712 157.50665 67.7145 157.57309 67.78093 curveto
-157.63953 67.84737 157.6769 67.93755 157.6769 68.0315 curveto closepath fill
-newpath 157.6769 89.29134 moveto
-157.6769 89.38528 157.63953 89.47546 157.57309 89.5419 curveto
-157.50665 89.60834 157.41647 89.6457 157.32253 89.6457 curveto
-157.22858 89.6457 157.1384 89.60834 157.07196 89.5419 curveto
-157.00552 89.47546 156.96815 89.38528 156.96815 89.29134 curveto
-156.96815 89.19739 157.00552 89.10721 157.07196 89.04077 curveto
-157.1384 88.97433 157.22858 88.93697 157.32253 88.93697 curveto
-157.41647 88.93697 157.50665 88.97433 157.57309 89.04077 curveto
-157.63953 89.10721 157.6769 89.19739 157.6769 89.29134 curveto closepath fill
-newpath 157.6769 131.81102 moveto
-157.6769 131.90497 157.63953 131.99515 157.57309 132.06158 curveto
-157.50665 132.12802 157.41647 132.16539 157.32253 132.16539 curveto
-157.22858 132.16539 157.1384 132.12802 157.07196 132.06158 curveto
-157.00552 131.99515 156.96815 131.90497 156.96815 131.81102 curveto
-156.96815 131.71707 157.00552 131.62689 157.07196 131.56046 curveto
-157.1384 131.49402 157.22858 131.45665 157.32253 131.45665 curveto
-157.41647 131.45665 157.50665 131.49402 157.57309 131.56046 curveto
-157.63953 131.62689 157.6769 131.71707 157.6769 131.81102 curveto closepath
- fill
-newpath 157.6769 153.07086 moveto
-157.6769 153.16481 157.63953 153.25499 157.57309 153.32143 curveto
-157.50665 153.38786 157.41647 153.42523 157.32253 153.42523 curveto
-157.22858 153.42523 157.1384 153.38786 157.07196 153.32143 curveto
-157.00552 153.25499 156.96815 153.16481 156.96815 153.07086 curveto
-156.96815 152.97691 157.00552 152.88673 157.07196 152.8203 curveto
-157.1384 152.75386 157.22858 152.71649 157.32253 152.71649 curveto
-157.41647 152.71649 157.50665 152.75386 157.57309 152.8203 curveto
-157.63953 152.88673 157.6769 152.97691 157.6769 153.07086 curveto closepath
- fill
-newpath 157.6769 174.3307 moveto
-157.6769 174.42465 157.63953 174.51483 157.57309 174.58127 curveto
-157.50665 174.6477 157.41647 174.68507 157.32253 174.68507 curveto
-157.22858 174.68507 157.1384 174.6477 157.07196 174.58127 curveto
-157.00552 174.51483 156.96815 174.42465 156.96815 174.3307 curveto
-156.96815 174.23676 157.00552 174.14658 157.07196 174.08014 curveto
-157.1384 174.0137 157.22858 173.97633 157.32253 173.97633 curveto
-157.41647 173.97633 157.50665 174.0137 157.57309 174.08014 curveto
-157.63953 174.14658 157.6769 174.23676 157.6769 174.3307 curveto closepath fill
-newpath 161.92886 46.77165 moveto
-161.92886 46.8656 161.8915 46.95578 161.82506 47.02222 curveto
-161.75862 47.08865 161.66844 47.12602 161.5745 47.12602 curveto
-161.48055 47.12602 161.39037 47.08865 161.32393 47.02222 curveto
-161.25749 46.95578 161.22012 46.8656 161.22012 46.77165 curveto
-161.22012 46.6777 161.25749 46.58752 161.32393 46.52109 curveto
-161.39037 46.45465 161.48055 46.41728 161.5745 46.41728 curveto
-161.66844 46.41728 161.75862 46.45465 161.82506 46.52109 curveto
-161.8915 46.58752 161.92886 46.6777 161.92886 46.77165 curveto closepath fill
-newpath 161.92886 68.0315 moveto
-161.92886 68.12544 161.8915 68.21562 161.82506 68.28206 curveto
-161.75862 68.3485 161.66844 68.38586 161.5745 68.38586 curveto
-161.48055 68.38586 161.39037 68.3485 161.32393 68.28206 curveto
-161.25749 68.21562 161.22012 68.12544 161.22012 68.0315 curveto
-161.22012 67.93755 161.25749 67.84737 161.32393 67.78093 curveto
-161.39037 67.7145 161.48055 67.67712 161.5745 67.67712 curveto
-161.66844 67.67712 161.75862 67.7145 161.82506 67.78093 curveto
-161.8915 67.84737 161.92886 67.93755 161.92886 68.0315 curveto closepath fill
-newpath 161.92886 89.29134 moveto
-161.92886 89.38528 161.8915 89.47546 161.82506 89.5419 curveto
-161.75862 89.60834 161.66844 89.6457 161.5745 89.6457 curveto
-161.48055 89.6457 161.39037 89.60834 161.32393 89.5419 curveto
-161.25749 89.47546 161.22012 89.38528 161.22012 89.29134 curveto
-161.22012 89.19739 161.25749 89.10721 161.32393 89.04077 curveto
-161.39037 88.97433 161.48055 88.93697 161.5745 88.93697 curveto
-161.66844 88.93697 161.75862 88.97433 161.82506 89.04077 curveto
-161.8915 89.10721 161.92886 89.19739 161.92886 89.29134 curveto closepath fill
-newpath 161.92886 131.81102 moveto
-161.92886 131.90497 161.8915 131.99515 161.82506 132.06158 curveto
-161.75862 132.12802 161.66844 132.16539 161.5745 132.16539 curveto
-161.48055 132.16539 161.39037 132.12802 161.32393 132.06158 curveto
-161.25749 131.99515 161.22012 131.90497 161.22012 131.81102 curveto
-161.22012 131.71707 161.25749 131.62689 161.32393 131.56046 curveto
-161.39037 131.49402 161.48055 131.45665 161.5745 131.45665 curveto
-161.66844 131.45665 161.75862 131.49402 161.82506 131.56046 curveto
-161.8915 131.62689 161.92886 131.71707 161.92886 131.81102 curveto closepath
- fill
-newpath 161.92886 153.07086 moveto
-161.92886 153.16481 161.8915 153.25499 161.82506 153.32143 curveto
-161.75862 153.38786 161.66844 153.42523 161.5745 153.42523 curveto
-161.48055 153.42523 161.39037 153.38786 161.32393 153.32143 curveto
-161.25749 153.25499 161.22012 153.16481 161.22012 153.07086 curveto
-161.22012 152.97691 161.25749 152.88673 161.32393 152.8203 curveto
-161.39037 152.75386 161.48055 152.71649 161.5745 152.71649 curveto
-161.66844 152.71649 161.75862 152.75386 161.82506 152.8203 curveto
-161.8915 152.88673 161.92886 152.97691 161.92886 153.07086 curveto closepath
- fill
-newpath 161.92886 174.3307 moveto
-161.92886 174.42465 161.8915 174.51483 161.82506 174.58127 curveto
-161.75862 174.6477 161.66844 174.68507 161.5745 174.68507 curveto
-161.48055 174.68507 161.39037 174.6477 161.32393 174.58127 curveto
-161.25749 174.51483 161.22012 174.42465 161.22012 174.3307 curveto
-161.22012 174.23676 161.25749 174.14658 161.32393 174.08014 curveto
-161.39037 174.0137 161.48055 173.97633 161.5745 173.97633 curveto
-161.66844 173.97633 161.75862 174.0137 161.82506 174.08014 curveto
-161.8915 174.14658 161.92886 174.23676 161.92886 174.3307 curveto closepath
- fill
-newpath 166.18083 46.77165 moveto
-166.18083 46.8656 166.14346 46.95578 166.07703 47.02222 curveto
-166.01059 47.08865 165.92041 47.12602 165.82646 47.12602 curveto
-165.73251 47.12602 165.64233 47.08865 165.5759 47.02222 curveto
-165.50946 46.95578 165.47209 46.8656 165.47209 46.77165 curveto
-165.47209 46.6777 165.50946 46.58752 165.5759 46.52109 curveto
-165.64233 46.45465 165.73251 46.41728 165.82646 46.41728 curveto
-165.92041 46.41728 166.01059 46.45465 166.07703 46.52109 curveto
-166.14346 46.58752 166.18083 46.6777 166.18083 46.77165 curveto closepath fill
-newpath 166.18083 68.0315 moveto
-166.18083 68.12544 166.14346 68.21562 166.07703 68.28206 curveto
-166.01059 68.3485 165.92041 68.38586 165.82646 68.38586 curveto
-165.73251 68.38586 165.64233 68.3485 165.5759 68.28206 curveto
-165.50946 68.21562 165.47209 68.12544 165.47209 68.0315 curveto
-165.47209 67.93755 165.50946 67.84737 165.5759 67.78093 curveto
-165.64233 67.7145 165.73251 67.67712 165.82646 67.67712 curveto
-165.92041 67.67712 166.01059 67.7145 166.07703 67.78093 curveto
-166.14346 67.84737 166.18083 67.93755 166.18083 68.0315 curveto closepath fill
-newpath 166.18083 89.29134 moveto
-166.18083 89.38528 166.14346 89.47546 166.07703 89.5419 curveto
-166.01059 89.60834 165.92041 89.6457 165.82646 89.6457 curveto
-165.73251 89.6457 165.64233 89.60834 165.5759 89.5419 curveto
-165.50946 89.47546 165.47209 89.38528 165.47209 89.29134 curveto
-165.47209 89.19739 165.50946 89.10721 165.5759 89.04077 curveto
-165.64233 88.97433 165.73251 88.93697 165.82646 88.93697 curveto
-165.92041 88.93697 166.01059 88.97433 166.07703 89.04077 curveto
-166.14346 89.10721 166.18083 89.19739 166.18083 89.29134 curveto closepath fill
-newpath 166.18083 131.81102 moveto
-166.18083 131.90497 166.14346 131.99515 166.07703 132.06158 curveto
-166.01059 132.12802 165.92041 132.16539 165.82646 132.16539 curveto
-165.73251 132.16539 165.64233 132.12802 165.5759 132.06158 curveto
-165.50946 131.99515 165.47209 131.90497 165.47209 131.81102 curveto
-165.47209 131.71707 165.50946 131.62689 165.5759 131.56046 curveto
-165.64233 131.49402 165.73251 131.45665 165.82646 131.45665 curveto
-165.92041 131.45665 166.01059 131.49402 166.07703 131.56046 curveto
-166.14346 131.62689 166.18083 131.71707 166.18083 131.81102 curveto closepath
- fill
-newpath 166.18083 153.07086 moveto
-166.18083 153.16481 166.14346 153.25499 166.07703 153.32143 curveto
-166.01059 153.38786 165.92041 153.42523 165.82646 153.42523 curveto
-165.73251 153.42523 165.64233 153.38786 165.5759 153.32143 curveto
-165.50946 153.25499 165.47209 153.16481 165.47209 153.07086 curveto
-165.47209 152.97691 165.50946 152.88673 165.5759 152.8203 curveto
-165.64233 152.75386 165.73251 152.71649 165.82646 152.71649 curveto
-165.92041 152.71649 166.01059 152.75386 166.07703 152.8203 curveto
-166.14346 152.88673 166.18083 152.97691 166.18083 153.07086 curveto closepath
- fill
-newpath 166.18083 174.3307 moveto
-166.18083 174.42465 166.14346 174.51483 166.07703 174.58127 curveto
-166.01059 174.6477 165.92041 174.68507 165.82646 174.68507 curveto
-165.73251 174.68507 165.64233 174.6477 165.5759 174.58127 curveto
-165.50946 174.51483 165.47209 174.42465 165.47209 174.3307 curveto
-165.47209 174.23676 165.50946 174.14658 165.5759 174.08014 curveto
-165.64233 174.0137 165.73251 173.97633 165.82646 173.97633 curveto
-165.92041 173.97633 166.01059 174.0137 166.07703 174.08014 curveto
-166.14346 174.14658 166.18083 174.23676 166.18083 174.3307 curveto closepath
- fill
-newpath 85.39343 114.80315 moveto
-85.39343 114.8971 85.35606 114.98727 85.28963 115.05371 curveto
-85.22319 115.12015 85.13301 115.15752 85.03906 115.15752 curveto
-84.94511 115.15752 84.85493 115.12015 84.7885 115.05371 curveto
-84.72206 114.98727 84.6847 114.8971 84.6847 114.80315 curveto
-84.6847 114.7092 84.72206 114.61902 84.7885 114.55258 curveto
-84.85493 114.48615 84.94511 114.44878 85.03906 114.44878 curveto
-85.13301 114.44878 85.22319 114.48615 85.28963 114.55258 curveto
-85.35606 114.61902 85.39343 114.7092 85.39343 114.80315 curveto closepath fill
-newpath 106.65327 114.80315 moveto
-106.65327 114.8971 106.6159 114.98727 106.54947 115.05371 curveto
-106.48303 115.12015 106.39285 115.15752 106.2989 115.15752 curveto
-106.20496 115.15752 106.11478 115.12015 106.04834 115.05371 curveto
-105.9819 114.98727 105.94453 114.8971 105.94453 114.80315 curveto
-105.94453 114.7092 105.9819 114.61902 106.04834 114.55258 curveto
-106.11478 114.48615 106.20496 114.44878 106.2989 114.44878 curveto
-106.39285 114.44878 106.48303 114.48615 106.54947 114.55258 curveto
-106.6159 114.61902 106.65327 114.7092 106.65327 114.80315 curveto closepath
- fill
-newpath 127.91312 114.80315 moveto
-127.91312 114.8971 127.87575 114.98727 127.80931 115.05371 curveto
-127.74287 115.12015 127.6527 115.15752 127.55875 115.15752 curveto
-127.4648 115.15752 127.37462 115.12015 127.30818 115.05371 curveto
-127.24174 114.98727 127.20438 114.8971 127.20438 114.80315 curveto
-127.20438 114.7092 127.24174 114.61902 127.30818 114.55258 curveto
-127.37462 114.48615 127.4648 114.44878 127.55875 114.44878 curveto
-127.6527 114.44878 127.74287 114.48615 127.80931 114.55258 curveto
-127.87575 114.61902 127.91312 114.7092 127.91312 114.80315 curveto closepath
- fill
-newpath 149.17296 114.80315 moveto
-149.17296 114.8971 149.13559 114.98727 149.06915 115.05371 curveto
-149.00272 115.12015 148.91254 115.15752 148.81859 115.15752 curveto
-148.72464 115.15752 148.63446 115.12015 148.56802 115.05371 curveto
-148.50159 114.98727 148.46422 114.8971 148.46422 114.80315 curveto
-148.46422 114.7092 148.50159 114.61902 148.56802 114.55258 curveto
-148.63446 114.48615 148.72464 114.44878 148.81859 114.44878 curveto
-148.91254 114.44878 149.00272 114.48615 149.06915 114.55258 curveto
-149.13559 114.61902 149.17296 114.7092 149.17296 114.80315 curveto closepath
- fill
-newpath 191.69264 114.80315 moveto
-191.69264 114.8971 191.65527 114.98727 191.58884 115.05371 curveto
-191.5224 115.12015 191.43222 115.15752 191.33827 115.15752 curveto
-191.24432 115.15752 191.15414 115.12015 191.0877 115.05371 curveto
-191.02127 114.98727 190.9839 114.8971 190.9839 114.80315 curveto
-190.9839 114.7092 191.02127 114.61902 191.0877 114.55258 curveto
-191.15414 114.48615 191.24432 114.44878 191.33827 114.44878 curveto
-191.43222 114.44878 191.5224 114.48615 191.58884 114.55258 curveto
-191.65527 114.61902 191.69264 114.7092 191.69264 114.80315 curveto closepath
- fill
-newpath 212.95248 114.80315 moveto
-212.95248 114.8971 212.91512 114.98727 212.84868 115.05371 curveto
-212.78224 115.12015 212.69206 115.15752 212.59811 115.15752 curveto
-212.50417 115.15752 212.41399 115.12015 212.34755 115.05371 curveto
-212.28111 114.98727 212.24374 114.8971 212.24374 114.80315 curveto
-212.24374 114.7092 212.28111 114.61902 212.34755 114.55258 curveto
-212.41399 114.48615 212.50417 114.44878 212.59811 114.44878 curveto
-212.69206 114.44878 212.78224 114.48615 212.84868 114.55258 curveto
-212.91512 114.61902 212.95248 114.7092 212.95248 114.80315 curveto closepath
- fill
-newpath 234.21233 114.80315 moveto
-234.21233 114.8971 234.17496 114.98727 234.10852 115.05371 curveto
-234.04208 115.12015 233.9519 115.15752 233.85796 115.15752 curveto
-233.764 115.15752 233.67383 115.12015 233.60739 115.05371 curveto
-233.54095 114.98727 233.50359 114.8971 233.50359 114.80315 curveto
-233.50359 114.7092 233.54095 114.61902 233.60739 114.55258 curveto
-233.67383 114.48615 233.764 114.44878 233.85796 114.44878 curveto
-233.9519 114.44878 234.04208 114.48615 234.10852 114.55258 curveto
-234.17496 114.61902 234.21233 114.7092 234.21233 114.80315 curveto closepath
- fill
-newpath 255.47217 114.80315 moveto
-255.47217 114.8971 255.4348 114.98727 255.36836 115.05371 curveto
-255.30193 115.12015 255.21175 115.15752 255.1178 115.15752 curveto
-255.02385 115.15752 254.93367 115.12015 254.86723 115.05371 curveto
-254.8008 114.98727 254.76343 114.8971 254.76343 114.80315 curveto
-254.76343 114.7092 254.8008 114.61902 254.86723 114.55258 curveto
-254.93367 114.48615 255.02385 114.44878 255.1178 114.44878 curveto
-255.21175 114.44878 255.30193 114.48615 255.36836 114.55258 curveto
-255.4348 114.61902 255.47217 114.7092 255.47217 114.80315 curveto closepath
- fill
-newpath 85.39343 119.05511 moveto
-85.39343 119.14906 85.35606 119.23924 85.28963 119.30568 curveto
-85.22319 119.37212 85.13301 119.40948 85.03906 119.40948 curveto
-84.94511 119.40948 84.85493 119.37212 84.7885 119.30568 curveto
-84.72206 119.23924 84.6847 119.14906 84.6847 119.05511 curveto
-84.6847 118.96117 84.72206 118.87099 84.7885 118.80455 curveto
-84.85493 118.73811 84.94511 118.70074 85.03906 118.70074 curveto
-85.13301 118.70074 85.22319 118.73811 85.28963 118.80455 curveto
-85.35606 118.87099 85.39343 118.96117 85.39343 119.05511 curveto closepath fill
-newpath 106.65327 119.05511 moveto
-106.65327 119.14906 106.6159 119.23924 106.54947 119.30568 curveto
-106.48303 119.37212 106.39285 119.40948 106.2989 119.40948 curveto
-106.20496 119.40948 106.11478 119.37212 106.04834 119.30568 curveto
-105.9819 119.23924 105.94453 119.14906 105.94453 119.05511 curveto
-105.94453 118.96117 105.9819 118.87099 106.04834 118.80455 curveto
-106.11478 118.73811 106.20496 118.70074 106.2989 118.70074 curveto
-106.39285 118.70074 106.48303 118.73811 106.54947 118.80455 curveto
-106.6159 118.87099 106.65327 118.96117 106.65327 119.05511 curveto closepath
- fill
-newpath 127.91312 119.05511 moveto
-127.91312 119.14906 127.87575 119.23924 127.80931 119.30568 curveto
-127.74287 119.37212 127.6527 119.40948 127.55875 119.40948 curveto
-127.4648 119.40948 127.37462 119.37212 127.30818 119.30568 curveto
-127.24174 119.23924 127.20438 119.14906 127.20438 119.05511 curveto
-127.20438 118.96117 127.24174 118.87099 127.30818 118.80455 curveto
-127.37462 118.73811 127.4648 118.70074 127.55875 118.70074 curveto
-127.6527 118.70074 127.74287 118.73811 127.80931 118.80455 curveto
-127.87575 118.87099 127.91312 118.96117 127.91312 119.05511 curveto closepath
- fill
-newpath 149.17296 119.05511 moveto
-149.17296 119.14906 149.13559 119.23924 149.06915 119.30568 curveto
-149.00272 119.37212 148.91254 119.40948 148.81859 119.40948 curveto
-148.72464 119.40948 148.63446 119.37212 148.56802 119.30568 curveto
-148.50159 119.23924 148.46422 119.14906 148.46422 119.05511 curveto
-148.46422 118.96117 148.50159 118.87099 148.56802 118.80455 curveto
-148.63446 118.73811 148.72464 118.70074 148.81859 118.70074 curveto
-148.91254 118.70074 149.00272 118.73811 149.06915 118.80455 curveto
-149.13559 118.87099 149.17296 118.96117 149.17296 119.05511 curveto closepath
- fill
-newpath 191.69264 119.05511 moveto
-191.69264 119.14906 191.65527 119.23924 191.58884 119.30568 curveto
-191.5224 119.37212 191.43222 119.40948 191.33827 119.40948 curveto
-191.24432 119.40948 191.15414 119.37212 191.0877 119.30568 curveto
-191.02127 119.23924 190.9839 119.14906 190.9839 119.05511 curveto
-190.9839 118.96117 191.02127 118.87099 191.0877 118.80455 curveto
-191.15414 118.73811 191.24432 118.70074 191.33827 118.70074 curveto
-191.43222 118.70074 191.5224 118.73811 191.58884 118.80455 curveto
-191.65527 118.87099 191.69264 118.96117 191.69264 119.05511 curveto closepath
- fill
-newpath 212.95248 119.05511 moveto
-212.95248 119.14906 212.91512 119.23924 212.84868 119.30568 curveto
-212.78224 119.37212 212.69206 119.40948 212.59811 119.40948 curveto
-212.50417 119.40948 212.41399 119.37212 212.34755 119.30568 curveto
-212.28111 119.23924 212.24374 119.14906 212.24374 119.05511 curveto
-212.24374 118.96117 212.28111 118.87099 212.34755 118.80455 curveto
-212.41399 118.73811 212.50417 118.70074 212.59811 118.70074 curveto
-212.69206 118.70074 212.78224 118.73811 212.84868 118.80455 curveto
-212.91512 118.87099 212.95248 118.96117 212.95248 119.05511 curveto closepath
- fill
-newpath 234.21233 119.05511 moveto
-234.21233 119.14906 234.17496 119.23924 234.10852 119.30568 curveto
-234.04208 119.37212 233.9519 119.40948 233.85796 119.40948 curveto
-233.764 119.40948 233.67383 119.37212 233.60739 119.30568 curveto
-233.54095 119.23924 233.50359 119.14906 233.50359 119.05511 curveto
-233.50359 118.96117 233.54095 118.87099 233.60739 118.80455 curveto
-233.67383 118.73811 233.764 118.70074 233.85796 118.70074 curveto
-233.9519 118.70074 234.04208 118.73811 234.10852 118.80455 curveto
-234.17496 118.87099 234.21233 118.96117 234.21233 119.05511 curveto closepath
- fill
-newpath 255.47217 119.05511 moveto
-255.47217 119.14906 255.4348 119.23924 255.36836 119.30568 curveto
-255.30193 119.37212 255.21175 119.40948 255.1178 119.40948 curveto
-255.02385 119.40948 254.93367 119.37212 254.86723 119.30568 curveto
-254.8008 119.23924 254.76343 119.14906 254.76343 119.05511 curveto
-254.76343 118.96117 254.8008 118.87099 254.86723 118.80455 curveto
-254.93367 118.73811 255.02385 118.70074 255.1178 118.70074 curveto
-255.21175 118.70074 255.30193 118.73811 255.36836 118.80455 curveto
-255.4348 118.87099 255.47217 118.96117 255.47217 119.05511 curveto closepath
- fill
-newpath 85.39343 123.30708 moveto
-85.39343 123.40103 85.35606 123.49121 85.28963 123.55765 curveto
-85.22319 123.62408 85.13301 123.66145 85.03906 123.66145 curveto
-84.94511 123.66145 84.85493 123.62408 84.7885 123.55765 curveto
-84.72206 123.49121 84.6847 123.40103 84.6847 123.30708 curveto
-84.6847 123.21313 84.72206 123.12296 84.7885 123.05652 curveto
-84.85493 122.99008 84.94511 122.95271 85.03906 122.95271 curveto
-85.13301 122.95271 85.22319 122.99008 85.28963 123.05652 curveto
-85.35606 123.12296 85.39343 123.21313 85.39343 123.30708 curveto closepath fill
-newpath 106.65327 123.30708 moveto
-106.65327 123.40103 106.6159 123.49121 106.54947 123.55765 curveto
-106.48303 123.62408 106.39285 123.66145 106.2989 123.66145 curveto
-106.20496 123.66145 106.11478 123.62408 106.04834 123.55765 curveto
-105.9819 123.49121 105.94453 123.40103 105.94453 123.30708 curveto
-105.94453 123.21313 105.9819 123.12296 106.04834 123.05652 curveto
-106.11478 122.99008 106.20496 122.95271 106.2989 122.95271 curveto
-106.39285 122.95271 106.48303 122.99008 106.54947 123.05652 curveto
-106.6159 123.12296 106.65327 123.21313 106.65327 123.30708 curveto closepath
- fill
-newpath 127.91312 123.30708 moveto
-127.91312 123.40103 127.87575 123.49121 127.80931 123.55765 curveto
-127.74287 123.62408 127.6527 123.66145 127.55875 123.66145 curveto
-127.4648 123.66145 127.37462 123.62408 127.30818 123.55765 curveto
-127.24174 123.49121 127.20438 123.40103 127.20438 123.30708 curveto
-127.20438 123.21313 127.24174 123.12296 127.30818 123.05652 curveto
-127.37462 122.99008 127.4648 122.95271 127.55875 122.95271 curveto
-127.6527 122.95271 127.74287 122.99008 127.80931 123.05652 curveto
-127.87575 123.12296 127.91312 123.21313 127.91312 123.30708 curveto closepath
- fill
-newpath 149.17296 123.30708 moveto
-149.17296 123.40103 149.13559 123.49121 149.06915 123.55765 curveto
-149.00272 123.62408 148.91254 123.66145 148.81859 123.66145 curveto
-148.72464 123.66145 148.63446 123.62408 148.56802 123.55765 curveto
-148.50159 123.49121 148.46422 123.40103 148.46422 123.30708 curveto
-148.46422 123.21313 148.50159 123.12296 148.56802 123.05652 curveto
-148.63446 122.99008 148.72464 122.95271 148.81859 122.95271 curveto
-148.91254 122.95271 149.00272 122.99008 149.06915 123.05652 curveto
-149.13559 123.12296 149.17296 123.21313 149.17296 123.30708 curveto closepath
- fill
-newpath 191.69264 123.30708 moveto
-191.69264 123.40103 191.65527 123.49121 191.58884 123.55765 curveto
-191.5224 123.62408 191.43222 123.66145 191.33827 123.66145 curveto
-191.24432 123.66145 191.15414 123.62408 191.0877 123.55765 curveto
-191.02127 123.49121 190.9839 123.40103 190.9839 123.30708 curveto
-190.9839 123.21313 191.02127 123.12296 191.0877 123.05652 curveto
-191.15414 122.99008 191.24432 122.95271 191.33827 122.95271 curveto
-191.43222 122.95271 191.5224 122.99008 191.58884 123.05652 curveto
-191.65527 123.12296 191.69264 123.21313 191.69264 123.30708 curveto closepath
- fill
-newpath 212.95248 123.30708 moveto
-212.95248 123.40103 212.91512 123.49121 212.84868 123.55765 curveto
-212.78224 123.62408 212.69206 123.66145 212.59811 123.66145 curveto
-212.50417 123.66145 212.41399 123.62408 212.34755 123.55765 curveto
-212.28111 123.49121 212.24374 123.40103 212.24374 123.30708 curveto
-212.24374 123.21313 212.28111 123.12296 212.34755 123.05652 curveto
-212.41399 122.99008 212.50417 122.95271 212.59811 122.95271 curveto
-212.69206 122.95271 212.78224 122.99008 212.84868 123.05652 curveto
-212.91512 123.12296 212.95248 123.21313 212.95248 123.30708 curveto closepath
- fill
-newpath 234.21233 123.30708 moveto
-234.21233 123.40103 234.17496 123.49121 234.10852 123.55765 curveto
-234.04208 123.62408 233.9519 123.66145 233.85796 123.66145 curveto
-233.764 123.66145 233.67383 123.62408 233.60739 123.55765 curveto
-233.54095 123.49121 233.50359 123.40103 233.50359 123.30708 curveto
-233.50359 123.21313 233.54095 123.12296 233.60739 123.05652 curveto
-233.67383 122.99008 233.764 122.95271 233.85796 122.95271 curveto
-233.9519 122.95271 234.04208 122.99008 234.10852 123.05652 curveto
-234.17496 123.12296 234.21233 123.21313 234.21233 123.30708 curveto closepath
- fill
-newpath 255.47217 123.30708 moveto
-255.47217 123.40103 255.4348 123.49121 255.36836 123.55765 curveto
-255.30193 123.62408 255.21175 123.66145 255.1178 123.66145 curveto
-255.02385 123.66145 254.93367 123.62408 254.86723 123.55765 curveto
-254.8008 123.49121 254.76343 123.40103 254.76343 123.30708 curveto
-254.76343 123.21313 254.8008 123.12296 254.86723 123.05652 curveto
-254.93367 122.99008 255.02385 122.95271 255.1178 122.95271 curveto
-255.21175 122.95271 255.30193 122.99008 255.36836 123.05652 curveto
-255.4348 123.12296 255.47217 123.21313 255.47217 123.30708 curveto closepath
- fill
-newpath 85.39343 127.55905 moveto
-85.39343 127.653 85.35606 127.74318 85.28963 127.80962 curveto
-85.22319 127.87605 85.13301 127.91342 85.03906 127.91342 curveto
-84.94511 127.91342 84.85493 127.87605 84.7885 127.80962 curveto
-84.72206 127.74318 84.6847 127.653 84.6847 127.55905 curveto
-84.6847 127.4651 84.72206 127.37492 84.7885 127.30849 curveto
-84.85493 127.24205 84.94511 127.20468 85.03906 127.20468 curveto
-85.13301 127.20468 85.22319 127.24205 85.28963 127.30849 curveto
-85.35606 127.37492 85.39343 127.4651 85.39343 127.55905 curveto closepath fill
-newpath 106.65327 127.55905 moveto
-106.65327 127.653 106.6159 127.74318 106.54947 127.80962 curveto
-106.48303 127.87605 106.39285 127.91342 106.2989 127.91342 curveto
-106.20496 127.91342 106.11478 127.87605 106.04834 127.80962 curveto
-105.9819 127.74318 105.94453 127.653 105.94453 127.55905 curveto
-105.94453 127.4651 105.9819 127.37492 106.04834 127.30849 curveto
-106.11478 127.24205 106.20496 127.20468 106.2989 127.20468 curveto
-106.39285 127.20468 106.48303 127.24205 106.54947 127.30849 curveto
-106.6159 127.37492 106.65327 127.4651 106.65327 127.55905 curveto closepath
- fill
-newpath 127.91312 127.55905 moveto
-127.91312 127.653 127.87575 127.74318 127.80931 127.80962 curveto
-127.74287 127.87605 127.6527 127.91342 127.55875 127.91342 curveto
-127.4648 127.91342 127.37462 127.87605 127.30818 127.80962 curveto
-127.24174 127.74318 127.20438 127.653 127.20438 127.55905 curveto
-127.20438 127.4651 127.24174 127.37492 127.30818 127.30849 curveto
-127.37462 127.24205 127.4648 127.20468 127.55875 127.20468 curveto
-127.6527 127.20468 127.74287 127.24205 127.80931 127.30849 curveto
-127.87575 127.37492 127.91312 127.4651 127.91312 127.55905 curveto closepath
- fill
-newpath 149.17296 127.55905 moveto
-149.17296 127.653 149.13559 127.74318 149.06915 127.80962 curveto
-149.00272 127.87605 148.91254 127.91342 148.81859 127.91342 curveto
-148.72464 127.91342 148.63446 127.87605 148.56802 127.80962 curveto
-148.50159 127.74318 148.46422 127.653 148.46422 127.55905 curveto
-148.46422 127.4651 148.50159 127.37492 148.56802 127.30849 curveto
-148.63446 127.24205 148.72464 127.20468 148.81859 127.20468 curveto
-148.91254 127.20468 149.00272 127.24205 149.06915 127.30849 curveto
-149.13559 127.37492 149.17296 127.4651 149.17296 127.55905 curveto closepath
- fill
-newpath 191.69264 127.55905 moveto
-191.69264 127.653 191.65527 127.74318 191.58884 127.80962 curveto
-191.5224 127.87605 191.43222 127.91342 191.33827 127.91342 curveto
-191.24432 127.91342 191.15414 127.87605 191.0877 127.80962 curveto
-191.02127 127.74318 190.9839 127.653 190.9839 127.55905 curveto
-190.9839 127.4651 191.02127 127.37492 191.0877 127.30849 curveto
-191.15414 127.24205 191.24432 127.20468 191.33827 127.20468 curveto
-191.43222 127.20468 191.5224 127.24205 191.58884 127.30849 curveto
-191.65527 127.37492 191.69264 127.4651 191.69264 127.55905 curveto closepath
- fill
-newpath 212.95248 127.55905 moveto
-212.95248 127.653 212.91512 127.74318 212.84868 127.80962 curveto
-212.78224 127.87605 212.69206 127.91342 212.59811 127.91342 curveto
-212.50417 127.91342 212.41399 127.87605 212.34755 127.80962 curveto
-212.28111 127.74318 212.24374 127.653 212.24374 127.55905 curveto
-212.24374 127.4651 212.28111 127.37492 212.34755 127.30849 curveto
-212.41399 127.24205 212.50417 127.20468 212.59811 127.20468 curveto
-212.69206 127.20468 212.78224 127.24205 212.84868 127.30849 curveto
-212.91512 127.37492 212.95248 127.4651 212.95248 127.55905 curveto closepath
- fill
-newpath 234.21233 127.55905 moveto
-234.21233 127.653 234.17496 127.74318 234.10852 127.80962 curveto
-234.04208 127.87605 233.9519 127.91342 233.85796 127.91342 curveto
-233.764 127.91342 233.67383 127.87605 233.60739 127.80962 curveto
-233.54095 127.74318 233.50359 127.653 233.50359 127.55905 curveto
-233.50359 127.4651 233.54095 127.37492 233.60739 127.30849 curveto
-233.67383 127.24205 233.764 127.20468 233.85796 127.20468 curveto
-233.9519 127.20468 234.04208 127.24205 234.10852 127.30849 curveto
-234.17496 127.37492 234.21233 127.4651 234.21233 127.55905 curveto closepath
- fill
-newpath 255.47217 127.55905 moveto
-255.47217 127.653 255.4348 127.74318 255.36836 127.80962 curveto
-255.30193 127.87605 255.21175 127.91342 255.1178 127.91342 curveto
-255.02385 127.91342 254.93367 127.87605 254.86723 127.80962 curveto
-254.8008 127.74318 254.76343 127.653 254.76343 127.55905 curveto
-254.76343 127.4651 254.8008 127.37492 254.86723 127.30849 curveto
-254.93367 127.24205 255.02385 127.20468 255.1178 127.20468 curveto
-255.21175 127.20468 255.30193 127.24205 255.36836 127.30849 curveto
-255.4348 127.37492 255.47217 127.4651 255.47217 127.55905 curveto closepath
- fill
-newpath 85.39343 131.81102 moveto
-85.39343 131.90497 85.35606 131.99515 85.28963 132.06158 curveto
-85.22319 132.12802 85.13301 132.16539 85.03906 132.16539 curveto
-84.94511 132.16539 84.85493 132.12802 84.7885 132.06158 curveto
-84.72206 131.99515 84.6847 131.90497 84.6847 131.81102 curveto
-84.6847 131.71707 84.72206 131.62689 84.7885 131.56046 curveto
-84.85493 131.49402 84.94511 131.45665 85.03906 131.45665 curveto
-85.13301 131.45665 85.22319 131.49402 85.28963 131.56046 curveto
-85.35606 131.62689 85.39343 131.71707 85.39343 131.81102 curveto closepath fill
-newpath 106.65327 131.81102 moveto
-106.65327 131.90497 106.6159 131.99515 106.54947 132.06158 curveto
-106.48303 132.12802 106.39285 132.16539 106.2989 132.16539 curveto
-106.20496 132.16539 106.11478 132.12802 106.04834 132.06158 curveto
-105.9819 131.99515 105.94453 131.90497 105.94453 131.81102 curveto
-105.94453 131.71707 105.9819 131.62689 106.04834 131.56046 curveto
-106.11478 131.49402 106.20496 131.45665 106.2989 131.45665 curveto
-106.39285 131.45665 106.48303 131.49402 106.54947 131.56046 curveto
-106.6159 131.62689 106.65327 131.71707 106.65327 131.81102 curveto closepath
- fill
-newpath 127.91312 131.81102 moveto
-127.91312 131.90497 127.87575 131.99515 127.80931 132.06158 curveto
-127.74287 132.12802 127.6527 132.16539 127.55875 132.16539 curveto
-127.4648 132.16539 127.37462 132.12802 127.30818 132.06158 curveto
-127.24174 131.99515 127.20438 131.90497 127.20438 131.81102 curveto
-127.20438 131.71707 127.24174 131.62689 127.30818 131.56046 curveto
-127.37462 131.49402 127.4648 131.45665 127.55875 131.45665 curveto
-127.6527 131.45665 127.74287 131.49402 127.80931 131.56046 curveto
-127.87575 131.62689 127.91312 131.71707 127.91312 131.81102 curveto closepath
- fill
-newpath 149.17296 131.81102 moveto
-149.17296 131.90497 149.13559 131.99515 149.06915 132.06158 curveto
-149.00272 132.12802 148.91254 132.16539 148.81859 132.16539 curveto
-148.72464 132.16539 148.63446 132.12802 148.56802 132.06158 curveto
-148.50159 131.99515 148.46422 131.90497 148.46422 131.81102 curveto
-148.46422 131.71707 148.50159 131.62689 148.56802 131.56046 curveto
-148.63446 131.49402 148.72464 131.45665 148.81859 131.45665 curveto
-148.91254 131.45665 149.00272 131.49402 149.06915 131.56046 curveto
-149.13559 131.62689 149.17296 131.71707 149.17296 131.81102 curveto closepath
- fill
-newpath 191.69264 131.81102 moveto
-191.69264 131.90497 191.65527 131.99515 191.58884 132.06158 curveto
-191.5224 132.12802 191.43222 132.16539 191.33827 132.16539 curveto
-191.24432 132.16539 191.15414 132.12802 191.0877 132.06158 curveto
-191.02127 131.99515 190.9839 131.90497 190.9839 131.81102 curveto
-190.9839 131.71707 191.02127 131.62689 191.0877 131.56046 curveto
-191.15414 131.49402 191.24432 131.45665 191.33827 131.45665 curveto
-191.43222 131.45665 191.5224 131.49402 191.58884 131.56046 curveto
-191.65527 131.62689 191.69264 131.71707 191.69264 131.81102 curveto closepath
- fill
-newpath 212.95248 131.81102 moveto
-212.95248 131.90497 212.91512 131.99515 212.84868 132.06158 curveto
-212.78224 132.12802 212.69206 132.16539 212.59811 132.16539 curveto
-212.50417 132.16539 212.41399 132.12802 212.34755 132.06158 curveto
-212.28111 131.99515 212.24374 131.90497 212.24374 131.81102 curveto
-212.24374 131.71707 212.28111 131.62689 212.34755 131.56046 curveto
-212.41399 131.49402 212.50417 131.45665 212.59811 131.45665 curveto
-212.69206 131.45665 212.78224 131.49402 212.84868 131.56046 curveto
-212.91512 131.62689 212.95248 131.71707 212.95248 131.81102 curveto closepath
- fill
-newpath 234.21233 131.81102 moveto
-234.21233 131.90497 234.17496 131.99515 234.10852 132.06158 curveto
-234.04208 132.12802 233.9519 132.16539 233.85796 132.16539 curveto
-233.764 132.16539 233.67383 132.12802 233.60739 132.06158 curveto
-233.54095 131.99515 233.50359 131.90497 233.50359 131.81102 curveto
-233.50359 131.71707 233.54095 131.62689 233.60739 131.56046 curveto
-233.67383 131.49402 233.764 131.45665 233.85796 131.45665 curveto
-233.9519 131.45665 234.04208 131.49402 234.10852 131.56046 curveto
-234.17496 131.62689 234.21233 131.71707 234.21233 131.81102 curveto closepath
- fill
-newpath 255.47217 131.81102 moveto
-255.47217 131.90497 255.4348 131.99515 255.36836 132.06158 curveto
-255.30193 132.12802 255.21175 132.16539 255.1178 132.16539 curveto
-255.02385 132.16539 254.93367 132.12802 254.86723 132.06158 curveto
-254.8008 131.99515 254.76343 131.90497 254.76343 131.81102 curveto
-254.76343 131.71707 254.8008 131.62689 254.86723 131.56046 curveto
-254.93367 131.49402 255.02385 131.45665 255.1178 131.45665 curveto
-255.21175 131.45665 255.30193 131.49402 255.36836 131.56046 curveto
-255.4348 131.62689 255.47217 131.71707 255.47217 131.81102 curveto closepath
- fill
-newpath 85.39343 136.06299 moveto
-85.39343 136.15694 85.35606 136.24712 85.28963 136.31355 curveto
-85.22319 136.37999 85.13301 136.41736 85.03906 136.41736 curveto
-84.94511 136.41736 84.85493 136.37999 84.7885 136.31355 curveto
-84.72206 136.24712 84.6847 136.15694 84.6847 136.06299 curveto
-84.6847 135.96904 84.72206 135.87886 84.7885 135.81242 curveto
-84.85493 135.74599 84.94511 135.70862 85.03906 135.70862 curveto
-85.13301 135.70862 85.22319 135.74599 85.28963 135.81242 curveto
-85.35606 135.87886 85.39343 135.96904 85.39343 136.06299 curveto closepath fill
-newpath 106.65327 136.06299 moveto
-106.65327 136.15694 106.6159 136.24712 106.54947 136.31355 curveto
-106.48303 136.37999 106.39285 136.41736 106.2989 136.41736 curveto
-106.20496 136.41736 106.11478 136.37999 106.04834 136.31355 curveto
-105.9819 136.24712 105.94453 136.15694 105.94453 136.06299 curveto
-105.94453 135.96904 105.9819 135.87886 106.04834 135.81242 curveto
-106.11478 135.74599 106.20496 135.70862 106.2989 135.70862 curveto
-106.39285 135.70862 106.48303 135.74599 106.54947 135.81242 curveto
-106.6159 135.87886 106.65327 135.96904 106.65327 136.06299 curveto closepath
- fill
-newpath 127.91312 136.06299 moveto
-127.91312 136.15694 127.87575 136.24712 127.80931 136.31355 curveto
-127.74287 136.37999 127.6527 136.41736 127.55875 136.41736 curveto
-127.4648 136.41736 127.37462 136.37999 127.30818 136.31355 curveto
-127.24174 136.24712 127.20438 136.15694 127.20438 136.06299 curveto
-127.20438 135.96904 127.24174 135.87886 127.30818 135.81242 curveto
-127.37462 135.74599 127.4648 135.70862 127.55875 135.70862 curveto
-127.6527 135.70862 127.74287 135.74599 127.80931 135.81242 curveto
-127.87575 135.87886 127.91312 135.96904 127.91312 136.06299 curveto closepath
- fill
-newpath 149.17296 136.06299 moveto
-149.17296 136.15694 149.13559 136.24712 149.06915 136.31355 curveto
-149.00272 136.37999 148.91254 136.41736 148.81859 136.41736 curveto
-148.72464 136.41736 148.63446 136.37999 148.56802 136.31355 curveto
-148.50159 136.24712 148.46422 136.15694 148.46422 136.06299 curveto
-148.46422 135.96904 148.50159 135.87886 148.56802 135.81242 curveto
-148.63446 135.74599 148.72464 135.70862 148.81859 135.70862 curveto
-148.91254 135.70862 149.00272 135.74599 149.06915 135.81242 curveto
-149.13559 135.87886 149.17296 135.96904 149.17296 136.06299 curveto closepath
- fill
-newpath 191.69264 136.06299 moveto
-191.69264 136.15694 191.65527 136.24712 191.58884 136.31355 curveto
-191.5224 136.37999 191.43222 136.41736 191.33827 136.41736 curveto
-191.24432 136.41736 191.15414 136.37999 191.0877 136.31355 curveto
-191.02127 136.24712 190.9839 136.15694 190.9839 136.06299 curveto
-190.9839 135.96904 191.02127 135.87886 191.0877 135.81242 curveto
-191.15414 135.74599 191.24432 135.70862 191.33827 135.70862 curveto
-191.43222 135.70862 191.5224 135.74599 191.58884 135.81242 curveto
-191.65527 135.87886 191.69264 135.96904 191.69264 136.06299 curveto closepath
- fill
-newpath 212.95248 136.06299 moveto
-212.95248 136.15694 212.91512 136.24712 212.84868 136.31355 curveto
-212.78224 136.37999 212.69206 136.41736 212.59811 136.41736 curveto
-212.50417 136.41736 212.41399 136.37999 212.34755 136.31355 curveto
-212.28111 136.24712 212.24374 136.15694 212.24374 136.06299 curveto
-212.24374 135.96904 212.28111 135.87886 212.34755 135.81242 curveto
-212.41399 135.74599 212.50417 135.70862 212.59811 135.70862 curveto
-212.69206 135.70862 212.78224 135.74599 212.84868 135.81242 curveto
-212.91512 135.87886 212.95248 135.96904 212.95248 136.06299 curveto closepath
- fill
-newpath 234.21233 136.06299 moveto
-234.21233 136.15694 234.17496 136.24712 234.10852 136.31355 curveto
-234.04208 136.37999 233.9519 136.41736 233.85796 136.41736 curveto
-233.764 136.41736 233.67383 136.37999 233.60739 136.31355 curveto
-233.54095 136.24712 233.50359 136.15694 233.50359 136.06299 curveto
-233.50359 135.96904 233.54095 135.87886 233.60739 135.81242 curveto
-233.67383 135.74599 233.764 135.70862 233.85796 135.70862 curveto
-233.9519 135.70862 234.04208 135.74599 234.10852 135.81242 curveto
-234.17496 135.87886 234.21233 135.96904 234.21233 136.06299 curveto closepath
- fill
-newpath 255.47217 136.06299 moveto
-255.47217 136.15694 255.4348 136.24712 255.36836 136.31355 curveto
-255.30193 136.37999 255.21175 136.41736 255.1178 136.41736 curveto
-255.02385 136.41736 254.93367 136.37999 254.86723 136.31355 curveto
-254.8008 136.24712 254.76343 136.15694 254.76343 136.06299 curveto
-254.76343 135.96904 254.8008 135.87886 254.86723 135.81242 curveto
-254.93367 135.74599 255.02385 135.70862 255.1178 135.70862 curveto
-255.21175 135.70862 255.30193 135.74599 255.36836 135.81242 curveto
-255.4348 135.87886 255.47217 135.96904 255.47217 136.06299 curveto closepath
- fill
-newpath 85.39343 140.31496 moveto
-85.39343 140.4089 85.35606 140.49908 85.28963 140.56552 curveto
-85.22319 140.63196 85.13301 140.66933 85.03906 140.66933 curveto
-84.94511 140.66933 84.85493 140.63196 84.7885 140.56552 curveto
-84.72206 140.49908 84.6847 140.4089 84.6847 140.31496 curveto
-84.6847 140.22101 84.72206 140.13083 84.7885 140.06439 curveto
-84.85493 139.99796 84.94511 139.96059 85.03906 139.96059 curveto
-85.13301 139.96059 85.22319 139.99796 85.28963 140.06439 curveto
-85.35606 140.13083 85.39343 140.22101 85.39343 140.31496 curveto closepath fill
-newpath 106.65327 140.31496 moveto
-106.65327 140.4089 106.6159 140.49908 106.54947 140.56552 curveto
-106.48303 140.63196 106.39285 140.66933 106.2989 140.66933 curveto
-106.20496 140.66933 106.11478 140.63196 106.04834 140.56552 curveto
-105.9819 140.49908 105.94453 140.4089 105.94453 140.31496 curveto
-105.94453 140.22101 105.9819 140.13083 106.04834 140.06439 curveto
-106.11478 139.99796 106.20496 139.96059 106.2989 139.96059 curveto
-106.39285 139.96059 106.48303 139.99796 106.54947 140.06439 curveto
-106.6159 140.13083 106.65327 140.22101 106.65327 140.31496 curveto closepath
- fill
-newpath 127.91312 140.31496 moveto
-127.91312 140.4089 127.87575 140.49908 127.80931 140.56552 curveto
-127.74287 140.63196 127.6527 140.66933 127.55875 140.66933 curveto
-127.4648 140.66933 127.37462 140.63196 127.30818 140.56552 curveto
-127.24174 140.49908 127.20438 140.4089 127.20438 140.31496 curveto
-127.20438 140.22101 127.24174 140.13083 127.30818 140.06439 curveto
-127.37462 139.99796 127.4648 139.96059 127.55875 139.96059 curveto
-127.6527 139.96059 127.74287 139.99796 127.80931 140.06439 curveto
-127.87575 140.13083 127.91312 140.22101 127.91312 140.31496 curveto closepath
- fill
-newpath 149.17296 140.31496 moveto
-149.17296 140.4089 149.13559 140.49908 149.06915 140.56552 curveto
-149.00272 140.63196 148.91254 140.66933 148.81859 140.66933 curveto
-148.72464 140.66933 148.63446 140.63196 148.56802 140.56552 curveto
-148.50159 140.49908 148.46422 140.4089 148.46422 140.31496 curveto
-148.46422 140.22101 148.50159 140.13083 148.56802 140.06439 curveto
-148.63446 139.99796 148.72464 139.96059 148.81859 139.96059 curveto
-148.91254 139.96059 149.00272 139.99796 149.06915 140.06439 curveto
-149.13559 140.13083 149.17296 140.22101 149.17296 140.31496 curveto closepath
- fill
-newpath 191.69264 140.31496 moveto
-191.69264 140.4089 191.65527 140.49908 191.58884 140.56552 curveto
-191.5224 140.63196 191.43222 140.66933 191.33827 140.66933 curveto
-191.24432 140.66933 191.15414 140.63196 191.0877 140.56552 curveto
-191.02127 140.49908 190.9839 140.4089 190.9839 140.31496 curveto
-190.9839 140.22101 191.02127 140.13083 191.0877 140.06439 curveto
-191.15414 139.99796 191.24432 139.96059 191.33827 139.96059 curveto
-191.43222 139.96059 191.5224 139.99796 191.58884 140.06439 curveto
-191.65527 140.13083 191.69264 140.22101 191.69264 140.31496 curveto closepath
- fill
-newpath 212.95248 140.31496 moveto
-212.95248 140.4089 212.91512 140.49908 212.84868 140.56552 curveto
-212.78224 140.63196 212.69206 140.66933 212.59811 140.66933 curveto
-212.50417 140.66933 212.41399 140.63196 212.34755 140.56552 curveto
-212.28111 140.49908 212.24374 140.4089 212.24374 140.31496 curveto
-212.24374 140.22101 212.28111 140.13083 212.34755 140.06439 curveto
-212.41399 139.99796 212.50417 139.96059 212.59811 139.96059 curveto
-212.69206 139.96059 212.78224 139.99796 212.84868 140.06439 curveto
-212.91512 140.13083 212.95248 140.22101 212.95248 140.31496 curveto closepath
- fill
-newpath 234.21233 140.31496 moveto
-234.21233 140.4089 234.17496 140.49908 234.10852 140.56552 curveto
-234.04208 140.63196 233.9519 140.66933 233.85796 140.66933 curveto
-233.764 140.66933 233.67383 140.63196 233.60739 140.56552 curveto
-233.54095 140.49908 233.50359 140.4089 233.50359 140.31496 curveto
-233.50359 140.22101 233.54095 140.13083 233.60739 140.06439 curveto
-233.67383 139.99796 233.764 139.96059 233.85796 139.96059 curveto
-233.9519 139.96059 234.04208 139.99796 234.10852 140.06439 curveto
-234.17496 140.13083 234.21233 140.22101 234.21233 140.31496 curveto closepath
- fill
-newpath 255.47217 140.31496 moveto
-255.47217 140.4089 255.4348 140.49908 255.36836 140.56552 curveto
-255.30193 140.63196 255.21175 140.66933 255.1178 140.66933 curveto
-255.02385 140.66933 254.93367 140.63196 254.86723 140.56552 curveto
-254.8008 140.49908 254.76343 140.4089 254.76343 140.31496 curveto
-254.76343 140.22101 254.8008 140.13083 254.86723 140.06439 curveto
-254.93367 139.99796 255.02385 139.96059 255.1178 139.96059 curveto
-255.21175 139.96059 255.30193 139.99796 255.36836 140.06439 curveto
-255.4348 140.13083 255.47217 140.22101 255.47217 140.31496 curveto closepath
- fill
-newpath 85.39343 144.56693 moveto
-85.39343 144.66087 85.35606 144.75105 85.28963 144.81749 curveto
-85.22319 144.88393 85.13301 144.9213 85.03906 144.9213 curveto
-84.94511 144.9213 84.85493 144.88393 84.7885 144.81749 curveto
-84.72206 144.75105 84.6847 144.66087 84.6847 144.56693 curveto
-84.6847 144.47298 84.72206 144.3828 84.7885 144.31636 curveto
-84.85493 144.24992 84.94511 144.21255 85.03906 144.21255 curveto
-85.13301 144.21255 85.22319 144.24992 85.28963 144.31636 curveto
-85.35606 144.3828 85.39343 144.47298 85.39343 144.56693 curveto closepath fill
-newpath 106.65327 144.56693 moveto
-106.65327 144.66087 106.6159 144.75105 106.54947 144.81749 curveto
-106.48303 144.88393 106.39285 144.9213 106.2989 144.9213 curveto
-106.20496 144.9213 106.11478 144.88393 106.04834 144.81749 curveto
-105.9819 144.75105 105.94453 144.66087 105.94453 144.56693 curveto
-105.94453 144.47298 105.9819 144.3828 106.04834 144.31636 curveto
-106.11478 144.24992 106.20496 144.21255 106.2989 144.21255 curveto
-106.39285 144.21255 106.48303 144.24992 106.54947 144.31636 curveto
-106.6159 144.3828 106.65327 144.47298 106.65327 144.56693 curveto closepath
- fill
-newpath 127.91312 144.56693 moveto
-127.91312 144.66087 127.87575 144.75105 127.80931 144.81749 curveto
-127.74287 144.88393 127.6527 144.9213 127.55875 144.9213 curveto
-127.4648 144.9213 127.37462 144.88393 127.30818 144.81749 curveto
-127.24174 144.75105 127.20438 144.66087 127.20438 144.56693 curveto
-127.20438 144.47298 127.24174 144.3828 127.30818 144.31636 curveto
-127.37462 144.24992 127.4648 144.21255 127.55875 144.21255 curveto
-127.6527 144.21255 127.74287 144.24992 127.80931 144.31636 curveto
-127.87575 144.3828 127.91312 144.47298 127.91312 144.56693 curveto closepath
- fill
-newpath 149.17296 144.56693 moveto
-149.17296 144.66087 149.13559 144.75105 149.06915 144.81749 curveto
-149.00272 144.88393 148.91254 144.9213 148.81859 144.9213 curveto
-148.72464 144.9213 148.63446 144.88393 148.56802 144.81749 curveto
-148.50159 144.75105 148.46422 144.66087 148.46422 144.56693 curveto
-148.46422 144.47298 148.50159 144.3828 148.56802 144.31636 curveto
-148.63446 144.24992 148.72464 144.21255 148.81859 144.21255 curveto
-148.91254 144.21255 149.00272 144.24992 149.06915 144.31636 curveto
-149.13559 144.3828 149.17296 144.47298 149.17296 144.56693 curveto closepath
- fill
-newpath 191.69264 144.56693 moveto
-191.69264 144.66087 191.65527 144.75105 191.58884 144.81749 curveto
-191.5224 144.88393 191.43222 144.9213 191.33827 144.9213 curveto
-191.24432 144.9213 191.15414 144.88393 191.0877 144.81749 curveto
-191.02127 144.75105 190.9839 144.66087 190.9839 144.56693 curveto
-190.9839 144.47298 191.02127 144.3828 191.0877 144.31636 curveto
-191.15414 144.24992 191.24432 144.21255 191.33827 144.21255 curveto
-191.43222 144.21255 191.5224 144.24992 191.58884 144.31636 curveto
-191.65527 144.3828 191.69264 144.47298 191.69264 144.56693 curveto closepath
- fill
-newpath 212.95248 144.56693 moveto
-212.95248 144.66087 212.91512 144.75105 212.84868 144.81749 curveto
-212.78224 144.88393 212.69206 144.9213 212.59811 144.9213 curveto
-212.50417 144.9213 212.41399 144.88393 212.34755 144.81749 curveto
-212.28111 144.75105 212.24374 144.66087 212.24374 144.56693 curveto
-212.24374 144.47298 212.28111 144.3828 212.34755 144.31636 curveto
-212.41399 144.24992 212.50417 144.21255 212.59811 144.21255 curveto
-212.69206 144.21255 212.78224 144.24992 212.84868 144.31636 curveto
-212.91512 144.3828 212.95248 144.47298 212.95248 144.56693 curveto closepath
- fill
-newpath 234.21233 144.56693 moveto
-234.21233 144.66087 234.17496 144.75105 234.10852 144.81749 curveto
-234.04208 144.88393 233.9519 144.9213 233.85796 144.9213 curveto
-233.764 144.9213 233.67383 144.88393 233.60739 144.81749 curveto
-233.54095 144.75105 233.50359 144.66087 233.50359 144.56693 curveto
-233.50359 144.47298 233.54095 144.3828 233.60739 144.31636 curveto
-233.67383 144.24992 233.764 144.21255 233.85796 144.21255 curveto
-233.9519 144.21255 234.04208 144.24992 234.10852 144.31636 curveto
-234.17496 144.3828 234.21233 144.47298 234.21233 144.56693 curveto closepath
- fill
-newpath 255.47217 144.56693 moveto
-255.47217 144.66087 255.4348 144.75105 255.36836 144.81749 curveto
-255.30193 144.88393 255.21175 144.9213 255.1178 144.9213 curveto
-255.02385 144.9213 254.93367 144.88393 254.86723 144.81749 curveto
-254.8008 144.75105 254.76343 144.66087 254.76343 144.56693 curveto
-254.76343 144.47298 254.8008 144.3828 254.86723 144.31636 curveto
-254.93367 144.24992 255.02385 144.21255 255.1178 144.21255 curveto
-255.21175 144.21255 255.30193 144.24992 255.36836 144.31636 curveto
-255.4348 144.3828 255.47217 144.47298 255.47217 144.56693 curveto closepath
- fill
-newpath 85.39343 148.8189 moveto
-85.39343 148.91284 85.35606 149.00302 85.28963 149.06946 curveto
-85.22319 149.1359 85.13301 149.17326 85.03906 149.17326 curveto
-84.94511 149.17326 84.85493 149.1359 84.7885 149.06946 curveto
-84.72206 149.00302 84.6847 148.91284 84.6847 148.8189 curveto
-84.6847 148.72495 84.72206 148.63477 84.7885 148.56833 curveto
-84.85493 148.50189 84.94511 148.46452 85.03906 148.46452 curveto
-85.13301 148.46452 85.22319 148.50189 85.28963 148.56833 curveto
-85.35606 148.63477 85.39343 148.72495 85.39343 148.8189 curveto closepath fill
-newpath 106.65327 148.8189 moveto
-106.65327 148.91284 106.6159 149.00302 106.54947 149.06946 curveto
-106.48303 149.1359 106.39285 149.17326 106.2989 149.17326 curveto
-106.20496 149.17326 106.11478 149.1359 106.04834 149.06946 curveto
-105.9819 149.00302 105.94453 148.91284 105.94453 148.8189 curveto
-105.94453 148.72495 105.9819 148.63477 106.04834 148.56833 curveto
-106.11478 148.50189 106.20496 148.46452 106.2989 148.46452 curveto
-106.39285 148.46452 106.48303 148.50189 106.54947 148.56833 curveto
-106.6159 148.63477 106.65327 148.72495 106.65327 148.8189 curveto closepath
- fill
-newpath 127.91312 148.8189 moveto
-127.91312 148.91284 127.87575 149.00302 127.80931 149.06946 curveto
-127.74287 149.1359 127.6527 149.17326 127.55875 149.17326 curveto
-127.4648 149.17326 127.37462 149.1359 127.30818 149.06946 curveto
-127.24174 149.00302 127.20438 148.91284 127.20438 148.8189 curveto
-127.20438 148.72495 127.24174 148.63477 127.30818 148.56833 curveto
-127.37462 148.50189 127.4648 148.46452 127.55875 148.46452 curveto
-127.6527 148.46452 127.74287 148.50189 127.80931 148.56833 curveto
-127.87575 148.63477 127.91312 148.72495 127.91312 148.8189 curveto closepath
- fill
-newpath 149.17296 148.8189 moveto
-149.17296 148.91284 149.13559 149.00302 149.06915 149.06946 curveto
-149.00272 149.1359 148.91254 149.17326 148.81859 149.17326 curveto
-148.72464 149.17326 148.63446 149.1359 148.56802 149.06946 curveto
-148.50159 149.00302 148.46422 148.91284 148.46422 148.8189 curveto
-148.46422 148.72495 148.50159 148.63477 148.56802 148.56833 curveto
-148.63446 148.50189 148.72464 148.46452 148.81859 148.46452 curveto
-148.91254 148.46452 149.00272 148.50189 149.06915 148.56833 curveto
-149.13559 148.63477 149.17296 148.72495 149.17296 148.8189 curveto closepath
- fill
-newpath 191.69264 148.8189 moveto
-191.69264 148.91284 191.65527 149.00302 191.58884 149.06946 curveto
-191.5224 149.1359 191.43222 149.17326 191.33827 149.17326 curveto
-191.24432 149.17326 191.15414 149.1359 191.0877 149.06946 curveto
-191.02127 149.00302 190.9839 148.91284 190.9839 148.8189 curveto
-190.9839 148.72495 191.02127 148.63477 191.0877 148.56833 curveto
-191.15414 148.50189 191.24432 148.46452 191.33827 148.46452 curveto
-191.43222 148.46452 191.5224 148.50189 191.58884 148.56833 curveto
-191.65527 148.63477 191.69264 148.72495 191.69264 148.8189 curveto closepath
- fill
-newpath 212.95248 148.8189 moveto
-212.95248 148.91284 212.91512 149.00302 212.84868 149.06946 curveto
-212.78224 149.1359 212.69206 149.17326 212.59811 149.17326 curveto
-212.50417 149.17326 212.41399 149.1359 212.34755 149.06946 curveto
-212.28111 149.00302 212.24374 148.91284 212.24374 148.8189 curveto
-212.24374 148.72495 212.28111 148.63477 212.34755 148.56833 curveto
-212.41399 148.50189 212.50417 148.46452 212.59811 148.46452 curveto
-212.69206 148.46452 212.78224 148.50189 212.84868 148.56833 curveto
-212.91512 148.63477 212.95248 148.72495 212.95248 148.8189 curveto closepath
- fill
-newpath 234.21233 148.8189 moveto
-234.21233 148.91284 234.17496 149.00302 234.10852 149.06946 curveto
-234.04208 149.1359 233.9519 149.17326 233.85796 149.17326 curveto
-233.764 149.17326 233.67383 149.1359 233.60739 149.06946 curveto
-233.54095 149.00302 233.50359 148.91284 233.50359 148.8189 curveto
-233.50359 148.72495 233.54095 148.63477 233.60739 148.56833 curveto
-233.67383 148.50189 233.764 148.46452 233.85796 148.46452 curveto
-233.9519 148.46452 234.04208 148.50189 234.10852 148.56833 curveto
-234.17496 148.63477 234.21233 148.72495 234.21233 148.8189 curveto closepath
- fill
-newpath 255.47217 148.8189 moveto
-255.47217 148.91284 255.4348 149.00302 255.36836 149.06946 curveto
-255.30193 149.1359 255.21175 149.17326 255.1178 149.17326 curveto
-255.02385 149.17326 254.93367 149.1359 254.86723 149.06946 curveto
-254.8008 149.00302 254.76343 148.91284 254.76343 148.8189 curveto
-254.76343 148.72495 254.8008 148.63477 254.86723 148.56833 curveto
-254.93367 148.50189 255.02385 148.46452 255.1178 148.46452 curveto
-255.21175 148.46452 255.30193 148.50189 255.36836 148.56833 curveto
-255.4348 148.63477 255.47217 148.72495 255.47217 148.8189 curveto closepath
- fill
-newpath 85.39343 153.07086 moveto
-85.39343 153.16481 85.35606 153.25499 85.28963 153.32143 curveto
-85.22319 153.38786 85.13301 153.42523 85.03906 153.42523 curveto
-84.94511 153.42523 84.85493 153.38786 84.7885 153.32143 curveto
-84.72206 153.25499 84.6847 153.16481 84.6847 153.07086 curveto
-84.6847 152.97691 84.72206 152.88673 84.7885 152.8203 curveto
-84.85493 152.75386 84.94511 152.71649 85.03906 152.71649 curveto
-85.13301 152.71649 85.22319 152.75386 85.28963 152.8203 curveto
-85.35606 152.88673 85.39343 152.97691 85.39343 153.07086 curveto closepath fill
-newpath 106.65327 153.07086 moveto
-106.65327 153.16481 106.6159 153.25499 106.54947 153.32143 curveto
-106.48303 153.38786 106.39285 153.42523 106.2989 153.42523 curveto
-106.20496 153.42523 106.11478 153.38786 106.04834 153.32143 curveto
-105.9819 153.25499 105.94453 153.16481 105.94453 153.07086 curveto
-105.94453 152.97691 105.9819 152.88673 106.04834 152.8203 curveto
-106.11478 152.75386 106.20496 152.71649 106.2989 152.71649 curveto
-106.39285 152.71649 106.48303 152.75386 106.54947 152.8203 curveto
-106.6159 152.88673 106.65327 152.97691 106.65327 153.07086 curveto closepath
- fill
-newpath 127.91312 153.07086 moveto
-127.91312 153.16481 127.87575 153.25499 127.80931 153.32143 curveto
-127.74287 153.38786 127.6527 153.42523 127.55875 153.42523 curveto
-127.4648 153.42523 127.37462 153.38786 127.30818 153.32143 curveto
-127.24174 153.25499 127.20438 153.16481 127.20438 153.07086 curveto
-127.20438 152.97691 127.24174 152.88673 127.30818 152.8203 curveto
-127.37462 152.75386 127.4648 152.71649 127.55875 152.71649 curveto
-127.6527 152.71649 127.74287 152.75386 127.80931 152.8203 curveto
-127.87575 152.88673 127.91312 152.97691 127.91312 153.07086 curveto closepath
- fill
-newpath 149.17296 153.07086 moveto
-149.17296 153.16481 149.13559 153.25499 149.06915 153.32143 curveto
-149.00272 153.38786 148.91254 153.42523 148.81859 153.42523 curveto
-148.72464 153.42523 148.63446 153.38786 148.56802 153.32143 curveto
-148.50159 153.25499 148.46422 153.16481 148.46422 153.07086 curveto
-148.46422 152.97691 148.50159 152.88673 148.56802 152.8203 curveto
-148.63446 152.75386 148.72464 152.71649 148.81859 152.71649 curveto
-148.91254 152.71649 149.00272 152.75386 149.06915 152.8203 curveto
-149.13559 152.88673 149.17296 152.97691 149.17296 153.07086 curveto closepath
- fill
-newpath 191.69264 153.07086 moveto
-191.69264 153.16481 191.65527 153.25499 191.58884 153.32143 curveto
-191.5224 153.38786 191.43222 153.42523 191.33827 153.42523 curveto
-191.24432 153.42523 191.15414 153.38786 191.0877 153.32143 curveto
-191.02127 153.25499 190.9839 153.16481 190.9839 153.07086 curveto
-190.9839 152.97691 191.02127 152.88673 191.0877 152.8203 curveto
-191.15414 152.75386 191.24432 152.71649 191.33827 152.71649 curveto
-191.43222 152.71649 191.5224 152.75386 191.58884 152.8203 curveto
-191.65527 152.88673 191.69264 152.97691 191.69264 153.07086 curveto closepath
- fill
-newpath 212.95248 153.07086 moveto
-212.95248 153.16481 212.91512 153.25499 212.84868 153.32143 curveto
-212.78224 153.38786 212.69206 153.42523 212.59811 153.42523 curveto
-212.50417 153.42523 212.41399 153.38786 212.34755 153.32143 curveto
-212.28111 153.25499 212.24374 153.16481 212.24374 153.07086 curveto
-212.24374 152.97691 212.28111 152.88673 212.34755 152.8203 curveto
-212.41399 152.75386 212.50417 152.71649 212.59811 152.71649 curveto
-212.69206 152.71649 212.78224 152.75386 212.84868 152.8203 curveto
-212.91512 152.88673 212.95248 152.97691 212.95248 153.07086 curveto closepath
- fill
-newpath 234.21233 153.07086 moveto
-234.21233 153.16481 234.17496 153.25499 234.10852 153.32143 curveto
-234.04208 153.38786 233.9519 153.42523 233.85796 153.42523 curveto
-233.764 153.42523 233.67383 153.38786 233.60739 153.32143 curveto
-233.54095 153.25499 233.50359 153.16481 233.50359 153.07086 curveto
-233.50359 152.97691 233.54095 152.88673 233.60739 152.8203 curveto
-233.67383 152.75386 233.764 152.71649 233.85796 152.71649 curveto
-233.9519 152.71649 234.04208 152.75386 234.10852 152.8203 curveto
-234.17496 152.88673 234.21233 152.97691 234.21233 153.07086 curveto closepath
- fill
-newpath 255.47217 153.07086 moveto
-255.47217 153.16481 255.4348 153.25499 255.36836 153.32143 curveto
-255.30193 153.38786 255.21175 153.42523 255.1178 153.42523 curveto
-255.02385 153.42523 254.93367 153.38786 254.86723 153.32143 curveto
-254.8008 153.25499 254.76343 153.16481 254.76343 153.07086 curveto
-254.76343 152.97691 254.8008 152.88673 254.86723 152.8203 curveto
-254.93367 152.75386 255.02385 152.71649 255.1178 152.71649 curveto
-255.21175 152.71649 255.30193 152.75386 255.36836 152.8203 curveto
-255.4348 152.88673 255.47217 152.97691 255.47217 153.07086 curveto closepath
- fill
-newpath 85.39343 157.32283 moveto
-85.39343 157.41678 85.35606 157.50696 85.28963 157.5734 curveto
-85.22319 157.63983 85.13301 157.6772 85.03906 157.6772 curveto
-84.94511 157.6772 84.85493 157.63983 84.7885 157.5734 curveto
-84.72206 157.50696 84.6847 157.41678 84.6847 157.32283 curveto
-84.6847 157.22888 84.72206 157.1387 84.7885 157.07227 curveto
-84.85493 157.00583 84.94511 156.96846 85.03906 156.96846 curveto
-85.13301 156.96846 85.22319 157.00583 85.28963 157.07227 curveto
-85.35606 157.1387 85.39343 157.22888 85.39343 157.32283 curveto closepath fill
-newpath 106.65327 157.32283 moveto
-106.65327 157.41678 106.6159 157.50696 106.54947 157.5734 curveto
-106.48303 157.63983 106.39285 157.6772 106.2989 157.6772 curveto
-106.20496 157.6772 106.11478 157.63983 106.04834 157.5734 curveto
-105.9819 157.50696 105.94453 157.41678 105.94453 157.32283 curveto
-105.94453 157.22888 105.9819 157.1387 106.04834 157.07227 curveto
-106.11478 157.00583 106.20496 156.96846 106.2989 156.96846 curveto
-106.39285 156.96846 106.48303 157.00583 106.54947 157.07227 curveto
-106.6159 157.1387 106.65327 157.22888 106.65327 157.32283 curveto closepath
- fill
-newpath 127.91312 157.32283 moveto
-127.91312 157.41678 127.87575 157.50696 127.80931 157.5734 curveto
-127.74287 157.63983 127.6527 157.6772 127.55875 157.6772 curveto
-127.4648 157.6772 127.37462 157.63983 127.30818 157.5734 curveto
-127.24174 157.50696 127.20438 157.41678 127.20438 157.32283 curveto
-127.20438 157.22888 127.24174 157.1387 127.30818 157.07227 curveto
-127.37462 157.00583 127.4648 156.96846 127.55875 156.96846 curveto
-127.6527 156.96846 127.74287 157.00583 127.80931 157.07227 curveto
-127.87575 157.1387 127.91312 157.22888 127.91312 157.32283 curveto closepath
- fill
-newpath 149.17296 157.32283 moveto
-149.17296 157.41678 149.13559 157.50696 149.06915 157.5734 curveto
-149.00272 157.63983 148.91254 157.6772 148.81859 157.6772 curveto
-148.72464 157.6772 148.63446 157.63983 148.56802 157.5734 curveto
-148.50159 157.50696 148.46422 157.41678 148.46422 157.32283 curveto
-148.46422 157.22888 148.50159 157.1387 148.56802 157.07227 curveto
-148.63446 157.00583 148.72464 156.96846 148.81859 156.96846 curveto
-148.91254 156.96846 149.00272 157.00583 149.06915 157.07227 curveto
-149.13559 157.1387 149.17296 157.22888 149.17296 157.32283 curveto closepath
- fill
-newpath 191.69264 157.32283 moveto
-191.69264 157.41678 191.65527 157.50696 191.58884 157.5734 curveto
-191.5224 157.63983 191.43222 157.6772 191.33827 157.6772 curveto
-191.24432 157.6772 191.15414 157.63983 191.0877 157.5734 curveto
-191.02127 157.50696 190.9839 157.41678 190.9839 157.32283 curveto
-190.9839 157.22888 191.02127 157.1387 191.0877 157.07227 curveto
-191.15414 157.00583 191.24432 156.96846 191.33827 156.96846 curveto
-191.43222 156.96846 191.5224 157.00583 191.58884 157.07227 curveto
-191.65527 157.1387 191.69264 157.22888 191.69264 157.32283 curveto closepath
- fill
-newpath 212.95248 157.32283 moveto
-212.95248 157.41678 212.91512 157.50696 212.84868 157.5734 curveto
-212.78224 157.63983 212.69206 157.6772 212.59811 157.6772 curveto
-212.50417 157.6772 212.41399 157.63983 212.34755 157.5734 curveto
-212.28111 157.50696 212.24374 157.41678 212.24374 157.32283 curveto
-212.24374 157.22888 212.28111 157.1387 212.34755 157.07227 curveto
-212.41399 157.00583 212.50417 156.96846 212.59811 156.96846 curveto
-212.69206 156.96846 212.78224 157.00583 212.84868 157.07227 curveto
-212.91512 157.1387 212.95248 157.22888 212.95248 157.32283 curveto closepath
- fill
-newpath 234.21233 157.32283 moveto
-234.21233 157.41678 234.17496 157.50696 234.10852 157.5734 curveto
-234.04208 157.63983 233.9519 157.6772 233.85796 157.6772 curveto
-233.764 157.6772 233.67383 157.63983 233.60739 157.5734 curveto
-233.54095 157.50696 233.50359 157.41678 233.50359 157.32283 curveto
-233.50359 157.22888 233.54095 157.1387 233.60739 157.07227 curveto
-233.67383 157.00583 233.764 156.96846 233.85796 156.96846 curveto
-233.9519 156.96846 234.04208 157.00583 234.10852 157.07227 curveto
-234.17496 157.1387 234.21233 157.22888 234.21233 157.32283 curveto closepath
- fill
-newpath 255.47217 157.32283 moveto
-255.47217 157.41678 255.4348 157.50696 255.36836 157.5734 curveto
-255.30193 157.63983 255.21175 157.6772 255.1178 157.6772 curveto
-255.02385 157.6772 254.93367 157.63983 254.86723 157.5734 curveto
-254.8008 157.50696 254.76343 157.41678 254.76343 157.32283 curveto
-254.76343 157.22888 254.8008 157.1387 254.86723 157.07227 curveto
-254.93367 157.00583 255.02385 156.96846 255.1178 156.96846 curveto
-255.21175 156.96846 255.30193 157.00583 255.36836 157.07227 curveto
-255.4348 157.1387 255.47217 157.22888 255.47217 157.32283 curveto closepath
- fill
-newpath 85.39343 161.5748 moveto
-85.39343 161.66875 85.35606 161.75893 85.28963 161.82536 curveto
-85.22319 161.8918 85.13301 161.92917 85.03906 161.92917 curveto
-84.94511 161.92917 84.85493 161.8918 84.7885 161.82536 curveto
-84.72206 161.75893 84.6847 161.66875 84.6847 161.5748 curveto
-84.6847 161.48085 84.72206 161.39067 84.7885 161.32423 curveto
-84.85493 161.2578 84.94511 161.22043 85.03906 161.22043 curveto
-85.13301 161.22043 85.22319 161.2578 85.28963 161.32423 curveto
-85.35606 161.39067 85.39343 161.48085 85.39343 161.5748 curveto closepath fill
-newpath 106.65327 161.5748 moveto
-106.65327 161.66875 106.6159 161.75893 106.54947 161.82536 curveto
-106.48303 161.8918 106.39285 161.92917 106.2989 161.92917 curveto
-106.20496 161.92917 106.11478 161.8918 106.04834 161.82536 curveto
-105.9819 161.75893 105.94453 161.66875 105.94453 161.5748 curveto
-105.94453 161.48085 105.9819 161.39067 106.04834 161.32423 curveto
-106.11478 161.2578 106.20496 161.22043 106.2989 161.22043 curveto
-106.39285 161.22043 106.48303 161.2578 106.54947 161.32423 curveto
-106.6159 161.39067 106.65327 161.48085 106.65327 161.5748 curveto closepath
- fill
-newpath 127.91312 161.5748 moveto
-127.91312 161.66875 127.87575 161.75893 127.80931 161.82536 curveto
-127.74287 161.8918 127.6527 161.92917 127.55875 161.92917 curveto
-127.4648 161.92917 127.37462 161.8918 127.30818 161.82536 curveto
-127.24174 161.75893 127.20438 161.66875 127.20438 161.5748 curveto
-127.20438 161.48085 127.24174 161.39067 127.30818 161.32423 curveto
-127.37462 161.2578 127.4648 161.22043 127.55875 161.22043 curveto
-127.6527 161.22043 127.74287 161.2578 127.80931 161.32423 curveto
-127.87575 161.39067 127.91312 161.48085 127.91312 161.5748 curveto closepath
- fill
-newpath 149.17296 161.5748 moveto
-149.17296 161.66875 149.13559 161.75893 149.06915 161.82536 curveto
-149.00272 161.8918 148.91254 161.92917 148.81859 161.92917 curveto
-148.72464 161.92917 148.63446 161.8918 148.56802 161.82536 curveto
-148.50159 161.75893 148.46422 161.66875 148.46422 161.5748 curveto
-148.46422 161.48085 148.50159 161.39067 148.56802 161.32423 curveto
-148.63446 161.2578 148.72464 161.22043 148.81859 161.22043 curveto
-148.91254 161.22043 149.00272 161.2578 149.06915 161.32423 curveto
-149.13559 161.39067 149.17296 161.48085 149.17296 161.5748 curveto closepath
- fill
-newpath 191.69264 161.5748 moveto
-191.69264 161.66875 191.65527 161.75893 191.58884 161.82536 curveto
-191.5224 161.8918 191.43222 161.92917 191.33827 161.92917 curveto
-191.24432 161.92917 191.15414 161.8918 191.0877 161.82536 curveto
-191.02127 161.75893 190.9839 161.66875 190.9839 161.5748 curveto
-190.9839 161.48085 191.02127 161.39067 191.0877 161.32423 curveto
-191.15414 161.2578 191.24432 161.22043 191.33827 161.22043 curveto
-191.43222 161.22043 191.5224 161.2578 191.58884 161.32423 curveto
-191.65527 161.39067 191.69264 161.48085 191.69264 161.5748 curveto closepath
- fill
-newpath 212.95248 161.5748 moveto
-212.95248 161.66875 212.91512 161.75893 212.84868 161.82536 curveto
-212.78224 161.8918 212.69206 161.92917 212.59811 161.92917 curveto
-212.50417 161.92917 212.41399 161.8918 212.34755 161.82536 curveto
-212.28111 161.75893 212.24374 161.66875 212.24374 161.5748 curveto
-212.24374 161.48085 212.28111 161.39067 212.34755 161.32423 curveto
-212.41399 161.2578 212.50417 161.22043 212.59811 161.22043 curveto
-212.69206 161.22043 212.78224 161.2578 212.84868 161.32423 curveto
-212.91512 161.39067 212.95248 161.48085 212.95248 161.5748 curveto closepath
- fill
-newpath 234.21233 161.5748 moveto
-234.21233 161.66875 234.17496 161.75893 234.10852 161.82536 curveto
-234.04208 161.8918 233.9519 161.92917 233.85796 161.92917 curveto
-233.764 161.92917 233.67383 161.8918 233.60739 161.82536 curveto
-233.54095 161.75893 233.50359 161.66875 233.50359 161.5748 curveto
-233.50359 161.48085 233.54095 161.39067 233.60739 161.32423 curveto
-233.67383 161.2578 233.764 161.22043 233.85796 161.22043 curveto
-233.9519 161.22043 234.04208 161.2578 234.10852 161.32423 curveto
-234.17496 161.39067 234.21233 161.48085 234.21233 161.5748 curveto closepath
- fill
-newpath 255.47217 161.5748 moveto
-255.47217 161.66875 255.4348 161.75893 255.36836 161.82536 curveto
-255.30193 161.8918 255.21175 161.92917 255.1178 161.92917 curveto
-255.02385 161.92917 254.93367 161.8918 254.86723 161.82536 curveto
-254.8008 161.75893 254.76343 161.66875 254.76343 161.5748 curveto
-254.76343 161.48085 254.8008 161.39067 254.86723 161.32423 curveto
-254.93367 161.2578 255.02385 161.22043 255.1178 161.22043 curveto
-255.21175 161.22043 255.30193 161.2578 255.36836 161.32423 curveto
-255.4348 161.39067 255.47217 161.48085 255.47217 161.5748 curveto closepath
- fill
-newpath 85.39343 165.82677 moveto
-85.39343 165.92072 85.35606 166.0109 85.28963 166.07733 curveto
-85.22319 166.14377 85.13301 166.18114 85.03906 166.18114 curveto
-84.94511 166.18114 84.85493 166.14377 84.7885 166.07733 curveto
-84.72206 166.0109 84.6847 165.92072 84.6847 165.82677 curveto
-84.6847 165.73282 84.72206 165.64264 84.7885 165.5762 curveto
-84.85493 165.50977 84.94511 165.4724 85.03906 165.4724 curveto
-85.13301 165.4724 85.22319 165.50977 85.28963 165.5762 curveto
-85.35606 165.64264 85.39343 165.73282 85.39343 165.82677 curveto closepath fill
-newpath 106.65327 165.82677 moveto
-106.65327 165.92072 106.6159 166.0109 106.54947 166.07733 curveto
-106.48303 166.14377 106.39285 166.18114 106.2989 166.18114 curveto
-106.20496 166.18114 106.11478 166.14377 106.04834 166.07733 curveto
-105.9819 166.0109 105.94453 165.92072 105.94453 165.82677 curveto
-105.94453 165.73282 105.9819 165.64264 106.04834 165.5762 curveto
-106.11478 165.50977 106.20496 165.4724 106.2989 165.4724 curveto
-106.39285 165.4724 106.48303 165.50977 106.54947 165.5762 curveto
-106.6159 165.64264 106.65327 165.73282 106.65327 165.82677 curveto closepath
- fill
-newpath 127.91312 165.82677 moveto
-127.91312 165.92072 127.87575 166.0109 127.80931 166.07733 curveto
-127.74287 166.14377 127.6527 166.18114 127.55875 166.18114 curveto
-127.4648 166.18114 127.37462 166.14377 127.30818 166.07733 curveto
-127.24174 166.0109 127.20438 165.92072 127.20438 165.82677 curveto
-127.20438 165.73282 127.24174 165.64264 127.30818 165.5762 curveto
-127.37462 165.50977 127.4648 165.4724 127.55875 165.4724 curveto
-127.6527 165.4724 127.74287 165.50977 127.80931 165.5762 curveto
-127.87575 165.64264 127.91312 165.73282 127.91312 165.82677 curveto closepath
- fill
-newpath 149.17296 165.82677 moveto
-149.17296 165.92072 149.13559 166.0109 149.06915 166.07733 curveto
-149.00272 166.14377 148.91254 166.18114 148.81859 166.18114 curveto
-148.72464 166.18114 148.63446 166.14377 148.56802 166.07733 curveto
-148.50159 166.0109 148.46422 165.92072 148.46422 165.82677 curveto
-148.46422 165.73282 148.50159 165.64264 148.56802 165.5762 curveto
-148.63446 165.50977 148.72464 165.4724 148.81859 165.4724 curveto
-148.91254 165.4724 149.00272 165.50977 149.06915 165.5762 curveto
-149.13559 165.64264 149.17296 165.73282 149.17296 165.82677 curveto closepath
- fill
-newpath 191.69264 165.82677 moveto
-191.69264 165.92072 191.65527 166.0109 191.58884 166.07733 curveto
-191.5224 166.14377 191.43222 166.18114 191.33827 166.18114 curveto
-191.24432 166.18114 191.15414 166.14377 191.0877 166.07733 curveto
-191.02127 166.0109 190.9839 165.92072 190.9839 165.82677 curveto
-190.9839 165.73282 191.02127 165.64264 191.0877 165.5762 curveto
-191.15414 165.50977 191.24432 165.4724 191.33827 165.4724 curveto
-191.43222 165.4724 191.5224 165.50977 191.58884 165.5762 curveto
-191.65527 165.64264 191.69264 165.73282 191.69264 165.82677 curveto closepath
- fill
-newpath 212.95248 165.82677 moveto
-212.95248 165.92072 212.91512 166.0109 212.84868 166.07733 curveto
-212.78224 166.14377 212.69206 166.18114 212.59811 166.18114 curveto
-212.50417 166.18114 212.41399 166.14377 212.34755 166.07733 curveto
-212.28111 166.0109 212.24374 165.92072 212.24374 165.82677 curveto
-212.24374 165.73282 212.28111 165.64264 212.34755 165.5762 curveto
-212.41399 165.50977 212.50417 165.4724 212.59811 165.4724 curveto
-212.69206 165.4724 212.78224 165.50977 212.84868 165.5762 curveto
-212.91512 165.64264 212.95248 165.73282 212.95248 165.82677 curveto closepath
- fill
-newpath 234.21233 165.82677 moveto
-234.21233 165.92072 234.17496 166.0109 234.10852 166.07733 curveto
-234.04208 166.14377 233.9519 166.18114 233.85796 166.18114 curveto
-233.764 166.18114 233.67383 166.14377 233.60739 166.07733 curveto
-233.54095 166.0109 233.50359 165.92072 233.50359 165.82677 curveto
-233.50359 165.73282 233.54095 165.64264 233.60739 165.5762 curveto
-233.67383 165.50977 233.764 165.4724 233.85796 165.4724 curveto
-233.9519 165.4724 234.04208 165.50977 234.10852 165.5762 curveto
-234.17496 165.64264 234.21233 165.73282 234.21233 165.82677 curveto closepath
- fill
-newpath 255.47217 165.82677 moveto
-255.47217 165.92072 255.4348 166.0109 255.36836 166.07733 curveto
-255.30193 166.14377 255.21175 166.18114 255.1178 166.18114 curveto
-255.02385 166.18114 254.93367 166.14377 254.86723 166.07733 curveto
-254.8008 166.0109 254.76343 165.92072 254.76343 165.82677 curveto
-254.76343 165.73282 254.8008 165.64264 254.86723 165.5762 curveto
-254.93367 165.50977 255.02385 165.4724 255.1178 165.4724 curveto
-255.21175 165.4724 255.30193 165.50977 255.36836 165.5762 curveto
-255.4348 165.64264 255.47217 165.73282 255.47217 165.82677 curveto closepath
- fill
-newpath 85.39343 170.07874 moveto
-85.39343 170.17268 85.35606 170.26286 85.28963 170.3293 curveto
-85.22319 170.39574 85.13301 170.4331 85.03906 170.4331 curveto
-84.94511 170.4331 84.85493 170.39574 84.7885 170.3293 curveto
-84.72206 170.26286 84.6847 170.17268 84.6847 170.07874 curveto
-84.6847 169.98479 84.72206 169.8946 84.7885 169.82817 curveto
-84.85493 169.76173 84.94511 169.72437 85.03906 169.72437 curveto
-85.13301 169.72437 85.22319 169.76173 85.28963 169.82817 curveto
-85.35606 169.8946 85.39343 169.98479 85.39343 170.07874 curveto closepath fill
-newpath 106.65327 170.07874 moveto
-106.65327 170.17268 106.6159 170.26286 106.54947 170.3293 curveto
-106.48303 170.39574 106.39285 170.4331 106.2989 170.4331 curveto
-106.20496 170.4331 106.11478 170.39574 106.04834 170.3293 curveto
-105.9819 170.26286 105.94453 170.17268 105.94453 170.07874 curveto
-105.94453 169.98479 105.9819 169.8946 106.04834 169.82817 curveto
-106.11478 169.76173 106.20496 169.72437 106.2989 169.72437 curveto
-106.39285 169.72437 106.48303 169.76173 106.54947 169.82817 curveto
-106.6159 169.8946 106.65327 169.98479 106.65327 170.07874 curveto closepath
- fill
-newpath 127.91312 170.07874 moveto
-127.91312 170.17268 127.87575 170.26286 127.80931 170.3293 curveto
-127.74287 170.39574 127.6527 170.4331 127.55875 170.4331 curveto
-127.4648 170.4331 127.37462 170.39574 127.30818 170.3293 curveto
-127.24174 170.26286 127.20438 170.17268 127.20438 170.07874 curveto
-127.20438 169.98479 127.24174 169.8946 127.30818 169.82817 curveto
-127.37462 169.76173 127.4648 169.72437 127.55875 169.72437 curveto
-127.6527 169.72437 127.74287 169.76173 127.80931 169.82817 curveto
-127.87575 169.8946 127.91312 169.98479 127.91312 170.07874 curveto closepath
- fill
-newpath 149.17296 170.07874 moveto
-149.17296 170.17268 149.13559 170.26286 149.06915 170.3293 curveto
-149.00272 170.39574 148.91254 170.4331 148.81859 170.4331 curveto
-148.72464 170.4331 148.63446 170.39574 148.56802 170.3293 curveto
-148.50159 170.26286 148.46422 170.17268 148.46422 170.07874 curveto
-148.46422 169.98479 148.50159 169.8946 148.56802 169.82817 curveto
-148.63446 169.76173 148.72464 169.72437 148.81859 169.72437 curveto
-148.91254 169.72437 149.00272 169.76173 149.06915 169.82817 curveto
-149.13559 169.8946 149.17296 169.98479 149.17296 170.07874 curveto closepath
- fill
-newpath 191.69264 170.07874 moveto
-191.69264 170.17268 191.65527 170.26286 191.58884 170.3293 curveto
-191.5224 170.39574 191.43222 170.4331 191.33827 170.4331 curveto
-191.24432 170.4331 191.15414 170.39574 191.0877 170.3293 curveto
-191.02127 170.26286 190.9839 170.17268 190.9839 170.07874 curveto
-190.9839 169.98479 191.02127 169.8946 191.0877 169.82817 curveto
-191.15414 169.76173 191.24432 169.72437 191.33827 169.72437 curveto
-191.43222 169.72437 191.5224 169.76173 191.58884 169.82817 curveto
-191.65527 169.8946 191.69264 169.98479 191.69264 170.07874 curveto closepath
- fill
-newpath 212.95248 170.07874 moveto
-212.95248 170.17268 212.91512 170.26286 212.84868 170.3293 curveto
-212.78224 170.39574 212.69206 170.4331 212.59811 170.4331 curveto
-212.50417 170.4331 212.41399 170.39574 212.34755 170.3293 curveto
-212.28111 170.26286 212.24374 170.17268 212.24374 170.07874 curveto
-212.24374 169.98479 212.28111 169.8946 212.34755 169.82817 curveto
-212.41399 169.76173 212.50417 169.72437 212.59811 169.72437 curveto
-212.69206 169.72437 212.78224 169.76173 212.84868 169.82817 curveto
-212.91512 169.8946 212.95248 169.98479 212.95248 170.07874 curveto closepath
- fill
-newpath 234.21233 170.07874 moveto
-234.21233 170.17268 234.17496 170.26286 234.10852 170.3293 curveto
-234.04208 170.39574 233.9519 170.4331 233.85796 170.4331 curveto
-233.764 170.4331 233.67383 170.39574 233.60739 170.3293 curveto
-233.54095 170.26286 233.50359 170.17268 233.50359 170.07874 curveto
-233.50359 169.98479 233.54095 169.8946 233.60739 169.82817 curveto
-233.67383 169.76173 233.764 169.72437 233.85796 169.72437 curveto
-233.9519 169.72437 234.04208 169.76173 234.10852 169.82817 curveto
-234.17496 169.8946 234.21233 169.98479 234.21233 170.07874 curveto closepath
- fill
-newpath 255.47217 170.07874 moveto
-255.47217 170.17268 255.4348 170.26286 255.36836 170.3293 curveto
-255.30193 170.39574 255.21175 170.4331 255.1178 170.4331 curveto
-255.02385 170.4331 254.93367 170.39574 254.86723 170.3293 curveto
-254.8008 170.26286 254.76343 170.17268 254.76343 170.07874 curveto
-254.76343 169.98479 254.8008 169.8946 254.86723 169.82817 curveto
-254.93367 169.76173 255.02385 169.72437 255.1178 169.72437 curveto
-255.21175 169.72437 255.30193 169.76173 255.36836 169.82817 curveto
-255.4348 169.8946 255.47217 169.98479 255.47217 170.07874 curveto closepath
- fill
-newpath 85.39343 174.3307 moveto
-85.39343 174.42465 85.35606 174.51483 85.28963 174.58127 curveto
-85.22319 174.6477 85.13301 174.68507 85.03906 174.68507 curveto
-84.94511 174.68507 84.85493 174.6477 84.7885 174.58127 curveto
-84.72206 174.51483 84.6847 174.42465 84.6847 174.3307 curveto
-84.6847 174.23676 84.72206 174.14658 84.7885 174.08014 curveto
-84.85493 174.0137 84.94511 173.97633 85.03906 173.97633 curveto
-85.13301 173.97633 85.22319 174.0137 85.28963 174.08014 curveto
-85.35606 174.14658 85.39343 174.23676 85.39343 174.3307 curveto closepath fill
-newpath 106.65327 174.3307 moveto
-106.65327 174.42465 106.6159 174.51483 106.54947 174.58127 curveto
-106.48303 174.6477 106.39285 174.68507 106.2989 174.68507 curveto
-106.20496 174.68507 106.11478 174.6477 106.04834 174.58127 curveto
-105.9819 174.51483 105.94453 174.42465 105.94453 174.3307 curveto
-105.94453 174.23676 105.9819 174.14658 106.04834 174.08014 curveto
-106.11478 174.0137 106.20496 173.97633 106.2989 173.97633 curveto
-106.39285 173.97633 106.48303 174.0137 106.54947 174.08014 curveto
-106.6159 174.14658 106.65327 174.23676 106.65327 174.3307 curveto closepath
- fill
-newpath 127.91312 174.3307 moveto
-127.91312 174.42465 127.87575 174.51483 127.80931 174.58127 curveto
-127.74287 174.6477 127.6527 174.68507 127.55875 174.68507 curveto
-127.4648 174.68507 127.37462 174.6477 127.30818 174.58127 curveto
-127.24174 174.51483 127.20438 174.42465 127.20438 174.3307 curveto
-127.20438 174.23676 127.24174 174.14658 127.30818 174.08014 curveto
-127.37462 174.0137 127.4648 173.97633 127.55875 173.97633 curveto
-127.6527 173.97633 127.74287 174.0137 127.80931 174.08014 curveto
-127.87575 174.14658 127.91312 174.23676 127.91312 174.3307 curveto closepath
- fill
-newpath 149.17296 174.3307 moveto
-149.17296 174.42465 149.13559 174.51483 149.06915 174.58127 curveto
-149.00272 174.6477 148.91254 174.68507 148.81859 174.68507 curveto
-148.72464 174.68507 148.63446 174.6477 148.56802 174.58127 curveto
-148.50159 174.51483 148.46422 174.42465 148.46422 174.3307 curveto
-148.46422 174.23676 148.50159 174.14658 148.56802 174.08014 curveto
-148.63446 174.0137 148.72464 173.97633 148.81859 173.97633 curveto
-148.91254 173.97633 149.00272 174.0137 149.06915 174.08014 curveto
-149.13559 174.14658 149.17296 174.23676 149.17296 174.3307 curveto closepath
- fill
-newpath 191.69264 174.3307 moveto
-191.69264 174.42465 191.65527 174.51483 191.58884 174.58127 curveto
-191.5224 174.6477 191.43222 174.68507 191.33827 174.68507 curveto
-191.24432 174.68507 191.15414 174.6477 191.0877 174.58127 curveto
-191.02127 174.51483 190.9839 174.42465 190.9839 174.3307 curveto
-190.9839 174.23676 191.02127 174.14658 191.0877 174.08014 curveto
-191.15414 174.0137 191.24432 173.97633 191.33827 173.97633 curveto
-191.43222 173.97633 191.5224 174.0137 191.58884 174.08014 curveto
-191.65527 174.14658 191.69264 174.23676 191.69264 174.3307 curveto closepath
- fill
-newpath 212.95248 174.3307 moveto
-212.95248 174.42465 212.91512 174.51483 212.84868 174.58127 curveto
-212.78224 174.6477 212.69206 174.68507 212.59811 174.68507 curveto
-212.50417 174.68507 212.41399 174.6477 212.34755 174.58127 curveto
-212.28111 174.51483 212.24374 174.42465 212.24374 174.3307 curveto
-212.24374 174.23676 212.28111 174.14658 212.34755 174.08014 curveto
-212.41399 174.0137 212.50417 173.97633 212.59811 173.97633 curveto
-212.69206 173.97633 212.78224 174.0137 212.84868 174.08014 curveto
-212.91512 174.14658 212.95248 174.23676 212.95248 174.3307 curveto closepath
- fill
-newpath 234.21233 174.3307 moveto
-234.21233 174.42465 234.17496 174.51483 234.10852 174.58127 curveto
-234.04208 174.6477 233.9519 174.68507 233.85796 174.68507 curveto
-233.764 174.68507 233.67383 174.6477 233.60739 174.58127 curveto
-233.54095 174.51483 233.50359 174.42465 233.50359 174.3307 curveto
-233.50359 174.23676 233.54095 174.14658 233.60739 174.08014 curveto
-233.67383 174.0137 233.764 173.97633 233.85796 173.97633 curveto
-233.9519 173.97633 234.04208 174.0137 234.10852 174.08014 curveto
-234.17496 174.14658 234.21233 174.23676 234.21233 174.3307 curveto closepath
- fill
-newpath 255.47217 174.3307 moveto
-255.47217 174.42465 255.4348 174.51483 255.36836 174.58127 curveto
-255.30193 174.6477 255.21175 174.68507 255.1178 174.68507 curveto
-255.02385 174.68507 254.93367 174.6477 254.86723 174.58127 curveto
-254.8008 174.51483 254.76343 174.42465 254.76343 174.3307 curveto
-254.76343 174.23676 254.8008 174.14658 254.86723 174.08014 curveto
-254.93367 174.0137 255.02385 173.97633 255.1178 173.97633 curveto
-255.21175 173.97633 255.30193 174.0137 255.36836 174.08014 curveto
-255.4348 174.14658 255.47217 174.23676 255.47217 174.3307 curveto closepath
- fill
-newpath 85.39343 178.58267 moveto
-85.39343 178.67662 85.35606 178.7668 85.28963 178.83324 curveto
-85.22319 178.89967 85.13301 178.93704 85.03906 178.93704 curveto
-84.94511 178.93704 84.85493 178.89967 84.7885 178.83324 curveto
-84.72206 178.7668 84.6847 178.67662 84.6847 178.58267 curveto
-84.6847 178.48872 84.72206 178.39854 84.7885 178.3321 curveto
-84.85493 178.26567 84.94511 178.2283 85.03906 178.2283 curveto
-85.13301 178.2283 85.22319 178.26567 85.28963 178.3321 curveto
-85.35606 178.39854 85.39343 178.48872 85.39343 178.58267 curveto closepath fill
-newpath 106.65327 178.58267 moveto
-106.65327 178.67662 106.6159 178.7668 106.54947 178.83324 curveto
-106.48303 178.89967 106.39285 178.93704 106.2989 178.93704 curveto
-106.20496 178.93704 106.11478 178.89967 106.04834 178.83324 curveto
-105.9819 178.7668 105.94453 178.67662 105.94453 178.58267 curveto
-105.94453 178.48872 105.9819 178.39854 106.04834 178.3321 curveto
-106.11478 178.26567 106.20496 178.2283 106.2989 178.2283 curveto
-106.39285 178.2283 106.48303 178.26567 106.54947 178.3321 curveto
-106.6159 178.39854 106.65327 178.48872 106.65327 178.58267 curveto closepath
- fill
-newpath 127.91312 178.58267 moveto
-127.91312 178.67662 127.87575 178.7668 127.80931 178.83324 curveto
-127.74287 178.89967 127.6527 178.93704 127.55875 178.93704 curveto
-127.4648 178.93704 127.37462 178.89967 127.30818 178.83324 curveto
-127.24174 178.7668 127.20438 178.67662 127.20438 178.58267 curveto
-127.20438 178.48872 127.24174 178.39854 127.30818 178.3321 curveto
-127.37462 178.26567 127.4648 178.2283 127.55875 178.2283 curveto
-127.6527 178.2283 127.74287 178.26567 127.80931 178.3321 curveto
-127.87575 178.39854 127.91312 178.48872 127.91312 178.58267 curveto closepath
- fill
-newpath 149.17296 178.58267 moveto
-149.17296 178.67662 149.13559 178.7668 149.06915 178.83324 curveto
-149.00272 178.89967 148.91254 178.93704 148.81859 178.93704 curveto
-148.72464 178.93704 148.63446 178.89967 148.56802 178.83324 curveto
-148.50159 178.7668 148.46422 178.67662 148.46422 178.58267 curveto
-148.46422 178.48872 148.50159 178.39854 148.56802 178.3321 curveto
-148.63446 178.26567 148.72464 178.2283 148.81859 178.2283 curveto
-148.91254 178.2283 149.00272 178.26567 149.06915 178.3321 curveto
-149.13559 178.39854 149.17296 178.48872 149.17296 178.58267 curveto closepath
- fill
-newpath 191.69264 178.58267 moveto
-191.69264 178.67662 191.65527 178.7668 191.58884 178.83324 curveto
-191.5224 178.89967 191.43222 178.93704 191.33827 178.93704 curveto
-191.24432 178.93704 191.15414 178.89967 191.0877 178.83324 curveto
-191.02127 178.7668 190.9839 178.67662 190.9839 178.58267 curveto
-190.9839 178.48872 191.02127 178.39854 191.0877 178.3321 curveto
-191.15414 178.26567 191.24432 178.2283 191.33827 178.2283 curveto
-191.43222 178.2283 191.5224 178.26567 191.58884 178.3321 curveto
-191.65527 178.39854 191.69264 178.48872 191.69264 178.58267 curveto closepath
- fill
-newpath 212.95248 178.58267 moveto
-212.95248 178.67662 212.91512 178.7668 212.84868 178.83324 curveto
-212.78224 178.89967 212.69206 178.93704 212.59811 178.93704 curveto
-212.50417 178.93704 212.41399 178.89967 212.34755 178.83324 curveto
-212.28111 178.7668 212.24374 178.67662 212.24374 178.58267 curveto
-212.24374 178.48872 212.28111 178.39854 212.34755 178.3321 curveto
-212.41399 178.26567 212.50417 178.2283 212.59811 178.2283 curveto
-212.69206 178.2283 212.78224 178.26567 212.84868 178.3321 curveto
-212.91512 178.39854 212.95248 178.48872 212.95248 178.58267 curveto closepath
- fill
-newpath 234.21233 178.58267 moveto
-234.21233 178.67662 234.17496 178.7668 234.10852 178.83324 curveto
-234.04208 178.89967 233.9519 178.93704 233.85796 178.93704 curveto
-233.764 178.93704 233.67383 178.89967 233.60739 178.83324 curveto
-233.54095 178.7668 233.50359 178.67662 233.50359 178.58267 curveto
-233.50359 178.48872 233.54095 178.39854 233.60739 178.3321 curveto
-233.67383 178.26567 233.764 178.2283 233.85796 178.2283 curveto
-233.9519 178.2283 234.04208 178.26567 234.10852 178.3321 curveto
-234.17496 178.39854 234.21233 178.48872 234.21233 178.58267 curveto closepath
- fill
-newpath 255.47217 178.58267 moveto
-255.47217 178.67662 255.4348 178.7668 255.36836 178.83324 curveto
-255.30193 178.89967 255.21175 178.93704 255.1178 178.93704 curveto
-255.02385 178.93704 254.93367 178.89967 254.86723 178.83324 curveto
-254.8008 178.7668 254.76343 178.67662 254.76343 178.58267 curveto
-254.76343 178.48872 254.8008 178.39854 254.86723 178.3321 curveto
-254.93367 178.26567 255.02385 178.2283 255.1178 178.2283 curveto
-255.21175 178.2283 255.30193 178.26567 255.36836 178.3321 curveto
-255.4348 178.39854 255.47217 178.48872 255.47217 178.58267 curveto closepath
- fill
-newpath 85.39343 182.83464 moveto
-85.39343 182.92859 85.35606 183.01877 85.28963 183.0852 curveto
-85.22319 183.15164 85.13301 183.18901 85.03906 183.18901 curveto
-84.94511 183.18901 84.85493 183.15164 84.7885 183.0852 curveto
-84.72206 183.01877 84.6847 182.92859 84.6847 182.83464 curveto
-84.6847 182.74069 84.72206 182.65051 84.7885 182.58408 curveto
-84.85493 182.51764 84.94511 182.48027 85.03906 182.48027 curveto
-85.13301 182.48027 85.22319 182.51764 85.28963 182.58408 curveto
-85.35606 182.65051 85.39343 182.74069 85.39343 182.83464 curveto closepath fill
-newpath 106.65327 182.83464 moveto
-106.65327 182.92859 106.6159 183.01877 106.54947 183.0852 curveto
-106.48303 183.15164 106.39285 183.18901 106.2989 183.18901 curveto
-106.20496 183.18901 106.11478 183.15164 106.04834 183.0852 curveto
-105.9819 183.01877 105.94453 182.92859 105.94453 182.83464 curveto
-105.94453 182.74069 105.9819 182.65051 106.04834 182.58408 curveto
-106.11478 182.51764 106.20496 182.48027 106.2989 182.48027 curveto
-106.39285 182.48027 106.48303 182.51764 106.54947 182.58408 curveto
-106.6159 182.65051 106.65327 182.74069 106.65327 182.83464 curveto closepath
- fill
-newpath 127.91312 182.83464 moveto
-127.91312 182.92859 127.87575 183.01877 127.80931 183.0852 curveto
-127.74287 183.15164 127.6527 183.18901 127.55875 183.18901 curveto
-127.4648 183.18901 127.37462 183.15164 127.30818 183.0852 curveto
-127.24174 183.01877 127.20438 182.92859 127.20438 182.83464 curveto
-127.20438 182.74069 127.24174 182.65051 127.30818 182.58408 curveto
-127.37462 182.51764 127.4648 182.48027 127.55875 182.48027 curveto
-127.6527 182.48027 127.74287 182.51764 127.80931 182.58408 curveto
-127.87575 182.65051 127.91312 182.74069 127.91312 182.83464 curveto closepath
- fill
-newpath 149.17296 182.83464 moveto
-149.17296 182.92859 149.13559 183.01877 149.06915 183.0852 curveto
-149.00272 183.15164 148.91254 183.18901 148.81859 183.18901 curveto
-148.72464 183.18901 148.63446 183.15164 148.56802 183.0852 curveto
-148.50159 183.01877 148.46422 182.92859 148.46422 182.83464 curveto
-148.46422 182.74069 148.50159 182.65051 148.56802 182.58408 curveto
-148.63446 182.51764 148.72464 182.48027 148.81859 182.48027 curveto
-148.91254 182.48027 149.00272 182.51764 149.06915 182.58408 curveto
-149.13559 182.65051 149.17296 182.74069 149.17296 182.83464 curveto closepath
- fill
-newpath 191.69264 182.83464 moveto
-191.69264 182.92859 191.65527 183.01877 191.58884 183.0852 curveto
-191.5224 183.15164 191.43222 183.18901 191.33827 183.18901 curveto
-191.24432 183.18901 191.15414 183.15164 191.0877 183.0852 curveto
-191.02127 183.01877 190.9839 182.92859 190.9839 182.83464 curveto
-190.9839 182.74069 191.02127 182.65051 191.0877 182.58408 curveto
-191.15414 182.51764 191.24432 182.48027 191.33827 182.48027 curveto
-191.43222 182.48027 191.5224 182.51764 191.58884 182.58408 curveto
-191.65527 182.65051 191.69264 182.74069 191.69264 182.83464 curveto closepath
- fill
-newpath 212.95248 182.83464 moveto
-212.95248 182.92859 212.91512 183.01877 212.84868 183.0852 curveto
-212.78224 183.15164 212.69206 183.18901 212.59811 183.18901 curveto
-212.50417 183.18901 212.41399 183.15164 212.34755 183.0852 curveto
-212.28111 183.01877 212.24374 182.92859 212.24374 182.83464 curveto
-212.24374 182.74069 212.28111 182.65051 212.34755 182.58408 curveto
-212.41399 182.51764 212.50417 182.48027 212.59811 182.48027 curveto
-212.69206 182.48027 212.78224 182.51764 212.84868 182.58408 curveto
-212.91512 182.65051 212.95248 182.74069 212.95248 182.83464 curveto closepath
- fill
-newpath 234.21233 182.83464 moveto
-234.21233 182.92859 234.17496 183.01877 234.10852 183.0852 curveto
-234.04208 183.15164 233.9519 183.18901 233.85796 183.18901 curveto
-233.764 183.18901 233.67383 183.15164 233.60739 183.0852 curveto
-233.54095 183.01877 233.50359 182.92859 233.50359 182.83464 curveto
-233.50359 182.74069 233.54095 182.65051 233.60739 182.58408 curveto
-233.67383 182.51764 233.764 182.48027 233.85796 182.48027 curveto
-233.9519 182.48027 234.04208 182.51764 234.10852 182.58408 curveto
-234.17496 182.65051 234.21233 182.74069 234.21233 182.83464 curveto closepath
- fill
-newpath 255.47217 182.83464 moveto
-255.47217 182.92859 255.4348 183.01877 255.36836 183.0852 curveto
-255.30193 183.15164 255.21175 183.18901 255.1178 183.18901 curveto
-255.02385 183.18901 254.93367 183.15164 254.86723 183.0852 curveto
-254.8008 183.01877 254.76343 182.92859 254.76343 182.83464 curveto
-254.76343 182.74069 254.8008 182.65051 254.86723 182.58408 curveto
-254.93367 182.51764 255.02385 182.48027 255.1178 182.48027 curveto
-255.21175 182.48027 255.30193 182.51764 255.36836 182.58408 curveto
-255.4348 182.65051 255.47217 182.74069 255.47217 182.83464 curveto closepath
- fill
-newpath 85.39343 187.08661 moveto
-85.39343 187.18056 85.35606 187.27074 85.28963 187.33717 curveto
-85.22319 187.40361 85.13301 187.44098 85.03906 187.44098 curveto
-84.94511 187.44098 84.85493 187.40361 84.7885 187.33717 curveto
-84.72206 187.27074 84.6847 187.18056 84.6847 187.08661 curveto
-84.6847 186.99266 84.72206 186.90248 84.7885 186.83604 curveto
-84.85493 186.7696 84.94511 186.73224 85.03906 186.73224 curveto
-85.13301 186.73224 85.22319 186.7696 85.28963 186.83604 curveto
-85.35606 186.90248 85.39343 186.99266 85.39343 187.08661 curveto closepath fill
-newpath 106.65327 187.08661 moveto
-106.65327 187.18056 106.6159 187.27074 106.54947 187.33717 curveto
-106.48303 187.40361 106.39285 187.44098 106.2989 187.44098 curveto
-106.20496 187.44098 106.11478 187.40361 106.04834 187.33717 curveto
-105.9819 187.27074 105.94453 187.18056 105.94453 187.08661 curveto
-105.94453 186.99266 105.9819 186.90248 106.04834 186.83604 curveto
-106.11478 186.7696 106.20496 186.73224 106.2989 186.73224 curveto
-106.39285 186.73224 106.48303 186.7696 106.54947 186.83604 curveto
-106.6159 186.90248 106.65327 186.99266 106.65327 187.08661 curveto closepath
- fill
-newpath 127.91312 187.08661 moveto
-127.91312 187.18056 127.87575 187.27074 127.80931 187.33717 curveto
-127.74287 187.40361 127.6527 187.44098 127.55875 187.44098 curveto
-127.4648 187.44098 127.37462 187.40361 127.30818 187.33717 curveto
-127.24174 187.27074 127.20438 187.18056 127.20438 187.08661 curveto
-127.20438 186.99266 127.24174 186.90248 127.30818 186.83604 curveto
-127.37462 186.7696 127.4648 186.73224 127.55875 186.73224 curveto
-127.6527 186.73224 127.74287 186.7696 127.80931 186.83604 curveto
-127.87575 186.90248 127.91312 186.99266 127.91312 187.08661 curveto closepath
- fill
-newpath 149.17296 187.08661 moveto
-149.17296 187.18056 149.13559 187.27074 149.06915 187.33717 curveto
-149.00272 187.40361 148.91254 187.44098 148.81859 187.44098 curveto
-148.72464 187.44098 148.63446 187.40361 148.56802 187.33717 curveto
-148.50159 187.27074 148.46422 187.18056 148.46422 187.08661 curveto
-148.46422 186.99266 148.50159 186.90248 148.56802 186.83604 curveto
-148.63446 186.7696 148.72464 186.73224 148.81859 186.73224 curveto
-148.91254 186.73224 149.00272 186.7696 149.06915 186.83604 curveto
-149.13559 186.90248 149.17296 186.99266 149.17296 187.08661 curveto closepath
- fill
-newpath 191.69264 187.08661 moveto
-191.69264 187.18056 191.65527 187.27074 191.58884 187.33717 curveto
-191.5224 187.40361 191.43222 187.44098 191.33827 187.44098 curveto
-191.24432 187.44098 191.15414 187.40361 191.0877 187.33717 curveto
-191.02127 187.27074 190.9839 187.18056 190.9839 187.08661 curveto
-190.9839 186.99266 191.02127 186.90248 191.0877 186.83604 curveto
-191.15414 186.7696 191.24432 186.73224 191.33827 186.73224 curveto
-191.43222 186.73224 191.5224 186.7696 191.58884 186.83604 curveto
-191.65527 186.90248 191.69264 186.99266 191.69264 187.08661 curveto closepath
- fill
-newpath 212.95248 187.08661 moveto
-212.95248 187.18056 212.91512 187.27074 212.84868 187.33717 curveto
-212.78224 187.40361 212.69206 187.44098 212.59811 187.44098 curveto
-212.50417 187.44098 212.41399 187.40361 212.34755 187.33717 curveto
-212.28111 187.27074 212.24374 187.18056 212.24374 187.08661 curveto
-212.24374 186.99266 212.28111 186.90248 212.34755 186.83604 curveto
-212.41399 186.7696 212.50417 186.73224 212.59811 186.73224 curveto
-212.69206 186.73224 212.78224 186.7696 212.84868 186.83604 curveto
-212.91512 186.90248 212.95248 186.99266 212.95248 187.08661 curveto closepath
- fill
-newpath 234.21233 187.08661 moveto
-234.21233 187.18056 234.17496 187.27074 234.10852 187.33717 curveto
-234.04208 187.40361 233.9519 187.44098 233.85796 187.44098 curveto
-233.764 187.44098 233.67383 187.40361 233.60739 187.33717 curveto
-233.54095 187.27074 233.50359 187.18056 233.50359 187.08661 curveto
-233.50359 186.99266 233.54095 186.90248 233.60739 186.83604 curveto
-233.67383 186.7696 233.764 186.73224 233.85796 186.73224 curveto
-233.9519 186.73224 234.04208 186.7696 234.10852 186.83604 curveto
-234.17496 186.90248 234.21233 186.99266 234.21233 187.08661 curveto closepath
- fill
-newpath 255.47217 187.08661 moveto
-255.47217 187.18056 255.4348 187.27074 255.36836 187.33717 curveto
-255.30193 187.40361 255.21175 187.44098 255.1178 187.44098 curveto
-255.02385 187.44098 254.93367 187.40361 254.86723 187.33717 curveto
-254.8008 187.27074 254.76343 187.18056 254.76343 187.08661 curveto
-254.76343 186.99266 254.8008 186.90248 254.86723 186.83604 curveto
-254.93367 186.7696 255.02385 186.73224 255.1178 186.73224 curveto
-255.21175 186.73224 255.30193 186.7696 255.36836 186.83604 curveto
-255.4348 186.90248 255.47217 186.99266 255.47217 187.08661 curveto closepath
- fill
-newpath 85.39343 191.33858 moveto
-85.39343 191.43253 85.35606 191.5227 85.28963 191.58914 curveto
-85.22319 191.65558 85.13301 191.69295 85.03906 191.69295 curveto
-84.94511 191.69295 84.85493 191.65558 84.7885 191.58914 curveto
-84.72206 191.5227 84.6847 191.43253 84.6847 191.33858 curveto
-84.6847 191.24463 84.72206 191.15445 84.7885 191.08801 curveto
-84.85493 191.02158 84.94511 190.9842 85.03906 190.9842 curveto
-85.13301 190.9842 85.22319 191.02158 85.28963 191.08801 curveto
-85.35606 191.15445 85.39343 191.24463 85.39343 191.33858 curveto closepath fill
-newpath 106.65327 191.33858 moveto
-106.65327 191.43253 106.6159 191.5227 106.54947 191.58914 curveto
-106.48303 191.65558 106.39285 191.69295 106.2989 191.69295 curveto
-106.20496 191.69295 106.11478 191.65558 106.04834 191.58914 curveto
-105.9819 191.5227 105.94453 191.43253 105.94453 191.33858 curveto
-105.94453 191.24463 105.9819 191.15445 106.04834 191.08801 curveto
-106.11478 191.02158 106.20496 190.9842 106.2989 190.9842 curveto
-106.39285 190.9842 106.48303 191.02158 106.54947 191.08801 curveto
-106.6159 191.15445 106.65327 191.24463 106.65327 191.33858 curveto closepath
- fill
-newpath 127.91312 191.33858 moveto
-127.91312 191.43253 127.87575 191.5227 127.80931 191.58914 curveto
-127.74287 191.65558 127.6527 191.69295 127.55875 191.69295 curveto
-127.4648 191.69295 127.37462 191.65558 127.30818 191.58914 curveto
-127.24174 191.5227 127.20438 191.43253 127.20438 191.33858 curveto
-127.20438 191.24463 127.24174 191.15445 127.30818 191.08801 curveto
-127.37462 191.02158 127.4648 190.9842 127.55875 190.9842 curveto
-127.6527 190.9842 127.74287 191.02158 127.80931 191.08801 curveto
-127.87575 191.15445 127.91312 191.24463 127.91312 191.33858 curveto closepath
- fill
-newpath 149.17296 191.33858 moveto
-149.17296 191.43253 149.13559 191.5227 149.06915 191.58914 curveto
-149.00272 191.65558 148.91254 191.69295 148.81859 191.69295 curveto
-148.72464 191.69295 148.63446 191.65558 148.56802 191.58914 curveto
-148.50159 191.5227 148.46422 191.43253 148.46422 191.33858 curveto
-148.46422 191.24463 148.50159 191.15445 148.56802 191.08801 curveto
-148.63446 191.02158 148.72464 190.9842 148.81859 190.9842 curveto
-148.91254 190.9842 149.00272 191.02158 149.06915 191.08801 curveto
-149.13559 191.15445 149.17296 191.24463 149.17296 191.33858 curveto closepath
- fill
-newpath 191.69264 191.33858 moveto
-191.69264 191.43253 191.65527 191.5227 191.58884 191.58914 curveto
-191.5224 191.65558 191.43222 191.69295 191.33827 191.69295 curveto
-191.24432 191.69295 191.15414 191.65558 191.0877 191.58914 curveto
-191.02127 191.5227 190.9839 191.43253 190.9839 191.33858 curveto
-190.9839 191.24463 191.02127 191.15445 191.0877 191.08801 curveto
-191.15414 191.02158 191.24432 190.9842 191.33827 190.9842 curveto
-191.43222 190.9842 191.5224 191.02158 191.58884 191.08801 curveto
-191.65527 191.15445 191.69264 191.24463 191.69264 191.33858 curveto closepath
- fill
-newpath 212.95248 191.33858 moveto
-212.95248 191.43253 212.91512 191.5227 212.84868 191.58914 curveto
-212.78224 191.65558 212.69206 191.69295 212.59811 191.69295 curveto
-212.50417 191.69295 212.41399 191.65558 212.34755 191.58914 curveto
-212.28111 191.5227 212.24374 191.43253 212.24374 191.33858 curveto
-212.24374 191.24463 212.28111 191.15445 212.34755 191.08801 curveto
-212.41399 191.02158 212.50417 190.9842 212.59811 190.9842 curveto
-212.69206 190.9842 212.78224 191.02158 212.84868 191.08801 curveto
-212.91512 191.15445 212.95248 191.24463 212.95248 191.33858 curveto closepath
- fill
-newpath 234.21233 191.33858 moveto
-234.21233 191.43253 234.17496 191.5227 234.10852 191.58914 curveto
-234.04208 191.65558 233.9519 191.69295 233.85796 191.69295 curveto
-233.764 191.69295 233.67383 191.65558 233.60739 191.58914 curveto
-233.54095 191.5227 233.50359 191.43253 233.50359 191.33858 curveto
-233.50359 191.24463 233.54095 191.15445 233.60739 191.08801 curveto
-233.67383 191.02158 233.764 190.9842 233.85796 190.9842 curveto
-233.9519 190.9842 234.04208 191.02158 234.10852 191.08801 curveto
-234.17496 191.15445 234.21233 191.24463 234.21233 191.33858 curveto closepath
- fill
-newpath 255.47217 191.33858 moveto
-255.47217 191.43253 255.4348 191.5227 255.36836 191.58914 curveto
-255.30193 191.65558 255.21175 191.69295 255.1178 191.69295 curveto
-255.02385 191.69295 254.93367 191.65558 254.86723 191.58914 curveto
-254.8008 191.5227 254.76343 191.43253 254.76343 191.33858 curveto
-254.76343 191.24463 254.8008 191.15445 254.86723 191.08801 curveto
-254.93367 191.02158 255.02385 190.9842 255.1178 190.9842 curveto
-255.21175 190.9842 255.30193 191.02158 255.36836 191.08801 curveto
-255.4348 191.15445 255.47217 191.24463 255.47217 191.33858 curveto closepath
- fill
-newpath 174.68477 46.77165 moveto
-174.68477 46.8656 174.6474 46.95578 174.58096 47.02222 curveto
-174.51453 47.08865 174.42435 47.12602 174.3304 47.12602 curveto
-174.23645 47.12602 174.14627 47.08865 174.07983 47.02222 curveto
-174.0134 46.95578 173.97603 46.8656 173.97603 46.77165 curveto
-173.97603 46.6777 174.0134 46.58752 174.07983 46.52109 curveto
-174.14627 46.45465 174.23645 46.41728 174.3304 46.41728 curveto
-174.42435 46.41728 174.51453 46.45465 174.58096 46.52109 curveto
-174.6474 46.58752 174.68477 46.6777 174.68477 46.77165 curveto closepath fill
-newpath 174.68477 68.0315 moveto
-174.68477 68.12544 174.6474 68.21562 174.58096 68.28206 curveto
-174.51453 68.3485 174.42435 68.38586 174.3304 68.38586 curveto
-174.23645 68.38586 174.14627 68.3485 174.07983 68.28206 curveto
-174.0134 68.21562 173.97603 68.12544 173.97603 68.0315 curveto
-173.97603 67.93755 174.0134 67.84737 174.07983 67.78093 curveto
-174.14627 67.7145 174.23645 67.67712 174.3304 67.67712 curveto
-174.42435 67.67712 174.51453 67.7145 174.58096 67.78093 curveto
-174.6474 67.84737 174.68477 67.93755 174.68477 68.0315 curveto closepath fill
-newpath 174.68477 89.29134 moveto
-174.68477 89.38528 174.6474 89.47546 174.58096 89.5419 curveto
-174.51453 89.60834 174.42435 89.6457 174.3304 89.6457 curveto
-174.23645 89.6457 174.14627 89.60834 174.07983 89.5419 curveto
-174.0134 89.47546 173.97603 89.38528 173.97603 89.29134 curveto
-173.97603 89.19739 174.0134 89.10721 174.07983 89.04077 curveto
-174.14627 88.97433 174.23645 88.93697 174.3304 88.93697 curveto
-174.42435 88.93697 174.51453 88.97433 174.58096 89.04077 curveto
-174.6474 89.10721 174.68477 89.19739 174.68477 89.29134 curveto closepath fill
-newpath 174.68477 131.81102 moveto
-174.68477 131.90497 174.6474 131.99515 174.58096 132.06158 curveto
-174.51453 132.12802 174.42435 132.16539 174.3304 132.16539 curveto
-174.23645 132.16539 174.14627 132.12802 174.07983 132.06158 curveto
-174.0134 131.99515 173.97603 131.90497 173.97603 131.81102 curveto
-173.97603 131.71707 174.0134 131.62689 174.07983 131.56046 curveto
-174.14627 131.49402 174.23645 131.45665 174.3304 131.45665 curveto
-174.42435 131.45665 174.51453 131.49402 174.58096 131.56046 curveto
-174.6474 131.62689 174.68477 131.71707 174.68477 131.81102 curveto closepath
- fill
-newpath 174.68477 153.07086 moveto
-174.68477 153.16481 174.6474 153.25499 174.58096 153.32143 curveto
-174.51453 153.38786 174.42435 153.42523 174.3304 153.42523 curveto
-174.23645 153.42523 174.14627 153.38786 174.07983 153.32143 curveto
-174.0134 153.25499 173.97603 153.16481 173.97603 153.07086 curveto
-173.97603 152.97691 174.0134 152.88673 174.07983 152.8203 curveto
-174.14627 152.75386 174.23645 152.71649 174.3304 152.71649 curveto
-174.42435 152.71649 174.51453 152.75386 174.58096 152.8203 curveto
-174.6474 152.88673 174.68477 152.97691 174.68477 153.07086 curveto closepath
- fill
-newpath 174.68477 174.3307 moveto
-174.68477 174.42465 174.6474 174.51483 174.58096 174.58127 curveto
-174.51453 174.6477 174.42435 174.68507 174.3304 174.68507 curveto
-174.23645 174.68507 174.14627 174.6477 174.07983 174.58127 curveto
-174.0134 174.51483 173.97603 174.42465 173.97603 174.3307 curveto
-173.97603 174.23676 174.0134 174.14658 174.07983 174.08014 curveto
-174.14627 174.0137 174.23645 173.97633 174.3304 173.97633 curveto
-174.42435 173.97633 174.51453 174.0137 174.58096 174.08014 curveto
-174.6474 174.14658 174.68477 174.23676 174.68477 174.3307 curveto closepath
- fill
-newpath 178.93674 46.77165 moveto
-178.93674 46.8656 178.89937 46.95578 178.83293 47.02222 curveto
-178.7665 47.08865 178.67632 47.12602 178.58237 47.12602 curveto
-178.48842 47.12602 178.39824 47.08865 178.3318 47.02222 curveto
-178.26537 46.95578 178.228 46.8656 178.228 46.77165 curveto
-178.228 46.6777 178.26537 46.58752 178.3318 46.52109 curveto
-178.39824 46.45465 178.48842 46.41728 178.58237 46.41728 curveto
-178.67632 46.41728 178.7665 46.45465 178.83293 46.52109 curveto
-178.89937 46.58752 178.93674 46.6777 178.93674 46.77165 curveto closepath fill
-newpath 178.93674 68.0315 moveto
-178.93674 68.12544 178.89937 68.21562 178.83293 68.28206 curveto
-178.7665 68.3485 178.67632 68.38586 178.58237 68.38586 curveto
-178.48842 68.38586 178.39824 68.3485 178.3318 68.28206 curveto
-178.26537 68.21562 178.228 68.12544 178.228 68.0315 curveto
-178.228 67.93755 178.26537 67.84737 178.3318 67.78093 curveto
-178.39824 67.7145 178.48842 67.67712 178.58237 67.67712 curveto
-178.67632 67.67712 178.7665 67.7145 178.83293 67.78093 curveto
-178.89937 67.84737 178.93674 67.93755 178.93674 68.0315 curveto closepath fill
-newpath 178.93674 89.29134 moveto
-178.93674 89.38528 178.89937 89.47546 178.83293 89.5419 curveto
-178.7665 89.60834 178.67632 89.6457 178.58237 89.6457 curveto
-178.48842 89.6457 178.39824 89.60834 178.3318 89.5419 curveto
-178.26537 89.47546 178.228 89.38528 178.228 89.29134 curveto
-178.228 89.19739 178.26537 89.10721 178.3318 89.04077 curveto
-178.39824 88.97433 178.48842 88.93697 178.58237 88.93697 curveto
-178.67632 88.93697 178.7665 88.97433 178.83293 89.04077 curveto
-178.89937 89.10721 178.93674 89.19739 178.93674 89.29134 curveto closepath fill
-newpath 178.93674 131.81102 moveto
-178.93674 131.90497 178.89937 131.99515 178.83293 132.06158 curveto
-178.7665 132.12802 178.67632 132.16539 178.58237 132.16539 curveto
-178.48842 132.16539 178.39824 132.12802 178.3318 132.06158 curveto
-178.26537 131.99515 178.228 131.90497 178.228 131.81102 curveto
-178.228 131.71707 178.26537 131.62689 178.3318 131.56046 curveto
-178.39824 131.49402 178.48842 131.45665 178.58237 131.45665 curveto
-178.67632 131.45665 178.7665 131.49402 178.83293 131.56046 curveto
-178.89937 131.62689 178.93674 131.71707 178.93674 131.81102 curveto closepath
- fill
-newpath 178.93674 153.07086 moveto
-178.93674 153.16481 178.89937 153.25499 178.83293 153.32143 curveto
-178.7665 153.38786 178.67632 153.42523 178.58237 153.42523 curveto
-178.48842 153.42523 178.39824 153.38786 178.3318 153.32143 curveto
-178.26537 153.25499 178.228 153.16481 178.228 153.07086 curveto
-178.228 152.97691 178.26537 152.88673 178.3318 152.8203 curveto
-178.39824 152.75386 178.48842 152.71649 178.58237 152.71649 curveto
-178.67632 152.71649 178.7665 152.75386 178.83293 152.8203 curveto
-178.89937 152.88673 178.93674 152.97691 178.93674 153.07086 curveto closepath
- fill
-newpath 178.93674 174.3307 moveto
-178.93674 174.42465 178.89937 174.51483 178.83293 174.58127 curveto
-178.7665 174.6477 178.67632 174.68507 178.58237 174.68507 curveto
-178.48842 174.68507 178.39824 174.6477 178.3318 174.58127 curveto
-178.26537 174.51483 178.228 174.42465 178.228 174.3307 curveto
-178.228 174.23676 178.26537 174.14658 178.3318 174.08014 curveto
-178.39824 174.0137 178.48842 173.97633 178.58237 173.97633 curveto
-178.67632 173.97633 178.7665 174.0137 178.83293 174.08014 curveto
-178.89937 174.14658 178.93674 174.23676 178.93674 174.3307 curveto closepath
- fill
-newpath 183.1887 46.77165 moveto
-183.1887 46.8656 183.15134 46.95578 183.0849 47.02222 curveto
-183.01846 47.08865 182.92828 47.12602 182.83434 47.12602 curveto
-182.74039 47.12602 182.6502 47.08865 182.58377 47.02222 curveto
-182.51733 46.95578 182.47997 46.8656 182.47997 46.77165 curveto
-182.47997 46.6777 182.51733 46.58752 182.58377 46.52109 curveto
-182.6502 46.45465 182.74039 46.41728 182.83434 46.41728 curveto
-182.92828 46.41728 183.01846 46.45465 183.0849 46.52109 curveto
-183.15134 46.58752 183.1887 46.6777 183.1887 46.77165 curveto closepath fill
-newpath 183.1887 68.0315 moveto
-183.1887 68.12544 183.15134 68.21562 183.0849 68.28206 curveto
-183.01846 68.3485 182.92828 68.38586 182.83434 68.38586 curveto
-182.74039 68.38586 182.6502 68.3485 182.58377 68.28206 curveto
-182.51733 68.21562 182.47997 68.12544 182.47997 68.0315 curveto
-182.47997 67.93755 182.51733 67.84737 182.58377 67.78093 curveto
-182.6502 67.7145 182.74039 67.67712 182.83434 67.67712 curveto
-182.92828 67.67712 183.01846 67.7145 183.0849 67.78093 curveto
-183.15134 67.84737 183.1887 67.93755 183.1887 68.0315 curveto closepath fill
-newpath 183.1887 89.29134 moveto
-183.1887 89.38528 183.15134 89.47546 183.0849 89.5419 curveto
-183.01846 89.60834 182.92828 89.6457 182.83434 89.6457 curveto
-182.74039 89.6457 182.6502 89.60834 182.58377 89.5419 curveto
-182.51733 89.47546 182.47997 89.38528 182.47997 89.29134 curveto
-182.47997 89.19739 182.51733 89.10721 182.58377 89.04077 curveto
-182.6502 88.97433 182.74039 88.93697 182.83434 88.93697 curveto
-182.92828 88.93697 183.01846 88.97433 183.0849 89.04077 curveto
-183.15134 89.10721 183.1887 89.19739 183.1887 89.29134 curveto closepath fill
-newpath 183.1887 131.81102 moveto
-183.1887 131.90497 183.15134 131.99515 183.0849 132.06158 curveto
-183.01846 132.12802 182.92828 132.16539 182.83434 132.16539 curveto
-182.74039 132.16539 182.6502 132.12802 182.58377 132.06158 curveto
-182.51733 131.99515 182.47997 131.90497 182.47997 131.81102 curveto
-182.47997 131.71707 182.51733 131.62689 182.58377 131.56046 curveto
-182.6502 131.49402 182.74039 131.45665 182.83434 131.45665 curveto
-182.92828 131.45665 183.01846 131.49402 183.0849 131.56046 curveto
-183.15134 131.62689 183.1887 131.71707 183.1887 131.81102 curveto closepath
- fill
-newpath 183.1887 153.07086 moveto
-183.1887 153.16481 183.15134 153.25499 183.0849 153.32143 curveto
-183.01846 153.38786 182.92828 153.42523 182.83434 153.42523 curveto
-182.74039 153.42523 182.6502 153.38786 182.58377 153.32143 curveto
-182.51733 153.25499 182.47997 153.16481 182.47997 153.07086 curveto
-182.47997 152.97691 182.51733 152.88673 182.58377 152.8203 curveto
-182.6502 152.75386 182.74039 152.71649 182.83434 152.71649 curveto
-182.92828 152.71649 183.01846 152.75386 183.0849 152.8203 curveto
-183.15134 152.88673 183.1887 152.97691 183.1887 153.07086 curveto closepath
- fill
-newpath 183.1887 174.3307 moveto
-183.1887 174.42465 183.15134 174.51483 183.0849 174.58127 curveto
-183.01846 174.6477 182.92828 174.68507 182.83434 174.68507 curveto
-182.74039 174.68507 182.6502 174.6477 182.58377 174.58127 curveto
-182.51733 174.51483 182.47997 174.42465 182.47997 174.3307 curveto
-182.47997 174.23676 182.51733 174.14658 182.58377 174.08014 curveto
-182.6502 174.0137 182.74039 173.97633 182.83434 173.97633 curveto
-182.92828 173.97633 183.01846 174.0137 183.0849 174.08014 curveto
-183.15134 174.14658 183.1887 174.23676 183.1887 174.3307 curveto closepath fill
-newpath 187.44067 46.77165 moveto
-187.44067 46.8656 187.4033 46.95578 187.33687 47.02222 curveto
-187.27043 47.08865 187.18025 47.12602 187.0863 47.12602 curveto
-186.99236 47.12602 186.90218 47.08865 186.83574 47.02222 curveto
-186.7693 46.95578 186.73193 46.8656 186.73193 46.77165 curveto
-186.73193 46.6777 186.7693 46.58752 186.83574 46.52109 curveto
-186.90218 46.45465 186.99236 46.41728 187.0863 46.41728 curveto
-187.18025 46.41728 187.27043 46.45465 187.33687 46.52109 curveto
-187.4033 46.58752 187.44067 46.6777 187.44067 46.77165 curveto closepath fill
-newpath 187.44067 68.0315 moveto
-187.44067 68.12544 187.4033 68.21562 187.33687 68.28206 curveto
-187.27043 68.3485 187.18025 68.38586 187.0863 68.38586 curveto
-186.99236 68.38586 186.90218 68.3485 186.83574 68.28206 curveto
-186.7693 68.21562 186.73193 68.12544 186.73193 68.0315 curveto
-186.73193 67.93755 186.7693 67.84737 186.83574 67.78093 curveto
-186.90218 67.7145 186.99236 67.67712 187.0863 67.67712 curveto
-187.18025 67.67712 187.27043 67.7145 187.33687 67.78093 curveto
-187.4033 67.84737 187.44067 67.93755 187.44067 68.0315 curveto closepath fill
-newpath 187.44067 89.29134 moveto
-187.44067 89.38528 187.4033 89.47546 187.33687 89.5419 curveto
-187.27043 89.60834 187.18025 89.6457 187.0863 89.6457 curveto
-186.99236 89.6457 186.90218 89.60834 186.83574 89.5419 curveto
-186.7693 89.47546 186.73193 89.38528 186.73193 89.29134 curveto
-186.73193 89.19739 186.7693 89.10721 186.83574 89.04077 curveto
-186.90218 88.97433 186.99236 88.93697 187.0863 88.93697 curveto
-187.18025 88.93697 187.27043 88.97433 187.33687 89.04077 curveto
-187.4033 89.10721 187.44067 89.19739 187.44067 89.29134 curveto closepath fill
-newpath 187.44067 131.81102 moveto
-187.44067 131.90497 187.4033 131.99515 187.33687 132.06158 curveto
-187.27043 132.12802 187.18025 132.16539 187.0863 132.16539 curveto
-186.99236 132.16539 186.90218 132.12802 186.83574 132.06158 curveto
-186.7693 131.99515 186.73193 131.90497 186.73193 131.81102 curveto
-186.73193 131.71707 186.7693 131.62689 186.83574 131.56046 curveto
-186.90218 131.49402 186.99236 131.45665 187.0863 131.45665 curveto
-187.18025 131.45665 187.27043 131.49402 187.33687 131.56046 curveto
-187.4033 131.62689 187.44067 131.71707 187.44067 131.81102 curveto closepath
- fill
-newpath 187.44067 153.07086 moveto
-187.44067 153.16481 187.4033 153.25499 187.33687 153.32143 curveto
-187.27043 153.38786 187.18025 153.42523 187.0863 153.42523 curveto
-186.99236 153.42523 186.90218 153.38786 186.83574 153.32143 curveto
-186.7693 153.25499 186.73193 153.16481 186.73193 153.07086 curveto
-186.73193 152.97691 186.7693 152.88673 186.83574 152.8203 curveto
-186.90218 152.75386 186.99236 152.71649 187.0863 152.71649 curveto
-187.18025 152.71649 187.27043 152.75386 187.33687 152.8203 curveto
-187.4033 152.88673 187.44067 152.97691 187.44067 153.07086 curveto closepath
- fill
-newpath 187.44067 174.3307 moveto
-187.44067 174.42465 187.4033 174.51483 187.33687 174.58127 curveto
-187.27043 174.6477 187.18025 174.68507 187.0863 174.68507 curveto
-186.99236 174.68507 186.90218 174.6477 186.83574 174.58127 curveto
-186.7693 174.51483 186.73193 174.42465 186.73193 174.3307 curveto
-186.73193 174.23676 186.7693 174.14658 186.83574 174.08014 curveto
-186.90218 174.0137 186.99236 173.97633 187.0863 173.97633 curveto
-187.18025 173.97633 187.27043 174.0137 187.33687 174.08014 curveto
-187.4033 174.14658 187.44067 174.23676 187.44067 174.3307 curveto closepath
- fill
-newpath 191.69264 46.77165 moveto
-191.69264 46.8656 191.65527 46.95578 191.58884 47.02222 curveto
-191.5224 47.08865 191.43222 47.12602 191.33827 47.12602 curveto
-191.24432 47.12602 191.15414 47.08865 191.0877 47.02222 curveto
-191.02127 46.95578 190.9839 46.8656 190.9839 46.77165 curveto
-190.9839 46.6777 191.02127 46.58752 191.0877 46.52109 curveto
-191.15414 46.45465 191.24432 46.41728 191.33827 46.41728 curveto
-191.43222 46.41728 191.5224 46.45465 191.58884 46.52109 curveto
-191.65527 46.58752 191.69264 46.6777 191.69264 46.77165 curveto closepath fill
-newpath 191.69264 68.0315 moveto
-191.69264 68.12544 191.65527 68.21562 191.58884 68.28206 curveto
-191.5224 68.3485 191.43222 68.38586 191.33827 68.38586 curveto
-191.24432 68.38586 191.15414 68.3485 191.0877 68.28206 curveto
-191.02127 68.21562 190.9839 68.12544 190.9839 68.0315 curveto
-190.9839 67.93755 191.02127 67.84737 191.0877 67.78093 curveto
-191.15414 67.7145 191.24432 67.67712 191.33827 67.67712 curveto
-191.43222 67.67712 191.5224 67.7145 191.58884 67.78093 curveto
-191.65527 67.84737 191.69264 67.93755 191.69264 68.0315 curveto closepath fill
-newpath 191.69264 89.29134 moveto
-191.69264 89.38528 191.65527 89.47546 191.58884 89.5419 curveto
-191.5224 89.60834 191.43222 89.6457 191.33827 89.6457 curveto
-191.24432 89.6457 191.15414 89.60834 191.0877 89.5419 curveto
-191.02127 89.47546 190.9839 89.38528 190.9839 89.29134 curveto
-190.9839 89.19739 191.02127 89.10721 191.0877 89.04077 curveto
-191.15414 88.97433 191.24432 88.93697 191.33827 88.93697 curveto
-191.43222 88.93697 191.5224 88.97433 191.58884 89.04077 curveto
-191.65527 89.10721 191.69264 89.19739 191.69264 89.29134 curveto closepath fill
-newpath 191.69264 131.81102 moveto
-191.69264 131.90497 191.65527 131.99515 191.58884 132.06158 curveto
-191.5224 132.12802 191.43222 132.16539 191.33827 132.16539 curveto
-191.24432 132.16539 191.15414 132.12802 191.0877 132.06158 curveto
-191.02127 131.99515 190.9839 131.90497 190.9839 131.81102 curveto
-190.9839 131.71707 191.02127 131.62689 191.0877 131.56046 curveto
-191.15414 131.49402 191.24432 131.45665 191.33827 131.45665 curveto
-191.43222 131.45665 191.5224 131.49402 191.58884 131.56046 curveto
-191.65527 131.62689 191.69264 131.71707 191.69264 131.81102 curveto closepath
- fill
-newpath 191.69264 153.07086 moveto
-191.69264 153.16481 191.65527 153.25499 191.58884 153.32143 curveto
-191.5224 153.38786 191.43222 153.42523 191.33827 153.42523 curveto
-191.24432 153.42523 191.15414 153.38786 191.0877 153.32143 curveto
-191.02127 153.25499 190.9839 153.16481 190.9839 153.07086 curveto
-190.9839 152.97691 191.02127 152.88673 191.0877 152.8203 curveto
-191.15414 152.75386 191.24432 152.71649 191.33827 152.71649 curveto
-191.43222 152.71649 191.5224 152.75386 191.58884 152.8203 curveto
-191.65527 152.88673 191.69264 152.97691 191.69264 153.07086 curveto closepath
- fill
-newpath 191.69264 174.3307 moveto
-191.69264 174.42465 191.65527 174.51483 191.58884 174.58127 curveto
-191.5224 174.6477 191.43222 174.68507 191.33827 174.68507 curveto
-191.24432 174.68507 191.15414 174.6477 191.0877 174.58127 curveto
-191.02127 174.51483 190.9839 174.42465 190.9839 174.3307 curveto
-190.9839 174.23676 191.02127 174.14658 191.0877 174.08014 curveto
-191.15414 174.0137 191.24432 173.97633 191.33827 173.97633 curveto
-191.43222 173.97633 191.5224 174.0137 191.58884 174.08014 curveto
-191.65527 174.14658 191.69264 174.23676 191.69264 174.3307 curveto closepath
- fill
-newpath 195.94461 46.77165 moveto
-195.94461 46.8656 195.90724 46.95578 195.8408 47.02222 curveto
-195.77437 47.08865 195.68419 47.12602 195.59024 47.12602 curveto
-195.49629 47.12602 195.40611 47.08865 195.33968 47.02222 curveto
-195.27324 46.95578 195.23587 46.8656 195.23587 46.77165 curveto
-195.23587 46.6777 195.27324 46.58752 195.33968 46.52109 curveto
-195.40611 46.45465 195.49629 46.41728 195.59024 46.41728 curveto
-195.68419 46.41728 195.77437 46.45465 195.8408 46.52109 curveto
-195.90724 46.58752 195.94461 46.6777 195.94461 46.77165 curveto closepath fill
-newpath 195.94461 68.0315 moveto
-195.94461 68.12544 195.90724 68.21562 195.8408 68.28206 curveto
-195.77437 68.3485 195.68419 68.38586 195.59024 68.38586 curveto
-195.49629 68.38586 195.40611 68.3485 195.33968 68.28206 curveto
-195.27324 68.21562 195.23587 68.12544 195.23587 68.0315 curveto
-195.23587 67.93755 195.27324 67.84737 195.33968 67.78093 curveto
-195.40611 67.7145 195.49629 67.67712 195.59024 67.67712 curveto
-195.68419 67.67712 195.77437 67.7145 195.8408 67.78093 curveto
-195.90724 67.84737 195.94461 67.93755 195.94461 68.0315 curveto closepath fill
-newpath 195.94461 89.29134 moveto
-195.94461 89.38528 195.90724 89.47546 195.8408 89.5419 curveto
-195.77437 89.60834 195.68419 89.6457 195.59024 89.6457 curveto
-195.49629 89.6457 195.40611 89.60834 195.33968 89.5419 curveto
-195.27324 89.47546 195.23587 89.38528 195.23587 89.29134 curveto
-195.23587 89.19739 195.27324 89.10721 195.33968 89.04077 curveto
-195.40611 88.97433 195.49629 88.93697 195.59024 88.93697 curveto
-195.68419 88.93697 195.77437 88.97433 195.8408 89.04077 curveto
-195.90724 89.10721 195.94461 89.19739 195.94461 89.29134 curveto closepath fill
-newpath 195.94461 131.81102 moveto
-195.94461 131.90497 195.90724 131.99515 195.8408 132.06158 curveto
-195.77437 132.12802 195.68419 132.16539 195.59024 132.16539 curveto
-195.49629 132.16539 195.40611 132.12802 195.33968 132.06158 curveto
-195.27324 131.99515 195.23587 131.90497 195.23587 131.81102 curveto
-195.23587 131.71707 195.27324 131.62689 195.33968 131.56046 curveto
-195.40611 131.49402 195.49629 131.45665 195.59024 131.45665 curveto
-195.68419 131.45665 195.77437 131.49402 195.8408 131.56046 curveto
-195.90724 131.62689 195.94461 131.71707 195.94461 131.81102 curveto closepath
- fill
-newpath 195.94461 153.07086 moveto
-195.94461 153.16481 195.90724 153.25499 195.8408 153.32143 curveto
-195.77437 153.38786 195.68419 153.42523 195.59024 153.42523 curveto
-195.49629 153.42523 195.40611 153.38786 195.33968 153.32143 curveto
-195.27324 153.25499 195.23587 153.16481 195.23587 153.07086 curveto
-195.23587 152.97691 195.27324 152.88673 195.33968 152.8203 curveto
-195.40611 152.75386 195.49629 152.71649 195.59024 152.71649 curveto
-195.68419 152.71649 195.77437 152.75386 195.8408 152.8203 curveto
-195.90724 152.88673 195.94461 152.97691 195.94461 153.07086 curveto closepath
- fill
-newpath 195.94461 174.3307 moveto
-195.94461 174.42465 195.90724 174.51483 195.8408 174.58127 curveto
-195.77437 174.6477 195.68419 174.68507 195.59024 174.68507 curveto
-195.49629 174.68507 195.40611 174.6477 195.33968 174.58127 curveto
-195.27324 174.51483 195.23587 174.42465 195.23587 174.3307 curveto
-195.23587 174.23676 195.27324 174.14658 195.33968 174.08014 curveto
-195.40611 174.0137 195.49629 173.97633 195.59024 173.97633 curveto
-195.68419 173.97633 195.77437 174.0137 195.8408 174.08014 curveto
-195.90724 174.14658 195.94461 174.23676 195.94461 174.3307 curveto closepath
- fill
-newpath 200.19658 46.77165 moveto
-200.19658 46.8656 200.15921 46.95578 200.09277 47.02222 curveto
-200.02634 47.08865 199.93616 47.12602 199.84221 47.12602 curveto
-199.74826 47.12602 199.65808 47.08865 199.59164 47.02222 curveto
-199.5252 46.95578 199.48784 46.8656 199.48784 46.77165 curveto
-199.48784 46.6777 199.5252 46.58752 199.59164 46.52109 curveto
-199.65808 46.45465 199.74826 46.41728 199.84221 46.41728 curveto
-199.93616 46.41728 200.02634 46.45465 200.09277 46.52109 curveto
-200.15921 46.58752 200.19658 46.6777 200.19658 46.77165 curveto closepath fill
-newpath 200.19658 68.0315 moveto
-200.19658 68.12544 200.15921 68.21562 200.09277 68.28206 curveto
-200.02634 68.3485 199.93616 68.38586 199.84221 68.38586 curveto
-199.74826 68.38586 199.65808 68.3485 199.59164 68.28206 curveto
-199.5252 68.21562 199.48784 68.12544 199.48784 68.0315 curveto
-199.48784 67.93755 199.5252 67.84737 199.59164 67.78093 curveto
-199.65808 67.7145 199.74826 67.67712 199.84221 67.67712 curveto
-199.93616 67.67712 200.02634 67.7145 200.09277 67.78093 curveto
-200.15921 67.84737 200.19658 67.93755 200.19658 68.0315 curveto closepath fill
-newpath 200.19658 89.29134 moveto
-200.19658 89.38528 200.15921 89.47546 200.09277 89.5419 curveto
-200.02634 89.60834 199.93616 89.6457 199.84221 89.6457 curveto
-199.74826 89.6457 199.65808 89.60834 199.59164 89.5419 curveto
-199.5252 89.47546 199.48784 89.38528 199.48784 89.29134 curveto
-199.48784 89.19739 199.5252 89.10721 199.59164 89.04077 curveto
-199.65808 88.97433 199.74826 88.93697 199.84221 88.93697 curveto
-199.93616 88.93697 200.02634 88.97433 200.09277 89.04077 curveto
-200.15921 89.10721 200.19658 89.19739 200.19658 89.29134 curveto closepath fill
-newpath 200.19658 131.81102 moveto
-200.19658 131.90497 200.15921 131.99515 200.09277 132.06158 curveto
-200.02634 132.12802 199.93616 132.16539 199.84221 132.16539 curveto
-199.74826 132.16539 199.65808 132.12802 199.59164 132.06158 curveto
-199.5252 131.99515 199.48784 131.90497 199.48784 131.81102 curveto
-199.48784 131.71707 199.5252 131.62689 199.59164 131.56046 curveto
-199.65808 131.49402 199.74826 131.45665 199.84221 131.45665 curveto
-199.93616 131.45665 200.02634 131.49402 200.09277 131.56046 curveto
-200.15921 131.62689 200.19658 131.71707 200.19658 131.81102 curveto closepath
- fill
-newpath 200.19658 153.07086 moveto
-200.19658 153.16481 200.15921 153.25499 200.09277 153.32143 curveto
-200.02634 153.38786 199.93616 153.42523 199.84221 153.42523 curveto
-199.74826 153.42523 199.65808 153.38786 199.59164 153.32143 curveto
-199.5252 153.25499 199.48784 153.16481 199.48784 153.07086 curveto
-199.48784 152.97691 199.5252 152.88673 199.59164 152.8203 curveto
-199.65808 152.75386 199.74826 152.71649 199.84221 152.71649 curveto
-199.93616 152.71649 200.02634 152.75386 200.09277 152.8203 curveto
-200.15921 152.88673 200.19658 152.97691 200.19658 153.07086 curveto closepath
- fill
-newpath 200.19658 174.3307 moveto
-200.19658 174.42465 200.15921 174.51483 200.09277 174.58127 curveto
-200.02634 174.6477 199.93616 174.68507 199.84221 174.68507 curveto
-199.74826 174.68507 199.65808 174.6477 199.59164 174.58127 curveto
-199.5252 174.51483 199.48784 174.42465 199.48784 174.3307 curveto
-199.48784 174.23676 199.5252 174.14658 199.59164 174.08014 curveto
-199.65808 174.0137 199.74826 173.97633 199.84221 173.97633 curveto
-199.93616 173.97633 200.02634 174.0137 200.09277 174.08014 curveto
-200.15921 174.14658 200.19658 174.23676 200.19658 174.3307 curveto closepath
- fill
-newpath 204.44855 46.77165 moveto
-204.44855 46.8656 204.41118 46.95578 204.34474 47.02222 curveto
-204.2783 47.08865 204.18813 47.12602 204.09418 47.12602 curveto
-204.00023 47.12602 203.91005 47.08865 203.84361 47.02222 curveto
-203.77718 46.95578 203.7398 46.8656 203.7398 46.77165 curveto
-203.7398 46.6777 203.77718 46.58752 203.84361 46.52109 curveto
-203.91005 46.45465 204.00023 46.41728 204.09418 46.41728 curveto
-204.18813 46.41728 204.2783 46.45465 204.34474 46.52109 curveto
-204.41118 46.58752 204.44855 46.6777 204.44855 46.77165 curveto closepath fill
-newpath 204.44855 68.0315 moveto
-204.44855 68.12544 204.41118 68.21562 204.34474 68.28206 curveto
-204.2783 68.3485 204.18813 68.38586 204.09418 68.38586 curveto
-204.00023 68.38586 203.91005 68.3485 203.84361 68.28206 curveto
-203.77718 68.21562 203.7398 68.12544 203.7398 68.0315 curveto
-203.7398 67.93755 203.77718 67.84737 203.84361 67.78093 curveto
-203.91005 67.7145 204.00023 67.67712 204.09418 67.67712 curveto
-204.18813 67.67712 204.2783 67.7145 204.34474 67.78093 curveto
-204.41118 67.84737 204.44855 67.93755 204.44855 68.0315 curveto closepath fill
-newpath 204.44855 89.29134 moveto
-204.44855 89.38528 204.41118 89.47546 204.34474 89.5419 curveto
-204.2783 89.60834 204.18813 89.6457 204.09418 89.6457 curveto
-204.00023 89.6457 203.91005 89.60834 203.84361 89.5419 curveto
-203.77718 89.47546 203.7398 89.38528 203.7398 89.29134 curveto
-203.7398 89.19739 203.77718 89.10721 203.84361 89.04077 curveto
-203.91005 88.97433 204.00023 88.93697 204.09418 88.93697 curveto
-204.18813 88.93697 204.2783 88.97433 204.34474 89.04077 curveto
-204.41118 89.10721 204.44855 89.19739 204.44855 89.29134 curveto closepath fill
-newpath 204.44855 131.81102 moveto
-204.44855 131.90497 204.41118 131.99515 204.34474 132.06158 curveto
-204.2783 132.12802 204.18813 132.16539 204.09418 132.16539 curveto
-204.00023 132.16539 203.91005 132.12802 203.84361 132.06158 curveto
-203.77718 131.99515 203.7398 131.90497 203.7398 131.81102 curveto
-203.7398 131.71707 203.77718 131.62689 203.84361 131.56046 curveto
-203.91005 131.49402 204.00023 131.45665 204.09418 131.45665 curveto
-204.18813 131.45665 204.2783 131.49402 204.34474 131.56046 curveto
-204.41118 131.62689 204.44855 131.71707 204.44855 131.81102 curveto closepath
- fill
-newpath 204.44855 153.07086 moveto
-204.44855 153.16481 204.41118 153.25499 204.34474 153.32143 curveto
-204.2783 153.38786 204.18813 153.42523 204.09418 153.42523 curveto
-204.00023 153.42523 203.91005 153.38786 203.84361 153.32143 curveto
-203.77718 153.25499 203.7398 153.16481 203.7398 153.07086 curveto
-203.7398 152.97691 203.77718 152.88673 203.84361 152.8203 curveto
-203.91005 152.75386 204.00023 152.71649 204.09418 152.71649 curveto
-204.18813 152.71649 204.2783 152.75386 204.34474 152.8203 curveto
-204.41118 152.88673 204.44855 152.97691 204.44855 153.07086 curveto closepath
- fill
-newpath 204.44855 174.3307 moveto
-204.44855 174.42465 204.41118 174.51483 204.34474 174.58127 curveto
-204.2783 174.6477 204.18813 174.68507 204.09418 174.68507 curveto
-204.00023 174.68507 203.91005 174.6477 203.84361 174.58127 curveto
-203.77718 174.51483 203.7398 174.42465 203.7398 174.3307 curveto
-203.7398 174.23676 203.77718 174.14658 203.84361 174.08014 curveto
-203.91005 174.0137 204.00023 173.97633 204.09418 173.97633 curveto
-204.18813 173.97633 204.2783 174.0137 204.34474 174.08014 curveto
-204.41118 174.14658 204.44855 174.23676 204.44855 174.3307 curveto closepath
- fill
-newpath 208.70052 46.77165 moveto
-208.70052 46.8656 208.66315 46.95578 208.59671 47.02222 curveto
-208.53027 47.08865 208.4401 47.12602 208.34615 47.12602 curveto
-208.2522 47.12602 208.16202 47.08865 208.09558 47.02222 curveto
-208.02914 46.95578 207.99178 46.8656 207.99178 46.77165 curveto
-207.99178 46.6777 208.02914 46.58752 208.09558 46.52109 curveto
-208.16202 46.45465 208.2522 46.41728 208.34615 46.41728 curveto
-208.4401 46.41728 208.53027 46.45465 208.59671 46.52109 curveto
-208.66315 46.58752 208.70052 46.6777 208.70052 46.77165 curveto closepath fill
-newpath 208.70052 68.0315 moveto
-208.70052 68.12544 208.66315 68.21562 208.59671 68.28206 curveto
-208.53027 68.3485 208.4401 68.38586 208.34615 68.38586 curveto
-208.2522 68.38586 208.16202 68.3485 208.09558 68.28206 curveto
-208.02914 68.21562 207.99178 68.12544 207.99178 68.0315 curveto
-207.99178 67.93755 208.02914 67.84737 208.09558 67.78093 curveto
-208.16202 67.7145 208.2522 67.67712 208.34615 67.67712 curveto
-208.4401 67.67712 208.53027 67.7145 208.59671 67.78093 curveto
-208.66315 67.84737 208.70052 67.93755 208.70052 68.0315 curveto closepath fill
-newpath 208.70052 89.29134 moveto
-208.70052 89.38528 208.66315 89.47546 208.59671 89.5419 curveto
-208.53027 89.60834 208.4401 89.6457 208.34615 89.6457 curveto
-208.2522 89.6457 208.16202 89.60834 208.09558 89.5419 curveto
-208.02914 89.47546 207.99178 89.38528 207.99178 89.29134 curveto
-207.99178 89.19739 208.02914 89.10721 208.09558 89.04077 curveto
-208.16202 88.97433 208.2522 88.93697 208.34615 88.93697 curveto
-208.4401 88.93697 208.53027 88.97433 208.59671 89.04077 curveto
-208.66315 89.10721 208.70052 89.19739 208.70052 89.29134 curveto closepath fill
-newpath 208.70052 131.81102 moveto
-208.70052 131.90497 208.66315 131.99515 208.59671 132.06158 curveto
-208.53027 132.12802 208.4401 132.16539 208.34615 132.16539 curveto
-208.2522 132.16539 208.16202 132.12802 208.09558 132.06158 curveto
-208.02914 131.99515 207.99178 131.90497 207.99178 131.81102 curveto
-207.99178 131.71707 208.02914 131.62689 208.09558 131.56046 curveto
-208.16202 131.49402 208.2522 131.45665 208.34615 131.45665 curveto
-208.4401 131.45665 208.53027 131.49402 208.59671 131.56046 curveto
-208.66315 131.62689 208.70052 131.71707 208.70052 131.81102 curveto closepath
- fill
-newpath 208.70052 153.07086 moveto
-208.70052 153.16481 208.66315 153.25499 208.59671 153.32143 curveto
-208.53027 153.38786 208.4401 153.42523 208.34615 153.42523 curveto
-208.2522 153.42523 208.16202 153.38786 208.09558 153.32143 curveto
-208.02914 153.25499 207.99178 153.16481 207.99178 153.07086 curveto
-207.99178 152.97691 208.02914 152.88673 208.09558 152.8203 curveto
-208.16202 152.75386 208.2522 152.71649 208.34615 152.71649 curveto
-208.4401 152.71649 208.53027 152.75386 208.59671 152.8203 curveto
-208.66315 152.88673 208.70052 152.97691 208.70052 153.07086 curveto closepath
- fill
-newpath 208.70052 174.3307 moveto
-208.70052 174.42465 208.66315 174.51483 208.59671 174.58127 curveto
-208.53027 174.6477 208.4401 174.68507 208.34615 174.68507 curveto
-208.2522 174.68507 208.16202 174.6477 208.09558 174.58127 curveto
-208.02914 174.51483 207.99178 174.42465 207.99178 174.3307 curveto
-207.99178 174.23676 208.02914 174.14658 208.09558 174.08014 curveto
-208.16202 174.0137 208.2522 173.97633 208.34615 173.97633 curveto
-208.4401 173.97633 208.53027 174.0137 208.59671 174.08014 curveto
-208.66315 174.14658 208.70052 174.23676 208.70052 174.3307 curveto closepath
- fill
-newpath 212.95248 46.77165 moveto
-212.95248 46.8656 212.91512 46.95578 212.84868 47.02222 curveto
-212.78224 47.08865 212.69206 47.12602 212.59811 47.12602 curveto
-212.50417 47.12602 212.41399 47.08865 212.34755 47.02222 curveto
-212.28111 46.95578 212.24374 46.8656 212.24374 46.77165 curveto
-212.24374 46.6777 212.28111 46.58752 212.34755 46.52109 curveto
-212.41399 46.45465 212.50417 46.41728 212.59811 46.41728 curveto
-212.69206 46.41728 212.78224 46.45465 212.84868 46.52109 curveto
-212.91512 46.58752 212.95248 46.6777 212.95248 46.77165 curveto closepath fill
-newpath 212.95248 68.0315 moveto
-212.95248 68.12544 212.91512 68.21562 212.84868 68.28206 curveto
-212.78224 68.3485 212.69206 68.38586 212.59811 68.38586 curveto
-212.50417 68.38586 212.41399 68.3485 212.34755 68.28206 curveto
-212.28111 68.21562 212.24374 68.12544 212.24374 68.0315 curveto
-212.24374 67.93755 212.28111 67.84737 212.34755 67.78093 curveto
-212.41399 67.7145 212.50417 67.67712 212.59811 67.67712 curveto
-212.69206 67.67712 212.78224 67.7145 212.84868 67.78093 curveto
-212.91512 67.84737 212.95248 67.93755 212.95248 68.0315 curveto closepath fill
-newpath 212.95248 89.29134 moveto
-212.95248 89.38528 212.91512 89.47546 212.84868 89.5419 curveto
-212.78224 89.60834 212.69206 89.6457 212.59811 89.6457 curveto
-212.50417 89.6457 212.41399 89.60834 212.34755 89.5419 curveto
-212.28111 89.47546 212.24374 89.38528 212.24374 89.29134 curveto
-212.24374 89.19739 212.28111 89.10721 212.34755 89.04077 curveto
-212.41399 88.97433 212.50417 88.93697 212.59811 88.93697 curveto
-212.69206 88.93697 212.78224 88.97433 212.84868 89.04077 curveto
-212.91512 89.10721 212.95248 89.19739 212.95248 89.29134 curveto closepath fill
-newpath 212.95248 131.81102 moveto
-212.95248 131.90497 212.91512 131.99515 212.84868 132.06158 curveto
-212.78224 132.12802 212.69206 132.16539 212.59811 132.16539 curveto
-212.50417 132.16539 212.41399 132.12802 212.34755 132.06158 curveto
-212.28111 131.99515 212.24374 131.90497 212.24374 131.81102 curveto
-212.24374 131.71707 212.28111 131.62689 212.34755 131.56046 curveto
-212.41399 131.49402 212.50417 131.45665 212.59811 131.45665 curveto
-212.69206 131.45665 212.78224 131.49402 212.84868 131.56046 curveto
-212.91512 131.62689 212.95248 131.71707 212.95248 131.81102 curveto closepath
- fill
-newpath 212.95248 153.07086 moveto
-212.95248 153.16481 212.91512 153.25499 212.84868 153.32143 curveto
-212.78224 153.38786 212.69206 153.42523 212.59811 153.42523 curveto
-212.50417 153.42523 212.41399 153.38786 212.34755 153.32143 curveto
-212.28111 153.25499 212.24374 153.16481 212.24374 153.07086 curveto
-212.24374 152.97691 212.28111 152.88673 212.34755 152.8203 curveto
-212.41399 152.75386 212.50417 152.71649 212.59811 152.71649 curveto
-212.69206 152.71649 212.78224 152.75386 212.84868 152.8203 curveto
-212.91512 152.88673 212.95248 152.97691 212.95248 153.07086 curveto closepath
- fill
-newpath 212.95248 174.3307 moveto
-212.95248 174.42465 212.91512 174.51483 212.84868 174.58127 curveto
-212.78224 174.6477 212.69206 174.68507 212.59811 174.68507 curveto
-212.50417 174.68507 212.41399 174.6477 212.34755 174.58127 curveto
-212.28111 174.51483 212.24374 174.42465 212.24374 174.3307 curveto
-212.24374 174.23676 212.28111 174.14658 212.34755 174.08014 curveto
-212.41399 174.0137 212.50417 173.97633 212.59811 173.97633 curveto
-212.69206 173.97633 212.78224 174.0137 212.84868 174.08014 curveto
-212.91512 174.14658 212.95248 174.23676 212.95248 174.3307 curveto closepath
- fill
-newpath 217.20445 46.77165 moveto
-217.20445 46.8656 217.16708 46.95578 217.10065 47.02222 curveto
-217.03421 47.08865 216.94403 47.12602 216.85008 47.12602 curveto
-216.75613 47.12602 216.66595 47.08865 216.59952 47.02222 curveto
-216.53308 46.95578 216.49571 46.8656 216.49571 46.77165 curveto
-216.49571 46.6777 216.53308 46.58752 216.59952 46.52109 curveto
-216.66595 46.45465 216.75613 46.41728 216.85008 46.41728 curveto
-216.94403 46.41728 217.03421 46.45465 217.10065 46.52109 curveto
-217.16708 46.58752 217.20445 46.6777 217.20445 46.77165 curveto closepath fill
-newpath 217.20445 68.0315 moveto
-217.20445 68.12544 217.16708 68.21562 217.10065 68.28206 curveto
-217.03421 68.3485 216.94403 68.38586 216.85008 68.38586 curveto
-216.75613 68.38586 216.66595 68.3485 216.59952 68.28206 curveto
-216.53308 68.21562 216.49571 68.12544 216.49571 68.0315 curveto
-216.49571 67.93755 216.53308 67.84737 216.59952 67.78093 curveto
-216.66595 67.7145 216.75613 67.67712 216.85008 67.67712 curveto
-216.94403 67.67712 217.03421 67.7145 217.10065 67.78093 curveto
-217.16708 67.84737 217.20445 67.93755 217.20445 68.0315 curveto closepath fill
-newpath 217.20445 89.29134 moveto
-217.20445 89.38528 217.16708 89.47546 217.10065 89.5419 curveto
-217.03421 89.60834 216.94403 89.6457 216.85008 89.6457 curveto
-216.75613 89.6457 216.66595 89.60834 216.59952 89.5419 curveto
-216.53308 89.47546 216.49571 89.38528 216.49571 89.29134 curveto
-216.49571 89.19739 216.53308 89.10721 216.59952 89.04077 curveto
-216.66595 88.97433 216.75613 88.93697 216.85008 88.93697 curveto
-216.94403 88.93697 217.03421 88.97433 217.10065 89.04077 curveto
-217.16708 89.10721 217.20445 89.19739 217.20445 89.29134 curveto closepath fill
-newpath 217.20445 131.81102 moveto
-217.20445 131.90497 217.16708 131.99515 217.10065 132.06158 curveto
-217.03421 132.12802 216.94403 132.16539 216.85008 132.16539 curveto
-216.75613 132.16539 216.66595 132.12802 216.59952 132.06158 curveto
-216.53308 131.99515 216.49571 131.90497 216.49571 131.81102 curveto
-216.49571 131.71707 216.53308 131.62689 216.59952 131.56046 curveto
-216.66595 131.49402 216.75613 131.45665 216.85008 131.45665 curveto
-216.94403 131.45665 217.03421 131.49402 217.10065 131.56046 curveto
-217.16708 131.62689 217.20445 131.71707 217.20445 131.81102 curveto closepath
- fill
-newpath 217.20445 153.07086 moveto
-217.20445 153.16481 217.16708 153.25499 217.10065 153.32143 curveto
-217.03421 153.38786 216.94403 153.42523 216.85008 153.42523 curveto
-216.75613 153.42523 216.66595 153.38786 216.59952 153.32143 curveto
-216.53308 153.25499 216.49571 153.16481 216.49571 153.07086 curveto
-216.49571 152.97691 216.53308 152.88673 216.59952 152.8203 curveto
-216.66595 152.75386 216.75613 152.71649 216.85008 152.71649 curveto
-216.94403 152.71649 217.03421 152.75386 217.10065 152.8203 curveto
-217.16708 152.88673 217.20445 152.97691 217.20445 153.07086 curveto closepath
- fill
-newpath 217.20445 174.3307 moveto
-217.20445 174.42465 217.16708 174.51483 217.10065 174.58127 curveto
-217.03421 174.6477 216.94403 174.68507 216.85008 174.68507 curveto
-216.75613 174.68507 216.66595 174.6477 216.59952 174.58127 curveto
-216.53308 174.51483 216.49571 174.42465 216.49571 174.3307 curveto
-216.49571 174.23676 216.53308 174.14658 216.59952 174.08014 curveto
-216.66595 174.0137 216.75613 173.97633 216.85008 173.97633 curveto
-216.94403 173.97633 217.03421 174.0137 217.10065 174.08014 curveto
-217.16708 174.14658 217.20445 174.23676 217.20445 174.3307 curveto closepath
- fill
-newpath 221.45642 46.77165 moveto
-221.45642 46.8656 221.41905 46.95578 221.35262 47.02222 curveto
-221.28618 47.08865 221.196 47.12602 221.10205 47.12602 curveto
-221.0081 47.12602 220.91792 47.08865 220.85149 47.02222 curveto
-220.78505 46.95578 220.74768 46.8656 220.74768 46.77165 curveto
-220.74768 46.6777 220.78505 46.58752 220.85149 46.52109 curveto
-220.91792 46.45465 221.0081 46.41728 221.10205 46.41728 curveto
-221.196 46.41728 221.28618 46.45465 221.35262 46.52109 curveto
-221.41905 46.58752 221.45642 46.6777 221.45642 46.77165 curveto closepath fill
-newpath 221.45642 68.0315 moveto
-221.45642 68.12544 221.41905 68.21562 221.35262 68.28206 curveto
-221.28618 68.3485 221.196 68.38586 221.10205 68.38586 curveto
-221.0081 68.38586 220.91792 68.3485 220.85149 68.28206 curveto
-220.78505 68.21562 220.74768 68.12544 220.74768 68.0315 curveto
-220.74768 67.93755 220.78505 67.84737 220.85149 67.78093 curveto
-220.91792 67.7145 221.0081 67.67712 221.10205 67.67712 curveto
-221.196 67.67712 221.28618 67.7145 221.35262 67.78093 curveto
-221.41905 67.84737 221.45642 67.93755 221.45642 68.0315 curveto closepath fill
-newpath 221.45642 89.29134 moveto
-221.45642 89.38528 221.41905 89.47546 221.35262 89.5419 curveto
-221.28618 89.60834 221.196 89.6457 221.10205 89.6457 curveto
-221.0081 89.6457 220.91792 89.60834 220.85149 89.5419 curveto
-220.78505 89.47546 220.74768 89.38528 220.74768 89.29134 curveto
-220.74768 89.19739 220.78505 89.10721 220.85149 89.04077 curveto
-220.91792 88.97433 221.0081 88.93697 221.10205 88.93697 curveto
-221.196 88.93697 221.28618 88.97433 221.35262 89.04077 curveto
-221.41905 89.10721 221.45642 89.19739 221.45642 89.29134 curveto closepath fill
-newpath 221.45642 131.81102 moveto
-221.45642 131.90497 221.41905 131.99515 221.35262 132.06158 curveto
-221.28618 132.12802 221.196 132.16539 221.10205 132.16539 curveto
-221.0081 132.16539 220.91792 132.12802 220.85149 132.06158 curveto
-220.78505 131.99515 220.74768 131.90497 220.74768 131.81102 curveto
-220.74768 131.71707 220.78505 131.62689 220.85149 131.56046 curveto
-220.91792 131.49402 221.0081 131.45665 221.10205 131.45665 curveto
-221.196 131.45665 221.28618 131.49402 221.35262 131.56046 curveto
-221.41905 131.62689 221.45642 131.71707 221.45642 131.81102 curveto closepath
- fill
-newpath 221.45642 153.07086 moveto
-221.45642 153.16481 221.41905 153.25499 221.35262 153.32143 curveto
-221.28618 153.38786 221.196 153.42523 221.10205 153.42523 curveto
-221.0081 153.42523 220.91792 153.38786 220.85149 153.32143 curveto
-220.78505 153.25499 220.74768 153.16481 220.74768 153.07086 curveto
-220.74768 152.97691 220.78505 152.88673 220.85149 152.8203 curveto
-220.91792 152.75386 221.0081 152.71649 221.10205 152.71649 curveto
-221.196 152.71649 221.28618 152.75386 221.35262 152.8203 curveto
-221.41905 152.88673 221.45642 152.97691 221.45642 153.07086 curveto closepath
- fill
-newpath 221.45642 174.3307 moveto
-221.45642 174.42465 221.41905 174.51483 221.35262 174.58127 curveto
-221.28618 174.6477 221.196 174.68507 221.10205 174.68507 curveto
-221.0081 174.68507 220.91792 174.6477 220.85149 174.58127 curveto
-220.78505 174.51483 220.74768 174.42465 220.74768 174.3307 curveto
-220.74768 174.23676 220.78505 174.14658 220.85149 174.08014 curveto
-220.91792 174.0137 221.0081 173.97633 221.10205 173.97633 curveto
-221.196 173.97633 221.28618 174.0137 221.35262 174.08014 curveto
-221.41905 174.14658 221.45642 174.23676 221.45642 174.3307 curveto closepath
- fill
-newpath 225.70839 46.77165 moveto
-225.70839 46.8656 225.67102 46.95578 225.60458 47.02222 curveto
-225.53815 47.08865 225.44797 47.12602 225.35402 47.12602 curveto
-225.26007 47.12602 225.16989 47.08865 225.10345 47.02222 curveto
-225.03702 46.95578 224.99965 46.8656 224.99965 46.77165 curveto
-224.99965 46.6777 225.03702 46.58752 225.10345 46.52109 curveto
-225.16989 46.45465 225.26007 46.41728 225.35402 46.41728 curveto
-225.44797 46.41728 225.53815 46.45465 225.60458 46.52109 curveto
-225.67102 46.58752 225.70839 46.6777 225.70839 46.77165 curveto closepath fill
-newpath 225.70839 68.0315 moveto
-225.70839 68.12544 225.67102 68.21562 225.60458 68.28206 curveto
-225.53815 68.3485 225.44797 68.38586 225.35402 68.38586 curveto
-225.26007 68.38586 225.16989 68.3485 225.10345 68.28206 curveto
-225.03702 68.21562 224.99965 68.12544 224.99965 68.0315 curveto
-224.99965 67.93755 225.03702 67.84737 225.10345 67.78093 curveto
-225.16989 67.7145 225.26007 67.67712 225.35402 67.67712 curveto
-225.44797 67.67712 225.53815 67.7145 225.60458 67.78093 curveto
-225.67102 67.84737 225.70839 67.93755 225.70839 68.0315 curveto closepath fill
-newpath 225.70839 89.29134 moveto
-225.70839 89.38528 225.67102 89.47546 225.60458 89.5419 curveto
-225.53815 89.60834 225.44797 89.6457 225.35402 89.6457 curveto
-225.26007 89.6457 225.16989 89.60834 225.10345 89.5419 curveto
-225.03702 89.47546 224.99965 89.38528 224.99965 89.29134 curveto
-224.99965 89.19739 225.03702 89.10721 225.10345 89.04077 curveto
-225.16989 88.97433 225.26007 88.93697 225.35402 88.93697 curveto
-225.44797 88.93697 225.53815 88.97433 225.60458 89.04077 curveto
-225.67102 89.10721 225.70839 89.19739 225.70839 89.29134 curveto closepath fill
-newpath 225.70839 131.81102 moveto
-225.70839 131.90497 225.67102 131.99515 225.60458 132.06158 curveto
-225.53815 132.12802 225.44797 132.16539 225.35402 132.16539 curveto
-225.26007 132.16539 225.16989 132.12802 225.10345 132.06158 curveto
-225.03702 131.99515 224.99965 131.90497 224.99965 131.81102 curveto
-224.99965 131.71707 225.03702 131.62689 225.10345 131.56046 curveto
-225.16989 131.49402 225.26007 131.45665 225.35402 131.45665 curveto
-225.44797 131.45665 225.53815 131.49402 225.60458 131.56046 curveto
-225.67102 131.62689 225.70839 131.71707 225.70839 131.81102 curveto closepath
- fill
-newpath 225.70839 153.07086 moveto
-225.70839 153.16481 225.67102 153.25499 225.60458 153.32143 curveto
-225.53815 153.38786 225.44797 153.42523 225.35402 153.42523 curveto
-225.26007 153.42523 225.16989 153.38786 225.10345 153.32143 curveto
-225.03702 153.25499 224.99965 153.16481 224.99965 153.07086 curveto
-224.99965 152.97691 225.03702 152.88673 225.10345 152.8203 curveto
-225.16989 152.75386 225.26007 152.71649 225.35402 152.71649 curveto
-225.44797 152.71649 225.53815 152.75386 225.60458 152.8203 curveto
-225.67102 152.88673 225.70839 152.97691 225.70839 153.07086 curveto closepath
- fill
-newpath 225.70839 174.3307 moveto
-225.70839 174.42465 225.67102 174.51483 225.60458 174.58127 curveto
-225.53815 174.6477 225.44797 174.68507 225.35402 174.68507 curveto
-225.26007 174.68507 225.16989 174.6477 225.10345 174.58127 curveto
-225.03702 174.51483 224.99965 174.42465 224.99965 174.3307 curveto
-224.99965 174.23676 225.03702 174.14658 225.10345 174.08014 curveto
-225.16989 174.0137 225.26007 173.97633 225.35402 173.97633 curveto
-225.44797 173.97633 225.53815 174.0137 225.60458 174.08014 curveto
-225.67102 174.14658 225.70839 174.23676 225.70839 174.3307 curveto closepath
- fill
-newpath 229.96036 46.77165 moveto
-229.96036 46.8656 229.92299 46.95578 229.85655 47.02222 curveto
-229.79012 47.08865 229.69994 47.12602 229.60599 47.12602 curveto
-229.51204 47.12602 229.42186 47.08865 229.35542 47.02222 curveto
-229.28899 46.95578 229.25162 46.8656 229.25162 46.77165 curveto
-229.25162 46.6777 229.28899 46.58752 229.35542 46.52109 curveto
-229.42186 46.45465 229.51204 46.41728 229.60599 46.41728 curveto
-229.69994 46.41728 229.79012 46.45465 229.85655 46.52109 curveto
-229.92299 46.58752 229.96036 46.6777 229.96036 46.77165 curveto closepath fill
-newpath 229.96036 68.0315 moveto
-229.96036 68.12544 229.92299 68.21562 229.85655 68.28206 curveto
-229.79012 68.3485 229.69994 68.38586 229.60599 68.38586 curveto
-229.51204 68.38586 229.42186 68.3485 229.35542 68.28206 curveto
-229.28899 68.21562 229.25162 68.12544 229.25162 68.0315 curveto
-229.25162 67.93755 229.28899 67.84737 229.35542 67.78093 curveto
-229.42186 67.7145 229.51204 67.67712 229.60599 67.67712 curveto
-229.69994 67.67712 229.79012 67.7145 229.85655 67.78093 curveto
-229.92299 67.84737 229.96036 67.93755 229.96036 68.0315 curveto closepath fill
-newpath 229.96036 89.29134 moveto
-229.96036 89.38528 229.92299 89.47546 229.85655 89.5419 curveto
-229.79012 89.60834 229.69994 89.6457 229.60599 89.6457 curveto
-229.51204 89.6457 229.42186 89.60834 229.35542 89.5419 curveto
-229.28899 89.47546 229.25162 89.38528 229.25162 89.29134 curveto
-229.25162 89.19739 229.28899 89.10721 229.35542 89.04077 curveto
-229.42186 88.97433 229.51204 88.93697 229.60599 88.93697 curveto
-229.69994 88.93697 229.79012 88.97433 229.85655 89.04077 curveto
-229.92299 89.10721 229.96036 89.19739 229.96036 89.29134 curveto closepath fill
-newpath 229.96036 131.81102 moveto
-229.96036 131.90497 229.92299 131.99515 229.85655 132.06158 curveto
-229.79012 132.12802 229.69994 132.16539 229.60599 132.16539 curveto
-229.51204 132.16539 229.42186 132.12802 229.35542 132.06158 curveto
-229.28899 131.99515 229.25162 131.90497 229.25162 131.81102 curveto
-229.25162 131.71707 229.28899 131.62689 229.35542 131.56046 curveto
-229.42186 131.49402 229.51204 131.45665 229.60599 131.45665 curveto
-229.69994 131.45665 229.79012 131.49402 229.85655 131.56046 curveto
-229.92299 131.62689 229.96036 131.71707 229.96036 131.81102 curveto closepath
- fill
-newpath 229.96036 153.07086 moveto
-229.96036 153.16481 229.92299 153.25499 229.85655 153.32143 curveto
-229.79012 153.38786 229.69994 153.42523 229.60599 153.42523 curveto
-229.51204 153.42523 229.42186 153.38786 229.35542 153.32143 curveto
-229.28899 153.25499 229.25162 153.16481 229.25162 153.07086 curveto
-229.25162 152.97691 229.28899 152.88673 229.35542 152.8203 curveto
-229.42186 152.75386 229.51204 152.71649 229.60599 152.71649 curveto
-229.69994 152.71649 229.79012 152.75386 229.85655 152.8203 curveto
-229.92299 152.88673 229.96036 152.97691 229.96036 153.07086 curveto closepath
- fill
-newpath 229.96036 174.3307 moveto
-229.96036 174.42465 229.92299 174.51483 229.85655 174.58127 curveto
-229.79012 174.6477 229.69994 174.68507 229.60599 174.68507 curveto
-229.51204 174.68507 229.42186 174.6477 229.35542 174.58127 curveto
-229.28899 174.51483 229.25162 174.42465 229.25162 174.3307 curveto
-229.25162 174.23676 229.28899 174.14658 229.35542 174.08014 curveto
-229.42186 174.0137 229.51204 173.97633 229.60599 173.97633 curveto
-229.69994 173.97633 229.79012 174.0137 229.85655 174.08014 curveto
-229.92299 174.14658 229.96036 174.23676 229.96036 174.3307 curveto closepath
- fill
-newpath 234.21233 46.77165 moveto
-234.21233 46.8656 234.17496 46.95578 234.10852 47.02222 curveto
-234.04208 47.08865 233.9519 47.12602 233.85796 47.12602 curveto
-233.764 47.12602 233.67383 47.08865 233.60739 47.02222 curveto
-233.54095 46.95578 233.50359 46.8656 233.50359 46.77165 curveto
-233.50359 46.6777 233.54095 46.58752 233.60739 46.52109 curveto
-233.67383 46.45465 233.764 46.41728 233.85796 46.41728 curveto
-233.9519 46.41728 234.04208 46.45465 234.10852 46.52109 curveto
-234.17496 46.58752 234.21233 46.6777 234.21233 46.77165 curveto closepath fill
-newpath 234.21233 68.0315 moveto
-234.21233 68.12544 234.17496 68.21562 234.10852 68.28206 curveto
-234.04208 68.3485 233.9519 68.38586 233.85796 68.38586 curveto
-233.764 68.38586 233.67383 68.3485 233.60739 68.28206 curveto
-233.54095 68.21562 233.50359 68.12544 233.50359 68.0315 curveto
-233.50359 67.93755 233.54095 67.84737 233.60739 67.78093 curveto
-233.67383 67.7145 233.764 67.67712 233.85796 67.67712 curveto
-233.9519 67.67712 234.04208 67.7145 234.10852 67.78093 curveto
-234.17496 67.84737 234.21233 67.93755 234.21233 68.0315 curveto closepath fill
-newpath 234.21233 89.29134 moveto
-234.21233 89.38528 234.17496 89.47546 234.10852 89.5419 curveto
-234.04208 89.60834 233.9519 89.6457 233.85796 89.6457 curveto
-233.764 89.6457 233.67383 89.60834 233.60739 89.5419 curveto
-233.54095 89.47546 233.50359 89.38528 233.50359 89.29134 curveto
-233.50359 89.19739 233.54095 89.10721 233.60739 89.04077 curveto
-233.67383 88.97433 233.764 88.93697 233.85796 88.93697 curveto
-233.9519 88.93697 234.04208 88.97433 234.10852 89.04077 curveto
-234.17496 89.10721 234.21233 89.19739 234.21233 89.29134 curveto closepath fill
-newpath 234.21233 131.81102 moveto
-234.21233 131.90497 234.17496 131.99515 234.10852 132.06158 curveto
-234.04208 132.12802 233.9519 132.16539 233.85796 132.16539 curveto
-233.764 132.16539 233.67383 132.12802 233.60739 132.06158 curveto
-233.54095 131.99515 233.50359 131.90497 233.50359 131.81102 curveto
-233.50359 131.71707 233.54095 131.62689 233.60739 131.56046 curveto
-233.67383 131.49402 233.764 131.45665 233.85796 131.45665 curveto
-233.9519 131.45665 234.04208 131.49402 234.10852 131.56046 curveto
-234.17496 131.62689 234.21233 131.71707 234.21233 131.81102 curveto closepath
- fill
-newpath 234.21233 153.07086 moveto
-234.21233 153.16481 234.17496 153.25499 234.10852 153.32143 curveto
-234.04208 153.38786 233.9519 153.42523 233.85796 153.42523 curveto
-233.764 153.42523 233.67383 153.38786 233.60739 153.32143 curveto
-233.54095 153.25499 233.50359 153.16481 233.50359 153.07086 curveto
-233.50359 152.97691 233.54095 152.88673 233.60739 152.8203 curveto
-233.67383 152.75386 233.764 152.71649 233.85796 152.71649 curveto
-233.9519 152.71649 234.04208 152.75386 234.10852 152.8203 curveto
-234.17496 152.88673 234.21233 152.97691 234.21233 153.07086 curveto closepath
- fill
-newpath 234.21233 174.3307 moveto
-234.21233 174.42465 234.17496 174.51483 234.10852 174.58127 curveto
-234.04208 174.6477 233.9519 174.68507 233.85796 174.68507 curveto
-233.764 174.68507 233.67383 174.6477 233.60739 174.58127 curveto
-233.54095 174.51483 233.50359 174.42465 233.50359 174.3307 curveto
-233.50359 174.23676 233.54095 174.14658 233.60739 174.08014 curveto
-233.67383 174.0137 233.764 173.97633 233.85796 173.97633 curveto
-233.9519 173.97633 234.04208 174.0137 234.10852 174.08014 curveto
-234.17496 174.14658 234.21233 174.23676 234.21233 174.3307 curveto closepath
- fill
-newpath 238.4643 46.77165 moveto
-238.4643 46.8656 238.42693 46.95578 238.36049 47.02222 curveto
-238.29405 47.08865 238.20387 47.12602 238.10992 47.12602 curveto
-238.01598 47.12602 237.9258 47.08865 237.85936 47.02222 curveto
-237.79292 46.95578 237.75555 46.8656 237.75555 46.77165 curveto
-237.75555 46.6777 237.79292 46.58752 237.85936 46.52109 curveto
-237.9258 46.45465 238.01598 46.41728 238.10992 46.41728 curveto
-238.20387 46.41728 238.29405 46.45465 238.36049 46.52109 curveto
-238.42693 46.58752 238.4643 46.6777 238.4643 46.77165 curveto closepath fill
-newpath 238.4643 68.0315 moveto
-238.4643 68.12544 238.42693 68.21562 238.36049 68.28206 curveto
-238.29405 68.3485 238.20387 68.38586 238.10992 68.38586 curveto
-238.01598 68.38586 237.9258 68.3485 237.85936 68.28206 curveto
-237.79292 68.21562 237.75555 68.12544 237.75555 68.0315 curveto
-237.75555 67.93755 237.79292 67.84737 237.85936 67.78093 curveto
-237.9258 67.7145 238.01598 67.67712 238.10992 67.67712 curveto
-238.20387 67.67712 238.29405 67.7145 238.36049 67.78093 curveto
-238.42693 67.84737 238.4643 67.93755 238.4643 68.0315 curveto closepath fill
-newpath 238.4643 89.29134 moveto
-238.4643 89.38528 238.42693 89.47546 238.36049 89.5419 curveto
-238.29405 89.60834 238.20387 89.6457 238.10992 89.6457 curveto
-238.01598 89.6457 237.9258 89.60834 237.85936 89.5419 curveto
-237.79292 89.47546 237.75555 89.38528 237.75555 89.29134 curveto
-237.75555 89.19739 237.79292 89.10721 237.85936 89.04077 curveto
-237.9258 88.97433 238.01598 88.93697 238.10992 88.93697 curveto
-238.20387 88.93697 238.29405 88.97433 238.36049 89.04077 curveto
-238.42693 89.10721 238.4643 89.19739 238.4643 89.29134 curveto closepath fill
-newpath 238.4643 131.81102 moveto
-238.4643 131.90497 238.42693 131.99515 238.36049 132.06158 curveto
-238.29405 132.12802 238.20387 132.16539 238.10992 132.16539 curveto
-238.01598 132.16539 237.9258 132.12802 237.85936 132.06158 curveto
-237.79292 131.99515 237.75555 131.90497 237.75555 131.81102 curveto
-237.75555 131.71707 237.79292 131.62689 237.85936 131.56046 curveto
-237.9258 131.49402 238.01598 131.45665 238.10992 131.45665 curveto
-238.20387 131.45665 238.29405 131.49402 238.36049 131.56046 curveto
-238.42693 131.62689 238.4643 131.71707 238.4643 131.81102 curveto closepath
- fill
-newpath 238.4643 153.07086 moveto
-238.4643 153.16481 238.42693 153.25499 238.36049 153.32143 curveto
-238.29405 153.38786 238.20387 153.42523 238.10992 153.42523 curveto
-238.01598 153.42523 237.9258 153.38786 237.85936 153.32143 curveto
-237.79292 153.25499 237.75555 153.16481 237.75555 153.07086 curveto
-237.75555 152.97691 237.79292 152.88673 237.85936 152.8203 curveto
-237.9258 152.75386 238.01598 152.71649 238.10992 152.71649 curveto
-238.20387 152.71649 238.29405 152.75386 238.36049 152.8203 curveto
-238.42693 152.88673 238.4643 152.97691 238.4643 153.07086 curveto closepath
- fill
-newpath 238.4643 174.3307 moveto
-238.4643 174.42465 238.42693 174.51483 238.36049 174.58127 curveto
-238.29405 174.6477 238.20387 174.68507 238.10992 174.68507 curveto
-238.01598 174.68507 237.9258 174.6477 237.85936 174.58127 curveto
-237.79292 174.51483 237.75555 174.42465 237.75555 174.3307 curveto
-237.75555 174.23676 237.79292 174.14658 237.85936 174.08014 curveto
-237.9258 174.0137 238.01598 173.97633 238.10992 173.97633 curveto
-238.20387 173.97633 238.29405 174.0137 238.36049 174.08014 curveto
-238.42693 174.14658 238.4643 174.23676 238.4643 174.3307 curveto closepath fill
-newpath 242.71626 46.77165 moveto
-242.71626 46.8656 242.6789 46.95578 242.61246 47.02222 curveto
-242.54602 47.08865 242.45584 47.12602 242.3619 47.12602 curveto
-242.26794 47.12602 242.17776 47.08865 242.11133 47.02222 curveto
-242.04489 46.95578 242.00752 46.8656 242.00752 46.77165 curveto
-242.00752 46.6777 242.04489 46.58752 242.11133 46.52109 curveto
-242.17776 46.45465 242.26794 46.41728 242.3619 46.41728 curveto
-242.45584 46.41728 242.54602 46.45465 242.61246 46.52109 curveto
-242.6789 46.58752 242.71626 46.6777 242.71626 46.77165 curveto closepath fill
-newpath 242.71626 68.0315 moveto
-242.71626 68.12544 242.6789 68.21562 242.61246 68.28206 curveto
-242.54602 68.3485 242.45584 68.38586 242.3619 68.38586 curveto
-242.26794 68.38586 242.17776 68.3485 242.11133 68.28206 curveto
-242.04489 68.21562 242.00752 68.12544 242.00752 68.0315 curveto
-242.00752 67.93755 242.04489 67.84737 242.11133 67.78093 curveto
-242.17776 67.7145 242.26794 67.67712 242.3619 67.67712 curveto
-242.45584 67.67712 242.54602 67.7145 242.61246 67.78093 curveto
-242.6789 67.84737 242.71626 67.93755 242.71626 68.0315 curveto closepath fill
-newpath 242.71626 89.29134 moveto
-242.71626 89.38528 242.6789 89.47546 242.61246 89.5419 curveto
-242.54602 89.60834 242.45584 89.6457 242.3619 89.6457 curveto
-242.26794 89.6457 242.17776 89.60834 242.11133 89.5419 curveto
-242.04489 89.47546 242.00752 89.38528 242.00752 89.29134 curveto
-242.00752 89.19739 242.04489 89.10721 242.11133 89.04077 curveto
-242.17776 88.97433 242.26794 88.93697 242.3619 88.93697 curveto
-242.45584 88.93697 242.54602 88.97433 242.61246 89.04077 curveto
-242.6789 89.10721 242.71626 89.19739 242.71626 89.29134 curveto closepath fill
-newpath 242.71626 131.81102 moveto
-242.71626 131.90497 242.6789 131.99515 242.61246 132.06158 curveto
-242.54602 132.12802 242.45584 132.16539 242.3619 132.16539 curveto
-242.26794 132.16539 242.17776 132.12802 242.11133 132.06158 curveto
-242.04489 131.99515 242.00752 131.90497 242.00752 131.81102 curveto
-242.00752 131.71707 242.04489 131.62689 242.11133 131.56046 curveto
-242.17776 131.49402 242.26794 131.45665 242.3619 131.45665 curveto
-242.45584 131.45665 242.54602 131.49402 242.61246 131.56046 curveto
-242.6789 131.62689 242.71626 131.71707 242.71626 131.81102 curveto closepath
- fill
-newpath 242.71626 153.07086 moveto
-242.71626 153.16481 242.6789 153.25499 242.61246 153.32143 curveto
-242.54602 153.38786 242.45584 153.42523 242.3619 153.42523 curveto
-242.26794 153.42523 242.17776 153.38786 242.11133 153.32143 curveto
-242.04489 153.25499 242.00752 153.16481 242.00752 153.07086 curveto
-242.00752 152.97691 242.04489 152.88673 242.11133 152.8203 curveto
-242.17776 152.75386 242.26794 152.71649 242.3619 152.71649 curveto
-242.45584 152.71649 242.54602 152.75386 242.61246 152.8203 curveto
-242.6789 152.88673 242.71626 152.97691 242.71626 153.07086 curveto closepath
- fill
-newpath 242.71626 174.3307 moveto
-242.71626 174.42465 242.6789 174.51483 242.61246 174.58127 curveto
-242.54602 174.6477 242.45584 174.68507 242.3619 174.68507 curveto
-242.26794 174.68507 242.17776 174.6477 242.11133 174.58127 curveto
-242.04489 174.51483 242.00752 174.42465 242.00752 174.3307 curveto
-242.00752 174.23676 242.04489 174.14658 242.11133 174.08014 curveto
-242.17776 174.0137 242.26794 173.97633 242.3619 173.97633 curveto
-242.45584 173.97633 242.54602 174.0137 242.61246 174.08014 curveto
-242.6789 174.14658 242.71626 174.23676 242.71626 174.3307 curveto closepath
- fill
-newpath 246.96823 46.77165 moveto
-246.96823 46.8656 246.93086 46.95578 246.86443 47.02222 curveto
-246.79799 47.08865 246.70781 47.12602 246.61386 47.12602 curveto
-246.51991 47.12602 246.42973 47.08865 246.3633 47.02222 curveto
-246.29686 46.95578 246.25949 46.8656 246.25949 46.77165 curveto
-246.25949 46.6777 246.29686 46.58752 246.3633 46.52109 curveto
-246.42973 46.45465 246.51991 46.41728 246.61386 46.41728 curveto
-246.70781 46.41728 246.79799 46.45465 246.86443 46.52109 curveto
-246.93086 46.58752 246.96823 46.6777 246.96823 46.77165 curveto closepath fill
-newpath 246.96823 68.0315 moveto
-246.96823 68.12544 246.93086 68.21562 246.86443 68.28206 curveto
-246.79799 68.3485 246.70781 68.38586 246.61386 68.38586 curveto
-246.51991 68.38586 246.42973 68.3485 246.3633 68.28206 curveto
-246.29686 68.21562 246.25949 68.12544 246.25949 68.0315 curveto
-246.25949 67.93755 246.29686 67.84737 246.3633 67.78093 curveto
-246.42973 67.7145 246.51991 67.67712 246.61386 67.67712 curveto
-246.70781 67.67712 246.79799 67.7145 246.86443 67.78093 curveto
-246.93086 67.84737 246.96823 67.93755 246.96823 68.0315 curveto closepath fill
-newpath 246.96823 89.29134 moveto
-246.96823 89.38528 246.93086 89.47546 246.86443 89.5419 curveto
-246.79799 89.60834 246.70781 89.6457 246.61386 89.6457 curveto
-246.51991 89.6457 246.42973 89.60834 246.3633 89.5419 curveto
-246.29686 89.47546 246.25949 89.38528 246.25949 89.29134 curveto
-246.25949 89.19739 246.29686 89.10721 246.3633 89.04077 curveto
-246.42973 88.97433 246.51991 88.93697 246.61386 88.93697 curveto
-246.70781 88.93697 246.79799 88.97433 246.86443 89.04077 curveto
-246.93086 89.10721 246.96823 89.19739 246.96823 89.29134 curveto closepath fill
-newpath 246.96823 131.81102 moveto
-246.96823 131.90497 246.93086 131.99515 246.86443 132.06158 curveto
-246.79799 132.12802 246.70781 132.16539 246.61386 132.16539 curveto
-246.51991 132.16539 246.42973 132.12802 246.3633 132.06158 curveto
-246.29686 131.99515 246.25949 131.90497 246.25949 131.81102 curveto
-246.25949 131.71707 246.29686 131.62689 246.3633 131.56046 curveto
-246.42973 131.49402 246.51991 131.45665 246.61386 131.45665 curveto
-246.70781 131.45665 246.79799 131.49402 246.86443 131.56046 curveto
-246.93086 131.62689 246.96823 131.71707 246.96823 131.81102 curveto closepath
- fill
-newpath 246.96823 153.07086 moveto
-246.96823 153.16481 246.93086 153.25499 246.86443 153.32143 curveto
-246.79799 153.38786 246.70781 153.42523 246.61386 153.42523 curveto
-246.51991 153.42523 246.42973 153.38786 246.3633 153.32143 curveto
-246.29686 153.25499 246.25949 153.16481 246.25949 153.07086 curveto
-246.25949 152.97691 246.29686 152.88673 246.3633 152.8203 curveto
-246.42973 152.75386 246.51991 152.71649 246.61386 152.71649 curveto
-246.70781 152.71649 246.79799 152.75386 246.86443 152.8203 curveto
-246.93086 152.88673 246.96823 152.97691 246.96823 153.07086 curveto closepath
- fill
-newpath 246.96823 174.3307 moveto
-246.96823 174.42465 246.93086 174.51483 246.86443 174.58127 curveto
-246.79799 174.6477 246.70781 174.68507 246.61386 174.68507 curveto
-246.51991 174.68507 246.42973 174.6477 246.3633 174.58127 curveto
-246.29686 174.51483 246.25949 174.42465 246.25949 174.3307 curveto
-246.25949 174.23676 246.29686 174.14658 246.3633 174.08014 curveto
-246.42973 174.0137 246.51991 173.97633 246.61386 173.97633 curveto
-246.70781 173.97633 246.79799 174.0137 246.86443 174.08014 curveto
-246.93086 174.14658 246.96823 174.23676 246.96823 174.3307 curveto closepath
- fill
-newpath 251.2202 46.77165 moveto
-251.2202 46.8656 251.18283 46.95578 251.1164 47.02222 curveto
-251.04996 47.08865 250.95978 47.12602 250.86583 47.12602 curveto
-250.77188 47.12602 250.6817 47.08865 250.61526 47.02222 curveto
-250.54883 46.95578 250.51146 46.8656 250.51146 46.77165 curveto
-250.51146 46.6777 250.54883 46.58752 250.61526 46.52109 curveto
-250.6817 46.45465 250.77188 46.41728 250.86583 46.41728 curveto
-250.95978 46.41728 251.04996 46.45465 251.1164 46.52109 curveto
-251.18283 46.58752 251.2202 46.6777 251.2202 46.77165 curveto closepath fill
-newpath 251.2202 68.0315 moveto
-251.2202 68.12544 251.18283 68.21562 251.1164 68.28206 curveto
-251.04996 68.3485 250.95978 68.38586 250.86583 68.38586 curveto
-250.77188 68.38586 250.6817 68.3485 250.61526 68.28206 curveto
-250.54883 68.21562 250.51146 68.12544 250.51146 68.0315 curveto
-250.51146 67.93755 250.54883 67.84737 250.61526 67.78093 curveto
-250.6817 67.7145 250.77188 67.67712 250.86583 67.67712 curveto
-250.95978 67.67712 251.04996 67.7145 251.1164 67.78093 curveto
-251.18283 67.84737 251.2202 67.93755 251.2202 68.0315 curveto closepath fill
-newpath 251.2202 89.29134 moveto
-251.2202 89.38528 251.18283 89.47546 251.1164 89.5419 curveto
-251.04996 89.60834 250.95978 89.6457 250.86583 89.6457 curveto
-250.77188 89.6457 250.6817 89.60834 250.61526 89.5419 curveto
-250.54883 89.47546 250.51146 89.38528 250.51146 89.29134 curveto
-250.51146 89.19739 250.54883 89.10721 250.61526 89.04077 curveto
-250.6817 88.97433 250.77188 88.93697 250.86583 88.93697 curveto
-250.95978 88.93697 251.04996 88.97433 251.1164 89.04077 curveto
-251.18283 89.10721 251.2202 89.19739 251.2202 89.29134 curveto closepath fill
-newpath 251.2202 131.81102 moveto
-251.2202 131.90497 251.18283 131.99515 251.1164 132.06158 curveto
-251.04996 132.12802 250.95978 132.16539 250.86583 132.16539 curveto
-250.77188 132.16539 250.6817 132.12802 250.61526 132.06158 curveto
-250.54883 131.99515 250.51146 131.90497 250.51146 131.81102 curveto
-250.51146 131.71707 250.54883 131.62689 250.61526 131.56046 curveto
-250.6817 131.49402 250.77188 131.45665 250.86583 131.45665 curveto
-250.95978 131.45665 251.04996 131.49402 251.1164 131.56046 curveto
-251.18283 131.62689 251.2202 131.71707 251.2202 131.81102 curveto closepath
- fill
-newpath 251.2202 153.07086 moveto
-251.2202 153.16481 251.18283 153.25499 251.1164 153.32143 curveto
-251.04996 153.38786 250.95978 153.42523 250.86583 153.42523 curveto
-250.77188 153.42523 250.6817 153.38786 250.61526 153.32143 curveto
-250.54883 153.25499 250.51146 153.16481 250.51146 153.07086 curveto
-250.51146 152.97691 250.54883 152.88673 250.61526 152.8203 curveto
-250.6817 152.75386 250.77188 152.71649 250.86583 152.71649 curveto
-250.95978 152.71649 251.04996 152.75386 251.1164 152.8203 curveto
-251.18283 152.88673 251.2202 152.97691 251.2202 153.07086 curveto closepath
- fill
-newpath 251.2202 174.3307 moveto
-251.2202 174.42465 251.18283 174.51483 251.1164 174.58127 curveto
-251.04996 174.6477 250.95978 174.68507 250.86583 174.68507 curveto
-250.77188 174.68507 250.6817 174.6477 250.61526 174.58127 curveto
-250.54883 174.51483 250.51146 174.42465 250.51146 174.3307 curveto
-250.51146 174.23676 250.54883 174.14658 250.61526 174.08014 curveto
-250.6817 174.0137 250.77188 173.97633 250.86583 173.97633 curveto
-250.95978 173.97633 251.04996 174.0137 251.1164 174.08014 curveto
-251.18283 174.14658 251.2202 174.23676 251.2202 174.3307 curveto closepath fill
-newpath 255.47217 46.77165 moveto
-255.47217 46.8656 255.4348 46.95578 255.36836 47.02222 curveto
-255.30193 47.08865 255.21175 47.12602 255.1178 47.12602 curveto
-255.02385 47.12602 254.93367 47.08865 254.86723 47.02222 curveto
-254.8008 46.95578 254.76343 46.8656 254.76343 46.77165 curveto
-254.76343 46.6777 254.8008 46.58752 254.86723 46.52109 curveto
-254.93367 46.45465 255.02385 46.41728 255.1178 46.41728 curveto
-255.21175 46.41728 255.30193 46.45465 255.36836 46.52109 curveto
-255.4348 46.58752 255.47217 46.6777 255.47217 46.77165 curveto closepath fill
-newpath 255.47217 68.0315 moveto
-255.47217 68.12544 255.4348 68.21562 255.36836 68.28206 curveto
-255.30193 68.3485 255.21175 68.38586 255.1178 68.38586 curveto
-255.02385 68.38586 254.93367 68.3485 254.86723 68.28206 curveto
-254.8008 68.21562 254.76343 68.12544 254.76343 68.0315 curveto
-254.76343 67.93755 254.8008 67.84737 254.86723 67.78093 curveto
-254.93367 67.7145 255.02385 67.67712 255.1178 67.67712 curveto
-255.21175 67.67712 255.30193 67.7145 255.36836 67.78093 curveto
-255.4348 67.84737 255.47217 67.93755 255.47217 68.0315 curveto closepath fill
-newpath 255.47217 89.29134 moveto
-255.47217 89.38528 255.4348 89.47546 255.36836 89.5419 curveto
-255.30193 89.60834 255.21175 89.6457 255.1178 89.6457 curveto
-255.02385 89.6457 254.93367 89.60834 254.86723 89.5419 curveto
-254.8008 89.47546 254.76343 89.38528 254.76343 89.29134 curveto
-254.76343 89.19739 254.8008 89.10721 254.86723 89.04077 curveto
-254.93367 88.97433 255.02385 88.93697 255.1178 88.93697 curveto
-255.21175 88.93697 255.30193 88.97433 255.36836 89.04077 curveto
-255.4348 89.10721 255.47217 89.19739 255.47217 89.29134 curveto closepath fill
-newpath 255.47217 131.81102 moveto
-255.47217 131.90497 255.4348 131.99515 255.36836 132.06158 curveto
-255.30193 132.12802 255.21175 132.16539 255.1178 132.16539 curveto
-255.02385 132.16539 254.93367 132.12802 254.86723 132.06158 curveto
-254.8008 131.99515 254.76343 131.90497 254.76343 131.81102 curveto
-254.76343 131.71707 254.8008 131.62689 254.86723 131.56046 curveto
-254.93367 131.49402 255.02385 131.45665 255.1178 131.45665 curveto
-255.21175 131.45665 255.30193 131.49402 255.36836 131.56046 curveto
-255.4348 131.62689 255.47217 131.71707 255.47217 131.81102 curveto closepath
- fill
-newpath 255.47217 153.07086 moveto
-255.47217 153.16481 255.4348 153.25499 255.36836 153.32143 curveto
-255.30193 153.38786 255.21175 153.42523 255.1178 153.42523 curveto
-255.02385 153.42523 254.93367 153.38786 254.86723 153.32143 curveto
-254.8008 153.25499 254.76343 153.16481 254.76343 153.07086 curveto
-254.76343 152.97691 254.8008 152.88673 254.86723 152.8203 curveto
-254.93367 152.75386 255.02385 152.71649 255.1178 152.71649 curveto
-255.21175 152.71649 255.30193 152.75386 255.36836 152.8203 curveto
-255.4348 152.88673 255.47217 152.97691 255.47217 153.07086 curveto closepath
- fill
-newpath 255.47217 174.3307 moveto
-255.47217 174.42465 255.4348 174.51483 255.36836 174.58127 curveto
-255.30193 174.6477 255.21175 174.68507 255.1178 174.68507 curveto
-255.02385 174.68507 254.93367 174.6477 254.86723 174.58127 curveto
-254.8008 174.51483 254.76343 174.42465 254.76343 174.3307 curveto
-254.76343 174.23676 254.8008 174.14658 254.86723 174.08014 curveto
-254.93367 174.0137 255.02385 173.97633 255.1178 173.97633 curveto
-255.21175 173.97633 255.30193 174.0137 255.36836 174.08014 curveto
-255.4348 174.14658 255.47217 174.23676 255.47217 174.3307 curveto closepath
- fill
-newpath 259.72414 46.77165 moveto
-259.72414 46.8656 259.68677 46.95578 259.62033 47.02222 curveto
-259.5539 47.08865 259.46371 47.12602 259.36977 47.12602 curveto
-259.27582 47.12602 259.18564 47.08865 259.1192 47.02222 curveto
-259.05276 46.95578 259.0154 46.8656 259.0154 46.77165 curveto
-259.0154 46.6777 259.05276 46.58752 259.1192 46.52109 curveto
-259.18564 46.45465 259.27582 46.41728 259.36977 46.41728 curveto
-259.46371 46.41728 259.5539 46.45465 259.62033 46.52109 curveto
-259.68677 46.58752 259.72414 46.6777 259.72414 46.77165 curveto closepath fill
-newpath 259.72414 68.0315 moveto
-259.72414 68.12544 259.68677 68.21562 259.62033 68.28206 curveto
-259.5539 68.3485 259.46371 68.38586 259.36977 68.38586 curveto
-259.27582 68.38586 259.18564 68.3485 259.1192 68.28206 curveto
-259.05276 68.21562 259.0154 68.12544 259.0154 68.0315 curveto
-259.0154 67.93755 259.05276 67.84737 259.1192 67.78093 curveto
-259.18564 67.7145 259.27582 67.67712 259.36977 67.67712 curveto
-259.46371 67.67712 259.5539 67.7145 259.62033 67.78093 curveto
-259.68677 67.84737 259.72414 67.93755 259.72414 68.0315 curveto closepath fill
-newpath 259.72414 89.29134 moveto
-259.72414 89.38528 259.68677 89.47546 259.62033 89.5419 curveto
-259.5539 89.60834 259.46371 89.6457 259.36977 89.6457 curveto
-259.27582 89.6457 259.18564 89.60834 259.1192 89.5419 curveto
-259.05276 89.47546 259.0154 89.38528 259.0154 89.29134 curveto
-259.0154 89.19739 259.05276 89.10721 259.1192 89.04077 curveto
-259.18564 88.97433 259.27582 88.93697 259.36977 88.93697 curveto
-259.46371 88.93697 259.5539 88.97433 259.62033 89.04077 curveto
-259.68677 89.10721 259.72414 89.19739 259.72414 89.29134 curveto closepath fill
-newpath 259.72414 131.81102 moveto
-259.72414 131.90497 259.68677 131.99515 259.62033 132.06158 curveto
-259.5539 132.12802 259.46371 132.16539 259.36977 132.16539 curveto
-259.27582 132.16539 259.18564 132.12802 259.1192 132.06158 curveto
-259.05276 131.99515 259.0154 131.90497 259.0154 131.81102 curveto
-259.0154 131.71707 259.05276 131.62689 259.1192 131.56046 curveto
-259.18564 131.49402 259.27582 131.45665 259.36977 131.45665 curveto
-259.46371 131.45665 259.5539 131.49402 259.62033 131.56046 curveto
-259.68677 131.62689 259.72414 131.71707 259.72414 131.81102 curveto closepath
- fill
-newpath 259.72414 153.07086 moveto
-259.72414 153.16481 259.68677 153.25499 259.62033 153.32143 curveto
-259.5539 153.38786 259.46371 153.42523 259.36977 153.42523 curveto
-259.27582 153.42523 259.18564 153.38786 259.1192 153.32143 curveto
-259.05276 153.25499 259.0154 153.16481 259.0154 153.07086 curveto
-259.0154 152.97691 259.05276 152.88673 259.1192 152.8203 curveto
-259.18564 152.75386 259.27582 152.71649 259.36977 152.71649 curveto
-259.46371 152.71649 259.5539 152.75386 259.62033 152.8203 curveto
-259.68677 152.88673 259.72414 152.97691 259.72414 153.07086 curveto closepath
- fill
-newpath 259.72414 174.3307 moveto
-259.72414 174.42465 259.68677 174.51483 259.62033 174.58127 curveto
-259.5539 174.6477 259.46371 174.68507 259.36977 174.68507 curveto
-259.27582 174.68507 259.18564 174.6477 259.1192 174.58127 curveto
-259.05276 174.51483 259.0154 174.42465 259.0154 174.3307 curveto
-259.0154 174.23676 259.05276 174.14658 259.1192 174.08014 curveto
-259.18564 174.0137 259.27582 173.97633 259.36977 173.97633 curveto
-259.46371 173.97633 259.5539 174.0137 259.62033 174.08014 curveto
-259.68677 174.14658 259.72414 174.23676 259.72414 174.3307 curveto closepath
- fill
-newpath 263.9761 46.77165 moveto
-263.9761 46.8656 263.93874 46.95578 263.8723 47.02222 curveto
-263.80586 47.08865 263.71568 47.12602 263.62173 47.12602 curveto
-263.52779 47.12602 263.4376 47.08865 263.37117 47.02222 curveto
-263.30473 46.95578 263.26736 46.8656 263.26736 46.77165 curveto
-263.26736 46.6777 263.30473 46.58752 263.37117 46.52109 curveto
-263.4376 46.45465 263.52779 46.41728 263.62173 46.41728 curveto
-263.71568 46.41728 263.80586 46.45465 263.8723 46.52109 curveto
-263.93874 46.58752 263.9761 46.6777 263.9761 46.77165 curveto closepath fill
-newpath 263.9761 68.0315 moveto
-263.9761 68.12544 263.93874 68.21562 263.8723 68.28206 curveto
-263.80586 68.3485 263.71568 68.38586 263.62173 68.38586 curveto
-263.52779 68.38586 263.4376 68.3485 263.37117 68.28206 curveto
-263.30473 68.21562 263.26736 68.12544 263.26736 68.0315 curveto
-263.26736 67.93755 263.30473 67.84737 263.37117 67.78093 curveto
-263.4376 67.7145 263.52779 67.67712 263.62173 67.67712 curveto
-263.71568 67.67712 263.80586 67.7145 263.8723 67.78093 curveto
-263.93874 67.84737 263.9761 67.93755 263.9761 68.0315 curveto closepath fill
-newpath 263.9761 89.29134 moveto
-263.9761 89.38528 263.93874 89.47546 263.8723 89.5419 curveto
-263.80586 89.60834 263.71568 89.6457 263.62173 89.6457 curveto
-263.52779 89.6457 263.4376 89.60834 263.37117 89.5419 curveto
-263.30473 89.47546 263.26736 89.38528 263.26736 89.29134 curveto
-263.26736 89.19739 263.30473 89.10721 263.37117 89.04077 curveto
-263.4376 88.97433 263.52779 88.93697 263.62173 88.93697 curveto
-263.71568 88.93697 263.80586 88.97433 263.8723 89.04077 curveto
-263.93874 89.10721 263.9761 89.19739 263.9761 89.29134 curveto closepath fill
-newpath 263.9761 131.81102 moveto
-263.9761 131.90497 263.93874 131.99515 263.8723 132.06158 curveto
-263.80586 132.12802 263.71568 132.16539 263.62173 132.16539 curveto
-263.52779 132.16539 263.4376 132.12802 263.37117 132.06158 curveto
-263.30473 131.99515 263.26736 131.90497 263.26736 131.81102 curveto
-263.26736 131.71707 263.30473 131.62689 263.37117 131.56046 curveto
-263.4376 131.49402 263.52779 131.45665 263.62173 131.45665 curveto
-263.71568 131.45665 263.80586 131.49402 263.8723 131.56046 curveto
-263.93874 131.62689 263.9761 131.71707 263.9761 131.81102 curveto closepath
- fill
-newpath 263.9761 153.07086 moveto
-263.9761 153.16481 263.93874 153.25499 263.8723 153.32143 curveto
-263.80586 153.38786 263.71568 153.42523 263.62173 153.42523 curveto
-263.52779 153.42523 263.4376 153.38786 263.37117 153.32143 curveto
-263.30473 153.25499 263.26736 153.16481 263.26736 153.07086 curveto
-263.26736 152.97691 263.30473 152.88673 263.37117 152.8203 curveto
-263.4376 152.75386 263.52779 152.71649 263.62173 152.71649 curveto
-263.71568 152.71649 263.80586 152.75386 263.8723 152.8203 curveto
-263.93874 152.88673 263.9761 152.97691 263.9761 153.07086 curveto closepath
- fill
-newpath 263.9761 174.3307 moveto
-263.9761 174.42465 263.93874 174.51483 263.8723 174.58127 curveto
-263.80586 174.6477 263.71568 174.68507 263.62173 174.68507 curveto
-263.52779 174.68507 263.4376 174.6477 263.37117 174.58127 curveto
-263.30473 174.51483 263.26736 174.42465 263.26736 174.3307 curveto
-263.26736 174.23676 263.30473 174.14658 263.37117 174.08014 curveto
-263.4376 174.0137 263.52779 173.97633 263.62173 173.97633 curveto
-263.71568 173.97633 263.80586 174.0137 263.8723 174.08014 curveto
-263.93874 174.14658 263.9761 174.23676 263.9761 174.3307 curveto closepath fill
-newpath 268.22807 46.77165 moveto
-268.22807 46.8656 268.1907 46.95578 268.12427 47.02222 curveto
-268.05783 47.08865 267.96765 47.12602 267.8737 47.12602 curveto
-267.77975 47.12602 267.68958 47.08865 267.62314 47.02222 curveto
-267.5567 46.95578 267.51933 46.8656 267.51933 46.77165 curveto
-267.51933 46.6777 267.5567 46.58752 267.62314 46.52109 curveto
-267.68958 46.45465 267.77975 46.41728 267.8737 46.41728 curveto
-267.96765 46.41728 268.05783 46.45465 268.12427 46.52109 curveto
-268.1907 46.58752 268.22807 46.6777 268.22807 46.77165 curveto closepath fill
-newpath 268.22807 68.0315 moveto
-268.22807 68.12544 268.1907 68.21562 268.12427 68.28206 curveto
-268.05783 68.3485 267.96765 68.38586 267.8737 68.38586 curveto
-267.77975 68.38586 267.68958 68.3485 267.62314 68.28206 curveto
-267.5567 68.21562 267.51933 68.12544 267.51933 68.0315 curveto
-267.51933 67.93755 267.5567 67.84737 267.62314 67.78093 curveto
-267.68958 67.7145 267.77975 67.67712 267.8737 67.67712 curveto
-267.96765 67.67712 268.05783 67.7145 268.12427 67.78093 curveto
-268.1907 67.84737 268.22807 67.93755 268.22807 68.0315 curveto closepath fill
-newpath 268.22807 89.29134 moveto
-268.22807 89.38528 268.1907 89.47546 268.12427 89.5419 curveto
-268.05783 89.60834 267.96765 89.6457 267.8737 89.6457 curveto
-267.77975 89.6457 267.68958 89.60834 267.62314 89.5419 curveto
-267.5567 89.47546 267.51933 89.38528 267.51933 89.29134 curveto
-267.51933 89.19739 267.5567 89.10721 267.62314 89.04077 curveto
-267.68958 88.97433 267.77975 88.93697 267.8737 88.93697 curveto
-267.96765 88.93697 268.05783 88.97433 268.12427 89.04077 curveto
-268.1907 89.10721 268.22807 89.19739 268.22807 89.29134 curveto closepath fill
-newpath 268.22807 131.81102 moveto
-268.22807 131.90497 268.1907 131.99515 268.12427 132.06158 curveto
-268.05783 132.12802 267.96765 132.16539 267.8737 132.16539 curveto
-267.77975 132.16539 267.68958 132.12802 267.62314 132.06158 curveto
-267.5567 131.99515 267.51933 131.90497 267.51933 131.81102 curveto
-267.51933 131.71707 267.5567 131.62689 267.62314 131.56046 curveto
-267.68958 131.49402 267.77975 131.45665 267.8737 131.45665 curveto
-267.96765 131.45665 268.05783 131.49402 268.12427 131.56046 curveto
-268.1907 131.62689 268.22807 131.71707 268.22807 131.81102 curveto closepath
- fill
-newpath 268.22807 153.07086 moveto
-268.22807 153.16481 268.1907 153.25499 268.12427 153.32143 curveto
-268.05783 153.38786 267.96765 153.42523 267.8737 153.42523 curveto
-267.77975 153.42523 267.68958 153.38786 267.62314 153.32143 curveto
-267.5567 153.25499 267.51933 153.16481 267.51933 153.07086 curveto
-267.51933 152.97691 267.5567 152.88673 267.62314 152.8203 curveto
-267.68958 152.75386 267.77975 152.71649 267.8737 152.71649 curveto
-267.96765 152.71649 268.05783 152.75386 268.12427 152.8203 curveto
-268.1907 152.88673 268.22807 152.97691 268.22807 153.07086 curveto closepath
- fill
-newpath 268.22807 174.3307 moveto
-268.22807 174.42465 268.1907 174.51483 268.12427 174.58127 curveto
-268.05783 174.6477 267.96765 174.68507 267.8737 174.68507 curveto
-267.77975 174.68507 267.68958 174.6477 267.62314 174.58127 curveto
-267.5567 174.51483 267.51933 174.42465 267.51933 174.3307 curveto
-267.51933 174.23676 267.5567 174.14658 267.62314 174.08014 curveto
-267.68958 174.0137 267.77975 173.97633 267.8737 173.97633 curveto
-267.96765 173.97633 268.05783 174.0137 268.12427 174.08014 curveto
-268.1907 174.14658 268.22807 174.23676 268.22807 174.3307 curveto closepath
- fill
-newpath 272.48004 46.77165 moveto
-272.48004 46.8656 272.44267 46.95578 272.37624 47.02222 curveto
-272.3098 47.08865 272.21962 47.12602 272.12567 47.12602 curveto
-272.03172 47.12602 271.94154 47.08865 271.8751 47.02222 curveto
-271.80867 46.95578 271.7713 46.8656 271.7713 46.77165 curveto
-271.7713 46.6777 271.80867 46.58752 271.8751 46.52109 curveto
-271.94154 46.45465 272.03172 46.41728 272.12567 46.41728 curveto
-272.21962 46.41728 272.3098 46.45465 272.37624 46.52109 curveto
-272.44267 46.58752 272.48004 46.6777 272.48004 46.77165 curveto closepath fill
-newpath 272.48004 68.0315 moveto
-272.48004 68.12544 272.44267 68.21562 272.37624 68.28206 curveto
-272.3098 68.3485 272.21962 68.38586 272.12567 68.38586 curveto
-272.03172 68.38586 271.94154 68.3485 271.8751 68.28206 curveto
-271.80867 68.21562 271.7713 68.12544 271.7713 68.0315 curveto
-271.7713 67.93755 271.80867 67.84737 271.8751 67.78093 curveto
-271.94154 67.7145 272.03172 67.67712 272.12567 67.67712 curveto
-272.21962 67.67712 272.3098 67.7145 272.37624 67.78093 curveto
-272.44267 67.84737 272.48004 67.93755 272.48004 68.0315 curveto closepath fill
-newpath 272.48004 89.29134 moveto
-272.48004 89.38528 272.44267 89.47546 272.37624 89.5419 curveto
-272.3098 89.60834 272.21962 89.6457 272.12567 89.6457 curveto
-272.03172 89.6457 271.94154 89.60834 271.8751 89.5419 curveto
-271.80867 89.47546 271.7713 89.38528 271.7713 89.29134 curveto
-271.7713 89.19739 271.80867 89.10721 271.8751 89.04077 curveto
-271.94154 88.97433 272.03172 88.93697 272.12567 88.93697 curveto
-272.21962 88.93697 272.3098 88.97433 272.37624 89.04077 curveto
-272.44267 89.10721 272.48004 89.19739 272.48004 89.29134 curveto closepath fill
-newpath 272.48004 131.81102 moveto
-272.48004 131.90497 272.44267 131.99515 272.37624 132.06158 curveto
-272.3098 132.12802 272.21962 132.16539 272.12567 132.16539 curveto
-272.03172 132.16539 271.94154 132.12802 271.8751 132.06158 curveto
-271.80867 131.99515 271.7713 131.90497 271.7713 131.81102 curveto
-271.7713 131.71707 271.80867 131.62689 271.8751 131.56046 curveto
-271.94154 131.49402 272.03172 131.45665 272.12567 131.45665 curveto
-272.21962 131.45665 272.3098 131.49402 272.37624 131.56046 curveto
-272.44267 131.62689 272.48004 131.71707 272.48004 131.81102 curveto closepath
- fill
-newpath 272.48004 153.07086 moveto
-272.48004 153.16481 272.44267 153.25499 272.37624 153.32143 curveto
-272.3098 153.38786 272.21962 153.42523 272.12567 153.42523 curveto
-272.03172 153.42523 271.94154 153.38786 271.8751 153.32143 curveto
-271.80867 153.25499 271.7713 153.16481 271.7713 153.07086 curveto
-271.7713 152.97691 271.80867 152.88673 271.8751 152.8203 curveto
-271.94154 152.75386 272.03172 152.71649 272.12567 152.71649 curveto
-272.21962 152.71649 272.3098 152.75386 272.37624 152.8203 curveto
-272.44267 152.88673 272.48004 152.97691 272.48004 153.07086 curveto closepath
- fill
-newpath 272.48004 174.3307 moveto
-272.48004 174.42465 272.44267 174.51483 272.37624 174.58127 curveto
-272.3098 174.6477 272.21962 174.68507 272.12567 174.68507 curveto
-272.03172 174.68507 271.94154 174.6477 271.8751 174.58127 curveto
-271.80867 174.51483 271.7713 174.42465 271.7713 174.3307 curveto
-271.7713 174.23676 271.80867 174.14658 271.8751 174.08014 curveto
-271.94154 174.0137 272.03172 173.97633 272.12567 173.97633 curveto
-272.21962 173.97633 272.3098 174.0137 272.37624 174.08014 curveto
-272.44267 174.14658 272.48004 174.23676 272.48004 174.3307 curveto closepath
- fill
-newpath 170.4328 110.55118 moveto
-170.4328 110.64513 170.39543 110.7353 170.329 110.80174 curveto
-170.26256 110.86818 170.17238 110.90555 170.07843 110.90555 curveto
-169.98448 110.90555 169.8943 110.86818 169.82787 110.80174 curveto
-169.76143 110.7353 169.72406 110.64513 169.72406 110.55118 curveto
-169.72406 110.45723 169.76143 110.36705 169.82787 110.30061 curveto
-169.8943 110.23418 169.98448 110.19681 170.07843 110.19681 curveto
-170.17238 110.19681 170.26256 110.23418 170.329 110.30061 curveto
-170.39543 110.36705 170.4328 110.45723 170.4328 110.55118 curveto closepath
- fill
+newpath 174.3304 98.85828 moveto
+174.3304 100.98425 lineto stroke
+newpath 178.58237 98.85828 moveto
+178.58237 100.98425 lineto stroke
+newpath 182.83434 98.85828 moveto
+182.83434 100.98425 lineto stroke
+newpath 187.0863 98.85828 moveto
+187.0863 100.98425 lineto stroke
+newpath 191.33827 98.85828 moveto
+191.33827 100.98425 lineto stroke
+newpath 195.59024 98.85828 moveto
+195.59024 100.98425 lineto stroke
+newpath 199.84221 98.85828 moveto
+199.84221 100.98425 lineto stroke
+newpath 204.09418 98.85828 moveto
+204.09418 100.98425 lineto stroke
+newpath 208.34615 98.85828 moveto
+208.34615 100.98425 lineto stroke
+newpath 212.59811 98.85828 moveto
+212.59811 100.98425 lineto stroke
+newpath 216.85008 98.85828 moveto
+216.85008 100.98425 lineto stroke
+newpath 221.10205 98.85828 moveto
+221.10205 100.98425 lineto stroke
+newpath 225.35402 98.85828 moveto
+225.35402 100.98425 lineto stroke
+newpath 229.60599 98.85828 moveto
+229.60599 100.98425 lineto stroke
+newpath 233.85796 98.85828 moveto
+233.85796 100.98425 lineto stroke
+newpath 238.10992 98.85828 moveto
+238.10992 100.98425 lineto stroke
+newpath 242.3619 98.85828 moveto
+242.3619 100.98425 lineto stroke
+newpath 246.61386 98.85828 moveto
+246.61386 100.98425 lineto stroke
+newpath 250.86583 98.85828 moveto
+250.86583 100.98425 lineto stroke
+newpath 255.1178 98.85828 moveto
+255.1178 100.98425 lineto stroke
+newpath 259.36977 98.85828 moveto
+259.36977 100.98425 lineto stroke
+newpath 263.62173 98.85828 moveto
+263.62173 100.98425 lineto stroke
+newpath 267.8737 98.85828 moveto
+267.8737 100.98425 lineto stroke
+newpath 272.12567 98.85828 moveto
+272.12567 100.98425 lineto stroke
+newpath 85.39343 19.13387 moveto
+85.39343 19.22781 85.35606 19.318 85.28963 19.38443 curveto
+85.22319 19.45087 85.13301 19.48824 85.03906 19.48824 curveto
+84.94511 19.48824 84.85493 19.45087 84.7885 19.38443 curveto
+84.72206 19.318 84.6847 19.22781 84.6847 19.13387 curveto
+84.6847 19.03992 84.72206 18.94974 84.7885 18.8833 curveto
+84.85493 18.81686 84.94511 18.7795 85.03906 18.7795 curveto
+85.13301 18.7795 85.22319 18.81686 85.28963 18.8833 curveto
+85.35606 18.94974 85.39343 19.03992 85.39343 19.13387 curveto closepath fill
+newpath 106.65327 19.13387 moveto
+106.65327 19.22781 106.6159 19.318 106.54947 19.38443 curveto
+106.48303 19.45087 106.39285 19.48824 106.2989 19.48824 curveto
+106.20496 19.48824 106.11478 19.45087 106.04834 19.38443 curveto
+105.9819 19.318 105.94453 19.22781 105.94453 19.13387 curveto
+105.94453 19.03992 105.9819 18.94974 106.04834 18.8833 curveto
+106.11478 18.81686 106.20496 18.7795 106.2989 18.7795 curveto
+106.39285 18.7795 106.48303 18.81686 106.54947 18.8833 curveto
+106.6159 18.94974 106.65327 19.03992 106.65327 19.13387 curveto closepath fill
+newpath 127.91312 19.13387 moveto
+127.91312 19.22781 127.87575 19.318 127.80931 19.38443 curveto
+127.74287 19.45087 127.6527 19.48824 127.55875 19.48824 curveto
+127.4648 19.48824 127.37462 19.45087 127.30818 19.38443 curveto
+127.24174 19.318 127.20438 19.22781 127.20438 19.13387 curveto
+127.20438 19.03992 127.24174 18.94974 127.30818 18.8833 curveto
+127.37462 18.81686 127.4648 18.7795 127.55875 18.7795 curveto
+127.6527 18.7795 127.74287 18.81686 127.80931 18.8833 curveto
+127.87575 18.94974 127.91312 19.03992 127.91312 19.13387 curveto closepath fill
+newpath 149.17296 19.13387 moveto
+149.17296 19.22781 149.13559 19.318 149.06915 19.38443 curveto
+149.00272 19.45087 148.91254 19.48824 148.81859 19.48824 curveto
+148.72464 19.48824 148.63446 19.45087 148.56802 19.38443 curveto
+148.50159 19.318 148.46422 19.22781 148.46422 19.13387 curveto
+148.46422 19.03992 148.50159 18.94974 148.56802 18.8833 curveto
+148.63446 18.81686 148.72464 18.7795 148.81859 18.7795 curveto
+148.91254 18.7795 149.00272 18.81686 149.06915 18.8833 curveto
+149.13559 18.94974 149.17296 19.03992 149.17296 19.13387 curveto closepath fill
+newpath 191.69264 19.13387 moveto
+191.69264 19.22781 191.65527 19.318 191.58884 19.38443 curveto
+191.5224 19.45087 191.43222 19.48824 191.33827 19.48824 curveto
+191.24432 19.48824 191.15414 19.45087 191.0877 19.38443 curveto
+191.02127 19.318 190.9839 19.22781 190.9839 19.13387 curveto
+190.9839 19.03992 191.02127 18.94974 191.0877 18.8833 curveto
+191.15414 18.81686 191.24432 18.7795 191.33827 18.7795 curveto
+191.43222 18.7795 191.5224 18.81686 191.58884 18.8833 curveto
+191.65527 18.94974 191.69264 19.03992 191.69264 19.13387 curveto closepath fill
+newpath 212.95248 19.13387 moveto
+212.95248 19.22781 212.91512 19.318 212.84868 19.38443 curveto
+212.78224 19.45087 212.69206 19.48824 212.59811 19.48824 curveto
+212.50417 19.48824 212.41399 19.45087 212.34755 19.38443 curveto
+212.28111 19.318 212.24374 19.22781 212.24374 19.13387 curveto
+212.24374 19.03992 212.28111 18.94974 212.34755 18.8833 curveto
+212.41399 18.81686 212.50417 18.7795 212.59811 18.7795 curveto
+212.69206 18.7795 212.78224 18.81686 212.84868 18.8833 curveto
+212.91512 18.94974 212.95248 19.03992 212.95248 19.13387 curveto closepath fill
+newpath 234.21233 19.13387 moveto
+234.21233 19.22781 234.17496 19.318 234.10852 19.38443 curveto
+234.04208 19.45087 233.9519 19.48824 233.85796 19.48824 curveto
+233.764 19.48824 233.67383 19.45087 233.60739 19.38443 curveto
+233.54095 19.318 233.50359 19.22781 233.50359 19.13387 curveto
+233.50359 19.03992 233.54095 18.94974 233.60739 18.8833 curveto
+233.67383 18.81686 233.764 18.7795 233.85796 18.7795 curveto
+233.9519 18.7795 234.04208 18.81686 234.10852 18.8833 curveto
+234.17496 18.94974 234.21233 19.03992 234.21233 19.13387 curveto closepath fill
+newpath 255.47217 19.13387 moveto
+255.47217 19.22781 255.4348 19.318 255.36836 19.38443 curveto
+255.30193 19.45087 255.21175 19.48824 255.1178 19.48824 curveto
+255.02385 19.48824 254.93367 19.45087 254.86723 19.38443 curveto
+254.8008 19.318 254.76343 19.22781 254.76343 19.13387 curveto
+254.76343 19.03992 254.8008 18.94974 254.86723 18.8833 curveto
+254.93367 18.81686 255.02385 18.7795 255.1178 18.7795 curveto
+255.21175 18.7795 255.30193 18.81686 255.36836 18.8833 curveto
+255.4348 18.94974 255.47217 19.03992 255.47217 19.13387 curveto closepath fill
+newpath 85.39343 23.38583 moveto
+85.39343 23.47978 85.35606 23.56996 85.28963 23.6364 curveto
+85.22319 23.70284 85.13301 23.7402 85.03906 23.7402 curveto
+84.94511 23.7402 84.85493 23.70284 84.7885 23.6364 curveto
+84.72206 23.56996 84.6847 23.47978 84.6847 23.38583 curveto
+84.6847 23.29189 84.72206 23.2017 84.7885 23.13527 curveto
+84.85493 23.06883 84.94511 23.03146 85.03906 23.03146 curveto
+85.13301 23.03146 85.22319 23.06883 85.28963 23.13527 curveto
+85.35606 23.2017 85.39343 23.29189 85.39343 23.38583 curveto closepath fill
+newpath 106.65327 23.38583 moveto
+106.65327 23.47978 106.6159 23.56996 106.54947 23.6364 curveto
+106.48303 23.70284 106.39285 23.7402 106.2989 23.7402 curveto
+106.20496 23.7402 106.11478 23.70284 106.04834 23.6364 curveto
+105.9819 23.56996 105.94453 23.47978 105.94453 23.38583 curveto
+105.94453 23.29189 105.9819 23.2017 106.04834 23.13527 curveto
+106.11478 23.06883 106.20496 23.03146 106.2989 23.03146 curveto
+106.39285 23.03146 106.48303 23.06883 106.54947 23.13527 curveto
+106.6159 23.2017 106.65327 23.29189 106.65327 23.38583 curveto closepath fill
+newpath 127.91312 23.38583 moveto
+127.91312 23.47978 127.87575 23.56996 127.80931 23.6364 curveto
+127.74287 23.70284 127.6527 23.7402 127.55875 23.7402 curveto
+127.4648 23.7402 127.37462 23.70284 127.30818 23.6364 curveto
+127.24174 23.56996 127.20438 23.47978 127.20438 23.38583 curveto
+127.20438 23.29189 127.24174 23.2017 127.30818 23.13527 curveto
+127.37462 23.06883 127.4648 23.03146 127.55875 23.03146 curveto
+127.6527 23.03146 127.74287 23.06883 127.80931 23.13527 curveto
+127.87575 23.2017 127.91312 23.29189 127.91312 23.38583 curveto closepath fill
+newpath 149.17296 23.38583 moveto
+149.17296 23.47978 149.13559 23.56996 149.06915 23.6364 curveto
+149.00272 23.70284 148.91254 23.7402 148.81859 23.7402 curveto
+148.72464 23.7402 148.63446 23.70284 148.56802 23.6364 curveto
+148.50159 23.56996 148.46422 23.47978 148.46422 23.38583 curveto
+148.46422 23.29189 148.50159 23.2017 148.56802 23.13527 curveto
+148.63446 23.06883 148.72464 23.03146 148.81859 23.03146 curveto
+148.91254 23.03146 149.00272 23.06883 149.06915 23.13527 curveto
+149.13559 23.2017 149.17296 23.29189 149.17296 23.38583 curveto closepath fill
+newpath 191.69264 23.38583 moveto
+191.69264 23.47978 191.65527 23.56996 191.58884 23.6364 curveto
+191.5224 23.70284 191.43222 23.7402 191.33827 23.7402 curveto
+191.24432 23.7402 191.15414 23.70284 191.0877 23.6364 curveto
+191.02127 23.56996 190.9839 23.47978 190.9839 23.38583 curveto
+190.9839 23.29189 191.02127 23.2017 191.0877 23.13527 curveto
+191.15414 23.06883 191.24432 23.03146 191.33827 23.03146 curveto
+191.43222 23.03146 191.5224 23.06883 191.58884 23.13527 curveto
+191.65527 23.2017 191.69264 23.29189 191.69264 23.38583 curveto closepath fill
+newpath 212.95248 23.38583 moveto
+212.95248 23.47978 212.91512 23.56996 212.84868 23.6364 curveto
+212.78224 23.70284 212.69206 23.7402 212.59811 23.7402 curveto
+212.50417 23.7402 212.41399 23.70284 212.34755 23.6364 curveto
+212.28111 23.56996 212.24374 23.47978 212.24374 23.38583 curveto
+212.24374 23.29189 212.28111 23.2017 212.34755 23.13527 curveto
+212.41399 23.06883 212.50417 23.03146 212.59811 23.03146 curveto
+212.69206 23.03146 212.78224 23.06883 212.84868 23.13527 curveto
+212.91512 23.2017 212.95248 23.29189 212.95248 23.38583 curveto closepath fill
+newpath 234.21233 23.38583 moveto
+234.21233 23.47978 234.17496 23.56996 234.10852 23.6364 curveto
+234.04208 23.70284 233.9519 23.7402 233.85796 23.7402 curveto
+233.764 23.7402 233.67383 23.70284 233.60739 23.6364 curveto
+233.54095 23.56996 233.50359 23.47978 233.50359 23.38583 curveto
+233.50359 23.29189 233.54095 23.2017 233.60739 23.13527 curveto
+233.67383 23.06883 233.764 23.03146 233.85796 23.03146 curveto
+233.9519 23.03146 234.04208 23.06883 234.10852 23.13527 curveto
+234.17496 23.2017 234.21233 23.29189 234.21233 23.38583 curveto closepath fill
+newpath 255.47217 23.38583 moveto
+255.47217 23.47978 255.4348 23.56996 255.36836 23.6364 curveto
+255.30193 23.70284 255.21175 23.7402 255.1178 23.7402 curveto
+255.02385 23.7402 254.93367 23.70284 254.86723 23.6364 curveto
+254.8008 23.56996 254.76343 23.47978 254.76343 23.38583 curveto
+254.76343 23.29189 254.8008 23.2017 254.86723 23.13527 curveto
+254.93367 23.06883 255.02385 23.03146 255.1178 23.03146 curveto
+255.21175 23.03146 255.30193 23.06883 255.36836 23.13527 curveto
+255.4348 23.2017 255.47217 23.29189 255.47217 23.38583 curveto closepath fill
+newpath 85.39343 27.6378 moveto
+85.39343 27.73175 85.35606 27.82193 85.28963 27.88837 curveto
+85.22319 27.9548 85.13301 27.99217 85.03906 27.99217 curveto
+84.94511 27.99217 84.85493 27.9548 84.7885 27.88837 curveto
+84.72206 27.82193 84.6847 27.73175 84.6847 27.6378 curveto
+84.6847 27.54385 84.72206 27.45367 84.7885 27.38724 curveto
+84.85493 27.3208 84.94511 27.28343 85.03906 27.28343 curveto
+85.13301 27.28343 85.22319 27.3208 85.28963 27.38724 curveto
+85.35606 27.45367 85.39343 27.54385 85.39343 27.6378 curveto closepath fill
+newpath 106.65327 27.6378 moveto
+106.65327 27.73175 106.6159 27.82193 106.54947 27.88837 curveto
+106.48303 27.9548 106.39285 27.99217 106.2989 27.99217 curveto
+106.20496 27.99217 106.11478 27.9548 106.04834 27.88837 curveto
+105.9819 27.82193 105.94453 27.73175 105.94453 27.6378 curveto
+105.94453 27.54385 105.9819 27.45367 106.04834 27.38724 curveto
+106.11478 27.3208 106.20496 27.28343 106.2989 27.28343 curveto
+106.39285 27.28343 106.48303 27.3208 106.54947 27.38724 curveto
+106.6159 27.45367 106.65327 27.54385 106.65327 27.6378 curveto closepath fill
+newpath 127.91312 27.6378 moveto
+127.91312 27.73175 127.87575 27.82193 127.80931 27.88837 curveto
+127.74287 27.9548 127.6527 27.99217 127.55875 27.99217 curveto
+127.4648 27.99217 127.37462 27.9548 127.30818 27.88837 curveto
+127.24174 27.82193 127.20438 27.73175 127.20438 27.6378 curveto
+127.20438 27.54385 127.24174 27.45367 127.30818 27.38724 curveto
+127.37462 27.3208 127.4648 27.28343 127.55875 27.28343 curveto
+127.6527 27.28343 127.74287 27.3208 127.80931 27.38724 curveto
+127.87575 27.45367 127.91312 27.54385 127.91312 27.6378 curveto closepath fill
+newpath 149.17296 27.6378 moveto
+149.17296 27.73175 149.13559 27.82193 149.06915 27.88837 curveto
+149.00272 27.9548 148.91254 27.99217 148.81859 27.99217 curveto
+148.72464 27.99217 148.63446 27.9548 148.56802 27.88837 curveto
+148.50159 27.82193 148.46422 27.73175 148.46422 27.6378 curveto
+148.46422 27.54385 148.50159 27.45367 148.56802 27.38724 curveto
+148.63446 27.3208 148.72464 27.28343 148.81859 27.28343 curveto
+148.91254 27.28343 149.00272 27.3208 149.06915 27.38724 curveto
+149.13559 27.45367 149.17296 27.54385 149.17296 27.6378 curveto closepath fill
+newpath 191.69264 27.6378 moveto
+191.69264 27.73175 191.65527 27.82193 191.58884 27.88837 curveto
+191.5224 27.9548 191.43222 27.99217 191.33827 27.99217 curveto
+191.24432 27.99217 191.15414 27.9548 191.0877 27.88837 curveto
+191.02127 27.82193 190.9839 27.73175 190.9839 27.6378 curveto
+190.9839 27.54385 191.02127 27.45367 191.0877 27.38724 curveto
+191.15414 27.3208 191.24432 27.28343 191.33827 27.28343 curveto
+191.43222 27.28343 191.5224 27.3208 191.58884 27.38724 curveto
+191.65527 27.45367 191.69264 27.54385 191.69264 27.6378 curveto closepath fill
+newpath 212.95248 27.6378 moveto
+212.95248 27.73175 212.91512 27.82193 212.84868 27.88837 curveto
+212.78224 27.9548 212.69206 27.99217 212.59811 27.99217 curveto
+212.50417 27.99217 212.41399 27.9548 212.34755 27.88837 curveto
+212.28111 27.82193 212.24374 27.73175 212.24374 27.6378 curveto
+212.24374 27.54385 212.28111 27.45367 212.34755 27.38724 curveto
+212.41399 27.3208 212.50417 27.28343 212.59811 27.28343 curveto
+212.69206 27.28343 212.78224 27.3208 212.84868 27.38724 curveto
+212.91512 27.45367 212.95248 27.54385 212.95248 27.6378 curveto closepath fill
+newpath 234.21233 27.6378 moveto
+234.21233 27.73175 234.17496 27.82193 234.10852 27.88837 curveto
+234.04208 27.9548 233.9519 27.99217 233.85796 27.99217 curveto
+233.764 27.99217 233.67383 27.9548 233.60739 27.88837 curveto
+233.54095 27.82193 233.50359 27.73175 233.50359 27.6378 curveto
+233.50359 27.54385 233.54095 27.45367 233.60739 27.38724 curveto
+233.67383 27.3208 233.764 27.28343 233.85796 27.28343 curveto
+233.9519 27.28343 234.04208 27.3208 234.10852 27.38724 curveto
+234.17496 27.45367 234.21233 27.54385 234.21233 27.6378 curveto closepath fill
+newpath 255.47217 27.6378 moveto
+255.47217 27.73175 255.4348 27.82193 255.36836 27.88837 curveto
+255.30193 27.9548 255.21175 27.99217 255.1178 27.99217 curveto
+255.02385 27.99217 254.93367 27.9548 254.86723 27.88837 curveto
+254.8008 27.82193 254.76343 27.73175 254.76343 27.6378 curveto
+254.76343 27.54385 254.8008 27.45367 254.86723 27.38724 curveto
+254.93367 27.3208 255.02385 27.28343 255.1178 27.28343 curveto
+255.21175 27.28343 255.30193 27.3208 255.36836 27.38724 curveto
+255.4348 27.45367 255.47217 27.54385 255.47217 27.6378 curveto closepath fill
+newpath 85.39343 31.88977 moveto
+85.39343 31.98372 85.35606 32.0739 85.28963 32.14034 curveto
+85.22319 32.20677 85.13301 32.24414 85.03906 32.24414 curveto
+84.94511 32.24414 84.85493 32.20677 84.7885 32.14034 curveto
+84.72206 32.0739 84.6847 31.98372 84.6847 31.88977 curveto
+84.6847 31.79582 84.72206 31.70564 84.7885 31.6392 curveto
+84.85493 31.57277 84.94511 31.5354 85.03906 31.5354 curveto
+85.13301 31.5354 85.22319 31.57277 85.28963 31.6392 curveto
+85.35606 31.70564 85.39343 31.79582 85.39343 31.88977 curveto closepath fill
+newpath 106.65327 31.88977 moveto
+106.65327 31.98372 106.6159 32.0739 106.54947 32.14034 curveto
+106.48303 32.20677 106.39285 32.24414 106.2989 32.24414 curveto
+106.20496 32.24414 106.11478 32.20677 106.04834 32.14034 curveto
+105.9819 32.0739 105.94453 31.98372 105.94453 31.88977 curveto
+105.94453 31.79582 105.9819 31.70564 106.04834 31.6392 curveto
+106.11478 31.57277 106.20496 31.5354 106.2989 31.5354 curveto
+106.39285 31.5354 106.48303 31.57277 106.54947 31.6392 curveto
+106.6159 31.70564 106.65327 31.79582 106.65327 31.88977 curveto closepath fill
+newpath 127.91312 31.88977 moveto
+127.91312 31.98372 127.87575 32.0739 127.80931 32.14034 curveto
+127.74287 32.20677 127.6527 32.24414 127.55875 32.24414 curveto
+127.4648 32.24414 127.37462 32.20677 127.30818 32.14034 curveto
+127.24174 32.0739 127.20438 31.98372 127.20438 31.88977 curveto
+127.20438 31.79582 127.24174 31.70564 127.30818 31.6392 curveto
+127.37462 31.57277 127.4648 31.5354 127.55875 31.5354 curveto
+127.6527 31.5354 127.74287 31.57277 127.80931 31.6392 curveto
+127.87575 31.70564 127.91312 31.79582 127.91312 31.88977 curveto closepath fill
+newpath 149.17296 31.88977 moveto
+149.17296 31.98372 149.13559 32.0739 149.06915 32.14034 curveto
+149.00272 32.20677 148.91254 32.24414 148.81859 32.24414 curveto
+148.72464 32.24414 148.63446 32.20677 148.56802 32.14034 curveto
+148.50159 32.0739 148.46422 31.98372 148.46422 31.88977 curveto
+148.46422 31.79582 148.50159 31.70564 148.56802 31.6392 curveto
+148.63446 31.57277 148.72464 31.5354 148.81859 31.5354 curveto
+148.91254 31.5354 149.00272 31.57277 149.06915 31.6392 curveto
+149.13559 31.70564 149.17296 31.79582 149.17296 31.88977 curveto closepath fill
+newpath 191.69264 31.88977 moveto
+191.69264 31.98372 191.65527 32.0739 191.58884 32.14034 curveto
+191.5224 32.20677 191.43222 32.24414 191.33827 32.24414 curveto
+191.24432 32.24414 191.15414 32.20677 191.0877 32.14034 curveto
+191.02127 32.0739 190.9839 31.98372 190.9839 31.88977 curveto
+190.9839 31.79582 191.02127 31.70564 191.0877 31.6392 curveto
+191.15414 31.57277 191.24432 31.5354 191.33827 31.5354 curveto
+191.43222 31.5354 191.5224 31.57277 191.58884 31.6392 curveto
+191.65527 31.70564 191.69264 31.79582 191.69264 31.88977 curveto closepath fill
+newpath 212.95248 31.88977 moveto
+212.95248 31.98372 212.91512 32.0739 212.84868 32.14034 curveto
+212.78224 32.20677 212.69206 32.24414 212.59811 32.24414 curveto
+212.50417 32.24414 212.41399 32.20677 212.34755 32.14034 curveto
+212.28111 32.0739 212.24374 31.98372 212.24374 31.88977 curveto
+212.24374 31.79582 212.28111 31.70564 212.34755 31.6392 curveto
+212.41399 31.57277 212.50417 31.5354 212.59811 31.5354 curveto
+212.69206 31.5354 212.78224 31.57277 212.84868 31.6392 curveto
+212.91512 31.70564 212.95248 31.79582 212.95248 31.88977 curveto closepath fill
+newpath 234.21233 31.88977 moveto
+234.21233 31.98372 234.17496 32.0739 234.10852 32.14034 curveto
+234.04208 32.20677 233.9519 32.24414 233.85796 32.24414 curveto
+233.764 32.24414 233.67383 32.20677 233.60739 32.14034 curveto
+233.54095 32.0739 233.50359 31.98372 233.50359 31.88977 curveto
+233.50359 31.79582 233.54095 31.70564 233.60739 31.6392 curveto
+233.67383 31.57277 233.764 31.5354 233.85796 31.5354 curveto
+233.9519 31.5354 234.04208 31.57277 234.10852 31.6392 curveto
+234.17496 31.70564 234.21233 31.79582 234.21233 31.88977 curveto closepath fill
+newpath 255.47217 31.88977 moveto
+255.47217 31.98372 255.4348 32.0739 255.36836 32.14034 curveto
+255.30193 32.20677 255.21175 32.24414 255.1178 32.24414 curveto
+255.02385 32.24414 254.93367 32.20677 254.86723 32.14034 curveto
+254.8008 32.0739 254.76343 31.98372 254.76343 31.88977 curveto
+254.76343 31.79582 254.8008 31.70564 254.86723 31.6392 curveto
+254.93367 31.57277 255.02385 31.5354 255.1178 31.5354 curveto
+255.21175 31.5354 255.30193 31.57277 255.36836 31.6392 curveto
+255.4348 31.70564 255.47217 31.79582 255.47217 31.88977 curveto closepath fill
+newpath 85.39343 36.14174 moveto
+85.39343 36.23569 85.35606 36.32587 85.28963 36.3923 curveto
+85.22319 36.45874 85.13301 36.49611 85.03906 36.49611 curveto
+84.94511 36.49611 84.85493 36.45874 84.7885 36.3923 curveto
+84.72206 36.32587 84.6847 36.23569 84.6847 36.14174 curveto
+84.6847 36.04779 84.72206 35.95761 84.7885 35.89117 curveto
+84.85493 35.82474 84.94511 35.78737 85.03906 35.78737 curveto
+85.13301 35.78737 85.22319 35.82474 85.28963 35.89117 curveto
+85.35606 35.95761 85.39343 36.04779 85.39343 36.14174 curveto closepath fill
+newpath 106.65327 36.14174 moveto
+106.65327 36.23569 106.6159 36.32587 106.54947 36.3923 curveto
+106.48303 36.45874 106.39285 36.49611 106.2989 36.49611 curveto
+106.20496 36.49611 106.11478 36.45874 106.04834 36.3923 curveto
+105.9819 36.32587 105.94453 36.23569 105.94453 36.14174 curveto
+105.94453 36.04779 105.9819 35.95761 106.04834 35.89117 curveto
+106.11478 35.82474 106.20496 35.78737 106.2989 35.78737 curveto
+106.39285 35.78737 106.48303 35.82474 106.54947 35.89117 curveto
+106.6159 35.95761 106.65327 36.04779 106.65327 36.14174 curveto closepath fill
+newpath 127.91312 36.14174 moveto
+127.91312 36.23569 127.87575 36.32587 127.80931 36.3923 curveto
+127.74287 36.45874 127.6527 36.49611 127.55875 36.49611 curveto
+127.4648 36.49611 127.37462 36.45874 127.30818 36.3923 curveto
+127.24174 36.32587 127.20438 36.23569 127.20438 36.14174 curveto
+127.20438 36.04779 127.24174 35.95761 127.30818 35.89117 curveto
+127.37462 35.82474 127.4648 35.78737 127.55875 35.78737 curveto
+127.6527 35.78737 127.74287 35.82474 127.80931 35.89117 curveto
+127.87575 35.95761 127.91312 36.04779 127.91312 36.14174 curveto closepath fill
+newpath 149.17296 36.14174 moveto
+149.17296 36.23569 149.13559 36.32587 149.06915 36.3923 curveto
+149.00272 36.45874 148.91254 36.49611 148.81859 36.49611 curveto
+148.72464 36.49611 148.63446 36.45874 148.56802 36.3923 curveto
+148.50159 36.32587 148.46422 36.23569 148.46422 36.14174 curveto
+148.46422 36.04779 148.50159 35.95761 148.56802 35.89117 curveto
+148.63446 35.82474 148.72464 35.78737 148.81859 35.78737 curveto
+148.91254 35.78737 149.00272 35.82474 149.06915 35.89117 curveto
+149.13559 35.95761 149.17296 36.04779 149.17296 36.14174 curveto closepath fill
+newpath 191.69264 36.14174 moveto
+191.69264 36.23569 191.65527 36.32587 191.58884 36.3923 curveto
+191.5224 36.45874 191.43222 36.49611 191.33827 36.49611 curveto
+191.24432 36.49611 191.15414 36.45874 191.0877 36.3923 curveto
+191.02127 36.32587 190.9839 36.23569 190.9839 36.14174 curveto
+190.9839 36.04779 191.02127 35.95761 191.0877 35.89117 curveto
+191.15414 35.82474 191.24432 35.78737 191.33827 35.78737 curveto
+191.43222 35.78737 191.5224 35.82474 191.58884 35.89117 curveto
+191.65527 35.95761 191.69264 36.04779 191.69264 36.14174 curveto closepath fill
+newpath 212.95248 36.14174 moveto
+212.95248 36.23569 212.91512 36.32587 212.84868 36.3923 curveto
+212.78224 36.45874 212.69206 36.49611 212.59811 36.49611 curveto
+212.50417 36.49611 212.41399 36.45874 212.34755 36.3923 curveto
+212.28111 36.32587 212.24374 36.23569 212.24374 36.14174 curveto
+212.24374 36.04779 212.28111 35.95761 212.34755 35.89117 curveto
+212.41399 35.82474 212.50417 35.78737 212.59811 35.78737 curveto
+212.69206 35.78737 212.78224 35.82474 212.84868 35.89117 curveto
+212.91512 35.95761 212.95248 36.04779 212.95248 36.14174 curveto closepath fill
+newpath 234.21233 36.14174 moveto
+234.21233 36.23569 234.17496 36.32587 234.10852 36.3923 curveto
+234.04208 36.45874 233.9519 36.49611 233.85796 36.49611 curveto
+233.764 36.49611 233.67383 36.45874 233.60739 36.3923 curveto
+233.54095 36.32587 233.50359 36.23569 233.50359 36.14174 curveto
+233.50359 36.04779 233.54095 35.95761 233.60739 35.89117 curveto
+233.67383 35.82474 233.764 35.78737 233.85796 35.78737 curveto
+233.9519 35.78737 234.04208 35.82474 234.10852 35.89117 curveto
+234.17496 35.95761 234.21233 36.04779 234.21233 36.14174 curveto closepath fill
+newpath 255.47217 36.14174 moveto
+255.47217 36.23569 255.4348 36.32587 255.36836 36.3923 curveto
+255.30193 36.45874 255.21175 36.49611 255.1178 36.49611 curveto
+255.02385 36.49611 254.93367 36.45874 254.86723 36.3923 curveto
+254.8008 36.32587 254.76343 36.23569 254.76343 36.14174 curveto
+254.76343 36.04779 254.8008 35.95761 254.86723 35.89117 curveto
+254.93367 35.82474 255.02385 35.78737 255.1178 35.78737 curveto
+255.21175 35.78737 255.30193 35.82474 255.36836 35.89117 curveto
+255.4348 35.95761 255.47217 36.04779 255.47217 36.14174 curveto closepath fill
+newpath 85.39343 40.3937 moveto
+85.39343 40.48766 85.35606 40.57784 85.28963 40.64427 curveto
+85.22319 40.71071 85.13301 40.74808 85.03906 40.74808 curveto
+84.94511 40.74808 84.85493 40.71071 84.7885 40.64427 curveto
+84.72206 40.57784 84.6847 40.48766 84.6847 40.3937 curveto
+84.6847 40.29976 84.72206 40.20958 84.7885 40.14314 curveto
+84.85493 40.0767 84.94511 40.03934 85.03906 40.03934 curveto
+85.13301 40.03934 85.22319 40.0767 85.28963 40.14314 curveto
+85.35606 40.20958 85.39343 40.29976 85.39343 40.3937 curveto closepath fill
+newpath 106.65327 40.3937 moveto
+106.65327 40.48766 106.6159 40.57784 106.54947 40.64427 curveto
+106.48303 40.71071 106.39285 40.74808 106.2989 40.74808 curveto
+106.20496 40.74808 106.11478 40.71071 106.04834 40.64427 curveto
+105.9819 40.57784 105.94453 40.48766 105.94453 40.3937 curveto
+105.94453 40.29976 105.9819 40.20958 106.04834 40.14314 curveto
+106.11478 40.0767 106.20496 40.03934 106.2989 40.03934 curveto
+106.39285 40.03934 106.48303 40.0767 106.54947 40.14314 curveto
+106.6159 40.20958 106.65327 40.29976 106.65327 40.3937 curveto closepath fill
+newpath 127.91312 40.3937 moveto
+127.91312 40.48766 127.87575 40.57784 127.80931 40.64427 curveto
+127.74287 40.71071 127.6527 40.74808 127.55875 40.74808 curveto
+127.4648 40.74808 127.37462 40.71071 127.30818 40.64427 curveto
+127.24174 40.57784 127.20438 40.48766 127.20438 40.3937 curveto
+127.20438 40.29976 127.24174 40.20958 127.30818 40.14314 curveto
+127.37462 40.0767 127.4648 40.03934 127.55875 40.03934 curveto
+127.6527 40.03934 127.74287 40.0767 127.80931 40.14314 curveto
+127.87575 40.20958 127.91312 40.29976 127.91312 40.3937 curveto closepath fill
+newpath 149.17296 40.3937 moveto
+149.17296 40.48766 149.13559 40.57784 149.06915 40.64427 curveto
+149.00272 40.71071 148.91254 40.74808 148.81859 40.74808 curveto
+148.72464 40.74808 148.63446 40.71071 148.56802 40.64427 curveto
+148.50159 40.57784 148.46422 40.48766 148.46422 40.3937 curveto
+148.46422 40.29976 148.50159 40.20958 148.56802 40.14314 curveto
+148.63446 40.0767 148.72464 40.03934 148.81859 40.03934 curveto
+148.91254 40.03934 149.00272 40.0767 149.06915 40.14314 curveto
+149.13559 40.20958 149.17296 40.29976 149.17296 40.3937 curveto closepath fill
+newpath 191.69264 40.3937 moveto
+191.69264 40.48766 191.65527 40.57784 191.58884 40.64427 curveto
+191.5224 40.71071 191.43222 40.74808 191.33827 40.74808 curveto
+191.24432 40.74808 191.15414 40.71071 191.0877 40.64427 curveto
+191.02127 40.57784 190.9839 40.48766 190.9839 40.3937 curveto
+190.9839 40.29976 191.02127 40.20958 191.0877 40.14314 curveto
+191.15414 40.0767 191.24432 40.03934 191.33827 40.03934 curveto
+191.43222 40.03934 191.5224 40.0767 191.58884 40.14314 curveto
+191.65527 40.20958 191.69264 40.29976 191.69264 40.3937 curveto closepath fill
+newpath 212.95248 40.3937 moveto
+212.95248 40.48766 212.91512 40.57784 212.84868 40.64427 curveto
+212.78224 40.71071 212.69206 40.74808 212.59811 40.74808 curveto
+212.50417 40.74808 212.41399 40.71071 212.34755 40.64427 curveto
+212.28111 40.57784 212.24374 40.48766 212.24374 40.3937 curveto
+212.24374 40.29976 212.28111 40.20958 212.34755 40.14314 curveto
+212.41399 40.0767 212.50417 40.03934 212.59811 40.03934 curveto
+212.69206 40.03934 212.78224 40.0767 212.84868 40.14314 curveto
+212.91512 40.20958 212.95248 40.29976 212.95248 40.3937 curveto closepath fill
+newpath 234.21233 40.3937 moveto
+234.21233 40.48766 234.17496 40.57784 234.10852 40.64427 curveto
+234.04208 40.71071 233.9519 40.74808 233.85796 40.74808 curveto
+233.764 40.74808 233.67383 40.71071 233.60739 40.64427 curveto
+233.54095 40.57784 233.50359 40.48766 233.50359 40.3937 curveto
+233.50359 40.29976 233.54095 40.20958 233.60739 40.14314 curveto
+233.67383 40.0767 233.764 40.03934 233.85796 40.03934 curveto
+233.9519 40.03934 234.04208 40.0767 234.10852 40.14314 curveto
+234.17496 40.20958 234.21233 40.29976 234.21233 40.3937 curveto closepath fill
+newpath 255.47217 40.3937 moveto
+255.47217 40.48766 255.4348 40.57784 255.36836 40.64427 curveto
+255.30193 40.71071 255.21175 40.74808 255.1178 40.74808 curveto
+255.02385 40.74808 254.93367 40.71071 254.86723 40.64427 curveto
+254.8008 40.57784 254.76343 40.48766 254.76343 40.3937 curveto
+254.76343 40.29976 254.8008 40.20958 254.86723 40.14314 curveto
+254.93367 40.0767 255.02385 40.03934 255.1178 40.03934 curveto
+255.21175 40.03934 255.30193 40.0767 255.36836 40.14314 curveto
+255.4348 40.20958 255.47217 40.29976 255.47217 40.3937 curveto closepath fill
+newpath 85.39343 44.64568 moveto
+85.39343 44.73962 85.35606 44.8298 85.28963 44.89624 curveto
+85.22319 44.96268 85.13301 45.00005 85.03906 45.00005 curveto
+84.94511 45.00005 84.85493 44.96268 84.7885 44.89624 curveto
+84.72206 44.8298 84.6847 44.73962 84.6847 44.64568 curveto
+84.6847 44.55173 84.72206 44.46155 84.7885 44.39511 curveto
+84.85493 44.32867 84.94511 44.2913 85.03906 44.2913 curveto
+85.13301 44.2913 85.22319 44.32867 85.28963 44.39511 curveto
+85.35606 44.46155 85.39343 44.55173 85.39343 44.64568 curveto closepath fill
+newpath 106.65327 44.64568 moveto
+106.65327 44.73962 106.6159 44.8298 106.54947 44.89624 curveto
+106.48303 44.96268 106.39285 45.00005 106.2989 45.00005 curveto
+106.20496 45.00005 106.11478 44.96268 106.04834 44.89624 curveto
+105.9819 44.8298 105.94453 44.73962 105.94453 44.64568 curveto
+105.94453 44.55173 105.9819 44.46155 106.04834 44.39511 curveto
+106.11478 44.32867 106.20496 44.2913 106.2989 44.2913 curveto
+106.39285 44.2913 106.48303 44.32867 106.54947 44.39511 curveto
+106.6159 44.46155 106.65327 44.55173 106.65327 44.64568 curveto closepath fill
+newpath 127.91312 44.64568 moveto
+127.91312 44.73962 127.87575 44.8298 127.80931 44.89624 curveto
+127.74287 44.96268 127.6527 45.00005 127.55875 45.00005 curveto
+127.4648 45.00005 127.37462 44.96268 127.30818 44.89624 curveto
+127.24174 44.8298 127.20438 44.73962 127.20438 44.64568 curveto
+127.20438 44.55173 127.24174 44.46155 127.30818 44.39511 curveto
+127.37462 44.32867 127.4648 44.2913 127.55875 44.2913 curveto
+127.6527 44.2913 127.74287 44.32867 127.80931 44.39511 curveto
+127.87575 44.46155 127.91312 44.55173 127.91312 44.64568 curveto closepath fill
+newpath 149.17296 44.64568 moveto
+149.17296 44.73962 149.13559 44.8298 149.06915 44.89624 curveto
+149.00272 44.96268 148.91254 45.00005 148.81859 45.00005 curveto
+148.72464 45.00005 148.63446 44.96268 148.56802 44.89624 curveto
+148.50159 44.8298 148.46422 44.73962 148.46422 44.64568 curveto
+148.46422 44.55173 148.50159 44.46155 148.56802 44.39511 curveto
+148.63446 44.32867 148.72464 44.2913 148.81859 44.2913 curveto
+148.91254 44.2913 149.00272 44.32867 149.06915 44.39511 curveto
+149.13559 44.46155 149.17296 44.55173 149.17296 44.64568 curveto closepath fill
+newpath 191.69264 44.64568 moveto
+191.69264 44.73962 191.65527 44.8298 191.58884 44.89624 curveto
+191.5224 44.96268 191.43222 45.00005 191.33827 45.00005 curveto
+191.24432 45.00005 191.15414 44.96268 191.0877 44.89624 curveto
+191.02127 44.8298 190.9839 44.73962 190.9839 44.64568 curveto
+190.9839 44.55173 191.02127 44.46155 191.0877 44.39511 curveto
+191.15414 44.32867 191.24432 44.2913 191.33827 44.2913 curveto
+191.43222 44.2913 191.5224 44.32867 191.58884 44.39511 curveto
+191.65527 44.46155 191.69264 44.55173 191.69264 44.64568 curveto closepath fill
+newpath 212.95248 44.64568 moveto
+212.95248 44.73962 212.91512 44.8298 212.84868 44.89624 curveto
+212.78224 44.96268 212.69206 45.00005 212.59811 45.00005 curveto
+212.50417 45.00005 212.41399 44.96268 212.34755 44.89624 curveto
+212.28111 44.8298 212.24374 44.73962 212.24374 44.64568 curveto
+212.24374 44.55173 212.28111 44.46155 212.34755 44.39511 curveto
+212.41399 44.32867 212.50417 44.2913 212.59811 44.2913 curveto
+212.69206 44.2913 212.78224 44.32867 212.84868 44.39511 curveto
+212.91512 44.46155 212.95248 44.55173 212.95248 44.64568 curveto closepath fill
+newpath 234.21233 44.64568 moveto
+234.21233 44.73962 234.17496 44.8298 234.10852 44.89624 curveto
+234.04208 44.96268 233.9519 45.00005 233.85796 45.00005 curveto
+233.764 45.00005 233.67383 44.96268 233.60739 44.89624 curveto
+233.54095 44.8298 233.50359 44.73962 233.50359 44.64568 curveto
+233.50359 44.55173 233.54095 44.46155 233.60739 44.39511 curveto
+233.67383 44.32867 233.764 44.2913 233.85796 44.2913 curveto
+233.9519 44.2913 234.04208 44.32867 234.10852 44.39511 curveto
+234.17496 44.46155 234.21233 44.55173 234.21233 44.64568 curveto closepath fill
+newpath 255.47217 44.64568 moveto
+255.47217 44.73962 255.4348 44.8298 255.36836 44.89624 curveto
+255.30193 44.96268 255.21175 45.00005 255.1178 45.00005 curveto
+255.02385 45.00005 254.93367 44.96268 254.86723 44.89624 curveto
+254.8008 44.8298 254.76343 44.73962 254.76343 44.64568 curveto
+254.76343 44.55173 254.8008 44.46155 254.86723 44.39511 curveto
+254.93367 44.32867 255.02385 44.2913 255.1178 44.2913 curveto
+255.21175 44.2913 255.30193 44.32867 255.36836 44.39511 curveto
+255.4348 44.46155 255.47217 44.55173 255.47217 44.64568 curveto closepath fill
+newpath 85.39343 48.89764 moveto
+85.39343 48.9916 85.35606 49.08177 85.28963 49.14821 curveto
+85.22319 49.21465 85.13301 49.25201 85.03906 49.25201 curveto
+84.94511 49.25201 84.85493 49.21465 84.7885 49.14821 curveto
+84.72206 49.08177 84.6847 48.9916 84.6847 48.89764 curveto
+84.6847 48.8037 84.72206 48.71352 84.7885 48.64708 curveto
+84.85493 48.58064 84.94511 48.54327 85.03906 48.54327 curveto
+85.13301 48.54327 85.22319 48.58064 85.28963 48.64708 curveto
+85.35606 48.71352 85.39343 48.8037 85.39343 48.89764 curveto closepath fill
+newpath 106.65327 48.89764 moveto
+106.65327 48.9916 106.6159 49.08177 106.54947 49.14821 curveto
+106.48303 49.21465 106.39285 49.25201 106.2989 49.25201 curveto
+106.20496 49.25201 106.11478 49.21465 106.04834 49.14821 curveto
+105.9819 49.08177 105.94453 48.9916 105.94453 48.89764 curveto
+105.94453 48.8037 105.9819 48.71352 106.04834 48.64708 curveto
+106.11478 48.58064 106.20496 48.54327 106.2989 48.54327 curveto
+106.39285 48.54327 106.48303 48.58064 106.54947 48.64708 curveto
+106.6159 48.71352 106.65327 48.8037 106.65327 48.89764 curveto closepath fill
+newpath 127.91312 48.89764 moveto
+127.91312 48.9916 127.87575 49.08177 127.80931 49.14821 curveto
+127.74287 49.21465 127.6527 49.25201 127.55875 49.25201 curveto
+127.4648 49.25201 127.37462 49.21465 127.30818 49.14821 curveto
+127.24174 49.08177 127.20438 48.9916 127.20438 48.89764 curveto
+127.20438 48.8037 127.24174 48.71352 127.30818 48.64708 curveto
+127.37462 48.58064 127.4648 48.54327 127.55875 48.54327 curveto
+127.6527 48.54327 127.74287 48.58064 127.80931 48.64708 curveto
+127.87575 48.71352 127.91312 48.8037 127.91312 48.89764 curveto closepath fill
+newpath 149.17296 48.89764 moveto
+149.17296 48.9916 149.13559 49.08177 149.06915 49.14821 curveto
+149.00272 49.21465 148.91254 49.25201 148.81859 49.25201 curveto
+148.72464 49.25201 148.63446 49.21465 148.56802 49.14821 curveto
+148.50159 49.08177 148.46422 48.9916 148.46422 48.89764 curveto
+148.46422 48.8037 148.50159 48.71352 148.56802 48.64708 curveto
+148.63446 48.58064 148.72464 48.54327 148.81859 48.54327 curveto
+148.91254 48.54327 149.00272 48.58064 149.06915 48.64708 curveto
+149.13559 48.71352 149.17296 48.8037 149.17296 48.89764 curveto closepath fill
+newpath 191.69264 48.89764 moveto
+191.69264 48.9916 191.65527 49.08177 191.58884 49.14821 curveto
+191.5224 49.21465 191.43222 49.25201 191.33827 49.25201 curveto
+191.24432 49.25201 191.15414 49.21465 191.0877 49.14821 curveto
+191.02127 49.08177 190.9839 48.9916 190.9839 48.89764 curveto
+190.9839 48.8037 191.02127 48.71352 191.0877 48.64708 curveto
+191.15414 48.58064 191.24432 48.54327 191.33827 48.54327 curveto
+191.43222 48.54327 191.5224 48.58064 191.58884 48.64708 curveto
+191.65527 48.71352 191.69264 48.8037 191.69264 48.89764 curveto closepath fill
+newpath 212.95248 48.89764 moveto
+212.95248 48.9916 212.91512 49.08177 212.84868 49.14821 curveto
+212.78224 49.21465 212.69206 49.25201 212.59811 49.25201 curveto
+212.50417 49.25201 212.41399 49.21465 212.34755 49.14821 curveto
+212.28111 49.08177 212.24374 48.9916 212.24374 48.89764 curveto
+212.24374 48.8037 212.28111 48.71352 212.34755 48.64708 curveto
+212.41399 48.58064 212.50417 48.54327 212.59811 48.54327 curveto
+212.69206 48.54327 212.78224 48.58064 212.84868 48.64708 curveto
+212.91512 48.71352 212.95248 48.8037 212.95248 48.89764 curveto closepath fill
+newpath 234.21233 48.89764 moveto
+234.21233 48.9916 234.17496 49.08177 234.10852 49.14821 curveto
+234.04208 49.21465 233.9519 49.25201 233.85796 49.25201 curveto
+233.764 49.25201 233.67383 49.21465 233.60739 49.14821 curveto
+233.54095 49.08177 233.50359 48.9916 233.50359 48.89764 curveto
+233.50359 48.8037 233.54095 48.71352 233.60739 48.64708 curveto
+233.67383 48.58064 233.764 48.54327 233.85796 48.54327 curveto
+233.9519 48.54327 234.04208 48.58064 234.10852 48.64708 curveto
+234.17496 48.71352 234.21233 48.8037 234.21233 48.89764 curveto closepath fill
+newpath 255.47217 48.89764 moveto
+255.47217 48.9916 255.4348 49.08177 255.36836 49.14821 curveto
+255.30193 49.21465 255.21175 49.25201 255.1178 49.25201 curveto
+255.02385 49.25201 254.93367 49.21465 254.86723 49.14821 curveto
+254.8008 49.08177 254.76343 48.9916 254.76343 48.89764 curveto
+254.76343 48.8037 254.8008 48.71352 254.86723 48.64708 curveto
+254.93367 48.58064 255.02385 48.54327 255.1178 48.54327 curveto
+255.21175 48.54327 255.30193 48.58064 255.36836 48.64708 curveto
+255.4348 48.71352 255.47217 48.8037 255.47217 48.89764 curveto closepath fill
+newpath 85.39343 53.14961 moveto
+85.39343 53.24356 85.35606 53.33374 85.28963 53.40018 curveto
+85.22319 53.46661 85.13301 53.50398 85.03906 53.50398 curveto
+84.94511 53.50398 84.85493 53.46661 84.7885 53.40018 curveto
+84.72206 53.33374 84.6847 53.24356 84.6847 53.14961 curveto
+84.6847 53.05566 84.72206 52.96548 84.7885 52.89905 curveto
+84.85493 52.83261 84.94511 52.79524 85.03906 52.79524 curveto
+85.13301 52.79524 85.22319 52.83261 85.28963 52.89905 curveto
+85.35606 52.96548 85.39343 53.05566 85.39343 53.14961 curveto closepath fill
+newpath 106.65327 53.14961 moveto
+106.65327 53.24356 106.6159 53.33374 106.54947 53.40018 curveto
+106.48303 53.46661 106.39285 53.50398 106.2989 53.50398 curveto
+106.20496 53.50398 106.11478 53.46661 106.04834 53.40018 curveto
+105.9819 53.33374 105.94453 53.24356 105.94453 53.14961 curveto
+105.94453 53.05566 105.9819 52.96548 106.04834 52.89905 curveto
+106.11478 52.83261 106.20496 52.79524 106.2989 52.79524 curveto
+106.39285 52.79524 106.48303 52.83261 106.54947 52.89905 curveto
+106.6159 52.96548 106.65327 53.05566 106.65327 53.14961 curveto closepath fill
+newpath 127.91312 53.14961 moveto
+127.91312 53.24356 127.87575 53.33374 127.80931 53.40018 curveto
+127.74287 53.46661 127.6527 53.50398 127.55875 53.50398 curveto
+127.4648 53.50398 127.37462 53.46661 127.30818 53.40018 curveto
+127.24174 53.33374 127.20438 53.24356 127.20438 53.14961 curveto
+127.20438 53.05566 127.24174 52.96548 127.30818 52.89905 curveto
+127.37462 52.83261 127.4648 52.79524 127.55875 52.79524 curveto
+127.6527 52.79524 127.74287 52.83261 127.80931 52.89905 curveto
+127.87575 52.96548 127.91312 53.05566 127.91312 53.14961 curveto closepath fill
+newpath 149.17296 53.14961 moveto
+149.17296 53.24356 149.13559 53.33374 149.06915 53.40018 curveto
+149.00272 53.46661 148.91254 53.50398 148.81859 53.50398 curveto
+148.72464 53.50398 148.63446 53.46661 148.56802 53.40018 curveto
+148.50159 53.33374 148.46422 53.24356 148.46422 53.14961 curveto
+148.46422 53.05566 148.50159 52.96548 148.56802 52.89905 curveto
+148.63446 52.83261 148.72464 52.79524 148.81859 52.79524 curveto
+148.91254 52.79524 149.00272 52.83261 149.06915 52.89905 curveto
+149.13559 52.96548 149.17296 53.05566 149.17296 53.14961 curveto closepath fill
+newpath 191.69264 53.14961 moveto
+191.69264 53.24356 191.65527 53.33374 191.58884 53.40018 curveto
+191.5224 53.46661 191.43222 53.50398 191.33827 53.50398 curveto
+191.24432 53.50398 191.15414 53.46661 191.0877 53.40018 curveto
+191.02127 53.33374 190.9839 53.24356 190.9839 53.14961 curveto
+190.9839 53.05566 191.02127 52.96548 191.0877 52.89905 curveto
+191.15414 52.83261 191.24432 52.79524 191.33827 52.79524 curveto
+191.43222 52.79524 191.5224 52.83261 191.58884 52.89905 curveto
+191.65527 52.96548 191.69264 53.05566 191.69264 53.14961 curveto closepath fill
+newpath 212.95248 53.14961 moveto
+212.95248 53.24356 212.91512 53.33374 212.84868 53.40018 curveto
+212.78224 53.46661 212.69206 53.50398 212.59811 53.50398 curveto
+212.50417 53.50398 212.41399 53.46661 212.34755 53.40018 curveto
+212.28111 53.33374 212.24374 53.24356 212.24374 53.14961 curveto
+212.24374 53.05566 212.28111 52.96548 212.34755 52.89905 curveto
+212.41399 52.83261 212.50417 52.79524 212.59811 52.79524 curveto
+212.69206 52.79524 212.78224 52.83261 212.84868 52.89905 curveto
+212.91512 52.96548 212.95248 53.05566 212.95248 53.14961 curveto closepath fill
+newpath 234.21233 53.14961 moveto
+234.21233 53.24356 234.17496 53.33374 234.10852 53.40018 curveto
+234.04208 53.46661 233.9519 53.50398 233.85796 53.50398 curveto
+233.764 53.50398 233.67383 53.46661 233.60739 53.40018 curveto
+233.54095 53.33374 233.50359 53.24356 233.50359 53.14961 curveto
+233.50359 53.05566 233.54095 52.96548 233.60739 52.89905 curveto
+233.67383 52.83261 233.764 52.79524 233.85796 52.79524 curveto
+233.9519 52.79524 234.04208 52.83261 234.10852 52.89905 curveto
+234.17496 52.96548 234.21233 53.05566 234.21233 53.14961 curveto closepath fill
+newpath 255.47217 53.14961 moveto
+255.47217 53.24356 255.4348 53.33374 255.36836 53.40018 curveto
+255.30193 53.46661 255.21175 53.50398 255.1178 53.50398 curveto
+255.02385 53.50398 254.93367 53.46661 254.86723 53.40018 curveto
+254.8008 53.33374 254.76343 53.24356 254.76343 53.14961 curveto
+254.76343 53.05566 254.8008 52.96548 254.86723 52.89905 curveto
+254.93367 52.83261 255.02385 52.79524 255.1178 52.79524 curveto
+255.21175 52.79524 255.30193 52.83261 255.36836 52.89905 curveto
+255.4348 52.96548 255.47217 53.05566 255.47217 53.14961 curveto closepath fill
+newpath 85.39343 57.40158 moveto
+85.39343 57.49553 85.35606 57.58571 85.28963 57.65215 curveto
+85.22319 57.71858 85.13301 57.75595 85.03906 57.75595 curveto
+84.94511 57.75595 84.85493 57.71858 84.7885 57.65215 curveto
+84.72206 57.58571 84.6847 57.49553 84.6847 57.40158 curveto
+84.6847 57.30763 84.72206 57.21745 84.7885 57.15102 curveto
+84.85493 57.08458 84.94511 57.04721 85.03906 57.04721 curveto
+85.13301 57.04721 85.22319 57.08458 85.28963 57.15102 curveto
+85.35606 57.21745 85.39343 57.30763 85.39343 57.40158 curveto closepath fill
+newpath 106.65327 57.40158 moveto
+106.65327 57.49553 106.6159 57.58571 106.54947 57.65215 curveto
+106.48303 57.71858 106.39285 57.75595 106.2989 57.75595 curveto
+106.20496 57.75595 106.11478 57.71858 106.04834 57.65215 curveto
+105.9819 57.58571 105.94453 57.49553 105.94453 57.40158 curveto
+105.94453 57.30763 105.9819 57.21745 106.04834 57.15102 curveto
+106.11478 57.08458 106.20496 57.04721 106.2989 57.04721 curveto
+106.39285 57.04721 106.48303 57.08458 106.54947 57.15102 curveto
+106.6159 57.21745 106.65327 57.30763 106.65327 57.40158 curveto closepath fill
+newpath 127.91312 57.40158 moveto
+127.91312 57.49553 127.87575 57.58571 127.80931 57.65215 curveto
+127.74287 57.71858 127.6527 57.75595 127.55875 57.75595 curveto
+127.4648 57.75595 127.37462 57.71858 127.30818 57.65215 curveto
+127.24174 57.58571 127.20438 57.49553 127.20438 57.40158 curveto
+127.20438 57.30763 127.24174 57.21745 127.30818 57.15102 curveto
+127.37462 57.08458 127.4648 57.04721 127.55875 57.04721 curveto
+127.6527 57.04721 127.74287 57.08458 127.80931 57.15102 curveto
+127.87575 57.21745 127.91312 57.30763 127.91312 57.40158 curveto closepath fill
+newpath 149.17296 57.40158 moveto
+149.17296 57.49553 149.13559 57.58571 149.06915 57.65215 curveto
+149.00272 57.71858 148.91254 57.75595 148.81859 57.75595 curveto
+148.72464 57.75595 148.63446 57.71858 148.56802 57.65215 curveto
+148.50159 57.58571 148.46422 57.49553 148.46422 57.40158 curveto
+148.46422 57.30763 148.50159 57.21745 148.56802 57.15102 curveto
+148.63446 57.08458 148.72464 57.04721 148.81859 57.04721 curveto
+148.91254 57.04721 149.00272 57.08458 149.06915 57.15102 curveto
+149.13559 57.21745 149.17296 57.30763 149.17296 57.40158 curveto closepath fill
+newpath 191.69264 57.40158 moveto
+191.69264 57.49553 191.65527 57.58571 191.58884 57.65215 curveto
+191.5224 57.71858 191.43222 57.75595 191.33827 57.75595 curveto
+191.24432 57.75595 191.15414 57.71858 191.0877 57.65215 curveto
+191.02127 57.58571 190.9839 57.49553 190.9839 57.40158 curveto
+190.9839 57.30763 191.02127 57.21745 191.0877 57.15102 curveto
+191.15414 57.08458 191.24432 57.04721 191.33827 57.04721 curveto
+191.43222 57.04721 191.5224 57.08458 191.58884 57.15102 curveto
+191.65527 57.21745 191.69264 57.30763 191.69264 57.40158 curveto closepath fill
+newpath 212.95248 57.40158 moveto
+212.95248 57.49553 212.91512 57.58571 212.84868 57.65215 curveto
+212.78224 57.71858 212.69206 57.75595 212.59811 57.75595 curveto
+212.50417 57.75595 212.41399 57.71858 212.34755 57.65215 curveto
+212.28111 57.58571 212.24374 57.49553 212.24374 57.40158 curveto
+212.24374 57.30763 212.28111 57.21745 212.34755 57.15102 curveto
+212.41399 57.08458 212.50417 57.04721 212.59811 57.04721 curveto
+212.69206 57.04721 212.78224 57.08458 212.84868 57.15102 curveto
+212.91512 57.21745 212.95248 57.30763 212.95248 57.40158 curveto closepath fill
+newpath 234.21233 57.40158 moveto
+234.21233 57.49553 234.17496 57.58571 234.10852 57.65215 curveto
+234.04208 57.71858 233.9519 57.75595 233.85796 57.75595 curveto
+233.764 57.75595 233.67383 57.71858 233.60739 57.65215 curveto
+233.54095 57.58571 233.50359 57.49553 233.50359 57.40158 curveto
+233.50359 57.30763 233.54095 57.21745 233.60739 57.15102 curveto
+233.67383 57.08458 233.764 57.04721 233.85796 57.04721 curveto
+233.9519 57.04721 234.04208 57.08458 234.10852 57.15102 curveto
+234.17496 57.21745 234.21233 57.30763 234.21233 57.40158 curveto closepath fill
+newpath 255.47217 57.40158 moveto
+255.47217 57.49553 255.4348 57.58571 255.36836 57.65215 curveto
+255.30193 57.71858 255.21175 57.75595 255.1178 57.75595 curveto
+255.02385 57.75595 254.93367 57.71858 254.86723 57.65215 curveto
+254.8008 57.58571 254.76343 57.49553 254.76343 57.40158 curveto
+254.76343 57.30763 254.8008 57.21745 254.86723 57.15102 curveto
+254.93367 57.08458 255.02385 57.04721 255.1178 57.04721 curveto
+255.21175 57.04721 255.30193 57.08458 255.36836 57.15102 curveto
+255.4348 57.21745 255.47217 57.30763 255.47217 57.40158 curveto closepath fill
+newpath 85.39343 61.65355 moveto
+85.39343 61.7475 85.35606 61.83768 85.28963 61.90411 curveto
+85.22319 61.97055 85.13301 62.00792 85.03906 62.00792 curveto
+84.94511 62.00792 84.85493 61.97055 84.7885 61.90411 curveto
+84.72206 61.83768 84.6847 61.7475 84.6847 61.65355 curveto
+84.6847 61.5596 84.72206 61.46942 84.7885 61.40298 curveto
+84.85493 61.33655 84.94511 61.29918 85.03906 61.29918 curveto
+85.13301 61.29918 85.22319 61.33655 85.28963 61.40298 curveto
+85.35606 61.46942 85.39343 61.5596 85.39343 61.65355 curveto closepath fill
+newpath 106.65327 61.65355 moveto
+106.65327 61.7475 106.6159 61.83768 106.54947 61.90411 curveto
+106.48303 61.97055 106.39285 62.00792 106.2989 62.00792 curveto
+106.20496 62.00792 106.11478 61.97055 106.04834 61.90411 curveto
+105.9819 61.83768 105.94453 61.7475 105.94453 61.65355 curveto
+105.94453 61.5596 105.9819 61.46942 106.04834 61.40298 curveto
+106.11478 61.33655 106.20496 61.29918 106.2989 61.29918 curveto
+106.39285 61.29918 106.48303 61.33655 106.54947 61.40298 curveto
+106.6159 61.46942 106.65327 61.5596 106.65327 61.65355 curveto closepath fill
+newpath 127.91312 61.65355 moveto
+127.91312 61.7475 127.87575 61.83768 127.80931 61.90411 curveto
+127.74287 61.97055 127.6527 62.00792 127.55875 62.00792 curveto
+127.4648 62.00792 127.37462 61.97055 127.30818 61.90411 curveto
+127.24174 61.83768 127.20438 61.7475 127.20438 61.65355 curveto
+127.20438 61.5596 127.24174 61.46942 127.30818 61.40298 curveto
+127.37462 61.33655 127.4648 61.29918 127.55875 61.29918 curveto
+127.6527 61.29918 127.74287 61.33655 127.80931 61.40298 curveto
+127.87575 61.46942 127.91312 61.5596 127.91312 61.65355 curveto closepath fill
+newpath 149.17296 61.65355 moveto
+149.17296 61.7475 149.13559 61.83768 149.06915 61.90411 curveto
+149.00272 61.97055 148.91254 62.00792 148.81859 62.00792 curveto
+148.72464 62.00792 148.63446 61.97055 148.56802 61.90411 curveto
+148.50159 61.83768 148.46422 61.7475 148.46422 61.65355 curveto
+148.46422 61.5596 148.50159 61.46942 148.56802 61.40298 curveto
+148.63446 61.33655 148.72464 61.29918 148.81859 61.29918 curveto
+148.91254 61.29918 149.00272 61.33655 149.06915 61.40298 curveto
+149.13559 61.46942 149.17296 61.5596 149.17296 61.65355 curveto closepath fill
+newpath 191.69264 61.65355 moveto
+191.69264 61.7475 191.65527 61.83768 191.58884 61.90411 curveto
+191.5224 61.97055 191.43222 62.00792 191.33827 62.00792 curveto
+191.24432 62.00792 191.15414 61.97055 191.0877 61.90411 curveto
+191.02127 61.83768 190.9839 61.7475 190.9839 61.65355 curveto
+190.9839 61.5596 191.02127 61.46942 191.0877 61.40298 curveto
+191.15414 61.33655 191.24432 61.29918 191.33827 61.29918 curveto
+191.43222 61.29918 191.5224 61.33655 191.58884 61.40298 curveto
+191.65527 61.46942 191.69264 61.5596 191.69264 61.65355 curveto closepath fill
+newpath 212.95248 61.65355 moveto
+212.95248 61.7475 212.91512 61.83768 212.84868 61.90411 curveto
+212.78224 61.97055 212.69206 62.00792 212.59811 62.00792 curveto
+212.50417 62.00792 212.41399 61.97055 212.34755 61.90411 curveto
+212.28111 61.83768 212.24374 61.7475 212.24374 61.65355 curveto
+212.24374 61.5596 212.28111 61.46942 212.34755 61.40298 curveto
+212.41399 61.33655 212.50417 61.29918 212.59811 61.29918 curveto
+212.69206 61.29918 212.78224 61.33655 212.84868 61.40298 curveto
+212.91512 61.46942 212.95248 61.5596 212.95248 61.65355 curveto closepath fill
+newpath 234.21233 61.65355 moveto
+234.21233 61.7475 234.17496 61.83768 234.10852 61.90411 curveto
+234.04208 61.97055 233.9519 62.00792 233.85796 62.00792 curveto
+233.764 62.00792 233.67383 61.97055 233.60739 61.90411 curveto
+233.54095 61.83768 233.50359 61.7475 233.50359 61.65355 curveto
+233.50359 61.5596 233.54095 61.46942 233.60739 61.40298 curveto
+233.67383 61.33655 233.764 61.29918 233.85796 61.29918 curveto
+233.9519 61.29918 234.04208 61.33655 234.10852 61.40298 curveto
+234.17496 61.46942 234.21233 61.5596 234.21233 61.65355 curveto closepath fill
+newpath 255.47217 61.65355 moveto
+255.47217 61.7475 255.4348 61.83768 255.36836 61.90411 curveto
+255.30193 61.97055 255.21175 62.00792 255.1178 62.00792 curveto
+255.02385 62.00792 254.93367 61.97055 254.86723 61.90411 curveto
+254.8008 61.83768 254.76343 61.7475 254.76343 61.65355 curveto
+254.76343 61.5596 254.8008 61.46942 254.86723 61.40298 curveto
+254.93367 61.33655 255.02385 61.29918 255.1178 61.29918 curveto
+255.21175 61.29918 255.30193 61.33655 255.36836 61.40298 curveto
+255.4348 61.46942 255.47217 61.5596 255.47217 61.65355 curveto closepath fill
+newpath 85.39343 65.90552 moveto
+85.39343 65.99947 85.35606 66.08965 85.28963 66.15608 curveto
+85.22319 66.22252 85.13301 66.25989 85.03906 66.25989 curveto
+84.94511 66.25989 84.85493 66.22252 84.7885 66.15608 curveto
+84.72206 66.08965 84.6847 65.99947 84.6847 65.90552 curveto
+84.6847 65.81157 84.72206 65.72139 84.7885 65.65495 curveto
+84.85493 65.58852 84.94511 65.55115 85.03906 65.55115 curveto
+85.13301 65.55115 85.22319 65.58852 85.28963 65.65495 curveto
+85.35606 65.72139 85.39343 65.81157 85.39343 65.90552 curveto closepath fill
+newpath 106.65327 65.90552 moveto
+106.65327 65.99947 106.6159 66.08965 106.54947 66.15608 curveto
+106.48303 66.22252 106.39285 66.25989 106.2989 66.25989 curveto
+106.20496 66.25989 106.11478 66.22252 106.04834 66.15608 curveto
+105.9819 66.08965 105.94453 65.99947 105.94453 65.90552 curveto
+105.94453 65.81157 105.9819 65.72139 106.04834 65.65495 curveto
+106.11478 65.58852 106.20496 65.55115 106.2989 65.55115 curveto
+106.39285 65.55115 106.48303 65.58852 106.54947 65.65495 curveto
+106.6159 65.72139 106.65327 65.81157 106.65327 65.90552 curveto closepath fill
+newpath 127.91312 65.90552 moveto
+127.91312 65.99947 127.87575 66.08965 127.80931 66.15608 curveto
+127.74287 66.22252 127.6527 66.25989 127.55875 66.25989 curveto
+127.4648 66.25989 127.37462 66.22252 127.30818 66.15608 curveto
+127.24174 66.08965 127.20438 65.99947 127.20438 65.90552 curveto
+127.20438 65.81157 127.24174 65.72139 127.30818 65.65495 curveto
+127.37462 65.58852 127.4648 65.55115 127.55875 65.55115 curveto
+127.6527 65.55115 127.74287 65.58852 127.80931 65.65495 curveto
+127.87575 65.72139 127.91312 65.81157 127.91312 65.90552 curveto closepath fill
+newpath 149.17296 65.90552 moveto
+149.17296 65.99947 149.13559 66.08965 149.06915 66.15608 curveto
+149.00272 66.22252 148.91254 66.25989 148.81859 66.25989 curveto
+148.72464 66.25989 148.63446 66.22252 148.56802 66.15608 curveto
+148.50159 66.08965 148.46422 65.99947 148.46422 65.90552 curveto
+148.46422 65.81157 148.50159 65.72139 148.56802 65.65495 curveto
+148.63446 65.58852 148.72464 65.55115 148.81859 65.55115 curveto
+148.91254 65.55115 149.00272 65.58852 149.06915 65.65495 curveto
+149.13559 65.72139 149.17296 65.81157 149.17296 65.90552 curveto closepath fill
+newpath 191.69264 65.90552 moveto
+191.69264 65.99947 191.65527 66.08965 191.58884 66.15608 curveto
+191.5224 66.22252 191.43222 66.25989 191.33827 66.25989 curveto
+191.24432 66.25989 191.15414 66.22252 191.0877 66.15608 curveto
+191.02127 66.08965 190.9839 65.99947 190.9839 65.90552 curveto
+190.9839 65.81157 191.02127 65.72139 191.0877 65.65495 curveto
+191.15414 65.58852 191.24432 65.55115 191.33827 65.55115 curveto
+191.43222 65.55115 191.5224 65.58852 191.58884 65.65495 curveto
+191.65527 65.72139 191.69264 65.81157 191.69264 65.90552 curveto closepath fill
+newpath 212.95248 65.90552 moveto
+212.95248 65.99947 212.91512 66.08965 212.84868 66.15608 curveto
+212.78224 66.22252 212.69206 66.25989 212.59811 66.25989 curveto
+212.50417 66.25989 212.41399 66.22252 212.34755 66.15608 curveto
+212.28111 66.08965 212.24374 65.99947 212.24374 65.90552 curveto
+212.24374 65.81157 212.28111 65.72139 212.34755 65.65495 curveto
+212.41399 65.58852 212.50417 65.55115 212.59811 65.55115 curveto
+212.69206 65.55115 212.78224 65.58852 212.84868 65.65495 curveto
+212.91512 65.72139 212.95248 65.81157 212.95248 65.90552 curveto closepath fill
+newpath 234.21233 65.90552 moveto
+234.21233 65.99947 234.17496 66.08965 234.10852 66.15608 curveto
+234.04208 66.22252 233.9519 66.25989 233.85796 66.25989 curveto
+233.764 66.25989 233.67383 66.22252 233.60739 66.15608 curveto
+233.54095 66.08965 233.50359 65.99947 233.50359 65.90552 curveto
+233.50359 65.81157 233.54095 65.72139 233.60739 65.65495 curveto
+233.67383 65.58852 233.764 65.55115 233.85796 65.55115 curveto
+233.9519 65.55115 234.04208 65.58852 234.10852 65.65495 curveto
+234.17496 65.72139 234.21233 65.81157 234.21233 65.90552 curveto closepath fill
+newpath 255.47217 65.90552 moveto
+255.47217 65.99947 255.4348 66.08965 255.36836 66.15608 curveto
+255.30193 66.22252 255.21175 66.25989 255.1178 66.25989 curveto
+255.02385 66.25989 254.93367 66.22252 254.86723 66.15608 curveto
+254.8008 66.08965 254.76343 65.99947 254.76343 65.90552 curveto
+254.76343 65.81157 254.8008 65.72139 254.86723 65.65495 curveto
+254.93367 65.58852 255.02385 65.55115 255.1178 65.55115 curveto
+255.21175 65.55115 255.30193 65.58852 255.36836 65.65495 curveto
+255.4348 65.72139 255.47217 65.81157 255.47217 65.90552 curveto closepath fill
+newpath 85.39343 70.15749 moveto
+85.39343 70.25143 85.35606 70.34161 85.28963 70.40805 curveto
+85.22319 70.47449 85.13301 70.51186 85.03906 70.51186 curveto
+84.94511 70.51186 84.85493 70.47449 84.7885 70.40805 curveto
+84.72206 70.34161 84.6847 70.25143 84.6847 70.15749 curveto
+84.6847 70.06354 84.72206 69.97336 84.7885 69.90692 curveto
+84.85493 69.84048 84.94511 69.80312 85.03906 69.80312 curveto
+85.13301 69.80312 85.22319 69.84048 85.28963 69.90692 curveto
+85.35606 69.97336 85.39343 70.06354 85.39343 70.15749 curveto closepath fill
+newpath 106.65327 70.15749 moveto
+106.65327 70.25143 106.6159 70.34161 106.54947 70.40805 curveto
+106.48303 70.47449 106.39285 70.51186 106.2989 70.51186 curveto
+106.20496 70.51186 106.11478 70.47449 106.04834 70.40805 curveto
+105.9819 70.34161 105.94453 70.25143 105.94453 70.15749 curveto
+105.94453 70.06354 105.9819 69.97336 106.04834 69.90692 curveto
+106.11478 69.84048 106.20496 69.80312 106.2989 69.80312 curveto
+106.39285 69.80312 106.48303 69.84048 106.54947 69.90692 curveto
+106.6159 69.97336 106.65327 70.06354 106.65327 70.15749 curveto closepath fill
+newpath 127.91312 70.15749 moveto
+127.91312 70.25143 127.87575 70.34161 127.80931 70.40805 curveto
+127.74287 70.47449 127.6527 70.51186 127.55875 70.51186 curveto
+127.4648 70.51186 127.37462 70.47449 127.30818 70.40805 curveto
+127.24174 70.34161 127.20438 70.25143 127.20438 70.15749 curveto
+127.20438 70.06354 127.24174 69.97336 127.30818 69.90692 curveto
+127.37462 69.84048 127.4648 69.80312 127.55875 69.80312 curveto
+127.6527 69.80312 127.74287 69.84048 127.80931 69.90692 curveto
+127.87575 69.97336 127.91312 70.06354 127.91312 70.15749 curveto closepath fill
+newpath 149.17296 70.15749 moveto
+149.17296 70.25143 149.13559 70.34161 149.06915 70.40805 curveto
+149.00272 70.47449 148.91254 70.51186 148.81859 70.51186 curveto
+148.72464 70.51186 148.63446 70.47449 148.56802 70.40805 curveto
+148.50159 70.34161 148.46422 70.25143 148.46422 70.15749 curveto
+148.46422 70.06354 148.50159 69.97336 148.56802 69.90692 curveto
+148.63446 69.84048 148.72464 69.80312 148.81859 69.80312 curveto
+148.91254 69.80312 149.00272 69.84048 149.06915 69.90692 curveto
+149.13559 69.97336 149.17296 70.06354 149.17296 70.15749 curveto closepath fill
+newpath 191.69264 70.15749 moveto
+191.69264 70.25143 191.65527 70.34161 191.58884 70.40805 curveto
+191.5224 70.47449 191.43222 70.51186 191.33827 70.51186 curveto
+191.24432 70.51186 191.15414 70.47449 191.0877 70.40805 curveto
+191.02127 70.34161 190.9839 70.25143 190.9839 70.15749 curveto
+190.9839 70.06354 191.02127 69.97336 191.0877 69.90692 curveto
+191.15414 69.84048 191.24432 69.80312 191.33827 69.80312 curveto
+191.43222 69.80312 191.5224 69.84048 191.58884 69.90692 curveto
+191.65527 69.97336 191.69264 70.06354 191.69264 70.15749 curveto closepath fill
+newpath 212.95248 70.15749 moveto
+212.95248 70.25143 212.91512 70.34161 212.84868 70.40805 curveto
+212.78224 70.47449 212.69206 70.51186 212.59811 70.51186 curveto
+212.50417 70.51186 212.41399 70.47449 212.34755 70.40805 curveto
+212.28111 70.34161 212.24374 70.25143 212.24374 70.15749 curveto
+212.24374 70.06354 212.28111 69.97336 212.34755 69.90692 curveto
+212.41399 69.84048 212.50417 69.80312 212.59811 69.80312 curveto
+212.69206 69.80312 212.78224 69.84048 212.84868 69.90692 curveto
+212.91512 69.97336 212.95248 70.06354 212.95248 70.15749 curveto closepath fill
+newpath 234.21233 70.15749 moveto
+234.21233 70.25143 234.17496 70.34161 234.10852 70.40805 curveto
+234.04208 70.47449 233.9519 70.51186 233.85796 70.51186 curveto
+233.764 70.51186 233.67383 70.47449 233.60739 70.40805 curveto
+233.54095 70.34161 233.50359 70.25143 233.50359 70.15749 curveto
+233.50359 70.06354 233.54095 69.97336 233.60739 69.90692 curveto
+233.67383 69.84048 233.764 69.80312 233.85796 69.80312 curveto
+233.9519 69.80312 234.04208 69.84048 234.10852 69.90692 curveto
+234.17496 69.97336 234.21233 70.06354 234.21233 70.15749 curveto closepath fill
+newpath 255.47217 70.15749 moveto
+255.47217 70.25143 255.4348 70.34161 255.36836 70.40805 curveto
+255.30193 70.47449 255.21175 70.51186 255.1178 70.51186 curveto
+255.02385 70.51186 254.93367 70.47449 254.86723 70.40805 curveto
+254.8008 70.34161 254.76343 70.25143 254.76343 70.15749 curveto
+254.76343 70.06354 254.8008 69.97336 254.86723 69.90692 curveto
+254.93367 69.84048 255.02385 69.80312 255.1178 69.80312 curveto
+255.21175 69.80312 255.30193 69.84048 255.36836 69.90692 curveto
+255.4348 69.97336 255.47217 70.06354 255.47217 70.15749 curveto closepath fill
+newpath 85.39343 74.40945 moveto
+85.39343 74.5034 85.35606 74.59358 85.28963 74.66002 curveto
+85.22319 74.72646 85.13301 74.76382 85.03906 74.76382 curveto
+84.94511 74.76382 84.85493 74.72646 84.7885 74.66002 curveto
+84.72206 74.59358 84.6847 74.5034 84.6847 74.40945 curveto
+84.6847 74.3155 84.72206 74.22533 84.7885 74.15889 curveto
+84.85493 74.09245 84.94511 74.05508 85.03906 74.05508 curveto
+85.13301 74.05508 85.22319 74.09245 85.28963 74.15889 curveto
+85.35606 74.22533 85.39343 74.3155 85.39343 74.40945 curveto closepath fill
+newpath 106.65327 74.40945 moveto
+106.65327 74.5034 106.6159 74.59358 106.54947 74.66002 curveto
+106.48303 74.72646 106.39285 74.76382 106.2989 74.76382 curveto
+106.20496 74.76382 106.11478 74.72646 106.04834 74.66002 curveto
+105.9819 74.59358 105.94453 74.5034 105.94453 74.40945 curveto
+105.94453 74.3155 105.9819 74.22533 106.04834 74.15889 curveto
+106.11478 74.09245 106.20496 74.05508 106.2989 74.05508 curveto
+106.39285 74.05508 106.48303 74.09245 106.54947 74.15889 curveto
+106.6159 74.22533 106.65327 74.3155 106.65327 74.40945 curveto closepath fill
+newpath 127.91312 74.40945 moveto
+127.91312 74.5034 127.87575 74.59358 127.80931 74.66002 curveto
+127.74287 74.72646 127.6527 74.76382 127.55875 74.76382 curveto
+127.4648 74.76382 127.37462 74.72646 127.30818 74.66002 curveto
+127.24174 74.59358 127.20438 74.5034 127.20438 74.40945 curveto
+127.20438 74.3155 127.24174 74.22533 127.30818 74.15889 curveto
+127.37462 74.09245 127.4648 74.05508 127.55875 74.05508 curveto
+127.6527 74.05508 127.74287 74.09245 127.80931 74.15889 curveto
+127.87575 74.22533 127.91312 74.3155 127.91312 74.40945 curveto closepath fill
+newpath 149.17296 74.40945 moveto
+149.17296 74.5034 149.13559 74.59358 149.06915 74.66002 curveto
+149.00272 74.72646 148.91254 74.76382 148.81859 74.76382 curveto
+148.72464 74.76382 148.63446 74.72646 148.56802 74.66002 curveto
+148.50159 74.59358 148.46422 74.5034 148.46422 74.40945 curveto
+148.46422 74.3155 148.50159 74.22533 148.56802 74.15889 curveto
+148.63446 74.09245 148.72464 74.05508 148.81859 74.05508 curveto
+148.91254 74.05508 149.00272 74.09245 149.06915 74.15889 curveto
+149.13559 74.22533 149.17296 74.3155 149.17296 74.40945 curveto closepath fill
+newpath 191.69264 74.40945 moveto
+191.69264 74.5034 191.65527 74.59358 191.58884 74.66002 curveto
+191.5224 74.72646 191.43222 74.76382 191.33827 74.76382 curveto
+191.24432 74.76382 191.15414 74.72646 191.0877 74.66002 curveto
+191.02127 74.59358 190.9839 74.5034 190.9839 74.40945 curveto
+190.9839 74.3155 191.02127 74.22533 191.0877 74.15889 curveto
+191.15414 74.09245 191.24432 74.05508 191.33827 74.05508 curveto
+191.43222 74.05508 191.5224 74.09245 191.58884 74.15889 curveto
+191.65527 74.22533 191.69264 74.3155 191.69264 74.40945 curveto closepath fill
+newpath 212.95248 74.40945 moveto
+212.95248 74.5034 212.91512 74.59358 212.84868 74.66002 curveto
+212.78224 74.72646 212.69206 74.76382 212.59811 74.76382 curveto
+212.50417 74.76382 212.41399 74.72646 212.34755 74.66002 curveto
+212.28111 74.59358 212.24374 74.5034 212.24374 74.40945 curveto
+212.24374 74.3155 212.28111 74.22533 212.34755 74.15889 curveto
+212.41399 74.09245 212.50417 74.05508 212.59811 74.05508 curveto
+212.69206 74.05508 212.78224 74.09245 212.84868 74.15889 curveto
+212.91512 74.22533 212.95248 74.3155 212.95248 74.40945 curveto closepath fill
+newpath 234.21233 74.40945 moveto
+234.21233 74.5034 234.17496 74.59358 234.10852 74.66002 curveto
+234.04208 74.72646 233.9519 74.76382 233.85796 74.76382 curveto
+233.764 74.76382 233.67383 74.72646 233.60739 74.66002 curveto
+233.54095 74.59358 233.50359 74.5034 233.50359 74.40945 curveto
+233.50359 74.3155 233.54095 74.22533 233.60739 74.15889 curveto
+233.67383 74.09245 233.764 74.05508 233.85796 74.05508 curveto
+233.9519 74.05508 234.04208 74.09245 234.10852 74.15889 curveto
+234.17496 74.22533 234.21233 74.3155 234.21233 74.40945 curveto closepath fill
+newpath 255.47217 74.40945 moveto
+255.47217 74.5034 255.4348 74.59358 255.36836 74.66002 curveto
+255.30193 74.72646 255.21175 74.76382 255.1178 74.76382 curveto
+255.02385 74.76382 254.93367 74.72646 254.86723 74.66002 curveto
+254.8008 74.59358 254.76343 74.5034 254.76343 74.40945 curveto
+254.76343 74.3155 254.8008 74.22533 254.86723 74.15889 curveto
+254.93367 74.09245 255.02385 74.05508 255.1178 74.05508 curveto
+255.21175 74.05508 255.30193 74.09245 255.36836 74.15889 curveto
+255.4348 74.22533 255.47217 74.3155 255.47217 74.40945 curveto closepath fill
+newpath 85.39343 78.66142 moveto
+85.39343 78.75537 85.35606 78.84555 85.28963 78.91199 curveto
+85.22319 78.97842 85.13301 79.0158 85.03906 79.0158 curveto
+84.94511 79.0158 84.85493 78.97842 84.7885 78.91199 curveto
+84.72206 78.84555 84.6847 78.75537 84.6847 78.66142 curveto
+84.6847 78.56747 84.72206 78.4773 84.7885 78.41086 curveto
+84.85493 78.34442 84.94511 78.30705 85.03906 78.30705 curveto
+85.13301 78.30705 85.22319 78.34442 85.28963 78.41086 curveto
+85.35606 78.4773 85.39343 78.56747 85.39343 78.66142 curveto closepath fill
+newpath 106.65327 78.66142 moveto
+106.65327 78.75537 106.6159 78.84555 106.54947 78.91199 curveto
+106.48303 78.97842 106.39285 79.0158 106.2989 79.0158 curveto
+106.20496 79.0158 106.11478 78.97842 106.04834 78.91199 curveto
+105.9819 78.84555 105.94453 78.75537 105.94453 78.66142 curveto
+105.94453 78.56747 105.9819 78.4773 106.04834 78.41086 curveto
+106.11478 78.34442 106.20496 78.30705 106.2989 78.30705 curveto
+106.39285 78.30705 106.48303 78.34442 106.54947 78.41086 curveto
+106.6159 78.4773 106.65327 78.56747 106.65327 78.66142 curveto closepath fill
+newpath 127.91312 78.66142 moveto
+127.91312 78.75537 127.87575 78.84555 127.80931 78.91199 curveto
+127.74287 78.97842 127.6527 79.0158 127.55875 79.0158 curveto
+127.4648 79.0158 127.37462 78.97842 127.30818 78.91199 curveto
+127.24174 78.84555 127.20438 78.75537 127.20438 78.66142 curveto
+127.20438 78.56747 127.24174 78.4773 127.30818 78.41086 curveto
+127.37462 78.34442 127.4648 78.30705 127.55875 78.30705 curveto
+127.6527 78.30705 127.74287 78.34442 127.80931 78.41086 curveto
+127.87575 78.4773 127.91312 78.56747 127.91312 78.66142 curveto closepath fill
+newpath 149.17296 78.66142 moveto
+149.17296 78.75537 149.13559 78.84555 149.06915 78.91199 curveto
+149.00272 78.97842 148.91254 79.0158 148.81859 79.0158 curveto
+148.72464 79.0158 148.63446 78.97842 148.56802 78.91199 curveto
+148.50159 78.84555 148.46422 78.75537 148.46422 78.66142 curveto
+148.46422 78.56747 148.50159 78.4773 148.56802 78.41086 curveto
+148.63446 78.34442 148.72464 78.30705 148.81859 78.30705 curveto
+148.91254 78.30705 149.00272 78.34442 149.06915 78.41086 curveto
+149.13559 78.4773 149.17296 78.56747 149.17296 78.66142 curveto closepath fill
+newpath 191.69264 78.66142 moveto
+191.69264 78.75537 191.65527 78.84555 191.58884 78.91199 curveto
+191.5224 78.97842 191.43222 79.0158 191.33827 79.0158 curveto
+191.24432 79.0158 191.15414 78.97842 191.0877 78.91199 curveto
+191.02127 78.84555 190.9839 78.75537 190.9839 78.66142 curveto
+190.9839 78.56747 191.02127 78.4773 191.0877 78.41086 curveto
+191.15414 78.34442 191.24432 78.30705 191.33827 78.30705 curveto
+191.43222 78.30705 191.5224 78.34442 191.58884 78.41086 curveto
+191.65527 78.4773 191.69264 78.56747 191.69264 78.66142 curveto closepath fill
+newpath 212.95248 78.66142 moveto
+212.95248 78.75537 212.91512 78.84555 212.84868 78.91199 curveto
+212.78224 78.97842 212.69206 79.0158 212.59811 79.0158 curveto
+212.50417 79.0158 212.41399 78.97842 212.34755 78.91199 curveto
+212.28111 78.84555 212.24374 78.75537 212.24374 78.66142 curveto
+212.24374 78.56747 212.28111 78.4773 212.34755 78.41086 curveto
+212.41399 78.34442 212.50417 78.30705 212.59811 78.30705 curveto
+212.69206 78.30705 212.78224 78.34442 212.84868 78.41086 curveto
+212.91512 78.4773 212.95248 78.56747 212.95248 78.66142 curveto closepath fill
+newpath 234.21233 78.66142 moveto
+234.21233 78.75537 234.17496 78.84555 234.10852 78.91199 curveto
+234.04208 78.97842 233.9519 79.0158 233.85796 79.0158 curveto
+233.764 79.0158 233.67383 78.97842 233.60739 78.91199 curveto
+233.54095 78.84555 233.50359 78.75537 233.50359 78.66142 curveto
+233.50359 78.56747 233.54095 78.4773 233.60739 78.41086 curveto
+233.67383 78.34442 233.764 78.30705 233.85796 78.30705 curveto
+233.9519 78.30705 234.04208 78.34442 234.10852 78.41086 curveto
+234.17496 78.4773 234.21233 78.56747 234.21233 78.66142 curveto closepath fill
+newpath 255.47217 78.66142 moveto
+255.47217 78.75537 255.4348 78.84555 255.36836 78.91199 curveto
+255.30193 78.97842 255.21175 79.0158 255.1178 79.0158 curveto
+255.02385 79.0158 254.93367 78.97842 254.86723 78.91199 curveto
+254.8008 78.84555 254.76343 78.75537 254.76343 78.66142 curveto
+254.76343 78.56747 254.8008 78.4773 254.86723 78.41086 curveto
+254.93367 78.34442 255.02385 78.30705 255.1178 78.30705 curveto
+255.21175 78.30705 255.30193 78.34442 255.36836 78.41086 curveto
+255.4348 78.4773 255.47217 78.56747 255.47217 78.66142 curveto closepath fill
+newpath 85.39343 82.91339 moveto
+85.39343 83.00734 85.35606 83.09752 85.28963 83.16396 curveto
+85.22319 83.2304 85.13301 83.26776 85.03906 83.26776 curveto
+84.94511 83.26776 84.85493 83.2304 84.7885 83.16396 curveto
+84.72206 83.09752 84.6847 83.00734 84.6847 82.91339 curveto
+84.6847 82.81944 84.72206 82.72926 84.7885 82.66283 curveto
+84.85493 82.59639 84.94511 82.55902 85.03906 82.55902 curveto
+85.13301 82.55902 85.22319 82.59639 85.28963 82.66283 curveto
+85.35606 82.72926 85.39343 82.81944 85.39343 82.91339 curveto closepath fill
+newpath 106.65327 82.91339 moveto
+106.65327 83.00734 106.6159 83.09752 106.54947 83.16396 curveto
+106.48303 83.2304 106.39285 83.26776 106.2989 83.26776 curveto
+106.20496 83.26776 106.11478 83.2304 106.04834 83.16396 curveto
+105.9819 83.09752 105.94453 83.00734 105.94453 82.91339 curveto
+105.94453 82.81944 105.9819 82.72926 106.04834 82.66283 curveto
+106.11478 82.59639 106.20496 82.55902 106.2989 82.55902 curveto
+106.39285 82.55902 106.48303 82.59639 106.54947 82.66283 curveto
+106.6159 82.72926 106.65327 82.81944 106.65327 82.91339 curveto closepath fill
+newpath 127.91312 82.91339 moveto
+127.91312 83.00734 127.87575 83.09752 127.80931 83.16396 curveto
+127.74287 83.2304 127.6527 83.26776 127.55875 83.26776 curveto
+127.4648 83.26776 127.37462 83.2304 127.30818 83.16396 curveto
+127.24174 83.09752 127.20438 83.00734 127.20438 82.91339 curveto
+127.20438 82.81944 127.24174 82.72926 127.30818 82.66283 curveto
+127.37462 82.59639 127.4648 82.55902 127.55875 82.55902 curveto
+127.6527 82.55902 127.74287 82.59639 127.80931 82.66283 curveto
+127.87575 82.72926 127.91312 82.81944 127.91312 82.91339 curveto closepath fill
+newpath 149.17296 82.91339 moveto
+149.17296 83.00734 149.13559 83.09752 149.06915 83.16396 curveto
+149.00272 83.2304 148.91254 83.26776 148.81859 83.26776 curveto
+148.72464 83.26776 148.63446 83.2304 148.56802 83.16396 curveto
+148.50159 83.09752 148.46422 83.00734 148.46422 82.91339 curveto
+148.46422 82.81944 148.50159 82.72926 148.56802 82.66283 curveto
+148.63446 82.59639 148.72464 82.55902 148.81859 82.55902 curveto
+148.91254 82.55902 149.00272 82.59639 149.06915 82.66283 curveto
+149.13559 82.72926 149.17296 82.81944 149.17296 82.91339 curveto closepath fill
+newpath 191.69264 82.91339 moveto
+191.69264 83.00734 191.65527 83.09752 191.58884 83.16396 curveto
+191.5224 83.2304 191.43222 83.26776 191.33827 83.26776 curveto
+191.24432 83.26776 191.15414 83.2304 191.0877 83.16396 curveto
+191.02127 83.09752 190.9839 83.00734 190.9839 82.91339 curveto
+190.9839 82.81944 191.02127 82.72926 191.0877 82.66283 curveto
+191.15414 82.59639 191.24432 82.55902 191.33827 82.55902 curveto
+191.43222 82.55902 191.5224 82.59639 191.58884 82.66283 curveto
+191.65527 82.72926 191.69264 82.81944 191.69264 82.91339 curveto closepath fill
+newpath 212.95248 82.91339 moveto
+212.95248 83.00734 212.91512 83.09752 212.84868 83.16396 curveto
+212.78224 83.2304 212.69206 83.26776 212.59811 83.26776 curveto
+212.50417 83.26776 212.41399 83.2304 212.34755 83.16396 curveto
+212.28111 83.09752 212.24374 83.00734 212.24374 82.91339 curveto
+212.24374 82.81944 212.28111 82.72926 212.34755 82.66283 curveto
+212.41399 82.59639 212.50417 82.55902 212.59811 82.55902 curveto
+212.69206 82.55902 212.78224 82.59639 212.84868 82.66283 curveto
+212.91512 82.72926 212.95248 82.81944 212.95248 82.91339 curveto closepath fill
+newpath 234.21233 82.91339 moveto
+234.21233 83.00734 234.17496 83.09752 234.10852 83.16396 curveto
+234.04208 83.2304 233.9519 83.26776 233.85796 83.26776 curveto
+233.764 83.26776 233.67383 83.2304 233.60739 83.16396 curveto
+233.54095 83.09752 233.50359 83.00734 233.50359 82.91339 curveto
+233.50359 82.81944 233.54095 82.72926 233.60739 82.66283 curveto
+233.67383 82.59639 233.764 82.55902 233.85796 82.55902 curveto
+233.9519 82.55902 234.04208 82.59639 234.10852 82.66283 curveto
+234.17496 82.72926 234.21233 82.81944 234.21233 82.91339 curveto closepath fill
+newpath 255.47217 82.91339 moveto
+255.47217 83.00734 255.4348 83.09752 255.36836 83.16396 curveto
+255.30193 83.2304 255.21175 83.26776 255.1178 83.26776 curveto
+255.02385 83.26776 254.93367 83.2304 254.86723 83.16396 curveto
+254.8008 83.09752 254.76343 83.00734 254.76343 82.91339 curveto
+254.76343 82.81944 254.8008 82.72926 254.86723 82.66283 curveto
+254.93367 82.59639 255.02385 82.55902 255.1178 82.55902 curveto
+255.21175 82.55902 255.30193 82.59639 255.36836 82.66283 curveto
+255.4348 82.72926 255.47217 82.81944 255.47217 82.91339 curveto closepath fill
+newpath 85.39343 87.16536 moveto
+85.39343 87.25931 85.35606 87.34949 85.28963 87.41592 curveto
+85.22319 87.48236 85.13301 87.51973 85.03906 87.51973 curveto
+84.94511 87.51973 84.85493 87.48236 84.7885 87.41592 curveto
+84.72206 87.34949 84.6847 87.25931 84.6847 87.16536 curveto
+84.6847 87.07141 84.72206 86.98123 84.7885 86.9148 curveto
+84.85493 86.84836 84.94511 86.81099 85.03906 86.81099 curveto
+85.13301 86.81099 85.22319 86.84836 85.28963 86.9148 curveto
+85.35606 86.98123 85.39343 87.07141 85.39343 87.16536 curveto closepath fill
+newpath 106.65327 87.16536 moveto
+106.65327 87.25931 106.6159 87.34949 106.54947 87.41592 curveto
+106.48303 87.48236 106.39285 87.51973 106.2989 87.51973 curveto
+106.20496 87.51973 106.11478 87.48236 106.04834 87.41592 curveto
+105.9819 87.34949 105.94453 87.25931 105.94453 87.16536 curveto
+105.94453 87.07141 105.9819 86.98123 106.04834 86.9148 curveto
+106.11478 86.84836 106.20496 86.81099 106.2989 86.81099 curveto
+106.39285 86.81099 106.48303 86.84836 106.54947 86.9148 curveto
+106.6159 86.98123 106.65327 87.07141 106.65327 87.16536 curveto closepath fill
+newpath 127.91312 87.16536 moveto
+127.91312 87.25931 127.87575 87.34949 127.80931 87.41592 curveto
+127.74287 87.48236 127.6527 87.51973 127.55875 87.51973 curveto
+127.4648 87.51973 127.37462 87.48236 127.30818 87.41592 curveto
+127.24174 87.34949 127.20438 87.25931 127.20438 87.16536 curveto
+127.20438 87.07141 127.24174 86.98123 127.30818 86.9148 curveto
+127.37462 86.84836 127.4648 86.81099 127.55875 86.81099 curveto
+127.6527 86.81099 127.74287 86.84836 127.80931 86.9148 curveto
+127.87575 86.98123 127.91312 87.07141 127.91312 87.16536 curveto closepath fill
+newpath 149.17296 87.16536 moveto
+149.17296 87.25931 149.13559 87.34949 149.06915 87.41592 curveto
+149.00272 87.48236 148.91254 87.51973 148.81859 87.51973 curveto
+148.72464 87.51973 148.63446 87.48236 148.56802 87.41592 curveto
+148.50159 87.34949 148.46422 87.25931 148.46422 87.16536 curveto
+148.46422 87.07141 148.50159 86.98123 148.56802 86.9148 curveto
+148.63446 86.84836 148.72464 86.81099 148.81859 86.81099 curveto
+148.91254 86.81099 149.00272 86.84836 149.06915 86.9148 curveto
+149.13559 86.98123 149.17296 87.07141 149.17296 87.16536 curveto closepath fill
+newpath 191.69264 87.16536 moveto
+191.69264 87.25931 191.65527 87.34949 191.58884 87.41592 curveto
+191.5224 87.48236 191.43222 87.51973 191.33827 87.51973 curveto
+191.24432 87.51973 191.15414 87.48236 191.0877 87.41592 curveto
+191.02127 87.34949 190.9839 87.25931 190.9839 87.16536 curveto
+190.9839 87.07141 191.02127 86.98123 191.0877 86.9148 curveto
+191.15414 86.84836 191.24432 86.81099 191.33827 86.81099 curveto
+191.43222 86.81099 191.5224 86.84836 191.58884 86.9148 curveto
+191.65527 86.98123 191.69264 87.07141 191.69264 87.16536 curveto closepath fill
+newpath 212.95248 87.16536 moveto
+212.95248 87.25931 212.91512 87.34949 212.84868 87.41592 curveto
+212.78224 87.48236 212.69206 87.51973 212.59811 87.51973 curveto
+212.50417 87.51973 212.41399 87.48236 212.34755 87.41592 curveto
+212.28111 87.34949 212.24374 87.25931 212.24374 87.16536 curveto
+212.24374 87.07141 212.28111 86.98123 212.34755 86.9148 curveto
+212.41399 86.84836 212.50417 86.81099 212.59811 86.81099 curveto
+212.69206 86.81099 212.78224 86.84836 212.84868 86.9148 curveto
+212.91512 86.98123 212.95248 87.07141 212.95248 87.16536 curveto closepath fill
+newpath 234.21233 87.16536 moveto
+234.21233 87.25931 234.17496 87.34949 234.10852 87.41592 curveto
+234.04208 87.48236 233.9519 87.51973 233.85796 87.51973 curveto
+233.764 87.51973 233.67383 87.48236 233.60739 87.41592 curveto
+233.54095 87.34949 233.50359 87.25931 233.50359 87.16536 curveto
+233.50359 87.07141 233.54095 86.98123 233.60739 86.9148 curveto
+233.67383 86.84836 233.764 86.81099 233.85796 86.81099 curveto
+233.9519 86.81099 234.04208 86.84836 234.10852 86.9148 curveto
+234.17496 86.98123 234.21233 87.07141 234.21233 87.16536 curveto closepath fill
+newpath 255.47217 87.16536 moveto
+255.47217 87.25931 255.4348 87.34949 255.36836 87.41592 curveto
+255.30193 87.48236 255.21175 87.51973 255.1178 87.51973 curveto
+255.02385 87.51973 254.93367 87.48236 254.86723 87.41592 curveto
+254.8008 87.34949 254.76343 87.25931 254.76343 87.16536 curveto
+254.76343 87.07141 254.8008 86.98123 254.86723 86.9148 curveto
+254.93367 86.84836 255.02385 86.81099 255.1178 86.81099 curveto
+255.21175 86.81099 255.30193 86.84836 255.36836 86.9148 curveto
+255.4348 86.98123 255.47217 87.07141 255.47217 87.16536 curveto closepath fill
+newpath 85.39343 91.41733 moveto
+85.39343 91.51128 85.35606 91.60146 85.28963 91.6679 curveto
+85.22319 91.73433 85.13301 91.7717 85.03906 91.7717 curveto
+84.94511 91.7717 84.85493 91.73433 84.7885 91.6679 curveto
+84.72206 91.60146 84.6847 91.51128 84.6847 91.41733 curveto
+84.6847 91.32338 84.72206 91.2332 84.7885 91.16676 curveto
+84.85493 91.10033 84.94511 91.06296 85.03906 91.06296 curveto
+85.13301 91.06296 85.22319 91.10033 85.28963 91.16676 curveto
+85.35606 91.2332 85.39343 91.32338 85.39343 91.41733 curveto closepath fill
+newpath 106.65327 91.41733 moveto
+106.65327 91.51128 106.6159 91.60146 106.54947 91.6679 curveto
+106.48303 91.73433 106.39285 91.7717 106.2989 91.7717 curveto
+106.20496 91.7717 106.11478 91.73433 106.04834 91.6679 curveto
+105.9819 91.60146 105.94453 91.51128 105.94453 91.41733 curveto
+105.94453 91.32338 105.9819 91.2332 106.04834 91.16676 curveto
+106.11478 91.10033 106.20496 91.06296 106.2989 91.06296 curveto
+106.39285 91.06296 106.48303 91.10033 106.54947 91.16676 curveto
+106.6159 91.2332 106.65327 91.32338 106.65327 91.41733 curveto closepath fill
+newpath 127.91312 91.41733 moveto
+127.91312 91.51128 127.87575 91.60146 127.80931 91.6679 curveto
+127.74287 91.73433 127.6527 91.7717 127.55875 91.7717 curveto
+127.4648 91.7717 127.37462 91.73433 127.30818 91.6679 curveto
+127.24174 91.60146 127.20438 91.51128 127.20438 91.41733 curveto
+127.20438 91.32338 127.24174 91.2332 127.30818 91.16676 curveto
+127.37462 91.10033 127.4648 91.06296 127.55875 91.06296 curveto
+127.6527 91.06296 127.74287 91.10033 127.80931 91.16676 curveto
+127.87575 91.2332 127.91312 91.32338 127.91312 91.41733 curveto closepath fill
+newpath 149.17296 91.41733 moveto
+149.17296 91.51128 149.13559 91.60146 149.06915 91.6679 curveto
+149.00272 91.73433 148.91254 91.7717 148.81859 91.7717 curveto
+148.72464 91.7717 148.63446 91.73433 148.56802 91.6679 curveto
+148.50159 91.60146 148.46422 91.51128 148.46422 91.41733 curveto
+148.46422 91.32338 148.50159 91.2332 148.56802 91.16676 curveto
+148.63446 91.10033 148.72464 91.06296 148.81859 91.06296 curveto
+148.91254 91.06296 149.00272 91.10033 149.06915 91.16676 curveto
+149.13559 91.2332 149.17296 91.32338 149.17296 91.41733 curveto closepath fill
+newpath 191.69264 91.41733 moveto
+191.69264 91.51128 191.65527 91.60146 191.58884 91.6679 curveto
+191.5224 91.73433 191.43222 91.7717 191.33827 91.7717 curveto
+191.24432 91.7717 191.15414 91.73433 191.0877 91.6679 curveto
+191.02127 91.60146 190.9839 91.51128 190.9839 91.41733 curveto
+190.9839 91.32338 191.02127 91.2332 191.0877 91.16676 curveto
+191.15414 91.10033 191.24432 91.06296 191.33827 91.06296 curveto
+191.43222 91.06296 191.5224 91.10033 191.58884 91.16676 curveto
+191.65527 91.2332 191.69264 91.32338 191.69264 91.41733 curveto closepath fill
+newpath 212.95248 91.41733 moveto
+212.95248 91.51128 212.91512 91.60146 212.84868 91.6679 curveto
+212.78224 91.73433 212.69206 91.7717 212.59811 91.7717 curveto
+212.50417 91.7717 212.41399 91.73433 212.34755 91.6679 curveto
+212.28111 91.60146 212.24374 91.51128 212.24374 91.41733 curveto
+212.24374 91.32338 212.28111 91.2332 212.34755 91.16676 curveto
+212.41399 91.10033 212.50417 91.06296 212.59811 91.06296 curveto
+212.69206 91.06296 212.78224 91.10033 212.84868 91.16676 curveto
+212.91512 91.2332 212.95248 91.32338 212.95248 91.41733 curveto closepath fill
+newpath 234.21233 91.41733 moveto
+234.21233 91.51128 234.17496 91.60146 234.10852 91.6679 curveto
+234.04208 91.73433 233.9519 91.7717 233.85796 91.7717 curveto
+233.764 91.7717 233.67383 91.73433 233.60739 91.6679 curveto
+233.54095 91.60146 233.50359 91.51128 233.50359 91.41733 curveto
+233.50359 91.32338 233.54095 91.2332 233.60739 91.16676 curveto
+233.67383 91.10033 233.764 91.06296 233.85796 91.06296 curveto
+233.9519 91.06296 234.04208 91.10033 234.10852 91.16676 curveto
+234.17496 91.2332 234.21233 91.32338 234.21233 91.41733 curveto closepath fill
+newpath 255.47217 91.41733 moveto
+255.47217 91.51128 255.4348 91.60146 255.36836 91.6679 curveto
+255.30193 91.73433 255.21175 91.7717 255.1178 91.7717 curveto
+255.02385 91.7717 254.93367 91.73433 254.86723 91.6679 curveto
+254.8008 91.60146 254.76343 91.51128 254.76343 91.41733 curveto
+254.76343 91.32338 254.8008 91.2332 254.86723 91.16676 curveto
+254.93367 91.10033 255.02385 91.06296 255.1178 91.06296 curveto
+255.21175 91.06296 255.30193 91.10033 255.36836 91.16676 curveto
+255.4348 91.2332 255.47217 91.32338 255.47217 91.41733 curveto closepath fill
+newpath 85.39343 95.6693 moveto
+85.39343 95.76324 85.35606 95.85342 85.28963 95.91986 curveto
+85.22319 95.9863 85.13301 96.02367 85.03906 96.02367 curveto
+84.94511 96.02367 84.85493 95.9863 84.7885 95.91986 curveto
+84.72206 95.85342 84.6847 95.76324 84.6847 95.6693 curveto
+84.6847 95.57535 84.72206 95.48517 84.7885 95.41873 curveto
+84.85493 95.3523 84.94511 95.31493 85.03906 95.31493 curveto
+85.13301 95.31493 85.22319 95.3523 85.28963 95.41873 curveto
+85.35606 95.48517 85.39343 95.57535 85.39343 95.6693 curveto closepath fill
+newpath 106.65327 95.6693 moveto
+106.65327 95.76324 106.6159 95.85342 106.54947 95.91986 curveto
+106.48303 95.9863 106.39285 96.02367 106.2989 96.02367 curveto
+106.20496 96.02367 106.11478 95.9863 106.04834 95.91986 curveto
+105.9819 95.85342 105.94453 95.76324 105.94453 95.6693 curveto
+105.94453 95.57535 105.9819 95.48517 106.04834 95.41873 curveto
+106.11478 95.3523 106.20496 95.31493 106.2989 95.31493 curveto
+106.39285 95.31493 106.48303 95.3523 106.54947 95.41873 curveto
+106.6159 95.48517 106.65327 95.57535 106.65327 95.6693 curveto closepath fill
+newpath 127.91312 95.6693 moveto
+127.91312 95.76324 127.87575 95.85342 127.80931 95.91986 curveto
+127.74287 95.9863 127.6527 96.02367 127.55875 96.02367 curveto
+127.4648 96.02367 127.37462 95.9863 127.30818 95.91986 curveto
+127.24174 95.85342 127.20438 95.76324 127.20438 95.6693 curveto
+127.20438 95.57535 127.24174 95.48517 127.30818 95.41873 curveto
+127.37462 95.3523 127.4648 95.31493 127.55875 95.31493 curveto
+127.6527 95.31493 127.74287 95.3523 127.80931 95.41873 curveto
+127.87575 95.48517 127.91312 95.57535 127.91312 95.6693 curveto closepath fill
+newpath 149.17296 95.6693 moveto
+149.17296 95.76324 149.13559 95.85342 149.06915 95.91986 curveto
+149.00272 95.9863 148.91254 96.02367 148.81859 96.02367 curveto
+148.72464 96.02367 148.63446 95.9863 148.56802 95.91986 curveto
+148.50159 95.85342 148.46422 95.76324 148.46422 95.6693 curveto
+148.46422 95.57535 148.50159 95.48517 148.56802 95.41873 curveto
+148.63446 95.3523 148.72464 95.31493 148.81859 95.31493 curveto
+148.91254 95.31493 149.00272 95.3523 149.06915 95.41873 curveto
+149.13559 95.48517 149.17296 95.57535 149.17296 95.6693 curveto closepath fill
+newpath 191.69264 95.6693 moveto
+191.69264 95.76324 191.65527 95.85342 191.58884 95.91986 curveto
+191.5224 95.9863 191.43222 96.02367 191.33827 96.02367 curveto
+191.24432 96.02367 191.15414 95.9863 191.0877 95.91986 curveto
+191.02127 95.85342 190.9839 95.76324 190.9839 95.6693 curveto
+190.9839 95.57535 191.02127 95.48517 191.0877 95.41873 curveto
+191.15414 95.3523 191.24432 95.31493 191.33827 95.31493 curveto
+191.43222 95.31493 191.5224 95.3523 191.58884 95.41873 curveto
+191.65527 95.48517 191.69264 95.57535 191.69264 95.6693 curveto closepath fill
+newpath 212.95248 95.6693 moveto
+212.95248 95.76324 212.91512 95.85342 212.84868 95.91986 curveto
+212.78224 95.9863 212.69206 96.02367 212.59811 96.02367 curveto
+212.50417 96.02367 212.41399 95.9863 212.34755 95.91986 curveto
+212.28111 95.85342 212.24374 95.76324 212.24374 95.6693 curveto
+212.24374 95.57535 212.28111 95.48517 212.34755 95.41873 curveto
+212.41399 95.3523 212.50417 95.31493 212.59811 95.31493 curveto
+212.69206 95.31493 212.78224 95.3523 212.84868 95.41873 curveto
+212.91512 95.48517 212.95248 95.57535 212.95248 95.6693 curveto closepath fill
+newpath 234.21233 95.6693 moveto
+234.21233 95.76324 234.17496 95.85342 234.10852 95.91986 curveto
+234.04208 95.9863 233.9519 96.02367 233.85796 96.02367 curveto
+233.764 96.02367 233.67383 95.9863 233.60739 95.91986 curveto
+233.54095 95.85342 233.50359 95.76324 233.50359 95.6693 curveto
+233.50359 95.57535 233.54095 95.48517 233.60739 95.41873 curveto
+233.67383 95.3523 233.764 95.31493 233.85796 95.31493 curveto
+233.9519 95.31493 234.04208 95.3523 234.10852 95.41873 curveto
+234.17496 95.48517 234.21233 95.57535 234.21233 95.6693 curveto closepath fill
+newpath 255.47217 95.6693 moveto
+255.47217 95.76324 255.4348 95.85342 255.36836 95.91986 curveto
+255.30193 95.9863 255.21175 96.02367 255.1178 96.02367 curveto
+255.02385 96.02367 254.93367 95.9863 254.86723 95.91986 curveto
+254.8008 95.85342 254.76343 95.76324 254.76343 95.6693 curveto
+254.76343 95.57535 254.8008 95.48517 254.86723 95.41873 curveto
+254.93367 95.3523 255.02385 95.31493 255.1178 95.31493 curveto
+255.21175 95.31493 255.30193 95.3523 255.36836 95.41873 curveto
+255.4348 95.48517 255.47217 95.57535 255.47217 95.6693 curveto closepath fill
+newpath 68.38556 36.14174 moveto
+68.38556 36.23569 68.34819 36.32587 68.28175 36.3923 curveto
+68.21532 36.45874 68.12514 36.49611 68.03119 36.49611 curveto
+67.93724 36.49611 67.84706 36.45874 67.78062 36.3923 curveto
+67.71419 36.32587 67.67682 36.23569 67.67682 36.14174 curveto
+67.67682 36.04779 67.71419 35.95761 67.78062 35.89117 curveto
+67.84706 35.82474 67.93724 35.78737 68.03119 35.78737 curveto
+68.12514 35.78737 68.21532 35.82474 68.28175 35.89117 curveto
+68.34819 35.95761 68.38556 36.04779 68.38556 36.14174 curveto closepath fill
+newpath 68.38556 57.40158 moveto
+68.38556 57.49553 68.34819 57.58571 68.28175 57.65215 curveto
+68.21532 57.71858 68.12514 57.75595 68.03119 57.75595 curveto
+67.93724 57.75595 67.84706 57.71858 67.78062 57.65215 curveto
+67.71419 57.58571 67.67682 57.49553 67.67682 57.40158 curveto
+67.67682 57.30763 67.71419 57.21745 67.78062 57.15102 curveto
+67.84706 57.08458 67.93724 57.04721 68.03119 57.04721 curveto
+68.12514 57.04721 68.21532 57.08458 68.28175 57.15102 curveto
+68.34819 57.21745 68.38556 57.30763 68.38556 57.40158 curveto closepath fill
+newpath 68.38556 78.66142 moveto
+68.38556 78.75537 68.34819 78.84555 68.28175 78.91199 curveto
+68.21532 78.97842 68.12514 79.0158 68.03119 79.0158 curveto
+67.93724 79.0158 67.84706 78.97842 67.78062 78.91199 curveto
+67.71419 78.84555 67.67682 78.75537 67.67682 78.66142 curveto
+67.67682 78.56747 67.71419 78.4773 67.78062 78.41086 curveto
+67.84706 78.34442 67.93724 78.30705 68.03119 78.30705 curveto
+68.12514 78.30705 68.21532 78.34442 68.28175 78.41086 curveto
+68.34819 78.4773 68.38556 78.56747 68.38556 78.66142 curveto closepath fill
+newpath 68.38556 121.1811 moveto
+68.38556 121.27505 68.34819 121.36523 68.28175 121.43167 curveto
+68.21532 121.49811 68.12514 121.53548 68.03119 121.53548 curveto
+67.93724 121.53548 67.84706 121.49811 67.78062 121.43167 curveto
+67.71419 121.36523 67.67682 121.27505 67.67682 121.1811 curveto
+67.67682 121.08716 67.71419 120.99698 67.78062 120.93054 curveto
+67.84706 120.8641 67.93724 120.82674 68.03119 120.82674 curveto
+68.12514 120.82674 68.21532 120.8641 68.28175 120.93054 curveto
+68.34819 120.99698 68.38556 121.08716 68.38556 121.1811 curveto closepath fill
+newpath 68.38556 142.44095 moveto
+68.38556 142.5349 68.34819 142.62508 68.28175 142.69151 curveto
+68.21532 142.75795 68.12514 142.79532 68.03119 142.79532 curveto
+67.93724 142.79532 67.84706 142.75795 67.78062 142.69151 curveto
+67.71419 142.62508 67.67682 142.5349 67.67682 142.44095 curveto
+67.67682 142.347 67.71419 142.25682 67.78062 142.19038 curveto
+67.84706 142.12395 67.93724 142.08658 68.03119 142.08658 curveto
+68.12514 142.08658 68.21532 142.12395 68.28175 142.19038 curveto
+68.34819 142.25682 68.38556 142.347 68.38556 142.44095 curveto closepath fill
+newpath 68.38556 163.70079 moveto
+68.38556 163.79474 68.34819 163.88492 68.28175 163.95135 curveto
+68.21532 164.01779 68.12514 164.05516 68.03119 164.05516 curveto
+67.93724 164.05516 67.84706 164.01779 67.78062 163.95135 curveto
+67.71419 163.88492 67.67682 163.79474 67.67682 163.70079 curveto
+67.67682 163.60684 67.71419 163.51666 67.78062 163.45023 curveto
+67.84706 163.38379 67.93724 163.34642 68.03119 163.34642 curveto
+68.12514 163.34642 68.21532 163.38379 68.28175 163.45023 curveto
+68.34819 163.51666 68.38556 163.60684 68.38556 163.70079 curveto closepath fill
+newpath 72.63753 36.14174 moveto
+72.63753 36.23569 72.60016 36.32587 72.53372 36.3923 curveto
+72.46729 36.45874 72.3771 36.49611 72.28316 36.49611 curveto
+72.18921 36.49611 72.09903 36.45874 72.0326 36.3923 curveto
+71.96616 36.32587 71.92879 36.23569 71.92879 36.14174 curveto
+71.92879 36.04779 71.96616 35.95761 72.0326 35.89117 curveto
+72.09903 35.82474 72.18921 35.78737 72.28316 35.78737 curveto
+72.3771 35.78737 72.46729 35.82474 72.53372 35.89117 curveto
+72.60016 35.95761 72.63753 36.04779 72.63753 36.14174 curveto closepath fill
+newpath 72.63753 57.40158 moveto
+72.63753 57.49553 72.60016 57.58571 72.53372 57.65215 curveto
+72.46729 57.71858 72.3771 57.75595 72.28316 57.75595 curveto
+72.18921 57.75595 72.09903 57.71858 72.0326 57.65215 curveto
+71.96616 57.58571 71.92879 57.49553 71.92879 57.40158 curveto
+71.92879 57.30763 71.96616 57.21745 72.0326 57.15102 curveto
+72.09903 57.08458 72.18921 57.04721 72.28316 57.04721 curveto
+72.3771 57.04721 72.46729 57.08458 72.53372 57.15102 curveto
+72.60016 57.21745 72.63753 57.30763 72.63753 57.40158 curveto closepath fill
+newpath 72.63753 78.66142 moveto
+72.63753 78.75537 72.60016 78.84555 72.53372 78.91199 curveto
+72.46729 78.97842 72.3771 79.0158 72.28316 79.0158 curveto
+72.18921 79.0158 72.09903 78.97842 72.0326 78.91199 curveto
+71.96616 78.84555 71.92879 78.75537 71.92879 78.66142 curveto
+71.92879 78.56747 71.96616 78.4773 72.0326 78.41086 curveto
+72.09903 78.34442 72.18921 78.30705 72.28316 78.30705 curveto
+72.3771 78.30705 72.46729 78.34442 72.53372 78.41086 curveto
+72.60016 78.4773 72.63753 78.56747 72.63753 78.66142 curveto closepath fill
+newpath 72.63753 121.1811 moveto
+72.63753 121.27505 72.60016 121.36523 72.53372 121.43167 curveto
+72.46729 121.49811 72.3771 121.53548 72.28316 121.53548 curveto
+72.18921 121.53548 72.09903 121.49811 72.0326 121.43167 curveto
+71.96616 121.36523 71.92879 121.27505 71.92879 121.1811 curveto
+71.92879 121.08716 71.96616 120.99698 72.0326 120.93054 curveto
+72.09903 120.8641 72.18921 120.82674 72.28316 120.82674 curveto
+72.3771 120.82674 72.46729 120.8641 72.53372 120.93054 curveto
+72.60016 120.99698 72.63753 121.08716 72.63753 121.1811 curveto closepath fill
+newpath 72.63753 142.44095 moveto
+72.63753 142.5349 72.60016 142.62508 72.53372 142.69151 curveto
+72.46729 142.75795 72.3771 142.79532 72.28316 142.79532 curveto
+72.18921 142.79532 72.09903 142.75795 72.0326 142.69151 curveto
+71.96616 142.62508 71.92879 142.5349 71.92879 142.44095 curveto
+71.92879 142.347 71.96616 142.25682 72.0326 142.19038 curveto
+72.09903 142.12395 72.18921 142.08658 72.28316 142.08658 curveto
+72.3771 142.08658 72.46729 142.12395 72.53372 142.19038 curveto
+72.60016 142.25682 72.63753 142.347 72.63753 142.44095 curveto closepath fill
+newpath 72.63753 163.70079 moveto
+72.63753 163.79474 72.60016 163.88492 72.53372 163.95135 curveto
+72.46729 164.01779 72.3771 164.05516 72.28316 164.05516 curveto
+72.18921 164.05516 72.09903 164.01779 72.0326 163.95135 curveto
+71.96616 163.88492 71.92879 163.79474 71.92879 163.70079 curveto
+71.92879 163.60684 71.96616 163.51666 72.0326 163.45023 curveto
+72.09903 163.38379 72.18921 163.34642 72.28316 163.34642 curveto
+72.3771 163.34642 72.46729 163.38379 72.53372 163.45023 curveto
+72.60016 163.51666 72.63753 163.60684 72.63753 163.70079 curveto closepath fill
+newpath 76.8895 36.14174 moveto
+76.8895 36.23569 76.85213 36.32587 76.78569 36.3923 curveto
+76.71925 36.45874 76.62907 36.49611 76.53513 36.49611 curveto
+76.44118 36.49611 76.351 36.45874 76.28456 36.3923 curveto
+76.21812 36.32587 76.18076 36.23569 76.18076 36.14174 curveto
+76.18076 36.04779 76.21812 35.95761 76.28456 35.89117 curveto
+76.351 35.82474 76.44118 35.78737 76.53513 35.78737 curveto
+76.62907 35.78737 76.71925 35.82474 76.78569 35.89117 curveto
+76.85213 35.95761 76.8895 36.04779 76.8895 36.14174 curveto closepath fill
+newpath 76.8895 57.40158 moveto
+76.8895 57.49553 76.85213 57.58571 76.78569 57.65215 curveto
+76.71925 57.71858 76.62907 57.75595 76.53513 57.75595 curveto
+76.44118 57.75595 76.351 57.71858 76.28456 57.65215 curveto
+76.21812 57.58571 76.18076 57.49553 76.18076 57.40158 curveto
+76.18076 57.30763 76.21812 57.21745 76.28456 57.15102 curveto
+76.351 57.08458 76.44118 57.04721 76.53513 57.04721 curveto
+76.62907 57.04721 76.71925 57.08458 76.78569 57.15102 curveto
+76.85213 57.21745 76.8895 57.30763 76.8895 57.40158 curveto closepath fill
+newpath 76.8895 78.66142 moveto
+76.8895 78.75537 76.85213 78.84555 76.78569 78.91199 curveto
+76.71925 78.97842 76.62907 79.0158 76.53513 79.0158 curveto
+76.44118 79.0158 76.351 78.97842 76.28456 78.91199 curveto
+76.21812 78.84555 76.18076 78.75537 76.18076 78.66142 curveto
+76.18076 78.56747 76.21812 78.4773 76.28456 78.41086 curveto
+76.351 78.34442 76.44118 78.30705 76.53513 78.30705 curveto
+76.62907 78.30705 76.71925 78.34442 76.78569 78.41086 curveto
+76.85213 78.4773 76.8895 78.56747 76.8895 78.66142 curveto closepath fill
+newpath 76.8895 121.1811 moveto
+76.8895 121.27505 76.85213 121.36523 76.78569 121.43167 curveto
+76.71925 121.49811 76.62907 121.53548 76.53513 121.53548 curveto
+76.44118 121.53548 76.351 121.49811 76.28456 121.43167 curveto
+76.21812 121.36523 76.18076 121.27505 76.18076 121.1811 curveto
+76.18076 121.08716 76.21812 120.99698 76.28456 120.93054 curveto
+76.351 120.8641 76.44118 120.82674 76.53513 120.82674 curveto
+76.62907 120.82674 76.71925 120.8641 76.78569 120.93054 curveto
+76.85213 120.99698 76.8895 121.08716 76.8895 121.1811 curveto closepath fill
+newpath 76.8895 142.44095 moveto
+76.8895 142.5349 76.85213 142.62508 76.78569 142.69151 curveto
+76.71925 142.75795 76.62907 142.79532 76.53513 142.79532 curveto
+76.44118 142.79532 76.351 142.75795 76.28456 142.69151 curveto
+76.21812 142.62508 76.18076 142.5349 76.18076 142.44095 curveto
+76.18076 142.347 76.21812 142.25682 76.28456 142.19038 curveto
+76.351 142.12395 76.44118 142.08658 76.53513 142.08658 curveto
+76.62907 142.08658 76.71925 142.12395 76.78569 142.19038 curveto
+76.85213 142.25682 76.8895 142.347 76.8895 142.44095 curveto closepath fill
+newpath 76.8895 163.70079 moveto
+76.8895 163.79474 76.85213 163.88492 76.78569 163.95135 curveto
+76.71925 164.01779 76.62907 164.05516 76.53513 164.05516 curveto
+76.44118 164.05516 76.351 164.01779 76.28456 163.95135 curveto
+76.21812 163.88492 76.18076 163.79474 76.18076 163.70079 curveto
+76.18076 163.60684 76.21812 163.51666 76.28456 163.45023 curveto
+76.351 163.38379 76.44118 163.34642 76.53513 163.34642 curveto
+76.62907 163.34642 76.71925 163.38379 76.78569 163.45023 curveto
+76.85213 163.51666 76.8895 163.60684 76.8895 163.70079 curveto closepath fill
+newpath 81.14146 36.14174 moveto
+81.14146 36.23569 81.1041 36.32587 81.03766 36.3923 curveto
+80.97122 36.45874 80.88104 36.49611 80.7871 36.49611 curveto
+80.69315 36.49611 80.60297 36.45874 80.53653 36.3923 curveto
+80.4701 36.32587 80.43272 36.23569 80.43272 36.14174 curveto
+80.43272 36.04779 80.4701 35.95761 80.53653 35.89117 curveto
+80.60297 35.82474 80.69315 35.78737 80.7871 35.78737 curveto
+80.88104 35.78737 80.97122 35.82474 81.03766 35.89117 curveto
+81.1041 35.95761 81.14146 36.04779 81.14146 36.14174 curveto closepath fill
+newpath 81.14146 57.40158 moveto
+81.14146 57.49553 81.1041 57.58571 81.03766 57.65215 curveto
+80.97122 57.71858 80.88104 57.75595 80.7871 57.75595 curveto
+80.69315 57.75595 80.60297 57.71858 80.53653 57.65215 curveto
+80.4701 57.58571 80.43272 57.49553 80.43272 57.40158 curveto
+80.43272 57.30763 80.4701 57.21745 80.53653 57.15102 curveto
+80.60297 57.08458 80.69315 57.04721 80.7871 57.04721 curveto
+80.88104 57.04721 80.97122 57.08458 81.03766 57.15102 curveto
+81.1041 57.21745 81.14146 57.30763 81.14146 57.40158 curveto closepath fill
+newpath 81.14146 78.66142 moveto
+81.14146 78.75537 81.1041 78.84555 81.03766 78.91199 curveto
+80.97122 78.97842 80.88104 79.0158 80.7871 79.0158 curveto
+80.69315 79.0158 80.60297 78.97842 80.53653 78.91199 curveto
+80.4701 78.84555 80.43272 78.75537 80.43272 78.66142 curveto
+80.43272 78.56747 80.4701 78.4773 80.53653 78.41086 curveto
+80.60297 78.34442 80.69315 78.30705 80.7871 78.30705 curveto
+80.88104 78.30705 80.97122 78.34442 81.03766 78.41086 curveto
+81.1041 78.4773 81.14146 78.56747 81.14146 78.66142 curveto closepath fill
+newpath 81.14146 121.1811 moveto
+81.14146 121.27505 81.1041 121.36523 81.03766 121.43167 curveto
+80.97122 121.49811 80.88104 121.53548 80.7871 121.53548 curveto
+80.69315 121.53548 80.60297 121.49811 80.53653 121.43167 curveto
+80.4701 121.36523 80.43272 121.27505 80.43272 121.1811 curveto
+80.43272 121.08716 80.4701 120.99698 80.53653 120.93054 curveto
+80.60297 120.8641 80.69315 120.82674 80.7871 120.82674 curveto
+80.88104 120.82674 80.97122 120.8641 81.03766 120.93054 curveto
+81.1041 120.99698 81.14146 121.08716 81.14146 121.1811 curveto closepath fill
+newpath 81.14146 142.44095 moveto
+81.14146 142.5349 81.1041 142.62508 81.03766 142.69151 curveto
+80.97122 142.75795 80.88104 142.79532 80.7871 142.79532 curveto
+80.69315 142.79532 80.60297 142.75795 80.53653 142.69151 curveto
+80.4701 142.62508 80.43272 142.5349 80.43272 142.44095 curveto
+80.43272 142.347 80.4701 142.25682 80.53653 142.19038 curveto
+80.60297 142.12395 80.69315 142.08658 80.7871 142.08658 curveto
+80.88104 142.08658 80.97122 142.12395 81.03766 142.19038 curveto
+81.1041 142.25682 81.14146 142.347 81.14146 142.44095 curveto closepath fill
+newpath 81.14146 163.70079 moveto
+81.14146 163.79474 81.1041 163.88492 81.03766 163.95135 curveto
+80.97122 164.01779 80.88104 164.05516 80.7871 164.05516 curveto
+80.69315 164.05516 80.60297 164.01779 80.53653 163.95135 curveto
+80.4701 163.88492 80.43272 163.79474 80.43272 163.70079 curveto
+80.43272 163.60684 80.4701 163.51666 80.53653 163.45023 curveto
+80.60297 163.38379 80.69315 163.34642 80.7871 163.34642 curveto
+80.88104 163.34642 80.97122 163.38379 81.03766 163.45023 curveto
+81.1041 163.51666 81.14146 163.60684 81.14146 163.70079 curveto closepath fill
+newpath 85.39343 36.14174 moveto
+85.39343 36.23569 85.35606 36.32587 85.28963 36.3923 curveto
+85.22319 36.45874 85.13301 36.49611 85.03906 36.49611 curveto
+84.94511 36.49611 84.85493 36.45874 84.7885 36.3923 curveto
+84.72206 36.32587 84.6847 36.23569 84.6847 36.14174 curveto
+84.6847 36.04779 84.72206 35.95761 84.7885 35.89117 curveto
+84.85493 35.82474 84.94511 35.78737 85.03906 35.78737 curveto
+85.13301 35.78737 85.22319 35.82474 85.28963 35.89117 curveto
+85.35606 35.95761 85.39343 36.04779 85.39343 36.14174 curveto closepath fill
+newpath 85.39343 57.40158 moveto
+85.39343 57.49553 85.35606 57.58571 85.28963 57.65215 curveto
+85.22319 57.71858 85.13301 57.75595 85.03906 57.75595 curveto
+84.94511 57.75595 84.85493 57.71858 84.7885 57.65215 curveto
+84.72206 57.58571 84.6847 57.49553 84.6847 57.40158 curveto
+84.6847 57.30763 84.72206 57.21745 84.7885 57.15102 curveto
+84.85493 57.08458 84.94511 57.04721 85.03906 57.04721 curveto
+85.13301 57.04721 85.22319 57.08458 85.28963 57.15102 curveto
+85.35606 57.21745 85.39343 57.30763 85.39343 57.40158 curveto closepath fill
+newpath 85.39343 78.66142 moveto
+85.39343 78.75537 85.35606 78.84555 85.28963 78.91199 curveto
+85.22319 78.97842 85.13301 79.0158 85.03906 79.0158 curveto
+84.94511 79.0158 84.85493 78.97842 84.7885 78.91199 curveto
+84.72206 78.84555 84.6847 78.75537 84.6847 78.66142 curveto
+84.6847 78.56747 84.72206 78.4773 84.7885 78.41086 curveto
+84.85493 78.34442 84.94511 78.30705 85.03906 78.30705 curveto
+85.13301 78.30705 85.22319 78.34442 85.28963 78.41086 curveto
+85.35606 78.4773 85.39343 78.56747 85.39343 78.66142 curveto closepath fill
+newpath 85.39343 121.1811 moveto
+85.39343 121.27505 85.35606 121.36523 85.28963 121.43167 curveto
+85.22319 121.49811 85.13301 121.53548 85.03906 121.53548 curveto
+84.94511 121.53548 84.85493 121.49811 84.7885 121.43167 curveto
+84.72206 121.36523 84.6847 121.27505 84.6847 121.1811 curveto
+84.6847 121.08716 84.72206 120.99698 84.7885 120.93054 curveto
+84.85493 120.8641 84.94511 120.82674 85.03906 120.82674 curveto
+85.13301 120.82674 85.22319 120.8641 85.28963 120.93054 curveto
+85.35606 120.99698 85.39343 121.08716 85.39343 121.1811 curveto closepath fill
+newpath 85.39343 142.44095 moveto
+85.39343 142.5349 85.35606 142.62508 85.28963 142.69151 curveto
+85.22319 142.75795 85.13301 142.79532 85.03906 142.79532 curveto
+84.94511 142.79532 84.85493 142.75795 84.7885 142.69151 curveto
+84.72206 142.62508 84.6847 142.5349 84.6847 142.44095 curveto
+84.6847 142.347 84.72206 142.25682 84.7885 142.19038 curveto
+84.85493 142.12395 84.94511 142.08658 85.03906 142.08658 curveto
+85.13301 142.08658 85.22319 142.12395 85.28963 142.19038 curveto
+85.35606 142.25682 85.39343 142.347 85.39343 142.44095 curveto closepath fill
+newpath 85.39343 163.70079 moveto
+85.39343 163.79474 85.35606 163.88492 85.28963 163.95135 curveto
+85.22319 164.01779 85.13301 164.05516 85.03906 164.05516 curveto
+84.94511 164.05516 84.85493 164.01779 84.7885 163.95135 curveto
+84.72206 163.88492 84.6847 163.79474 84.6847 163.70079 curveto
+84.6847 163.60684 84.72206 163.51666 84.7885 163.45023 curveto
+84.85493 163.38379 84.94511 163.34642 85.03906 163.34642 curveto
+85.13301 163.34642 85.22319 163.38379 85.28963 163.45023 curveto
+85.35606 163.51666 85.39343 163.60684 85.39343 163.70079 curveto closepath fill
+newpath 89.6454 36.14174 moveto
+89.6454 36.23569 89.60803 36.32587 89.5416 36.3923 curveto
+89.47516 36.45874 89.38498 36.49611 89.29103 36.49611 curveto
+89.19708 36.49611 89.1069 36.45874 89.04047 36.3923 curveto
+88.97403 36.32587 88.93666 36.23569 88.93666 36.14174 curveto
+88.93666 36.04779 88.97403 35.95761 89.04047 35.89117 curveto
+89.1069 35.82474 89.19708 35.78737 89.29103 35.78737 curveto
+89.38498 35.78737 89.47516 35.82474 89.5416 35.89117 curveto
+89.60803 35.95761 89.6454 36.04779 89.6454 36.14174 curveto closepath fill
+newpath 89.6454 57.40158 moveto
+89.6454 57.49553 89.60803 57.58571 89.5416 57.65215 curveto
+89.47516 57.71858 89.38498 57.75595 89.29103 57.75595 curveto
+89.19708 57.75595 89.1069 57.71858 89.04047 57.65215 curveto
+88.97403 57.58571 88.93666 57.49553 88.93666 57.40158 curveto
+88.93666 57.30763 88.97403 57.21745 89.04047 57.15102 curveto
+89.1069 57.08458 89.19708 57.04721 89.29103 57.04721 curveto
+89.38498 57.04721 89.47516 57.08458 89.5416 57.15102 curveto
+89.60803 57.21745 89.6454 57.30763 89.6454 57.40158 curveto closepath fill
+newpath 89.6454 78.66142 moveto
+89.6454 78.75537 89.60803 78.84555 89.5416 78.91199 curveto
+89.47516 78.97842 89.38498 79.0158 89.29103 79.0158 curveto
+89.19708 79.0158 89.1069 78.97842 89.04047 78.91199 curveto
+88.97403 78.84555 88.93666 78.75537 88.93666 78.66142 curveto
+88.93666 78.56747 88.97403 78.4773 89.04047 78.41086 curveto
+89.1069 78.34442 89.19708 78.30705 89.29103 78.30705 curveto
+89.38498 78.30705 89.47516 78.34442 89.5416 78.41086 curveto
+89.60803 78.4773 89.6454 78.56747 89.6454 78.66142 curveto closepath fill
+newpath 89.6454 121.1811 moveto
+89.6454 121.27505 89.60803 121.36523 89.5416 121.43167 curveto
+89.47516 121.49811 89.38498 121.53548 89.29103 121.53548 curveto
+89.19708 121.53548 89.1069 121.49811 89.04047 121.43167 curveto
+88.97403 121.36523 88.93666 121.27505 88.93666 121.1811 curveto
+88.93666 121.08716 88.97403 120.99698 89.04047 120.93054 curveto
+89.1069 120.8641 89.19708 120.82674 89.29103 120.82674 curveto
+89.38498 120.82674 89.47516 120.8641 89.5416 120.93054 curveto
+89.60803 120.99698 89.6454 121.08716 89.6454 121.1811 curveto closepath fill
+newpath 89.6454 142.44095 moveto
+89.6454 142.5349 89.60803 142.62508 89.5416 142.69151 curveto
+89.47516 142.75795 89.38498 142.79532 89.29103 142.79532 curveto
+89.19708 142.79532 89.1069 142.75795 89.04047 142.69151 curveto
+88.97403 142.62508 88.93666 142.5349 88.93666 142.44095 curveto
+88.93666 142.347 88.97403 142.25682 89.04047 142.19038 curveto
+89.1069 142.12395 89.19708 142.08658 89.29103 142.08658 curveto
+89.38498 142.08658 89.47516 142.12395 89.5416 142.19038 curveto
+89.60803 142.25682 89.6454 142.347 89.6454 142.44095 curveto closepath fill
+newpath 89.6454 163.70079 moveto
+89.6454 163.79474 89.60803 163.88492 89.5416 163.95135 curveto
+89.47516 164.01779 89.38498 164.05516 89.29103 164.05516 curveto
+89.19708 164.05516 89.1069 164.01779 89.04047 163.95135 curveto
+88.97403 163.88492 88.93666 163.79474 88.93666 163.70079 curveto
+88.93666 163.60684 88.97403 163.51666 89.04047 163.45023 curveto
+89.1069 163.38379 89.19708 163.34642 89.29103 163.34642 curveto
+89.38498 163.34642 89.47516 163.38379 89.5416 163.45023 curveto
+89.60803 163.51666 89.6454 163.60684 89.6454 163.70079 curveto closepath fill
+newpath 93.89737 36.14174 moveto
+93.89737 36.23569 93.86 36.32587 93.79356 36.3923 curveto
+93.72713 36.45874 93.63695 36.49611 93.543 36.49611 curveto
+93.44905 36.49611 93.35887 36.45874 93.29243 36.3923 curveto
+93.226 36.32587 93.18863 36.23569 93.18863 36.14174 curveto
+93.18863 36.04779 93.226 35.95761 93.29243 35.89117 curveto
+93.35887 35.82474 93.44905 35.78737 93.543 35.78737 curveto
+93.63695 35.78737 93.72713 35.82474 93.79356 35.89117 curveto
+93.86 35.95761 93.89737 36.04779 93.89737 36.14174 curveto closepath fill
+newpath 93.89737 57.40158 moveto
+93.89737 57.49553 93.86 57.58571 93.79356 57.65215 curveto
+93.72713 57.71858 93.63695 57.75595 93.543 57.75595 curveto
+93.44905 57.75595 93.35887 57.71858 93.29243 57.65215 curveto
+93.226 57.58571 93.18863 57.49553 93.18863 57.40158 curveto
+93.18863 57.30763 93.226 57.21745 93.29243 57.15102 curveto
+93.35887 57.08458 93.44905 57.04721 93.543 57.04721 curveto
+93.63695 57.04721 93.72713 57.08458 93.79356 57.15102 curveto
+93.86 57.21745 93.89737 57.30763 93.89737 57.40158 curveto closepath fill
+newpath 93.89737 78.66142 moveto
+93.89737 78.75537 93.86 78.84555 93.79356 78.91199 curveto
+93.72713 78.97842 93.63695 79.0158 93.543 79.0158 curveto
+93.44905 79.0158 93.35887 78.97842 93.29243 78.91199 curveto
+93.226 78.84555 93.18863 78.75537 93.18863 78.66142 curveto
+93.18863 78.56747 93.226 78.4773 93.29243 78.41086 curveto
+93.35887 78.34442 93.44905 78.30705 93.543 78.30705 curveto
+93.63695 78.30705 93.72713 78.34442 93.79356 78.41086 curveto
+93.86 78.4773 93.89737 78.56747 93.89737 78.66142 curveto closepath fill
+newpath 93.89737 121.1811 moveto
+93.89737 121.27505 93.86 121.36523 93.79356 121.43167 curveto
+93.72713 121.49811 93.63695 121.53548 93.543 121.53548 curveto
+93.44905 121.53548 93.35887 121.49811 93.29243 121.43167 curveto
+93.226 121.36523 93.18863 121.27505 93.18863 121.1811 curveto
+93.18863 121.08716 93.226 120.99698 93.29243 120.93054 curveto
+93.35887 120.8641 93.44905 120.82674 93.543 120.82674 curveto
+93.63695 120.82674 93.72713 120.8641 93.79356 120.93054 curveto
+93.86 120.99698 93.89737 121.08716 93.89737 121.1811 curveto closepath fill
+newpath 93.89737 142.44095 moveto
+93.89737 142.5349 93.86 142.62508 93.79356 142.69151 curveto
+93.72713 142.75795 93.63695 142.79532 93.543 142.79532 curveto
+93.44905 142.79532 93.35887 142.75795 93.29243 142.69151 curveto
+93.226 142.62508 93.18863 142.5349 93.18863 142.44095 curveto
+93.18863 142.347 93.226 142.25682 93.29243 142.19038 curveto
+93.35887 142.12395 93.44905 142.08658 93.543 142.08658 curveto
+93.63695 142.08658 93.72713 142.12395 93.79356 142.19038 curveto
+93.86 142.25682 93.89737 142.347 93.89737 142.44095 curveto closepath fill
+newpath 93.89737 163.70079 moveto
+93.89737 163.79474 93.86 163.88492 93.79356 163.95135 curveto
+93.72713 164.01779 93.63695 164.05516 93.543 164.05516 curveto
+93.44905 164.05516 93.35887 164.01779 93.29243 163.95135 curveto
+93.226 163.88492 93.18863 163.79474 93.18863 163.70079 curveto
+93.18863 163.60684 93.226 163.51666 93.29243 163.45023 curveto
+93.35887 163.38379 93.44905 163.34642 93.543 163.34642 curveto
+93.63695 163.34642 93.72713 163.38379 93.79356 163.45023 curveto
+93.86 163.51666 93.89737 163.60684 93.89737 163.70079 curveto closepath fill
+newpath 98.14934 36.14174 moveto
+98.14934 36.23569 98.11197 36.32587 98.04553 36.3923 curveto
+97.9791 36.45874 97.88892 36.49611 97.79497 36.49611 curveto
+97.70102 36.49611 97.61084 36.45874 97.5444 36.3923 curveto
+97.47797 36.32587 97.4406 36.23569 97.4406 36.14174 curveto
+97.4406 36.04779 97.47797 35.95761 97.5444 35.89117 curveto
+97.61084 35.82474 97.70102 35.78737 97.79497 35.78737 curveto
+97.88892 35.78737 97.9791 35.82474 98.04553 35.89117 curveto
+98.11197 35.95761 98.14934 36.04779 98.14934 36.14174 curveto closepath fill
+newpath 98.14934 57.40158 moveto
+98.14934 57.49553 98.11197 57.58571 98.04553 57.65215 curveto
+97.9791 57.71858 97.88892 57.75595 97.79497 57.75595 curveto
+97.70102 57.75595 97.61084 57.71858 97.5444 57.65215 curveto
+97.47797 57.58571 97.4406 57.49553 97.4406 57.40158 curveto
+97.4406 57.30763 97.47797 57.21745 97.5444 57.15102 curveto
+97.61084 57.08458 97.70102 57.04721 97.79497 57.04721 curveto
+97.88892 57.04721 97.9791 57.08458 98.04553 57.15102 curveto
+98.11197 57.21745 98.14934 57.30763 98.14934 57.40158 curveto closepath fill
+newpath 98.14934 78.66142 moveto
+98.14934 78.75537 98.11197 78.84555 98.04553 78.91199 curveto
+97.9791 78.97842 97.88892 79.0158 97.79497 79.0158 curveto
+97.70102 79.0158 97.61084 78.97842 97.5444 78.91199 curveto
+97.47797 78.84555 97.4406 78.75537 97.4406 78.66142 curveto
+97.4406 78.56747 97.47797 78.4773 97.5444 78.41086 curveto
+97.61084 78.34442 97.70102 78.30705 97.79497 78.30705 curveto
+97.88892 78.30705 97.9791 78.34442 98.04553 78.41086 curveto
+98.11197 78.4773 98.14934 78.56747 98.14934 78.66142 curveto closepath fill
+newpath 98.14934 121.1811 moveto
+98.14934 121.27505 98.11197 121.36523 98.04553 121.43167 curveto
+97.9791 121.49811 97.88892 121.53548 97.79497 121.53548 curveto
+97.70102 121.53548 97.61084 121.49811 97.5444 121.43167 curveto
+97.47797 121.36523 97.4406 121.27505 97.4406 121.1811 curveto
+97.4406 121.08716 97.47797 120.99698 97.5444 120.93054 curveto
+97.61084 120.8641 97.70102 120.82674 97.79497 120.82674 curveto
+97.88892 120.82674 97.9791 120.8641 98.04553 120.93054 curveto
+98.11197 120.99698 98.14934 121.08716 98.14934 121.1811 curveto closepath fill
+newpath 98.14934 142.44095 moveto
+98.14934 142.5349 98.11197 142.62508 98.04553 142.69151 curveto
+97.9791 142.75795 97.88892 142.79532 97.79497 142.79532 curveto
+97.70102 142.79532 97.61084 142.75795 97.5444 142.69151 curveto
+97.47797 142.62508 97.4406 142.5349 97.4406 142.44095 curveto
+97.4406 142.347 97.47797 142.25682 97.5444 142.19038 curveto
+97.61084 142.12395 97.70102 142.08658 97.79497 142.08658 curveto
+97.88892 142.08658 97.9791 142.12395 98.04553 142.19038 curveto
+98.11197 142.25682 98.14934 142.347 98.14934 142.44095 curveto closepath fill
+newpath 98.14934 163.70079 moveto
+98.14934 163.79474 98.11197 163.88492 98.04553 163.95135 curveto
+97.9791 164.01779 97.88892 164.05516 97.79497 164.05516 curveto
+97.70102 164.05516 97.61084 164.01779 97.5444 163.95135 curveto
+97.47797 163.88492 97.4406 163.79474 97.4406 163.70079 curveto
+97.4406 163.60684 97.47797 163.51666 97.5444 163.45023 curveto
+97.61084 163.38379 97.70102 163.34642 97.79497 163.34642 curveto
+97.88892 163.34642 97.9791 163.38379 98.04553 163.45023 curveto
+98.11197 163.51666 98.14934 163.60684 98.14934 163.70079 curveto closepath fill
+newpath 102.4013 36.14174 moveto
+102.4013 36.23569 102.36394 36.32587 102.2975 36.3923 curveto
+102.23106 36.45874 102.14088 36.49611 102.04694 36.49611 curveto
+101.95299 36.49611 101.86281 36.45874 101.79637 36.3923 curveto
+101.72993 36.32587 101.69257 36.23569 101.69257 36.14174 curveto
+101.69257 36.04779 101.72993 35.95761 101.79637 35.89117 curveto
+101.86281 35.82474 101.95299 35.78737 102.04694 35.78737 curveto
+102.14088 35.78737 102.23106 35.82474 102.2975 35.89117 curveto
+102.36394 35.95761 102.4013 36.04779 102.4013 36.14174 curveto closepath fill
+newpath 102.4013 57.40158 moveto
+102.4013 57.49553 102.36394 57.58571 102.2975 57.65215 curveto
+102.23106 57.71858 102.14088 57.75595 102.04694 57.75595 curveto
+101.95299 57.75595 101.86281 57.71858 101.79637 57.65215 curveto
+101.72993 57.58571 101.69257 57.49553 101.69257 57.40158 curveto
+101.69257 57.30763 101.72993 57.21745 101.79637 57.15102 curveto
+101.86281 57.08458 101.95299 57.04721 102.04694 57.04721 curveto
+102.14088 57.04721 102.23106 57.08458 102.2975 57.15102 curveto
+102.36394 57.21745 102.4013 57.30763 102.4013 57.40158 curveto closepath fill
+newpath 102.4013 78.66142 moveto
+102.4013 78.75537 102.36394 78.84555 102.2975 78.91199 curveto
+102.23106 78.97842 102.14088 79.0158 102.04694 79.0158 curveto
+101.95299 79.0158 101.86281 78.97842 101.79637 78.91199 curveto
+101.72993 78.84555 101.69257 78.75537 101.69257 78.66142 curveto
+101.69257 78.56747 101.72993 78.4773 101.79637 78.41086 curveto
+101.86281 78.34442 101.95299 78.30705 102.04694 78.30705 curveto
+102.14088 78.30705 102.23106 78.34442 102.2975 78.41086 curveto
+102.36394 78.4773 102.4013 78.56747 102.4013 78.66142 curveto closepath fill
+newpath 102.4013 121.1811 moveto
+102.4013 121.27505 102.36394 121.36523 102.2975 121.43167 curveto
+102.23106 121.49811 102.14088 121.53548 102.04694 121.53548 curveto
+101.95299 121.53548 101.86281 121.49811 101.79637 121.43167 curveto
+101.72993 121.36523 101.69257 121.27505 101.69257 121.1811 curveto
+101.69257 121.08716 101.72993 120.99698 101.79637 120.93054 curveto
+101.86281 120.8641 101.95299 120.82674 102.04694 120.82674 curveto
+102.14088 120.82674 102.23106 120.8641 102.2975 120.93054 curveto
+102.36394 120.99698 102.4013 121.08716 102.4013 121.1811 curveto closepath fill
+newpath 102.4013 142.44095 moveto
+102.4013 142.5349 102.36394 142.62508 102.2975 142.69151 curveto
+102.23106 142.75795 102.14088 142.79532 102.04694 142.79532 curveto
+101.95299 142.79532 101.86281 142.75795 101.79637 142.69151 curveto
+101.72993 142.62508 101.69257 142.5349 101.69257 142.44095 curveto
+101.69257 142.347 101.72993 142.25682 101.79637 142.19038 curveto
+101.86281 142.12395 101.95299 142.08658 102.04694 142.08658 curveto
+102.14088 142.08658 102.23106 142.12395 102.2975 142.19038 curveto
+102.36394 142.25682 102.4013 142.347 102.4013 142.44095 curveto closepath fill
+newpath 102.4013 163.70079 moveto
+102.4013 163.79474 102.36394 163.88492 102.2975 163.95135 curveto
+102.23106 164.01779 102.14088 164.05516 102.04694 164.05516 curveto
+101.95299 164.05516 101.86281 164.01779 101.79637 163.95135 curveto
+101.72993 163.88492 101.69257 163.79474 101.69257 163.70079 curveto
+101.69257 163.60684 101.72993 163.51666 101.79637 163.45023 curveto
+101.86281 163.38379 101.95299 163.34642 102.04694 163.34642 curveto
+102.14088 163.34642 102.23106 163.38379 102.2975 163.45023 curveto
+102.36394 163.51666 102.4013 163.60684 102.4013 163.70079 curveto closepath
+ fill
+newpath 106.65327 36.14174 moveto
+106.65327 36.23569 106.6159 36.32587 106.54947 36.3923 curveto
+106.48303 36.45874 106.39285 36.49611 106.2989 36.49611 curveto
+106.20496 36.49611 106.11478 36.45874 106.04834 36.3923 curveto
+105.9819 36.32587 105.94453 36.23569 105.94453 36.14174 curveto
+105.94453 36.04779 105.9819 35.95761 106.04834 35.89117 curveto
+106.11478 35.82474 106.20496 35.78737 106.2989 35.78737 curveto
+106.39285 35.78737 106.48303 35.82474 106.54947 35.89117 curveto
+106.6159 35.95761 106.65327 36.04779 106.65327 36.14174 curveto closepath fill
+newpath 106.65327 57.40158 moveto
+106.65327 57.49553 106.6159 57.58571 106.54947 57.65215 curveto
+106.48303 57.71858 106.39285 57.75595 106.2989 57.75595 curveto
+106.20496 57.75595 106.11478 57.71858 106.04834 57.65215 curveto
+105.9819 57.58571 105.94453 57.49553 105.94453 57.40158 curveto
+105.94453 57.30763 105.9819 57.21745 106.04834 57.15102 curveto
+106.11478 57.08458 106.20496 57.04721 106.2989 57.04721 curveto
+106.39285 57.04721 106.48303 57.08458 106.54947 57.15102 curveto
+106.6159 57.21745 106.65327 57.30763 106.65327 57.40158 curveto closepath fill
+newpath 106.65327 78.66142 moveto
+106.65327 78.75537 106.6159 78.84555 106.54947 78.91199 curveto
+106.48303 78.97842 106.39285 79.0158 106.2989 79.0158 curveto
+106.20496 79.0158 106.11478 78.97842 106.04834 78.91199 curveto
+105.9819 78.84555 105.94453 78.75537 105.94453 78.66142 curveto
+105.94453 78.56747 105.9819 78.4773 106.04834 78.41086 curveto
+106.11478 78.34442 106.20496 78.30705 106.2989 78.30705 curveto
+106.39285 78.30705 106.48303 78.34442 106.54947 78.41086 curveto
+106.6159 78.4773 106.65327 78.56747 106.65327 78.66142 curveto closepath fill
+newpath 106.65327 121.1811 moveto
+106.65327 121.27505 106.6159 121.36523 106.54947 121.43167 curveto
+106.48303 121.49811 106.39285 121.53548 106.2989 121.53548 curveto
+106.20496 121.53548 106.11478 121.49811 106.04834 121.43167 curveto
+105.9819 121.36523 105.94453 121.27505 105.94453 121.1811 curveto
+105.94453 121.08716 105.9819 120.99698 106.04834 120.93054 curveto
+106.11478 120.8641 106.20496 120.82674 106.2989 120.82674 curveto
+106.39285 120.82674 106.48303 120.8641 106.54947 120.93054 curveto
+106.6159 120.99698 106.65327 121.08716 106.65327 121.1811 curveto closepath
+ fill
+newpath 106.65327 142.44095 moveto
+106.65327 142.5349 106.6159 142.62508 106.54947 142.69151 curveto
+106.48303 142.75795 106.39285 142.79532 106.2989 142.79532 curveto
+106.20496 142.79532 106.11478 142.75795 106.04834 142.69151 curveto
+105.9819 142.62508 105.94453 142.5349 105.94453 142.44095 curveto
+105.94453 142.347 105.9819 142.25682 106.04834 142.19038 curveto
+106.11478 142.12395 106.20496 142.08658 106.2989 142.08658 curveto
+106.39285 142.08658 106.48303 142.12395 106.54947 142.19038 curveto
+106.6159 142.25682 106.65327 142.347 106.65327 142.44095 curveto closepath fill
+newpath 106.65327 163.70079 moveto
+106.65327 163.79474 106.6159 163.88492 106.54947 163.95135 curveto
+106.48303 164.01779 106.39285 164.05516 106.2989 164.05516 curveto
+106.20496 164.05516 106.11478 164.01779 106.04834 163.95135 curveto
+105.9819 163.88492 105.94453 163.79474 105.94453 163.70079 curveto
+105.94453 163.60684 105.9819 163.51666 106.04834 163.45023 curveto
+106.11478 163.38379 106.20496 163.34642 106.2989 163.34642 curveto
+106.39285 163.34642 106.48303 163.38379 106.54947 163.45023 curveto
+106.6159 163.51666 106.65327 163.60684 106.65327 163.70079 curveto closepath
+ fill
+newpath 110.90524 36.14174 moveto
+110.90524 36.23569 110.86787 36.32587 110.80144 36.3923 curveto
+110.735 36.45874 110.64482 36.49611 110.55087 36.49611 curveto
+110.45692 36.49611 110.36674 36.45874 110.30031 36.3923 curveto
+110.23387 36.32587 110.1965 36.23569 110.1965 36.14174 curveto
+110.1965 36.04779 110.23387 35.95761 110.30031 35.89117 curveto
+110.36674 35.82474 110.45692 35.78737 110.55087 35.78737 curveto
+110.64482 35.78737 110.735 35.82474 110.80144 35.89117 curveto
+110.86787 35.95761 110.90524 36.04779 110.90524 36.14174 curveto closepath fill
+newpath 110.90524 57.40158 moveto
+110.90524 57.49553 110.86787 57.58571 110.80144 57.65215 curveto
+110.735 57.71858 110.64482 57.75595 110.55087 57.75595 curveto
+110.45692 57.75595 110.36674 57.71858 110.30031 57.65215 curveto
+110.23387 57.58571 110.1965 57.49553 110.1965 57.40158 curveto
+110.1965 57.30763 110.23387 57.21745 110.30031 57.15102 curveto
+110.36674 57.08458 110.45692 57.04721 110.55087 57.04721 curveto
+110.64482 57.04721 110.735 57.08458 110.80144 57.15102 curveto
+110.86787 57.21745 110.90524 57.30763 110.90524 57.40158 curveto closepath fill
+newpath 110.90524 78.66142 moveto
+110.90524 78.75537 110.86787 78.84555 110.80144 78.91199 curveto
+110.735 78.97842 110.64482 79.0158 110.55087 79.0158 curveto
+110.45692 79.0158 110.36674 78.97842 110.30031 78.91199 curveto
+110.23387 78.84555 110.1965 78.75537 110.1965 78.66142 curveto
+110.1965 78.56747 110.23387 78.4773 110.30031 78.41086 curveto
+110.36674 78.34442 110.45692 78.30705 110.55087 78.30705 curveto
+110.64482 78.30705 110.735 78.34442 110.80144 78.41086 curveto
+110.86787 78.4773 110.90524 78.56747 110.90524 78.66142 curveto closepath fill
+newpath 110.90524 121.1811 moveto
+110.90524 121.27505 110.86787 121.36523 110.80144 121.43167 curveto
+110.735 121.49811 110.64482 121.53548 110.55087 121.53548 curveto
+110.45692 121.53548 110.36674 121.49811 110.30031 121.43167 curveto
+110.23387 121.36523 110.1965 121.27505 110.1965 121.1811 curveto
+110.1965 121.08716 110.23387 120.99698 110.30031 120.93054 curveto
+110.36674 120.8641 110.45692 120.82674 110.55087 120.82674 curveto
+110.64482 120.82674 110.735 120.8641 110.80144 120.93054 curveto
+110.86787 120.99698 110.90524 121.08716 110.90524 121.1811 curveto closepath
+ fill
+newpath 110.90524 142.44095 moveto
+110.90524 142.5349 110.86787 142.62508 110.80144 142.69151 curveto
+110.735 142.75795 110.64482 142.79532 110.55087 142.79532 curveto
+110.45692 142.79532 110.36674 142.75795 110.30031 142.69151 curveto
+110.23387 142.62508 110.1965 142.5349 110.1965 142.44095 curveto
+110.1965 142.347 110.23387 142.25682 110.30031 142.19038 curveto
+110.36674 142.12395 110.45692 142.08658 110.55087 142.08658 curveto
+110.64482 142.08658 110.735 142.12395 110.80144 142.19038 curveto
+110.86787 142.25682 110.90524 142.347 110.90524 142.44095 curveto closepath
+ fill
+newpath 110.90524 163.70079 moveto
+110.90524 163.79474 110.86787 163.88492 110.80144 163.95135 curveto
+110.735 164.01779 110.64482 164.05516 110.55087 164.05516 curveto
+110.45692 164.05516 110.36674 164.01779 110.30031 163.95135 curveto
+110.23387 163.88492 110.1965 163.79474 110.1965 163.70079 curveto
+110.1965 163.60684 110.23387 163.51666 110.30031 163.45023 curveto
+110.36674 163.38379 110.45692 163.34642 110.55087 163.34642 curveto
+110.64482 163.34642 110.735 163.38379 110.80144 163.45023 curveto
+110.86787 163.51666 110.90524 163.60684 110.90524 163.70079 curveto closepath
+ fill
+newpath 115.15721 36.14174 moveto
+115.15721 36.23569 115.11984 36.32587 115.0534 36.3923 curveto
+114.98697 36.45874 114.89679 36.49611 114.80284 36.49611 curveto
+114.7089 36.49611 114.61871 36.45874 114.55228 36.3923 curveto
+114.48584 36.32587 114.44847 36.23569 114.44847 36.14174 curveto
+114.44847 36.04779 114.48584 35.95761 114.55228 35.89117 curveto
+114.61871 35.82474 114.7089 35.78737 114.80284 35.78737 curveto
+114.89679 35.78737 114.98697 35.82474 115.0534 35.89117 curveto
+115.11984 35.95761 115.15721 36.04779 115.15721 36.14174 curveto closepath fill
+newpath 115.15721 57.40158 moveto
+115.15721 57.49553 115.11984 57.58571 115.0534 57.65215 curveto
+114.98697 57.71858 114.89679 57.75595 114.80284 57.75595 curveto
+114.7089 57.75595 114.61871 57.71858 114.55228 57.65215 curveto
+114.48584 57.58571 114.44847 57.49553 114.44847 57.40158 curveto
+114.44847 57.30763 114.48584 57.21745 114.55228 57.15102 curveto
+114.61871 57.08458 114.7089 57.04721 114.80284 57.04721 curveto
+114.89679 57.04721 114.98697 57.08458 115.0534 57.15102 curveto
+115.11984 57.21745 115.15721 57.30763 115.15721 57.40158 curveto closepath fill
+newpath 115.15721 78.66142 moveto
+115.15721 78.75537 115.11984 78.84555 115.0534 78.91199 curveto
+114.98697 78.97842 114.89679 79.0158 114.80284 79.0158 curveto
+114.7089 79.0158 114.61871 78.97842 114.55228 78.91199 curveto
+114.48584 78.84555 114.44847 78.75537 114.44847 78.66142 curveto
+114.44847 78.56747 114.48584 78.4773 114.55228 78.41086 curveto
+114.61871 78.34442 114.7089 78.30705 114.80284 78.30705 curveto
+114.89679 78.30705 114.98697 78.34442 115.0534 78.41086 curveto
+115.11984 78.4773 115.15721 78.56747 115.15721 78.66142 curveto closepath fill
+newpath 115.15721 121.1811 moveto
+115.15721 121.27505 115.11984 121.36523 115.0534 121.43167 curveto
+114.98697 121.49811 114.89679 121.53548 114.80284 121.53548 curveto
+114.7089 121.53548 114.61871 121.49811 114.55228 121.43167 curveto
+114.48584 121.36523 114.44847 121.27505 114.44847 121.1811 curveto
+114.44847 121.08716 114.48584 120.99698 114.55228 120.93054 curveto
+114.61871 120.8641 114.7089 120.82674 114.80284 120.82674 curveto
+114.89679 120.82674 114.98697 120.8641 115.0534 120.93054 curveto
+115.11984 120.99698 115.15721 121.08716 115.15721 121.1811 curveto closepath
+ fill
+newpath 115.15721 142.44095 moveto
+115.15721 142.5349 115.11984 142.62508 115.0534 142.69151 curveto
+114.98697 142.75795 114.89679 142.79532 114.80284 142.79532 curveto
+114.7089 142.79532 114.61871 142.75795 114.55228 142.69151 curveto
+114.48584 142.62508 114.44847 142.5349 114.44847 142.44095 curveto
+114.44847 142.347 114.48584 142.25682 114.55228 142.19038 curveto
+114.61871 142.12395 114.7089 142.08658 114.80284 142.08658 curveto
+114.89679 142.08658 114.98697 142.12395 115.0534 142.19038 curveto
+115.11984 142.25682 115.15721 142.347 115.15721 142.44095 curveto closepath
+ fill
+newpath 115.15721 163.70079 moveto
+115.15721 163.79474 115.11984 163.88492 115.0534 163.95135 curveto
+114.98697 164.01779 114.89679 164.05516 114.80284 164.05516 curveto
+114.7089 164.05516 114.61871 164.01779 114.55228 163.95135 curveto
+114.48584 163.88492 114.44847 163.79474 114.44847 163.70079 curveto
+114.44847 163.60684 114.48584 163.51666 114.55228 163.45023 curveto
+114.61871 163.38379 114.7089 163.34642 114.80284 163.34642 curveto
+114.89679 163.34642 114.98697 163.38379 115.0534 163.45023 curveto
+115.11984 163.51666 115.15721 163.60684 115.15721 163.70079 curveto closepath
+ fill
+newpath 119.40918 36.14174 moveto
+119.40918 36.23569 119.37181 36.32587 119.30537 36.3923 curveto
+119.23894 36.45874 119.14876 36.49611 119.05481 36.49611 curveto
+118.96086 36.49611 118.87068 36.45874 118.80424 36.3923 curveto
+118.73781 36.32587 118.70044 36.23569 118.70044 36.14174 curveto
+118.70044 36.04779 118.73781 35.95761 118.80424 35.89117 curveto
+118.87068 35.82474 118.96086 35.78737 119.05481 35.78737 curveto
+119.14876 35.78737 119.23894 35.82474 119.30537 35.89117 curveto
+119.37181 35.95761 119.40918 36.04779 119.40918 36.14174 curveto closepath fill
+newpath 119.40918 57.40158 moveto
+119.40918 57.49553 119.37181 57.58571 119.30537 57.65215 curveto
+119.23894 57.71858 119.14876 57.75595 119.05481 57.75595 curveto
+118.96086 57.75595 118.87068 57.71858 118.80424 57.65215 curveto
+118.73781 57.58571 118.70044 57.49553 118.70044 57.40158 curveto
+118.70044 57.30763 118.73781 57.21745 118.80424 57.15102 curveto
+118.87068 57.08458 118.96086 57.04721 119.05481 57.04721 curveto
+119.14876 57.04721 119.23894 57.08458 119.30537 57.15102 curveto
+119.37181 57.21745 119.40918 57.30763 119.40918 57.40158 curveto closepath fill
+newpath 119.40918 78.66142 moveto
+119.40918 78.75537 119.37181 78.84555 119.30537 78.91199 curveto
+119.23894 78.97842 119.14876 79.0158 119.05481 79.0158 curveto
+118.96086 79.0158 118.87068 78.97842 118.80424 78.91199 curveto
+118.73781 78.84555 118.70044 78.75537 118.70044 78.66142 curveto
+118.70044 78.56747 118.73781 78.4773 118.80424 78.41086 curveto
+118.87068 78.34442 118.96086 78.30705 119.05481 78.30705 curveto
+119.14876 78.30705 119.23894 78.34442 119.30537 78.41086 curveto
+119.37181 78.4773 119.40918 78.56747 119.40918 78.66142 curveto closepath fill
+newpath 119.40918 121.1811 moveto
+119.40918 121.27505 119.37181 121.36523 119.30537 121.43167 curveto
+119.23894 121.49811 119.14876 121.53548 119.05481 121.53548 curveto
+118.96086 121.53548 118.87068 121.49811 118.80424 121.43167 curveto
+118.73781 121.36523 118.70044 121.27505 118.70044 121.1811 curveto
+118.70044 121.08716 118.73781 120.99698 118.80424 120.93054 curveto
+118.87068 120.8641 118.96086 120.82674 119.05481 120.82674 curveto
+119.14876 120.82674 119.23894 120.8641 119.30537 120.93054 curveto
+119.37181 120.99698 119.40918 121.08716 119.40918 121.1811 curveto closepath
+ fill
+newpath 119.40918 142.44095 moveto
+119.40918 142.5349 119.37181 142.62508 119.30537 142.69151 curveto
+119.23894 142.75795 119.14876 142.79532 119.05481 142.79532 curveto
+118.96086 142.79532 118.87068 142.75795 118.80424 142.69151 curveto
+118.73781 142.62508 118.70044 142.5349 118.70044 142.44095 curveto
+118.70044 142.347 118.73781 142.25682 118.80424 142.19038 curveto
+118.87068 142.12395 118.96086 142.08658 119.05481 142.08658 curveto
+119.14876 142.08658 119.23894 142.12395 119.30537 142.19038 curveto
+119.37181 142.25682 119.40918 142.347 119.40918 142.44095 curveto closepath
+ fill
+newpath 119.40918 163.70079 moveto
+119.40918 163.79474 119.37181 163.88492 119.30537 163.95135 curveto
+119.23894 164.01779 119.14876 164.05516 119.05481 164.05516 curveto
+118.96086 164.05516 118.87068 164.01779 118.80424 163.95135 curveto
+118.73781 163.88492 118.70044 163.79474 118.70044 163.70079 curveto
+118.70044 163.60684 118.73781 163.51666 118.80424 163.45023 curveto
+118.87068 163.38379 118.96086 163.34642 119.05481 163.34642 curveto
+119.14876 163.34642 119.23894 163.38379 119.30537 163.45023 curveto
+119.37181 163.51666 119.40918 163.60684 119.40918 163.70079 curveto closepath
+ fill
+newpath 123.66115 36.14174 moveto
+123.66115 36.23569 123.62378 36.32587 123.55734 36.3923 curveto
+123.4909 36.45874 123.40073 36.49611 123.30678 36.49611 curveto
+123.21283 36.49611 123.12265 36.45874 123.05621 36.3923 curveto
+122.98978 36.32587 122.95241 36.23569 122.95241 36.14174 curveto
+122.95241 36.04779 122.98978 35.95761 123.05621 35.89117 curveto
+123.12265 35.82474 123.21283 35.78737 123.30678 35.78737 curveto
+123.40073 35.78737 123.4909 35.82474 123.55734 35.89117 curveto
+123.62378 35.95761 123.66115 36.04779 123.66115 36.14174 curveto closepath fill
+newpath 123.66115 57.40158 moveto
+123.66115 57.49553 123.62378 57.58571 123.55734 57.65215 curveto
+123.4909 57.71858 123.40073 57.75595 123.30678 57.75595 curveto
+123.21283 57.75595 123.12265 57.71858 123.05621 57.65215 curveto
+122.98978 57.58571 122.95241 57.49553 122.95241 57.40158 curveto
+122.95241 57.30763 122.98978 57.21745 123.05621 57.15102 curveto
+123.12265 57.08458 123.21283 57.04721 123.30678 57.04721 curveto
+123.40073 57.04721 123.4909 57.08458 123.55734 57.15102 curveto
+123.62378 57.21745 123.66115 57.30763 123.66115 57.40158 curveto closepath fill
+newpath 123.66115 78.66142 moveto
+123.66115 78.75537 123.62378 78.84555 123.55734 78.91199 curveto
+123.4909 78.97842 123.40073 79.0158 123.30678 79.0158 curveto
+123.21283 79.0158 123.12265 78.97842 123.05621 78.91199 curveto
+122.98978 78.84555 122.95241 78.75537 122.95241 78.66142 curveto
+122.95241 78.56747 122.98978 78.4773 123.05621 78.41086 curveto
+123.12265 78.34442 123.21283 78.30705 123.30678 78.30705 curveto
+123.40073 78.30705 123.4909 78.34442 123.55734 78.41086 curveto
+123.62378 78.4773 123.66115 78.56747 123.66115 78.66142 curveto closepath fill
+newpath 123.66115 121.1811 moveto
+123.66115 121.27505 123.62378 121.36523 123.55734 121.43167 curveto
+123.4909 121.49811 123.40073 121.53548 123.30678 121.53548 curveto
+123.21283 121.53548 123.12265 121.49811 123.05621 121.43167 curveto
+122.98978 121.36523 122.95241 121.27505 122.95241 121.1811 curveto
+122.95241 121.08716 122.98978 120.99698 123.05621 120.93054 curveto
+123.12265 120.8641 123.21283 120.82674 123.30678 120.82674 curveto
+123.40073 120.82674 123.4909 120.8641 123.55734 120.93054 curveto
+123.62378 120.99698 123.66115 121.08716 123.66115 121.1811 curveto closepath
+ fill
+newpath 123.66115 142.44095 moveto
+123.66115 142.5349 123.62378 142.62508 123.55734 142.69151 curveto
+123.4909 142.75795 123.40073 142.79532 123.30678 142.79532 curveto
+123.21283 142.79532 123.12265 142.75795 123.05621 142.69151 curveto
+122.98978 142.62508 122.95241 142.5349 122.95241 142.44095 curveto
+122.95241 142.347 122.98978 142.25682 123.05621 142.19038 curveto
+123.12265 142.12395 123.21283 142.08658 123.30678 142.08658 curveto
+123.40073 142.08658 123.4909 142.12395 123.55734 142.19038 curveto
+123.62378 142.25682 123.66115 142.347 123.66115 142.44095 curveto closepath
+ fill
+newpath 123.66115 163.70079 moveto
+123.66115 163.79474 123.62378 163.88492 123.55734 163.95135 curveto
+123.4909 164.01779 123.40073 164.05516 123.30678 164.05516 curveto
+123.21283 164.05516 123.12265 164.01779 123.05621 163.95135 curveto
+122.98978 163.88492 122.95241 163.79474 122.95241 163.70079 curveto
+122.95241 163.60684 122.98978 163.51666 123.05621 163.45023 curveto
+123.12265 163.38379 123.21283 163.34642 123.30678 163.34642 curveto
+123.40073 163.34642 123.4909 163.38379 123.55734 163.45023 curveto
+123.62378 163.51666 123.66115 163.60684 123.66115 163.70079 curveto closepath
+ fill
+newpath 127.91312 36.14174 moveto
+127.91312 36.23569 127.87575 36.32587 127.80931 36.3923 curveto
+127.74287 36.45874 127.6527 36.49611 127.55875 36.49611 curveto
+127.4648 36.49611 127.37462 36.45874 127.30818 36.3923 curveto
+127.24174 36.32587 127.20438 36.23569 127.20438 36.14174 curveto
+127.20438 36.04779 127.24174 35.95761 127.30818 35.89117 curveto
+127.37462 35.82474 127.4648 35.78737 127.55875 35.78737 curveto
+127.6527 35.78737 127.74287 35.82474 127.80931 35.89117 curveto
+127.87575 35.95761 127.91312 36.04779 127.91312 36.14174 curveto closepath fill
+newpath 127.91312 57.40158 moveto
+127.91312 57.49553 127.87575 57.58571 127.80931 57.65215 curveto
+127.74287 57.71858 127.6527 57.75595 127.55875 57.75595 curveto
+127.4648 57.75595 127.37462 57.71858 127.30818 57.65215 curveto
+127.24174 57.58571 127.20438 57.49553 127.20438 57.40158 curveto
+127.20438 57.30763 127.24174 57.21745 127.30818 57.15102 curveto
+127.37462 57.08458 127.4648 57.04721 127.55875 57.04721 curveto
+127.6527 57.04721 127.74287 57.08458 127.80931 57.15102 curveto
+127.87575 57.21745 127.91312 57.30763 127.91312 57.40158 curveto closepath fill
+newpath 127.91312 78.66142 moveto
+127.91312 78.75537 127.87575 78.84555 127.80931 78.91199 curveto
+127.74287 78.97842 127.6527 79.0158 127.55875 79.0158 curveto
+127.4648 79.0158 127.37462 78.97842 127.30818 78.91199 curveto
+127.24174 78.84555 127.20438 78.75537 127.20438 78.66142 curveto
+127.20438 78.56747 127.24174 78.4773 127.30818 78.41086 curveto
+127.37462 78.34442 127.4648 78.30705 127.55875 78.30705 curveto
+127.6527 78.30705 127.74287 78.34442 127.80931 78.41086 curveto
+127.87575 78.4773 127.91312 78.56747 127.91312 78.66142 curveto closepath fill
+newpath 127.91312 121.1811 moveto
+127.91312 121.27505 127.87575 121.36523 127.80931 121.43167 curveto
+127.74287 121.49811 127.6527 121.53548 127.55875 121.53548 curveto
+127.4648 121.53548 127.37462 121.49811 127.30818 121.43167 curveto
+127.24174 121.36523 127.20438 121.27505 127.20438 121.1811 curveto
+127.20438 121.08716 127.24174 120.99698 127.30818 120.93054 curveto
+127.37462 120.8641 127.4648 120.82674 127.55875 120.82674 curveto
+127.6527 120.82674 127.74287 120.8641 127.80931 120.93054 curveto
+127.87575 120.99698 127.91312 121.08716 127.91312 121.1811 curveto closepath
+ fill
+newpath 127.91312 142.44095 moveto
+127.91312 142.5349 127.87575 142.62508 127.80931 142.69151 curveto
+127.74287 142.75795 127.6527 142.79532 127.55875 142.79532 curveto
+127.4648 142.79532 127.37462 142.75795 127.30818 142.69151 curveto
+127.24174 142.62508 127.20438 142.5349 127.20438 142.44095 curveto
+127.20438 142.347 127.24174 142.25682 127.30818 142.19038 curveto
+127.37462 142.12395 127.4648 142.08658 127.55875 142.08658 curveto
+127.6527 142.08658 127.74287 142.12395 127.80931 142.19038 curveto
+127.87575 142.25682 127.91312 142.347 127.91312 142.44095 curveto closepath
+ fill
+newpath 127.91312 163.70079 moveto
+127.91312 163.79474 127.87575 163.88492 127.80931 163.95135 curveto
+127.74287 164.01779 127.6527 164.05516 127.55875 164.05516 curveto
+127.4648 164.05516 127.37462 164.01779 127.30818 163.95135 curveto
+127.24174 163.88492 127.20438 163.79474 127.20438 163.70079 curveto
+127.20438 163.60684 127.24174 163.51666 127.30818 163.45023 curveto
+127.37462 163.38379 127.4648 163.34642 127.55875 163.34642 curveto
+127.6527 163.34642 127.74287 163.38379 127.80931 163.45023 curveto
+127.87575 163.51666 127.91312 163.60684 127.91312 163.70079 curveto closepath
+ fill
+newpath 132.16508 36.14174 moveto
+132.16508 36.23569 132.12772 36.32587 132.06128 36.3923 curveto
+131.99484 36.45874 131.90466 36.49611 131.81071 36.49611 curveto
+131.71677 36.49611 131.62659 36.45874 131.56015 36.3923 curveto
+131.49371 36.32587 131.45634 36.23569 131.45634 36.14174 curveto
+131.45634 36.04779 131.49371 35.95761 131.56015 35.89117 curveto
+131.62659 35.82474 131.71677 35.78737 131.81071 35.78737 curveto
+131.90466 35.78737 131.99484 35.82474 132.06128 35.89117 curveto
+132.12772 35.95761 132.16508 36.04779 132.16508 36.14174 curveto closepath fill
+newpath 132.16508 57.40158 moveto
+132.16508 57.49553 132.12772 57.58571 132.06128 57.65215 curveto
+131.99484 57.71858 131.90466 57.75595 131.81071 57.75595 curveto
+131.71677 57.75595 131.62659 57.71858 131.56015 57.65215 curveto
+131.49371 57.58571 131.45634 57.49553 131.45634 57.40158 curveto
+131.45634 57.30763 131.49371 57.21745 131.56015 57.15102 curveto
+131.62659 57.08458 131.71677 57.04721 131.81071 57.04721 curveto
+131.90466 57.04721 131.99484 57.08458 132.06128 57.15102 curveto
+132.12772 57.21745 132.16508 57.30763 132.16508 57.40158 curveto closepath fill
+newpath 132.16508 78.66142 moveto
+132.16508 78.75537 132.12772 78.84555 132.06128 78.91199 curveto
+131.99484 78.97842 131.90466 79.0158 131.81071 79.0158 curveto
+131.71677 79.0158 131.62659 78.97842 131.56015 78.91199 curveto
+131.49371 78.84555 131.45634 78.75537 131.45634 78.66142 curveto
+131.45634 78.56747 131.49371 78.4773 131.56015 78.41086 curveto
+131.62659 78.34442 131.71677 78.30705 131.81071 78.30705 curveto
+131.90466 78.30705 131.99484 78.34442 132.06128 78.41086 curveto
+132.12772 78.4773 132.16508 78.56747 132.16508 78.66142 curveto closepath fill
+newpath 132.16508 121.1811 moveto
+132.16508 121.27505 132.12772 121.36523 132.06128 121.43167 curveto
+131.99484 121.49811 131.90466 121.53548 131.81071 121.53548 curveto
+131.71677 121.53548 131.62659 121.49811 131.56015 121.43167 curveto
+131.49371 121.36523 131.45634 121.27505 131.45634 121.1811 curveto
+131.45634 121.08716 131.49371 120.99698 131.56015 120.93054 curveto
+131.62659 120.8641 131.71677 120.82674 131.81071 120.82674 curveto
+131.90466 120.82674 131.99484 120.8641 132.06128 120.93054 curveto
+132.12772 120.99698 132.16508 121.08716 132.16508 121.1811 curveto closepath
+ fill
+newpath 132.16508 142.44095 moveto
+132.16508 142.5349 132.12772 142.62508 132.06128 142.69151 curveto
+131.99484 142.75795 131.90466 142.79532 131.81071 142.79532 curveto
+131.71677 142.79532 131.62659 142.75795 131.56015 142.69151 curveto
+131.49371 142.62508 131.45634 142.5349 131.45634 142.44095 curveto
+131.45634 142.347 131.49371 142.25682 131.56015 142.19038 curveto
+131.62659 142.12395 131.71677 142.08658 131.81071 142.08658 curveto
+131.90466 142.08658 131.99484 142.12395 132.06128 142.19038 curveto
+132.12772 142.25682 132.16508 142.347 132.16508 142.44095 curveto closepath
+ fill
+newpath 132.16508 163.70079 moveto
+132.16508 163.79474 132.12772 163.88492 132.06128 163.95135 curveto
+131.99484 164.01779 131.90466 164.05516 131.81071 164.05516 curveto
+131.71677 164.05516 131.62659 164.01779 131.56015 163.95135 curveto
+131.49371 163.88492 131.45634 163.79474 131.45634 163.70079 curveto
+131.45634 163.60684 131.49371 163.51666 131.56015 163.45023 curveto
+131.62659 163.38379 131.71677 163.34642 131.81071 163.34642 curveto
+131.90466 163.34642 131.99484 163.38379 132.06128 163.45023 curveto
+132.12772 163.51666 132.16508 163.60684 132.16508 163.70079 curveto closepath
+ fill
+newpath 136.41705 36.14174 moveto
+136.41705 36.23569 136.37968 36.32587 136.31325 36.3923 curveto
+136.24681 36.45874 136.15663 36.49611 136.06268 36.49611 curveto
+135.96873 36.49611 135.87856 36.45874 135.81212 36.3923 curveto
+135.74568 36.32587 135.70831 36.23569 135.70831 36.14174 curveto
+135.70831 36.04779 135.74568 35.95761 135.81212 35.89117 curveto
+135.87856 35.82474 135.96873 35.78737 136.06268 35.78737 curveto
+136.15663 35.78737 136.24681 35.82474 136.31325 35.89117 curveto
+136.37968 35.95761 136.41705 36.04779 136.41705 36.14174 curveto closepath fill
+newpath 136.41705 57.40158 moveto
+136.41705 57.49553 136.37968 57.58571 136.31325 57.65215 curveto
+136.24681 57.71858 136.15663 57.75595 136.06268 57.75595 curveto
+135.96873 57.75595 135.87856 57.71858 135.81212 57.65215 curveto
+135.74568 57.58571 135.70831 57.49553 135.70831 57.40158 curveto
+135.70831 57.30763 135.74568 57.21745 135.81212 57.15102 curveto
+135.87856 57.08458 135.96873 57.04721 136.06268 57.04721 curveto
+136.15663 57.04721 136.24681 57.08458 136.31325 57.15102 curveto
+136.37968 57.21745 136.41705 57.30763 136.41705 57.40158 curveto closepath fill
+newpath 136.41705 78.66142 moveto
+136.41705 78.75537 136.37968 78.84555 136.31325 78.91199 curveto
+136.24681 78.97842 136.15663 79.0158 136.06268 79.0158 curveto
+135.96873 79.0158 135.87856 78.97842 135.81212 78.91199 curveto
+135.74568 78.84555 135.70831 78.75537 135.70831 78.66142 curveto
+135.70831 78.56747 135.74568 78.4773 135.81212 78.41086 curveto
+135.87856 78.34442 135.96873 78.30705 136.06268 78.30705 curveto
+136.15663 78.30705 136.24681 78.34442 136.31325 78.41086 curveto
+136.37968 78.4773 136.41705 78.56747 136.41705 78.66142 curveto closepath fill
+newpath 136.41705 121.1811 moveto
+136.41705 121.27505 136.37968 121.36523 136.31325 121.43167 curveto
+136.24681 121.49811 136.15663 121.53548 136.06268 121.53548 curveto
+135.96873 121.53548 135.87856 121.49811 135.81212 121.43167 curveto
+135.74568 121.36523 135.70831 121.27505 135.70831 121.1811 curveto
+135.70831 121.08716 135.74568 120.99698 135.81212 120.93054 curveto
+135.87856 120.8641 135.96873 120.82674 136.06268 120.82674 curveto
+136.15663 120.82674 136.24681 120.8641 136.31325 120.93054 curveto
+136.37968 120.99698 136.41705 121.08716 136.41705 121.1811 curveto closepath
+ fill
+newpath 136.41705 142.44095 moveto
+136.41705 142.5349 136.37968 142.62508 136.31325 142.69151 curveto
+136.24681 142.75795 136.15663 142.79532 136.06268 142.79532 curveto
+135.96873 142.79532 135.87856 142.75795 135.81212 142.69151 curveto
+135.74568 142.62508 135.70831 142.5349 135.70831 142.44095 curveto
+135.70831 142.347 135.74568 142.25682 135.81212 142.19038 curveto
+135.87856 142.12395 135.96873 142.08658 136.06268 142.08658 curveto
+136.15663 142.08658 136.24681 142.12395 136.31325 142.19038 curveto
+136.37968 142.25682 136.41705 142.347 136.41705 142.44095 curveto closepath
+ fill
+newpath 136.41705 163.70079 moveto
+136.41705 163.79474 136.37968 163.88492 136.31325 163.95135 curveto
+136.24681 164.01779 136.15663 164.05516 136.06268 164.05516 curveto
+135.96873 164.05516 135.87856 164.01779 135.81212 163.95135 curveto
+135.74568 163.88492 135.70831 163.79474 135.70831 163.70079 curveto
+135.70831 163.60684 135.74568 163.51666 135.81212 163.45023 curveto
+135.87856 163.38379 135.96873 163.34642 136.06268 163.34642 curveto
+136.15663 163.34642 136.24681 163.38379 136.31325 163.45023 curveto
+136.37968 163.51666 136.41705 163.60684 136.41705 163.70079 curveto closepath
+ fill
+newpath 140.66902 36.14174 moveto
+140.66902 36.23569 140.63165 36.32587 140.56522 36.3923 curveto
+140.49878 36.45874 140.4086 36.49611 140.31465 36.49611 curveto
+140.2207 36.49611 140.13052 36.45874 140.06409 36.3923 curveto
+139.99765 36.32587 139.96028 36.23569 139.96028 36.14174 curveto
+139.96028 36.04779 139.99765 35.95761 140.06409 35.89117 curveto
+140.13052 35.82474 140.2207 35.78737 140.31465 35.78737 curveto
+140.4086 35.78737 140.49878 35.82474 140.56522 35.89117 curveto
+140.63165 35.95761 140.66902 36.04779 140.66902 36.14174 curveto closepath fill
+newpath 140.66902 57.40158 moveto
+140.66902 57.49553 140.63165 57.58571 140.56522 57.65215 curveto
+140.49878 57.71858 140.4086 57.75595 140.31465 57.75595 curveto
+140.2207 57.75595 140.13052 57.71858 140.06409 57.65215 curveto
+139.99765 57.58571 139.96028 57.49553 139.96028 57.40158 curveto
+139.96028 57.30763 139.99765 57.21745 140.06409 57.15102 curveto
+140.13052 57.08458 140.2207 57.04721 140.31465 57.04721 curveto
+140.4086 57.04721 140.49878 57.08458 140.56522 57.15102 curveto
+140.63165 57.21745 140.66902 57.30763 140.66902 57.40158 curveto closepath fill
+newpath 140.66902 78.66142 moveto
+140.66902 78.75537 140.63165 78.84555 140.56522 78.91199 curveto
+140.49878 78.97842 140.4086 79.0158 140.31465 79.0158 curveto
+140.2207 79.0158 140.13052 78.97842 140.06409 78.91199 curveto
+139.99765 78.84555 139.96028 78.75537 139.96028 78.66142 curveto
+139.96028 78.56747 139.99765 78.4773 140.06409 78.41086 curveto
+140.13052 78.34442 140.2207 78.30705 140.31465 78.30705 curveto
+140.4086 78.30705 140.49878 78.34442 140.56522 78.41086 curveto
+140.63165 78.4773 140.66902 78.56747 140.66902 78.66142 curveto closepath fill
+newpath 140.66902 121.1811 moveto
+140.66902 121.27505 140.63165 121.36523 140.56522 121.43167 curveto
+140.49878 121.49811 140.4086 121.53548 140.31465 121.53548 curveto
+140.2207 121.53548 140.13052 121.49811 140.06409 121.43167 curveto
+139.99765 121.36523 139.96028 121.27505 139.96028 121.1811 curveto
+139.96028 121.08716 139.99765 120.99698 140.06409 120.93054 curveto
+140.13052 120.8641 140.2207 120.82674 140.31465 120.82674 curveto
+140.4086 120.82674 140.49878 120.8641 140.56522 120.93054 curveto
+140.63165 120.99698 140.66902 121.08716 140.66902 121.1811 curveto closepath
+ fill
+newpath 140.66902 142.44095 moveto
+140.66902 142.5349 140.63165 142.62508 140.56522 142.69151 curveto
+140.49878 142.75795 140.4086 142.79532 140.31465 142.79532 curveto
+140.2207 142.79532 140.13052 142.75795 140.06409 142.69151 curveto
+139.99765 142.62508 139.96028 142.5349 139.96028 142.44095 curveto
+139.96028 142.347 139.99765 142.25682 140.06409 142.19038 curveto
+140.13052 142.12395 140.2207 142.08658 140.31465 142.08658 curveto
+140.4086 142.08658 140.49878 142.12395 140.56522 142.19038 curveto
+140.63165 142.25682 140.66902 142.347 140.66902 142.44095 curveto closepath
+ fill
+newpath 140.66902 163.70079 moveto
+140.66902 163.79474 140.63165 163.88492 140.56522 163.95135 curveto
+140.49878 164.01779 140.4086 164.05516 140.31465 164.05516 curveto
+140.2207 164.05516 140.13052 164.01779 140.06409 163.95135 curveto
+139.99765 163.88492 139.96028 163.79474 139.96028 163.70079 curveto
+139.96028 163.60684 139.99765 163.51666 140.06409 163.45023 curveto
+140.13052 163.38379 140.2207 163.34642 140.31465 163.34642 curveto
+140.4086 163.34642 140.49878 163.38379 140.56522 163.45023 curveto
+140.63165 163.51666 140.66902 163.60684 140.66902 163.70079 curveto closepath
+ fill
+newpath 144.92099 36.14174 moveto
+144.92099 36.23569 144.88362 36.32587 144.81718 36.3923 curveto
+144.75075 36.45874 144.66057 36.49611 144.56662 36.49611 curveto
+144.47267 36.49611 144.38249 36.45874 144.31606 36.3923 curveto
+144.24962 36.32587 144.21225 36.23569 144.21225 36.14174 curveto
+144.21225 36.04779 144.24962 35.95761 144.31606 35.89117 curveto
+144.38249 35.82474 144.47267 35.78737 144.56662 35.78737 curveto
+144.66057 35.78737 144.75075 35.82474 144.81718 35.89117 curveto
+144.88362 35.95761 144.92099 36.04779 144.92099 36.14174 curveto closepath fill
+newpath 144.92099 57.40158 moveto
+144.92099 57.49553 144.88362 57.58571 144.81718 57.65215 curveto
+144.75075 57.71858 144.66057 57.75595 144.56662 57.75595 curveto
+144.47267 57.75595 144.38249 57.71858 144.31606 57.65215 curveto
+144.24962 57.58571 144.21225 57.49553 144.21225 57.40158 curveto
+144.21225 57.30763 144.24962 57.21745 144.31606 57.15102 curveto
+144.38249 57.08458 144.47267 57.04721 144.56662 57.04721 curveto
+144.66057 57.04721 144.75075 57.08458 144.81718 57.15102 curveto
+144.88362 57.21745 144.92099 57.30763 144.92099 57.40158 curveto closepath fill
+newpath 144.92099 78.66142 moveto
+144.92099 78.75537 144.88362 78.84555 144.81718 78.91199 curveto
+144.75075 78.97842 144.66057 79.0158 144.56662 79.0158 curveto
+144.47267 79.0158 144.38249 78.97842 144.31606 78.91199 curveto
+144.24962 78.84555 144.21225 78.75537 144.21225 78.66142 curveto
+144.21225 78.56747 144.24962 78.4773 144.31606 78.41086 curveto
+144.38249 78.34442 144.47267 78.30705 144.56662 78.30705 curveto
+144.66057 78.30705 144.75075 78.34442 144.81718 78.41086 curveto
+144.88362 78.4773 144.92099 78.56747 144.92099 78.66142 curveto closepath fill
+newpath 144.92099 121.1811 moveto
+144.92099 121.27505 144.88362 121.36523 144.81718 121.43167 curveto
+144.75075 121.49811 144.66057 121.53548 144.56662 121.53548 curveto
+144.47267 121.53548 144.38249 121.49811 144.31606 121.43167 curveto
+144.24962 121.36523 144.21225 121.27505 144.21225 121.1811 curveto
+144.21225 121.08716 144.24962 120.99698 144.31606 120.93054 curveto
+144.38249 120.8641 144.47267 120.82674 144.56662 120.82674 curveto
+144.66057 120.82674 144.75075 120.8641 144.81718 120.93054 curveto
+144.88362 120.99698 144.92099 121.08716 144.92099 121.1811 curveto closepath
+ fill
+newpath 144.92099 142.44095 moveto
+144.92099 142.5349 144.88362 142.62508 144.81718 142.69151 curveto
+144.75075 142.75795 144.66057 142.79532 144.56662 142.79532 curveto
+144.47267 142.79532 144.38249 142.75795 144.31606 142.69151 curveto
+144.24962 142.62508 144.21225 142.5349 144.21225 142.44095 curveto
+144.21225 142.347 144.24962 142.25682 144.31606 142.19038 curveto
+144.38249 142.12395 144.47267 142.08658 144.56662 142.08658 curveto
+144.66057 142.08658 144.75075 142.12395 144.81718 142.19038 curveto
+144.88362 142.25682 144.92099 142.347 144.92099 142.44095 curveto closepath
+ fill
+newpath 144.92099 163.70079 moveto
+144.92099 163.79474 144.88362 163.88492 144.81718 163.95135 curveto
+144.75075 164.01779 144.66057 164.05516 144.56662 164.05516 curveto
+144.47267 164.05516 144.38249 164.01779 144.31606 163.95135 curveto
+144.24962 163.88492 144.21225 163.79474 144.21225 163.70079 curveto
+144.21225 163.60684 144.24962 163.51666 144.31606 163.45023 curveto
+144.38249 163.38379 144.47267 163.34642 144.56662 163.34642 curveto
+144.66057 163.34642 144.75075 163.38379 144.81718 163.45023 curveto
+144.88362 163.51666 144.92099 163.60684 144.92099 163.70079 curveto closepath
+ fill
+newpath 149.17296 36.14174 moveto
+149.17296 36.23569 149.13559 36.32587 149.06915 36.3923 curveto
+149.00272 36.45874 148.91254 36.49611 148.81859 36.49611 curveto
+148.72464 36.49611 148.63446 36.45874 148.56802 36.3923 curveto
+148.50159 36.32587 148.46422 36.23569 148.46422 36.14174 curveto
+148.46422 36.04779 148.50159 35.95761 148.56802 35.89117 curveto
+148.63446 35.82474 148.72464 35.78737 148.81859 35.78737 curveto
+148.91254 35.78737 149.00272 35.82474 149.06915 35.89117 curveto
+149.13559 35.95761 149.17296 36.04779 149.17296 36.14174 curveto closepath fill
+newpath 149.17296 57.40158 moveto
+149.17296 57.49553 149.13559 57.58571 149.06915 57.65215 curveto
+149.00272 57.71858 148.91254 57.75595 148.81859 57.75595 curveto
+148.72464 57.75595 148.63446 57.71858 148.56802 57.65215 curveto
+148.50159 57.58571 148.46422 57.49553 148.46422 57.40158 curveto
+148.46422 57.30763 148.50159 57.21745 148.56802 57.15102 curveto
+148.63446 57.08458 148.72464 57.04721 148.81859 57.04721 curveto
+148.91254 57.04721 149.00272 57.08458 149.06915 57.15102 curveto
+149.13559 57.21745 149.17296 57.30763 149.17296 57.40158 curveto closepath fill
+newpath 149.17296 78.66142 moveto
+149.17296 78.75537 149.13559 78.84555 149.06915 78.91199 curveto
+149.00272 78.97842 148.91254 79.0158 148.81859 79.0158 curveto
+148.72464 79.0158 148.63446 78.97842 148.56802 78.91199 curveto
+148.50159 78.84555 148.46422 78.75537 148.46422 78.66142 curveto
+148.46422 78.56747 148.50159 78.4773 148.56802 78.41086 curveto
+148.63446 78.34442 148.72464 78.30705 148.81859 78.30705 curveto
+148.91254 78.30705 149.00272 78.34442 149.06915 78.41086 curveto
+149.13559 78.4773 149.17296 78.56747 149.17296 78.66142 curveto closepath fill
+newpath 149.17296 121.1811 moveto
+149.17296 121.27505 149.13559 121.36523 149.06915 121.43167 curveto
+149.00272 121.49811 148.91254 121.53548 148.81859 121.53548 curveto
+148.72464 121.53548 148.63446 121.49811 148.56802 121.43167 curveto
+148.50159 121.36523 148.46422 121.27505 148.46422 121.1811 curveto
+148.46422 121.08716 148.50159 120.99698 148.56802 120.93054 curveto
+148.63446 120.8641 148.72464 120.82674 148.81859 120.82674 curveto
+148.91254 120.82674 149.00272 120.8641 149.06915 120.93054 curveto
+149.13559 120.99698 149.17296 121.08716 149.17296 121.1811 curveto closepath
+ fill
+newpath 149.17296 142.44095 moveto
+149.17296 142.5349 149.13559 142.62508 149.06915 142.69151 curveto
+149.00272 142.75795 148.91254 142.79532 148.81859 142.79532 curveto
+148.72464 142.79532 148.63446 142.75795 148.56802 142.69151 curveto
+148.50159 142.62508 148.46422 142.5349 148.46422 142.44095 curveto
+148.46422 142.347 148.50159 142.25682 148.56802 142.19038 curveto
+148.63446 142.12395 148.72464 142.08658 148.81859 142.08658 curveto
+148.91254 142.08658 149.00272 142.12395 149.06915 142.19038 curveto
+149.13559 142.25682 149.17296 142.347 149.17296 142.44095 curveto closepath
+ fill
+newpath 149.17296 163.70079 moveto
+149.17296 163.79474 149.13559 163.88492 149.06915 163.95135 curveto
+149.00272 164.01779 148.91254 164.05516 148.81859 164.05516 curveto
+148.72464 164.05516 148.63446 164.01779 148.56802 163.95135 curveto
+148.50159 163.88492 148.46422 163.79474 148.46422 163.70079 curveto
+148.46422 163.60684 148.50159 163.51666 148.56802 163.45023 curveto
+148.63446 163.38379 148.72464 163.34642 148.81859 163.34642 curveto
+148.91254 163.34642 149.00272 163.38379 149.06915 163.45023 curveto
+149.13559 163.51666 149.17296 163.60684 149.17296 163.70079 curveto closepath
+ fill
+newpath 153.42493 36.14174 moveto
+153.42493 36.23569 153.38756 36.32587 153.32112 36.3923 curveto
+153.25468 36.45874 153.1645 36.49611 153.07056 36.49611 curveto
+152.97661 36.49611 152.88643 36.45874 152.81999 36.3923 curveto
+152.75356 36.32587 152.71619 36.23569 152.71619 36.14174 curveto
+152.71619 36.04779 152.75356 35.95761 152.81999 35.89117 curveto
+152.88643 35.82474 152.97661 35.78737 153.07056 35.78737 curveto
+153.1645 35.78737 153.25468 35.82474 153.32112 35.89117 curveto
+153.38756 35.95761 153.42493 36.04779 153.42493 36.14174 curveto closepath fill
+newpath 153.42493 57.40158 moveto
+153.42493 57.49553 153.38756 57.58571 153.32112 57.65215 curveto
+153.25468 57.71858 153.1645 57.75595 153.07056 57.75595 curveto
+152.97661 57.75595 152.88643 57.71858 152.81999 57.65215 curveto
+152.75356 57.58571 152.71619 57.49553 152.71619 57.40158 curveto
+152.71619 57.30763 152.75356 57.21745 152.81999 57.15102 curveto
+152.88643 57.08458 152.97661 57.04721 153.07056 57.04721 curveto
+153.1645 57.04721 153.25468 57.08458 153.32112 57.15102 curveto
+153.38756 57.21745 153.42493 57.30763 153.42493 57.40158 curveto closepath fill
+newpath 153.42493 78.66142 moveto
+153.42493 78.75537 153.38756 78.84555 153.32112 78.91199 curveto
+153.25468 78.97842 153.1645 79.0158 153.07056 79.0158 curveto
+152.97661 79.0158 152.88643 78.97842 152.81999 78.91199 curveto
+152.75356 78.84555 152.71619 78.75537 152.71619 78.66142 curveto
+152.71619 78.56747 152.75356 78.4773 152.81999 78.41086 curveto
+152.88643 78.34442 152.97661 78.30705 153.07056 78.30705 curveto
+153.1645 78.30705 153.25468 78.34442 153.32112 78.41086 curveto
+153.38756 78.4773 153.42493 78.56747 153.42493 78.66142 curveto closepath fill
+newpath 153.42493 121.1811 moveto
+153.42493 121.27505 153.38756 121.36523 153.32112 121.43167 curveto
+153.25468 121.49811 153.1645 121.53548 153.07056 121.53548 curveto
+152.97661 121.53548 152.88643 121.49811 152.81999 121.43167 curveto
+152.75356 121.36523 152.71619 121.27505 152.71619 121.1811 curveto
+152.71619 121.08716 152.75356 120.99698 152.81999 120.93054 curveto
+152.88643 120.8641 152.97661 120.82674 153.07056 120.82674 curveto
+153.1645 120.82674 153.25468 120.8641 153.32112 120.93054 curveto
+153.38756 120.99698 153.42493 121.08716 153.42493 121.1811 curveto closepath
+ fill
+newpath 153.42493 142.44095 moveto
+153.42493 142.5349 153.38756 142.62508 153.32112 142.69151 curveto
+153.25468 142.75795 153.1645 142.79532 153.07056 142.79532 curveto
+152.97661 142.79532 152.88643 142.75795 152.81999 142.69151 curveto
+152.75356 142.62508 152.71619 142.5349 152.71619 142.44095 curveto
+152.71619 142.347 152.75356 142.25682 152.81999 142.19038 curveto
+152.88643 142.12395 152.97661 142.08658 153.07056 142.08658 curveto
+153.1645 142.08658 153.25468 142.12395 153.32112 142.19038 curveto
+153.38756 142.25682 153.42493 142.347 153.42493 142.44095 curveto closepath
+ fill
+newpath 153.42493 163.70079 moveto
+153.42493 163.79474 153.38756 163.88492 153.32112 163.95135 curveto
+153.25468 164.01779 153.1645 164.05516 153.07056 164.05516 curveto
+152.97661 164.05516 152.88643 164.01779 152.81999 163.95135 curveto
+152.75356 163.88492 152.71619 163.79474 152.71619 163.70079 curveto
+152.71619 163.60684 152.75356 163.51666 152.81999 163.45023 curveto
+152.88643 163.38379 152.97661 163.34642 153.07056 163.34642 curveto
+153.1645 163.34642 153.25468 163.38379 153.32112 163.45023 curveto
+153.38756 163.51666 153.42493 163.60684 153.42493 163.70079 curveto closepath
+ fill
+newpath 157.6769 36.14174 moveto
+157.6769 36.23569 157.63953 36.32587 157.57309 36.3923 curveto
+157.50665 36.45874 157.41647 36.49611 157.32253 36.49611 curveto
+157.22858 36.49611 157.1384 36.45874 157.07196 36.3923 curveto
+157.00552 36.32587 156.96815 36.23569 156.96815 36.14174 curveto
+156.96815 36.04779 157.00552 35.95761 157.07196 35.89117 curveto
+157.1384 35.82474 157.22858 35.78737 157.32253 35.78737 curveto
+157.41647 35.78737 157.50665 35.82474 157.57309 35.89117 curveto
+157.63953 35.95761 157.6769 36.04779 157.6769 36.14174 curveto closepath fill
+newpath 157.6769 57.40158 moveto
+157.6769 57.49553 157.63953 57.58571 157.57309 57.65215 curveto
+157.50665 57.71858 157.41647 57.75595 157.32253 57.75595 curveto
+157.22858 57.75595 157.1384 57.71858 157.07196 57.65215 curveto
+157.00552 57.58571 156.96815 57.49553 156.96815 57.40158 curveto
+156.96815 57.30763 157.00552 57.21745 157.07196 57.15102 curveto
+157.1384 57.08458 157.22858 57.04721 157.32253 57.04721 curveto
+157.41647 57.04721 157.50665 57.08458 157.57309 57.15102 curveto
+157.63953 57.21745 157.6769 57.30763 157.6769 57.40158 curveto closepath fill
+newpath 157.6769 78.66142 moveto
+157.6769 78.75537 157.63953 78.84555 157.57309 78.91199 curveto
+157.50665 78.97842 157.41647 79.0158 157.32253 79.0158 curveto
+157.22858 79.0158 157.1384 78.97842 157.07196 78.91199 curveto
+157.00552 78.84555 156.96815 78.75537 156.96815 78.66142 curveto
+156.96815 78.56747 157.00552 78.4773 157.07196 78.41086 curveto
+157.1384 78.34442 157.22858 78.30705 157.32253 78.30705 curveto
+157.41647 78.30705 157.50665 78.34442 157.57309 78.41086 curveto
+157.63953 78.4773 157.6769 78.56747 157.6769 78.66142 curveto closepath fill
+newpath 157.6769 121.1811 moveto
+157.6769 121.27505 157.63953 121.36523 157.57309 121.43167 curveto
+157.50665 121.49811 157.41647 121.53548 157.32253 121.53548 curveto
+157.22858 121.53548 157.1384 121.49811 157.07196 121.43167 curveto
+157.00552 121.36523 156.96815 121.27505 156.96815 121.1811 curveto
+156.96815 121.08716 157.00552 120.99698 157.07196 120.93054 curveto
+157.1384 120.8641 157.22858 120.82674 157.32253 120.82674 curveto
+157.41647 120.82674 157.50665 120.8641 157.57309 120.93054 curveto
+157.63953 120.99698 157.6769 121.08716 157.6769 121.1811 curveto closepath fill
+newpath 157.6769 142.44095 moveto
+157.6769 142.5349 157.63953 142.62508 157.57309 142.69151 curveto
+157.50665 142.75795 157.41647 142.79532 157.32253 142.79532 curveto
+157.22858 142.79532 157.1384 142.75795 157.07196 142.69151 curveto
+157.00552 142.62508 156.96815 142.5349 156.96815 142.44095 curveto
+156.96815 142.347 157.00552 142.25682 157.07196 142.19038 curveto
+157.1384 142.12395 157.22858 142.08658 157.32253 142.08658 curveto
+157.41647 142.08658 157.50665 142.12395 157.57309 142.19038 curveto
+157.63953 142.25682 157.6769 142.347 157.6769 142.44095 curveto closepath fill
+newpath 157.6769 163.70079 moveto
+157.6769 163.79474 157.63953 163.88492 157.57309 163.95135 curveto
+157.50665 164.01779 157.41647 164.05516 157.32253 164.05516 curveto
+157.22858 164.05516 157.1384 164.01779 157.07196 163.95135 curveto
+157.00552 163.88492 156.96815 163.79474 156.96815 163.70079 curveto
+156.96815 163.60684 157.00552 163.51666 157.07196 163.45023 curveto
+157.1384 163.38379 157.22858 163.34642 157.32253 163.34642 curveto
+157.41647 163.34642 157.50665 163.38379 157.57309 163.45023 curveto
+157.63953 163.51666 157.6769 163.60684 157.6769 163.70079 curveto closepath
+ fill
+newpath 161.92886 36.14174 moveto
+161.92886 36.23569 161.8915 36.32587 161.82506 36.3923 curveto
+161.75862 36.45874 161.66844 36.49611 161.5745 36.49611 curveto
+161.48055 36.49611 161.39037 36.45874 161.32393 36.3923 curveto
+161.25749 36.32587 161.22012 36.23569 161.22012 36.14174 curveto
+161.22012 36.04779 161.25749 35.95761 161.32393 35.89117 curveto
+161.39037 35.82474 161.48055 35.78737 161.5745 35.78737 curveto
+161.66844 35.78737 161.75862 35.82474 161.82506 35.89117 curveto
+161.8915 35.95761 161.92886 36.04779 161.92886 36.14174 curveto closepath fill
+newpath 161.92886 57.40158 moveto
+161.92886 57.49553 161.8915 57.58571 161.82506 57.65215 curveto
+161.75862 57.71858 161.66844 57.75595 161.5745 57.75595 curveto
+161.48055 57.75595 161.39037 57.71858 161.32393 57.65215 curveto
+161.25749 57.58571 161.22012 57.49553 161.22012 57.40158 curveto
+161.22012 57.30763 161.25749 57.21745 161.32393 57.15102 curveto
+161.39037 57.08458 161.48055 57.04721 161.5745 57.04721 curveto
+161.66844 57.04721 161.75862 57.08458 161.82506 57.15102 curveto
+161.8915 57.21745 161.92886 57.30763 161.92886 57.40158 curveto closepath fill
+newpath 161.92886 78.66142 moveto
+161.92886 78.75537 161.8915 78.84555 161.82506 78.91199 curveto
+161.75862 78.97842 161.66844 79.0158 161.5745 79.0158 curveto
+161.48055 79.0158 161.39037 78.97842 161.32393 78.91199 curveto
+161.25749 78.84555 161.22012 78.75537 161.22012 78.66142 curveto
+161.22012 78.56747 161.25749 78.4773 161.32393 78.41086 curveto
+161.39037 78.34442 161.48055 78.30705 161.5745 78.30705 curveto
+161.66844 78.30705 161.75862 78.34442 161.82506 78.41086 curveto
+161.8915 78.4773 161.92886 78.56747 161.92886 78.66142 curveto closepath fill
+newpath 161.92886 121.1811 moveto
+161.92886 121.27505 161.8915 121.36523 161.82506 121.43167 curveto
+161.75862 121.49811 161.66844 121.53548 161.5745 121.53548 curveto
+161.48055 121.53548 161.39037 121.49811 161.32393 121.43167 curveto
+161.25749 121.36523 161.22012 121.27505 161.22012 121.1811 curveto
+161.22012 121.08716 161.25749 120.99698 161.32393 120.93054 curveto
+161.39037 120.8641 161.48055 120.82674 161.5745 120.82674 curveto
+161.66844 120.82674 161.75862 120.8641 161.82506 120.93054 curveto
+161.8915 120.99698 161.92886 121.08716 161.92886 121.1811 curveto closepath
+ fill
+newpath 161.92886 142.44095 moveto
+161.92886 142.5349 161.8915 142.62508 161.82506 142.69151 curveto
+161.75862 142.75795 161.66844 142.79532 161.5745 142.79532 curveto
+161.48055 142.79532 161.39037 142.75795 161.32393 142.69151 curveto
+161.25749 142.62508 161.22012 142.5349 161.22012 142.44095 curveto
+161.22012 142.347 161.25749 142.25682 161.32393 142.19038 curveto
+161.39037 142.12395 161.48055 142.08658 161.5745 142.08658 curveto
+161.66844 142.08658 161.75862 142.12395 161.82506 142.19038 curveto
+161.8915 142.25682 161.92886 142.347 161.92886 142.44095 curveto closepath fill
+newpath 161.92886 163.70079 moveto
+161.92886 163.79474 161.8915 163.88492 161.82506 163.95135 curveto
+161.75862 164.01779 161.66844 164.05516 161.5745 164.05516 curveto
+161.48055 164.05516 161.39037 164.01779 161.32393 163.95135 curveto
+161.25749 163.88492 161.22012 163.79474 161.22012 163.70079 curveto
+161.22012 163.60684 161.25749 163.51666 161.32393 163.45023 curveto
+161.39037 163.38379 161.48055 163.34642 161.5745 163.34642 curveto
+161.66844 163.34642 161.75862 163.38379 161.82506 163.45023 curveto
+161.8915 163.51666 161.92886 163.60684 161.92886 163.70079 curveto closepath
+ fill
+newpath 166.18083 36.14174 moveto
+166.18083 36.23569 166.14346 36.32587 166.07703 36.3923 curveto
+166.01059 36.45874 165.92041 36.49611 165.82646 36.49611 curveto
+165.73251 36.49611 165.64233 36.45874 165.5759 36.3923 curveto
+165.50946 36.32587 165.47209 36.23569 165.47209 36.14174 curveto
+165.47209 36.04779 165.50946 35.95761 165.5759 35.89117 curveto
+165.64233 35.82474 165.73251 35.78737 165.82646 35.78737 curveto
+165.92041 35.78737 166.01059 35.82474 166.07703 35.89117 curveto
+166.14346 35.95761 166.18083 36.04779 166.18083 36.14174 curveto closepath fill
+newpath 166.18083 57.40158 moveto
+166.18083 57.49553 166.14346 57.58571 166.07703 57.65215 curveto
+166.01059 57.71858 165.92041 57.75595 165.82646 57.75595 curveto
+165.73251 57.75595 165.64233 57.71858 165.5759 57.65215 curveto
+165.50946 57.58571 165.47209 57.49553 165.47209 57.40158 curveto
+165.47209 57.30763 165.50946 57.21745 165.5759 57.15102 curveto
+165.64233 57.08458 165.73251 57.04721 165.82646 57.04721 curveto
+165.92041 57.04721 166.01059 57.08458 166.07703 57.15102 curveto
+166.14346 57.21745 166.18083 57.30763 166.18083 57.40158 curveto closepath fill
+newpath 166.18083 78.66142 moveto
+166.18083 78.75537 166.14346 78.84555 166.07703 78.91199 curveto
+166.01059 78.97842 165.92041 79.0158 165.82646 79.0158 curveto
+165.73251 79.0158 165.64233 78.97842 165.5759 78.91199 curveto
+165.50946 78.84555 165.47209 78.75537 165.47209 78.66142 curveto
+165.47209 78.56747 165.50946 78.4773 165.5759 78.41086 curveto
+165.64233 78.34442 165.73251 78.30705 165.82646 78.30705 curveto
+165.92041 78.30705 166.01059 78.34442 166.07703 78.41086 curveto
+166.14346 78.4773 166.18083 78.56747 166.18083 78.66142 curveto closepath fill
+newpath 166.18083 121.1811 moveto
+166.18083 121.27505 166.14346 121.36523 166.07703 121.43167 curveto
+166.01059 121.49811 165.92041 121.53548 165.82646 121.53548 curveto
+165.73251 121.53548 165.64233 121.49811 165.5759 121.43167 curveto
+165.50946 121.36523 165.47209 121.27505 165.47209 121.1811 curveto
+165.47209 121.08716 165.50946 120.99698 165.5759 120.93054 curveto
+165.64233 120.8641 165.73251 120.82674 165.82646 120.82674 curveto
+165.92041 120.82674 166.01059 120.8641 166.07703 120.93054 curveto
+166.14346 120.99698 166.18083 121.08716 166.18083 121.1811 curveto closepath
+ fill
+newpath 166.18083 142.44095 moveto
+166.18083 142.5349 166.14346 142.62508 166.07703 142.69151 curveto
+166.01059 142.75795 165.92041 142.79532 165.82646 142.79532 curveto
+165.73251 142.79532 165.64233 142.75795 165.5759 142.69151 curveto
+165.50946 142.62508 165.47209 142.5349 165.47209 142.44095 curveto
+165.47209 142.347 165.50946 142.25682 165.5759 142.19038 curveto
+165.64233 142.12395 165.73251 142.08658 165.82646 142.08658 curveto
+165.92041 142.08658 166.01059 142.12395 166.07703 142.19038 curveto
+166.14346 142.25682 166.18083 142.347 166.18083 142.44095 curveto closepath
+ fill
+newpath 166.18083 163.70079 moveto
+166.18083 163.79474 166.14346 163.88492 166.07703 163.95135 curveto
+166.01059 164.01779 165.92041 164.05516 165.82646 164.05516 curveto
+165.73251 164.05516 165.64233 164.01779 165.5759 163.95135 curveto
+165.50946 163.88492 165.47209 163.79474 165.47209 163.70079 curveto
+165.47209 163.60684 165.50946 163.51666 165.5759 163.45023 curveto
+165.64233 163.38379 165.73251 163.34642 165.82646 163.34642 curveto
+165.92041 163.34642 166.01059 163.38379 166.07703 163.45023 curveto
+166.14346 163.51666 166.18083 163.60684 166.18083 163.70079 curveto closepath
+ fill
+newpath 85.39343 104.17323 moveto
+85.39343 104.26718 85.35606 104.35736 85.28963 104.4238 curveto
+85.22319 104.49023 85.13301 104.5276 85.03906 104.5276 curveto
+84.94511 104.5276 84.85493 104.49023 84.7885 104.4238 curveto
+84.72206 104.35736 84.6847 104.26718 84.6847 104.17323 curveto
+84.6847 104.07928 84.72206 103.9891 84.7885 103.92267 curveto
+84.85493 103.85623 84.94511 103.81886 85.03906 103.81886 curveto
+85.13301 103.81886 85.22319 103.85623 85.28963 103.92267 curveto
+85.35606 103.9891 85.39343 104.07928 85.39343 104.17323 curveto closepath fill
+newpath 106.65327 104.17323 moveto
+106.65327 104.26718 106.6159 104.35736 106.54947 104.4238 curveto
+106.48303 104.49023 106.39285 104.5276 106.2989 104.5276 curveto
+106.20496 104.5276 106.11478 104.49023 106.04834 104.4238 curveto
+105.9819 104.35736 105.94453 104.26718 105.94453 104.17323 curveto
+105.94453 104.07928 105.9819 103.9891 106.04834 103.92267 curveto
+106.11478 103.85623 106.20496 103.81886 106.2989 103.81886 curveto
+106.39285 103.81886 106.48303 103.85623 106.54947 103.92267 curveto
+106.6159 103.9891 106.65327 104.07928 106.65327 104.17323 curveto closepath
+ fill
+newpath 127.91312 104.17323 moveto
+127.91312 104.26718 127.87575 104.35736 127.80931 104.4238 curveto
+127.74287 104.49023 127.6527 104.5276 127.55875 104.5276 curveto
+127.4648 104.5276 127.37462 104.49023 127.30818 104.4238 curveto
+127.24174 104.35736 127.20438 104.26718 127.20438 104.17323 curveto
+127.20438 104.07928 127.24174 103.9891 127.30818 103.92267 curveto
+127.37462 103.85623 127.4648 103.81886 127.55875 103.81886 curveto
+127.6527 103.81886 127.74287 103.85623 127.80931 103.92267 curveto
+127.87575 103.9891 127.91312 104.07928 127.91312 104.17323 curveto closepath
+ fill
+newpath 149.17296 104.17323 moveto
+149.17296 104.26718 149.13559 104.35736 149.06915 104.4238 curveto
+149.00272 104.49023 148.91254 104.5276 148.81859 104.5276 curveto
+148.72464 104.5276 148.63446 104.49023 148.56802 104.4238 curveto
+148.50159 104.35736 148.46422 104.26718 148.46422 104.17323 curveto
+148.46422 104.07928 148.50159 103.9891 148.56802 103.92267 curveto
+148.63446 103.85623 148.72464 103.81886 148.81859 103.81886 curveto
+148.91254 103.81886 149.00272 103.85623 149.06915 103.92267 curveto
+149.13559 103.9891 149.17296 104.07928 149.17296 104.17323 curveto closepath
+ fill
+newpath 191.69264 104.17323 moveto
+191.69264 104.26718 191.65527 104.35736 191.58884 104.4238 curveto
+191.5224 104.49023 191.43222 104.5276 191.33827 104.5276 curveto
+191.24432 104.5276 191.15414 104.49023 191.0877 104.4238 curveto
+191.02127 104.35736 190.9839 104.26718 190.9839 104.17323 curveto
+190.9839 104.07928 191.02127 103.9891 191.0877 103.92267 curveto
+191.15414 103.85623 191.24432 103.81886 191.33827 103.81886 curveto
+191.43222 103.81886 191.5224 103.85623 191.58884 103.92267 curveto
+191.65527 103.9891 191.69264 104.07928 191.69264 104.17323 curveto closepath
+ fill
+newpath 212.95248 104.17323 moveto
+212.95248 104.26718 212.91512 104.35736 212.84868 104.4238 curveto
+212.78224 104.49023 212.69206 104.5276 212.59811 104.5276 curveto
+212.50417 104.5276 212.41399 104.49023 212.34755 104.4238 curveto
+212.28111 104.35736 212.24374 104.26718 212.24374 104.17323 curveto
+212.24374 104.07928 212.28111 103.9891 212.34755 103.92267 curveto
+212.41399 103.85623 212.50417 103.81886 212.59811 103.81886 curveto
+212.69206 103.81886 212.78224 103.85623 212.84868 103.92267 curveto
+212.91512 103.9891 212.95248 104.07928 212.95248 104.17323 curveto closepath
+ fill
+newpath 234.21233 104.17323 moveto
+234.21233 104.26718 234.17496 104.35736 234.10852 104.4238 curveto
+234.04208 104.49023 233.9519 104.5276 233.85796 104.5276 curveto
+233.764 104.5276 233.67383 104.49023 233.60739 104.4238 curveto
+233.54095 104.35736 233.50359 104.26718 233.50359 104.17323 curveto
+233.50359 104.07928 233.54095 103.9891 233.60739 103.92267 curveto
+233.67383 103.85623 233.764 103.81886 233.85796 103.81886 curveto
+233.9519 103.81886 234.04208 103.85623 234.10852 103.92267 curveto
+234.17496 103.9891 234.21233 104.07928 234.21233 104.17323 curveto closepath
+ fill
+newpath 255.47217 104.17323 moveto
+255.47217 104.26718 255.4348 104.35736 255.36836 104.4238 curveto
+255.30193 104.49023 255.21175 104.5276 255.1178 104.5276 curveto
+255.02385 104.5276 254.93367 104.49023 254.86723 104.4238 curveto
+254.8008 104.35736 254.76343 104.26718 254.76343 104.17323 curveto
+254.76343 104.07928 254.8008 103.9891 254.86723 103.92267 curveto
+254.93367 103.85623 255.02385 103.81886 255.1178 103.81886 curveto
+255.21175 103.81886 255.30193 103.85623 255.36836 103.92267 curveto
+255.4348 103.9891 255.47217 104.07928 255.47217 104.17323 curveto closepath
+ fill
+newpath 85.39343 108.4252 moveto
+85.39343 108.51915 85.35606 108.60933 85.28963 108.67577 curveto
+85.22319 108.7422 85.13301 108.77957 85.03906 108.77957 curveto
+84.94511 108.77957 84.85493 108.7422 84.7885 108.67577 curveto
+84.72206 108.60933 84.6847 108.51915 84.6847 108.4252 curveto
+84.6847 108.33125 84.72206 108.24107 84.7885 108.17464 curveto
+84.85493 108.1082 84.94511 108.07083 85.03906 108.07083 curveto
+85.13301 108.07083 85.22319 108.1082 85.28963 108.17464 curveto
+85.35606 108.24107 85.39343 108.33125 85.39343 108.4252 curveto closepath fill
+newpath 106.65327 108.4252 moveto
+106.65327 108.51915 106.6159 108.60933 106.54947 108.67577 curveto
+106.48303 108.7422 106.39285 108.77957 106.2989 108.77957 curveto
+106.20496 108.77957 106.11478 108.7422 106.04834 108.67577 curveto
+105.9819 108.60933 105.94453 108.51915 105.94453 108.4252 curveto
+105.94453 108.33125 105.9819 108.24107 106.04834 108.17464 curveto
+106.11478 108.1082 106.20496 108.07083 106.2989 108.07083 curveto
+106.39285 108.07083 106.48303 108.1082 106.54947 108.17464 curveto
+106.6159 108.24107 106.65327 108.33125 106.65327 108.4252 curveto closepath
+ fill
+newpath 127.91312 108.4252 moveto
+127.91312 108.51915 127.87575 108.60933 127.80931 108.67577 curveto
+127.74287 108.7422 127.6527 108.77957 127.55875 108.77957 curveto
+127.4648 108.77957 127.37462 108.7422 127.30818 108.67577 curveto
+127.24174 108.60933 127.20438 108.51915 127.20438 108.4252 curveto
+127.20438 108.33125 127.24174 108.24107 127.30818 108.17464 curveto
+127.37462 108.1082 127.4648 108.07083 127.55875 108.07083 curveto
+127.6527 108.07083 127.74287 108.1082 127.80931 108.17464 curveto
+127.87575 108.24107 127.91312 108.33125 127.91312 108.4252 curveto closepath
+ fill
+newpath 149.17296 108.4252 moveto
+149.17296 108.51915 149.13559 108.60933 149.06915 108.67577 curveto
+149.00272 108.7422 148.91254 108.77957 148.81859 108.77957 curveto
+148.72464 108.77957 148.63446 108.7422 148.56802 108.67577 curveto
+148.50159 108.60933 148.46422 108.51915 148.46422 108.4252 curveto
+148.46422 108.33125 148.50159 108.24107 148.56802 108.17464 curveto
+148.63446 108.1082 148.72464 108.07083 148.81859 108.07083 curveto
+148.91254 108.07083 149.00272 108.1082 149.06915 108.17464 curveto
+149.13559 108.24107 149.17296 108.33125 149.17296 108.4252 curveto closepath
+ fill
+newpath 191.69264 108.4252 moveto
+191.69264 108.51915 191.65527 108.60933 191.58884 108.67577 curveto
+191.5224 108.7422 191.43222 108.77957 191.33827 108.77957 curveto
+191.24432 108.77957 191.15414 108.7422 191.0877 108.67577 curveto
+191.02127 108.60933 190.9839 108.51915 190.9839 108.4252 curveto
+190.9839 108.33125 191.02127 108.24107 191.0877 108.17464 curveto
+191.15414 108.1082 191.24432 108.07083 191.33827 108.07083 curveto
+191.43222 108.07083 191.5224 108.1082 191.58884 108.17464 curveto
+191.65527 108.24107 191.69264 108.33125 191.69264 108.4252 curveto closepath
+ fill
+newpath 212.95248 108.4252 moveto
+212.95248 108.51915 212.91512 108.60933 212.84868 108.67577 curveto
+212.78224 108.7422 212.69206 108.77957 212.59811 108.77957 curveto
+212.50417 108.77957 212.41399 108.7422 212.34755 108.67577 curveto
+212.28111 108.60933 212.24374 108.51915 212.24374 108.4252 curveto
+212.24374 108.33125 212.28111 108.24107 212.34755 108.17464 curveto
+212.41399 108.1082 212.50417 108.07083 212.59811 108.07083 curveto
+212.69206 108.07083 212.78224 108.1082 212.84868 108.17464 curveto
+212.91512 108.24107 212.95248 108.33125 212.95248 108.4252 curveto closepath
+ fill
+newpath 234.21233 108.4252 moveto
+234.21233 108.51915 234.17496 108.60933 234.10852 108.67577 curveto
+234.04208 108.7422 233.9519 108.77957 233.85796 108.77957 curveto
+233.764 108.77957 233.67383 108.7422 233.60739 108.67577 curveto
+233.54095 108.60933 233.50359 108.51915 233.50359 108.4252 curveto
+233.50359 108.33125 233.54095 108.24107 233.60739 108.17464 curveto
+233.67383 108.1082 233.764 108.07083 233.85796 108.07083 curveto
+233.9519 108.07083 234.04208 108.1082 234.10852 108.17464 curveto
+234.17496 108.24107 234.21233 108.33125 234.21233 108.4252 curveto closepath
+ fill
+newpath 255.47217 108.4252 moveto
+255.47217 108.51915 255.4348 108.60933 255.36836 108.67577 curveto
+255.30193 108.7422 255.21175 108.77957 255.1178 108.77957 curveto
+255.02385 108.77957 254.93367 108.7422 254.86723 108.67577 curveto
+254.8008 108.60933 254.76343 108.51915 254.76343 108.4252 curveto
+254.76343 108.33125 254.8008 108.24107 254.86723 108.17464 curveto
+254.93367 108.1082 255.02385 108.07083 255.1178 108.07083 curveto
+255.21175 108.07083 255.30193 108.1082 255.36836 108.17464 curveto
+255.4348 108.24107 255.47217 108.33125 255.47217 108.4252 curveto closepath
+ fill
+newpath 85.39343 112.67717 moveto
+85.39343 112.77112 85.35606 112.8613 85.28963 112.92773 curveto
+85.22319 112.99417 85.13301 113.03154 85.03906 113.03154 curveto
+84.94511 113.03154 84.85493 112.99417 84.7885 112.92773 curveto
+84.72206 112.8613 84.6847 112.77112 84.6847 112.67717 curveto
+84.6847 112.58322 84.72206 112.49304 84.7885 112.4266 curveto
+84.85493 112.36017 84.94511 112.3228 85.03906 112.3228 curveto
+85.13301 112.3228 85.22319 112.36017 85.28963 112.4266 curveto
+85.35606 112.49304 85.39343 112.58322 85.39343 112.67717 curveto closepath fill
+newpath 106.65327 112.67717 moveto
+106.65327 112.77112 106.6159 112.8613 106.54947 112.92773 curveto
+106.48303 112.99417 106.39285 113.03154 106.2989 113.03154 curveto
+106.20496 113.03154 106.11478 112.99417 106.04834 112.92773 curveto
+105.9819 112.8613 105.94453 112.77112 105.94453 112.67717 curveto
+105.94453 112.58322 105.9819 112.49304 106.04834 112.4266 curveto
+106.11478 112.36017 106.20496 112.3228 106.2989 112.3228 curveto
+106.39285 112.3228 106.48303 112.36017 106.54947 112.4266 curveto
+106.6159 112.49304 106.65327 112.58322 106.65327 112.67717 curveto closepath
+ fill
+newpath 127.91312 112.67717 moveto
+127.91312 112.77112 127.87575 112.8613 127.80931 112.92773 curveto
+127.74287 112.99417 127.6527 113.03154 127.55875 113.03154 curveto
+127.4648 113.03154 127.37462 112.99417 127.30818 112.92773 curveto
+127.24174 112.8613 127.20438 112.77112 127.20438 112.67717 curveto
+127.20438 112.58322 127.24174 112.49304 127.30818 112.4266 curveto
+127.37462 112.36017 127.4648 112.3228 127.55875 112.3228 curveto
+127.6527 112.3228 127.74287 112.36017 127.80931 112.4266 curveto
+127.87575 112.49304 127.91312 112.58322 127.91312 112.67717 curveto closepath
+ fill
+newpath 149.17296 112.67717 moveto
+149.17296 112.77112 149.13559 112.8613 149.06915 112.92773 curveto
+149.00272 112.99417 148.91254 113.03154 148.81859 113.03154 curveto
+148.72464 113.03154 148.63446 112.99417 148.56802 112.92773 curveto
+148.50159 112.8613 148.46422 112.77112 148.46422 112.67717 curveto
+148.46422 112.58322 148.50159 112.49304 148.56802 112.4266 curveto
+148.63446 112.36017 148.72464 112.3228 148.81859 112.3228 curveto
+148.91254 112.3228 149.00272 112.36017 149.06915 112.4266 curveto
+149.13559 112.49304 149.17296 112.58322 149.17296 112.67717 curveto closepath
+ fill
+newpath 191.69264 112.67717 moveto
+191.69264 112.77112 191.65527 112.8613 191.58884 112.92773 curveto
+191.5224 112.99417 191.43222 113.03154 191.33827 113.03154 curveto
+191.24432 113.03154 191.15414 112.99417 191.0877 112.92773 curveto
+191.02127 112.8613 190.9839 112.77112 190.9839 112.67717 curveto
+190.9839 112.58322 191.02127 112.49304 191.0877 112.4266 curveto
+191.15414 112.36017 191.24432 112.3228 191.33827 112.3228 curveto
+191.43222 112.3228 191.5224 112.36017 191.58884 112.4266 curveto
+191.65527 112.49304 191.69264 112.58322 191.69264 112.67717 curveto closepath
+ fill
+newpath 212.95248 112.67717 moveto
+212.95248 112.77112 212.91512 112.8613 212.84868 112.92773 curveto
+212.78224 112.99417 212.69206 113.03154 212.59811 113.03154 curveto
+212.50417 113.03154 212.41399 112.99417 212.34755 112.92773 curveto
+212.28111 112.8613 212.24374 112.77112 212.24374 112.67717 curveto
+212.24374 112.58322 212.28111 112.49304 212.34755 112.4266 curveto
+212.41399 112.36017 212.50417 112.3228 212.59811 112.3228 curveto
+212.69206 112.3228 212.78224 112.36017 212.84868 112.4266 curveto
+212.91512 112.49304 212.95248 112.58322 212.95248 112.67717 curveto closepath
+ fill
+newpath 234.21233 112.67717 moveto
+234.21233 112.77112 234.17496 112.8613 234.10852 112.92773 curveto
+234.04208 112.99417 233.9519 113.03154 233.85796 113.03154 curveto
+233.764 113.03154 233.67383 112.99417 233.60739 112.92773 curveto
+233.54095 112.8613 233.50359 112.77112 233.50359 112.67717 curveto
+233.50359 112.58322 233.54095 112.49304 233.60739 112.4266 curveto
+233.67383 112.36017 233.764 112.3228 233.85796 112.3228 curveto
+233.9519 112.3228 234.04208 112.36017 234.10852 112.4266 curveto
+234.17496 112.49304 234.21233 112.58322 234.21233 112.67717 curveto closepath
+ fill
+newpath 255.47217 112.67717 moveto
+255.47217 112.77112 255.4348 112.8613 255.36836 112.92773 curveto
+255.30193 112.99417 255.21175 113.03154 255.1178 113.03154 curveto
+255.02385 113.03154 254.93367 112.99417 254.86723 112.92773 curveto
+254.8008 112.8613 254.76343 112.77112 254.76343 112.67717 curveto
+254.76343 112.58322 254.8008 112.49304 254.86723 112.4266 curveto
+254.93367 112.36017 255.02385 112.3228 255.1178 112.3228 curveto
+255.21175 112.3228 255.30193 112.36017 255.36836 112.4266 curveto
+255.4348 112.49304 255.47217 112.58322 255.47217 112.67717 curveto closepath
+ fill
+newpath 85.39343 116.92914 moveto
+85.39343 117.02309 85.35606 117.11327 85.28963 117.1797 curveto
+85.22319 117.24614 85.13301 117.28351 85.03906 117.28351 curveto
+84.94511 117.28351 84.85493 117.24614 84.7885 117.1797 curveto
+84.72206 117.11327 84.6847 117.02309 84.6847 116.92914 curveto
+84.6847 116.83519 84.72206 116.74501 84.7885 116.67857 curveto
+84.85493 116.61214 84.94511 116.57477 85.03906 116.57477 curveto
+85.13301 116.57477 85.22319 116.61214 85.28963 116.67857 curveto
+85.35606 116.74501 85.39343 116.83519 85.39343 116.92914 curveto closepath fill
+newpath 106.65327 116.92914 moveto
+106.65327 117.02309 106.6159 117.11327 106.54947 117.1797 curveto
+106.48303 117.24614 106.39285 117.28351 106.2989 117.28351 curveto
+106.20496 117.28351 106.11478 117.24614 106.04834 117.1797 curveto
+105.9819 117.11327 105.94453 117.02309 105.94453 116.92914 curveto
+105.94453 116.83519 105.9819 116.74501 106.04834 116.67857 curveto
+106.11478 116.61214 106.20496 116.57477 106.2989 116.57477 curveto
+106.39285 116.57477 106.48303 116.61214 106.54947 116.67857 curveto
+106.6159 116.74501 106.65327 116.83519 106.65327 116.92914 curveto closepath
+ fill
+newpath 127.91312 116.92914 moveto
+127.91312 117.02309 127.87575 117.11327 127.80931 117.1797 curveto
+127.74287 117.24614 127.6527 117.28351 127.55875 117.28351 curveto
+127.4648 117.28351 127.37462 117.24614 127.30818 117.1797 curveto
+127.24174 117.11327 127.20438 117.02309 127.20438 116.92914 curveto
+127.20438 116.83519 127.24174 116.74501 127.30818 116.67857 curveto
+127.37462 116.61214 127.4648 116.57477 127.55875 116.57477 curveto
+127.6527 116.57477 127.74287 116.61214 127.80931 116.67857 curveto
+127.87575 116.74501 127.91312 116.83519 127.91312 116.92914 curveto closepath
+ fill
+newpath 149.17296 116.92914 moveto
+149.17296 117.02309 149.13559 117.11327 149.06915 117.1797 curveto
+149.00272 117.24614 148.91254 117.28351 148.81859 117.28351 curveto
+148.72464 117.28351 148.63446 117.24614 148.56802 117.1797 curveto
+148.50159 117.11327 148.46422 117.02309 148.46422 116.92914 curveto
+148.46422 116.83519 148.50159 116.74501 148.56802 116.67857 curveto
+148.63446 116.61214 148.72464 116.57477 148.81859 116.57477 curveto
+148.91254 116.57477 149.00272 116.61214 149.06915 116.67857 curveto
+149.13559 116.74501 149.17296 116.83519 149.17296 116.92914 curveto closepath
+ fill
+newpath 191.69264 116.92914 moveto
+191.69264 117.02309 191.65527 117.11327 191.58884 117.1797 curveto
+191.5224 117.24614 191.43222 117.28351 191.33827 117.28351 curveto
+191.24432 117.28351 191.15414 117.24614 191.0877 117.1797 curveto
+191.02127 117.11327 190.9839 117.02309 190.9839 116.92914 curveto
+190.9839 116.83519 191.02127 116.74501 191.0877 116.67857 curveto
+191.15414 116.61214 191.24432 116.57477 191.33827 116.57477 curveto
+191.43222 116.57477 191.5224 116.61214 191.58884 116.67857 curveto
+191.65527 116.74501 191.69264 116.83519 191.69264 116.92914 curveto closepath
+ fill
+newpath 212.95248 116.92914 moveto
+212.95248 117.02309 212.91512 117.11327 212.84868 117.1797 curveto
+212.78224 117.24614 212.69206 117.28351 212.59811 117.28351 curveto
+212.50417 117.28351 212.41399 117.24614 212.34755 117.1797 curveto
+212.28111 117.11327 212.24374 117.02309 212.24374 116.92914 curveto
+212.24374 116.83519 212.28111 116.74501 212.34755 116.67857 curveto
+212.41399 116.61214 212.50417 116.57477 212.59811 116.57477 curveto
+212.69206 116.57477 212.78224 116.61214 212.84868 116.67857 curveto
+212.91512 116.74501 212.95248 116.83519 212.95248 116.92914 curveto closepath
+ fill
+newpath 234.21233 116.92914 moveto
+234.21233 117.02309 234.17496 117.11327 234.10852 117.1797 curveto
+234.04208 117.24614 233.9519 117.28351 233.85796 117.28351 curveto
+233.764 117.28351 233.67383 117.24614 233.60739 117.1797 curveto
+233.54095 117.11327 233.50359 117.02309 233.50359 116.92914 curveto
+233.50359 116.83519 233.54095 116.74501 233.60739 116.67857 curveto
+233.67383 116.61214 233.764 116.57477 233.85796 116.57477 curveto
+233.9519 116.57477 234.04208 116.61214 234.10852 116.67857 curveto
+234.17496 116.74501 234.21233 116.83519 234.21233 116.92914 curveto closepath
+ fill
+newpath 255.47217 116.92914 moveto
+255.47217 117.02309 255.4348 117.11327 255.36836 117.1797 curveto
+255.30193 117.24614 255.21175 117.28351 255.1178 117.28351 curveto
+255.02385 117.28351 254.93367 117.24614 254.86723 117.1797 curveto
+254.8008 117.11327 254.76343 117.02309 254.76343 116.92914 curveto
+254.76343 116.83519 254.8008 116.74501 254.86723 116.67857 curveto
+254.93367 116.61214 255.02385 116.57477 255.1178 116.57477 curveto
+255.21175 116.57477 255.30193 116.61214 255.36836 116.67857 curveto
+255.4348 116.74501 255.47217 116.83519 255.47217 116.92914 curveto closepath
+ fill
+newpath 85.39343 121.1811 moveto
+85.39343 121.27505 85.35606 121.36523 85.28963 121.43167 curveto
+85.22319 121.49811 85.13301 121.53548 85.03906 121.53548 curveto
+84.94511 121.53548 84.85493 121.49811 84.7885 121.43167 curveto
+84.72206 121.36523 84.6847 121.27505 84.6847 121.1811 curveto
+84.6847 121.08716 84.72206 120.99698 84.7885 120.93054 curveto
+84.85493 120.8641 84.94511 120.82674 85.03906 120.82674 curveto
+85.13301 120.82674 85.22319 120.8641 85.28963 120.93054 curveto
+85.35606 120.99698 85.39343 121.08716 85.39343 121.1811 curveto closepath fill
+newpath 106.65327 121.1811 moveto
+106.65327 121.27505 106.6159 121.36523 106.54947 121.43167 curveto
+106.48303 121.49811 106.39285 121.53548 106.2989 121.53548 curveto
+106.20496 121.53548 106.11478 121.49811 106.04834 121.43167 curveto
+105.9819 121.36523 105.94453 121.27505 105.94453 121.1811 curveto
+105.94453 121.08716 105.9819 120.99698 106.04834 120.93054 curveto
+106.11478 120.8641 106.20496 120.82674 106.2989 120.82674 curveto
+106.39285 120.82674 106.48303 120.8641 106.54947 120.93054 curveto
+106.6159 120.99698 106.65327 121.08716 106.65327 121.1811 curveto closepath
+ fill
+newpath 127.91312 121.1811 moveto
+127.91312 121.27505 127.87575 121.36523 127.80931 121.43167 curveto
+127.74287 121.49811 127.6527 121.53548 127.55875 121.53548 curveto
+127.4648 121.53548 127.37462 121.49811 127.30818 121.43167 curveto
+127.24174 121.36523 127.20438 121.27505 127.20438 121.1811 curveto
+127.20438 121.08716 127.24174 120.99698 127.30818 120.93054 curveto
+127.37462 120.8641 127.4648 120.82674 127.55875 120.82674 curveto
+127.6527 120.82674 127.74287 120.8641 127.80931 120.93054 curveto
+127.87575 120.99698 127.91312 121.08716 127.91312 121.1811 curveto closepath
+ fill
+newpath 149.17296 121.1811 moveto
+149.17296 121.27505 149.13559 121.36523 149.06915 121.43167 curveto
+149.00272 121.49811 148.91254 121.53548 148.81859 121.53548 curveto
+148.72464 121.53548 148.63446 121.49811 148.56802 121.43167 curveto
+148.50159 121.36523 148.46422 121.27505 148.46422 121.1811 curveto
+148.46422 121.08716 148.50159 120.99698 148.56802 120.93054 curveto
+148.63446 120.8641 148.72464 120.82674 148.81859 120.82674 curveto
+148.91254 120.82674 149.00272 120.8641 149.06915 120.93054 curveto
+149.13559 120.99698 149.17296 121.08716 149.17296 121.1811 curveto closepath
+ fill
+newpath 191.69264 121.1811 moveto
+191.69264 121.27505 191.65527 121.36523 191.58884 121.43167 curveto
+191.5224 121.49811 191.43222 121.53548 191.33827 121.53548 curveto
+191.24432 121.53548 191.15414 121.49811 191.0877 121.43167 curveto
+191.02127 121.36523 190.9839 121.27505 190.9839 121.1811 curveto
+190.9839 121.08716 191.02127 120.99698 191.0877 120.93054 curveto
+191.15414 120.8641 191.24432 120.82674 191.33827 120.82674 curveto
+191.43222 120.82674 191.5224 120.8641 191.58884 120.93054 curveto
+191.65527 120.99698 191.69264 121.08716 191.69264 121.1811 curveto closepath
+ fill
+newpath 212.95248 121.1811 moveto
+212.95248 121.27505 212.91512 121.36523 212.84868 121.43167 curveto
+212.78224 121.49811 212.69206 121.53548 212.59811 121.53548 curveto
+212.50417 121.53548 212.41399 121.49811 212.34755 121.43167 curveto
+212.28111 121.36523 212.24374 121.27505 212.24374 121.1811 curveto
+212.24374 121.08716 212.28111 120.99698 212.34755 120.93054 curveto
+212.41399 120.8641 212.50417 120.82674 212.59811 120.82674 curveto
+212.69206 120.82674 212.78224 120.8641 212.84868 120.93054 curveto
+212.91512 120.99698 212.95248 121.08716 212.95248 121.1811 curveto closepath
+ fill
+newpath 234.21233 121.1811 moveto
+234.21233 121.27505 234.17496 121.36523 234.10852 121.43167 curveto
+234.04208 121.49811 233.9519 121.53548 233.85796 121.53548 curveto
+233.764 121.53548 233.67383 121.49811 233.60739 121.43167 curveto
+233.54095 121.36523 233.50359 121.27505 233.50359 121.1811 curveto
+233.50359 121.08716 233.54095 120.99698 233.60739 120.93054 curveto
+233.67383 120.8641 233.764 120.82674 233.85796 120.82674 curveto
+233.9519 120.82674 234.04208 120.8641 234.10852 120.93054 curveto
+234.17496 120.99698 234.21233 121.08716 234.21233 121.1811 curveto closepath
+ fill
+newpath 255.47217 121.1811 moveto
+255.47217 121.27505 255.4348 121.36523 255.36836 121.43167 curveto
+255.30193 121.49811 255.21175 121.53548 255.1178 121.53548 curveto
+255.02385 121.53548 254.93367 121.49811 254.86723 121.43167 curveto
+254.8008 121.36523 254.76343 121.27505 254.76343 121.1811 curveto
+254.76343 121.08716 254.8008 120.99698 254.86723 120.93054 curveto
+254.93367 120.8641 255.02385 120.82674 255.1178 120.82674 curveto
+255.21175 120.82674 255.30193 120.8641 255.36836 120.93054 curveto
+255.4348 120.99698 255.47217 121.08716 255.47217 121.1811 curveto closepath
+ fill
+newpath 85.39343 125.43307 moveto
+85.39343 125.52702 85.35606 125.6172 85.28963 125.68364 curveto
+85.22319 125.75008 85.13301 125.78745 85.03906 125.78745 curveto
+84.94511 125.78745 84.85493 125.75008 84.7885 125.68364 curveto
+84.72206 125.6172 84.6847 125.52702 84.6847 125.43307 curveto
+84.6847 125.33913 84.72206 125.24895 84.7885 125.18251 curveto
+84.85493 125.11607 84.94511 125.0787 85.03906 125.0787 curveto
+85.13301 125.0787 85.22319 125.11607 85.28963 125.18251 curveto
+85.35606 125.24895 85.39343 125.33913 85.39343 125.43307 curveto closepath fill
+newpath 106.65327 125.43307 moveto
+106.65327 125.52702 106.6159 125.6172 106.54947 125.68364 curveto
+106.48303 125.75008 106.39285 125.78745 106.2989 125.78745 curveto
+106.20496 125.78745 106.11478 125.75008 106.04834 125.68364 curveto
+105.9819 125.6172 105.94453 125.52702 105.94453 125.43307 curveto
+105.94453 125.33913 105.9819 125.24895 106.04834 125.18251 curveto
+106.11478 125.11607 106.20496 125.0787 106.2989 125.0787 curveto
+106.39285 125.0787 106.48303 125.11607 106.54947 125.18251 curveto
+106.6159 125.24895 106.65327 125.33913 106.65327 125.43307 curveto closepath
+ fill
+newpath 127.91312 125.43307 moveto
+127.91312 125.52702 127.87575 125.6172 127.80931 125.68364 curveto
+127.74287 125.75008 127.6527 125.78745 127.55875 125.78745 curveto
+127.4648 125.78745 127.37462 125.75008 127.30818 125.68364 curveto
+127.24174 125.6172 127.20438 125.52702 127.20438 125.43307 curveto
+127.20438 125.33913 127.24174 125.24895 127.30818 125.18251 curveto
+127.37462 125.11607 127.4648 125.0787 127.55875 125.0787 curveto
+127.6527 125.0787 127.74287 125.11607 127.80931 125.18251 curveto
+127.87575 125.24895 127.91312 125.33913 127.91312 125.43307 curveto closepath
+ fill
+newpath 149.17296 125.43307 moveto
+149.17296 125.52702 149.13559 125.6172 149.06915 125.68364 curveto
+149.00272 125.75008 148.91254 125.78745 148.81859 125.78745 curveto
+148.72464 125.78745 148.63446 125.75008 148.56802 125.68364 curveto
+148.50159 125.6172 148.46422 125.52702 148.46422 125.43307 curveto
+148.46422 125.33913 148.50159 125.24895 148.56802 125.18251 curveto
+148.63446 125.11607 148.72464 125.0787 148.81859 125.0787 curveto
+148.91254 125.0787 149.00272 125.11607 149.06915 125.18251 curveto
+149.13559 125.24895 149.17296 125.33913 149.17296 125.43307 curveto closepath
+ fill
+newpath 191.69264 125.43307 moveto
+191.69264 125.52702 191.65527 125.6172 191.58884 125.68364 curveto
+191.5224 125.75008 191.43222 125.78745 191.33827 125.78745 curveto
+191.24432 125.78745 191.15414 125.75008 191.0877 125.68364 curveto
+191.02127 125.6172 190.9839 125.52702 190.9839 125.43307 curveto
+190.9839 125.33913 191.02127 125.24895 191.0877 125.18251 curveto
+191.15414 125.11607 191.24432 125.0787 191.33827 125.0787 curveto
+191.43222 125.0787 191.5224 125.11607 191.58884 125.18251 curveto
+191.65527 125.24895 191.69264 125.33913 191.69264 125.43307 curveto closepath
+ fill
+newpath 212.95248 125.43307 moveto
+212.95248 125.52702 212.91512 125.6172 212.84868 125.68364 curveto
+212.78224 125.75008 212.69206 125.78745 212.59811 125.78745 curveto
+212.50417 125.78745 212.41399 125.75008 212.34755 125.68364 curveto
+212.28111 125.6172 212.24374 125.52702 212.24374 125.43307 curveto
+212.24374 125.33913 212.28111 125.24895 212.34755 125.18251 curveto
+212.41399 125.11607 212.50417 125.0787 212.59811 125.0787 curveto
+212.69206 125.0787 212.78224 125.11607 212.84868 125.18251 curveto
+212.91512 125.24895 212.95248 125.33913 212.95248 125.43307 curveto closepath
+ fill
+newpath 234.21233 125.43307 moveto
+234.21233 125.52702 234.17496 125.6172 234.10852 125.68364 curveto
+234.04208 125.75008 233.9519 125.78745 233.85796 125.78745 curveto
+233.764 125.78745 233.67383 125.75008 233.60739 125.68364 curveto
+233.54095 125.6172 233.50359 125.52702 233.50359 125.43307 curveto
+233.50359 125.33913 233.54095 125.24895 233.60739 125.18251 curveto
+233.67383 125.11607 233.764 125.0787 233.85796 125.0787 curveto
+233.9519 125.0787 234.04208 125.11607 234.10852 125.18251 curveto
+234.17496 125.24895 234.21233 125.33913 234.21233 125.43307 curveto closepath
+ fill
+newpath 255.47217 125.43307 moveto
+255.47217 125.52702 255.4348 125.6172 255.36836 125.68364 curveto
+255.30193 125.75008 255.21175 125.78745 255.1178 125.78745 curveto
+255.02385 125.78745 254.93367 125.75008 254.86723 125.68364 curveto
+254.8008 125.6172 254.76343 125.52702 254.76343 125.43307 curveto
+254.76343 125.33913 254.8008 125.24895 254.86723 125.18251 curveto
+254.93367 125.11607 255.02385 125.0787 255.1178 125.0787 curveto
+255.21175 125.0787 255.30193 125.11607 255.36836 125.18251 curveto
+255.4348 125.24895 255.47217 125.33913 255.47217 125.43307 curveto closepath
+ fill
+newpath 85.39343 129.68504 moveto
+85.39343 129.77899 85.35606 129.86917 85.28963 129.93561 curveto
+85.22319 130.00204 85.13301 130.03941 85.03906 130.03941 curveto
+84.94511 130.03941 84.85493 130.00204 84.7885 129.93561 curveto
+84.72206 129.86917 84.6847 129.77899 84.6847 129.68504 curveto
+84.6847 129.5911 84.72206 129.50092 84.7885 129.43448 curveto
+84.85493 129.36804 84.94511 129.33067 85.03906 129.33067 curveto
+85.13301 129.33067 85.22319 129.36804 85.28963 129.43448 curveto
+85.35606 129.50092 85.39343 129.5911 85.39343 129.68504 curveto closepath fill
+newpath 106.65327 129.68504 moveto
+106.65327 129.77899 106.6159 129.86917 106.54947 129.93561 curveto
+106.48303 130.00204 106.39285 130.03941 106.2989 130.03941 curveto
+106.20496 130.03941 106.11478 130.00204 106.04834 129.93561 curveto
+105.9819 129.86917 105.94453 129.77899 105.94453 129.68504 curveto
+105.94453 129.5911 105.9819 129.50092 106.04834 129.43448 curveto
+106.11478 129.36804 106.20496 129.33067 106.2989 129.33067 curveto
+106.39285 129.33067 106.48303 129.36804 106.54947 129.43448 curveto
+106.6159 129.50092 106.65327 129.5911 106.65327 129.68504 curveto closepath
+ fill
+newpath 127.91312 129.68504 moveto
+127.91312 129.77899 127.87575 129.86917 127.80931 129.93561 curveto
+127.74287 130.00204 127.6527 130.03941 127.55875 130.03941 curveto
+127.4648 130.03941 127.37462 130.00204 127.30818 129.93561 curveto
+127.24174 129.86917 127.20438 129.77899 127.20438 129.68504 curveto
+127.20438 129.5911 127.24174 129.50092 127.30818 129.43448 curveto
+127.37462 129.36804 127.4648 129.33067 127.55875 129.33067 curveto
+127.6527 129.33067 127.74287 129.36804 127.80931 129.43448 curveto
+127.87575 129.50092 127.91312 129.5911 127.91312 129.68504 curveto closepath
+ fill
+newpath 149.17296 129.68504 moveto
+149.17296 129.77899 149.13559 129.86917 149.06915 129.93561 curveto
+149.00272 130.00204 148.91254 130.03941 148.81859 130.03941 curveto
+148.72464 130.03941 148.63446 130.00204 148.56802 129.93561 curveto
+148.50159 129.86917 148.46422 129.77899 148.46422 129.68504 curveto
+148.46422 129.5911 148.50159 129.50092 148.56802 129.43448 curveto
+148.63446 129.36804 148.72464 129.33067 148.81859 129.33067 curveto
+148.91254 129.33067 149.00272 129.36804 149.06915 129.43448 curveto
+149.13559 129.50092 149.17296 129.5911 149.17296 129.68504 curveto closepath
+ fill
+newpath 191.69264 129.68504 moveto
+191.69264 129.77899 191.65527 129.86917 191.58884 129.93561 curveto
+191.5224 130.00204 191.43222 130.03941 191.33827 130.03941 curveto
+191.24432 130.03941 191.15414 130.00204 191.0877 129.93561 curveto
+191.02127 129.86917 190.9839 129.77899 190.9839 129.68504 curveto
+190.9839 129.5911 191.02127 129.50092 191.0877 129.43448 curveto
+191.15414 129.36804 191.24432 129.33067 191.33827 129.33067 curveto
+191.43222 129.33067 191.5224 129.36804 191.58884 129.43448 curveto
+191.65527 129.50092 191.69264 129.5911 191.69264 129.68504 curveto closepath
+ fill
+newpath 212.95248 129.68504 moveto
+212.95248 129.77899 212.91512 129.86917 212.84868 129.93561 curveto
+212.78224 130.00204 212.69206 130.03941 212.59811 130.03941 curveto
+212.50417 130.03941 212.41399 130.00204 212.34755 129.93561 curveto
+212.28111 129.86917 212.24374 129.77899 212.24374 129.68504 curveto
+212.24374 129.5911 212.28111 129.50092 212.34755 129.43448 curveto
+212.41399 129.36804 212.50417 129.33067 212.59811 129.33067 curveto
+212.69206 129.33067 212.78224 129.36804 212.84868 129.43448 curveto
+212.91512 129.50092 212.95248 129.5911 212.95248 129.68504 curveto closepath
+ fill
+newpath 234.21233 129.68504 moveto
+234.21233 129.77899 234.17496 129.86917 234.10852 129.93561 curveto
+234.04208 130.00204 233.9519 130.03941 233.85796 130.03941 curveto
+233.764 130.03941 233.67383 130.00204 233.60739 129.93561 curveto
+233.54095 129.86917 233.50359 129.77899 233.50359 129.68504 curveto
+233.50359 129.5911 233.54095 129.50092 233.60739 129.43448 curveto
+233.67383 129.36804 233.764 129.33067 233.85796 129.33067 curveto
+233.9519 129.33067 234.04208 129.36804 234.10852 129.43448 curveto
+234.17496 129.50092 234.21233 129.5911 234.21233 129.68504 curveto closepath
+ fill
+newpath 255.47217 129.68504 moveto
+255.47217 129.77899 255.4348 129.86917 255.36836 129.93561 curveto
+255.30193 130.00204 255.21175 130.03941 255.1178 130.03941 curveto
+255.02385 130.03941 254.93367 130.00204 254.86723 129.93561 curveto
+254.8008 129.86917 254.76343 129.77899 254.76343 129.68504 curveto
+254.76343 129.5911 254.8008 129.50092 254.86723 129.43448 curveto
+254.93367 129.36804 255.02385 129.33067 255.1178 129.33067 curveto
+255.21175 129.33067 255.30193 129.36804 255.36836 129.43448 curveto
+255.4348 129.50092 255.47217 129.5911 255.47217 129.68504 curveto closepath
+ fill
+newpath 85.39343 133.93701 moveto
+85.39343 134.03096 85.35606 134.12114 85.28963 134.18758 curveto
+85.22319 134.25401 85.13301 134.29138 85.03906 134.29138 curveto
+84.94511 134.29138 84.85493 134.25401 84.7885 134.18758 curveto
+84.72206 134.12114 84.6847 134.03096 84.6847 133.93701 curveto
+84.6847 133.84306 84.72206 133.75288 84.7885 133.68645 curveto
+84.85493 133.62001 84.94511 133.58264 85.03906 133.58264 curveto
+85.13301 133.58264 85.22319 133.62001 85.28963 133.68645 curveto
+85.35606 133.75288 85.39343 133.84306 85.39343 133.93701 curveto closepath fill
+newpath 106.65327 133.93701 moveto
+106.65327 134.03096 106.6159 134.12114 106.54947 134.18758 curveto
+106.48303 134.25401 106.39285 134.29138 106.2989 134.29138 curveto
+106.20496 134.29138 106.11478 134.25401 106.04834 134.18758 curveto
+105.9819 134.12114 105.94453 134.03096 105.94453 133.93701 curveto
+105.94453 133.84306 105.9819 133.75288 106.04834 133.68645 curveto
+106.11478 133.62001 106.20496 133.58264 106.2989 133.58264 curveto
+106.39285 133.58264 106.48303 133.62001 106.54947 133.68645 curveto
+106.6159 133.75288 106.65327 133.84306 106.65327 133.93701 curveto closepath
+ fill
+newpath 127.91312 133.93701 moveto
+127.91312 134.03096 127.87575 134.12114 127.80931 134.18758 curveto
+127.74287 134.25401 127.6527 134.29138 127.55875 134.29138 curveto
+127.4648 134.29138 127.37462 134.25401 127.30818 134.18758 curveto
+127.24174 134.12114 127.20438 134.03096 127.20438 133.93701 curveto
+127.20438 133.84306 127.24174 133.75288 127.30818 133.68645 curveto
+127.37462 133.62001 127.4648 133.58264 127.55875 133.58264 curveto
+127.6527 133.58264 127.74287 133.62001 127.80931 133.68645 curveto
+127.87575 133.75288 127.91312 133.84306 127.91312 133.93701 curveto closepath
+ fill
+newpath 149.17296 133.93701 moveto
+149.17296 134.03096 149.13559 134.12114 149.06915 134.18758 curveto
+149.00272 134.25401 148.91254 134.29138 148.81859 134.29138 curveto
+148.72464 134.29138 148.63446 134.25401 148.56802 134.18758 curveto
+148.50159 134.12114 148.46422 134.03096 148.46422 133.93701 curveto
+148.46422 133.84306 148.50159 133.75288 148.56802 133.68645 curveto
+148.63446 133.62001 148.72464 133.58264 148.81859 133.58264 curveto
+148.91254 133.58264 149.00272 133.62001 149.06915 133.68645 curveto
+149.13559 133.75288 149.17296 133.84306 149.17296 133.93701 curveto closepath
+ fill
+newpath 191.69264 133.93701 moveto
+191.69264 134.03096 191.65527 134.12114 191.58884 134.18758 curveto
+191.5224 134.25401 191.43222 134.29138 191.33827 134.29138 curveto
+191.24432 134.29138 191.15414 134.25401 191.0877 134.18758 curveto
+191.02127 134.12114 190.9839 134.03096 190.9839 133.93701 curveto
+190.9839 133.84306 191.02127 133.75288 191.0877 133.68645 curveto
+191.15414 133.62001 191.24432 133.58264 191.33827 133.58264 curveto
+191.43222 133.58264 191.5224 133.62001 191.58884 133.68645 curveto
+191.65527 133.75288 191.69264 133.84306 191.69264 133.93701 curveto closepath
+ fill
+newpath 212.95248 133.93701 moveto
+212.95248 134.03096 212.91512 134.12114 212.84868 134.18758 curveto
+212.78224 134.25401 212.69206 134.29138 212.59811 134.29138 curveto
+212.50417 134.29138 212.41399 134.25401 212.34755 134.18758 curveto
+212.28111 134.12114 212.24374 134.03096 212.24374 133.93701 curveto
+212.24374 133.84306 212.28111 133.75288 212.34755 133.68645 curveto
+212.41399 133.62001 212.50417 133.58264 212.59811 133.58264 curveto
+212.69206 133.58264 212.78224 133.62001 212.84868 133.68645 curveto
+212.91512 133.75288 212.95248 133.84306 212.95248 133.93701 curveto closepath
+ fill
+newpath 234.21233 133.93701 moveto
+234.21233 134.03096 234.17496 134.12114 234.10852 134.18758 curveto
+234.04208 134.25401 233.9519 134.29138 233.85796 134.29138 curveto
+233.764 134.29138 233.67383 134.25401 233.60739 134.18758 curveto
+233.54095 134.12114 233.50359 134.03096 233.50359 133.93701 curveto
+233.50359 133.84306 233.54095 133.75288 233.60739 133.68645 curveto
+233.67383 133.62001 233.764 133.58264 233.85796 133.58264 curveto
+233.9519 133.58264 234.04208 133.62001 234.10852 133.68645 curveto
+234.17496 133.75288 234.21233 133.84306 234.21233 133.93701 curveto closepath
+ fill
+newpath 255.47217 133.93701 moveto
+255.47217 134.03096 255.4348 134.12114 255.36836 134.18758 curveto
+255.30193 134.25401 255.21175 134.29138 255.1178 134.29138 curveto
+255.02385 134.29138 254.93367 134.25401 254.86723 134.18758 curveto
+254.8008 134.12114 254.76343 134.03096 254.76343 133.93701 curveto
+254.76343 133.84306 254.8008 133.75288 254.86723 133.68645 curveto
+254.93367 133.62001 255.02385 133.58264 255.1178 133.58264 curveto
+255.21175 133.58264 255.30193 133.62001 255.36836 133.68645 curveto
+255.4348 133.75288 255.47217 133.84306 255.47217 133.93701 curveto closepath
+ fill
+newpath 85.39343 138.18898 moveto
+85.39343 138.28293 85.35606 138.37311 85.28963 138.43954 curveto
+85.22319 138.50598 85.13301 138.54335 85.03906 138.54335 curveto
+84.94511 138.54335 84.85493 138.50598 84.7885 138.43954 curveto
+84.72206 138.37311 84.6847 138.28293 84.6847 138.18898 curveto
+84.6847 138.09503 84.72206 138.00485 84.7885 137.93842 curveto
+84.85493 137.87198 84.94511 137.83461 85.03906 137.83461 curveto
+85.13301 137.83461 85.22319 137.87198 85.28963 137.93842 curveto
+85.35606 138.00485 85.39343 138.09503 85.39343 138.18898 curveto closepath fill
+newpath 106.65327 138.18898 moveto
+106.65327 138.28293 106.6159 138.37311 106.54947 138.43954 curveto
+106.48303 138.50598 106.39285 138.54335 106.2989 138.54335 curveto
+106.20496 138.54335 106.11478 138.50598 106.04834 138.43954 curveto
+105.9819 138.37311 105.94453 138.28293 105.94453 138.18898 curveto
+105.94453 138.09503 105.9819 138.00485 106.04834 137.93842 curveto
+106.11478 137.87198 106.20496 137.83461 106.2989 137.83461 curveto
+106.39285 137.83461 106.48303 137.87198 106.54947 137.93842 curveto
+106.6159 138.00485 106.65327 138.09503 106.65327 138.18898 curveto closepath
+ fill
+newpath 127.91312 138.18898 moveto
+127.91312 138.28293 127.87575 138.37311 127.80931 138.43954 curveto
+127.74287 138.50598 127.6527 138.54335 127.55875 138.54335 curveto
+127.4648 138.54335 127.37462 138.50598 127.30818 138.43954 curveto
+127.24174 138.37311 127.20438 138.28293 127.20438 138.18898 curveto
+127.20438 138.09503 127.24174 138.00485 127.30818 137.93842 curveto
+127.37462 137.87198 127.4648 137.83461 127.55875 137.83461 curveto
+127.6527 137.83461 127.74287 137.87198 127.80931 137.93842 curveto
+127.87575 138.00485 127.91312 138.09503 127.91312 138.18898 curveto closepath
+ fill
+newpath 149.17296 138.18898 moveto
+149.17296 138.28293 149.13559 138.37311 149.06915 138.43954 curveto
+149.00272 138.50598 148.91254 138.54335 148.81859 138.54335 curveto
+148.72464 138.54335 148.63446 138.50598 148.56802 138.43954 curveto
+148.50159 138.37311 148.46422 138.28293 148.46422 138.18898 curveto
+148.46422 138.09503 148.50159 138.00485 148.56802 137.93842 curveto
+148.63446 137.87198 148.72464 137.83461 148.81859 137.83461 curveto
+148.91254 137.83461 149.00272 137.87198 149.06915 137.93842 curveto
+149.13559 138.00485 149.17296 138.09503 149.17296 138.18898 curveto closepath
+ fill
+newpath 191.69264 138.18898 moveto
+191.69264 138.28293 191.65527 138.37311 191.58884 138.43954 curveto
+191.5224 138.50598 191.43222 138.54335 191.33827 138.54335 curveto
+191.24432 138.54335 191.15414 138.50598 191.0877 138.43954 curveto
+191.02127 138.37311 190.9839 138.28293 190.9839 138.18898 curveto
+190.9839 138.09503 191.02127 138.00485 191.0877 137.93842 curveto
+191.15414 137.87198 191.24432 137.83461 191.33827 137.83461 curveto
+191.43222 137.83461 191.5224 137.87198 191.58884 137.93842 curveto
+191.65527 138.00485 191.69264 138.09503 191.69264 138.18898 curveto closepath
+ fill
+newpath 212.95248 138.18898 moveto
+212.95248 138.28293 212.91512 138.37311 212.84868 138.43954 curveto
+212.78224 138.50598 212.69206 138.54335 212.59811 138.54335 curveto
+212.50417 138.54335 212.41399 138.50598 212.34755 138.43954 curveto
+212.28111 138.37311 212.24374 138.28293 212.24374 138.18898 curveto
+212.24374 138.09503 212.28111 138.00485 212.34755 137.93842 curveto
+212.41399 137.87198 212.50417 137.83461 212.59811 137.83461 curveto
+212.69206 137.83461 212.78224 137.87198 212.84868 137.93842 curveto
+212.91512 138.00485 212.95248 138.09503 212.95248 138.18898 curveto closepath
+ fill
+newpath 234.21233 138.18898 moveto
+234.21233 138.28293 234.17496 138.37311 234.10852 138.43954 curveto
+234.04208 138.50598 233.9519 138.54335 233.85796 138.54335 curveto
+233.764 138.54335 233.67383 138.50598 233.60739 138.43954 curveto
+233.54095 138.37311 233.50359 138.28293 233.50359 138.18898 curveto
+233.50359 138.09503 233.54095 138.00485 233.60739 137.93842 curveto
+233.67383 137.87198 233.764 137.83461 233.85796 137.83461 curveto
+233.9519 137.83461 234.04208 137.87198 234.10852 137.93842 curveto
+234.17496 138.00485 234.21233 138.09503 234.21233 138.18898 curveto closepath
+ fill
+newpath 255.47217 138.18898 moveto
+255.47217 138.28293 255.4348 138.37311 255.36836 138.43954 curveto
+255.30193 138.50598 255.21175 138.54335 255.1178 138.54335 curveto
+255.02385 138.54335 254.93367 138.50598 254.86723 138.43954 curveto
+254.8008 138.37311 254.76343 138.28293 254.76343 138.18898 curveto
+254.76343 138.09503 254.8008 138.00485 254.86723 137.93842 curveto
+254.93367 137.87198 255.02385 137.83461 255.1178 137.83461 curveto
+255.21175 137.83461 255.30193 137.87198 255.36836 137.93842 curveto
+255.4348 138.00485 255.47217 138.09503 255.47217 138.18898 curveto closepath
+ fill
+newpath 85.39343 142.44095 moveto
+85.39343 142.5349 85.35606 142.62508 85.28963 142.69151 curveto
+85.22319 142.75795 85.13301 142.79532 85.03906 142.79532 curveto
+84.94511 142.79532 84.85493 142.75795 84.7885 142.69151 curveto
+84.72206 142.62508 84.6847 142.5349 84.6847 142.44095 curveto
+84.6847 142.347 84.72206 142.25682 84.7885 142.19038 curveto
+84.85493 142.12395 84.94511 142.08658 85.03906 142.08658 curveto
+85.13301 142.08658 85.22319 142.12395 85.28963 142.19038 curveto
+85.35606 142.25682 85.39343 142.347 85.39343 142.44095 curveto closepath fill
+newpath 106.65327 142.44095 moveto
+106.65327 142.5349 106.6159 142.62508 106.54947 142.69151 curveto
+106.48303 142.75795 106.39285 142.79532 106.2989 142.79532 curveto
+106.20496 142.79532 106.11478 142.75795 106.04834 142.69151 curveto
+105.9819 142.62508 105.94453 142.5349 105.94453 142.44095 curveto
+105.94453 142.347 105.9819 142.25682 106.04834 142.19038 curveto
+106.11478 142.12395 106.20496 142.08658 106.2989 142.08658 curveto
+106.39285 142.08658 106.48303 142.12395 106.54947 142.19038 curveto
+106.6159 142.25682 106.65327 142.347 106.65327 142.44095 curveto closepath fill
+newpath 127.91312 142.44095 moveto
+127.91312 142.5349 127.87575 142.62508 127.80931 142.69151 curveto
+127.74287 142.75795 127.6527 142.79532 127.55875 142.79532 curveto
+127.4648 142.79532 127.37462 142.75795 127.30818 142.69151 curveto
+127.24174 142.62508 127.20438 142.5349 127.20438 142.44095 curveto
+127.20438 142.347 127.24174 142.25682 127.30818 142.19038 curveto
+127.37462 142.12395 127.4648 142.08658 127.55875 142.08658 curveto
+127.6527 142.08658 127.74287 142.12395 127.80931 142.19038 curveto
+127.87575 142.25682 127.91312 142.347 127.91312 142.44095 curveto closepath
+ fill
+newpath 149.17296 142.44095 moveto
+149.17296 142.5349 149.13559 142.62508 149.06915 142.69151 curveto
+149.00272 142.75795 148.91254 142.79532 148.81859 142.79532 curveto
+148.72464 142.79532 148.63446 142.75795 148.56802 142.69151 curveto
+148.50159 142.62508 148.46422 142.5349 148.46422 142.44095 curveto
+148.46422 142.347 148.50159 142.25682 148.56802 142.19038 curveto
+148.63446 142.12395 148.72464 142.08658 148.81859 142.08658 curveto
+148.91254 142.08658 149.00272 142.12395 149.06915 142.19038 curveto
+149.13559 142.25682 149.17296 142.347 149.17296 142.44095 curveto closepath
+ fill
+newpath 191.69264 142.44095 moveto
+191.69264 142.5349 191.65527 142.62508 191.58884 142.69151 curveto
+191.5224 142.75795 191.43222 142.79532 191.33827 142.79532 curveto
+191.24432 142.79532 191.15414 142.75795 191.0877 142.69151 curveto
+191.02127 142.62508 190.9839 142.5349 190.9839 142.44095 curveto
+190.9839 142.347 191.02127 142.25682 191.0877 142.19038 curveto
+191.15414 142.12395 191.24432 142.08658 191.33827 142.08658 curveto
+191.43222 142.08658 191.5224 142.12395 191.58884 142.19038 curveto
+191.65527 142.25682 191.69264 142.347 191.69264 142.44095 curveto closepath
+ fill
+newpath 212.95248 142.44095 moveto
+212.95248 142.5349 212.91512 142.62508 212.84868 142.69151 curveto
+212.78224 142.75795 212.69206 142.79532 212.59811 142.79532 curveto
+212.50417 142.79532 212.41399 142.75795 212.34755 142.69151 curveto
+212.28111 142.62508 212.24374 142.5349 212.24374 142.44095 curveto
+212.24374 142.347 212.28111 142.25682 212.34755 142.19038 curveto
+212.41399 142.12395 212.50417 142.08658 212.59811 142.08658 curveto
+212.69206 142.08658 212.78224 142.12395 212.84868 142.19038 curveto
+212.91512 142.25682 212.95248 142.347 212.95248 142.44095 curveto closepath
+ fill
+newpath 234.21233 142.44095 moveto
+234.21233 142.5349 234.17496 142.62508 234.10852 142.69151 curveto
+234.04208 142.75795 233.9519 142.79532 233.85796 142.79532 curveto
+233.764 142.79532 233.67383 142.75795 233.60739 142.69151 curveto
+233.54095 142.62508 233.50359 142.5349 233.50359 142.44095 curveto
+233.50359 142.347 233.54095 142.25682 233.60739 142.19038 curveto
+233.67383 142.12395 233.764 142.08658 233.85796 142.08658 curveto
+233.9519 142.08658 234.04208 142.12395 234.10852 142.19038 curveto
+234.17496 142.25682 234.21233 142.347 234.21233 142.44095 curveto closepath
+ fill
+newpath 255.47217 142.44095 moveto
+255.47217 142.5349 255.4348 142.62508 255.36836 142.69151 curveto
+255.30193 142.75795 255.21175 142.79532 255.1178 142.79532 curveto
+255.02385 142.79532 254.93367 142.75795 254.86723 142.69151 curveto
+254.8008 142.62508 254.76343 142.5349 254.76343 142.44095 curveto
+254.76343 142.347 254.8008 142.25682 254.86723 142.19038 curveto
+254.93367 142.12395 255.02385 142.08658 255.1178 142.08658 curveto
+255.21175 142.08658 255.30193 142.12395 255.36836 142.19038 curveto
+255.4348 142.25682 255.47217 142.347 255.47217 142.44095 curveto closepath fill
+newpath 85.39343 146.69292 moveto
+85.39343 146.78687 85.35606 146.87704 85.28963 146.94348 curveto
+85.22319 147.00992 85.13301 147.04729 85.03906 147.04729 curveto
+84.94511 147.04729 84.85493 147.00992 84.7885 146.94348 curveto
+84.72206 146.87704 84.6847 146.78687 84.6847 146.69292 curveto
+84.6847 146.59897 84.72206 146.50879 84.7885 146.44235 curveto
+84.85493 146.37592 84.94511 146.33855 85.03906 146.33855 curveto
+85.13301 146.33855 85.22319 146.37592 85.28963 146.44235 curveto
+85.35606 146.50879 85.39343 146.59897 85.39343 146.69292 curveto closepath fill
+newpath 106.65327 146.69292 moveto
+106.65327 146.78687 106.6159 146.87704 106.54947 146.94348 curveto
+106.48303 147.00992 106.39285 147.04729 106.2989 147.04729 curveto
+106.20496 147.04729 106.11478 147.00992 106.04834 146.94348 curveto
+105.9819 146.87704 105.94453 146.78687 105.94453 146.69292 curveto
+105.94453 146.59897 105.9819 146.50879 106.04834 146.44235 curveto
+106.11478 146.37592 106.20496 146.33855 106.2989 146.33855 curveto
+106.39285 146.33855 106.48303 146.37592 106.54947 146.44235 curveto
+106.6159 146.50879 106.65327 146.59897 106.65327 146.69292 curveto closepath
+ fill
+newpath 127.91312 146.69292 moveto
+127.91312 146.78687 127.87575 146.87704 127.80931 146.94348 curveto
+127.74287 147.00992 127.6527 147.04729 127.55875 147.04729 curveto
+127.4648 147.04729 127.37462 147.00992 127.30818 146.94348 curveto
+127.24174 146.87704 127.20438 146.78687 127.20438 146.69292 curveto
+127.20438 146.59897 127.24174 146.50879 127.30818 146.44235 curveto
+127.37462 146.37592 127.4648 146.33855 127.55875 146.33855 curveto
+127.6527 146.33855 127.74287 146.37592 127.80931 146.44235 curveto
+127.87575 146.50879 127.91312 146.59897 127.91312 146.69292 curveto closepath
+ fill
+newpath 149.17296 146.69292 moveto
+149.17296 146.78687 149.13559 146.87704 149.06915 146.94348 curveto
+149.00272 147.00992 148.91254 147.04729 148.81859 147.04729 curveto
+148.72464 147.04729 148.63446 147.00992 148.56802 146.94348 curveto
+148.50159 146.87704 148.46422 146.78687 148.46422 146.69292 curveto
+148.46422 146.59897 148.50159 146.50879 148.56802 146.44235 curveto
+148.63446 146.37592 148.72464 146.33855 148.81859 146.33855 curveto
+148.91254 146.33855 149.00272 146.37592 149.06915 146.44235 curveto
+149.13559 146.50879 149.17296 146.59897 149.17296 146.69292 curveto closepath
+ fill
+newpath 191.69264 146.69292 moveto
+191.69264 146.78687 191.65527 146.87704 191.58884 146.94348 curveto
+191.5224 147.00992 191.43222 147.04729 191.33827 147.04729 curveto
+191.24432 147.04729 191.15414 147.00992 191.0877 146.94348 curveto
+191.02127 146.87704 190.9839 146.78687 190.9839 146.69292 curveto
+190.9839 146.59897 191.02127 146.50879 191.0877 146.44235 curveto
+191.15414 146.37592 191.24432 146.33855 191.33827 146.33855 curveto
+191.43222 146.33855 191.5224 146.37592 191.58884 146.44235 curveto
+191.65527 146.50879 191.69264 146.59897 191.69264 146.69292 curveto closepath
+ fill
+newpath 212.95248 146.69292 moveto
+212.95248 146.78687 212.91512 146.87704 212.84868 146.94348 curveto
+212.78224 147.00992 212.69206 147.04729 212.59811 147.04729 curveto
+212.50417 147.04729 212.41399 147.00992 212.34755 146.94348 curveto
+212.28111 146.87704 212.24374 146.78687 212.24374 146.69292 curveto
+212.24374 146.59897 212.28111 146.50879 212.34755 146.44235 curveto
+212.41399 146.37592 212.50417 146.33855 212.59811 146.33855 curveto
+212.69206 146.33855 212.78224 146.37592 212.84868 146.44235 curveto
+212.91512 146.50879 212.95248 146.59897 212.95248 146.69292 curveto closepath
+ fill
+newpath 234.21233 146.69292 moveto
+234.21233 146.78687 234.17496 146.87704 234.10852 146.94348 curveto
+234.04208 147.00992 233.9519 147.04729 233.85796 147.04729 curveto
+233.764 147.04729 233.67383 147.00992 233.60739 146.94348 curveto
+233.54095 146.87704 233.50359 146.78687 233.50359 146.69292 curveto
+233.50359 146.59897 233.54095 146.50879 233.60739 146.44235 curveto
+233.67383 146.37592 233.764 146.33855 233.85796 146.33855 curveto
+233.9519 146.33855 234.04208 146.37592 234.10852 146.44235 curveto
+234.17496 146.50879 234.21233 146.59897 234.21233 146.69292 curveto closepath
+ fill
+newpath 255.47217 146.69292 moveto
+255.47217 146.78687 255.4348 146.87704 255.36836 146.94348 curveto
+255.30193 147.00992 255.21175 147.04729 255.1178 147.04729 curveto
+255.02385 147.04729 254.93367 147.00992 254.86723 146.94348 curveto
+254.8008 146.87704 254.76343 146.78687 254.76343 146.69292 curveto
+254.76343 146.59897 254.8008 146.50879 254.86723 146.44235 curveto
+254.93367 146.37592 255.02385 146.33855 255.1178 146.33855 curveto
+255.21175 146.33855 255.30193 146.37592 255.36836 146.44235 curveto
+255.4348 146.50879 255.47217 146.59897 255.47217 146.69292 curveto closepath
+ fill
+newpath 85.39343 150.94489 moveto
+85.39343 151.03883 85.35606 151.12901 85.28963 151.19545 curveto
+85.22319 151.26189 85.13301 151.29926 85.03906 151.29926 curveto
+84.94511 151.29926 84.85493 151.26189 84.7885 151.19545 curveto
+84.72206 151.12901 84.6847 151.03883 84.6847 150.94489 curveto
+84.6847 150.85094 84.72206 150.76076 84.7885 150.69432 curveto
+84.85493 150.62788 84.94511 150.59052 85.03906 150.59052 curveto
+85.13301 150.59052 85.22319 150.62788 85.28963 150.69432 curveto
+85.35606 150.76076 85.39343 150.85094 85.39343 150.94489 curveto closepath fill
+newpath 106.65327 150.94489 moveto
+106.65327 151.03883 106.6159 151.12901 106.54947 151.19545 curveto
+106.48303 151.26189 106.39285 151.29926 106.2989 151.29926 curveto
+106.20496 151.29926 106.11478 151.26189 106.04834 151.19545 curveto
+105.9819 151.12901 105.94453 151.03883 105.94453 150.94489 curveto
+105.94453 150.85094 105.9819 150.76076 106.04834 150.69432 curveto
+106.11478 150.62788 106.20496 150.59052 106.2989 150.59052 curveto
+106.39285 150.59052 106.48303 150.62788 106.54947 150.69432 curveto
+106.6159 150.76076 106.65327 150.85094 106.65327 150.94489 curveto closepath
+ fill
+newpath 127.91312 150.94489 moveto
+127.91312 151.03883 127.87575 151.12901 127.80931 151.19545 curveto
+127.74287 151.26189 127.6527 151.29926 127.55875 151.29926 curveto
+127.4648 151.29926 127.37462 151.26189 127.30818 151.19545 curveto
+127.24174 151.12901 127.20438 151.03883 127.20438 150.94489 curveto
+127.20438 150.85094 127.24174 150.76076 127.30818 150.69432 curveto
+127.37462 150.62788 127.4648 150.59052 127.55875 150.59052 curveto
+127.6527 150.59052 127.74287 150.62788 127.80931 150.69432 curveto
+127.87575 150.76076 127.91312 150.85094 127.91312 150.94489 curveto closepath
+ fill
+newpath 149.17296 150.94489 moveto
+149.17296 151.03883 149.13559 151.12901 149.06915 151.19545 curveto
+149.00272 151.26189 148.91254 151.29926 148.81859 151.29926 curveto
+148.72464 151.29926 148.63446 151.26189 148.56802 151.19545 curveto
+148.50159 151.12901 148.46422 151.03883 148.46422 150.94489 curveto
+148.46422 150.85094 148.50159 150.76076 148.56802 150.69432 curveto
+148.63446 150.62788 148.72464 150.59052 148.81859 150.59052 curveto
+148.91254 150.59052 149.00272 150.62788 149.06915 150.69432 curveto
+149.13559 150.76076 149.17296 150.85094 149.17296 150.94489 curveto closepath
+ fill
+newpath 191.69264 150.94489 moveto
+191.69264 151.03883 191.65527 151.12901 191.58884 151.19545 curveto
+191.5224 151.26189 191.43222 151.29926 191.33827 151.29926 curveto
+191.24432 151.29926 191.15414 151.26189 191.0877 151.19545 curveto
+191.02127 151.12901 190.9839 151.03883 190.9839 150.94489 curveto
+190.9839 150.85094 191.02127 150.76076 191.0877 150.69432 curveto
+191.15414 150.62788 191.24432 150.59052 191.33827 150.59052 curveto
+191.43222 150.59052 191.5224 150.62788 191.58884 150.69432 curveto
+191.65527 150.76076 191.69264 150.85094 191.69264 150.94489 curveto closepath
+ fill
+newpath 212.95248 150.94489 moveto
+212.95248 151.03883 212.91512 151.12901 212.84868 151.19545 curveto
+212.78224 151.26189 212.69206 151.29926 212.59811 151.29926 curveto
+212.50417 151.29926 212.41399 151.26189 212.34755 151.19545 curveto
+212.28111 151.12901 212.24374 151.03883 212.24374 150.94489 curveto
+212.24374 150.85094 212.28111 150.76076 212.34755 150.69432 curveto
+212.41399 150.62788 212.50417 150.59052 212.59811 150.59052 curveto
+212.69206 150.59052 212.78224 150.62788 212.84868 150.69432 curveto
+212.91512 150.76076 212.95248 150.85094 212.95248 150.94489 curveto closepath
+ fill
+newpath 234.21233 150.94489 moveto
+234.21233 151.03883 234.17496 151.12901 234.10852 151.19545 curveto
+234.04208 151.26189 233.9519 151.29926 233.85796 151.29926 curveto
+233.764 151.29926 233.67383 151.26189 233.60739 151.19545 curveto
+233.54095 151.12901 233.50359 151.03883 233.50359 150.94489 curveto
+233.50359 150.85094 233.54095 150.76076 233.60739 150.69432 curveto
+233.67383 150.62788 233.764 150.59052 233.85796 150.59052 curveto
+233.9519 150.59052 234.04208 150.62788 234.10852 150.69432 curveto
+234.17496 150.76076 234.21233 150.85094 234.21233 150.94489 curveto closepath
+ fill
+newpath 255.47217 150.94489 moveto
+255.47217 151.03883 255.4348 151.12901 255.36836 151.19545 curveto
+255.30193 151.26189 255.21175 151.29926 255.1178 151.29926 curveto
+255.02385 151.29926 254.93367 151.26189 254.86723 151.19545 curveto
+254.8008 151.12901 254.76343 151.03883 254.76343 150.94489 curveto
+254.76343 150.85094 254.8008 150.76076 254.86723 150.69432 curveto
+254.93367 150.62788 255.02385 150.59052 255.1178 150.59052 curveto
+255.21175 150.59052 255.30193 150.62788 255.36836 150.69432 curveto
+255.4348 150.76076 255.47217 150.85094 255.47217 150.94489 curveto closepath
+ fill
+newpath 85.39343 155.19685 moveto
+85.39343 155.2908 85.35606 155.38098 85.28963 155.44742 curveto
+85.22319 155.51385 85.13301 155.55122 85.03906 155.55122 curveto
+84.94511 155.55122 84.85493 155.51385 84.7885 155.44742 curveto
+84.72206 155.38098 84.6847 155.2908 84.6847 155.19685 curveto
+84.6847 155.1029 84.72206 155.01273 84.7885 154.94629 curveto
+84.85493 154.87985 84.94511 154.84248 85.03906 154.84248 curveto
+85.13301 154.84248 85.22319 154.87985 85.28963 154.94629 curveto
+85.35606 155.01273 85.39343 155.1029 85.39343 155.19685 curveto closepath fill
+newpath 106.65327 155.19685 moveto
+106.65327 155.2908 106.6159 155.38098 106.54947 155.44742 curveto
+106.48303 155.51385 106.39285 155.55122 106.2989 155.55122 curveto
+106.20496 155.55122 106.11478 155.51385 106.04834 155.44742 curveto
+105.9819 155.38098 105.94453 155.2908 105.94453 155.19685 curveto
+105.94453 155.1029 105.9819 155.01273 106.04834 154.94629 curveto
+106.11478 154.87985 106.20496 154.84248 106.2989 154.84248 curveto
+106.39285 154.84248 106.48303 154.87985 106.54947 154.94629 curveto
+106.6159 155.01273 106.65327 155.1029 106.65327 155.19685 curveto closepath
+ fill
+newpath 127.91312 155.19685 moveto
+127.91312 155.2908 127.87575 155.38098 127.80931 155.44742 curveto
+127.74287 155.51385 127.6527 155.55122 127.55875 155.55122 curveto
+127.4648 155.55122 127.37462 155.51385 127.30818 155.44742 curveto
+127.24174 155.38098 127.20438 155.2908 127.20438 155.19685 curveto
+127.20438 155.1029 127.24174 155.01273 127.30818 154.94629 curveto
+127.37462 154.87985 127.4648 154.84248 127.55875 154.84248 curveto
+127.6527 154.84248 127.74287 154.87985 127.80931 154.94629 curveto
+127.87575 155.01273 127.91312 155.1029 127.91312 155.19685 curveto closepath
+ fill
+newpath 149.17296 155.19685 moveto
+149.17296 155.2908 149.13559 155.38098 149.06915 155.44742 curveto
+149.00272 155.51385 148.91254 155.55122 148.81859 155.55122 curveto
+148.72464 155.55122 148.63446 155.51385 148.56802 155.44742 curveto
+148.50159 155.38098 148.46422 155.2908 148.46422 155.19685 curveto
+148.46422 155.1029 148.50159 155.01273 148.56802 154.94629 curveto
+148.63446 154.87985 148.72464 154.84248 148.81859 154.84248 curveto
+148.91254 154.84248 149.00272 154.87985 149.06915 154.94629 curveto
+149.13559 155.01273 149.17296 155.1029 149.17296 155.19685 curveto closepath
+ fill
+newpath 191.69264 155.19685 moveto
+191.69264 155.2908 191.65527 155.38098 191.58884 155.44742 curveto
+191.5224 155.51385 191.43222 155.55122 191.33827 155.55122 curveto
+191.24432 155.55122 191.15414 155.51385 191.0877 155.44742 curveto
+191.02127 155.38098 190.9839 155.2908 190.9839 155.19685 curveto
+190.9839 155.1029 191.02127 155.01273 191.0877 154.94629 curveto
+191.15414 154.87985 191.24432 154.84248 191.33827 154.84248 curveto
+191.43222 154.84248 191.5224 154.87985 191.58884 154.94629 curveto
+191.65527 155.01273 191.69264 155.1029 191.69264 155.19685 curveto closepath
+ fill
+newpath 212.95248 155.19685 moveto
+212.95248 155.2908 212.91512 155.38098 212.84868 155.44742 curveto
+212.78224 155.51385 212.69206 155.55122 212.59811 155.55122 curveto
+212.50417 155.55122 212.41399 155.51385 212.34755 155.44742 curveto
+212.28111 155.38098 212.24374 155.2908 212.24374 155.19685 curveto
+212.24374 155.1029 212.28111 155.01273 212.34755 154.94629 curveto
+212.41399 154.87985 212.50417 154.84248 212.59811 154.84248 curveto
+212.69206 154.84248 212.78224 154.87985 212.84868 154.94629 curveto
+212.91512 155.01273 212.95248 155.1029 212.95248 155.19685 curveto closepath
+ fill
+newpath 234.21233 155.19685 moveto
+234.21233 155.2908 234.17496 155.38098 234.10852 155.44742 curveto
+234.04208 155.51385 233.9519 155.55122 233.85796 155.55122 curveto
+233.764 155.55122 233.67383 155.51385 233.60739 155.44742 curveto
+233.54095 155.38098 233.50359 155.2908 233.50359 155.19685 curveto
+233.50359 155.1029 233.54095 155.01273 233.60739 154.94629 curveto
+233.67383 154.87985 233.764 154.84248 233.85796 154.84248 curveto
+233.9519 154.84248 234.04208 154.87985 234.10852 154.94629 curveto
+234.17496 155.01273 234.21233 155.1029 234.21233 155.19685 curveto closepath
+ fill
+newpath 255.47217 155.19685 moveto
+255.47217 155.2908 255.4348 155.38098 255.36836 155.44742 curveto
+255.30193 155.51385 255.21175 155.55122 255.1178 155.55122 curveto
+255.02385 155.55122 254.93367 155.51385 254.86723 155.44742 curveto
+254.8008 155.38098 254.76343 155.2908 254.76343 155.19685 curveto
+254.76343 155.1029 254.8008 155.01273 254.86723 154.94629 curveto
+254.93367 154.87985 255.02385 154.84248 255.1178 154.84248 curveto
+255.21175 154.84248 255.30193 154.87985 255.36836 154.94629 curveto
+255.4348 155.01273 255.47217 155.1029 255.47217 155.19685 curveto closepath
+ fill
+newpath 85.39343 159.44882 moveto
+85.39343 159.54277 85.35606 159.63295 85.28963 159.69939 curveto
+85.22319 159.76582 85.13301 159.80319 85.03906 159.80319 curveto
+84.94511 159.80319 84.85493 159.76582 84.7885 159.69939 curveto
+84.72206 159.63295 84.6847 159.54277 84.6847 159.44882 curveto
+84.6847 159.35487 84.72206 159.2647 84.7885 159.19826 curveto
+84.85493 159.13182 84.94511 159.09445 85.03906 159.09445 curveto
+85.13301 159.09445 85.22319 159.13182 85.28963 159.19826 curveto
+85.35606 159.2647 85.39343 159.35487 85.39343 159.44882 curveto closepath fill
+newpath 106.65327 159.44882 moveto
+106.65327 159.54277 106.6159 159.63295 106.54947 159.69939 curveto
+106.48303 159.76582 106.39285 159.80319 106.2989 159.80319 curveto
+106.20496 159.80319 106.11478 159.76582 106.04834 159.69939 curveto
+105.9819 159.63295 105.94453 159.54277 105.94453 159.44882 curveto
+105.94453 159.35487 105.9819 159.2647 106.04834 159.19826 curveto
+106.11478 159.13182 106.20496 159.09445 106.2989 159.09445 curveto
+106.39285 159.09445 106.48303 159.13182 106.54947 159.19826 curveto
+106.6159 159.2647 106.65327 159.35487 106.65327 159.44882 curveto closepath
+ fill
+newpath 127.91312 159.44882 moveto
+127.91312 159.54277 127.87575 159.63295 127.80931 159.69939 curveto
+127.74287 159.76582 127.6527 159.80319 127.55875 159.80319 curveto
+127.4648 159.80319 127.37462 159.76582 127.30818 159.69939 curveto
+127.24174 159.63295 127.20438 159.54277 127.20438 159.44882 curveto
+127.20438 159.35487 127.24174 159.2647 127.30818 159.19826 curveto
+127.37462 159.13182 127.4648 159.09445 127.55875 159.09445 curveto
+127.6527 159.09445 127.74287 159.13182 127.80931 159.19826 curveto
+127.87575 159.2647 127.91312 159.35487 127.91312 159.44882 curveto closepath
+ fill
+newpath 149.17296 159.44882 moveto
+149.17296 159.54277 149.13559 159.63295 149.06915 159.69939 curveto
+149.00272 159.76582 148.91254 159.80319 148.81859 159.80319 curveto
+148.72464 159.80319 148.63446 159.76582 148.56802 159.69939 curveto
+148.50159 159.63295 148.46422 159.54277 148.46422 159.44882 curveto
+148.46422 159.35487 148.50159 159.2647 148.56802 159.19826 curveto
+148.63446 159.13182 148.72464 159.09445 148.81859 159.09445 curveto
+148.91254 159.09445 149.00272 159.13182 149.06915 159.19826 curveto
+149.13559 159.2647 149.17296 159.35487 149.17296 159.44882 curveto closepath
+ fill
+newpath 191.69264 159.44882 moveto
+191.69264 159.54277 191.65527 159.63295 191.58884 159.69939 curveto
+191.5224 159.76582 191.43222 159.80319 191.33827 159.80319 curveto
+191.24432 159.80319 191.15414 159.76582 191.0877 159.69939 curveto
+191.02127 159.63295 190.9839 159.54277 190.9839 159.44882 curveto
+190.9839 159.35487 191.02127 159.2647 191.0877 159.19826 curveto
+191.15414 159.13182 191.24432 159.09445 191.33827 159.09445 curveto
+191.43222 159.09445 191.5224 159.13182 191.58884 159.19826 curveto
+191.65527 159.2647 191.69264 159.35487 191.69264 159.44882 curveto closepath
+ fill
+newpath 212.95248 159.44882 moveto
+212.95248 159.54277 212.91512 159.63295 212.84868 159.69939 curveto
+212.78224 159.76582 212.69206 159.80319 212.59811 159.80319 curveto
+212.50417 159.80319 212.41399 159.76582 212.34755 159.69939 curveto
+212.28111 159.63295 212.24374 159.54277 212.24374 159.44882 curveto
+212.24374 159.35487 212.28111 159.2647 212.34755 159.19826 curveto
+212.41399 159.13182 212.50417 159.09445 212.59811 159.09445 curveto
+212.69206 159.09445 212.78224 159.13182 212.84868 159.19826 curveto
+212.91512 159.2647 212.95248 159.35487 212.95248 159.44882 curveto closepath
+ fill
+newpath 234.21233 159.44882 moveto
+234.21233 159.54277 234.17496 159.63295 234.10852 159.69939 curveto
+234.04208 159.76582 233.9519 159.80319 233.85796 159.80319 curveto
+233.764 159.80319 233.67383 159.76582 233.60739 159.69939 curveto
+233.54095 159.63295 233.50359 159.54277 233.50359 159.44882 curveto
+233.50359 159.35487 233.54095 159.2647 233.60739 159.19826 curveto
+233.67383 159.13182 233.764 159.09445 233.85796 159.09445 curveto
+233.9519 159.09445 234.04208 159.13182 234.10852 159.19826 curveto
+234.17496 159.2647 234.21233 159.35487 234.21233 159.44882 curveto closepath
+ fill
+newpath 255.47217 159.44882 moveto
+255.47217 159.54277 255.4348 159.63295 255.36836 159.69939 curveto
+255.30193 159.76582 255.21175 159.80319 255.1178 159.80319 curveto
+255.02385 159.80319 254.93367 159.76582 254.86723 159.69939 curveto
+254.8008 159.63295 254.76343 159.54277 254.76343 159.44882 curveto
+254.76343 159.35487 254.8008 159.2647 254.86723 159.19826 curveto
+254.93367 159.13182 255.02385 159.09445 255.1178 159.09445 curveto
+255.21175 159.09445 255.30193 159.13182 255.36836 159.19826 curveto
+255.4348 159.2647 255.47217 159.35487 255.47217 159.44882 curveto closepath
+ fill
+newpath 85.39343 163.70079 moveto
+85.39343 163.79474 85.35606 163.88492 85.28963 163.95135 curveto
+85.22319 164.01779 85.13301 164.05516 85.03906 164.05516 curveto
+84.94511 164.05516 84.85493 164.01779 84.7885 163.95135 curveto
+84.72206 163.88492 84.6847 163.79474 84.6847 163.70079 curveto
+84.6847 163.60684 84.72206 163.51666 84.7885 163.45023 curveto
+84.85493 163.38379 84.94511 163.34642 85.03906 163.34642 curveto
+85.13301 163.34642 85.22319 163.38379 85.28963 163.45023 curveto
+85.35606 163.51666 85.39343 163.60684 85.39343 163.70079 curveto closepath fill
+newpath 106.65327 163.70079 moveto
+106.65327 163.79474 106.6159 163.88492 106.54947 163.95135 curveto
+106.48303 164.01779 106.39285 164.05516 106.2989 164.05516 curveto
+106.20496 164.05516 106.11478 164.01779 106.04834 163.95135 curveto
+105.9819 163.88492 105.94453 163.79474 105.94453 163.70079 curveto
+105.94453 163.60684 105.9819 163.51666 106.04834 163.45023 curveto
+106.11478 163.38379 106.20496 163.34642 106.2989 163.34642 curveto
+106.39285 163.34642 106.48303 163.38379 106.54947 163.45023 curveto
+106.6159 163.51666 106.65327 163.60684 106.65327 163.70079 curveto closepath
+ fill
+newpath 127.91312 163.70079 moveto
+127.91312 163.79474 127.87575 163.88492 127.80931 163.95135 curveto
+127.74287 164.01779 127.6527 164.05516 127.55875 164.05516 curveto
+127.4648 164.05516 127.37462 164.01779 127.30818 163.95135 curveto
+127.24174 163.88492 127.20438 163.79474 127.20438 163.70079 curveto
+127.20438 163.60684 127.24174 163.51666 127.30818 163.45023 curveto
+127.37462 163.38379 127.4648 163.34642 127.55875 163.34642 curveto
+127.6527 163.34642 127.74287 163.38379 127.80931 163.45023 curveto
+127.87575 163.51666 127.91312 163.60684 127.91312 163.70079 curveto closepath
+ fill
+newpath 149.17296 163.70079 moveto
+149.17296 163.79474 149.13559 163.88492 149.06915 163.95135 curveto
+149.00272 164.01779 148.91254 164.05516 148.81859 164.05516 curveto
+148.72464 164.05516 148.63446 164.01779 148.56802 163.95135 curveto
+148.50159 163.88492 148.46422 163.79474 148.46422 163.70079 curveto
+148.46422 163.60684 148.50159 163.51666 148.56802 163.45023 curveto
+148.63446 163.38379 148.72464 163.34642 148.81859 163.34642 curveto
+148.91254 163.34642 149.00272 163.38379 149.06915 163.45023 curveto
+149.13559 163.51666 149.17296 163.60684 149.17296 163.70079 curveto closepath
+ fill
+newpath 191.69264 163.70079 moveto
+191.69264 163.79474 191.65527 163.88492 191.58884 163.95135 curveto
+191.5224 164.01779 191.43222 164.05516 191.33827 164.05516 curveto
+191.24432 164.05516 191.15414 164.01779 191.0877 163.95135 curveto
+191.02127 163.88492 190.9839 163.79474 190.9839 163.70079 curveto
+190.9839 163.60684 191.02127 163.51666 191.0877 163.45023 curveto
+191.15414 163.38379 191.24432 163.34642 191.33827 163.34642 curveto
+191.43222 163.34642 191.5224 163.38379 191.58884 163.45023 curveto
+191.65527 163.51666 191.69264 163.60684 191.69264 163.70079 curveto closepath
+ fill
+newpath 212.95248 163.70079 moveto
+212.95248 163.79474 212.91512 163.88492 212.84868 163.95135 curveto
+212.78224 164.01779 212.69206 164.05516 212.59811 164.05516 curveto
+212.50417 164.05516 212.41399 164.01779 212.34755 163.95135 curveto
+212.28111 163.88492 212.24374 163.79474 212.24374 163.70079 curveto
+212.24374 163.60684 212.28111 163.51666 212.34755 163.45023 curveto
+212.41399 163.38379 212.50417 163.34642 212.59811 163.34642 curveto
+212.69206 163.34642 212.78224 163.38379 212.84868 163.45023 curveto
+212.91512 163.51666 212.95248 163.60684 212.95248 163.70079 curveto closepath
+ fill
+newpath 234.21233 163.70079 moveto
+234.21233 163.79474 234.17496 163.88492 234.10852 163.95135 curveto
+234.04208 164.01779 233.9519 164.05516 233.85796 164.05516 curveto
+233.764 164.05516 233.67383 164.01779 233.60739 163.95135 curveto
+233.54095 163.88492 233.50359 163.79474 233.50359 163.70079 curveto
+233.50359 163.60684 233.54095 163.51666 233.60739 163.45023 curveto
+233.67383 163.38379 233.764 163.34642 233.85796 163.34642 curveto
+233.9519 163.34642 234.04208 163.38379 234.10852 163.45023 curveto
+234.17496 163.51666 234.21233 163.60684 234.21233 163.70079 curveto closepath
+ fill
+newpath 255.47217 163.70079 moveto
+255.47217 163.79474 255.4348 163.88492 255.36836 163.95135 curveto
+255.30193 164.01779 255.21175 164.05516 255.1178 164.05516 curveto
+255.02385 164.05516 254.93367 164.01779 254.86723 163.95135 curveto
+254.8008 163.88492 254.76343 163.79474 254.76343 163.70079 curveto
+254.76343 163.60684 254.8008 163.51666 254.86723 163.45023 curveto
+254.93367 163.38379 255.02385 163.34642 255.1178 163.34642 curveto
+255.21175 163.34642 255.30193 163.38379 255.36836 163.45023 curveto
+255.4348 163.51666 255.47217 163.60684 255.47217 163.70079 curveto closepath
+ fill
+newpath 85.39343 167.95276 moveto
+85.39343 168.0467 85.35606 168.13689 85.28963 168.20332 curveto
+85.22319 168.26976 85.13301 168.30713 85.03906 168.30713 curveto
+84.94511 168.30713 84.85493 168.26976 84.7885 168.20332 curveto
+84.72206 168.13689 84.6847 168.0467 84.6847 167.95276 curveto
+84.6847 167.85881 84.72206 167.76863 84.7885 167.7022 curveto
+84.85493 167.63576 84.94511 167.59839 85.03906 167.59839 curveto
+85.13301 167.59839 85.22319 167.63576 85.28963 167.7022 curveto
+85.35606 167.76863 85.39343 167.85881 85.39343 167.95276 curveto closepath fill
+newpath 106.65327 167.95276 moveto
+106.65327 168.0467 106.6159 168.13689 106.54947 168.20332 curveto
+106.48303 168.26976 106.39285 168.30713 106.2989 168.30713 curveto
+106.20496 168.30713 106.11478 168.26976 106.04834 168.20332 curveto
+105.9819 168.13689 105.94453 168.0467 105.94453 167.95276 curveto
+105.94453 167.85881 105.9819 167.76863 106.04834 167.7022 curveto
+106.11478 167.63576 106.20496 167.59839 106.2989 167.59839 curveto
+106.39285 167.59839 106.48303 167.63576 106.54947 167.7022 curveto
+106.6159 167.76863 106.65327 167.85881 106.65327 167.95276 curveto closepath
+ fill
+newpath 127.91312 167.95276 moveto
+127.91312 168.0467 127.87575 168.13689 127.80931 168.20332 curveto
+127.74287 168.26976 127.6527 168.30713 127.55875 168.30713 curveto
+127.4648 168.30713 127.37462 168.26976 127.30818 168.20332 curveto
+127.24174 168.13689 127.20438 168.0467 127.20438 167.95276 curveto
+127.20438 167.85881 127.24174 167.76863 127.30818 167.7022 curveto
+127.37462 167.63576 127.4648 167.59839 127.55875 167.59839 curveto
+127.6527 167.59839 127.74287 167.63576 127.80931 167.7022 curveto
+127.87575 167.76863 127.91312 167.85881 127.91312 167.95276 curveto closepath
+ fill
+newpath 149.17296 167.95276 moveto
+149.17296 168.0467 149.13559 168.13689 149.06915 168.20332 curveto
+149.00272 168.26976 148.91254 168.30713 148.81859 168.30713 curveto
+148.72464 168.30713 148.63446 168.26976 148.56802 168.20332 curveto
+148.50159 168.13689 148.46422 168.0467 148.46422 167.95276 curveto
+148.46422 167.85881 148.50159 167.76863 148.56802 167.7022 curveto
+148.63446 167.63576 148.72464 167.59839 148.81859 167.59839 curveto
+148.91254 167.59839 149.00272 167.63576 149.06915 167.7022 curveto
+149.13559 167.76863 149.17296 167.85881 149.17296 167.95276 curveto closepath
+ fill
+newpath 191.69264 167.95276 moveto
+191.69264 168.0467 191.65527 168.13689 191.58884 168.20332 curveto
+191.5224 168.26976 191.43222 168.30713 191.33827 168.30713 curveto
+191.24432 168.30713 191.15414 168.26976 191.0877 168.20332 curveto
+191.02127 168.13689 190.9839 168.0467 190.9839 167.95276 curveto
+190.9839 167.85881 191.02127 167.76863 191.0877 167.7022 curveto
+191.15414 167.63576 191.24432 167.59839 191.33827 167.59839 curveto
+191.43222 167.59839 191.5224 167.63576 191.58884 167.7022 curveto
+191.65527 167.76863 191.69264 167.85881 191.69264 167.95276 curveto closepath
+ fill
+newpath 212.95248 167.95276 moveto
+212.95248 168.0467 212.91512 168.13689 212.84868 168.20332 curveto
+212.78224 168.26976 212.69206 168.30713 212.59811 168.30713 curveto
+212.50417 168.30713 212.41399 168.26976 212.34755 168.20332 curveto
+212.28111 168.13689 212.24374 168.0467 212.24374 167.95276 curveto
+212.24374 167.85881 212.28111 167.76863 212.34755 167.7022 curveto
+212.41399 167.63576 212.50417 167.59839 212.59811 167.59839 curveto
+212.69206 167.59839 212.78224 167.63576 212.84868 167.7022 curveto
+212.91512 167.76863 212.95248 167.85881 212.95248 167.95276 curveto closepath
+ fill
+newpath 234.21233 167.95276 moveto
+234.21233 168.0467 234.17496 168.13689 234.10852 168.20332 curveto
+234.04208 168.26976 233.9519 168.30713 233.85796 168.30713 curveto
+233.764 168.30713 233.67383 168.26976 233.60739 168.20332 curveto
+233.54095 168.13689 233.50359 168.0467 233.50359 167.95276 curveto
+233.50359 167.85881 233.54095 167.76863 233.60739 167.7022 curveto
+233.67383 167.63576 233.764 167.59839 233.85796 167.59839 curveto
+233.9519 167.59839 234.04208 167.63576 234.10852 167.7022 curveto
+234.17496 167.76863 234.21233 167.85881 234.21233 167.95276 curveto closepath
+ fill
+newpath 255.47217 167.95276 moveto
+255.47217 168.0467 255.4348 168.13689 255.36836 168.20332 curveto
+255.30193 168.26976 255.21175 168.30713 255.1178 168.30713 curveto
+255.02385 168.30713 254.93367 168.26976 254.86723 168.20332 curveto
+254.8008 168.13689 254.76343 168.0467 254.76343 167.95276 curveto
+254.76343 167.85881 254.8008 167.76863 254.86723 167.7022 curveto
+254.93367 167.63576 255.02385 167.59839 255.1178 167.59839 curveto
+255.21175 167.59839 255.30193 167.63576 255.36836 167.7022 curveto
+255.4348 167.76863 255.47217 167.85881 255.47217 167.95276 curveto closepath
+ fill
+newpath 85.39343 172.20473 moveto
+85.39343 172.29868 85.35606 172.38885 85.28963 172.45529 curveto
+85.22319 172.52173 85.13301 172.5591 85.03906 172.5591 curveto
+84.94511 172.5591 84.85493 172.52173 84.7885 172.45529 curveto
+84.72206 172.38885 84.6847 172.29868 84.6847 172.20473 curveto
+84.6847 172.11078 84.72206 172.0206 84.7885 171.95416 curveto
+84.85493 171.88773 84.94511 171.85036 85.03906 171.85036 curveto
+85.13301 171.85036 85.22319 171.88773 85.28963 171.95416 curveto
+85.35606 172.0206 85.39343 172.11078 85.39343 172.20473 curveto closepath fill
+newpath 106.65327 172.20473 moveto
+106.65327 172.29868 106.6159 172.38885 106.54947 172.45529 curveto
+106.48303 172.52173 106.39285 172.5591 106.2989 172.5591 curveto
+106.20496 172.5591 106.11478 172.52173 106.04834 172.45529 curveto
+105.9819 172.38885 105.94453 172.29868 105.94453 172.20473 curveto
+105.94453 172.11078 105.9819 172.0206 106.04834 171.95416 curveto
+106.11478 171.88773 106.20496 171.85036 106.2989 171.85036 curveto
+106.39285 171.85036 106.48303 171.88773 106.54947 171.95416 curveto
+106.6159 172.0206 106.65327 172.11078 106.65327 172.20473 curveto closepath
+ fill
+newpath 127.91312 172.20473 moveto
+127.91312 172.29868 127.87575 172.38885 127.80931 172.45529 curveto
+127.74287 172.52173 127.6527 172.5591 127.55875 172.5591 curveto
+127.4648 172.5591 127.37462 172.52173 127.30818 172.45529 curveto
+127.24174 172.38885 127.20438 172.29868 127.20438 172.20473 curveto
+127.20438 172.11078 127.24174 172.0206 127.30818 171.95416 curveto
+127.37462 171.88773 127.4648 171.85036 127.55875 171.85036 curveto
+127.6527 171.85036 127.74287 171.88773 127.80931 171.95416 curveto
+127.87575 172.0206 127.91312 172.11078 127.91312 172.20473 curveto closepath
+ fill
+newpath 149.17296 172.20473 moveto
+149.17296 172.29868 149.13559 172.38885 149.06915 172.45529 curveto
+149.00272 172.52173 148.91254 172.5591 148.81859 172.5591 curveto
+148.72464 172.5591 148.63446 172.52173 148.56802 172.45529 curveto
+148.50159 172.38885 148.46422 172.29868 148.46422 172.20473 curveto
+148.46422 172.11078 148.50159 172.0206 148.56802 171.95416 curveto
+148.63446 171.88773 148.72464 171.85036 148.81859 171.85036 curveto
+148.91254 171.85036 149.00272 171.88773 149.06915 171.95416 curveto
+149.13559 172.0206 149.17296 172.11078 149.17296 172.20473 curveto closepath
+ fill
+newpath 191.69264 172.20473 moveto
+191.69264 172.29868 191.65527 172.38885 191.58884 172.45529 curveto
+191.5224 172.52173 191.43222 172.5591 191.33827 172.5591 curveto
+191.24432 172.5591 191.15414 172.52173 191.0877 172.45529 curveto
+191.02127 172.38885 190.9839 172.29868 190.9839 172.20473 curveto
+190.9839 172.11078 191.02127 172.0206 191.0877 171.95416 curveto
+191.15414 171.88773 191.24432 171.85036 191.33827 171.85036 curveto
+191.43222 171.85036 191.5224 171.88773 191.58884 171.95416 curveto
+191.65527 172.0206 191.69264 172.11078 191.69264 172.20473 curveto closepath
+ fill
+newpath 212.95248 172.20473 moveto
+212.95248 172.29868 212.91512 172.38885 212.84868 172.45529 curveto
+212.78224 172.52173 212.69206 172.5591 212.59811 172.5591 curveto
+212.50417 172.5591 212.41399 172.52173 212.34755 172.45529 curveto
+212.28111 172.38885 212.24374 172.29868 212.24374 172.20473 curveto
+212.24374 172.11078 212.28111 172.0206 212.34755 171.95416 curveto
+212.41399 171.88773 212.50417 171.85036 212.59811 171.85036 curveto
+212.69206 171.85036 212.78224 171.88773 212.84868 171.95416 curveto
+212.91512 172.0206 212.95248 172.11078 212.95248 172.20473 curveto closepath
+ fill
+newpath 234.21233 172.20473 moveto
+234.21233 172.29868 234.17496 172.38885 234.10852 172.45529 curveto
+234.04208 172.52173 233.9519 172.5591 233.85796 172.5591 curveto
+233.764 172.5591 233.67383 172.52173 233.60739 172.45529 curveto
+233.54095 172.38885 233.50359 172.29868 233.50359 172.20473 curveto
+233.50359 172.11078 233.54095 172.0206 233.60739 171.95416 curveto
+233.67383 171.88773 233.764 171.85036 233.85796 171.85036 curveto
+233.9519 171.85036 234.04208 171.88773 234.10852 171.95416 curveto
+234.17496 172.0206 234.21233 172.11078 234.21233 172.20473 curveto closepath
+ fill
+newpath 255.47217 172.20473 moveto
+255.47217 172.29868 255.4348 172.38885 255.36836 172.45529 curveto
+255.30193 172.52173 255.21175 172.5591 255.1178 172.5591 curveto
+255.02385 172.5591 254.93367 172.52173 254.86723 172.45529 curveto
+254.8008 172.38885 254.76343 172.29868 254.76343 172.20473 curveto
+254.76343 172.11078 254.8008 172.0206 254.86723 171.95416 curveto
+254.93367 171.88773 255.02385 171.85036 255.1178 171.85036 curveto
+255.21175 171.85036 255.30193 171.88773 255.36836 171.95416 curveto
+255.4348 172.0206 255.47217 172.11078 255.47217 172.20473 curveto closepath
+ fill
+newpath 85.39343 176.4567 moveto
+85.39343 176.55064 85.35606 176.64082 85.28963 176.70726 curveto
+85.22319 176.7737 85.13301 176.81107 85.03906 176.81107 curveto
+84.94511 176.81107 84.85493 176.7737 84.7885 176.70726 curveto
+84.72206 176.64082 84.6847 176.55064 84.6847 176.4567 curveto
+84.6847 176.36275 84.72206 176.27257 84.7885 176.20613 curveto
+84.85493 176.1397 84.94511 176.10233 85.03906 176.10233 curveto
+85.13301 176.10233 85.22319 176.1397 85.28963 176.20613 curveto
+85.35606 176.27257 85.39343 176.36275 85.39343 176.4567 curveto closepath fill
+newpath 106.65327 176.4567 moveto
+106.65327 176.55064 106.6159 176.64082 106.54947 176.70726 curveto
+106.48303 176.7737 106.39285 176.81107 106.2989 176.81107 curveto
+106.20496 176.81107 106.11478 176.7737 106.04834 176.70726 curveto
+105.9819 176.64082 105.94453 176.55064 105.94453 176.4567 curveto
+105.94453 176.36275 105.9819 176.27257 106.04834 176.20613 curveto
+106.11478 176.1397 106.20496 176.10233 106.2989 176.10233 curveto
+106.39285 176.10233 106.48303 176.1397 106.54947 176.20613 curveto
+106.6159 176.27257 106.65327 176.36275 106.65327 176.4567 curveto closepath
+ fill
+newpath 127.91312 176.4567 moveto
+127.91312 176.55064 127.87575 176.64082 127.80931 176.70726 curveto
+127.74287 176.7737 127.6527 176.81107 127.55875 176.81107 curveto
+127.4648 176.81107 127.37462 176.7737 127.30818 176.70726 curveto
+127.24174 176.64082 127.20438 176.55064 127.20438 176.4567 curveto
+127.20438 176.36275 127.24174 176.27257 127.30818 176.20613 curveto
+127.37462 176.1397 127.4648 176.10233 127.55875 176.10233 curveto
+127.6527 176.10233 127.74287 176.1397 127.80931 176.20613 curveto
+127.87575 176.27257 127.91312 176.36275 127.91312 176.4567 curveto closepath
+ fill
+newpath 149.17296 176.4567 moveto
+149.17296 176.55064 149.13559 176.64082 149.06915 176.70726 curveto
+149.00272 176.7737 148.91254 176.81107 148.81859 176.81107 curveto
+148.72464 176.81107 148.63446 176.7737 148.56802 176.70726 curveto
+148.50159 176.64082 148.46422 176.55064 148.46422 176.4567 curveto
+148.46422 176.36275 148.50159 176.27257 148.56802 176.20613 curveto
+148.63446 176.1397 148.72464 176.10233 148.81859 176.10233 curveto
+148.91254 176.10233 149.00272 176.1397 149.06915 176.20613 curveto
+149.13559 176.27257 149.17296 176.36275 149.17296 176.4567 curveto closepath
+ fill
+newpath 191.69264 176.4567 moveto
+191.69264 176.55064 191.65527 176.64082 191.58884 176.70726 curveto
+191.5224 176.7737 191.43222 176.81107 191.33827 176.81107 curveto
+191.24432 176.81107 191.15414 176.7737 191.0877 176.70726 curveto
+191.02127 176.64082 190.9839 176.55064 190.9839 176.4567 curveto
+190.9839 176.36275 191.02127 176.27257 191.0877 176.20613 curveto
+191.15414 176.1397 191.24432 176.10233 191.33827 176.10233 curveto
+191.43222 176.10233 191.5224 176.1397 191.58884 176.20613 curveto
+191.65527 176.27257 191.69264 176.36275 191.69264 176.4567 curveto closepath
+ fill
+newpath 212.95248 176.4567 moveto
+212.95248 176.55064 212.91512 176.64082 212.84868 176.70726 curveto
+212.78224 176.7737 212.69206 176.81107 212.59811 176.81107 curveto
+212.50417 176.81107 212.41399 176.7737 212.34755 176.70726 curveto
+212.28111 176.64082 212.24374 176.55064 212.24374 176.4567 curveto
+212.24374 176.36275 212.28111 176.27257 212.34755 176.20613 curveto
+212.41399 176.1397 212.50417 176.10233 212.59811 176.10233 curveto
+212.69206 176.10233 212.78224 176.1397 212.84868 176.20613 curveto
+212.91512 176.27257 212.95248 176.36275 212.95248 176.4567 curveto closepath
+ fill
+newpath 234.21233 176.4567 moveto
+234.21233 176.55064 234.17496 176.64082 234.10852 176.70726 curveto
+234.04208 176.7737 233.9519 176.81107 233.85796 176.81107 curveto
+233.764 176.81107 233.67383 176.7737 233.60739 176.70726 curveto
+233.54095 176.64082 233.50359 176.55064 233.50359 176.4567 curveto
+233.50359 176.36275 233.54095 176.27257 233.60739 176.20613 curveto
+233.67383 176.1397 233.764 176.10233 233.85796 176.10233 curveto
+233.9519 176.10233 234.04208 176.1397 234.10852 176.20613 curveto
+234.17496 176.27257 234.21233 176.36275 234.21233 176.4567 curveto closepath
+ fill
+newpath 255.47217 176.4567 moveto
+255.47217 176.55064 255.4348 176.64082 255.36836 176.70726 curveto
+255.30193 176.7737 255.21175 176.81107 255.1178 176.81107 curveto
+255.02385 176.81107 254.93367 176.7737 254.86723 176.70726 curveto
+254.8008 176.64082 254.76343 176.55064 254.76343 176.4567 curveto
+254.76343 176.36275 254.8008 176.27257 254.86723 176.20613 curveto
+254.93367 176.1397 255.02385 176.10233 255.1178 176.10233 curveto
+255.21175 176.10233 255.30193 176.1397 255.36836 176.20613 curveto
+255.4348 176.27257 255.47217 176.36275 255.47217 176.4567 curveto closepath
+ fill
+newpath 85.39343 180.70866 moveto
+85.39343 180.80261 85.35606 180.89279 85.28963 180.95923 curveto
+85.22319 181.02567 85.13301 181.06303 85.03906 181.06303 curveto
+84.94511 181.06303 84.85493 181.02567 84.7885 180.95923 curveto
+84.72206 180.89279 84.6847 180.80261 84.6847 180.70866 curveto
+84.6847 180.61472 84.72206 180.52454 84.7885 180.4581 curveto
+84.85493 180.39166 84.94511 180.3543 85.03906 180.3543 curveto
+85.13301 180.3543 85.22319 180.39166 85.28963 180.4581 curveto
+85.35606 180.52454 85.39343 180.61472 85.39343 180.70866 curveto closepath fill
+newpath 106.65327 180.70866 moveto
+106.65327 180.80261 106.6159 180.89279 106.54947 180.95923 curveto
+106.48303 181.02567 106.39285 181.06303 106.2989 181.06303 curveto
+106.20496 181.06303 106.11478 181.02567 106.04834 180.95923 curveto
+105.9819 180.89279 105.94453 180.80261 105.94453 180.70866 curveto
+105.94453 180.61472 105.9819 180.52454 106.04834 180.4581 curveto
+106.11478 180.39166 106.20496 180.3543 106.2989 180.3543 curveto
+106.39285 180.3543 106.48303 180.39166 106.54947 180.4581 curveto
+106.6159 180.52454 106.65327 180.61472 106.65327 180.70866 curveto closepath
+ fill
+newpath 127.91312 180.70866 moveto
+127.91312 180.80261 127.87575 180.89279 127.80931 180.95923 curveto
+127.74287 181.02567 127.6527 181.06303 127.55875 181.06303 curveto
+127.4648 181.06303 127.37462 181.02567 127.30818 180.95923 curveto
+127.24174 180.89279 127.20438 180.80261 127.20438 180.70866 curveto
+127.20438 180.61472 127.24174 180.52454 127.30818 180.4581 curveto
+127.37462 180.39166 127.4648 180.3543 127.55875 180.3543 curveto
+127.6527 180.3543 127.74287 180.39166 127.80931 180.4581 curveto
+127.87575 180.52454 127.91312 180.61472 127.91312 180.70866 curveto closepath
+ fill
+newpath 149.17296 180.70866 moveto
+149.17296 180.80261 149.13559 180.89279 149.06915 180.95923 curveto
+149.00272 181.02567 148.91254 181.06303 148.81859 181.06303 curveto
+148.72464 181.06303 148.63446 181.02567 148.56802 180.95923 curveto
+148.50159 180.89279 148.46422 180.80261 148.46422 180.70866 curveto
+148.46422 180.61472 148.50159 180.52454 148.56802 180.4581 curveto
+148.63446 180.39166 148.72464 180.3543 148.81859 180.3543 curveto
+148.91254 180.3543 149.00272 180.39166 149.06915 180.4581 curveto
+149.13559 180.52454 149.17296 180.61472 149.17296 180.70866 curveto closepath
+ fill
+newpath 191.69264 180.70866 moveto
+191.69264 180.80261 191.65527 180.89279 191.58884 180.95923 curveto
+191.5224 181.02567 191.43222 181.06303 191.33827 181.06303 curveto
+191.24432 181.06303 191.15414 181.02567 191.0877 180.95923 curveto
+191.02127 180.89279 190.9839 180.80261 190.9839 180.70866 curveto
+190.9839 180.61472 191.02127 180.52454 191.0877 180.4581 curveto
+191.15414 180.39166 191.24432 180.3543 191.33827 180.3543 curveto
+191.43222 180.3543 191.5224 180.39166 191.58884 180.4581 curveto
+191.65527 180.52454 191.69264 180.61472 191.69264 180.70866 curveto closepath
+ fill
+newpath 212.95248 180.70866 moveto
+212.95248 180.80261 212.91512 180.89279 212.84868 180.95923 curveto
+212.78224 181.02567 212.69206 181.06303 212.59811 181.06303 curveto
+212.50417 181.06303 212.41399 181.02567 212.34755 180.95923 curveto
+212.28111 180.89279 212.24374 180.80261 212.24374 180.70866 curveto
+212.24374 180.61472 212.28111 180.52454 212.34755 180.4581 curveto
+212.41399 180.39166 212.50417 180.3543 212.59811 180.3543 curveto
+212.69206 180.3543 212.78224 180.39166 212.84868 180.4581 curveto
+212.91512 180.52454 212.95248 180.61472 212.95248 180.70866 curveto closepath
+ fill
+newpath 234.21233 180.70866 moveto
+234.21233 180.80261 234.17496 180.89279 234.10852 180.95923 curveto
+234.04208 181.02567 233.9519 181.06303 233.85796 181.06303 curveto
+233.764 181.06303 233.67383 181.02567 233.60739 180.95923 curveto
+233.54095 180.89279 233.50359 180.80261 233.50359 180.70866 curveto
+233.50359 180.61472 233.54095 180.52454 233.60739 180.4581 curveto
+233.67383 180.39166 233.764 180.3543 233.85796 180.3543 curveto
+233.9519 180.3543 234.04208 180.39166 234.10852 180.4581 curveto
+234.17496 180.52454 234.21233 180.61472 234.21233 180.70866 curveto closepath
+ fill
+newpath 255.47217 180.70866 moveto
+255.47217 180.80261 255.4348 180.89279 255.36836 180.95923 curveto
+255.30193 181.02567 255.21175 181.06303 255.1178 181.06303 curveto
+255.02385 181.06303 254.93367 181.02567 254.86723 180.95923 curveto
+254.8008 180.89279 254.76343 180.80261 254.76343 180.70866 curveto
+254.76343 180.61472 254.8008 180.52454 254.86723 180.4581 curveto
+254.93367 180.39166 255.02385 180.3543 255.1178 180.3543 curveto
+255.21175 180.3543 255.30193 180.39166 255.36836 180.4581 curveto
+255.4348 180.52454 255.47217 180.61472 255.47217 180.70866 curveto closepath
+ fill
+newpath 174.68477 36.14174 moveto
+174.68477 36.23569 174.6474 36.32587 174.58096 36.3923 curveto
+174.51453 36.45874 174.42435 36.49611 174.3304 36.49611 curveto
+174.23645 36.49611 174.14627 36.45874 174.07983 36.3923 curveto
+174.0134 36.32587 173.97603 36.23569 173.97603 36.14174 curveto
+173.97603 36.04779 174.0134 35.95761 174.07983 35.89117 curveto
+174.14627 35.82474 174.23645 35.78737 174.3304 35.78737 curveto
+174.42435 35.78737 174.51453 35.82474 174.58096 35.89117 curveto
+174.6474 35.95761 174.68477 36.04779 174.68477 36.14174 curveto closepath fill
+newpath 174.68477 57.40158 moveto
+174.68477 57.49553 174.6474 57.58571 174.58096 57.65215 curveto
+174.51453 57.71858 174.42435 57.75595 174.3304 57.75595 curveto
+174.23645 57.75595 174.14627 57.71858 174.07983 57.65215 curveto
+174.0134 57.58571 173.97603 57.49553 173.97603 57.40158 curveto
+173.97603 57.30763 174.0134 57.21745 174.07983 57.15102 curveto
+174.14627 57.08458 174.23645 57.04721 174.3304 57.04721 curveto
+174.42435 57.04721 174.51453 57.08458 174.58096 57.15102 curveto
+174.6474 57.21745 174.68477 57.30763 174.68477 57.40158 curveto closepath fill
+newpath 174.68477 78.66142 moveto
+174.68477 78.75537 174.6474 78.84555 174.58096 78.91199 curveto
+174.51453 78.97842 174.42435 79.0158 174.3304 79.0158 curveto
+174.23645 79.0158 174.14627 78.97842 174.07983 78.91199 curveto
+174.0134 78.84555 173.97603 78.75537 173.97603 78.66142 curveto
+173.97603 78.56747 174.0134 78.4773 174.07983 78.41086 curveto
+174.14627 78.34442 174.23645 78.30705 174.3304 78.30705 curveto
+174.42435 78.30705 174.51453 78.34442 174.58096 78.41086 curveto
+174.6474 78.4773 174.68477 78.56747 174.68477 78.66142 curveto closepath fill
+newpath 174.68477 121.1811 moveto
+174.68477 121.27505 174.6474 121.36523 174.58096 121.43167 curveto
+174.51453 121.49811 174.42435 121.53548 174.3304 121.53548 curveto
+174.23645 121.53548 174.14627 121.49811 174.07983 121.43167 curveto
+174.0134 121.36523 173.97603 121.27505 173.97603 121.1811 curveto
+173.97603 121.08716 174.0134 120.99698 174.07983 120.93054 curveto
+174.14627 120.8641 174.23645 120.82674 174.3304 120.82674 curveto
+174.42435 120.82674 174.51453 120.8641 174.58096 120.93054 curveto
+174.6474 120.99698 174.68477 121.08716 174.68477 121.1811 curveto closepath
+ fill
+newpath 174.68477 142.44095 moveto
+174.68477 142.5349 174.6474 142.62508 174.58096 142.69151 curveto
+174.51453 142.75795 174.42435 142.79532 174.3304 142.79532 curveto
+174.23645 142.79532 174.14627 142.75795 174.07983 142.69151 curveto
+174.0134 142.62508 173.97603 142.5349 173.97603 142.44095 curveto
+173.97603 142.347 174.0134 142.25682 174.07983 142.19038 curveto
+174.14627 142.12395 174.23645 142.08658 174.3304 142.08658 curveto
+174.42435 142.08658 174.51453 142.12395 174.58096 142.19038 curveto
+174.6474 142.25682 174.68477 142.347 174.68477 142.44095 curveto closepath fill
+newpath 174.68477 163.70079 moveto
+174.68477 163.79474 174.6474 163.88492 174.58096 163.95135 curveto
+174.51453 164.01779 174.42435 164.05516 174.3304 164.05516 curveto
+174.23645 164.05516 174.14627 164.01779 174.07983 163.95135 curveto
+174.0134 163.88492 173.97603 163.79474 173.97603 163.70079 curveto
+173.97603 163.60684 174.0134 163.51666 174.07983 163.45023 curveto
+174.14627 163.38379 174.23645 163.34642 174.3304 163.34642 curveto
+174.42435 163.34642 174.51453 163.38379 174.58096 163.45023 curveto
+174.6474 163.51666 174.68477 163.60684 174.68477 163.70079 curveto closepath
+ fill
+newpath 178.93674 36.14174 moveto
+178.93674 36.23569 178.89937 36.32587 178.83293 36.3923 curveto
+178.7665 36.45874 178.67632 36.49611 178.58237 36.49611 curveto
+178.48842 36.49611 178.39824 36.45874 178.3318 36.3923 curveto
+178.26537 36.32587 178.228 36.23569 178.228 36.14174 curveto
+178.228 36.04779 178.26537 35.95761 178.3318 35.89117 curveto
+178.39824 35.82474 178.48842 35.78737 178.58237 35.78737 curveto
+178.67632 35.78737 178.7665 35.82474 178.83293 35.89117 curveto
+178.89937 35.95761 178.93674 36.04779 178.93674 36.14174 curveto closepath fill
+newpath 178.93674 57.40158 moveto
+178.93674 57.49553 178.89937 57.58571 178.83293 57.65215 curveto
+178.7665 57.71858 178.67632 57.75595 178.58237 57.75595 curveto
+178.48842 57.75595 178.39824 57.71858 178.3318 57.65215 curveto
+178.26537 57.58571 178.228 57.49553 178.228 57.40158 curveto
+178.228 57.30763 178.26537 57.21745 178.3318 57.15102 curveto
+178.39824 57.08458 178.48842 57.04721 178.58237 57.04721 curveto
+178.67632 57.04721 178.7665 57.08458 178.83293 57.15102 curveto
+178.89937 57.21745 178.93674 57.30763 178.93674 57.40158 curveto closepath fill
+newpath 178.93674 78.66142 moveto
+178.93674 78.75537 178.89937 78.84555 178.83293 78.91199 curveto
+178.7665 78.97842 178.67632 79.0158 178.58237 79.0158 curveto
+178.48842 79.0158 178.39824 78.97842 178.3318 78.91199 curveto
+178.26537 78.84555 178.228 78.75537 178.228 78.66142 curveto
+178.228 78.56747 178.26537 78.4773 178.3318 78.41086 curveto
+178.39824 78.34442 178.48842 78.30705 178.58237 78.30705 curveto
+178.67632 78.30705 178.7665 78.34442 178.83293 78.41086 curveto
+178.89937 78.4773 178.93674 78.56747 178.93674 78.66142 curveto closepath fill
+newpath 178.93674 121.1811 moveto
+178.93674 121.27505 178.89937 121.36523 178.83293 121.43167 curveto
+178.7665 121.49811 178.67632 121.53548 178.58237 121.53548 curveto
+178.48842 121.53548 178.39824 121.49811 178.3318 121.43167 curveto
+178.26537 121.36523 178.228 121.27505 178.228 121.1811 curveto
+178.228 121.08716 178.26537 120.99698 178.3318 120.93054 curveto
+178.39824 120.8641 178.48842 120.82674 178.58237 120.82674 curveto
+178.67632 120.82674 178.7665 120.8641 178.83293 120.93054 curveto
+178.89937 120.99698 178.93674 121.08716 178.93674 121.1811 curveto closepath
+ fill
+newpath 178.93674 142.44095 moveto
+178.93674 142.5349 178.89937 142.62508 178.83293 142.69151 curveto
+178.7665 142.75795 178.67632 142.79532 178.58237 142.79532 curveto
+178.48842 142.79532 178.39824 142.75795 178.3318 142.69151 curveto
+178.26537 142.62508 178.228 142.5349 178.228 142.44095 curveto
+178.228 142.347 178.26537 142.25682 178.3318 142.19038 curveto
+178.39824 142.12395 178.48842 142.08658 178.58237 142.08658 curveto
+178.67632 142.08658 178.7665 142.12395 178.83293 142.19038 curveto
+178.89937 142.25682 178.93674 142.347 178.93674 142.44095 curveto closepath
+ fill
+newpath 178.93674 163.70079 moveto
+178.93674 163.79474 178.89937 163.88492 178.83293 163.95135 curveto
+178.7665 164.01779 178.67632 164.05516 178.58237 164.05516 curveto
+178.48842 164.05516 178.39824 164.01779 178.3318 163.95135 curveto
+178.26537 163.88492 178.228 163.79474 178.228 163.70079 curveto
+178.228 163.60684 178.26537 163.51666 178.3318 163.45023 curveto
+178.39824 163.38379 178.48842 163.34642 178.58237 163.34642 curveto
+178.67632 163.34642 178.7665 163.38379 178.83293 163.45023 curveto
+178.89937 163.51666 178.93674 163.60684 178.93674 163.70079 curveto closepath
+ fill
+newpath 183.1887 36.14174 moveto
+183.1887 36.23569 183.15134 36.32587 183.0849 36.3923 curveto
+183.01846 36.45874 182.92828 36.49611 182.83434 36.49611 curveto
+182.74039 36.49611 182.6502 36.45874 182.58377 36.3923 curveto
+182.51733 36.32587 182.47997 36.23569 182.47997 36.14174 curveto
+182.47997 36.04779 182.51733 35.95761 182.58377 35.89117 curveto
+182.6502 35.82474 182.74039 35.78737 182.83434 35.78737 curveto
+182.92828 35.78737 183.01846 35.82474 183.0849 35.89117 curveto
+183.15134 35.95761 183.1887 36.04779 183.1887 36.14174 curveto closepath fill
+newpath 183.1887 57.40158 moveto
+183.1887 57.49553 183.15134 57.58571 183.0849 57.65215 curveto
+183.01846 57.71858 182.92828 57.75595 182.83434 57.75595 curveto
+182.74039 57.75595 182.6502 57.71858 182.58377 57.65215 curveto
+182.51733 57.58571 182.47997 57.49553 182.47997 57.40158 curveto
+182.47997 57.30763 182.51733 57.21745 182.58377 57.15102 curveto
+182.6502 57.08458 182.74039 57.04721 182.83434 57.04721 curveto
+182.92828 57.04721 183.01846 57.08458 183.0849 57.15102 curveto
+183.15134 57.21745 183.1887 57.30763 183.1887 57.40158 curveto closepath fill
+newpath 183.1887 78.66142 moveto
+183.1887 78.75537 183.15134 78.84555 183.0849 78.91199 curveto
+183.01846 78.97842 182.92828 79.0158 182.83434 79.0158 curveto
+182.74039 79.0158 182.6502 78.97842 182.58377 78.91199 curveto
+182.51733 78.84555 182.47997 78.75537 182.47997 78.66142 curveto
+182.47997 78.56747 182.51733 78.4773 182.58377 78.41086 curveto
+182.6502 78.34442 182.74039 78.30705 182.83434 78.30705 curveto
+182.92828 78.30705 183.01846 78.34442 183.0849 78.41086 curveto
+183.15134 78.4773 183.1887 78.56747 183.1887 78.66142 curveto closepath fill
+newpath 183.1887 121.1811 moveto
+183.1887 121.27505 183.15134 121.36523 183.0849 121.43167 curveto
+183.01846 121.49811 182.92828 121.53548 182.83434 121.53548 curveto
+182.74039 121.53548 182.6502 121.49811 182.58377 121.43167 curveto
+182.51733 121.36523 182.47997 121.27505 182.47997 121.1811 curveto
+182.47997 121.08716 182.51733 120.99698 182.58377 120.93054 curveto
+182.6502 120.8641 182.74039 120.82674 182.83434 120.82674 curveto
+182.92828 120.82674 183.01846 120.8641 183.0849 120.93054 curveto
+183.15134 120.99698 183.1887 121.08716 183.1887 121.1811 curveto closepath fill
+newpath 183.1887 142.44095 moveto
+183.1887 142.5349 183.15134 142.62508 183.0849 142.69151 curveto
+183.01846 142.75795 182.92828 142.79532 182.83434 142.79532 curveto
+182.74039 142.79532 182.6502 142.75795 182.58377 142.69151 curveto
+182.51733 142.62508 182.47997 142.5349 182.47997 142.44095 curveto
+182.47997 142.347 182.51733 142.25682 182.58377 142.19038 curveto
+182.6502 142.12395 182.74039 142.08658 182.83434 142.08658 curveto
+182.92828 142.08658 183.01846 142.12395 183.0849 142.19038 curveto
+183.15134 142.25682 183.1887 142.347 183.1887 142.44095 curveto closepath fill
+newpath 183.1887 163.70079 moveto
+183.1887 163.79474 183.15134 163.88492 183.0849 163.95135 curveto
+183.01846 164.01779 182.92828 164.05516 182.83434 164.05516 curveto
+182.74039 164.05516 182.6502 164.01779 182.58377 163.95135 curveto
+182.51733 163.88492 182.47997 163.79474 182.47997 163.70079 curveto
+182.47997 163.60684 182.51733 163.51666 182.58377 163.45023 curveto
+182.6502 163.38379 182.74039 163.34642 182.83434 163.34642 curveto
+182.92828 163.34642 183.01846 163.38379 183.0849 163.45023 curveto
+183.15134 163.51666 183.1887 163.60684 183.1887 163.70079 curveto closepath
+ fill
+newpath 187.44067 36.14174 moveto
+187.44067 36.23569 187.4033 36.32587 187.33687 36.3923 curveto
+187.27043 36.45874 187.18025 36.49611 187.0863 36.49611 curveto
+186.99236 36.49611 186.90218 36.45874 186.83574 36.3923 curveto
+186.7693 36.32587 186.73193 36.23569 186.73193 36.14174 curveto
+186.73193 36.04779 186.7693 35.95761 186.83574 35.89117 curveto
+186.90218 35.82474 186.99236 35.78737 187.0863 35.78737 curveto
+187.18025 35.78737 187.27043 35.82474 187.33687 35.89117 curveto
+187.4033 35.95761 187.44067 36.04779 187.44067 36.14174 curveto closepath fill
+newpath 187.44067 57.40158 moveto
+187.44067 57.49553 187.4033 57.58571 187.33687 57.65215 curveto
+187.27043 57.71858 187.18025 57.75595 187.0863 57.75595 curveto
+186.99236 57.75595 186.90218 57.71858 186.83574 57.65215 curveto
+186.7693 57.58571 186.73193 57.49553 186.73193 57.40158 curveto
+186.73193 57.30763 186.7693 57.21745 186.83574 57.15102 curveto
+186.90218 57.08458 186.99236 57.04721 187.0863 57.04721 curveto
+187.18025 57.04721 187.27043 57.08458 187.33687 57.15102 curveto
+187.4033 57.21745 187.44067 57.30763 187.44067 57.40158 curveto closepath fill
+newpath 187.44067 78.66142 moveto
+187.44067 78.75537 187.4033 78.84555 187.33687 78.91199 curveto
+187.27043 78.97842 187.18025 79.0158 187.0863 79.0158 curveto
+186.99236 79.0158 186.90218 78.97842 186.83574 78.91199 curveto
+186.7693 78.84555 186.73193 78.75537 186.73193 78.66142 curveto
+186.73193 78.56747 186.7693 78.4773 186.83574 78.41086 curveto
+186.90218 78.34442 186.99236 78.30705 187.0863 78.30705 curveto
+187.18025 78.30705 187.27043 78.34442 187.33687 78.41086 curveto
+187.4033 78.4773 187.44067 78.56747 187.44067 78.66142 curveto closepath fill
+newpath 187.44067 121.1811 moveto
+187.44067 121.27505 187.4033 121.36523 187.33687 121.43167 curveto
+187.27043 121.49811 187.18025 121.53548 187.0863 121.53548 curveto
+186.99236 121.53548 186.90218 121.49811 186.83574 121.43167 curveto
+186.7693 121.36523 186.73193 121.27505 186.73193 121.1811 curveto
+186.73193 121.08716 186.7693 120.99698 186.83574 120.93054 curveto
+186.90218 120.8641 186.99236 120.82674 187.0863 120.82674 curveto
+187.18025 120.82674 187.27043 120.8641 187.33687 120.93054 curveto
+187.4033 120.99698 187.44067 121.08716 187.44067 121.1811 curveto closepath
+ fill
+newpath 187.44067 142.44095 moveto
+187.44067 142.5349 187.4033 142.62508 187.33687 142.69151 curveto
+187.27043 142.75795 187.18025 142.79532 187.0863 142.79532 curveto
+186.99236 142.79532 186.90218 142.75795 186.83574 142.69151 curveto
+186.7693 142.62508 186.73193 142.5349 186.73193 142.44095 curveto
+186.73193 142.347 186.7693 142.25682 186.83574 142.19038 curveto
+186.90218 142.12395 186.99236 142.08658 187.0863 142.08658 curveto
+187.18025 142.08658 187.27043 142.12395 187.33687 142.19038 curveto
+187.4033 142.25682 187.44067 142.347 187.44067 142.44095 curveto closepath fill
+newpath 187.44067 163.70079 moveto
+187.44067 163.79474 187.4033 163.88492 187.33687 163.95135 curveto
+187.27043 164.01779 187.18025 164.05516 187.0863 164.05516 curveto
+186.99236 164.05516 186.90218 164.01779 186.83574 163.95135 curveto
+186.7693 163.88492 186.73193 163.79474 186.73193 163.70079 curveto
+186.73193 163.60684 186.7693 163.51666 186.83574 163.45023 curveto
+186.90218 163.38379 186.99236 163.34642 187.0863 163.34642 curveto
+187.18025 163.34642 187.27043 163.38379 187.33687 163.45023 curveto
+187.4033 163.51666 187.44067 163.60684 187.44067 163.70079 curveto closepath
+ fill
+newpath 191.69264 36.14174 moveto
+191.69264 36.23569 191.65527 36.32587 191.58884 36.3923 curveto
+191.5224 36.45874 191.43222 36.49611 191.33827 36.49611 curveto
+191.24432 36.49611 191.15414 36.45874 191.0877 36.3923 curveto
+191.02127 36.32587 190.9839 36.23569 190.9839 36.14174 curveto
+190.9839 36.04779 191.02127 35.95761 191.0877 35.89117 curveto
+191.15414 35.82474 191.24432 35.78737 191.33827 35.78737 curveto
+191.43222 35.78737 191.5224 35.82474 191.58884 35.89117 curveto
+191.65527 35.95761 191.69264 36.04779 191.69264 36.14174 curveto closepath fill
+newpath 191.69264 57.40158 moveto
+191.69264 57.49553 191.65527 57.58571 191.58884 57.65215 curveto
+191.5224 57.71858 191.43222 57.75595 191.33827 57.75595 curveto
+191.24432 57.75595 191.15414 57.71858 191.0877 57.65215 curveto
+191.02127 57.58571 190.9839 57.49553 190.9839 57.40158 curveto
+190.9839 57.30763 191.02127 57.21745 191.0877 57.15102 curveto
+191.15414 57.08458 191.24432 57.04721 191.33827 57.04721 curveto
+191.43222 57.04721 191.5224 57.08458 191.58884 57.15102 curveto
+191.65527 57.21745 191.69264 57.30763 191.69264 57.40158 curveto closepath fill
+newpath 191.69264 78.66142 moveto
+191.69264 78.75537 191.65527 78.84555 191.58884 78.91199 curveto
+191.5224 78.97842 191.43222 79.0158 191.33827 79.0158 curveto
+191.24432 79.0158 191.15414 78.97842 191.0877 78.91199 curveto
+191.02127 78.84555 190.9839 78.75537 190.9839 78.66142 curveto
+190.9839 78.56747 191.02127 78.4773 191.0877 78.41086 curveto
+191.15414 78.34442 191.24432 78.30705 191.33827 78.30705 curveto
+191.43222 78.30705 191.5224 78.34442 191.58884 78.41086 curveto
+191.65527 78.4773 191.69264 78.56747 191.69264 78.66142 curveto closepath fill
+newpath 191.69264 121.1811 moveto
+191.69264 121.27505 191.65527 121.36523 191.58884 121.43167 curveto
+191.5224 121.49811 191.43222 121.53548 191.33827 121.53548 curveto
+191.24432 121.53548 191.15414 121.49811 191.0877 121.43167 curveto
+191.02127 121.36523 190.9839 121.27505 190.9839 121.1811 curveto
+190.9839 121.08716 191.02127 120.99698 191.0877 120.93054 curveto
+191.15414 120.8641 191.24432 120.82674 191.33827 120.82674 curveto
+191.43222 120.82674 191.5224 120.8641 191.58884 120.93054 curveto
+191.65527 120.99698 191.69264 121.08716 191.69264 121.1811 curveto closepath
+ fill
+newpath 191.69264 142.44095 moveto
+191.69264 142.5349 191.65527 142.62508 191.58884 142.69151 curveto
+191.5224 142.75795 191.43222 142.79532 191.33827 142.79532 curveto
+191.24432 142.79532 191.15414 142.75795 191.0877 142.69151 curveto
+191.02127 142.62508 190.9839 142.5349 190.9839 142.44095 curveto
+190.9839 142.347 191.02127 142.25682 191.0877 142.19038 curveto
+191.15414 142.12395 191.24432 142.08658 191.33827 142.08658 curveto
+191.43222 142.08658 191.5224 142.12395 191.58884 142.19038 curveto
+191.65527 142.25682 191.69264 142.347 191.69264 142.44095 curveto closepath
+ fill
+newpath 191.69264 163.70079 moveto
+191.69264 163.79474 191.65527 163.88492 191.58884 163.95135 curveto
+191.5224 164.01779 191.43222 164.05516 191.33827 164.05516 curveto
+191.24432 164.05516 191.15414 164.01779 191.0877 163.95135 curveto
+191.02127 163.88492 190.9839 163.79474 190.9839 163.70079 curveto
+190.9839 163.60684 191.02127 163.51666 191.0877 163.45023 curveto
+191.15414 163.38379 191.24432 163.34642 191.33827 163.34642 curveto
+191.43222 163.34642 191.5224 163.38379 191.58884 163.45023 curveto
+191.65527 163.51666 191.69264 163.60684 191.69264 163.70079 curveto closepath
+ fill
+newpath 195.94461 36.14174 moveto
+195.94461 36.23569 195.90724 36.32587 195.8408 36.3923 curveto
+195.77437 36.45874 195.68419 36.49611 195.59024 36.49611 curveto
+195.49629 36.49611 195.40611 36.45874 195.33968 36.3923 curveto
+195.27324 36.32587 195.23587 36.23569 195.23587 36.14174 curveto
+195.23587 36.04779 195.27324 35.95761 195.33968 35.89117 curveto
+195.40611 35.82474 195.49629 35.78737 195.59024 35.78737 curveto
+195.68419 35.78737 195.77437 35.82474 195.8408 35.89117 curveto
+195.90724 35.95761 195.94461 36.04779 195.94461 36.14174 curveto closepath fill
+newpath 195.94461 57.40158 moveto
+195.94461 57.49553 195.90724 57.58571 195.8408 57.65215 curveto
+195.77437 57.71858 195.68419 57.75595 195.59024 57.75595 curveto
+195.49629 57.75595 195.40611 57.71858 195.33968 57.65215 curveto
+195.27324 57.58571 195.23587 57.49553 195.23587 57.40158 curveto
+195.23587 57.30763 195.27324 57.21745 195.33968 57.15102 curveto
+195.40611 57.08458 195.49629 57.04721 195.59024 57.04721 curveto
+195.68419 57.04721 195.77437 57.08458 195.8408 57.15102 curveto
+195.90724 57.21745 195.94461 57.30763 195.94461 57.40158 curveto closepath fill
+newpath 195.94461 78.66142 moveto
+195.94461 78.75537 195.90724 78.84555 195.8408 78.91199 curveto
+195.77437 78.97842 195.68419 79.0158 195.59024 79.0158 curveto
+195.49629 79.0158 195.40611 78.97842 195.33968 78.91199 curveto
+195.27324 78.84555 195.23587 78.75537 195.23587 78.66142 curveto
+195.23587 78.56747 195.27324 78.4773 195.33968 78.41086 curveto
+195.40611 78.34442 195.49629 78.30705 195.59024 78.30705 curveto
+195.68419 78.30705 195.77437 78.34442 195.8408 78.41086 curveto
+195.90724 78.4773 195.94461 78.56747 195.94461 78.66142 curveto closepath fill
+newpath 195.94461 121.1811 moveto
+195.94461 121.27505 195.90724 121.36523 195.8408 121.43167 curveto
+195.77437 121.49811 195.68419 121.53548 195.59024 121.53548 curveto
+195.49629 121.53548 195.40611 121.49811 195.33968 121.43167 curveto
+195.27324 121.36523 195.23587 121.27505 195.23587 121.1811 curveto
+195.23587 121.08716 195.27324 120.99698 195.33968 120.93054 curveto
+195.40611 120.8641 195.49629 120.82674 195.59024 120.82674 curveto
+195.68419 120.82674 195.77437 120.8641 195.8408 120.93054 curveto
+195.90724 120.99698 195.94461 121.08716 195.94461 121.1811 curveto closepath
+ fill
+newpath 195.94461 142.44095 moveto
+195.94461 142.5349 195.90724 142.62508 195.8408 142.69151 curveto
+195.77437 142.75795 195.68419 142.79532 195.59024 142.79532 curveto
+195.49629 142.79532 195.40611 142.75795 195.33968 142.69151 curveto
+195.27324 142.62508 195.23587 142.5349 195.23587 142.44095 curveto
+195.23587 142.347 195.27324 142.25682 195.33968 142.19038 curveto
+195.40611 142.12395 195.49629 142.08658 195.59024 142.08658 curveto
+195.68419 142.08658 195.77437 142.12395 195.8408 142.19038 curveto
+195.90724 142.25682 195.94461 142.347 195.94461 142.44095 curveto closepath
+ fill
+newpath 195.94461 163.70079 moveto
+195.94461 163.79474 195.90724 163.88492 195.8408 163.95135 curveto
+195.77437 164.01779 195.68419 164.05516 195.59024 164.05516 curveto
+195.49629 164.05516 195.40611 164.01779 195.33968 163.95135 curveto
+195.27324 163.88492 195.23587 163.79474 195.23587 163.70079 curveto
+195.23587 163.60684 195.27324 163.51666 195.33968 163.45023 curveto
+195.40611 163.38379 195.49629 163.34642 195.59024 163.34642 curveto
+195.68419 163.34642 195.77437 163.38379 195.8408 163.45023 curveto
+195.90724 163.51666 195.94461 163.60684 195.94461 163.70079 curveto closepath
+ fill
+newpath 200.19658 36.14174 moveto
+200.19658 36.23569 200.15921 36.32587 200.09277 36.3923 curveto
+200.02634 36.45874 199.93616 36.49611 199.84221 36.49611 curveto
+199.74826 36.49611 199.65808 36.45874 199.59164 36.3923 curveto
+199.5252 36.32587 199.48784 36.23569 199.48784 36.14174 curveto
+199.48784 36.04779 199.5252 35.95761 199.59164 35.89117 curveto
+199.65808 35.82474 199.74826 35.78737 199.84221 35.78737 curveto
+199.93616 35.78737 200.02634 35.82474 200.09277 35.89117 curveto
+200.15921 35.95761 200.19658 36.04779 200.19658 36.14174 curveto closepath fill
+newpath 200.19658 57.40158 moveto
+200.19658 57.49553 200.15921 57.58571 200.09277 57.65215 curveto
+200.02634 57.71858 199.93616 57.75595 199.84221 57.75595 curveto
+199.74826 57.75595 199.65808 57.71858 199.59164 57.65215 curveto
+199.5252 57.58571 199.48784 57.49553 199.48784 57.40158 curveto
+199.48784 57.30763 199.5252 57.21745 199.59164 57.15102 curveto
+199.65808 57.08458 199.74826 57.04721 199.84221 57.04721 curveto
+199.93616 57.04721 200.02634 57.08458 200.09277 57.15102 curveto
+200.15921 57.21745 200.19658 57.30763 200.19658 57.40158 curveto closepath fill
+newpath 200.19658 78.66142 moveto
+200.19658 78.75537 200.15921 78.84555 200.09277 78.91199 curveto
+200.02634 78.97842 199.93616 79.0158 199.84221 79.0158 curveto
+199.74826 79.0158 199.65808 78.97842 199.59164 78.91199 curveto
+199.5252 78.84555 199.48784 78.75537 199.48784 78.66142 curveto
+199.48784 78.56747 199.5252 78.4773 199.59164 78.41086 curveto
+199.65808 78.34442 199.74826 78.30705 199.84221 78.30705 curveto
+199.93616 78.30705 200.02634 78.34442 200.09277 78.41086 curveto
+200.15921 78.4773 200.19658 78.56747 200.19658 78.66142 curveto closepath fill
+newpath 200.19658 121.1811 moveto
+200.19658 121.27505 200.15921 121.36523 200.09277 121.43167 curveto
+200.02634 121.49811 199.93616 121.53548 199.84221 121.53548 curveto
+199.74826 121.53548 199.65808 121.49811 199.59164 121.43167 curveto
+199.5252 121.36523 199.48784 121.27505 199.48784 121.1811 curveto
+199.48784 121.08716 199.5252 120.99698 199.59164 120.93054 curveto
+199.65808 120.8641 199.74826 120.82674 199.84221 120.82674 curveto
+199.93616 120.82674 200.02634 120.8641 200.09277 120.93054 curveto
+200.15921 120.99698 200.19658 121.08716 200.19658 121.1811 curveto closepath
+ fill
+newpath 200.19658 142.44095 moveto
+200.19658 142.5349 200.15921 142.62508 200.09277 142.69151 curveto
+200.02634 142.75795 199.93616 142.79532 199.84221 142.79532 curveto
+199.74826 142.79532 199.65808 142.75795 199.59164 142.69151 curveto
+199.5252 142.62508 199.48784 142.5349 199.48784 142.44095 curveto
+199.48784 142.347 199.5252 142.25682 199.59164 142.19038 curveto
+199.65808 142.12395 199.74826 142.08658 199.84221 142.08658 curveto
+199.93616 142.08658 200.02634 142.12395 200.09277 142.19038 curveto
+200.15921 142.25682 200.19658 142.347 200.19658 142.44095 curveto closepath
+ fill
+newpath 200.19658 163.70079 moveto
+200.19658 163.79474 200.15921 163.88492 200.09277 163.95135 curveto
+200.02634 164.01779 199.93616 164.05516 199.84221 164.05516 curveto
+199.74826 164.05516 199.65808 164.01779 199.59164 163.95135 curveto
+199.5252 163.88492 199.48784 163.79474 199.48784 163.70079 curveto
+199.48784 163.60684 199.5252 163.51666 199.59164 163.45023 curveto
+199.65808 163.38379 199.74826 163.34642 199.84221 163.34642 curveto
+199.93616 163.34642 200.02634 163.38379 200.09277 163.45023 curveto
+200.15921 163.51666 200.19658 163.60684 200.19658 163.70079 curveto closepath
+ fill
+newpath 204.44855 36.14174 moveto
+204.44855 36.23569 204.41118 36.32587 204.34474 36.3923 curveto
+204.2783 36.45874 204.18813 36.49611 204.09418 36.49611 curveto
+204.00023 36.49611 203.91005 36.45874 203.84361 36.3923 curveto
+203.77718 36.32587 203.7398 36.23569 203.7398 36.14174 curveto
+203.7398 36.04779 203.77718 35.95761 203.84361 35.89117 curveto
+203.91005 35.82474 204.00023 35.78737 204.09418 35.78737 curveto
+204.18813 35.78737 204.2783 35.82474 204.34474 35.89117 curveto
+204.41118 35.95761 204.44855 36.04779 204.44855 36.14174 curveto closepath fill
+newpath 204.44855 57.40158 moveto
+204.44855 57.49553 204.41118 57.58571 204.34474 57.65215 curveto
+204.2783 57.71858 204.18813 57.75595 204.09418 57.75595 curveto
+204.00023 57.75595 203.91005 57.71858 203.84361 57.65215 curveto
+203.77718 57.58571 203.7398 57.49553 203.7398 57.40158 curveto
+203.7398 57.30763 203.77718 57.21745 203.84361 57.15102 curveto
+203.91005 57.08458 204.00023 57.04721 204.09418 57.04721 curveto
+204.18813 57.04721 204.2783 57.08458 204.34474 57.15102 curveto
+204.41118 57.21745 204.44855 57.30763 204.44855 57.40158 curveto closepath fill
+newpath 204.44855 78.66142 moveto
+204.44855 78.75537 204.41118 78.84555 204.34474 78.91199 curveto
+204.2783 78.97842 204.18813 79.0158 204.09418 79.0158 curveto
+204.00023 79.0158 203.91005 78.97842 203.84361 78.91199 curveto
+203.77718 78.84555 203.7398 78.75537 203.7398 78.66142 curveto
+203.7398 78.56747 203.77718 78.4773 203.84361 78.41086 curveto
+203.91005 78.34442 204.00023 78.30705 204.09418 78.30705 curveto
+204.18813 78.30705 204.2783 78.34442 204.34474 78.41086 curveto
+204.41118 78.4773 204.44855 78.56747 204.44855 78.66142 curveto closepath fill
+newpath 204.44855 121.1811 moveto
+204.44855 121.27505 204.41118 121.36523 204.34474 121.43167 curveto
+204.2783 121.49811 204.18813 121.53548 204.09418 121.53548 curveto
+204.00023 121.53548 203.91005 121.49811 203.84361 121.43167 curveto
+203.77718 121.36523 203.7398 121.27505 203.7398 121.1811 curveto
+203.7398 121.08716 203.77718 120.99698 203.84361 120.93054 curveto
+203.91005 120.8641 204.00023 120.82674 204.09418 120.82674 curveto
+204.18813 120.82674 204.2783 120.8641 204.34474 120.93054 curveto
+204.41118 120.99698 204.44855 121.08716 204.44855 121.1811 curveto closepath
+ fill
+newpath 204.44855 142.44095 moveto
+204.44855 142.5349 204.41118 142.62508 204.34474 142.69151 curveto
+204.2783 142.75795 204.18813 142.79532 204.09418 142.79532 curveto
+204.00023 142.79532 203.91005 142.75795 203.84361 142.69151 curveto
+203.77718 142.62508 203.7398 142.5349 203.7398 142.44095 curveto
+203.7398 142.347 203.77718 142.25682 203.84361 142.19038 curveto
+203.91005 142.12395 204.00023 142.08658 204.09418 142.08658 curveto
+204.18813 142.08658 204.2783 142.12395 204.34474 142.19038 curveto
+204.41118 142.25682 204.44855 142.347 204.44855 142.44095 curveto closepath
+ fill
+newpath 204.44855 163.70079 moveto
+204.44855 163.79474 204.41118 163.88492 204.34474 163.95135 curveto
+204.2783 164.01779 204.18813 164.05516 204.09418 164.05516 curveto
+204.00023 164.05516 203.91005 164.01779 203.84361 163.95135 curveto
+203.77718 163.88492 203.7398 163.79474 203.7398 163.70079 curveto
+203.7398 163.60684 203.77718 163.51666 203.84361 163.45023 curveto
+203.91005 163.38379 204.00023 163.34642 204.09418 163.34642 curveto
+204.18813 163.34642 204.2783 163.38379 204.34474 163.45023 curveto
+204.41118 163.51666 204.44855 163.60684 204.44855 163.70079 curveto closepath
+ fill
+newpath 208.70052 36.14174 moveto
+208.70052 36.23569 208.66315 36.32587 208.59671 36.3923 curveto
+208.53027 36.45874 208.4401 36.49611 208.34615 36.49611 curveto
+208.2522 36.49611 208.16202 36.45874 208.09558 36.3923 curveto
+208.02914 36.32587 207.99178 36.23569 207.99178 36.14174 curveto
+207.99178 36.04779 208.02914 35.95761 208.09558 35.89117 curveto
+208.16202 35.82474 208.2522 35.78737 208.34615 35.78737 curveto
+208.4401 35.78737 208.53027 35.82474 208.59671 35.89117 curveto
+208.66315 35.95761 208.70052 36.04779 208.70052 36.14174 curveto closepath fill
+newpath 208.70052 57.40158 moveto
+208.70052 57.49553 208.66315 57.58571 208.59671 57.65215 curveto
+208.53027 57.71858 208.4401 57.75595 208.34615 57.75595 curveto
+208.2522 57.75595 208.16202 57.71858 208.09558 57.65215 curveto
+208.02914 57.58571 207.99178 57.49553 207.99178 57.40158 curveto
+207.99178 57.30763 208.02914 57.21745 208.09558 57.15102 curveto
+208.16202 57.08458 208.2522 57.04721 208.34615 57.04721 curveto
+208.4401 57.04721 208.53027 57.08458 208.59671 57.15102 curveto
+208.66315 57.21745 208.70052 57.30763 208.70052 57.40158 curveto closepath fill
+newpath 208.70052 78.66142 moveto
+208.70052 78.75537 208.66315 78.84555 208.59671 78.91199 curveto
+208.53027 78.97842 208.4401 79.0158 208.34615 79.0158 curveto
+208.2522 79.0158 208.16202 78.97842 208.09558 78.91199 curveto
+208.02914 78.84555 207.99178 78.75537 207.99178 78.66142 curveto
+207.99178 78.56747 208.02914 78.4773 208.09558 78.41086 curveto
+208.16202 78.34442 208.2522 78.30705 208.34615 78.30705 curveto
+208.4401 78.30705 208.53027 78.34442 208.59671 78.41086 curveto
+208.66315 78.4773 208.70052 78.56747 208.70052 78.66142 curveto closepath fill
+newpath 208.70052 121.1811 moveto
+208.70052 121.27505 208.66315 121.36523 208.59671 121.43167 curveto
+208.53027 121.49811 208.4401 121.53548 208.34615 121.53548 curveto
+208.2522 121.53548 208.16202 121.49811 208.09558 121.43167 curveto
+208.02914 121.36523 207.99178 121.27505 207.99178 121.1811 curveto
+207.99178 121.08716 208.02914 120.99698 208.09558 120.93054 curveto
+208.16202 120.8641 208.2522 120.82674 208.34615 120.82674 curveto
+208.4401 120.82674 208.53027 120.8641 208.59671 120.93054 curveto
+208.66315 120.99698 208.70052 121.08716 208.70052 121.1811 curveto closepath
+ fill
+newpath 208.70052 142.44095 moveto
+208.70052 142.5349 208.66315 142.62508 208.59671 142.69151 curveto
+208.53027 142.75795 208.4401 142.79532 208.34615 142.79532 curveto
+208.2522 142.79532 208.16202 142.75795 208.09558 142.69151 curveto
+208.02914 142.62508 207.99178 142.5349 207.99178 142.44095 curveto
+207.99178 142.347 208.02914 142.25682 208.09558 142.19038 curveto
+208.16202 142.12395 208.2522 142.08658 208.34615 142.08658 curveto
+208.4401 142.08658 208.53027 142.12395 208.59671 142.19038 curveto
+208.66315 142.25682 208.70052 142.347 208.70052 142.44095 curveto closepath
+ fill
+newpath 208.70052 163.70079 moveto
+208.70052 163.79474 208.66315 163.88492 208.59671 163.95135 curveto
+208.53027 164.01779 208.4401 164.05516 208.34615 164.05516 curveto
+208.2522 164.05516 208.16202 164.01779 208.09558 163.95135 curveto
+208.02914 163.88492 207.99178 163.79474 207.99178 163.70079 curveto
+207.99178 163.60684 208.02914 163.51666 208.09558 163.45023 curveto
+208.16202 163.38379 208.2522 163.34642 208.34615 163.34642 curveto
+208.4401 163.34642 208.53027 163.38379 208.59671 163.45023 curveto
+208.66315 163.51666 208.70052 163.60684 208.70052 163.70079 curveto closepath
+ fill
+newpath 212.95248 36.14174 moveto
+212.95248 36.23569 212.91512 36.32587 212.84868 36.3923 curveto
+212.78224 36.45874 212.69206 36.49611 212.59811 36.49611 curveto
+212.50417 36.49611 212.41399 36.45874 212.34755 36.3923 curveto
+212.28111 36.32587 212.24374 36.23569 212.24374 36.14174 curveto
+212.24374 36.04779 212.28111 35.95761 212.34755 35.89117 curveto
+212.41399 35.82474 212.50417 35.78737 212.59811 35.78737 curveto
+212.69206 35.78737 212.78224 35.82474 212.84868 35.89117 curveto
+212.91512 35.95761 212.95248 36.04779 212.95248 36.14174 curveto closepath fill
+newpath 212.95248 57.40158 moveto
+212.95248 57.49553 212.91512 57.58571 212.84868 57.65215 curveto
+212.78224 57.71858 212.69206 57.75595 212.59811 57.75595 curveto
+212.50417 57.75595 212.41399 57.71858 212.34755 57.65215 curveto
+212.28111 57.58571 212.24374 57.49553 212.24374 57.40158 curveto
+212.24374 57.30763 212.28111 57.21745 212.34755 57.15102 curveto
+212.41399 57.08458 212.50417 57.04721 212.59811 57.04721 curveto
+212.69206 57.04721 212.78224 57.08458 212.84868 57.15102 curveto
+212.91512 57.21745 212.95248 57.30763 212.95248 57.40158 curveto closepath fill
+newpath 212.95248 78.66142 moveto
+212.95248 78.75537 212.91512 78.84555 212.84868 78.91199 curveto
+212.78224 78.97842 212.69206 79.0158 212.59811 79.0158 curveto
+212.50417 79.0158 212.41399 78.97842 212.34755 78.91199 curveto
+212.28111 78.84555 212.24374 78.75537 212.24374 78.66142 curveto
+212.24374 78.56747 212.28111 78.4773 212.34755 78.41086 curveto
+212.41399 78.34442 212.50417 78.30705 212.59811 78.30705 curveto
+212.69206 78.30705 212.78224 78.34442 212.84868 78.41086 curveto
+212.91512 78.4773 212.95248 78.56747 212.95248 78.66142 curveto closepath fill
+newpath 212.95248 121.1811 moveto
+212.95248 121.27505 212.91512 121.36523 212.84868 121.43167 curveto
+212.78224 121.49811 212.69206 121.53548 212.59811 121.53548 curveto
+212.50417 121.53548 212.41399 121.49811 212.34755 121.43167 curveto
+212.28111 121.36523 212.24374 121.27505 212.24374 121.1811 curveto
+212.24374 121.08716 212.28111 120.99698 212.34755 120.93054 curveto
+212.41399 120.8641 212.50417 120.82674 212.59811 120.82674 curveto
+212.69206 120.82674 212.78224 120.8641 212.84868 120.93054 curveto
+212.91512 120.99698 212.95248 121.08716 212.95248 121.1811 curveto closepath
+ fill
+newpath 212.95248 142.44095 moveto
+212.95248 142.5349 212.91512 142.62508 212.84868 142.69151 curveto
+212.78224 142.75795 212.69206 142.79532 212.59811 142.79532 curveto
+212.50417 142.79532 212.41399 142.75795 212.34755 142.69151 curveto
+212.28111 142.62508 212.24374 142.5349 212.24374 142.44095 curveto
+212.24374 142.347 212.28111 142.25682 212.34755 142.19038 curveto
+212.41399 142.12395 212.50417 142.08658 212.59811 142.08658 curveto
+212.69206 142.08658 212.78224 142.12395 212.84868 142.19038 curveto
+212.91512 142.25682 212.95248 142.347 212.95248 142.44095 curveto closepath
+ fill
+newpath 212.95248 163.70079 moveto
+212.95248 163.79474 212.91512 163.88492 212.84868 163.95135 curveto
+212.78224 164.01779 212.69206 164.05516 212.59811 164.05516 curveto
+212.50417 164.05516 212.41399 164.01779 212.34755 163.95135 curveto
+212.28111 163.88492 212.24374 163.79474 212.24374 163.70079 curveto
+212.24374 163.60684 212.28111 163.51666 212.34755 163.45023 curveto
+212.41399 163.38379 212.50417 163.34642 212.59811 163.34642 curveto
+212.69206 163.34642 212.78224 163.38379 212.84868 163.45023 curveto
+212.91512 163.51666 212.95248 163.60684 212.95248 163.70079 curveto closepath
+ fill
+newpath 217.20445 36.14174 moveto
+217.20445 36.23569 217.16708 36.32587 217.10065 36.3923 curveto
+217.03421 36.45874 216.94403 36.49611 216.85008 36.49611 curveto
+216.75613 36.49611 216.66595 36.45874 216.59952 36.3923 curveto
+216.53308 36.32587 216.49571 36.23569 216.49571 36.14174 curveto
+216.49571 36.04779 216.53308 35.95761 216.59952 35.89117 curveto
+216.66595 35.82474 216.75613 35.78737 216.85008 35.78737 curveto
+216.94403 35.78737 217.03421 35.82474 217.10065 35.89117 curveto
+217.16708 35.95761 217.20445 36.04779 217.20445 36.14174 curveto closepath fill
+newpath 217.20445 57.40158 moveto
+217.20445 57.49553 217.16708 57.58571 217.10065 57.65215 curveto
+217.03421 57.71858 216.94403 57.75595 216.85008 57.75595 curveto
+216.75613 57.75595 216.66595 57.71858 216.59952 57.65215 curveto
+216.53308 57.58571 216.49571 57.49553 216.49571 57.40158 curveto
+216.49571 57.30763 216.53308 57.21745 216.59952 57.15102 curveto
+216.66595 57.08458 216.75613 57.04721 216.85008 57.04721 curveto
+216.94403 57.04721 217.03421 57.08458 217.10065 57.15102 curveto
+217.16708 57.21745 217.20445 57.30763 217.20445 57.40158 curveto closepath fill
+newpath 217.20445 78.66142 moveto
+217.20445 78.75537 217.16708 78.84555 217.10065 78.91199 curveto
+217.03421 78.97842 216.94403 79.0158 216.85008 79.0158 curveto
+216.75613 79.0158 216.66595 78.97842 216.59952 78.91199 curveto
+216.53308 78.84555 216.49571 78.75537 216.49571 78.66142 curveto
+216.49571 78.56747 216.53308 78.4773 216.59952 78.41086 curveto
+216.66595 78.34442 216.75613 78.30705 216.85008 78.30705 curveto
+216.94403 78.30705 217.03421 78.34442 217.10065 78.41086 curveto
+217.16708 78.4773 217.20445 78.56747 217.20445 78.66142 curveto closepath fill
+newpath 217.20445 121.1811 moveto
+217.20445 121.27505 217.16708 121.36523 217.10065 121.43167 curveto
+217.03421 121.49811 216.94403 121.53548 216.85008 121.53548 curveto
+216.75613 121.53548 216.66595 121.49811 216.59952 121.43167 curveto
+216.53308 121.36523 216.49571 121.27505 216.49571 121.1811 curveto
+216.49571 121.08716 216.53308 120.99698 216.59952 120.93054 curveto
+216.66595 120.8641 216.75613 120.82674 216.85008 120.82674 curveto
+216.94403 120.82674 217.03421 120.8641 217.10065 120.93054 curveto
+217.16708 120.99698 217.20445 121.08716 217.20445 121.1811 curveto closepath
+ fill
+newpath 217.20445 142.44095 moveto
+217.20445 142.5349 217.16708 142.62508 217.10065 142.69151 curveto
+217.03421 142.75795 216.94403 142.79532 216.85008 142.79532 curveto
+216.75613 142.79532 216.66595 142.75795 216.59952 142.69151 curveto
+216.53308 142.62508 216.49571 142.5349 216.49571 142.44095 curveto
+216.49571 142.347 216.53308 142.25682 216.59952 142.19038 curveto
+216.66595 142.12395 216.75613 142.08658 216.85008 142.08658 curveto
+216.94403 142.08658 217.03421 142.12395 217.10065 142.19038 curveto
+217.16708 142.25682 217.20445 142.347 217.20445 142.44095 curveto closepath
+ fill
+newpath 217.20445 163.70079 moveto
+217.20445 163.79474 217.16708 163.88492 217.10065 163.95135 curveto
+217.03421 164.01779 216.94403 164.05516 216.85008 164.05516 curveto
+216.75613 164.05516 216.66595 164.01779 216.59952 163.95135 curveto
+216.53308 163.88492 216.49571 163.79474 216.49571 163.70079 curveto
+216.49571 163.60684 216.53308 163.51666 216.59952 163.45023 curveto
+216.66595 163.38379 216.75613 163.34642 216.85008 163.34642 curveto
+216.94403 163.34642 217.03421 163.38379 217.10065 163.45023 curveto
+217.16708 163.51666 217.20445 163.60684 217.20445 163.70079 curveto closepath
+ fill
+newpath 221.45642 36.14174 moveto
+221.45642 36.23569 221.41905 36.32587 221.35262 36.3923 curveto
+221.28618 36.45874 221.196 36.49611 221.10205 36.49611 curveto
+221.0081 36.49611 220.91792 36.45874 220.85149 36.3923 curveto
+220.78505 36.32587 220.74768 36.23569 220.74768 36.14174 curveto
+220.74768 36.04779 220.78505 35.95761 220.85149 35.89117 curveto
+220.91792 35.82474 221.0081 35.78737 221.10205 35.78737 curveto
+221.196 35.78737 221.28618 35.82474 221.35262 35.89117 curveto
+221.41905 35.95761 221.45642 36.04779 221.45642 36.14174 curveto closepath fill
+newpath 221.45642 57.40158 moveto
+221.45642 57.49553 221.41905 57.58571 221.35262 57.65215 curveto
+221.28618 57.71858 221.196 57.75595 221.10205 57.75595 curveto
+221.0081 57.75595 220.91792 57.71858 220.85149 57.65215 curveto
+220.78505 57.58571 220.74768 57.49553 220.74768 57.40158 curveto
+220.74768 57.30763 220.78505 57.21745 220.85149 57.15102 curveto
+220.91792 57.08458 221.0081 57.04721 221.10205 57.04721 curveto
+221.196 57.04721 221.28618 57.08458 221.35262 57.15102 curveto
+221.41905 57.21745 221.45642 57.30763 221.45642 57.40158 curveto closepath fill
+newpath 221.45642 78.66142 moveto
+221.45642 78.75537 221.41905 78.84555 221.35262 78.91199 curveto
+221.28618 78.97842 221.196 79.0158 221.10205 79.0158 curveto
+221.0081 79.0158 220.91792 78.97842 220.85149 78.91199 curveto
+220.78505 78.84555 220.74768 78.75537 220.74768 78.66142 curveto
+220.74768 78.56747 220.78505 78.4773 220.85149 78.41086 curveto
+220.91792 78.34442 221.0081 78.30705 221.10205 78.30705 curveto
+221.196 78.30705 221.28618 78.34442 221.35262 78.41086 curveto
+221.41905 78.4773 221.45642 78.56747 221.45642 78.66142 curveto closepath fill
+newpath 221.45642 121.1811 moveto
+221.45642 121.27505 221.41905 121.36523 221.35262 121.43167 curveto
+221.28618 121.49811 221.196 121.53548 221.10205 121.53548 curveto
+221.0081 121.53548 220.91792 121.49811 220.85149 121.43167 curveto
+220.78505 121.36523 220.74768 121.27505 220.74768 121.1811 curveto
+220.74768 121.08716 220.78505 120.99698 220.85149 120.93054 curveto
+220.91792 120.8641 221.0081 120.82674 221.10205 120.82674 curveto
+221.196 120.82674 221.28618 120.8641 221.35262 120.93054 curveto
+221.41905 120.99698 221.45642 121.08716 221.45642 121.1811 curveto closepath
+ fill
+newpath 221.45642 142.44095 moveto
+221.45642 142.5349 221.41905 142.62508 221.35262 142.69151 curveto
+221.28618 142.75795 221.196 142.79532 221.10205 142.79532 curveto
+221.0081 142.79532 220.91792 142.75795 220.85149 142.69151 curveto
+220.78505 142.62508 220.74768 142.5349 220.74768 142.44095 curveto
+220.74768 142.347 220.78505 142.25682 220.85149 142.19038 curveto
+220.91792 142.12395 221.0081 142.08658 221.10205 142.08658 curveto
+221.196 142.08658 221.28618 142.12395 221.35262 142.19038 curveto
+221.41905 142.25682 221.45642 142.347 221.45642 142.44095 curveto closepath
+ fill
+newpath 221.45642 163.70079 moveto
+221.45642 163.79474 221.41905 163.88492 221.35262 163.95135 curveto
+221.28618 164.01779 221.196 164.05516 221.10205 164.05516 curveto
+221.0081 164.05516 220.91792 164.01779 220.85149 163.95135 curveto
+220.78505 163.88492 220.74768 163.79474 220.74768 163.70079 curveto
+220.74768 163.60684 220.78505 163.51666 220.85149 163.45023 curveto
+220.91792 163.38379 221.0081 163.34642 221.10205 163.34642 curveto
+221.196 163.34642 221.28618 163.38379 221.35262 163.45023 curveto
+221.41905 163.51666 221.45642 163.60684 221.45642 163.70079 curveto closepath
+ fill
+newpath 225.70839 36.14174 moveto
+225.70839 36.23569 225.67102 36.32587 225.60458 36.3923 curveto
+225.53815 36.45874 225.44797 36.49611 225.35402 36.49611 curveto
+225.26007 36.49611 225.16989 36.45874 225.10345 36.3923 curveto
+225.03702 36.32587 224.99965 36.23569 224.99965 36.14174 curveto
+224.99965 36.04779 225.03702 35.95761 225.10345 35.89117 curveto
+225.16989 35.82474 225.26007 35.78737 225.35402 35.78737 curveto
+225.44797 35.78737 225.53815 35.82474 225.60458 35.89117 curveto
+225.67102 35.95761 225.70839 36.04779 225.70839 36.14174 curveto closepath fill
+newpath 225.70839 57.40158 moveto
+225.70839 57.49553 225.67102 57.58571 225.60458 57.65215 curveto
+225.53815 57.71858 225.44797 57.75595 225.35402 57.75595 curveto
+225.26007 57.75595 225.16989 57.71858 225.10345 57.65215 curveto
+225.03702 57.58571 224.99965 57.49553 224.99965 57.40158 curveto
+224.99965 57.30763 225.03702 57.21745 225.10345 57.15102 curveto
+225.16989 57.08458 225.26007 57.04721 225.35402 57.04721 curveto
+225.44797 57.04721 225.53815 57.08458 225.60458 57.15102 curveto
+225.67102 57.21745 225.70839 57.30763 225.70839 57.40158 curveto closepath fill
+newpath 225.70839 78.66142 moveto
+225.70839 78.75537 225.67102 78.84555 225.60458 78.91199 curveto
+225.53815 78.97842 225.44797 79.0158 225.35402 79.0158 curveto
+225.26007 79.0158 225.16989 78.97842 225.10345 78.91199 curveto
+225.03702 78.84555 224.99965 78.75537 224.99965 78.66142 curveto
+224.99965 78.56747 225.03702 78.4773 225.10345 78.41086 curveto
+225.16989 78.34442 225.26007 78.30705 225.35402 78.30705 curveto
+225.44797 78.30705 225.53815 78.34442 225.60458 78.41086 curveto
+225.67102 78.4773 225.70839 78.56747 225.70839 78.66142 curveto closepath fill
+newpath 225.70839 121.1811 moveto
+225.70839 121.27505 225.67102 121.36523 225.60458 121.43167 curveto
+225.53815 121.49811 225.44797 121.53548 225.35402 121.53548 curveto
+225.26007 121.53548 225.16989 121.49811 225.10345 121.43167 curveto
+225.03702 121.36523 224.99965 121.27505 224.99965 121.1811 curveto
+224.99965 121.08716 225.03702 120.99698 225.10345 120.93054 curveto
+225.16989 120.8641 225.26007 120.82674 225.35402 120.82674 curveto
+225.44797 120.82674 225.53815 120.8641 225.60458 120.93054 curveto
+225.67102 120.99698 225.70839 121.08716 225.70839 121.1811 curveto closepath
+ fill
+newpath 225.70839 142.44095 moveto
+225.70839 142.5349 225.67102 142.62508 225.60458 142.69151 curveto
+225.53815 142.75795 225.44797 142.79532 225.35402 142.79532 curveto
+225.26007 142.79532 225.16989 142.75795 225.10345 142.69151 curveto
+225.03702 142.62508 224.99965 142.5349 224.99965 142.44095 curveto
+224.99965 142.347 225.03702 142.25682 225.10345 142.19038 curveto
+225.16989 142.12395 225.26007 142.08658 225.35402 142.08658 curveto
+225.44797 142.08658 225.53815 142.12395 225.60458 142.19038 curveto
+225.67102 142.25682 225.70839 142.347 225.70839 142.44095 curveto closepath
+ fill
+newpath 225.70839 163.70079 moveto
+225.70839 163.79474 225.67102 163.88492 225.60458 163.95135 curveto
+225.53815 164.01779 225.44797 164.05516 225.35402 164.05516 curveto
+225.26007 164.05516 225.16989 164.01779 225.10345 163.95135 curveto
+225.03702 163.88492 224.99965 163.79474 224.99965 163.70079 curveto
+224.99965 163.60684 225.03702 163.51666 225.10345 163.45023 curveto
+225.16989 163.38379 225.26007 163.34642 225.35402 163.34642 curveto
+225.44797 163.34642 225.53815 163.38379 225.60458 163.45023 curveto
+225.67102 163.51666 225.70839 163.60684 225.70839 163.70079 curveto closepath
+ fill
+newpath 229.96036 36.14174 moveto
+229.96036 36.23569 229.92299 36.32587 229.85655 36.3923 curveto
+229.79012 36.45874 229.69994 36.49611 229.60599 36.49611 curveto
+229.51204 36.49611 229.42186 36.45874 229.35542 36.3923 curveto
+229.28899 36.32587 229.25162 36.23569 229.25162 36.14174 curveto
+229.25162 36.04779 229.28899 35.95761 229.35542 35.89117 curveto
+229.42186 35.82474 229.51204 35.78737 229.60599 35.78737 curveto
+229.69994 35.78737 229.79012 35.82474 229.85655 35.89117 curveto
+229.92299 35.95761 229.96036 36.04779 229.96036 36.14174 curveto closepath fill
+newpath 229.96036 57.40158 moveto
+229.96036 57.49553 229.92299 57.58571 229.85655 57.65215 curveto
+229.79012 57.71858 229.69994 57.75595 229.60599 57.75595 curveto
+229.51204 57.75595 229.42186 57.71858 229.35542 57.65215 curveto
+229.28899 57.58571 229.25162 57.49553 229.25162 57.40158 curveto
+229.25162 57.30763 229.28899 57.21745 229.35542 57.15102 curveto
+229.42186 57.08458 229.51204 57.04721 229.60599 57.04721 curveto
+229.69994 57.04721 229.79012 57.08458 229.85655 57.15102 curveto
+229.92299 57.21745 229.96036 57.30763 229.96036 57.40158 curveto closepath fill
+newpath 229.96036 78.66142 moveto
+229.96036 78.75537 229.92299 78.84555 229.85655 78.91199 curveto
+229.79012 78.97842 229.69994 79.0158 229.60599 79.0158 curveto
+229.51204 79.0158 229.42186 78.97842 229.35542 78.91199 curveto
+229.28899 78.84555 229.25162 78.75537 229.25162 78.66142 curveto
+229.25162 78.56747 229.28899 78.4773 229.35542 78.41086 curveto
+229.42186 78.34442 229.51204 78.30705 229.60599 78.30705 curveto
+229.69994 78.30705 229.79012 78.34442 229.85655 78.41086 curveto
+229.92299 78.4773 229.96036 78.56747 229.96036 78.66142 curveto closepath fill
+newpath 229.96036 121.1811 moveto
+229.96036 121.27505 229.92299 121.36523 229.85655 121.43167 curveto
+229.79012 121.49811 229.69994 121.53548 229.60599 121.53548 curveto
+229.51204 121.53548 229.42186 121.49811 229.35542 121.43167 curveto
+229.28899 121.36523 229.25162 121.27505 229.25162 121.1811 curveto
+229.25162 121.08716 229.28899 120.99698 229.35542 120.93054 curveto
+229.42186 120.8641 229.51204 120.82674 229.60599 120.82674 curveto
+229.69994 120.82674 229.79012 120.8641 229.85655 120.93054 curveto
+229.92299 120.99698 229.96036 121.08716 229.96036 121.1811 curveto closepath
+ fill
+newpath 229.96036 142.44095 moveto
+229.96036 142.5349 229.92299 142.62508 229.85655 142.69151 curveto
+229.79012 142.75795 229.69994 142.79532 229.60599 142.79532 curveto
+229.51204 142.79532 229.42186 142.75795 229.35542 142.69151 curveto
+229.28899 142.62508 229.25162 142.5349 229.25162 142.44095 curveto
+229.25162 142.347 229.28899 142.25682 229.35542 142.19038 curveto
+229.42186 142.12395 229.51204 142.08658 229.60599 142.08658 curveto
+229.69994 142.08658 229.79012 142.12395 229.85655 142.19038 curveto
+229.92299 142.25682 229.96036 142.347 229.96036 142.44095 curveto closepath
+ fill
+newpath 229.96036 163.70079 moveto
+229.96036 163.79474 229.92299 163.88492 229.85655 163.95135 curveto
+229.79012 164.01779 229.69994 164.05516 229.60599 164.05516 curveto
+229.51204 164.05516 229.42186 164.01779 229.35542 163.95135 curveto
+229.28899 163.88492 229.25162 163.79474 229.25162 163.70079 curveto
+229.25162 163.60684 229.28899 163.51666 229.35542 163.45023 curveto
+229.42186 163.38379 229.51204 163.34642 229.60599 163.34642 curveto
+229.69994 163.34642 229.79012 163.38379 229.85655 163.45023 curveto
+229.92299 163.51666 229.96036 163.60684 229.96036 163.70079 curveto closepath
+ fill
+newpath 234.21233 36.14174 moveto
+234.21233 36.23569 234.17496 36.32587 234.10852 36.3923 curveto
+234.04208 36.45874 233.9519 36.49611 233.85796 36.49611 curveto
+233.764 36.49611 233.67383 36.45874 233.60739 36.3923 curveto
+233.54095 36.32587 233.50359 36.23569 233.50359 36.14174 curveto
+233.50359 36.04779 233.54095 35.95761 233.60739 35.89117 curveto
+233.67383 35.82474 233.764 35.78737 233.85796 35.78737 curveto
+233.9519 35.78737 234.04208 35.82474 234.10852 35.89117 curveto
+234.17496 35.95761 234.21233 36.04779 234.21233 36.14174 curveto closepath fill
+newpath 234.21233 57.40158 moveto
+234.21233 57.49553 234.17496 57.58571 234.10852 57.65215 curveto
+234.04208 57.71858 233.9519 57.75595 233.85796 57.75595 curveto
+233.764 57.75595 233.67383 57.71858 233.60739 57.65215 curveto
+233.54095 57.58571 233.50359 57.49553 233.50359 57.40158 curveto
+233.50359 57.30763 233.54095 57.21745 233.60739 57.15102 curveto
+233.67383 57.08458 233.764 57.04721 233.85796 57.04721 curveto
+233.9519 57.04721 234.04208 57.08458 234.10852 57.15102 curveto
+234.17496 57.21745 234.21233 57.30763 234.21233 57.40158 curveto closepath fill
+newpath 234.21233 78.66142 moveto
+234.21233 78.75537 234.17496 78.84555 234.10852 78.91199 curveto
+234.04208 78.97842 233.9519 79.0158 233.85796 79.0158 curveto
+233.764 79.0158 233.67383 78.97842 233.60739 78.91199 curveto
+233.54095 78.84555 233.50359 78.75537 233.50359 78.66142 curveto
+233.50359 78.56747 233.54095 78.4773 233.60739 78.41086 curveto
+233.67383 78.34442 233.764 78.30705 233.85796 78.30705 curveto
+233.9519 78.30705 234.04208 78.34442 234.10852 78.41086 curveto
+234.17496 78.4773 234.21233 78.56747 234.21233 78.66142 curveto closepath fill
+newpath 234.21233 121.1811 moveto
+234.21233 121.27505 234.17496 121.36523 234.10852 121.43167 curveto
+234.04208 121.49811 233.9519 121.53548 233.85796 121.53548 curveto
+233.764 121.53548 233.67383 121.49811 233.60739 121.43167 curveto
+233.54095 121.36523 233.50359 121.27505 233.50359 121.1811 curveto
+233.50359 121.08716 233.54095 120.99698 233.60739 120.93054 curveto
+233.67383 120.8641 233.764 120.82674 233.85796 120.82674 curveto
+233.9519 120.82674 234.04208 120.8641 234.10852 120.93054 curveto
+234.17496 120.99698 234.21233 121.08716 234.21233 121.1811 curveto closepath
+ fill
+newpath 234.21233 142.44095 moveto
+234.21233 142.5349 234.17496 142.62508 234.10852 142.69151 curveto
+234.04208 142.75795 233.9519 142.79532 233.85796 142.79532 curveto
+233.764 142.79532 233.67383 142.75795 233.60739 142.69151 curveto
+233.54095 142.62508 233.50359 142.5349 233.50359 142.44095 curveto
+233.50359 142.347 233.54095 142.25682 233.60739 142.19038 curveto
+233.67383 142.12395 233.764 142.08658 233.85796 142.08658 curveto
+233.9519 142.08658 234.04208 142.12395 234.10852 142.19038 curveto
+234.17496 142.25682 234.21233 142.347 234.21233 142.44095 curveto closepath
+ fill
+newpath 234.21233 163.70079 moveto
+234.21233 163.79474 234.17496 163.88492 234.10852 163.95135 curveto
+234.04208 164.01779 233.9519 164.05516 233.85796 164.05516 curveto
+233.764 164.05516 233.67383 164.01779 233.60739 163.95135 curveto
+233.54095 163.88492 233.50359 163.79474 233.50359 163.70079 curveto
+233.50359 163.60684 233.54095 163.51666 233.60739 163.45023 curveto
+233.67383 163.38379 233.764 163.34642 233.85796 163.34642 curveto
+233.9519 163.34642 234.04208 163.38379 234.10852 163.45023 curveto
+234.17496 163.51666 234.21233 163.60684 234.21233 163.70079 curveto closepath
+ fill
+newpath 238.4643 36.14174 moveto
+238.4643 36.23569 238.42693 36.32587 238.36049 36.3923 curveto
+238.29405 36.45874 238.20387 36.49611 238.10992 36.49611 curveto
+238.01598 36.49611 237.9258 36.45874 237.85936 36.3923 curveto
+237.79292 36.32587 237.75555 36.23569 237.75555 36.14174 curveto
+237.75555 36.04779 237.79292 35.95761 237.85936 35.89117 curveto
+237.9258 35.82474 238.01598 35.78737 238.10992 35.78737 curveto
+238.20387 35.78737 238.29405 35.82474 238.36049 35.89117 curveto
+238.42693 35.95761 238.4643 36.04779 238.4643 36.14174 curveto closepath fill
+newpath 238.4643 57.40158 moveto
+238.4643 57.49553 238.42693 57.58571 238.36049 57.65215 curveto
+238.29405 57.71858 238.20387 57.75595 238.10992 57.75595 curveto
+238.01598 57.75595 237.9258 57.71858 237.85936 57.65215 curveto
+237.79292 57.58571 237.75555 57.49553 237.75555 57.40158 curveto
+237.75555 57.30763 237.79292 57.21745 237.85936 57.15102 curveto
+237.9258 57.08458 238.01598 57.04721 238.10992 57.04721 curveto
+238.20387 57.04721 238.29405 57.08458 238.36049 57.15102 curveto
+238.42693 57.21745 238.4643 57.30763 238.4643 57.40158 curveto closepath fill
+newpath 238.4643 78.66142 moveto
+238.4643 78.75537 238.42693 78.84555 238.36049 78.91199 curveto
+238.29405 78.97842 238.20387 79.0158 238.10992 79.0158 curveto
+238.01598 79.0158 237.9258 78.97842 237.85936 78.91199 curveto
+237.79292 78.84555 237.75555 78.75537 237.75555 78.66142 curveto
+237.75555 78.56747 237.79292 78.4773 237.85936 78.41086 curveto
+237.9258 78.34442 238.01598 78.30705 238.10992 78.30705 curveto
+238.20387 78.30705 238.29405 78.34442 238.36049 78.41086 curveto
+238.42693 78.4773 238.4643 78.56747 238.4643 78.66142 curveto closepath fill
+newpath 238.4643 121.1811 moveto
+238.4643 121.27505 238.42693 121.36523 238.36049 121.43167 curveto
+238.29405 121.49811 238.20387 121.53548 238.10992 121.53548 curveto
+238.01598 121.53548 237.9258 121.49811 237.85936 121.43167 curveto
+237.79292 121.36523 237.75555 121.27505 237.75555 121.1811 curveto
+237.75555 121.08716 237.79292 120.99698 237.85936 120.93054 curveto
+237.9258 120.8641 238.01598 120.82674 238.10992 120.82674 curveto
+238.20387 120.82674 238.29405 120.8641 238.36049 120.93054 curveto
+238.42693 120.99698 238.4643 121.08716 238.4643 121.1811 curveto closepath fill
+newpath 238.4643 142.44095 moveto
+238.4643 142.5349 238.42693 142.62508 238.36049 142.69151 curveto
+238.29405 142.75795 238.20387 142.79532 238.10992 142.79532 curveto
+238.01598 142.79532 237.9258 142.75795 237.85936 142.69151 curveto
+237.79292 142.62508 237.75555 142.5349 237.75555 142.44095 curveto
+237.75555 142.347 237.79292 142.25682 237.85936 142.19038 curveto
+237.9258 142.12395 238.01598 142.08658 238.10992 142.08658 curveto
+238.20387 142.08658 238.29405 142.12395 238.36049 142.19038 curveto
+238.42693 142.25682 238.4643 142.347 238.4643 142.44095 curveto closepath fill
+newpath 238.4643 163.70079 moveto
+238.4643 163.79474 238.42693 163.88492 238.36049 163.95135 curveto
+238.29405 164.01779 238.20387 164.05516 238.10992 164.05516 curveto
+238.01598 164.05516 237.9258 164.01779 237.85936 163.95135 curveto
+237.79292 163.88492 237.75555 163.79474 237.75555 163.70079 curveto
+237.75555 163.60684 237.79292 163.51666 237.85936 163.45023 curveto
+237.9258 163.38379 238.01598 163.34642 238.10992 163.34642 curveto
+238.20387 163.34642 238.29405 163.38379 238.36049 163.45023 curveto
+238.42693 163.51666 238.4643 163.60684 238.4643 163.70079 curveto closepath
+ fill
+newpath 242.71626 36.14174 moveto
+242.71626 36.23569 242.6789 36.32587 242.61246 36.3923 curveto
+242.54602 36.45874 242.45584 36.49611 242.3619 36.49611 curveto
+242.26794 36.49611 242.17776 36.45874 242.11133 36.3923 curveto
+242.04489 36.32587 242.00752 36.23569 242.00752 36.14174 curveto
+242.00752 36.04779 242.04489 35.95761 242.11133 35.89117 curveto
+242.17776 35.82474 242.26794 35.78737 242.3619 35.78737 curveto
+242.45584 35.78737 242.54602 35.82474 242.61246 35.89117 curveto
+242.6789 35.95761 242.71626 36.04779 242.71626 36.14174 curveto closepath fill
+newpath 242.71626 57.40158 moveto
+242.71626 57.49553 242.6789 57.58571 242.61246 57.65215 curveto
+242.54602 57.71858 242.45584 57.75595 242.3619 57.75595 curveto
+242.26794 57.75595 242.17776 57.71858 242.11133 57.65215 curveto
+242.04489 57.58571 242.00752 57.49553 242.00752 57.40158 curveto
+242.00752 57.30763 242.04489 57.21745 242.11133 57.15102 curveto
+242.17776 57.08458 242.26794 57.04721 242.3619 57.04721 curveto
+242.45584 57.04721 242.54602 57.08458 242.61246 57.15102 curveto
+242.6789 57.21745 242.71626 57.30763 242.71626 57.40158 curveto closepath fill
+newpath 242.71626 78.66142 moveto
+242.71626 78.75537 242.6789 78.84555 242.61246 78.91199 curveto
+242.54602 78.97842 242.45584 79.0158 242.3619 79.0158 curveto
+242.26794 79.0158 242.17776 78.97842 242.11133 78.91199 curveto
+242.04489 78.84555 242.00752 78.75537 242.00752 78.66142 curveto
+242.00752 78.56747 242.04489 78.4773 242.11133 78.41086 curveto
+242.17776 78.34442 242.26794 78.30705 242.3619 78.30705 curveto
+242.45584 78.30705 242.54602 78.34442 242.61246 78.41086 curveto
+242.6789 78.4773 242.71626 78.56747 242.71626 78.66142 curveto closepath fill
+newpath 242.71626 121.1811 moveto
+242.71626 121.27505 242.6789 121.36523 242.61246 121.43167 curveto
+242.54602 121.49811 242.45584 121.53548 242.3619 121.53548 curveto
+242.26794 121.53548 242.17776 121.49811 242.11133 121.43167 curveto
+242.04489 121.36523 242.00752 121.27505 242.00752 121.1811 curveto
+242.00752 121.08716 242.04489 120.99698 242.11133 120.93054 curveto
+242.17776 120.8641 242.26794 120.82674 242.3619 120.82674 curveto
+242.45584 120.82674 242.54602 120.8641 242.61246 120.93054 curveto
+242.6789 120.99698 242.71626 121.08716 242.71626 121.1811 curveto closepath
+ fill
+newpath 242.71626 142.44095 moveto
+242.71626 142.5349 242.6789 142.62508 242.61246 142.69151 curveto
+242.54602 142.75795 242.45584 142.79532 242.3619 142.79532 curveto
+242.26794 142.79532 242.17776 142.75795 242.11133 142.69151 curveto
+242.04489 142.62508 242.00752 142.5349 242.00752 142.44095 curveto
+242.00752 142.347 242.04489 142.25682 242.11133 142.19038 curveto
+242.17776 142.12395 242.26794 142.08658 242.3619 142.08658 curveto
+242.45584 142.08658 242.54602 142.12395 242.61246 142.19038 curveto
+242.6789 142.25682 242.71626 142.347 242.71626 142.44095 curveto closepath fill
+newpath 242.71626 163.70079 moveto
+242.71626 163.79474 242.6789 163.88492 242.61246 163.95135 curveto
+242.54602 164.01779 242.45584 164.05516 242.3619 164.05516 curveto
+242.26794 164.05516 242.17776 164.01779 242.11133 163.95135 curveto
+242.04489 163.88492 242.00752 163.79474 242.00752 163.70079 curveto
+242.00752 163.60684 242.04489 163.51666 242.11133 163.45023 curveto
+242.17776 163.38379 242.26794 163.34642 242.3619 163.34642 curveto
+242.45584 163.34642 242.54602 163.38379 242.61246 163.45023 curveto
+242.6789 163.51666 242.71626 163.60684 242.71626 163.70079 curveto closepath
+ fill
+newpath 246.96823 36.14174 moveto
+246.96823 36.23569 246.93086 36.32587 246.86443 36.3923 curveto
+246.79799 36.45874 246.70781 36.49611 246.61386 36.49611 curveto
+246.51991 36.49611 246.42973 36.45874 246.3633 36.3923 curveto
+246.29686 36.32587 246.25949 36.23569 246.25949 36.14174 curveto
+246.25949 36.04779 246.29686 35.95761 246.3633 35.89117 curveto
+246.42973 35.82474 246.51991 35.78737 246.61386 35.78737 curveto
+246.70781 35.78737 246.79799 35.82474 246.86443 35.89117 curveto
+246.93086 35.95761 246.96823 36.04779 246.96823 36.14174 curveto closepath fill
+newpath 246.96823 57.40158 moveto
+246.96823 57.49553 246.93086 57.58571 246.86443 57.65215 curveto
+246.79799 57.71858 246.70781 57.75595 246.61386 57.75595 curveto
+246.51991 57.75595 246.42973 57.71858 246.3633 57.65215 curveto
+246.29686 57.58571 246.25949 57.49553 246.25949 57.40158 curveto
+246.25949 57.30763 246.29686 57.21745 246.3633 57.15102 curveto
+246.42973 57.08458 246.51991 57.04721 246.61386 57.04721 curveto
+246.70781 57.04721 246.79799 57.08458 246.86443 57.15102 curveto
+246.93086 57.21745 246.96823 57.30763 246.96823 57.40158 curveto closepath fill
+newpath 246.96823 78.66142 moveto
+246.96823 78.75537 246.93086 78.84555 246.86443 78.91199 curveto
+246.79799 78.97842 246.70781 79.0158 246.61386 79.0158 curveto
+246.51991 79.0158 246.42973 78.97842 246.3633 78.91199 curveto
+246.29686 78.84555 246.25949 78.75537 246.25949 78.66142 curveto
+246.25949 78.56747 246.29686 78.4773 246.3633 78.41086 curveto
+246.42973 78.34442 246.51991 78.30705 246.61386 78.30705 curveto
+246.70781 78.30705 246.79799 78.34442 246.86443 78.41086 curveto
+246.93086 78.4773 246.96823 78.56747 246.96823 78.66142 curveto closepath fill
+newpath 246.96823 121.1811 moveto
+246.96823 121.27505 246.93086 121.36523 246.86443 121.43167 curveto
+246.79799 121.49811 246.70781 121.53548 246.61386 121.53548 curveto
+246.51991 121.53548 246.42973 121.49811 246.3633 121.43167 curveto
+246.29686 121.36523 246.25949 121.27505 246.25949 121.1811 curveto
+246.25949 121.08716 246.29686 120.99698 246.3633 120.93054 curveto
+246.42973 120.8641 246.51991 120.82674 246.61386 120.82674 curveto
+246.70781 120.82674 246.79799 120.8641 246.86443 120.93054 curveto
+246.93086 120.99698 246.96823 121.08716 246.96823 121.1811 curveto closepath
+ fill
+newpath 246.96823 142.44095 moveto
+246.96823 142.5349 246.93086 142.62508 246.86443 142.69151 curveto
+246.79799 142.75795 246.70781 142.79532 246.61386 142.79532 curveto
+246.51991 142.79532 246.42973 142.75795 246.3633 142.69151 curveto
+246.29686 142.62508 246.25949 142.5349 246.25949 142.44095 curveto
+246.25949 142.347 246.29686 142.25682 246.3633 142.19038 curveto
+246.42973 142.12395 246.51991 142.08658 246.61386 142.08658 curveto
+246.70781 142.08658 246.79799 142.12395 246.86443 142.19038 curveto
+246.93086 142.25682 246.96823 142.347 246.96823 142.44095 curveto closepath
+ fill
+newpath 246.96823 163.70079 moveto
+246.96823 163.79474 246.93086 163.88492 246.86443 163.95135 curveto
+246.79799 164.01779 246.70781 164.05516 246.61386 164.05516 curveto
+246.51991 164.05516 246.42973 164.01779 246.3633 163.95135 curveto
+246.29686 163.88492 246.25949 163.79474 246.25949 163.70079 curveto
+246.25949 163.60684 246.29686 163.51666 246.3633 163.45023 curveto
+246.42973 163.38379 246.51991 163.34642 246.61386 163.34642 curveto
+246.70781 163.34642 246.79799 163.38379 246.86443 163.45023 curveto
+246.93086 163.51666 246.96823 163.60684 246.96823 163.70079 curveto closepath
+ fill
+newpath 251.2202 36.14174 moveto
+251.2202 36.23569 251.18283 36.32587 251.1164 36.3923 curveto
+251.04996 36.45874 250.95978 36.49611 250.86583 36.49611 curveto
+250.77188 36.49611 250.6817 36.45874 250.61526 36.3923 curveto
+250.54883 36.32587 250.51146 36.23569 250.51146 36.14174 curveto
+250.51146 36.04779 250.54883 35.95761 250.61526 35.89117 curveto
+250.6817 35.82474 250.77188 35.78737 250.86583 35.78737 curveto
+250.95978 35.78737 251.04996 35.82474 251.1164 35.89117 curveto
+251.18283 35.95761 251.2202 36.04779 251.2202 36.14174 curveto closepath fill
+newpath 251.2202 57.40158 moveto
+251.2202 57.49553 251.18283 57.58571 251.1164 57.65215 curveto
+251.04996 57.71858 250.95978 57.75595 250.86583 57.75595 curveto
+250.77188 57.75595 250.6817 57.71858 250.61526 57.65215 curveto
+250.54883 57.58571 250.51146 57.49553 250.51146 57.40158 curveto
+250.51146 57.30763 250.54883 57.21745 250.61526 57.15102 curveto
+250.6817 57.08458 250.77188 57.04721 250.86583 57.04721 curveto
+250.95978 57.04721 251.04996 57.08458 251.1164 57.15102 curveto
+251.18283 57.21745 251.2202 57.30763 251.2202 57.40158 curveto closepath fill
+newpath 251.2202 78.66142 moveto
+251.2202 78.75537 251.18283 78.84555 251.1164 78.91199 curveto
+251.04996 78.97842 250.95978 79.0158 250.86583 79.0158 curveto
+250.77188 79.0158 250.6817 78.97842 250.61526 78.91199 curveto
+250.54883 78.84555 250.51146 78.75537 250.51146 78.66142 curveto
+250.51146 78.56747 250.54883 78.4773 250.61526 78.41086 curveto
+250.6817 78.34442 250.77188 78.30705 250.86583 78.30705 curveto
+250.95978 78.30705 251.04996 78.34442 251.1164 78.41086 curveto
+251.18283 78.4773 251.2202 78.56747 251.2202 78.66142 curveto closepath fill
+newpath 251.2202 121.1811 moveto
+251.2202 121.27505 251.18283 121.36523 251.1164 121.43167 curveto
+251.04996 121.49811 250.95978 121.53548 250.86583 121.53548 curveto
+250.77188 121.53548 250.6817 121.49811 250.61526 121.43167 curveto
+250.54883 121.36523 250.51146 121.27505 250.51146 121.1811 curveto
+250.51146 121.08716 250.54883 120.99698 250.61526 120.93054 curveto
+250.6817 120.8641 250.77188 120.82674 250.86583 120.82674 curveto
+250.95978 120.82674 251.04996 120.8641 251.1164 120.93054 curveto
+251.18283 120.99698 251.2202 121.08716 251.2202 121.1811 curveto closepath fill
+newpath 251.2202 142.44095 moveto
+251.2202 142.5349 251.18283 142.62508 251.1164 142.69151 curveto
+251.04996 142.75795 250.95978 142.79532 250.86583 142.79532 curveto
+250.77188 142.79532 250.6817 142.75795 250.61526 142.69151 curveto
+250.54883 142.62508 250.51146 142.5349 250.51146 142.44095 curveto
+250.51146 142.347 250.54883 142.25682 250.61526 142.19038 curveto
+250.6817 142.12395 250.77188 142.08658 250.86583 142.08658 curveto
+250.95978 142.08658 251.04996 142.12395 251.1164 142.19038 curveto
+251.18283 142.25682 251.2202 142.347 251.2202 142.44095 curveto closepath fill
+newpath 251.2202 163.70079 moveto
+251.2202 163.79474 251.18283 163.88492 251.1164 163.95135 curveto
+251.04996 164.01779 250.95978 164.05516 250.86583 164.05516 curveto
+250.77188 164.05516 250.6817 164.01779 250.61526 163.95135 curveto
+250.54883 163.88492 250.51146 163.79474 250.51146 163.70079 curveto
+250.51146 163.60684 250.54883 163.51666 250.61526 163.45023 curveto
+250.6817 163.38379 250.77188 163.34642 250.86583 163.34642 curveto
+250.95978 163.34642 251.04996 163.38379 251.1164 163.45023 curveto
+251.18283 163.51666 251.2202 163.60684 251.2202 163.70079 curveto closepath
+ fill
+newpath 255.47217 36.14174 moveto
+255.47217 36.23569 255.4348 36.32587 255.36836 36.3923 curveto
+255.30193 36.45874 255.21175 36.49611 255.1178 36.49611 curveto
+255.02385 36.49611 254.93367 36.45874 254.86723 36.3923 curveto
+254.8008 36.32587 254.76343 36.23569 254.76343 36.14174 curveto
+254.76343 36.04779 254.8008 35.95761 254.86723 35.89117 curveto
+254.93367 35.82474 255.02385 35.78737 255.1178 35.78737 curveto
+255.21175 35.78737 255.30193 35.82474 255.36836 35.89117 curveto
+255.4348 35.95761 255.47217 36.04779 255.47217 36.14174 curveto closepath fill
+newpath 255.47217 57.40158 moveto
+255.47217 57.49553 255.4348 57.58571 255.36836 57.65215 curveto
+255.30193 57.71858 255.21175 57.75595 255.1178 57.75595 curveto
+255.02385 57.75595 254.93367 57.71858 254.86723 57.65215 curveto
+254.8008 57.58571 254.76343 57.49553 254.76343 57.40158 curveto
+254.76343 57.30763 254.8008 57.21745 254.86723 57.15102 curveto
+254.93367 57.08458 255.02385 57.04721 255.1178 57.04721 curveto
+255.21175 57.04721 255.30193 57.08458 255.36836 57.15102 curveto
+255.4348 57.21745 255.47217 57.30763 255.47217 57.40158 curveto closepath fill
+newpath 255.47217 78.66142 moveto
+255.47217 78.75537 255.4348 78.84555 255.36836 78.91199 curveto
+255.30193 78.97842 255.21175 79.0158 255.1178 79.0158 curveto
+255.02385 79.0158 254.93367 78.97842 254.86723 78.91199 curveto
+254.8008 78.84555 254.76343 78.75537 254.76343 78.66142 curveto
+254.76343 78.56747 254.8008 78.4773 254.86723 78.41086 curveto
+254.93367 78.34442 255.02385 78.30705 255.1178 78.30705 curveto
+255.21175 78.30705 255.30193 78.34442 255.36836 78.41086 curveto
+255.4348 78.4773 255.47217 78.56747 255.47217 78.66142 curveto closepath fill
+newpath 255.47217 121.1811 moveto
+255.47217 121.27505 255.4348 121.36523 255.36836 121.43167 curveto
+255.30193 121.49811 255.21175 121.53548 255.1178 121.53548 curveto
+255.02385 121.53548 254.93367 121.49811 254.86723 121.43167 curveto
+254.8008 121.36523 254.76343 121.27505 254.76343 121.1811 curveto
+254.76343 121.08716 254.8008 120.99698 254.86723 120.93054 curveto
+254.93367 120.8641 255.02385 120.82674 255.1178 120.82674 curveto
+255.21175 120.82674 255.30193 120.8641 255.36836 120.93054 curveto
+255.4348 120.99698 255.47217 121.08716 255.47217 121.1811 curveto closepath
+ fill
+newpath 255.47217 142.44095 moveto
+255.47217 142.5349 255.4348 142.62508 255.36836 142.69151 curveto
+255.30193 142.75795 255.21175 142.79532 255.1178 142.79532 curveto
+255.02385 142.79532 254.93367 142.75795 254.86723 142.69151 curveto
+254.8008 142.62508 254.76343 142.5349 254.76343 142.44095 curveto
+254.76343 142.347 254.8008 142.25682 254.86723 142.19038 curveto
+254.93367 142.12395 255.02385 142.08658 255.1178 142.08658 curveto
+255.21175 142.08658 255.30193 142.12395 255.36836 142.19038 curveto
+255.4348 142.25682 255.47217 142.347 255.47217 142.44095 curveto closepath fill
+newpath 255.47217 163.70079 moveto
+255.47217 163.79474 255.4348 163.88492 255.36836 163.95135 curveto
+255.30193 164.01779 255.21175 164.05516 255.1178 164.05516 curveto
+255.02385 164.05516 254.93367 164.01779 254.86723 163.95135 curveto
+254.8008 163.88492 254.76343 163.79474 254.76343 163.70079 curveto
+254.76343 163.60684 254.8008 163.51666 254.86723 163.45023 curveto
+254.93367 163.38379 255.02385 163.34642 255.1178 163.34642 curveto
+255.21175 163.34642 255.30193 163.38379 255.36836 163.45023 curveto
+255.4348 163.51666 255.47217 163.60684 255.47217 163.70079 curveto closepath
+ fill
+newpath 259.72414 36.14174 moveto
+259.72414 36.23569 259.68677 36.32587 259.62033 36.3923 curveto
+259.5539 36.45874 259.46371 36.49611 259.36977 36.49611 curveto
+259.27582 36.49611 259.18564 36.45874 259.1192 36.3923 curveto
+259.05276 36.32587 259.0154 36.23569 259.0154 36.14174 curveto
+259.0154 36.04779 259.05276 35.95761 259.1192 35.89117 curveto
+259.18564 35.82474 259.27582 35.78737 259.36977 35.78737 curveto
+259.46371 35.78737 259.5539 35.82474 259.62033 35.89117 curveto
+259.68677 35.95761 259.72414 36.04779 259.72414 36.14174 curveto closepath fill
+newpath 259.72414 57.40158 moveto
+259.72414 57.49553 259.68677 57.58571 259.62033 57.65215 curveto
+259.5539 57.71858 259.46371 57.75595 259.36977 57.75595 curveto
+259.27582 57.75595 259.18564 57.71858 259.1192 57.65215 curveto
+259.05276 57.58571 259.0154 57.49553 259.0154 57.40158 curveto
+259.0154 57.30763 259.05276 57.21745 259.1192 57.15102 curveto
+259.18564 57.08458 259.27582 57.04721 259.36977 57.04721 curveto
+259.46371 57.04721 259.5539 57.08458 259.62033 57.15102 curveto
+259.68677 57.21745 259.72414 57.30763 259.72414 57.40158 curveto closepath fill
+newpath 259.72414 78.66142 moveto
+259.72414 78.75537 259.68677 78.84555 259.62033 78.91199 curveto
+259.5539 78.97842 259.46371 79.0158 259.36977 79.0158 curveto
+259.27582 79.0158 259.18564 78.97842 259.1192 78.91199 curveto
+259.05276 78.84555 259.0154 78.75537 259.0154 78.66142 curveto
+259.0154 78.56747 259.05276 78.4773 259.1192 78.41086 curveto
+259.18564 78.34442 259.27582 78.30705 259.36977 78.30705 curveto
+259.46371 78.30705 259.5539 78.34442 259.62033 78.41086 curveto
+259.68677 78.4773 259.72414 78.56747 259.72414 78.66142 curveto closepath fill
+newpath 259.72414 121.1811 moveto
+259.72414 121.27505 259.68677 121.36523 259.62033 121.43167 curveto
+259.5539 121.49811 259.46371 121.53548 259.36977 121.53548 curveto
+259.27582 121.53548 259.18564 121.49811 259.1192 121.43167 curveto
+259.05276 121.36523 259.0154 121.27505 259.0154 121.1811 curveto
+259.0154 121.08716 259.05276 120.99698 259.1192 120.93054 curveto
+259.18564 120.8641 259.27582 120.82674 259.36977 120.82674 curveto
+259.46371 120.82674 259.5539 120.8641 259.62033 120.93054 curveto
+259.68677 120.99698 259.72414 121.08716 259.72414 121.1811 curveto closepath
+ fill
+newpath 259.72414 142.44095 moveto
+259.72414 142.5349 259.68677 142.62508 259.62033 142.69151 curveto
+259.5539 142.75795 259.46371 142.79532 259.36977 142.79532 curveto
+259.27582 142.79532 259.18564 142.75795 259.1192 142.69151 curveto
+259.05276 142.62508 259.0154 142.5349 259.0154 142.44095 curveto
+259.0154 142.347 259.05276 142.25682 259.1192 142.19038 curveto
+259.18564 142.12395 259.27582 142.08658 259.36977 142.08658 curveto
+259.46371 142.08658 259.5539 142.12395 259.62033 142.19038 curveto
+259.68677 142.25682 259.72414 142.347 259.72414 142.44095 curveto closepath
+ fill
+newpath 259.72414 163.70079 moveto
+259.72414 163.79474 259.68677 163.88492 259.62033 163.95135 curveto
+259.5539 164.01779 259.46371 164.05516 259.36977 164.05516 curveto
+259.27582 164.05516 259.18564 164.01779 259.1192 163.95135 curveto
+259.05276 163.88492 259.0154 163.79474 259.0154 163.70079 curveto
+259.0154 163.60684 259.05276 163.51666 259.1192 163.45023 curveto
+259.18564 163.38379 259.27582 163.34642 259.36977 163.34642 curveto
+259.46371 163.34642 259.5539 163.38379 259.62033 163.45023 curveto
+259.68677 163.51666 259.72414 163.60684 259.72414 163.70079 curveto closepath
+ fill
+newpath 263.9761 36.14174 moveto
+263.9761 36.23569 263.93874 36.32587 263.8723 36.3923 curveto
+263.80586 36.45874 263.71568 36.49611 263.62173 36.49611 curveto
+263.52779 36.49611 263.4376 36.45874 263.37117 36.3923 curveto
+263.30473 36.32587 263.26736 36.23569 263.26736 36.14174 curveto
+263.26736 36.04779 263.30473 35.95761 263.37117 35.89117 curveto
+263.4376 35.82474 263.52779 35.78737 263.62173 35.78737 curveto
+263.71568 35.78737 263.80586 35.82474 263.8723 35.89117 curveto
+263.93874 35.95761 263.9761 36.04779 263.9761 36.14174 curveto closepath fill
+newpath 263.9761 57.40158 moveto
+263.9761 57.49553 263.93874 57.58571 263.8723 57.65215 curveto
+263.80586 57.71858 263.71568 57.75595 263.62173 57.75595 curveto
+263.52779 57.75595 263.4376 57.71858 263.37117 57.65215 curveto
+263.30473 57.58571 263.26736 57.49553 263.26736 57.40158 curveto
+263.26736 57.30763 263.30473 57.21745 263.37117 57.15102 curveto
+263.4376 57.08458 263.52779 57.04721 263.62173 57.04721 curveto
+263.71568 57.04721 263.80586 57.08458 263.8723 57.15102 curveto
+263.93874 57.21745 263.9761 57.30763 263.9761 57.40158 curveto closepath fill
+newpath 263.9761 78.66142 moveto
+263.9761 78.75537 263.93874 78.84555 263.8723 78.91199 curveto
+263.80586 78.97842 263.71568 79.0158 263.62173 79.0158 curveto
+263.52779 79.0158 263.4376 78.97842 263.37117 78.91199 curveto
+263.30473 78.84555 263.26736 78.75537 263.26736 78.66142 curveto
+263.26736 78.56747 263.30473 78.4773 263.37117 78.41086 curveto
+263.4376 78.34442 263.52779 78.30705 263.62173 78.30705 curveto
+263.71568 78.30705 263.80586 78.34442 263.8723 78.41086 curveto
+263.93874 78.4773 263.9761 78.56747 263.9761 78.66142 curveto closepath fill
+newpath 263.9761 121.1811 moveto
+263.9761 121.27505 263.93874 121.36523 263.8723 121.43167 curveto
+263.80586 121.49811 263.71568 121.53548 263.62173 121.53548 curveto
+263.52779 121.53548 263.4376 121.49811 263.37117 121.43167 curveto
+263.30473 121.36523 263.26736 121.27505 263.26736 121.1811 curveto
+263.26736 121.08716 263.30473 120.99698 263.37117 120.93054 curveto
+263.4376 120.8641 263.52779 120.82674 263.62173 120.82674 curveto
+263.71568 120.82674 263.80586 120.8641 263.8723 120.93054 curveto
+263.93874 120.99698 263.9761 121.08716 263.9761 121.1811 curveto closepath fill
+newpath 263.9761 142.44095 moveto
+263.9761 142.5349 263.93874 142.62508 263.8723 142.69151 curveto
+263.80586 142.75795 263.71568 142.79532 263.62173 142.79532 curveto
+263.52779 142.79532 263.4376 142.75795 263.37117 142.69151 curveto
+263.30473 142.62508 263.26736 142.5349 263.26736 142.44095 curveto
+263.26736 142.347 263.30473 142.25682 263.37117 142.19038 curveto
+263.4376 142.12395 263.52779 142.08658 263.62173 142.08658 curveto
+263.71568 142.08658 263.80586 142.12395 263.8723 142.19038 curveto
+263.93874 142.25682 263.9761 142.347 263.9761 142.44095 curveto closepath fill
+newpath 263.9761 163.70079 moveto
+263.9761 163.79474 263.93874 163.88492 263.8723 163.95135 curveto
+263.80586 164.01779 263.71568 164.05516 263.62173 164.05516 curveto
+263.52779 164.05516 263.4376 164.01779 263.37117 163.95135 curveto
+263.30473 163.88492 263.26736 163.79474 263.26736 163.70079 curveto
+263.26736 163.60684 263.30473 163.51666 263.37117 163.45023 curveto
+263.4376 163.38379 263.52779 163.34642 263.62173 163.34642 curveto
+263.71568 163.34642 263.80586 163.38379 263.8723 163.45023 curveto
+263.93874 163.51666 263.9761 163.60684 263.9761 163.70079 curveto closepath
+ fill
+newpath 268.22807 36.14174 moveto
+268.22807 36.23569 268.1907 36.32587 268.12427 36.3923 curveto
+268.05783 36.45874 267.96765 36.49611 267.8737 36.49611 curveto
+267.77975 36.49611 267.68958 36.45874 267.62314 36.3923 curveto
+267.5567 36.32587 267.51933 36.23569 267.51933 36.14174 curveto
+267.51933 36.04779 267.5567 35.95761 267.62314 35.89117 curveto
+267.68958 35.82474 267.77975 35.78737 267.8737 35.78737 curveto
+267.96765 35.78737 268.05783 35.82474 268.12427 35.89117 curveto
+268.1907 35.95761 268.22807 36.04779 268.22807 36.14174 curveto closepath fill
+newpath 268.22807 57.40158 moveto
+268.22807 57.49553 268.1907 57.58571 268.12427 57.65215 curveto
+268.05783 57.71858 267.96765 57.75595 267.8737 57.75595 curveto
+267.77975 57.75595 267.68958 57.71858 267.62314 57.65215 curveto
+267.5567 57.58571 267.51933 57.49553 267.51933 57.40158 curveto
+267.51933 57.30763 267.5567 57.21745 267.62314 57.15102 curveto
+267.68958 57.08458 267.77975 57.04721 267.8737 57.04721 curveto
+267.96765 57.04721 268.05783 57.08458 268.12427 57.15102 curveto
+268.1907 57.21745 268.22807 57.30763 268.22807 57.40158 curveto closepath fill
+newpath 268.22807 78.66142 moveto
+268.22807 78.75537 268.1907 78.84555 268.12427 78.91199 curveto
+268.05783 78.97842 267.96765 79.0158 267.8737 79.0158 curveto
+267.77975 79.0158 267.68958 78.97842 267.62314 78.91199 curveto
+267.5567 78.84555 267.51933 78.75537 267.51933 78.66142 curveto
+267.51933 78.56747 267.5567 78.4773 267.62314 78.41086 curveto
+267.68958 78.34442 267.77975 78.30705 267.8737 78.30705 curveto
+267.96765 78.30705 268.05783 78.34442 268.12427 78.41086 curveto
+268.1907 78.4773 268.22807 78.56747 268.22807 78.66142 curveto closepath fill
+newpath 268.22807 121.1811 moveto
+268.22807 121.27505 268.1907 121.36523 268.12427 121.43167 curveto
+268.05783 121.49811 267.96765 121.53548 267.8737 121.53548 curveto
+267.77975 121.53548 267.68958 121.49811 267.62314 121.43167 curveto
+267.5567 121.36523 267.51933 121.27505 267.51933 121.1811 curveto
+267.51933 121.08716 267.5567 120.99698 267.62314 120.93054 curveto
+267.68958 120.8641 267.77975 120.82674 267.8737 120.82674 curveto
+267.96765 120.82674 268.05783 120.8641 268.12427 120.93054 curveto
+268.1907 120.99698 268.22807 121.08716 268.22807 121.1811 curveto closepath
+ fill
+newpath 268.22807 142.44095 moveto
+268.22807 142.5349 268.1907 142.62508 268.12427 142.69151 curveto
+268.05783 142.75795 267.96765 142.79532 267.8737 142.79532 curveto
+267.77975 142.79532 267.68958 142.75795 267.62314 142.69151 curveto
+267.5567 142.62508 267.51933 142.5349 267.51933 142.44095 curveto
+267.51933 142.347 267.5567 142.25682 267.62314 142.19038 curveto
+267.68958 142.12395 267.77975 142.08658 267.8737 142.08658 curveto
+267.96765 142.08658 268.05783 142.12395 268.12427 142.19038 curveto
+268.1907 142.25682 268.22807 142.347 268.22807 142.44095 curveto closepath fill
+newpath 268.22807 163.70079 moveto
+268.22807 163.79474 268.1907 163.88492 268.12427 163.95135 curveto
+268.05783 164.01779 267.96765 164.05516 267.8737 164.05516 curveto
+267.77975 164.05516 267.68958 164.01779 267.62314 163.95135 curveto
+267.5567 163.88492 267.51933 163.79474 267.51933 163.70079 curveto
+267.51933 163.60684 267.5567 163.51666 267.62314 163.45023 curveto
+267.68958 163.38379 267.77975 163.34642 267.8737 163.34642 curveto
+267.96765 163.34642 268.05783 163.38379 268.12427 163.45023 curveto
+268.1907 163.51666 268.22807 163.60684 268.22807 163.70079 curveto closepath
+ fill
+newpath 272.48004 36.14174 moveto
+272.48004 36.23569 272.44267 36.32587 272.37624 36.3923 curveto
+272.3098 36.45874 272.21962 36.49611 272.12567 36.49611 curveto
+272.03172 36.49611 271.94154 36.45874 271.8751 36.3923 curveto
+271.80867 36.32587 271.7713 36.23569 271.7713 36.14174 curveto
+271.7713 36.04779 271.80867 35.95761 271.8751 35.89117 curveto
+271.94154 35.82474 272.03172 35.78737 272.12567 35.78737 curveto
+272.21962 35.78737 272.3098 35.82474 272.37624 35.89117 curveto
+272.44267 35.95761 272.48004 36.04779 272.48004 36.14174 curveto closepath fill
+newpath 272.48004 57.40158 moveto
+272.48004 57.49553 272.44267 57.58571 272.37624 57.65215 curveto
+272.3098 57.71858 272.21962 57.75595 272.12567 57.75595 curveto
+272.03172 57.75595 271.94154 57.71858 271.8751 57.65215 curveto
+271.80867 57.58571 271.7713 57.49553 271.7713 57.40158 curveto
+271.7713 57.30763 271.80867 57.21745 271.8751 57.15102 curveto
+271.94154 57.08458 272.03172 57.04721 272.12567 57.04721 curveto
+272.21962 57.04721 272.3098 57.08458 272.37624 57.15102 curveto
+272.44267 57.21745 272.48004 57.30763 272.48004 57.40158 curveto closepath fill
+newpath 272.48004 78.66142 moveto
+272.48004 78.75537 272.44267 78.84555 272.37624 78.91199 curveto
+272.3098 78.97842 272.21962 79.0158 272.12567 79.0158 curveto
+272.03172 79.0158 271.94154 78.97842 271.8751 78.91199 curveto
+271.80867 78.84555 271.7713 78.75537 271.7713 78.66142 curveto
+271.7713 78.56747 271.80867 78.4773 271.8751 78.41086 curveto
+271.94154 78.34442 272.03172 78.30705 272.12567 78.30705 curveto
+272.21962 78.30705 272.3098 78.34442 272.37624 78.41086 curveto
+272.44267 78.4773 272.48004 78.56747 272.48004 78.66142 curveto closepath fill
+newpath 272.48004 121.1811 moveto
+272.48004 121.27505 272.44267 121.36523 272.37624 121.43167 curveto
+272.3098 121.49811 272.21962 121.53548 272.12567 121.53548 curveto
+272.03172 121.53548 271.94154 121.49811 271.8751 121.43167 curveto
+271.80867 121.36523 271.7713 121.27505 271.7713 121.1811 curveto
+271.7713 121.08716 271.80867 120.99698 271.8751 120.93054 curveto
+271.94154 120.8641 272.03172 120.82674 272.12567 120.82674 curveto
+272.21962 120.82674 272.3098 120.8641 272.37624 120.93054 curveto
+272.44267 120.99698 272.48004 121.08716 272.48004 121.1811 curveto closepath
+ fill
+newpath 272.48004 142.44095 moveto
+272.48004 142.5349 272.44267 142.62508 272.37624 142.69151 curveto
+272.3098 142.75795 272.21962 142.79532 272.12567 142.79532 curveto
+272.03172 142.79532 271.94154 142.75795 271.8751 142.69151 curveto
+271.80867 142.62508 271.7713 142.5349 271.7713 142.44095 curveto
+271.7713 142.347 271.80867 142.25682 271.8751 142.19038 curveto
+271.94154 142.12395 272.03172 142.08658 272.12567 142.08658 curveto
+272.21962 142.08658 272.3098 142.12395 272.37624 142.19038 curveto
+272.44267 142.25682 272.48004 142.347 272.48004 142.44095 curveto closepath
+ fill
+newpath 272.48004 163.70079 moveto
+272.48004 163.79474 272.44267 163.88492 272.37624 163.95135 curveto
+272.3098 164.01779 272.21962 164.05516 272.12567 164.05516 curveto
+272.03172 164.05516 271.94154 164.01779 271.8751 163.95135 curveto
+271.80867 163.88492 271.7713 163.79474 271.7713 163.70079 curveto
+271.7713 163.60684 271.80867 163.51666 271.8751 163.45023 curveto
+271.94154 163.38379 272.03172 163.34642 272.12567 163.34642 curveto
+272.21962 163.34642 272.3098 163.38379 272.37624 163.45023 curveto
+272.44267 163.51666 272.48004 163.60684 272.48004 163.70079 curveto closepath
+ fill
+newpath 170.4328 99.92126 moveto
+170.4328 100.01521 170.39543 100.1054 170.329 100.17183 curveto
+170.26256 100.23827 170.17238 100.27563 170.07843 100.27563 curveto
+169.98448 100.27563 169.8943 100.23827 169.82787 100.17183 curveto
+169.76143 100.1054 169.72406 100.01521 169.72406 99.92126 curveto
+169.72406 99.82732 169.76143 99.73714 169.82787 99.6707 curveto
+169.8943 99.60426 169.98448 99.5669 170.07843 99.5669 curveto
+170.17238 99.5669 170.26256 99.60426 170.329 99.6707 curveto
+170.39543 99.73714 170.4328 99.82732 170.4328 99.92126 curveto closepath fill
  0 0.99214 dtransform truncate idtransform setlinewidth pop
-newpath 77.59811 171.55818 moveto
-78.0658 172.32689 lineto
-78.74611 173.20082 lineto
-79.42642 173.82756 lineto
-80.10674 174.20515 lineto
-80.78705 174.3307 lineto
-81.46736 174.20515 lineto
-82.14767 173.82756 lineto
-82.82799 173.20082 lineto
-83.5083 172.32689 lineto
-84.18861 171.20868 lineto
-84.86893 169.85205 lineto
-85.54924 168.26086 lineto
-86.22955 166.44196 lineto
-86.90987 164.40213 lineto
-87.59018 162.15015 lineto
-88.2705 159.6938 lineto
-88.9508 157.04475 lineto
-89.63112 154.2108 lineto
-90.31143 151.20557 lineto
-90.99174 148.03975 lineto
-91.67206 144.72601 lineto
-92.35237 141.277 lineto
-93.03268 137.7073 lineto
-93.713 134.02959 lineto
-94.39331 130.25941 lineto
-95.07362 126.41237 lineto
-95.75394 122.50206 lineto
-96.43425 118.54503 lineto
-97.11456 114.5559 lineto
-97.79488 110.55118 lineto
-98.47519 106.54646 lineto
-99.1555 102.55733 lineto
-99.83582 98.59933 lineto
-100.51613 94.68903 lineto
-101.19644 90.84196 lineto
-101.87675 87.0718 lineto
-102.55707 83.39505 lineto
-103.23738 79.82439 lineto
-103.9177 76.37634 lineto
-104.598 73.0626 lineto
-105.27832 69.89581 lineto
-105.95863 66.89058 lineto
-106.63895 64.0576 lineto
-107.31926 61.40758 lineto
-107.99957 58.95221 lineto
-108.67989 56.70023 lineto
-109.3602 54.6604 lineto
-110.04051 52.84149 lineto
-110.72083 51.2503 lineto
-111.40114 49.8927 lineto
-112.08145 48.77547 lineto
-112.76176 47.90154 lineto
-113.44208 47.2748 lineto
-114.12239 46.8972 lineto
-114.8027 46.77165 lineto
-115.48302 46.8972 lineto
-116.16333 47.2748 lineto
-116.84364 47.90154 lineto
-117.52396 48.77547 lineto
-118.20427 49.89368 lineto
-118.88458 51.2503 lineto
-119.5649 52.84149 lineto
-120.24521 54.66138 lineto
-120.92552 56.70023 lineto
-121.60583 58.95317 lineto
-122.28615 61.40855 lineto
-122.96646 64.05858 lineto
-123.64677 66.89156 lineto
-124.32709 69.89679 lineto
-125.0074 73.0626 lineto
-125.68771 76.37732 lineto
-126.36803 79.82536 lineto
-127.04834 83.39603 lineto
-127.72865 87.07277 lineto
-128.40897 90.84294 lineto
-129.08928 94.69096 lineto
-129.76959 98.6003 lineto
-130.4499 102.5583 lineto
-131.13022 106.54744 lineto
-131.81053 110.55215 lineto
-132.49084 114.55687 lineto
-133.17116 118.546 lineto
-133.85147 122.50302 lineto
-134.53178 126.41333 lineto
-135.2121 130.26039 lineto
-135.89241 134.03056 lineto
-136.57272 137.70828 lineto
-137.25304 141.27797 lineto
-137.93335 144.72699 lineto
-138.61366 148.04073 lineto
-139.29398 151.20654 lineto
-139.97429 154.21178 lineto
-140.6546 157.04475 lineto
-141.33492 159.69478 lineto
-142.01523 162.15015 lineto
-142.69554 164.40213 lineto
-143.37585 166.44196 lineto
-144.05617 168.26086 lineto
-144.73648 169.85205 lineto
-145.4168 171.20966 lineto
-146.0971 172.32689 lineto
-146.77742 173.20082 lineto
-147.45773 173.82756 lineto
-148.13805 174.20515 lineto
-148.81836 174.3307 lineto
-149.49867 174.20515 lineto
-150.17899 173.82756 lineto
-150.8593 173.20082 lineto
-151.53961 172.32689 lineto
-152.21992 171.20868 lineto
-152.90024 169.85107 lineto
-153.58055 168.25989 lineto
-154.26086 166.44098 lineto
-154.94118 164.40115 lineto
-155.62149 162.14919 lineto
-156.3018 159.6938 lineto
-156.98212 157.04378 lineto
-157.66243 154.2108 lineto
-158.34274 151.20459 lineto
-159.02306 148.03877 lineto
-159.70337 144.72504 lineto
-160.38368 141.27602 lineto
-161.064 137.70633 lineto
-161.74431 134.02861 lineto
-162.42462 130.25941 lineto
-163.10493 126.41139 lineto
-163.78525 122.50108 lineto
-164.46556 118.54405 lineto
-165.14587 114.55492 lineto
-165.82619 110.5502 lineto
-166.5065 106.54549 lineto
-167.18681 102.55635 lineto
-167.86713 98.59933 lineto
-168.54744 94.68903 lineto
-169.22775 90.84099 lineto
-169.90807 87.0718 lineto
-170.58838 83.39407 lineto
-171.26869 79.82439 lineto
-171.949 76.37537 lineto
-172.62932 73.06163 lineto
-173.30963 69.89581 lineto
-173.98994 66.89058 lineto
-174.67026 64.0576 lineto
-175.35057 61.40758 lineto
-176.03088 58.95221 lineto
-176.7112 56.70023 lineto
-177.39151 54.6604 lineto
-178.07182 52.84149 lineto
-178.75214 51.2503 lineto
-179.43245 49.8927 lineto
-180.11276 48.77547 lineto
-180.79308 47.90154 lineto
-181.47339 47.2748 lineto
-182.1537 46.8972 lineto
-182.83401 46.77165 lineto
-183.51433 46.8972 lineto
-184.19464 47.2748 lineto
-184.87495 47.90154 lineto
-185.55527 48.77547 lineto
-186.23558 49.89368 lineto
-186.9159 51.25128 lineto
-187.5962 52.84247 lineto
-188.27652 54.66138 lineto
-188.95683 56.7012 lineto
-189.63715 58.95317 lineto
-190.31746 61.40855 lineto
-190.99777 64.05858 lineto
-191.67809 66.89156 lineto
-192.3584 69.89777 lineto
-193.03871 73.06358 lineto
-193.71902 76.37732 lineto
-194.39934 79.82634 lineto
-195.07965 83.39603 lineto
-195.75996 87.07375 lineto
-196.44028 90.84392 lineto
-197.12059 94.69096 lineto
-197.8009 98.60127 lineto
-198.48122 102.55928 lineto
-199.16153 106.54744 lineto
-199.84184 110.55215 lineto
-200.52216 114.55687 lineto
-201.20247 118.546 lineto
-201.88278 122.504 lineto
-202.5631 126.4143 lineto
-203.24341 130.26137 lineto
-203.92372 134.03154 lineto
-204.60403 137.70828 lineto
-205.28435 141.27797 lineto
-205.96466 144.72699 lineto
-206.64497 148.04073 lineto
-207.32529 151.20654 lineto
-208.0056 154.21275 lineto
-208.68591 157.04573 lineto
-209.36623 159.69478 lineto
-210.04654 162.15112 lineto
-210.72685 164.4031 lineto
-211.40717 166.44196 lineto
-212.08748 168.26086 lineto
-212.76779 169.85205 lineto
-213.4481 171.20966 lineto
-214.12842 172.32689 lineto
-214.80873 173.20082 lineto
-215.48904 173.82756 lineto
-216.16936 174.20515 lineto
-216.84967 174.3307 lineto
-217.52998 174.20515 lineto
-218.2103 173.82756 lineto
-218.89061 173.20082 lineto
-219.57092 172.32689 lineto
-220.25124 171.20868 lineto
-220.93155 169.85107 lineto
-221.61186 168.25989 lineto
-222.29218 166.44098 lineto
-222.97249 164.40115 lineto
-223.6528 162.14919 lineto
-224.33311 159.69283 lineto
-225.01343 157.04378 lineto
-225.69374 154.20982 lineto
-226.37405 151.20459 lineto
-227.05437 148.03877 lineto
-227.73468 144.72504 lineto
-228.415 141.27602 lineto
-229.0953 137.70535 lineto
-229.77562 134.02861 lineto
-230.45593 130.25844 lineto
-231.13625 126.41042 lineto
-231.81656 122.50108 lineto
-232.49687 118.54308 lineto
-233.17719 114.55394 lineto
-233.8575 110.54922 lineto
-234.53781 106.54453 lineto
-235.21812 102.55537 lineto
-235.89844 98.59836 lineto
-236.57875 94.68805 lineto
-237.25906 90.84099 lineto
-237.93938 87.07082 lineto
-238.61969 83.39407 lineto
-239.3 79.82341 lineto
-239.98032 76.37537 lineto
-240.66063 73.06065 lineto
-241.34094 69.89485 lineto
-242.02126 66.8896 lineto
-242.70157 64.05663 lineto
-243.38188 61.40662 lineto
-244.0622 58.95123 lineto
-244.74251 56.69925 lineto
-245.42282 54.65942 lineto
-246.10313 52.84052 lineto
-246.78345 51.24934 lineto
-247.46376 49.8927 lineto
-248.14407 48.77449 lineto
-248.82439 47.90056 lineto
-249.5047 47.2748 lineto
-250.18501 46.8972 lineto
-250.86533 46.77165 lineto
-251.54564 46.8972 lineto
-252.22595 47.2748 lineto
-252.90627 47.90154 lineto
-253.58658 48.77547 lineto
-254.26689 49.89368 lineto
-254.9472 51.25128 lineto
-255.62752 52.84247 lineto
-256.30783 54.66138 lineto
-256.98814 56.7012 lineto
-257.66846 58.95317 lineto
-258.34877 61.40953 lineto
-259.02908 64.05954 lineto
-259.7094 66.89253 lineto
-260.38971 69.89777 lineto
-261.07002 73.06454 lineto
-261.75034 76.3783 lineto
-262.43065 79.8273 lineto
-262.55873 80.49934 lineto stroke
-newpath 0 0 moveto
-340.15686 0 lineto
-340.15686 382.67648 lineto
-0 382.67648 lineto
- closepath stroke
+newpath 276.37762 160.54517 moveto
+276.18628 160.65074 275.99493 160.75633 275.80138 160.86191 curveto
+275.60947 160.96559 275.41754 161.06926 275.22342 161.17073 curveto
+275.03151 161.2722 274.8396 161.37148 274.64548 161.47073 curveto
+274.45355 161.57 274.26164 161.66707 274.06752 161.76192 curveto
+273.87561 161.85678 273.68149 161.95163 273.48958 162.04428 curveto
+273.29765 162.13693 273.10574 162.22957 272.91162 162.32222 curveto
+272.71971 162.41266 272.5278 162.50311 272.33368 162.59134 curveto
+272.14175 162.67958 271.94984 162.76782 271.75572 162.85385 curveto
+271.56381 162.93988 271.36969 163.0237 271.17778 163.10753 curveto
+270.98586 163.19136 270.79395 163.27298 270.59982 163.35458 curveto
+270.40791 163.4362 270.21379 163.51341 270.02187 163.59283 curveto
+269.82996 163.67224 269.63805 163.75166 269.44392 163.82886 curveto
+269.25201 163.90607 269.06009 163.98108 268.86597 164.05608 curveto
+268.67406 164.13107 268.47993 164.20387 268.28802 164.27666 curveto
+268.09612 164.34946 267.902 164.42226 267.71007 164.49284 curveto
+267.51816 164.56343 267.32625 164.63402 267.13213 164.70241 curveto
+266.94022 164.77078 266.7461 164.83917 266.55417 164.90535 curveto
+266.36226 164.97153 266.16814 165.0377 265.97623 165.10388 curveto
+265.7843 165.17006 265.59239 165.23624 265.39827 165.30022 curveto
+265.20636 165.36418 265.01445 165.42595 264.82033 165.48772 curveto
+264.6284 165.54948 264.43428 165.60904 264.24237 165.6686 curveto
+264.05046 165.72816 263.85634 165.78772 263.66443 165.84727 curveto
+263.4725 165.90463 263.27838 165.96199 263.08647 166.01933 curveto
+262.89456 166.07669 262.70044 166.13184 262.50853 166.18698 curveto
+262.3166 166.24214 262.1247 166.29948 261.93057 166.35243 curveto
+261.73866 166.40538 261.54454 166.45831 261.35262 166.50905 curveto
+261.1607 166.55978 260.96658 166.61273 260.77467 166.66347 curveto
+260.58276 166.7142 260.38864 166.76715 260.19672 166.81567 curveto
+260.0048 166.8642 259.81068 166.91273 259.61877 166.96126 curveto
+259.42686 167.0098 259.23274 167.05832 259.04082 167.10464 curveto
+258.8489 167.15097 258.65479 167.1973 258.46288 167.24362 curveto
+258.27095 167.28995 258.07684 167.33406 257.88492 167.37819 curveto
+257.69301 167.4223 257.49889 167.46422 257.30698 167.50833 curveto
+257.11505 167.55244 256.92094 167.59436 256.72902 167.63628 curveto
+256.53711 167.67819 256.34299 167.7179 256.15108 167.75981 curveto
+255.95915 167.80171 255.76503 167.84143 255.57312 167.88113 curveto
+255.38121 167.92084 255.18709 167.95834 254.99518 167.99805 curveto
+254.80325 168.03775 254.60913 168.07745 254.41722 168.11496 curveto
+254.22531 168.15247 254.03119 168.18776 253.83928 168.22305 curveto
+253.64735 168.25835 253.45323 168.29805 253.26132 168.33334 curveto
+253.06941 168.36864 252.87529 168.40173 252.68336 168.43703 curveto
+252.49146 168.47232 252.29733 168.50761 252.10542 168.5407 curveto
+251.91351 168.57379 251.71939 168.60687 251.52747 168.63997 curveto
+251.33556 168.67305 251.14143 168.70615 250.94952 168.73703 curveto
+250.75761 168.76791 250.56349 168.7988 250.37157 168.82968 curveto
+250.17966 168.86057 249.98553 168.89143 249.79362 168.92232 curveto
+249.6017 168.9532 249.4076 168.98409 249.21567 169.01277 curveto
+249.02376 169.04144 248.82964 169.07011 248.63773 169.0988 curveto
+248.4458 169.12747 248.2517 169.15836 248.05977 169.18483 curveto
+247.86786 169.2113 247.67374 169.23776 247.48183 169.26424 curveto
+247.2899 169.29071 247.09578 169.31938 246.90387 169.34586 curveto
+246.71196 169.37233 246.51784 169.3988 246.32593 169.42307 curveto
+246.134 169.44733 245.93988 169.4738 245.74797 169.49806 curveto
+245.55606 169.52234 245.36194 169.5488 245.17003 169.57307 curveto
+244.9781 169.59734 244.78398 169.6216 244.59207 169.64366 curveto
+244.40016 169.66571 244.20604 169.68999 244.01411 169.71204 curveto
+243.8222 169.7341 243.62808 169.75836 243.43617 169.78043 curveto
+243.24426 169.80249 243.05014 169.82675 242.85822 169.84882 curveto
+242.6663 169.87086 242.47218 169.89072 242.28027 169.91057 curveto
+242.08836 169.93044 241.89424 169.95248 241.70232 169.97234 curveto
+241.5104 169.99219 241.31628 170.01425 241.12437 170.0341 curveto
+240.93245 170.05396 240.73834 170.0738 240.54642 170.09366 curveto
+240.3545 170.11353 240.16039 170.13116 239.96848 170.14882 curveto
+239.77655 170.16646 239.58243 170.18631 239.39052 170.20616 curveto
+239.19861 170.22601 239.00449 170.24367 238.81258 170.26132 curveto
+238.62065 170.27896 238.42653 170.29662 238.23462 170.31425 curveto
+238.04271 170.33191 237.84859 170.34955 237.65668 170.36499 curveto
+237.46475 170.38043 237.27063 170.39587 237.07872 170.41353 curveto
+236.88681 170.43117 236.69269 170.44661 236.50078 170.46426 curveto
+236.30885 170.4819 236.11473 170.49734 235.92282 170.51279 curveto
+235.73091 170.52823 235.53679 170.54367 235.34486 170.55911 curveto
+235.15295 170.57455 234.95883 170.58778 234.76692 170.60103 curveto
+234.57501 170.61426 234.38089 170.6297 234.18896 170.64514 curveto
+233.99706 170.66058 233.80293 170.67603 233.61102 170.68927 curveto
+233.41911 170.7025 233.22499 170.71573 233.03307 170.72897 curveto
+232.84116 168.18114 232.64703 165.6333 232.45512 163.08546 curveto
+232.26762 160.66338 232.0757 158.24127 231.87717 155.82138 curveto
+231.68967 153.52943 231.49776 151.2397 231.29922 148.94995 curveto
+231.11172 146.78154 230.9198 144.61313 230.72127 142.44472 curveto
+230.53377 140.391 230.34186 138.33951 230.14333 136.288 curveto
+229.95581 134.34459 229.7639 132.40338 229.56537 130.46217 curveto
+229.37787 128.62465 229.18596 126.78712 228.98743 124.94958 curveto
+228.79991 123.20912 228.608 121.47086 228.40947 119.7326 curveto
+228.22197 118.08478 228.03006 116.43916 227.83151 114.79355 curveto
+227.64401 113.23618 227.4521 111.6788 227.25357 110.12141 curveto
+227.06607 108.64566 226.87415 107.1721 226.67561 105.69856 curveto
+226.48811 104.30222 226.2962 102.90587 226.09767 101.51173 curveto
+225.91017 100.19038 225.71825 98.86905 225.51971 97.54991 curveto
+225.33221 96.29915 225.1403 95.0484 224.94177 93.79985 curveto
+224.75427 92.61748 224.56235 91.4351 224.36382 90.25273 curveto
+224.17632 89.13434 223.9822 88.01593 223.78587 86.89754 curveto
+223.59837 85.83649 223.40645 84.77544 223.20792 83.7166 curveto
+223.02042 82.71512 222.8285 81.71364 222.62997 80.71214 curveto
+222.44246 79.7636 222.25055 78.81506 222.05202 77.86652 curveto
+221.86452 76.9665 221.6726 76.0687 221.47408 75.17088 curveto
+221.28656 74.3194 221.09465 73.47012 220.89612 72.62305 curveto
+220.70862 71.81789 220.51671 71.01494 220.31818 70.21199 curveto
+220.13066 69.44873 219.93875 68.6877 219.74022 67.92886 curveto
+219.55272 67.20753 219.3608 66.48619 219.16226 65.76706 curveto
+218.97476 65.08543 218.78285 64.40381 218.58432 63.72438 curveto
+218.39682 63.07805 218.2027 62.43393 218.00636 61.7898 curveto
+217.81886 61.17656 217.62695 60.5655 217.42842 59.95668 curveto
+217.24092 59.37872 217.049 58.80078 216.85046 58.22504 curveto
+216.66296 57.67796 216.46884 57.1309 216.27252 56.58604 curveto
+216.08502 56.06766 215.8909 55.54926 215.69456 55.03308 curveto
+215.50706 54.54115 215.31516 54.04924 215.11662 53.56174 curveto
+214.92912 53.09628 214.735 52.63524 214.53867 52.17421 curveto
+214.34895 51.73303 214.15704 51.29405 213.96072 50.85727 curveto
+213.77321 50.44035 213.5813 50.02344 213.38277 49.61093 curveto
+213.19527 49.21608 213.00114 48.82562 212.80482 48.43518 curveto
+212.61511 48.06018 212.4232 47.68958 212.22687 47.31898 curveto
+212.03937 46.96603 211.84525 46.6131 211.64893 46.26456 curveto
+211.45921 45.92926 211.26729 45.59396 211.07097 45.26308 curveto
+210.88126 44.94763 210.68935 44.63219 210.49301 44.32115 curveto
+210.30331 44.02115 210.11139 43.72113 209.91507 43.42554 curveto
+209.72536 43.14098 209.53345 42.85863 209.33711 42.57848 curveto
+209.14742 42.30936 208.95549 42.04022 208.75917 41.77551 curveto
+208.56946 41.51964 208.37755 41.26816 208.18121 41.01889 curveto
+207.99152 40.77844 207.79959 40.538 207.60327 40.30197 curveto
+207.41356 40.07256 207.22165 39.84534 207.02531 39.62254 curveto
+206.8356 39.40637 206.64369 39.1924 206.44737 38.98062 curveto
+206.25766 38.77547 206.06575 38.57253 205.86942 38.3718 curveto
+205.6797 38.17767 205.4856 37.98796 205.29147 37.79825 curveto
+205.10176 37.61296 204.90764 37.43207 204.71352 37.25119 curveto
+204.5238 37.07692 204.3319 36.90486 204.13557 36.735 curveto
+203.94586 36.56955 203.75174 36.40852 203.55762 36.2497 curveto
+203.3657 36.09308 203.17378 35.93866 202.97968 35.78645 curveto
+202.78996 35.63866 202.59584 35.49307 202.40172 35.34969 curveto
+202.20981 35.21071 202.01788 35.07394 201.82376 34.93718 curveto
+201.63185 34.80261 201.43994 34.67026 201.24582 34.54231 curveto
+201.0561 34.41658 200.86198 34.29526 200.66786 34.17393 curveto
+200.47595 34.05481 200.28404 33.9379 200.08992 33.8232 curveto
+199.89801 33.7107 199.70609 33.59819 199.51196 33.4901 curveto
+199.32005 33.38422 199.12814 33.28053 198.93402 33.17906 curveto
+198.7421 33.07759 198.55019 32.97833 198.35606 32.88127 curveto
+198.16415 32.78421 197.97224 32.69156 197.77812 32.5989 curveto
+197.5862 32.50847 197.39429 32.42023 197.20016 32.3342 curveto
+197.00826 32.24817 196.81635 32.16434 196.62222 32.08272 curveto
+196.4303 32.0011 196.23839 31.92169 196.04427 31.84448 curveto
+195.85236 31.76727 195.66043 31.69228 195.46632 31.61948 curveto
+195.2744 31.54669 195.08249 31.47609 194.88837 31.4055 curveto
+194.69646 31.33492 194.50453 31.26874 194.31041 31.20256 curveto
+194.1185 31.13638 193.92659 31.07462 193.73247 31.01285 curveto
+193.54056 30.9511 193.34863 30.88933 193.15451 30.82976 curveto
+192.9626 30.7702 192.77069 30.71284 192.57657 30.6577 curveto
+192.38466 30.60255 192.19273 30.5496 191.99861 30.49667 curveto
+191.8067 30.44373 191.61258 30.3952 191.42067 30.34447 curveto
+191.22874 30.29593 191.03464 30.2452 190.84271 30.19887 curveto
+190.6508 30.15254 190.45668 30.10622 190.26477 30.0621 curveto
+190.07285 30.01799 189.87874 29.97386 189.68681 29.93196 curveto
+189.4949 29.89005 189.30078 29.84813 189.10887 29.80843 curveto
+188.91695 29.76872 188.72282 29.73122 188.53091 29.69371 curveto
+188.339 29.65622 188.14488 29.61652 187.95297 29.5812 curveto
+187.76105 29.54591 187.56693 29.51062 187.37502 29.47754 curveto
+187.1831 29.44444 186.98898 29.41136 186.79707 29.37827 curveto
+186.60515 29.34518 186.41103 29.3143 186.21912 29.28342 curveto
+186.0272 29.25253 185.83308 29.22606 185.64116 29.19739 curveto
+185.44925 29.1687 185.25513 29.14003 185.06322 29.11356 curveto
+184.8713 29.08708 184.67719 29.06062 184.48526 29.03415 curveto
+184.40585 29.08267 lineto
+184.21614 30.37976 184.02423 31.67683 183.8279 32.97171 curveto
+183.6382 34.23349 183.44627 35.49527 183.24995 36.75706 curveto
+183.06024 37.98575 182.86612 39.21225 182.672 40.43874 curveto
+182.4823 41.63434 182.29037 42.82774 182.09406 44.02115 curveto
+181.90434 45.18365 181.71243 46.34398 181.5161 47.50429 curveto
+181.3264 48.63371 181.13228 49.76314 180.93816 50.89258 curveto
+180.74844 51.99332 180.55653 53.09187 180.3602 54.19041 curveto
+180.1705 55.26028 179.97858 56.33015 179.78226 57.39781 curveto
+179.59254 58.43901 179.40063 59.48021 179.2043 60.5192 curveto
+179.01459 61.53171 178.82268 62.54422 178.62636 63.55453 curveto
+178.43665 64.54057 178.24474 65.52441 178.0484 66.50826 curveto
+177.85869 67.46562 177.66457 68.42299 177.47046 69.38036 curveto
+177.28075 70.31346 177.08884 71.24435 176.8925 72.17525 curveto
+176.70279 73.08188 176.51088 73.98851 176.31456 74.89294 curveto
+176.12485 75.7753 175.93073 76.65767 175.7366 77.53783 curveto
+175.54689 78.39594 175.35277 79.25403 175.15865 80.10992 curveto
+174.96895 80.94597 174.77483 81.77982 174.5807 82.61365 curveto
+174.39099 83.42543 174.19687 84.2372 174.00275 85.04898 curveto
+173.81305 85.8387 173.62112 86.62842 173.4248 87.41814 curveto
+173.23509 88.18579 173.04097 88.95345 172.84685 89.72112 curveto
+172.65715 90.46892 172.46523 91.21672 172.2689 91.96452 curveto
+172.0792 92.69247 171.88507 93.41823 171.69095 94.14397 curveto
+171.50124 94.85207 171.30933 95.56017 171.113 96.26826 curveto
+170.9233 96.95651 170.72917 97.64476 170.53505 98.3308 curveto
+170.34534 99.0014 170.15123 99.672 169.9571 100.3404 curveto
+169.7674 100.99113 169.57327 101.64188 169.37915 102.29262 curveto
+169.18944 102.92572 168.99532 103.55882 168.80121 104.19193 curveto
+168.6115 104.80957 168.41957 105.42723 168.22325 106.04268 curveto
+168.03354 106.64268 167.83942 107.2427 167.64531 107.8405 curveto
+167.4556 108.42506 167.26147 109.00743 167.06735 109.5898 curveto
+166.87764 110.15672 166.68573 110.72363 166.4894 111.29056 curveto
+166.2997 111.84204 166.10558 112.39351 165.91145 112.94499 curveto
+165.72174 113.48323 165.52762 114.02148 165.3335 114.55753 curveto
+165.1438 115.08032 164.95187 115.60312 164.75555 116.12593 curveto
+164.56584 116.63329 164.37172 117.14064 164.1776 117.64801 curveto
+163.9879 118.14214 163.79378 118.63626 163.59966 119.13039 curveto
+163.40994 119.61127 163.21582 120.09216 163.0217 120.57306 curveto
+162.83199 121.04071 162.63788 121.50836 162.44376 121.97601 curveto
+162.25404 122.43263 162.05992 122.88927 161.8658 123.34369 curveto
+161.67609 123.78708 161.48198 124.23047 161.28786 124.67165 curveto
+161.09814 125.10179 160.90402 125.53195 160.7099 125.96211 curveto
+160.52019 126.38123 160.32607 126.80035 160.13196 127.21948 curveto
+159.94225 127.62758 159.74812 128.03566 159.554 128.44156 curveto
+159.36429 128.83862 159.17017 129.23569 158.97604 129.63054 curveto
+158.78635 130.01659 158.59222 130.40262 158.3981 130.78865 curveto
+158.20839 131.16365 158.01427 131.53867 157.82014 131.91367 curveto
+157.63045 132.27985 157.43633 132.64383 157.2422 133.0078 curveto
+157.05249 133.36516 156.86058 133.7203 156.66425 134.07547 curveto
+156.47455 134.4218 156.28043 134.76591 156.0863 135.11005 curveto
+155.89438 135.44754 155.70247 135.78285 155.50835 136.11815 curveto
+155.31865 136.44682 155.12453 136.7733 154.9304 137.09978 curveto
+154.74069 137.41963 154.54657 137.73729 154.35245 138.05273 curveto
+154.16054 138.36377 153.96863 138.67259 153.7745 138.98143 curveto
+153.58258 139.28363 153.39067 139.58585 153.19655 139.88585 curveto
+153.00684 140.17923 152.81271 140.47263 152.6186 140.76381 curveto
+152.42668 141.05057 152.23477 141.33513 152.04065 141.6175 curveto
+151.85094 141.89543 151.65681 142.17339 151.4627 142.44913 curveto
+151.27078 142.72044 151.07887 142.98737 150.88475 143.25648 curveto
+150.69284 143.5212 150.50092 143.7837 150.3068 144.044 curveto
+150.11488 144.29988 149.92297 144.55577 149.72885 144.80945 curveto
+149.53694 145.05872 149.34502 145.30798 149.1509 145.55505 curveto
+148.95898 145.7977 148.76707 146.04036 148.57295 146.28079 curveto
+148.38324 146.51683 148.18912 146.74846 147.995 146.98228 curveto
+147.80309 147.2117 147.61118 147.44112 147.41705 147.66832 curveto
+147.22513 147.89333 147.03322 148.11612 146.8391 148.33672 curveto
+146.64719 148.5551 146.45528 148.77129 146.26115 148.98526 curveto
+146.06923 149.19702 145.87732 149.40659 145.6832 149.61615 curveto
+145.49129 149.8235 145.29938 150.02866 145.10526 150.2316 curveto
+144.91333 150.43233 144.72142 150.63086 144.5273 150.8272 curveto
+144.33539 151.02132 144.14346 151.21544 143.94936 151.40735 curveto
+143.75743 151.59706 143.56552 151.78677 143.3714 151.97427 curveto
+143.17949 152.15956 142.98756 152.34045 142.79346 152.52354 curveto
+142.60153 152.70442 142.40962 152.8831 142.2155 153.05959 curveto
+142.02359 153.23384 141.83167 153.40591 141.63754 153.57797 curveto
+141.44563 153.74783 141.25372 153.91768 141.0596 154.08533 curveto
+140.86769 154.25078 140.67577 154.41621 140.48164 154.57945 curveto
+140.28973 154.7405 140.09782 154.8993 139.9037 155.05594 curveto
+139.71179 155.21255 139.51987 155.36697 139.32574 155.52138 curveto
+139.13383 155.67358 138.94193 155.8258 138.7478 155.9758 curveto
+138.55588 156.1236 138.36397 156.2714 138.16985 156.41699 curveto
+137.97794 156.56258 137.78603 156.70596 137.5919 156.84714 curveto
+137.39998 156.98831 137.20807 157.12509 137.01395 157.26405 curveto
+136.82204 157.40082 136.63013 157.5376 136.436 157.67215 curveto
+136.24408 157.8045 136.05217 157.93686 135.85805 158.06702 curveto
+135.66614 158.19495 135.47421 158.32289 135.2801 158.44864 curveto
+135.08818 158.57437 134.89627 158.7001 134.70215 158.82364 curveto
+134.51024 158.94717 134.31831 159.0685 134.1242 159.18762 curveto
+133.93228 159.30673 133.74037 159.42365 133.54625 159.54056 curveto
+133.35434 159.65747 133.16241 159.76997 132.96829 159.88469 curveto
+132.77638 159.9972 132.58447 160.1097 132.39035 160.21999 curveto
+132.19844 160.33028 132.00652 160.43616 131.8124 160.54425 curveto
+131.62048 160.65013 131.42857 160.75603 131.23445 160.86191 curveto
+131.04254 160.96559 130.85062 161.06926 130.6565 161.17073 curveto
+130.46458 161.2722 130.27267 161.37148 130.07855 161.47073 curveto
+129.88663 161.57 129.69472 161.66707 129.5006 161.76192 curveto
+129.30869 161.85678 129.11456 161.95163 128.92265 162.04428 curveto
+128.73073 162.13693 128.53882 162.22957 128.3447 162.32222 curveto
+128.15279 162.41266 127.96088 162.50311 127.76675 162.59134 curveto
+127.57483 162.67958 127.38292 162.76782 127.1888 162.85385 curveto
+126.99689 162.93988 126.80276 163.0237 126.61086 163.10753 curveto
+126.41893 163.19136 126.22702 163.27298 126.0329 163.35458 curveto
+125.84099 163.4362 125.64687 163.51341 125.45494 163.59283 curveto
+125.26303 163.67224 125.07112 163.75166 124.877 163.82886 curveto
+124.68509 163.90607 124.49316 163.98108 124.29904 164.05608 curveto
+124.10713 164.13107 123.91301 164.20387 123.7211 164.27666 curveto
+123.52919 164.34946 123.33507 164.42226 123.14314 164.49284 curveto
+122.95123 164.56343 122.75932 164.63402 122.5652 164.70241 curveto
+122.37329 164.77078 122.17917 164.83917 121.98724 164.90535 curveto
+121.79533 164.97153 121.60121 165.0377 121.4093 165.10388 curveto
+121.21738 165.17006 121.02547 165.23624 120.83134 165.30022 curveto
+120.63943 165.36418 120.44753 165.42595 120.2534 165.48772 curveto
+120.06148 165.54948 119.86736 165.60904 119.67545 165.6686 curveto
+119.48354 165.72816 119.28941 165.78772 119.0975 165.84727 curveto
+118.90558 165.90463 118.71146 165.96199 118.51955 166.01933 curveto
+118.32764 166.07669 118.13351 166.13184 117.9416 166.18698 curveto
+117.74968 166.24214 117.55777 166.29948 117.36365 166.35243 curveto
+117.17174 166.40538 116.97762 166.45831 116.78569 166.50905 curveto
+116.59378 166.55978 116.39966 166.61273 116.20775 166.66347 curveto
+116.01584 166.7142 115.82172 166.76715 115.62979 166.81567 curveto
+115.43788 166.8642 115.24376 166.91273 115.05185 166.96126 curveto
+114.85994 167.0098 114.66582 167.05832 114.47389 167.10464 curveto
+114.28198 167.15097 114.08786 167.1973 113.89595 167.24362 curveto
+113.70403 167.28995 113.50992 167.33406 113.318 167.37819 curveto
+113.12608 167.4223 112.93196 167.46422 112.74005 167.50833 curveto
+112.54813 167.55244 112.35402 167.59436 112.1621 167.63628 curveto
+111.97018 167.67819 111.77606 167.7179 111.58415 167.75981 curveto
+111.39223 167.80171 111.1981 167.84143 111.0062 167.88113 curveto
+110.81429 167.92084 110.62016 167.95834 110.42825 167.99805 curveto
+110.23633 168.03775 110.0422 168.07745 109.8503 168.11496 curveto
+109.65839 168.15247 109.46426 168.18776 109.27235 168.22305 curveto
+109.08043 168.25835 108.8863 168.29805 108.6944 168.33334 curveto
+108.50249 168.36864 108.30836 168.40173 108.11644 168.43703 curveto
+107.92453 168.47232 107.73041 168.50761 107.5385 168.5407 curveto
+107.34659 168.57379 107.15247 168.60687 106.96054 168.63997 curveto
+106.76863 168.67305 106.57451 168.70615 106.3826 168.73703 curveto
+106.19069 168.76791 105.99657 168.7988 105.80464 168.82968 curveto
+105.61273 168.86057 105.41861 168.89143 105.2267 168.92232 curveto
+105.03477 168.9532 104.84067 168.98409 104.64874 169.01277 curveto
+104.45683 169.04144 104.26271 169.07011 104.0708 169.0988 curveto
+103.87888 169.12747 103.68477 169.15836 103.49284 169.18483 curveto
+103.30093 169.2113 103.10681 169.23776 102.9149 169.26424 curveto
+102.72298 169.29071 102.52885 169.31938 102.33694 169.34586 curveto
+102.14503 169.37233 101.95091 169.3988 101.759 169.42307 curveto
+101.56708 169.44733 101.37296 169.4738 101.18105 169.49806 curveto
+100.98914 169.52234 100.79501 169.5488 100.6031 169.57307 curveto
+100.41118 169.59734 100.21706 169.6216 100.02515 169.64366 curveto
+99.83324 169.66571 99.63911 169.68999 99.44719 169.71204 curveto
+99.25528 169.7341 99.06116 169.75836 98.86925 169.78043 curveto
+98.67734 169.80249 98.48322 169.82675 98.29129 169.84882 curveto
+98.09938 169.87086 97.90526 169.89072 97.71335 169.91057 curveto
+97.52144 169.93044 97.32732 169.95248 97.13539 169.97234 curveto
+96.94348 169.99219 96.74936 170.01425 96.55745 170.0341 curveto
+96.36552 170.05396 96.17142 170.0738 95.97949 170.09366 curveto
+95.78758 170.11353 95.59346 170.13116 95.40155 170.14882 curveto
+95.20963 170.16646 95.0155 170.18631 94.8236 170.20616 curveto
+94.63168 170.22601 94.43756 170.24367 94.24565 170.26132 curveto
+94.05373 170.27896 93.8596 170.29662 93.6677 170.31425 curveto
+93.47578 170.33191 93.28166 170.34955 93.08975 170.36499 curveto
+92.89783 170.38043 92.7037 170.39587 92.5118 170.41353 curveto
+92.31989 170.43117 92.12576 170.44661 91.93385 170.46426 curveto
+91.74193 170.4819 91.5478 170.49734 91.3559 170.51279 curveto
+91.16399 170.52823 90.96986 170.54367 90.77794 170.55911 curveto
+90.58603 170.57455 90.3919 170.58778 90.2 170.60103 curveto
+90.00809 170.61426 89.81396 170.6297 89.62204 170.64514 curveto
+89.43013 170.66058 89.23601 170.67603 89.0441 170.68927 curveto
+88.85219 170.7025 88.65807 170.71573 88.46614 170.72897 curveto
+88.27423 168.18114 88.08011 165.6333 87.8882 163.08546 curveto
+87.7007 160.66338 87.50877 158.24127 87.31024 155.82138 curveto
+87.12274 153.52943 86.93083 151.2397 86.7323 148.94995 curveto
+86.5448 146.78154 86.35287 144.61313 86.15434 142.44472 curveto
+85.96684 140.391 85.77493 138.33951 85.5764 136.288 curveto
+85.38889 134.34459 85.19698 132.40338 84.99844 130.46217 curveto
+84.81094 128.62465 84.61903 126.78712 84.4205 124.94958 curveto
+84.23299 123.20912 84.04108 121.47086 83.84254 119.7326 curveto
+83.65504 118.08478 83.46313 116.43916 83.26459 114.79355 curveto
+83.07709 113.23618 82.88518 111.6788 82.68665 110.12141 curveto
+82.49915 108.64566 82.30722 107.1721 82.10869 105.69856 curveto
+81.92119 104.30222 81.72928 102.90587 81.53075 101.51173 curveto
+81.34325 100.19038 81.15132 98.86905 80.95279 97.54991 curveto
+80.76529 96.29915 80.57338 95.0484 80.37485 93.79985 curveto
+80.18735 92.61748 79.99542 91.4351 79.79689 90.25273 curveto
+79.60939 89.13434 79.41527 88.01593 79.21895 86.89754 curveto
+79.03145 85.83649 78.83952 84.77544 78.64099 83.7166 curveto
+78.45349 82.71512 78.26158 81.71364 78.06305 80.71214 curveto
+77.87553 79.7636 77.68362 78.81506 77.48509 77.86652 curveto
+77.29759 76.9665 77.10568 76.0687 76.90715 75.17088 curveto
+76.71964 74.3194 76.52773 73.47012 76.3292 72.62305 curveto
+76.1417 71.81789 75.94978 71.01494 75.75125 70.21199 curveto
+75.56374 69.44873 75.37183 68.6877 75.1733 67.92886 curveto
+74.9858 67.20753 74.79387 66.48619 74.59534 65.76706 curveto
+74.40784 65.08543 74.21593 64.40381 74.0174 63.72438 curveto
+73.8299 63.07805 73.63577 62.43393 73.43944 61.7898 curveto
+73.25194 61.17656 73.06003 60.5655 72.8615 59.95668 curveto
+72.674 59.37872 72.48207 58.80078 72.28354 58.22504 curveto
+72.09604 57.67796 71.90192 57.1309 71.7056 56.58604 curveto
+71.5181 56.06766 71.32397 55.54926 71.12764 55.03308 curveto
+70.94014 54.54115 70.74823 54.04924 70.5497 53.56174 curveto
+70.3622 53.09628 70.16808 52.63524 69.97174 52.17421 curveto
+69.78203 51.73303 69.59012 51.29405 69.3938 50.85727 curveto
+69.20628 50.44035 69.01437 50.02344 68.81584 49.61093 curveto
+68.62834 49.21608 68.43422 48.82562 68.2379 48.43518 curveto
+68.04819 48.06018 67.85628 47.68958 67.65994 47.31898 curveto
+67.47244 46.96603 67.27832 46.6131 67.082 46.26456 curveto
+66.89229 45.92926 66.70036 45.59396 66.50404 45.26308 curveto
+66.31433 44.94763 66.12242 44.63219 65.92609 44.32115 curveto
+65.73639 44.02115 65.54446 43.72113 65.34814 43.42554 curveto
+65.15843 43.14098 64.96652 42.85863 64.77019 42.57848 curveto
+64.58049 42.30936 64.38857 42.04022 64.19225 41.77551 curveto
+64.05598 41.59172 63.91858 41.4102 63.77922 41.23015 curveto stroke
+newpath 34.0157 412.41629 moveto
+34.44989 412.76482 lineto
+34.6418 412.91702 34.83371 413.06924 35.02783 413.21924 curveto
+35.21976 413.36703 35.41167 413.51483 35.60579 413.66043 curveto
+35.7977 413.80602 35.98961 413.9494 36.18373 414.09058 curveto
+36.37566 414.23175 36.56757 414.36853 36.76169 414.50749 curveto
+36.9536 414.64426 37.14551 414.78104 37.33963 414.91559 curveto
+37.53156 415.04794 37.72346 415.1803 37.91759 415.31046 curveto
+38.1095 415.43839 38.30142 415.56633 38.49553 415.69208 curveto
+38.68745 415.81781 38.87936 415.94354 39.07349 416.06708 curveto
+39.2654 416.19061 39.45732 416.31194 39.65143 416.43106 curveto
+39.84335 416.55017 40.03526 416.66708 40.22939 416.784 curveto
+40.4213 416.90091 40.61322 417.01341 40.80734 417.12813 curveto
+40.99925 417.24063 41.19116 417.35313 41.38528 417.46342 curveto
+41.5772 417.57372 41.76912 417.6796 41.96324 417.78769 curveto
+42.15515 417.89357 42.34706 417.99947 42.54118 418.10535 curveto
+42.7331 418.20903 42.92502 418.3127 43.11914 418.41417 curveto
+43.31105 418.51564 43.50296 418.61491 43.69708 418.71417 curveto
+43.889 418.81345 44.08092 418.9105 44.27504 419.00536 curveto
+44.46695 419.10022 44.66107 419.19507 44.85298 419.28772 curveto
+45.0449 419.38037 45.23682 419.473 45.43094 419.56566 curveto
+45.62285 419.6561 45.81476 419.74655 46.00888 419.83478 curveto
+46.2008 419.92302 46.39272 420.01126 46.58684 420.09729 curveto
+46.77875 420.18332 46.97287 420.26714 47.16478 420.35097 curveto
+47.3567 420.4348 47.54861 420.51642 47.74274 420.59802 curveto
+47.93465 420.67964 48.12877 420.75685 48.3207 420.83627 curveto
+48.5126 420.91568 48.70451 420.9951 48.89864 421.0723 curveto
+49.09055 421.1495 49.28247 421.22452 49.4766 421.29951 curveto
+49.6685 421.37451 49.86263 421.44731 50.05453 421.5201 curveto
+50.24644 421.5929 50.44057 421.6657 50.63249 421.73628 curveto
+50.8244 421.80687 51.01631 421.87746 51.21043 421.94585 curveto
+51.40234 422.01422 51.59647 422.08261 51.78839 422.14879 curveto
+51.9803 422.21497 52.17442 422.28114 52.36633 422.34732 curveto
+52.55826 422.4135 52.75017 422.47968 52.94429 422.54366 curveto
+53.1362 422.60762 53.32811 422.66939 53.52223 422.73116 curveto
+53.71416 422.79292 53.90828 422.85248 54.10019 422.91203 curveto
+54.2921 422.9716 54.48622 423.03116 54.67813 423.09071 curveto
+54.87006 423.14807 55.06418 423.20543 55.25609 423.26277 curveto
+55.448 423.32013 55.64212 423.37527 55.83403 423.43042 curveto
+56.02596 423.48558 56.21786 423.54292 56.41199 423.59587 curveto
+56.6039 423.64882 56.79802 423.70175 56.98994 423.75249 curveto
+57.18185 423.80322 57.37598 423.85617 57.56789 423.9069 curveto
+57.7598 423.95764 57.95392 424.01059 58.14584 424.05911 curveto
+58.33775 424.10764 58.53188 424.15617 58.72379 424.2047 curveto
+58.9157 424.25323 59.10982 424.30176 59.30174 424.34808 curveto
+59.49365 424.39441 59.68777 424.44073 59.87968 424.48706 curveto
+60.07161 424.53339 60.26572 424.5775 60.45764 424.62163 curveto
+60.64955 424.66574 60.84367 424.70766 61.03558 424.75177 curveto
+61.22751 424.79588 61.42162 424.8378 61.61354 424.87971 curveto
+61.80545 424.92163 61.99957 424.96133 62.19148 425.00325 curveto
+62.3834 425.04515 62.57753 425.08487 62.76944 425.12457 curveto
+62.96135 425.16428 63.15547 425.20178 63.34738 425.24149 curveto
+63.5393 425.28119 63.73343 425.32089 63.92534 425.3584 curveto
+64.11725 425.3959 64.31137 425.4312 64.50328 425.46649 curveto
+64.6952 425.50179 64.88933 425.54149 65.08124 425.57678 curveto
+65.27315 425.61208 65.46727 425.64517 65.6592 425.68047 curveto
+65.8511 425.71576 66.04523 425.75105 66.23714 425.78413 curveto
+66.42905 425.81723 66.62317 425.85031 66.8151 425.8834 curveto
+67.007 425.91649 67.20113 425.94958 67.39304 425.98047 curveto
+67.58495 426.01135 67.77907 426.04224 67.971 426.07312 curveto
+68.1629 426.104 68.35703 426.13487 68.54893 426.16576 curveto
+68.74086 426.19664 68.93497 426.22752 69.12689 426.25621 curveto
+69.3188 426.28488 69.51292 426.31355 69.70483 426.34224 curveto
+69.89676 426.37091 70.09087 426.4018 70.28279 426.42827 curveto
+70.4747 426.45474 70.66882 426.4812 70.86073 426.50768 curveto
+71.05266 426.53415 71.24678 426.56282 71.43869 426.5893 curveto
+71.6306 426.61577 71.82472 426.64224 72.01663 426.6665 curveto
+72.20856 426.69077 72.40268 426.71724 72.59459 426.7415 curveto
+72.7865 426.76578 72.98062 426.79224 73.17253 426.81651 curveto
+73.36446 426.84077 73.55858 426.86504 73.75049 426.8871 curveto
+73.9424 426.90915 74.13652 426.93343 74.32845 426.95547 curveto
+74.52036 426.97754 74.71448 427.0018 74.90639 427.02386 curveto
+75.0983 427.04593 75.29242 427.07019 75.48434 427.09225 curveto
+75.67625 427.1143 75.87038 427.13416 76.06229 427.154 curveto
+76.2542 427.17387 76.44832 427.19592 76.64024 427.21577 curveto
+76.83215 427.23563 77.02628 427.25769 77.21819 427.27754 curveto
+77.41011 427.2974 77.60422 427.31725 77.79614 427.3371 curveto
+77.98805 427.35696 78.18217 427.3746 78.37408 427.39226 curveto
+78.56601 427.4099 78.76013 427.42975 78.95204 427.4496 curveto
+79.14395 427.46945 79.33807 427.4871 79.52998 427.50476 curveto
+79.72191 427.5224 79.91603 427.54005 80.10794 427.5577 curveto
+80.29985 427.57535 80.49397 427.59299 80.68588 427.60843 curveto
+80.8778 427.62387 81.07193 427.63931 81.26384 427.65697 curveto
+81.45575 427.6746 81.64987 427.69005 81.84178 427.7077 curveto
+82.0337 427.72534 82.22783 427.74078 82.41974 427.75623 curveto
+82.61165 427.77167 82.80577 427.78711 82.9977 427.80255 curveto
+83.1896 427.818 83.38373 427.83122 83.57564 427.84447 curveto
+83.76755 427.8577 83.96167 427.87314 84.1536 427.88858 curveto
+84.3455 427.90402 84.53963 427.91946 84.73154 427.93271 curveto
+84.92345 427.94594 85.11757 427.95917 85.3095 427.97241 curveto
+85.5014 425.42458 85.69553 422.87674 85.88744 420.3289 curveto
+86.07494 417.90681 86.26686 415.48471 86.4654 413.06482 curveto
+86.6529 410.77287 86.8448 408.48314 87.04333 406.19339 curveto
+87.23083 404.02498 87.42276 401.85657 87.62129 399.68816 curveto
+87.80879 397.63445 88.0007 395.58295 88.19923 393.53143 curveto
+88.38675 391.58803 88.57866 389.64682 88.77719 387.70561 curveto
+88.96469 385.86809 89.1566 384.03056 89.35513 382.19302 curveto
+89.54265 380.45256 89.73456 378.7143 89.93309 376.97604 curveto
+90.12059 375.32822 90.3125 373.6826 90.51105 372.03699 curveto
+90.69855 370.47961 90.89046 368.92224 91.08899 367.36485 curveto
+91.27649 365.8891 91.46841 364.41554 91.66695 362.942 curveto
+91.85445 361.54565 92.04636 360.1493 92.24489 358.75517 curveto
+92.43239 357.43382 92.62431 356.11249 92.82285 354.79335 curveto
+93.01035 353.54259 93.20226 352.29184 93.40079 351.04329 curveto
+93.58829 349.86092 93.78021 348.67854 93.97874 347.49617 curveto
+94.16624 346.37778 94.36037 345.25937 94.55669 344.14098 curveto
+94.74419 343.07993 94.93611 342.01888 95.13464 340.96004 curveto
+95.32214 339.95856 95.51405 338.95708 95.71259 337.95558 curveto
+95.9001 337.00703 96.09201 336.0585 96.29054 335.10995 curveto
+96.47804 334.20995 96.66995 333.31213 96.86848 332.41432 curveto
+97.056 331.56284 97.24791 330.71356 97.44644 329.86649 curveto
+97.63394 329.06133 97.82585 328.25838 98.02438 327.45543 curveto
+98.2119 326.69217 98.40381 325.93114 98.60234 325.1723 curveto
+98.78984 324.45097 98.98177 323.72963 99.1803 323.0105 curveto
+99.3678 322.32887 99.55971 321.64725 99.75824 320.96782 curveto
+99.94574 320.32149 100.13986 319.67737 100.3362 319.03323 curveto
+100.5237 318.42 100.7156 317.80894 100.91414 317.20012 curveto
+101.10164 316.62216 101.29356 316.04422 101.4921 315.46848 curveto
+101.6796 314.9214 101.87372 314.37434 102.07004 313.82948 curveto
+102.25754 313.3111 102.45166 312.7927 102.648 312.27652 curveto
+102.8355 311.78459 103.0274 311.29268 103.22594 310.80518 curveto
+103.41344 310.33972 103.60756 309.87868 103.8039 309.41765 curveto
+103.9936 308.97647 104.18552 308.53749 104.38184 308.10071 curveto
+104.56935 307.68379 104.76126 307.26688 104.9598 306.85437 curveto
+105.1473 306.45952 105.34142 306.06906 105.53773 305.67862 curveto
+105.72745 305.30362 105.91936 304.93301 106.11569 304.56242 curveto
+106.30319 304.20947 106.49731 303.85654 106.69363 303.508 curveto
+106.88335 303.1727 107.07527 302.8374 107.27159 302.50652 curveto
+107.4613 302.19107 107.65321 301.87563 107.84955 301.56459 curveto
+108.03925 301.26459 108.23117 300.96457 108.42749 300.66898 curveto
+108.6172 300.38441 108.80911 300.10207 109.00545 299.82191 curveto
+109.19514 299.5528 109.38707 299.28366 109.58339 299.01895 curveto
+109.7731 298.76308 109.96501 298.5116 110.16135 298.26233 curveto
+110.35104 298.02188 110.54297 297.78143 110.73929 297.54541 curveto
+110.929 297.316 111.12091 297.08878 111.31725 296.86598 curveto
+111.50696 296.64981 111.69887 296.43584 111.89519 296.22406 curveto
+112.0849 296.0189 112.27681 295.81596 112.47314 295.61523 curveto
+112.66286 295.42111 112.85696 295.2314 113.05109 295.04169 curveto
+113.2408 294.8564 113.43492 294.6755 113.62904 294.49463 curveto
+113.81876 294.32036 114.01067 294.1483 114.20699 293.97844 curveto
+114.3967 293.81299 114.59082 293.65196 114.78494 293.49313 curveto
+114.97685 293.33652 115.16878 293.1821 115.36288 293.02989 curveto
+115.5526 292.8821 115.74672 292.73651 115.94084 292.59312 curveto
+116.13275 292.45415 116.32468 292.31738 116.5188 292.18062 curveto
+116.71071 292.04605 116.90262 291.9137 117.09674 291.78575 curveto
+117.28645 291.66002 117.48058 291.5387 117.6747 291.41737 curveto
+117.86661 291.29825 118.05852 291.18134 118.25264 291.06664 curveto
+118.44455 290.95413 118.63647 290.84163 118.8306 290.73354 curveto
+119.0225 290.62766 119.21442 290.52397 119.40854 290.4225 curveto
+119.60046 290.32103 119.79237 290.22177 119.9865 290.12471 curveto
+120.1784 290.02765 120.37032 289.935 120.56444 289.84235 curveto
+120.75636 289.7519 120.94827 289.66367 121.1424 289.57764 curveto
+121.3343 289.49161 121.52621 289.40778 121.72034 289.32616 curveto
+121.91226 289.24454 122.10417 289.16513 122.2983 289.08792 curveto
+122.4902 289.01071 122.68213 288.93571 122.87624 288.86292 curveto
+123.06816 288.79013 123.26007 288.71953 123.4542 288.64894 curveto
+123.6461 288.57835 123.83803 288.51218 124.03215 288.446 curveto
+124.22406 288.37982 124.41597 288.31805 124.61009 288.25629 curveto
+124.802 288.19453 124.99393 288.13277 125.18805 288.0732 curveto
+125.37996 288.01364 125.57187 287.95628 125.76599 287.90114 curveto
+125.9579 287.846 126.14983 287.79305 126.34395 287.74011 curveto
+126.53586 287.68716 126.72998 287.63864 126.92189 287.5879 curveto
+127.11382 287.53937 127.30792 287.48863 127.49985 287.4423 curveto
+127.69176 287.39598 127.88588 287.34966 128.07779 287.30554 curveto
+128.26971 287.26143 128.46382 287.2173 128.65575 287.1754 curveto
+128.84766 287.13348 129.04178 287.09157 129.23369 287.05186 curveto
+129.42561 287.01216 129.61974 286.97466 129.81165 286.93715 curveto
+130.00356 286.89966 130.19768 286.85995 130.38959 286.82465 curveto
+130.58151 286.78935 130.77563 286.75406 130.96754 286.72098 curveto
+131.15945 286.68788 131.35358 286.6548 131.54549 286.6217 curveto
+131.73741 286.58862 131.93153 286.55774 132.12344 286.52686 curveto
+132.31535 286.49597 132.50948 286.4695 132.7014 286.44083 curveto
+132.89331 286.41214 133.08743 286.38347 133.27934 286.357 curveto
+133.47125 286.33052 133.66537 286.30406 133.8573 286.27759 curveto
+133.9367 286.32611 lineto
+134.12642 287.6232 134.31833 288.92027 134.51466 290.21515 curveto
+134.70436 291.47693 134.89629 292.73871 135.0926 294.0005 curveto
+135.28232 295.22919 135.47644 296.45569 135.67056 297.68217 curveto
+135.86026 298.87778 136.05219 300.07118 136.2485 301.26459 curveto
+136.43822 302.4271 136.63013 303.58742 136.82646 304.74773 curveto
+137.01616 305.87715 137.21028 307.00658 137.4044 308.13602 curveto
+137.59412 309.23676 137.78603 310.33531 137.98236 311.43385 curveto
+138.17206 312.50372 138.36398 313.5736 138.5603 314.64125 curveto
+138.75002 315.68245 138.94193 316.72365 139.13826 317.76263 curveto
+139.32797 318.77515 139.51988 319.78766 139.7162 320.79797 curveto
+139.90591 321.78401 140.09782 322.76785 140.29416 323.7517 curveto
+140.48387 324.70906 140.678 325.66643 140.8721 326.6238 curveto
+141.06181 327.5569 141.25372 328.4878 141.45006 329.41869 curveto
+141.63977 330.32532 141.83168 331.23195 142.028 332.13638 curveto
+142.21771 333.01874 142.41183 333.90111 142.60596 334.78127 curveto
+142.79567 335.63937 142.98979 336.49747 143.18391 337.35336 curveto
+143.37361 338.1894 143.56773 339.02325 143.76186 339.85709 curveto
+143.95157 340.66887 144.14569 341.48064 144.33981 342.29242 curveto
+144.52951 343.08214 144.72144 343.87186 144.91776 344.66158 curveto
+145.10747 345.42923 145.30159 346.19688 145.49571 346.96455 curveto
+145.68541 347.71236 145.87733 348.46016 146.07365 349.20796 curveto
+146.26337 349.93591 146.45749 350.66167 146.65161 351.3874 curveto
+146.84132 352.0955 147.03323 352.8036 147.22955 353.5117 curveto
+147.41927 354.19995 147.61339 354.8882 147.80751 355.57423 curveto
+147.99722 356.24484 148.19133 356.91544 148.38545 357.58383 curveto
+148.57516 358.23457 148.76929 358.88531 148.96341 359.53606 curveto
+149.15312 360.16916 149.34724 360.80226 149.54135 361.43536 curveto
+149.73106 362.05301 149.92299 362.67067 150.11931 363.28612 curveto
+150.30902 363.88612 150.50314 364.48615 150.69725 365.08394 curveto
+150.88696 365.6685 151.08109 366.25087 151.2752 366.83324 curveto
+151.46492 367.40016 151.65683 367.96707 151.85316 368.534 curveto
+152.04286 369.08548 152.23698 369.63695 152.4311 370.18843 curveto
+152.62082 370.72667 152.81494 371.26492 153.00906 371.80096 curveto
+153.19876 372.32376 153.39069 372.84656 153.587 373.36937 curveto
+153.77672 373.87672 153.97084 374.38408 154.16496 374.89145 curveto
+154.35466 375.38557 154.54878 375.8797 154.7429 376.37383 curveto
+154.93262 376.8547 155.12674 377.3356 155.32086 377.8165 curveto
+155.51057 378.28415 155.70468 378.7518 155.8988 379.21945 curveto
+156.08852 379.67607 156.28264 380.1327 156.47676 380.58713 curveto
+156.66647 381.03052 156.86058 381.4739 157.0547 381.91508 curveto
+157.24442 382.34523 157.43854 382.77539 157.63266 383.20555 curveto
+157.82237 383.62466 158.0165 384.0438 158.2106 384.46292 curveto
+158.40031 384.87102 158.59444 385.2791 158.78856 385.685 curveto
+158.97827 386.08206 159.1724 386.47913 159.36652 386.87398 curveto
+159.55621 387.26003 159.75034 387.64606 159.94446 388.03209 curveto
+160.13417 388.40709 160.3283 388.7821 160.52242 389.1571 curveto
+160.71211 389.52328 160.90623 389.88727 161.10036 390.25124 curveto
+161.29007 390.6086 161.48198 390.96375 161.67831 391.31891 curveto
+161.86801 391.66524 162.06213 392.00935 162.25626 392.35349 curveto
+162.44818 392.69098 162.64009 393.02629 162.83421 393.36159 curveto
+163.02391 393.69026 163.21803 394.01674 163.41216 394.34322 curveto
+163.60187 394.66307 163.79599 394.98073 163.99011 395.29617 curveto
+164.18202 395.60721 164.37393 395.91603 164.56805 396.22487 curveto
+164.75998 396.52707 164.95189 396.82928 165.14601 397.12929 curveto
+165.33572 397.42267 165.52985 397.71606 165.72395 398.00725 curveto
+165.91588 398.294 166.10779 398.57857 166.30191 398.86093 curveto
+166.49162 399.13887 166.68575 399.41682 166.87985 399.69257 curveto
+167.07178 399.96388 167.26369 400.2308 167.45781 400.49992 curveto
+167.64972 400.76463 167.84164 401.02715 168.03577 401.28745 curveto
+168.22768 401.54332 168.41959 401.79921 168.61371 402.05289 curveto
+168.80562 402.30215 168.99754 402.55142 169.19167 402.7985 curveto
+169.38358 403.04114 169.57549 403.2838 169.7696 403.52423 curveto
+169.95932 403.76027 170.15344 403.9919 170.34756 404.22572 curveto
+170.53947 404.45514 170.73138 404.68456 170.9255 404.91176 curveto
+171.11743 405.13676 171.30934 405.35956 171.50346 405.58015 curveto
+171.69537 405.79854 171.88728 406.01472 172.0814 406.2287 curveto
+172.27333 406.44046 172.46524 406.65002 172.65936 406.85959 curveto
+172.85127 407.06694 173.04318 407.2721 173.2373 407.47504 curveto
+173.42923 407.67577 173.62114 407.8743 173.81526 408.07063 curveto
+174.00717 408.26476 174.1991 408.45888 174.3932 408.65079 curveto
+174.58513 408.8405 174.77704 409.03021 174.97116 409.21771 curveto
+175.16307 409.403 175.355 409.5839 175.5491 409.76698 curveto
+175.74103 409.94786 175.93294 410.12654 176.12706 410.30302 curveto
+176.31897 410.47728 176.5109 410.64935 176.70502 410.82141 curveto
+176.89693 410.99127 177.08884 411.16112 177.28296 411.32877 curveto
+177.47487 411.49422 177.6668 411.65965 177.86092 411.82289 curveto
+178.05283 411.98393 178.24474 412.14275 178.43886 412.29938 curveto
+178.63077 412.456 178.8227 412.61041 179.01682 412.76482 curveto
+179.20872 412.91702 179.40063 413.06924 179.59476 413.21924 curveto
+179.78668 413.36703 179.97859 413.51483 180.17271 413.66043 curveto
+180.36462 413.80602 180.55653 413.9494 180.75066 414.09058 curveto
+180.94258 414.23175 181.13449 414.36853 181.32861 414.50749 curveto
+181.52052 414.64426 181.71243 414.78104 181.90656 414.91559 curveto
+182.09848 415.04794 182.29039 415.1803 182.48451 415.31046 curveto
+182.67642 415.43839 182.86835 415.56633 183.06245 415.69208 curveto
+183.25438 415.81781 183.44629 415.94354 183.64041 416.06708 curveto
+183.83232 416.19061 184.02425 416.31194 184.21835 416.43106 curveto
+184.41028 416.55017 184.60219 416.66708 184.79631 416.784 curveto
+184.98822 416.90091 185.18015 417.01341 185.37427 417.12813 curveto
+185.56618 417.24063 185.75809 417.35313 185.95221 417.46342 curveto
+186.14412 417.57372 186.33604 417.6796 186.53017 417.78769 curveto
+186.72208 417.89357 186.91399 417.99947 187.10811 418.10535 curveto
+187.30002 418.20903 187.49194 418.3127 187.68607 418.41417 curveto
+187.87798 418.51564 188.06989 418.61491 188.264 418.71417 curveto
+188.45593 418.81345 188.64784 418.9105 188.84196 419.00536 curveto
+189.03387 419.10022 189.228 419.19507 189.4199 419.28772 curveto
+189.61183 419.38037 189.80374 419.473 189.99786 419.56566 curveto
+190.18977 419.6561 190.38168 419.74655 190.5758 419.83478 curveto
+190.76773 419.92302 190.95964 420.01126 191.15376 420.09729 curveto
+191.34567 420.18332 191.5398 420.26714 191.7317 420.35097 curveto
+191.92363 420.4348 192.11554 420.51642 192.30966 420.59802 curveto
+192.50157 420.67964 192.6957 420.75685 192.88762 420.83627 curveto
+193.07953 420.91568 193.27144 420.9951 193.46556 421.0723 curveto
+193.65747 421.1495 193.8494 421.22452 194.04352 421.29951 curveto
+194.23543 421.37451 194.42955 421.44731 194.62146 421.5201 curveto
+194.81337 421.5929 195.00749 421.6657 195.19942 421.73628 curveto
+195.39133 421.80687 195.58324 421.87746 195.77736 421.94585 curveto
+195.96927 422.01422 196.16339 422.08261 196.35532 422.14879 curveto
+196.54723 422.21497 196.74135 422.28114 196.93326 422.34732 curveto
+197.12518 422.4135 197.3171 422.47968 197.51122 422.54366 curveto
+197.70313 422.60762 197.89503 422.66939 198.08916 422.73116 curveto
+198.28108 422.79292 198.4752 422.85248 198.66711 422.91203 curveto
+198.85902 422.9716 199.05315 423.03116 199.24506 423.09071 curveto
+199.43698 423.14807 199.6311 423.20543 199.82301 423.26277 curveto
+200.01492 423.32013 200.20905 423.37527 200.40096 423.43042 curveto
+200.59288 423.48558 200.78479 423.54292 200.97891 423.59587 curveto
+201.17082 423.64882 201.36494 423.70175 201.55687 423.75249 curveto
+201.74878 423.80322 201.9429 423.85617 202.13481 423.9069 curveto
+202.32672 423.95764 202.52084 424.01059 202.71277 424.05911 curveto
+202.90468 424.10764 203.0988 424.15617 203.29071 424.2047 curveto
+203.48262 424.25323 203.67674 424.30176 203.86867 424.34808 curveto
+204.06058 424.39441 204.2547 424.44073 204.44661 424.48706 curveto
+204.63853 424.53339 204.83264 424.5775 205.02457 424.62163 curveto
+205.21648 424.66574 205.4106 424.70766 205.60251 424.75177 curveto
+205.79443 424.79588 205.98854 424.8378 206.18047 424.87971 curveto
+206.37238 424.92163 206.5665 424.96133 206.7584 425.00325 curveto
+206.95033 425.04515 207.14445 425.08487 207.33636 425.12457 curveto
+207.52827 425.16428 207.7224 425.20178 207.9143 425.24149 curveto
+208.10623 425.28119 208.30035 425.32089 208.49226 425.3584 curveto
+208.68417 425.3959 208.8783 425.4312 209.0702 425.46649 curveto
+209.26213 425.50179 209.45625 425.54149 209.64816 425.57678 curveto
+209.84007 425.61208 210.0342 425.64517 210.22612 425.68047 curveto
+210.41803 425.71576 210.61215 425.75105 210.80406 425.78413 curveto
+210.99597 425.81723 211.1901 425.85031 211.38202 425.8834 curveto
+211.57393 425.91649 211.76805 425.94958 211.95996 425.98047 curveto
+212.15187 426.01135 212.346 426.04224 212.53792 426.07312 curveto
+212.72983 426.104 212.92395 426.13487 213.11586 426.16576 curveto
+213.30779 426.19664 213.50189 426.22752 213.69382 426.25621 curveto
+213.88573 426.28488 214.07985 426.31355 214.27176 426.34224 curveto
+214.46368 426.37091 214.65779 426.4018 214.84972 426.42827 curveto
+215.04163 426.45474 215.23575 426.4812 215.42766 426.50768 curveto
+215.61958 426.53415 215.8137 426.56282 216.00562 426.5893 curveto
+216.19753 426.61577 216.39165 426.64224 216.58356 426.6665 curveto
+216.77548 426.69077 216.9696 426.71724 217.16151 426.7415 curveto
+217.35342 426.76578 217.54755 426.79224 217.73946 426.81651 curveto
+217.93138 426.84077 218.1255 426.86504 218.31741 426.8871 curveto
+218.50932 426.90915 218.70345 426.93343 218.89537 426.95547 curveto
+219.08728 426.97754 219.2814 427.0018 219.47331 427.02386 curveto
+219.66522 427.04593 219.85934 427.07019 220.05127 427.09225 curveto
+220.24318 427.1143 220.4373 427.13416 220.62921 427.154 curveto
+220.82112 427.17387 221.01524 427.19592 221.20717 427.21577 curveto
+221.39908 427.23563 221.5932 427.25769 221.78511 427.27754 curveto
+221.97704 427.2974 222.17114 427.31725 222.36307 427.3371 curveto
+222.55498 427.35696 222.7491 427.3746 222.94101 427.39226 curveto
+223.13293 427.4099 223.32706 427.42975 223.51897 427.4496 curveto
+223.71088 427.46945 223.905 427.4871 224.09691 427.50476 curveto
+224.28883 427.5224 224.48296 427.54005 224.67487 427.5577 curveto
+224.86678 427.57535 225.0609 427.59299 225.2528 427.60843 curveto
+225.44473 427.62387 225.63885 427.63931 225.83076 427.65697 curveto
+226.02267 427.6746 226.2168 427.69005 226.4087 427.7077 curveto
+226.60063 427.72534 226.79475 427.74078 226.98666 427.75623 curveto
+227.17857 427.77167 227.3727 427.78711 227.56462 427.80255 curveto
+227.75653 427.818 227.95065 427.83122 228.14256 427.84447 curveto
+228.33447 427.8577 228.5286 427.87314 228.72052 427.88858 curveto
+228.91243 427.90402 229.10655 427.91946 229.29846 427.93271 curveto
+229.49037 427.94594 229.6845 427.95917 229.87642 427.97241 curveto
+230.06833 425.42458 230.26245 422.87674 230.45436 420.3289 curveto
+230.64186 417.90681 230.83379 415.48471 231.03232 413.06482 curveto
+231.21982 410.77287 231.41173 408.48314 231.61026 406.19339 curveto
+231.79776 404.02498 231.98969 401.85657 232.18822 399.68816 curveto
+232.37572 397.63445 232.56763 395.58295 232.76616 393.53143 curveto
+232.95367 391.58803 233.14558 389.64682 233.34412 387.70561 curveto
+233.53162 385.86809 233.72353 384.03056 233.92206 382.19302 curveto
+234.10957 380.45256 234.30148 378.7143 234.50002 376.97604 curveto
+234.68752 375.32822 234.87943 373.6826 235.07797 372.03699 curveto
+235.26547 370.47961 235.45738 368.92224 235.65591 367.36485 curveto
+235.84341 365.8891 236.03534 364.41554 236.23387 362.942 curveto
+236.42137 361.54565 236.61328 360.1493 236.81181 358.75517 curveto
+236.99931 357.43382 237.19124 356.11249 237.38977 354.79335 curveto
+237.57727 353.54259 237.76918 352.29184 237.96771 351.04329 curveto
+238.15521 349.86092 238.34714 348.67854 238.54567 347.49617 curveto
+238.73317 346.37778 238.92729 345.25937 239.12361 344.14098 curveto
+239.31111 343.07993 239.50304 342.01888 239.70157 340.96004 curveto
+239.88907 339.95856 240.08098 338.95708 240.27951 337.95558 curveto
+240.46703 337.00703 240.65894 336.0585 240.85747 335.10995 curveto
+241.04497 334.20995 241.23688 333.31213 241.43541 332.41432 curveto
+241.62292 331.56284 241.81483 330.71356 242.01337 329.86649 curveto
+242.20087 329.06133 242.39278 328.25838 242.59131 327.45543 curveto
+242.77882 326.69217 242.97073 325.93114 243.16927 325.1723 curveto
+243.35677 324.45097 243.54869 323.72963 243.74722 323.0105 curveto
+243.93472 322.32887 244.12663 321.64725 244.32516 320.96782 curveto
+244.51266 320.32149 244.70679 319.67737 244.90312 319.03323 curveto
+245.09062 318.42 245.28253 317.80894 245.48106 317.20012 curveto
+245.66856 316.62216 245.86049 316.04422 246.05902 315.46848 curveto
+246.24652 314.9214 246.44064 314.37434 246.63696 313.82948 curveto
+246.82446 313.3111 247.01859 312.7927 247.21492 312.27652 curveto
+247.40242 311.78459 247.59433 311.29268 247.79286 310.80518 curveto
+247.98036 310.33972 248.17448 309.87868 248.37082 309.41765 curveto
+248.56053 308.97647 248.75244 308.53749 248.94876 308.10071 curveto
+249.13628 307.68379 249.32819 307.26688 249.52672 306.85437 curveto
+249.71422 306.45952 249.90834 306.06906 250.10466 305.67862 curveto
+250.29437 305.30362 250.48628 304.93301 250.68262 304.56242 curveto
+250.87012 304.20947 251.06424 303.85654 251.26056 303.508 curveto
+251.45027 303.1727 251.6422 302.8374 251.83852 302.50652 curveto
+252.02823 302.19107 252.22014 301.87563 252.41647 301.56459 curveto
+252.60617 301.26459 252.7981 300.96457 252.99442 300.66898 curveto
+253.18413 300.38441 253.37604 300.10207 253.57237 299.82191 curveto
+253.76207 299.5528 253.954 299.28366 254.15031 299.01895 curveto
+254.34003 298.76308 254.53194 298.5116 254.72827 298.26233 curveto
+254.91797 298.02188 255.1099 297.78143 255.30621 297.54541 curveto
+255.49593 297.316 255.68784 297.08878 255.88417 296.86598 curveto
+256.07388 296.64981 256.2658 296.43584 256.46211 296.22406 curveto
+256.65182 296.0189 256.84373 295.81596 257.04007 295.61523 curveto
+257.22978 295.42111 257.42389 295.2314 257.61801 295.04169 curveto
+257.80772 294.8564 258.00185 294.6755 258.19597 294.49463 curveto
+258.38568 294.32036 258.57759 294.1483 258.77391 293.97844 curveto
+258.96362 293.81299 259.15775 293.65196 259.35187 293.49313 curveto
+259.54378 293.33652 259.7357 293.1821 259.92981 293.02989 curveto
+260.11952 292.8821 260.31364 292.73651 260.50777 292.59312 curveto
+260.69968 292.45415 260.8916 292.31738 261.08572 292.18062 curveto
+261.27763 292.04605 261.46954 291.9137 261.66367 291.78575 curveto
+261.85338 291.66002 262.0475 291.5387 262.24162 291.41737 curveto
+262.43353 291.29825 262.62544 291.18134 262.81956 291.06664 curveto
+263.01147 290.95413 263.2034 290.84163 263.39752 290.73354 curveto
+263.58943 290.62766 263.78134 290.52397 263.97546 290.4225 curveto
+264.16739 290.32103 264.3593 290.22177 264.55342 290.12471 curveto
+264.74533 290.02765 264.93724 289.935 265.13136 289.84235 curveto
+265.32329 289.7519 265.5152 289.66367 265.70932 289.57764 curveto
+265.90123 289.49161 266.09314 289.40778 266.28726 289.32616 curveto
+266.47919 289.24454 266.6711 289.16513 266.86522 289.08792 curveto
+267.05713 289.01071 267.24905 288.93571 267.44316 288.86292 curveto
+267.63509 288.79013 267.827 288.71953 268.02112 288.64894 curveto
+268.21303 288.57835 268.40495 288.51218 268.59908 288.446 curveto
+268.79099 288.37982 268.9829 288.31805 269.17702 288.25629 curveto
+269.36893 288.19453 269.56085 288.13277 269.75497 288.0732 curveto
+269.94688 288.01364 270.1388 287.95628 270.33292 287.90114 curveto
+270.52483 287.846 270.71675 287.79305 270.91087 287.74011 curveto
+271.10278 287.68716 271.2969 287.63864 271.48882 287.5879 curveto
+271.68074 287.53937 271.87485 287.48863 272.06677 287.4423 curveto
+272.25868 287.39598 272.4528 287.34966 272.64471 287.30554 curveto
+272.83664 287.26143 273.03075 287.2173 273.22267 287.1754 curveto
+273.41458 287.13348 273.6087 287.09157 273.80061 287.05186 curveto
+273.99254 287.01216 274.18666 286.97466 274.37857 286.93715 curveto
+274.57048 286.89966 274.7646 286.85995 274.95651 286.82465 curveto
+275.14844 286.78935 275.34256 286.75406 275.53447 286.72098 curveto
+275.72638 286.68788 275.9205 286.6548 276.11241 286.6217 curveto
+276.30434 286.58862 276.49846 286.55774 276.69037 286.52686 curveto
+276.88228 286.49597 277.0764 286.4695 277.26833 286.44083 curveto
+277.46024 286.41214 277.65436 286.38347 277.84627 286.357 curveto
+278.03818 286.33052 278.2323 286.30406 278.42422 286.27759 curveto
+278.50363 286.32611 lineto
+278.69334 287.6232 278.88525 288.92027 279.08159 290.21515 curveto
+279.27129 291.47693 279.46321 292.73871 279.65953 294.0005 curveto
+279.84924 295.22919 280.04337 296.45569 280.23749 297.68217 curveto
+280.42719 298.87778 280.61911 300.07118 280.81543 301.26459 curveto
+281.00514 302.4271 281.19705 303.58742 281.39339 304.74773 curveto
+281.58308 305.87715 281.7772 307.00658 281.97133 308.13602 curveto
+282.16104 309.23676 282.35295 310.33531 282.54929 311.43385 curveto
+282.73898 312.50372 282.93091 313.5736 283.12723 314.64125 curveto
+283.31694 315.68245 283.50885 316.72365 283.70518 317.76263 curveto
+283.8949 318.77515 284.0868 319.78766 284.28313 320.79797 curveto
+284.47284 321.78401 284.66475 322.76785 284.86108 323.7517 curveto
+285.0508 324.70906 285.24492 325.66643 285.43903 326.6238 curveto
+285.62874 327.5569 285.82065 328.4878 286.01698 329.41869 curveto
+286.2067 330.32532 286.3986 331.23195 286.59492 332.13638 curveto
+286.78464 333.01874 286.97876 333.90111 287.17288 334.78127 curveto
+287.3626 335.63937 287.55672 336.49747 287.75084 337.35336 curveto
+287.94054 338.1894 288.13466 339.02325 288.32878 339.85709 curveto
+288.5185 340.66887 288.71262 341.48064 288.90674 342.29242 curveto
+289.09644 343.08214 289.28836 343.87186 289.48468 344.66158 curveto
+289.6744 345.42923 289.86852 346.19688 290.06264 346.96455 curveto
+290.25233 347.71236 290.44426 348.46016 290.64058 349.20796 curveto
+290.83029 349.93591 291.02441 350.66167 291.21854 351.3874 curveto
+291.40825 352.0955 291.60016 352.8036 291.79648 353.5117 curveto
+291.98619 354.19995 292.18031 354.8882 292.37444 355.57423 curveto
+292.56415 356.24484 292.75826 356.91544 292.95238 357.58383 curveto
+293.14209 358.23457 293.33621 358.88531 293.53033 359.53606 curveto
+293.72005 360.16916 293.91417 360.80226 294.10828 361.43536 curveto
+294.29799 362.05301 294.48991 362.67067 294.68623 363.28612 curveto
+294.87595 363.88612 295.07007 364.48615 295.26418 365.08394 curveto
+295.45389 365.6685 295.64801 366.25087 295.84213 366.83324 curveto
+296.03185 367.40016 296.22375 367.96707 296.42009 368.534 curveto
+296.60979 369.08548 296.80391 369.63695 296.99803 370.18843 curveto
+297.18774 370.72667 297.38187 371.26492 297.57599 371.80096 curveto
+297.76569 372.32376 297.95761 372.84656 298.15393 373.36937 curveto
+298.34364 373.87672 298.53777 374.38408 298.73189 374.89145 curveto
+298.92159 375.38557 299.1157 375.8797 299.30983 376.37383 curveto
+299.49954 376.8547 299.69366 377.3356 299.88779 377.8165 curveto
+300.0775 378.28415 300.2716 378.7518 300.46573 379.21945 curveto
+300.65544 379.67607 300.84956 380.1327 301.04369 380.58713 curveto
+301.2334 381.03052 301.4275 381.4739 301.62163 381.91508 curveto
+301.81134 382.34523 302.00546 382.77539 302.19958 383.20555 curveto
+302.3893 383.62466 302.58342 384.0438 302.77753 384.46292 curveto
+302.96724 384.87102 303.16136 385.2791 303.35548 385.685 curveto
+303.5452 386.08206 303.73932 386.47913 303.93344 386.87398 curveto
+304.12314 387.26003 304.31726 387.64606 304.51138 388.03209 curveto
+304.7011 388.40709 304.89522 388.7821 305.08934 389.1571 curveto
+305.27904 389.52328 305.47316 389.88727 305.66728 390.25124 curveto
+305.82335 390.54521 305.9809 390.83768 306.14117 391.1299 curveto stroke
+ 0 0.70866 dtransform truncate idtransform setlinewidth pop
+newpath 25.51176 293.38518 moveto
+309.25827 293.38518 lineto stroke
+newpath 309.06207 292.40076 moveto
+314.6451 293.38518 lineto
+309.06207 294.3696 lineto
+309.34126 293.38518 lineto
+ closepath
+gsave fill grestore stroke
+ [3 3 ] 0 setdash
+newpath 25.51176 357.1647 moveto
+314.6451 357.1647 lineto stroke
+ 0.70866 0 dtransform exch truncate exch idtransform pop setlinewidth
+ [] 0 setdash
+newpath 38.26765 280.62927 moveto
+38.26765 436.81711 lineto stroke
+ 0 0.70866 dtransform truncate idtransform setlinewidth pop
+newpath 39.2523 436.61975 moveto
+38.26765 442.20407 lineto
+37.283 436.61975 lineto
+38.26765 436.899 lineto
+ closepath
+gsave fill grestore stroke
 showpage
 %%EOF

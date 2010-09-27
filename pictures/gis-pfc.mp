@@ -90,9 +90,9 @@ addto f1 contour makepath(n1 scaled (1/escala)) shifted (0, 0);
 
 % ------------------------------------------------------------------
 % marcos o ventanas externas
-c5 = 3c0;
-c6 = c3/2 + c5;			c7 = c4/2 + c5;
-c8 = c6 + c0/2;			c9 = c7 + c0/2;
+c5 = 3c0;			c6 = c3/2 + c5;
+c7 = c4/2 + c5;			c8 = c6 + c0/2;
+c9 = c7 + c0/2;
 r2 = (-c6, -c7)--(c6, -c7)--(c6, c7)--(-c6, c7)--cycle;
 r3 = (-c6, -c9)--(c6, -c9){right}..{up}(c8, -c7)--(c8, c7){up}.. %
 	{left}(c6, c9)--(-c6, c9){left}..{down}(-c8, c7)-- %
@@ -340,6 +340,49 @@ addto f0 doublepath r0 shifted z02 scaled escala %
 % ------------------------------------------------------------------
 % cierro la definición
 (f0)
+endgroup
+
+enddef;
+% ==================================================================
+
+
+
+% ==================================================================
+def sierra =
+begingroup
+save c,d,r;
+numeric c[], d[][]; path r[];
+
+% ------------------------------------------------------------------
+% primer periodo de una función diente de sierra con Th = 2/3, Tl =
+% 1/3 (T = 1).
+c0 = 1/100;			c1 = 1 - c0;	% Vtl y Vth
+c2 = -256/mlog(c0/c1);		c3 = 2c2/3;	% T1
+c4 = c3/2;			c5 = 250;	% T2 y N
+c6 = 1/250;			c7 = 256/c4;	% Paso y cte. aux.
+c8 = 166;					% i / 2/3 < d[0][i]
+for i = 0 upto c8 :
+	d[0][i] = i*c6;
+	d[1][i] = -256d[0][i]/c3;
+	d[2][i] = 1 - mexp(d[1][i]);
+	d[3][i] = c0 + c1*d[2][i];
+endfor
+c9 = d[0][c8];
+for i = (c8 + 1) upto c5 :
+	d[0][i] = i*c6;
+	d[1][i] = (c9 - d[0][i])*c7;
+	d[2][i] = 1 - mexp(d[1][i]);
+	d[3][i] = c1 - c1*d[2][i];
+endfor
+r0 = (d[0][0], d[3][0]) for i = 1 upto c8 :
+	..(d[0][i], d[3][i]) endfor -- %
+	for i = (c8 + 1) upto (c5 - 1) :
+		(d[0][i], d[3][i]).. endfor %
+	(d[0][c5], d[3][c5]);
+
+% ------------------------------------------------------------------
+% cierro la definición
+(r0)
 endgroup
 
 enddef;
