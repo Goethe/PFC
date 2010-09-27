@@ -869,89 +869,112 @@ l7 = pensquare scaled 0.5u;
 pickup l1;
 
 % ------------------------------------------------------------------
-% pulso rectangular y portadora modulada por el pulso gaussiano
+% ejes para la representación de los pulsos
 % ancho y alto del gráfico
-a00 = 4wi/10;			a01 = he01/2;
-% límites de las coordenadas internas del gráfico
-a02 = 3.7;			a03 = 1.1;
-% Th figurado, ancho del pulso rectangular
-a04 = 3.0305;
+a00 = 2wi/5;			a01 = he01/2;
 % desplazamiento del gráfico
-a05 = wi/20;			a06 = wi/2 + a05;
-a07 = u/10;
+a02 = wi/20;			a03 = wi/2;
+a04 = u/10;
 % ejes coordenados
 p0 = (0, 0)--(0, 7a01/10);
-p1 = (0, 0)--(a00 + a05, 0);
-p2 = (0, 0)--(5a05/4, 0)--(3a05/2, sqrt(a05))-- %
-	(2a05, -sqrt(a05))--(9a05/4, 0)--(a00 + a05, 0);
+p1 = (0, 0)--(a00 + a02, 0);
+p2 = (0, 0)--(5a02/4, 0)--(3a02/2, sqrt(a02))-- %
+	(2a02, -sqrt(a02))--(9a02/4, 0)--(a00 + a02, 0);
+drawgisarrow p0 shifted (5a02/4, 2a01/5);
+drawgisarrow p1 shifted (a02/2, a01/2 - a04);
+drawgisarrow p0 shifted (5a02/4, 2a01/5) shifted (a03, 0);
+drawgisarrow p2 shifted (a02/2, a01/2 - a04) shifted (a03, 0);
 
-draw begingraph(a00, a01);
-	Gneedfr_ := false;
-	setrange(-3a04/2, -a03, 5a04/2, a03);
-	gdraw (-3a04/2, 0)--(-a04, 0)--(-a04, 1)--(a04, 1)--%
-		(a04, 0)--(5a04/2, 0) withpen l2;
-	autogrid(, );
-	glabel.bot(btex $t_0$ etex, (-a04, -1/20));
-	glabel.bot(btex $t_0 + T_H$ etex, (a04, -1/20));
-	glabel.lft(btex $P$ etex, (-11a04/8, 1));
-	glabel.urt(btex $u(t)$ etex, (-5a04/4, 1.1));
-	glabel.bot(btex $t$ etex, (5a04/2, -1/20));
-endgraph shifted (a05, 0);
-drawgisarrow p0 shifted (5a05/4, 2a01/5);
-drawgisarrow p1 shifted (a05/2, a01/2 - a07);
+% ------------------------------------------------------------------
+% pulso rectangular
+% altura y duración del estado alto (Th)
+a05 = wi/10;			a06 = 4a01/10;
+% Th figurado, ancho del pulso rectangular
+p3 = (a02/4, 0)--(a05/2, 0)--(a05/2, a06)--(5a05/2, a06)--%
+	(5a05/2, 0)--(4a05, 0);
+z00 = (3a02/4, a01/2);		a07 = -a06/20;
+z01 = (a05/4, a06);		z02 = (3a05/8, a01/2);
+z03 = (a03 - 3a02/2, a07);
+pickup l2;
+draw p3 shifted z00;
+label.bot(btex $t_0$ etex, z00 shifted (9a05/16, a07));
+label.bot(btex $t_0 + T_H$ etex, z00 shifted (21a05/8, a07));
+label.lft(btex $P$ etex, z00 shifted z01);
+label.urt(btex $u(t)$ etex, z00 shifted z02);
+label.bot(btex $t$ etex, z00 shifted z03);
 
-draw begingraph(a00, a01);
+% ------------------------------------------------------------------
+% pulso gausiano y portadora
+a08 = 100;			a09 = v/a08;
+a10 = 450;			a11 = 360/a10;
+a12 = 19;
+for i = 0 upto a10 :
+	b[0][i] = (i - a10/2)*a09;
+	b[1][i] = b[0][i]**2;
+	b[2][i] = -b[1][i]/2;
+	b[3][i] = mexp(b[2][i]);
+	b[4][i] = b[3][i]*sind(a11*a12*i);
+endfor
+p4 = (b[0][0]/16, b[3][0]) for i = 1 upto a10 :
+	..(b[0][i]/16, b[3][i]) endfor;
+p5 = (b[0][0]/16, b[4][0]) for i = 1 upto a10 :
+	..(b[0][i]/16, b[4][i]) endfor;
+z04 = (3a02/4 + a03, a01/2);
+begingroup
 	interim linejoin := rounded;
-	Gneedfr_ := false;
-	setrange(-5a04/2, -a03, 3a04/2, a03);
-	gdraw "e.d" dashed evenly;
-	gdraw "c.d" withpen l2;
-	autogrid(, );
-	glabel.llft(btex $t_0 < t_1$ etex, (-a04, -1/20));
-	glabel.bot(btex $t_1 + T_H$ etex, (a04 + 1, -1/2));
-	glabel.lft(btex $P^\prime$ etex, (-19a04/8, 1));
-	glabel.urt(btex $v(t)$ etex, (-9a04/4, 1.1));
-	glabel.bot(btex $t$ etex, (3a04/2, -1/20));
-endgraph shifted (a06, 0);
-drawgisarrow p0 shifted (a05/4 + a06, 2a01/5);
-drawgisarrow p2 shifted (a06 - a05/2, a01/2 - a07);
+	draw p5 xscaled (9a05/v) yscaled (28*a06/v) shifted z04 %
+		shifted (13a05/5, 0);
+	pickup l1;
+	draw p4 xscaled (9a05/v) yscaled (28*a06/v) shifted z04 %
+		shifted (13a05/5, 0) dashed evenly;
+endgroup;
+label.lft(btex $P^\prime$ etex, z04 shifted z01);
+label.urt(btex $v(t)$ etex, z04 shifted z02);
+label.bot(btex $t$ etex, z04 shifted z03);
+a13 = -3a06/5;				a14 = 6a05/5;
+a15 = 4a05;				a16 = a05/10;
+a17 = a05/8;				a18 = -2u;
+label.bot(btex $t_0 < t_1$ etex, z04 shifted (a14, a13));
+label.bot(btex $t_1 + T_H$ etex, z04 shifted (a15 + a17, a13));
 begingroup
 	interim ahlength := 3u/2;
-	drawgisarrow (a00 + a06 - a05/4 - 3u/2, 11a01/40)-- %
-		(a00 + a06 - a05/4 - 2u, a01/2 - u);
+	drawgisarrow z04 shifted (a14, a13)-- %
+		z04 shifted (a14 + a16, a18);
+	drawgisarrow z04 shifted (a15, a13)-- %
+		z04 shifted (a15 - a16, a18);
 endgroup;
 
 % ------------------------------------------------------------------
 % diagrama de cajas
-a08 = 16he01/20;	a09 = 3u;
-a10 = 3a09/2 + 2u;	a11 = a09 + 7.5u;
+a19 = 16he01/20;			a20 = 3u;
+a21 = 3a20/2 + 2u;			a22 = a20 + 7.5u;
 d0 = thelabel.rt(btex \begin{tabular}{c} Alimentaci\'on\\ %
-	el\'ectrica \end{tabular} etex, (0, a08));
+	el\'ectrica \end{tabular} etex, (0, a19));
 d2 = thelabel.lft(btex \begin{tabular}{c} Se\~nal\\ac\'ustica %
-	\end{tabular} etex, (wi, a08));
-z00 = 1/2[urcorner d0, lrcorner d0];
-z01 = 1/2[ulcorner d2, llcorner d2];
-(a12, whatever) = 1/2[z00, z01];
-a13 = 1.2;
-d1 = transductor(a13, (a12, a08));
+	\end{tabular} etex, (wi, a19));
+z05 = 1/2[urcorner d0, lrcorner d0];
+z06 = 1/2[ulcorner d2, llcorner d2];
+(a23, whatever) = 1/2[z05, z06];
+a24 = 1.2;
+d1 = transductor(a24, (a23, a19));
 begingroup
-	interim bboxmargin := a09;
-	p3 = bbox d0;
-	p5 = bbox d2;
-	interim bboxmargin := 3a09/2;
-	p4 = bbox d1;
-	interim bboxmargin := a10;
-	p6 = bbox d1;
+	interim bboxmargin := a20;
+	p6 = bbox d0;
+	p8 = bbox d2;
+	interim bboxmargin := 3a20/2;
+	p7 = bbox d1;
+	interim bboxmargin := a21;
+	p9 = bbox d1;
 endgroup;
-z02 = 1/2[ulcorner p4, llcorner p4];
-draw z02 shifted (3a09/4, 0)--z02 shifted (a11, 0);
+z07 = 1/2[ulcorner p7, llcorner p7];
+draw z07 shifted (3a20/4, 0)--z07 shifted (a22, 0);
 draw d0;	draw d1;	draw d2;
-draw p4;
-drawgisarrow center p3--center p4 cutbefore p3 cutafter p6;
-drawgisarrow center p4--center p5 cutbefore p6 cutafter p5;
-label.top(btex $u(t)$ etex, 1/2[center p3, center p4]);
-label.top(btex $v(t)$ etex, 1/2[center p4, center p5]);
-label.bot(btex Transductor etex, 1/2[llcorner p4, lrcorner p4] %
+draw p7;
+drawgisarrow center p6--center p7 cutbefore p6 cutafter p9;
+drawgisarrow center p7--center p8 cutbefore p9 cutafter p8;
+label.top(btex $u(t)$ etex, 1/2[center p6, center p7]);
+label.top(btex $v(t)$ etex, 9/16[center p7, center p8]);
+label.bot(btex Transductor etex, 1/2[llcorner p7, lrcorner p7] %
 	shifted (0, -u));
 
 endfig;

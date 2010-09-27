@@ -6,7 +6,6 @@ CH1SRC = gis-pfc-ch1.mp
 CH2SRC = gis-pfc-ch2.mp
 CH3SRC = gis-pfc-ch3.mp
 OBJ = $(CH1) $(CH2) $(CH3)
-SRC = $(CH1SRC) $(CH2SRC) $(CH3SRC)
 MAIN = pictures.pdf
 PRMAIN = pictures.tex
 PL = pdflatex
