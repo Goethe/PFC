@@ -12,7 +12,7 @@ PRMAIN = pictures.tex
 PL = pdflatex
 MP = mpost
 
-$(MAIN) : $(PRMAIN) $(SRC) $(OBJ) $(LIB)
+$(MAIN) : $(PRMAIN) $(OBJ) $(LIB)
 	$(PL) $(PRMAIN)
 	$(PL) $(PRMAIN) > /dev/null
 

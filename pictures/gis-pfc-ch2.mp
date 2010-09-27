@@ -274,4 +274,62 @@ endfig;
 
 
 
+% ==================================================================
+beginfig(3);
+numeric a[], i, j, k, pi;
+picture d[];
+pen l[];
+path p[], q[][];
+transform t[];
+string s[];
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+pickup l1;
+
+% ------------------------------------------------------------------
+% ventana del osciloscopio
+a00 = 3u/2;			a01 = 500;
+z00 = (0, 0);			z01 = (50a00, 40a00);
+z02 = (57a00, 47a00);
+a02 = wi/a01;			a03 = 360/a01;
+a04 = 3y01/8;			a05 = (he02 - y01)/2;
+a06 = 5;			a07 = 87x01/100;
+a08 = x01 - a07;
+d0 = osciloscopio(a00, z00);
+p0 = (a08/2, -y01)--(a07 + a08/2, -y01)--(a07 + a08/2, y01)-- %
+	(a08/2, y01)--cycle;
+p1 = (0, 0) for i = 1 upto a01 :
+	--(i*a02, a04*sind(a06*a03*i)) endfor cutbefore p0 %
+		cutafter p0;
+draw d0 shifted (wi/2, 26a00);
+pickup l2;
+draw p1 shifted (wi/2 - x01/2, 26a00);
+
+% ------------------------------------------------------------------
+% sinusoide que entra al osciloscopio
+
+
+% Tengo que representar en esta figura, la señal (en principio una
+% sinusoide) tal y como se concibe tras el acondicionador de
+% recepción, y después una versión disparada de la misma en la
+% ventana del osciloscopio. Con disparada me refiero centrada en el
+% origen. En la parte que representa a la señal «libre» tengo que
+% marcar que trozo coge el osciloscopio, que trozo descarta, y que
+% trozo se pierde durante el procesado. También cabría representar
+% la inversión que se produce en la señal (que no tiene por que
+% ocurrir en los osciloscopios de laboratorio, pero que se produce
+% en el osciloscopio que yo he diseñado)
+
+% ------------------------------------------------------------------
+% marco
+pickup l2;
+draw (0, 0)--(wi, 0)--(wi, 2he02)--(0, 2he02)--cycle;
+
+endfig;
+% ==================================================================
+
+
+
 end

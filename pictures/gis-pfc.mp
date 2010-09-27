@@ -4,6 +4,116 @@ message "Preloading the gis-pfc file, version "&base_version;
 
 
 % ==================================================================
+def osciloscopio(expr escala, desplazamiento) =
+begingroup
+save c,n,f,r,x,y;
+numeric c[],x[],y[]; pen n[]; picture f[]; path r[];
+interim bboxmargin := 0;
+n0 = pencircle scaled 0.15u;
+n1 = pencircle scaled 0.25u;
+n2 = pencircle scaled 0.35u;
+n3 = pencircle scaled 0.5u;
+f0 = nullpicture;
+f1 = nullpicture;
+f2 = nullpicture;
+f3 = nullpicture;
+
+% ------------------------------------------------------------------
+% constantes necesarias para formar la cuadrícula
+c0 = 1;				c1 = 5c00; % cuadro pequeño/grande
+c2 = c0/2;			c3 = 10c1; % tick/ancho total
+c4 = 8c1;				   % alto total
+r0 = (0, 0)--(c2, 0);		r1 = (-c2/2, 0)--(c2/2, 0);
+% ejes externos
+addto f0 doublepath (-c3/2, -c4/2)--(c3/2, -c4/2)--(c3/2, c4/2)-- %
+	(-c3/2, c4/2)--cycle;
+% ejes centrados
+for i = -c3/2, (c3/2 - c2) :
+	for j = (c0 - c4/2) step c0 until (c4/2 - c0) :
+		addto f0 doublepath r0 shifted (i, j);
+	endfor
+endfor
+for i = -c4/2, (c4/2 - c2) :
+	for j = (c0 - c3/2) step c0 until (c3/2 - c0):
+		addto f0 doublepath r0 rotated 90 shifted (j, i);
+	endfor
+endfor
+
+% ------------------------------------------------------------------
+% cuadrícula punteada
+for i = (c0 - c4/2) step c0 until -c0 :
+	addto f0 doublepath r1 shifted (0, i);
+	for j = (c1 - c3/2) step c1 until -c1 :
+		addto f1 contour makepath(n1 scaled (1/escala)) %
+			shifted (j, i);
+	endfor
+	for j = c1 step c1 until (c3/2 - c1) :
+		addto f1 contour makepath(n1 scaled (1/escala)) %
+			shifted (j, i);
+	endfor
+endfor
+for i = (c0 - c3/2) step c0 until -c0 :
+	addto f0 doublepath r1 rotated 90 shifted (i, 0);
+	for j = (c1 - c4/2) step c1 until -c1 :
+		addto f1 contour makepath(n1 scaled (1/escala)) %
+			shifted (i, j);
+	endfor
+	for j = c1 step c1 until (c4/2 - c1) :
+		addto f1 contour makepath(n1 scaled (1/escala)) %
+			shifted (i, j);
+	endfor
+endfor
+for i = c0 step c0 until (c4/2 - c0) :
+	addto f0 doublepath r1 shifted (0, i);
+	for j = (c1 - c3/2) step c1 until -c1 :
+		addto f1 contour makepath(n1 scaled (1/escala)) %
+			shifted (j, i);
+	endfor
+	for j = c1 step c1 until (c3/2 - c1) :
+		addto f1 contour makepath(n1 scaled (1/escala)) %
+			shifted (j, i);
+	endfor
+endfor
+for i = c0 step c0 until (c3/2 - c0) :
+	addto f0 doublepath r1 rotated 90 shifted (i, 0);
+	for j = (c1 - c4/2) step c1 until -c1 :
+		addto f1 contour makepath(n1 scaled (1/escala)) %
+			shifted (i, j);
+	endfor
+	for j = c1 step c1 until (c4/2 - c1) :
+		addto f1 contour makepath(n1 scaled (1/escala)) %
+			shifted (i, j);
+	endfor
+endfor
+% punto central
+addto f1 contour makepath(n1 scaled (1/escala)) shifted (0, 0);
+
+% ------------------------------------------------------------------
+% marcos o ventanas externas
+c5 = 3c0;
+c6 = c3/2 + c5;			c7 = c4/2 + c5;
+c8 = c6 + c0/2;			c9 = c7 + c0/2;
+r2 = (-c6, -c7)--(c6, -c7)--(c6, c7)--(-c6, c7)--cycle;
+r3 = (-c6, -c9)--(c6, -c9){right}..{up}(c8, -c7)--(c8, c7){up}.. %
+	{left}(c6, c9)--(-c6, c9){left}..{down}(-c8, c7)-- %
+	(-c8, -c7){down}..{right}cycle;
+addto f2 contour r3;
+addto f2 contour r2 withcolor white;
+
+% ------------------------------------------------------------------
+% cierro la definición
+addto f3 also f2 scaled escala shifted desplazamiento withpen n0;
+addto f3 also f0 scaled escala shifted desplazamiento withpen n1;
+addto f3 also f1 scaled escala shifted desplazamiento;
+(f3)
+endgroup
+
+enddef;
+% ==================================================================
+
+
+
+% ==================================================================
 def transductor(expr escala, desplazamiento) =
 begingroup
 save c,n,f,r,x,y;
