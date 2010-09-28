@@ -90,7 +90,7 @@ Los elementos de \matlab{} que juegan un papel suficientemente importante en el 
 		Adaptadores & Son la vía de comunicación entre la máquina virtual de adquisición de datos y el hardware por la cual se transmiten propiedades, datos y eventos.\\
 		\bottomrule
 	\end{tabulary}
-	\caption{Descripción de los componentes de la \datx{}}
+	\caption{Descripción de los componentes de la \datx{}.}
 	\label{tab:toolcomp}
 \end{table}
 
@@ -98,7 +98,7 @@ Los elementos de \matlab{} que juegan un papel suficientemente importante en el 
 	\begin{center}
 		\includegraphics{gis-pfc-ch2-1.mps}
 	\end{center}
-	\caption{Elementos que intervienen en el funcionamiento de la \datx{}}
+	\caption{Elementos que intervienen en el funcionamiento de la \datx{}.}
 	\label{fig:toolcomp}
 \end{figure}
 
@@ -110,7 +110,7 @@ Los objetos dispositivo permiten el acceso a subsistemas específicos del hardwar
 	\begin{center}
 		\includegraphics{gis-pfc-ch2-2.mps}
 	\end{center}
-	\caption{Grafo que representa la comunicación entre los subsistemas del hardware y los objetos dispositivo}
+	\caption{Grafo que representa la comunicación entre los subsistemas del hardware y los objetos dispositivo.}
 	\label{fig:subsystemsOO}
 \end{figure}
 
@@ -147,11 +147,11 @@ Para crear un objeto dispositivo, se debe llamar a la función de creación apropi
 		Entrada / Salida digital & digitalio(`adaptador', ID); \\
 		\bottomrule
 	\end{tabular}
-	\caption{Tipos de función de creación de acuerdo con el tipo subsistema al que se orienta el objeto dispositivo creado}
+	\caption{Tipos de función de creación de acuerdo con el tipo subsistema al que se orienta el objeto dispositivo creado.}
 	\label{tab:constructors}
 \end{table}
 
-\begin{lstlisting}[style=displayed, caption={[Método a seguir para crear un objeto dispositivo]Método que evalúa la existencia de un objeto dispositivo previo a la llamada de la aplicación, en caso positivo lo hereda para su uso posterior, de lo contrario crea uno nuevo}, label={cod:constructor}]
+\begin{lstlisting}[style=displayed, caption={[Método a seguir para crear un objeto dispositivo]Método que evalúa la existencia de un objeto dispositivo previo a la llamada de la aplicación, en caso positivo lo hereda para su uso posterior, de lo contrario crea uno nuevo.}, label={cod:constructor}]
 	handles.ai = [];
 
 	if ~isempty(daqfind)
@@ -201,7 +201,7 @@ El argumento \func{id} es un indicador de dispositivo hardware. Se trata de un a
 		Keithley Instruments, Inc. & keithley \\
 		\bottomrule
 	\end{tabular}
-	\caption{Argumento que debe emplearse en la llamada a \func{analoginput} en función del fabricante}
+	\caption{Argumento que debe emplearse en la llamada a \func{analoginput} en función del fabricante.}
 	\label{tab:adaptors}
 \end{table}
 
@@ -278,7 +278,7 @@ No obstante haber iniciado el dispositivo, este no empieza a registrar datos has
 		\tnotetext{a}{Se ha añadido esta característica de la \kpci{} a la lista original.}
 	\end{TableNotes}
 	\end{threeparttable}
-	\caption{Tipos de disparo soportados por el hardware compatible con \matlab{} y una breve descripción de los mismos}
+	\caption{Tipos de disparo soportados por el hardware compatible con \matlab{} y una breve descripción de los mismos.}
 	\label{tab:triggers}
 \end{table}
 
@@ -314,7 +314,7 @@ Por ejemplo, los siguientes comandos configuran \func{objeto} de forma que la fu
 
 Un segundo ejemplo, este extraído del código fuente de la aplicación de control muestra como pasar argumentos a la función de callback y cuál es la sintaxis de la definición de la misma en el \cref{cod:callback}.
 
-\begin{lstlisting}[style=displayed, caption={Configuración de \emph{callback} para responder a eventos en la sesión de muestreo, la función de \emph{callback} recibe un argumento}, label={cod:callback}]
+\begin{lstlisting}[style=displayed, caption={Configuración de \emph{callback} para responder a eventos en la sesión de muestreo, la función de \emph{callback} recibe un argumento.}, label={cod:callback}]
 	set(handles.ai, 'TriggerType', 'Immediate', 'TimerFcn', '', ...
 		'SamplesAcquiredFcn', {@localDaqCallback, gcbo});
 
