@@ -13,6 +13,10 @@
 *latexmk
 gis-pfc.pdf
 gis-pfc.fdb_latexmk
+references/examples/pelayo
+references/examples/endus
 pictures/work
+pictures/references/osciloscope
+pictures/references/measurement\ system
 !pictures/*.pdf
 pictures/pictures.pdf
