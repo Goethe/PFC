@@ -5,7 +5,7 @@ verbatimtex
 \fontsize{12pt}{14.4pt}\selectfont
 etex
 
-filenametemplate "%j-%c.mps";
+filenametemplate "%j-%02c.mps";
 
 newinternal u, v;
 u := 1mm;

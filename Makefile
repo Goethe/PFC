@@ -4,7 +4,7 @@ BIB = gis-pfc.bib
 MAIN = gis-pfc.pdf
 MAINSRC = gis-pfc.tex
 PICS = pictures/gis-pfc-ch?-?.mps pictures/gis-pfc-appa-1.png \
-	pictures/gis-pfc-ch3-6.jpg
+	pictures/gis-pfc-ch?-??.mps pictures/gis-pfc-ch3-06.jpg
 LM = latexmk
 LMOPTS = -pdf
 LMFORCE = -f -g
