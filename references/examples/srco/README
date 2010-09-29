@@ -1,5 +1,0 @@
-Copyright 2009 by M. Ramos Martín, J. R. Gisbert Valls
-
-This file may be distributed and/or modified under the GNU Free Documentation License. You can find the license file in the same folder than this document.
-
-To compile main documents move FSO09.tex presFSO09.tex and bibFSO09.bib to the same folder where you've placed document pictures (default is imagenes folder). Run pdflatex over FSO09.tex, then run bibtex over FSO09.aux and then run pdflatex again, two times over FSO09.tex and three times over presFSO09.tex.

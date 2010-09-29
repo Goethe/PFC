@@ -3,10 +3,11 @@ SRC = gis-pfc-pro.tex gis-pfc-ch1.tex gis-pfc-ch2.tex gis-pfc-ch3-1.tex \
 BIB = gis-pfc.bib
 MAIN = gis-pfc.pdf
 MAINSRC = gis-pfc.tex
-PICS = pictures/gis-pfc-ch?-?.mps pictures/application/83of.png
+PICS = pictures/gis-pfc-ch?-?.mps pictures/gis-pfc-appa-1.png \
+	pictures/gis-pfc-ch3-6.jpg
 LM = latexmk
 LMOPTS = -pdf
-LMFORCE = -fg
+LMFORCE = -f -g
 LMSILENT = -silent
 
 $(MAIN) : $(MAINSRC) $(SRC) $(BIB) $(PICS)
