@@ -47,63 +47,80 @@ z02 = (57a00, 47a00);
 
 % ------------------------------------------------------------------
 % curvas auxiliares para delimitar la imagen de la señal
-a02 = 8wi/10;
+a02 = 4wi/5;
 p0 = (-a02/2, -y01/2)--(a02/2, -y01/2)--(a02/2, y01/2)-- %
 	(-a02/2, y01/2)--cycle;
-pickup l2;
 
 % ------------------------------------------------------------------
 % señal que entra al osciloscopio
-a03 = 34a00;			a04 = 5u;
-p2 = sierra scaled a03;
-p3 = p2 shifted (-3a03/2, -a03/2) -- p2 shifted (-a03/2, -a03/2) %
-	-- p2 shifted (a03/2, -a03/2) -- %
-	p2 shifted (3a03/2, -a03/2);
-p4 = p3 shifted (a03/2 - a04, 0) cutbefore p0 cutafter p0;
+a03 = 20a00;			a04 = 34a00;
+a05 = 5u;
+p1 = sierra xscaled a03 yscaled a04;
+p2 = p1 shifted (-5a03/2, -a04/2) -- %
+	p1 shifted (-3a03/2, -a04/2) -- %
+	p1 shifted (-a03/2, -a04/2) -- %
+	p1 shifted (a03/2, -a04/2) -- %
+	p1 shifted (3a03/2, -a04/2);
+p3 = p2 shifted (a03/2 - a05, 0) cutbefore p0 cutafter p0;
 % cortes por cero de la señal
-a05 = -(2*mlog(50/99))/(3*mlog(99));
-a06 = 2/3 - (mlog(50/99))/(3*mlog(99));
-a07 = a03 * a05;		a08 = a03 * a06;
+a06 = -(2*mlog(50/99))/(3*mlog(99));
+a07 = 2/3 - (mlog(50/99))/(3*mlog(99));
+a08 = a03 * a06;		a09 = a03 * a07;
 
 % ------------------------------------------------------------------
 % ejes auxiliares
-a09 = 17wi/20;			a10 = he02/2;
-a11 = 3y01/8;			a12 = 19y01/20;
-a13 = wi/2 + a07 - a04;		a14 = y01/40;
-p5 = (-a09/2, 0)--(a09/2, 0);
-p6 = (0, -a12/2)--(0, a12/2);
-p7 = p6 scaled 19/20;
-drawgisarrow p5 shifted (wi/2, a10 - a11);
-drawgisarrow p6 shifted (3*(wi - a09)/4, a10 + a14);
-draw p5 shifted (wi/2, a10) dashed evenly;
-draw p7 shifted (a13 - x01/2, a10 + a14) dashed evenly;
-draw p7 shifted (a13 + x01/2, a10 + a14) dashed evenly;
+a10 = 17wi/20;			a11 = he02/2;
+a12 = 3y01/8;			a13 = 19y01/20;
+a14 = wi/2 + a08 - a05;		a15 = y01/40;
+a16 = x01/2;			a17 = a16 * 3/4;
+a18 = wi - a10;
+p4 = (-a10/2, 0)--(a10/2, 0);
+p5 = (0, -a13/2)--(0, a13/2);
+p6 = p5 scaled 19/20;
 pickup l2;
-draw p4 shifted (wi/2, a10);
+draw p3 shifted (wi/2, a11);
+pickup l1;
+drawgisarrow p4 shifted (wi/2, a11 - a12);
+drawgisarrow p5 shifted (3a18/4, a11 + a15);
+draw p4 shifted (wi/2, a11) dashed evenly;
+draw p6 shifted (a14 - a17, a11 + a15) dashed evenly;
+draw p6 shifted (a14 + a17, a11 + a15)cutbefore p4 %
+	shifted (wi/2, a11 - a12) dashed evenly shifted (u, 0);
+
+% ------------------------------------------------------------------
+% marcas de grafo
+a19 = 3u;			a20 = 5u/2;
+p7 = (0, 0)--(0, a19);
+draw p7 shifted (a18, a11 - a12);
+draw p7 shifted (a14 + a17 + a18/4, a11 - a12);
+draw p7 shifted (a14 + a17 + a18, a11 - a12);
+label(btex $t_0$ etex, (a18, a11 - a12 - a20));
+d0 = thelabel(btex $t_0 + T$ etex, %
+	(a14 + a17 + 18/4 + 3a19/2, a11 - a12 - a20));
+draw d0;
+label(btex $t_1$ etex, (a14 + a17 + a18, a11 - a12 - a20));
 
 % ------------------------------------------------------------------
 % etiquetas
-a15 = 3u/2;
-p8 = (-x01/2 + a15, 0)--(x01/2 - a15, 0);
-drawdblgisarrow p8 shifted (a13, a10 + 19a12/40 + a14 - a15);
-d0 = thelabel(btex Ventana temporal etex, %
-	(a13, a10 + 19a12/40 + a14 - a15));
-fill bbox d0 withcolor white;
-draw d0;
-a16 = wi/2 + a08 - a03 - a04;
-a17 = wi/2 + a08 - a04;
-z04 = 1/2[(a13, a10 - a11), (a17, a10)];
-d1 = thelabel(btex \begin{tabular}{c} Corte\\central %
-	\end{tabular} etex, z04);
-drawgisarrow z04--(a13, a10) shifted (a15, -a15) cutbefore bbox d1;
+a21 = 3u/2;
+p8 = (-a17 + a21, 0)--(a17 - a21, 0);
+drawdblgisarrow p8 shifted (a14, a11 + 19a13/40 + a15 - a21);
+d1 = thelabel(btex Ventana temporal etex, %
+	(a14, a11 + 19a13/40 + a15 - a21));
+fill bbox d1 withcolor white;
 draw d1;
-label.llft(btex $t_1$ etex, (a16, a10));
-label.ulft(btex $t_2$ etex, (a13, a10));
-label.llft(btex $t_3$ etex, (a17, a10));
-
-% ------------------------------------------------------------------
-% marco
-% draw (0, 0)--(wi, 0)--(wi, he02)--(0, he02)--cycle;
+a22 = wi/2 + a08 - a03 - a05;
+a23 = wi/2 + a09 - a03 - a05;
+a24 = wi/2 + a09 - a05;
+z04 = 1/2[(a14, a11 - a12), (a24, a11)];
+d2 = thelabel(btex \begin{tabular}{c} Corte\\central %
+	\end{tabular} etex, z04);
+drawgisarrow z04--(a14, a11) shifted (a21, -a21) cutbefore bbox d2;
+draw d2;
+label.ulft(btex $p_0$ etex, (a22, a11));
+label.llft(btex $p_1$ etex, (a23, a11));
+label.ulft(btex $p_2$ etex, (a14, a11));
+label.llft(btex $p_3$ etex, (a24, a11));
 
 endfig;
 % ==================================================================
@@ -136,23 +153,24 @@ draw d0 shifted (wi/2, y02/2);
 % curvas auxiliares para delimitar la imagen de la señal
 p0 = (-x01/2, -y01/2)--(x01/2, -y01/2)--(x01/2, y01/2)-- %
 	(-x01/2, y01/2)--cycle;
-pickup l2;
 
 % ------------------------------------------------------------------
 % fragmento de señal representado en el osciloscopio
-a02 = 34a00;
+a02 = 80a00/3;			a03 = 34a00;
 % cortes por cero de la señal
-a03 = -(2*mlog(50/99))/(3*mlog(99));
-a04 = 2/3 - (mlog(50/99))/(3*mlog(99));
-a05 = a02 * a03;		a06 = a02 * a04;
-p2 = sierra scaled a02;
-p3 = p2 shifted (-3a02/2, -a02/2) -- p2 shifted (-a02/2, -a02/2) %
-	-- p2 shifted (a02/2, -a02/2) -- %
-	p2 shifted (3a02/2, -a02/2);
-p5 = p3 shifted (a02/2 - a05, 0) xscaled -1 cutbefore p0 %
+a04 = -(2*mlog(50/99))/(3*mlog(99));
+a05 = 2/3 - (mlog(50/99))/(3*mlog(99));
+a06 = a02 * a04;		a07 = a02 * a05;
+p1 = sierra xscaled a02 yscaled a03;
+p2 = p1 shifted (-5a02/2, -a03/2) -- %
+	p1 shifted (-3a02/2, -a03/2) -- %
+	p1 shifted (-a02/2, -a03/2) --  %
+	p1 shifted (a02/2, -a03/2) -- %
+	p1 shifted (3a02/2, -a03/2);
+p3 = p2 shifted (a02/2 - a06, 0) cutbefore p0 %
 	cutafter p0;
 pickup l2;
-draw p5 shifted (wi/2, y02/2);
+draw p3 shifted (wi/2, y02/2);
 
 endfig;
 % ==================================================================
@@ -161,6 +179,263 @@ endfig;
 
 % ==================================================================
 beginfig(4);
+numeric a[], b[][], i, j, k, pi;
+picture d[], e[][];
+pen l[];
+path p[], q[][];
+transform t[];
+string s[];
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+pickup l1;
+
+% ------------------------------------------------------------------
+% constantes iniciales
+a00 = 3u/2;			a01 = 500;
+z00 = (0, 0);			z01 = (50a00, 40a00);
+z02 = (57a00, 47a00);
+
+% ------------------------------------------------------------------
+% curvas auxiliares para delimitar la imagen de la señal
+a02 = 4wi/5;
+p0 = (-a02/2, -y01/2)--(a02/2, -y01/2)--(a02/2, y01/2)-- %
+	(-a02/2, y01/2)--cycle;
+
+% ------------------------------------------------------------------
+% señal que entra al osciloscopio
+a03 = 34a00;			a04 = a03/2;
+a05 = 5u;
+p2 = sierra xscaled a04 yscaled a03;
+p3 = p2 shifted (-5a04/2, -a03/2) -- %
+	p2 shifted (-3a04/2, -a03/2) -- %
+	p2 shifted (-a04/2, -a03/2) -- %
+	p2 shifted (a04/2, -a03/2) -- %
+	p2 shifted (3a04/2, -a03/2);
+p4 = p3 shifted (a04/2 - a05, 0) cutbefore p0 cutafter p0;
+% cortes por cero de la señal
+a06 = -(2*mlog(50/99))/(3*mlog(99));
+a07 = 2/3 - (mlog(50/99))/(3*mlog(99));
+a08 = a04 * a06;		a09 = a04 * a07;
+
+% ------------------------------------------------------------------
+% ejes auxiliares
+a10 = 17wi/20;			a11 = he02/2;
+a12 = 3y01/8;			a13 = 19y01/20;
+a14 = wi/2 + a08 - a05;		a15 = y01/40;
+pickup l2;
+draw p4 shifted (wi/2, a11);
+pickup l1;
+p5 = (-a10/2, 0)--(a10/2, 0);
+p6 = (0, -a13/2)--(0, a13/2);
+p7 = p6 scaled 19/20;
+drawgisarrow p5 shifted (wi/2, a11 - a12);
+drawgisarrow p6 shifted (3*(wi - a10)/4, a11 + a15);
+draw p5 shifted (wi/2, a11) dashed evenly;
+
+% ------------------------------------------------------------------
+% etiquetas
+a16 = wi/20;			a17 = wi/2 + a16 - a02/2;
+a18 = wi/2 + a02/2 - a16;	a19 = 7;
+a20 = (a18 - a17)/a19;
+j := 0;
+for i = a17 step a20 until a18 :
+	draw p7 shifted (i, a11 + a15) dashed evenly;
+	b[0][j] = i;
+	j := j + 1; 
+endfor
+e[0][0] = thelabel.lrt(btex $t_0$ etex, (b[0][0] + u, a11 - u));
+e[0][1] = thelabel.lrt(btex $t_1$ etex, (b[0][1] + u, a11 - u));
+e[0][2] = thelabel.lrt(btex $t_2$ etex, (b[0][2] + u, a11 - u));
+e[0][3] = thelabel.lrt(btex $t_3$ etex, (b[0][3] + u, a11 - u));
+e[0][4] = thelabel.lrt(btex $t_4$ etex, (b[0][4] + u, a11 - u));
+e[0][5] = thelabel.lrt(btex $t_5$ etex, (b[0][5] + u, a11 - u));
+e[0][6] = thelabel.lrt(btex $t_6$ etex, (b[0][6] + u, a11 - u));
+e[0][7] = thelabel.lrt(btex $t_7$ etex, (b[0][7] + u, a11 - u));
+for i = 0 upto 7 :
+	fill bbox e[0][i] withcolor white;
+	draw e[0][i];
+endfor
+
+endfig;
+% ==================================================================
+
+
+
+% ==================================================================
+beginfig(5);
+numeric a[], i, j, k, pi;
+picture d[];
+pen l[];
+path p[], q[][];
+transform t[];
+string s[];
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+pickup l1;
+
+% ------------------------------------------------------------------
+% ventanas del osciloscopio
+a00 = 9u/10;			a01 = 500;
+z00 = (0, 0);			z01 = (50a00, 40a00);
+z02 = (57a00, 47a00);
+d0 = osciloscopio(a00, z00);
+a02 = 2u;			a03 = 8;
+a04 = wi - 2y02 + a02*a03;	a05 = wi/4 + 4u;
+a06 = 3wi/4 - a04/8 + 4u;
+draw d0 shifted (a05, he02/2);
+draw d0 shifted (a06, he02/2);
+
+% ------------------------------------------------------------------
+% marcas de grafo
+a07 = 3u;			a08 = he02/2 - y02/2 - a07;
+a09 = 5u/2;
+p0 = (0, 0)--(0, a09);
+draw p0 shifted (a05, a08);
+draw p0 shifted (a06, a08);
+label(btex $t_1$ etex, (a05, a08 - a07));
+label(btex $t_2$ etex, (a06, a08 - a07));
+
+% ------------------------------------------------------------------
+% ejes coordenados y puntos suspensivos
+drawgisarrow (-a07, a08)--(wi + a07, a08);
+drawgisarrow (0, a08 - a07)--(0, he02/2 + y02/2 + 2a07);
+a10 = 2u;
+for i = (a05 - x02/2 - 3a10) step a10 until (a05 - x02/2 - a10) :
+	fill fullcircle scaled 0.5u shifted (i, he02/2);
+endfor
+for i = (x02/2 + a06 + a10) step a10 until (x02/2 + a06 + 3a10) :
+	fill fullcircle scaled 0.5u shifted (i, he02/2);
+endfor
+
+% ------------------------------------------------------------------
+% razón de compresión y razón de escalado
+a11 = 3/4;			% (7 * y01)/(5 * (a02' - 2a16'))
+a12 = 153u/8;			% a04' * a11
+
+% ------------------------------------------------------------------
+% fragmento de señal representado en las ventanas de osciloscopio
+% señal al completo
+a13 = 34a00;			a14 = 3*5u/4;
+p1 = sierra xscaled a12 yscaled a13;
+p2 = p1 shifted (-5a12/2, -a13/2) -- %
+	p1 shifted (-3a12/2, -a13/2) -- %
+	p1 shifted (-a12/2, -a13/2) -- %
+	p1 shifted (a12/2, -a13/2) -- %
+	p1 shifted (3a12/2, -a13/2);
+p3 = p2 shifted (a12/2 - a14, 0);
+% cortes por cero de la señal
+a15 = -(2*mlog(50/99))/(3*mlog(99));
+a16 = 2/3 - (mlog(50/99))/(3*mlog(99));
+a17 = a12 * a15;		a18 = a12 * a16;
+% línea delimitadora
+a19 = x01/5;
+p4 = (-a19/2, -y01/2)--(a19/2, -y01/2)--(a19/2, y01/2)-- %
+	(-a19/2, y01/2)--cycle;
+% fragmentos de señal
+p5 = p3 cutbefore p4 shifted (-3a19, 0) cutafter p4 %
+	shifted (-3a19, 0);
+p6 = p3 cutbefore p4 scaled 2 shifted (-5a19/2, 0) cutafter p4 %
+	scaled 2 shifted (-5a19/2, 0);
+pickup l2;
+draw p5 shifted (5a19, 0) shifted(a05, he02/2);
+draw p6 shifted (4a19, 0) shifted(a06, he02/2);
+
+endfig;
+% ==================================================================
+
+
+
+% ==================================================================
+beginfig(6);
+numeric a[], i, j, k, pi;
+picture d[];
+pen l[];
+path p[], q[][];
+transform t[];
+string s[];
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+pickup l1;
+
+% ------------------------------------------------------------------
+% ventanas del osciloscopio
+a00 = 9u/10;			a01 = 500;
+z00 = (0, 0);			z01 = (50a00, 40a00);
+z02 = (57a00, 47a00);
+d0 = osciloscopio(a00, z00);
+a02 = 2u;			a03 = 8;
+a04 = wi - 2y02 + a02*a03;	a05 = wi/4 + 4u;
+a06 = 3wi/4 - a04/8 + 4u;
+draw d0 shifted (a05, he02/2);
+draw d0 shifted (a06, he02/2);
+
+% ------------------------------------------------------------------
+% marcas de grafo
+a07 = 3u;			a08 = he02/2 - y02/2 - a07;
+a09 = 5u/2;
+p0 = (0, 0)--(0, a09);
+draw p0 shifted (a05, a08);
+draw p0 shifted (a06, a08);
+label(btex $t_5$ etex, (a05, a08 - a07));
+label(btex $t_6$ etex, (a06, a08 - a07));
+
+% ------------------------------------------------------------------
+% ejes coordenados y puntos suspensivos
+drawgisarrow (-a07, a08)--(wi + a07, a08);
+drawgisarrow (0, a08 - a07)--(0, he02/2 + y02/2 + 2a07);
+a10 = 2u;
+for i = (a05 - x02/2 - 3a10) step a10 until (a05 - x02/2 - a10) :
+	fill fullcircle scaled 0.5u shifted (i, he02/2);
+endfor
+for i = (x02/2 + a06 + a10) step a10 until (x02/2 + a06 + 3a10) :
+	fill fullcircle scaled 0.5u shifted (i, he02/2);
+endfor
+
+% ------------------------------------------------------------------
+% razón de compresión y razón de escalado
+a11 = 3/4;			% (7 * y01)/(5 * (a02' - 2a16'))
+a12 = 153u/8;			% a04' * a11
+
+% ------------------------------------------------------------------
+% fragmento de señal representado en las ventanas de osciloscopio
+% señal al completo
+a13 = 34a00;			a14 = 3*5u/4;
+p1 = sierra xscaled a12 yscaled a13;
+p2 = p1 shifted (-5a12/2, -a13/2) -- %
+	p1 shifted (-3a12/2, -a13/2) -- %
+	p1 shifted (-a12/2, -a13/2) -- %
+	p1 shifted (a12/2, -a13/2) -- %
+	p1 shifted (3a12/2, -a13/2);
+p3 = p2 shifted (a12/2 - a14, 0);
+% cortes por cero de la señal
+a15 = -(2*mlog(50/99))/(3*mlog(99));
+a16 = 2/3 - (mlog(50/99))/(3*mlog(99));
+a17 = a12 * a15;		a18 = a12 * a16;
+% línea delimitadora
+a19 = x01/5;
+p4 = (-a19/2, -y01/2)--(a19/2, -y01/2)--(a19/2, y01/2)-- %
+	(-a19/2, y01/2)--cycle;
+% fragmentos de señal
+p5 = p3 cutbefore p4 scaled 5 shifted (-a19, 0) %
+	cutafter p4 scaled 5 shifted (-a19, 0);
+p6 = p3 cutbefore p4 scaled 5 cutafter p4 scaled 5;
+pickup l2;
+draw p5 shifted (a19, 0) shifted(a05, he02/2);
+draw p6 shifted(a06, he02/2);
+
+endfig;
+% ==================================================================
+
+
+
+% ==================================================================
+beginfig(7);
 numeric a[], i, j, k;
 picture d[];
 pen l[];
@@ -313,7 +588,7 @@ endfig;
 
 
 % ==================================================================
-beginfig(5);
+beginfig(8);
 numeric a[], i, j, k;
 picture d[];
 pen l[];

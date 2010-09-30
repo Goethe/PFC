@@ -9,19 +9,24 @@ LM = latexmk
 LMOPTS = -pdf
 LMFORCE = -f -g
 LMSILENT = -silent
+AUX = gis-pfc.cb gis-pfc.cb2 gis-pfc.bbl
+RM = rm
+RMOPTS = -fv
 
 $(MAIN) : $(MAINSRC) $(SRC) $(BIB) $(PICS)
 	$(LM) $(LMOPTS) $(LMSILENT) $(MAINSRC)
 
 .PHONY: clean, cleanall, force, verbose
-force :
+force : $(MAINSRC) $(SRC) $(BIB) $(PICS)
 	$(LM) $(LMOPTS) $(LMFORCE) $(MAINSRC)
 
-verbose :
+verbose : $(MAINSRC) $(SRC) $(BIB) $(PICS)
 	$(LM) $(LMOPTS) $(MAINSRC)
 
 clean :
 	$(LM) -c
+	@ $(RM) $(RMOPTS) $(AUX)
 
 cleanall :
 	$(LM) -C
+	@ $(RM) $(RMOPTS) $(AUX)
