@@ -53,7 +53,7 @@ La cola de muestreo, como su propio nombre indica, es una estructura de datos or
 		\tnotetext{d}{Se define: canal diferencial (\sig{d}); canal monoterminal (\sig{m}).}
 	\end{TableNotes}
 	\end{threeparttable}
-	\caption{Ejemplo de cola de muestreo.}
+	\caption[Ejemplo de cola de muestreo]{Ejemplo de cola de muestreo.}
 	\label{tab:queue}
 \end{table}
 
@@ -113,7 +113,7 @@ Si se sabe a ciencia cierta que la señal de entrada es unipolar debe emplearse e
 		800 & 12,5 & 0,4 & 0/$12,5$ & 0,2 \\
 		\bottomrule
 	\end{tabular}
-	\caption{Relación entre ganancia, rango de trabajo y resolución según el modo de adquisición.}
+	\caption[Relación entre ganancia, rango de trabajo y resolución según el modo de adquisición]{Relación entre ganancia, rango de trabajo y resolución según el modo de adquisición.}
 	\label{tab:acqmodes}
 \end{table}
 
@@ -175,21 +175,23 @@ La solución de carácter práctico propuesta por Keithley radica configurar la col
 \section{Comunicación con el periférico}
 
 Para la interacción con dispositivos externos, la \kpci{} dispone de dos conectores formato mini-\sig{d} de 36 terminales que cumplen con el estándar \sig{ieee} 1284 de protocolos de comunicación en paralelo. Si se observa la tarjeta como el rectángulo que forma desde un punto de vista geométrico y observándola de frente, los conectores quedan ubicados en un lado de la tarjeta contiguo a aquel en el que se sitúa la conexión \sig{pci}. Todo ello de forma que tras el montaje del periférico en la placa base los conectores quedan expuestos en la parte posterior de la carcasa en la que providencialmente debe encontrarse instalada dicha placa, tal y como es habitual en este tipo de dispositivos.\par
-En la \cref{fig:ports} se etiqueta cada terminal según su ubicación relativa con respecto al conector y al resto de terminales en el mismo, para cada conector, mostrando la distribución definida por el fabricante. Los \cref{tab:analog,tab:digital} describen el propósito de cada terminal y se especifica que tipo de señal debe circular por los mismos.
-
-\newbox{\portbox}
-\sbox{\portbox}{\includegraphics[width=.4\textwidth, keepaspectratio=true]{gis-pfc-ch1-2.pdf}}
+En las \cref{fig:portanalog,fig:portdigital} se etiqueta cada terminal según su ubicación relativa con respecto al conector y al resto de terminales en el mismo, para cada conector, mostrando la distribución definida por el fabricante. Los \cref{tab:analog,tab:digital} describen el propósito de cada terminal y se especifica que tipo de señal debe circular por los mismos.
 
 \begin{figure}
-	\centering
-	\subfloat[Conector etiquetado como ``analog'']{%
-		\includegraphics[width=.4\textwidth, keepaspectratio=true]{gis-pfc-ch1-2.pdf}}\qquad
-	\subfloat[Conector etiquetado como ``digital'']{%
-		\includegraphics[height=\ht\portbox, keepaspectratio=true]{gis-pfc-ch1-3.pdf}}
- 	\caption{Esquema del panel de conexiones trasero de la \kpci{}.}
-	\label{fig:ports}
+	\begin{center}
+		\includegraphics{gis-pfc-ch1-2.mps}
+	\end{center}
+	\caption[Conector etiquetado como \emph{analog}]{Conector etiquetado como \emph{analog}.}
+	\label{fig:portanalog}
 \end{figure}
 
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch1-3.mps}
+	\end{center}
+	\caption[Conector etiquetado como \emph{digital}]{Conector etiquetado como \emph{digital}.}
+	\label{fig:portdigital}
+\end{figure}
 
 \begin{table}
 	\centering
@@ -220,7 +222,7 @@ En la \cref{fig:ports} se etiqueta cada terminal según su ubicación relativa con
 		\multicolumn{1}{l}{17, 18} & agnd & Tierra analógica \\
 		\bottomrule
 	\end{tabular}
-	\caption{Relación entre los puertos y terminales que presenta el conector trasero de la \kpci{} etiquetado como \emph{analog}.}
+	\caption[Relación entre los puertos y terminales en el conector \emph{analog}]{Relación entre los puertos y terminales que presenta el conector trasero de la \kpci{} etiquetado como \emph{analog}.}
 	\label{tab:analog}
 \end{table}
 
@@ -308,7 +310,7 @@ En la \cref{fig:ports} se etiqueta cada terminal según su ubicación relativa con
 		\multicolumn{1}{l}{35, 36} & {\upshape +5 V} & +5 V\sig{dc} desde el bus del ordenador \\
 		\bottomrule
 	\end{tabular}
-	\caption{Relación entre los puertos y terminales que presenta el conector trasero de la \kpci{} etiquetado como \emph{digital}.}
+	\caption[Relación entre los puertos y terminales en el conector \emph{digital}]{Relación entre los puertos y terminales que presenta el conector trasero de la \kpci{} etiquetado como \emph{digital}.}
 	\label{tab:digital}
 \end{table}
 
@@ -317,13 +319,13 @@ En la \cref{fig:ports} se etiqueta cada terminal según su ubicación relativa con
 
 Por razones prácticas, la interfaz original de la \kpci{} basada en dos conectores mini-\sig{d} no se acomoda a las necesidades que se prevé surgirán durante el desarrollo de las pruebas requeridas para la finalización de este proyecto de fin de carrera. En consecuencia, con el propósito de agilizar en la medida de lo posible la realización de estos ensayos, se decide ampliar la interfaz existente.\par
 Para ello se parte de dos extremos de cable terminados en un conector tipo macho y desprovistos de cubierta, de cada uno de los cuales surgen 36 hilos de cobre recubiertos de plástico flexible coloreado. El patrón de coloreado de las cubiertas individuales es único y no se repite en ninguno de los 36 hilos de que se compone cada extremo de cable. A partir de ahí, se identifica cada terminal de cada conector con el hilo de cobre correspondiente, relacionando las etiquetas que el fabricante pone a los terminales con el código de colores de la cubiertas individuales.\par
-Una vez recopilada esta información, se planea la construcción de una caja de conexiones. El diseño de la caja contempla que se equipe ésta con 72 conectores banana hembra soldados a los 72 hilos de cobre y que comunican con los terminales de los conectores mini-\sig{d} en los que termina el otro extremo de los cables. Además se planifica la inclusión de cuatro conectores coaxiales con rosca con conexiones redundantes a las que se presupone son las cuatro puertas cuyo uso será más frecuente, las correspondientes al primer canal analógico diferencial y las tierras analógicas; para así facilitar el uso continuado de las mismas. Por último se decide etiquetar la caja de conexiones con marbetes que reproduzcan la nomenclatura visible en la \vref{fig:ports}.\par
+Una vez recopilada esta información, se planea la construcción de una caja de conexiones. El diseño de la caja contempla que se equipe ésta con 72 conectores banana hembra soldados a los 72 hilos de cobre y que comunican con los terminales de los conectores mini-\sig{d} en los que termina el otro extremo de los cables. Además se planifica la inclusión de cuatro conectores coaxiales con rosca con conexiones redundantes a las que se presupone son las cuatro puertas cuyo uso será más frecuente, las correspondientes al primer canal analógico diferencial y las tierras analógicas; para así facilitar el uso continuado de las mismas. Por último se decide etiquetar la caja de conexiones con marbetes que reproduzcan la nomenclatura visible en las \vref{fig:portanalog,fig:portdigital}.\par
 Puede observarse una representación de la caja de conexiones ya terminada en la \vref{fig:conbox}.
 
 \begin{figure}
 	\begin{center}
 		\includegraphics[scale=1, keepaspectratio=true]{gis-pfc-ch1-4.jpg}
 	\end{center}
-	\caption{Plano de la caja de conexiones ya terminada.}
+	\caption[Plano de la caja de conexiones ya terminada]{Plano de la caja de conexiones ya terminada.}
 	\label{fig:conbox}
 \end{figure}

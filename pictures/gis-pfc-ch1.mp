@@ -199,4 +199,178 @@ endfig;
 
 
 
+% ==================================================================
+beginfig(2);
+numeric a[], b[][];
+picture d[], e[][];
+pen l[];
+path p[], q[][];
+transform t[];
+ahlength := 4u;	ahangle := 20;
+ahinset := 5/100;
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+pickup l1;
+
+% ------------------------------------------------------------------
+% constantes
+a00 = 7u/3;			a01 = 5a00/2;
+a02 = 3a00;			a03 = 2a00 + a02 + 6a00;
+a04 = a00;			a05 = 18a01;
+a06 = a03 * sind(30)/cosd(30);	a07 = a06/3;
+a08 = 40;
+z00 = (0, 0);			z01 = (a06, 0) rotated 30;
+z02 = (a07, 0) rotated 210;	z03 = (a07, 0) rotated 150;
+z04 = (a06, 0) rotated 330;
+
+% ------------------------------------------------------------------
+% conector
+draw conectorh(a00, z00);
+
+% ------------------------------------------------------------------
+% posiciones
+for i = 0 upto 17 :
+	b[0][i] =  a01/2 + i*a01 - a05/2;
+endfor
+
+% ------------------------------------------------------------------
+% etiquetas externas
+e[0][0] = thelabel.lft(btex \textsc{ip5} etex, z00);
+e[0][1] = thelabel.lft(btex \textsc{ip3} etex, z00);
+e[0][2] = thelabel.lft(btex \textsc{ip1} etex, z00);
+e[0][3] = thelabel.lft(btex \textsc{op5} etex, z00);
+e[0][4] = thelabel.lft(btex \textsc{op3} etex, z00);
+e[0][5] = thelabel.lft(btex \textsc{op1} etex, z00);
+e[0][6] = thelabel.lft(btex \textsc{dgnd} etex, z00);
+e[0][7] = thelabel.lft(btex \textsc{ch 07 lo/ch 15} etex, z00);
+e[0][8] = thelabel.lft(btex \textsc{ch 06 lo/ch 14} etex, z00);
+e[0][9] = thelabel.lft(btex \textsc{ch 05 lo/ch 13} etex, z00);
+e[0][10] = thelabel.lft(btex \textsc{ch 04 lo/ch 12} etex, z00);
+e[0][11] = thelabel.lft(btex \textsc{ch 03 lo/ch 11} etex, z00);
+e[0][12] = thelabel.lft(btex \textsc{ch 02 lo/ch 10} etex, z00);
+e[0][13] = thelabel.lft(btex \textsc{ch 01 lo/ch 09} etex, z00);
+e[0][14] = thelabel.lft(btex \textsc{ch 00 lo/ch 08} etex, z00);
+e[0][15] = thelabel.lft(btex Sin conexi\'on etex, z00);
+e[0][16] = thelabel.lft(btex \textsc{agnd} etex, z00);
+e[0][17] = thelabel.lft(btex \textsc{agnd} etex, z00);
+e[1][0] = thelabel.rt(btex \textsc{ip4} etex, z00);
+e[1][1] = thelabel.rt(btex \textsc{ip2} etex, z00);
+e[1][2] = thelabel.rt(btex \textsc{ip0} etex, z00);
+e[1][3] = thelabel.rt(btex \textsc{op4} etex, z00);
+e[1][4] = thelabel.rt(btex \textsc{op2} etex, z00);
+e[1][5] = thelabel.rt(btex \textsc{op0} etex, z00);
+e[1][6] = thelabel.rt(btex +5 V etex, z00);
+e[1][7] = thelabel.rt(btex \textsc{ch 07 hi} etex, z00);
+e[1][8] = thelabel.rt(btex \textsc{ch 06 hi} etex, z00);
+e[1][9] = thelabel.rt(btex \textsc{ch 05 hi} etex, z00);
+e[1][10] = thelabel.rt(btex \textsc{ch 04 hi} etex, z00);
+e[1][11] = thelabel.rt(btex \textsc{ch 03 hi} etex, z00);
+e[1][12] = thelabel.rt(btex \textsc{ch 02 hi} etex, z00);
+e[1][13] = thelabel.rt(btex \textsc{ch 01 hi} etex, z00);
+e[1][14] = thelabel.rt(btex \textsc{ch 00 hi} etex, z00);
+e[1][15] = thelabel.rt(btex +10 V etex, z00);
+e[1][16] = thelabel.rt(btex \textsc{dac1} etex, z00);
+e[1][17] = thelabel.rt(btex \textsc{dac0} etex, z00);
+pickup pencircle scaled 0.75u;
+for i = 0 upto 17 :
+	drawdot (b[0][i], -a03/2 - a04);
+	drawdot (b[0][i], a03/2 + a04);
+	draw e[0][i] rotated a08 shifted (b[0][i], -a03/2 - a04);
+	draw e[1][i] rotated a08 shifted (b[0][i], a03/2 + a04);
+endfor
+
+endfig;
+% ==================================================================
+
+
+
+% ==================================================================
+beginfig(3);
+numeric a[], b[][];
+picture d[], e[][];
+pen l[];
+path p[], q[][];
+transform t[];
+ahlength := 4u;	ahangle := 20;
+ahinset := 5/100;
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+pickup l1;
+
+% ------------------------------------------------------------------
+% constantes
+a00 = 7u/3;			a01 = 5a00/2;
+a02 = 3a00;			a03 = 2a00 + a02 + 6a00;
+a04 = a00;			a05 = 18a01;
+a06 = a03 * sind(30)/cosd(30);	a07 = a06/3;
+a08 = 40;
+z00 = (0, 0);			z01 = (a06, 0) rotated 30;
+z02 = (a07, 0) rotated 210;	z03 = (a07, 0) rotated 150;
+z04 = (a06, 0) rotated 330;
+
+% ------------------------------------------------------------------
+% conector
+draw conectorh(a00, z00);
+
+% ------------------------------------------------------------------
+% posiciones
+for i = 0 upto 17 :
+	b[0][i] =  a01/2 + i*a01 - a05/2;
+endfor
+
+% ------------------------------------------------------------------
+% etiquetas externas
+e[0][0] = thelabel.lft(btex Bit 0 etex, z00);
+e[0][1] = thelabel.lft(btex Bit 1 etex, z00);
+e[0][2] = thelabel.lft(btex Bit 2 etex, z00);
+e[0][3] = thelabel.lft(btex Bit 3 etex, z00);
+e[0][4] = thelabel.lft(btex Bit 4 etex, z00);
+e[0][5] = thelabel.lft(btex Bit 5 etex, z00);
+e[0][6] = thelabel.lft(btex Bit 6 etex, z00);
+e[0][7] = thelabel.lft(btex Bit 7 etex, z00);
+e[0][8] = thelabel.lft(btex Bit 8 etex, z00);
+e[0][9] = thelabel.lft(btex Bit 9 etex, z00);
+e[0][10] = thelabel.lft(btex Bit 10 etex, z00);
+e[0][11] = thelabel.lft(btex Bit 11 etex, z00);
+e[0][12] = thelabel.lft(btex Bit 12 etex, z00);
+e[0][13] = thelabel.lft(btex Bit 13 etex, z00);
+e[0][14] = thelabel.lft(btex Bit 14 etex, z00);
+e[0][15] = thelabel.lft(btex Bit 15 etex, z00);
+e[0][16] = thelabel.lft(btex \textsc{dgnd} etex, z00);
+e[0][17] = thelabel.lft(btex \textsc{dgnd} etex, z00);
+e[1][0] = thelabel.rt(btex Bit 16 etex, z00);
+e[1][1] = thelabel.rt(btex Bit 17 etex, z00);
+e[1][2] = thelabel.rt(btex Bit 18 etex, z00);
+e[1][3] = thelabel.rt(btex Bit 19 etex, z00);
+e[1][4] = thelabel.rt(btex Bit 20 etex, z00);
+e[1][5] = thelabel.rt(btex Bit 21 etex, z00);
+e[1][6] = thelabel.rt(btex Bit 22 etex, z00);
+e[1][7] = thelabel.rt(btex Bit 23 etex, z00);
+e[1][8] = thelabel.rt(btex Bit 24 etex, z00);
+e[1][9] = thelabel.rt(btex Bit 25 etex, z00);
+e[1][10] = thelabel.rt(btex Bit 26 etex, z00);
+e[1][11] = thelabel.rt(btex Bit 27 etex, z00);
+e[1][12] = thelabel.rt(btex Bit 28 etex, z00);
+e[1][13] = thelabel.rt(btex Bit 29 etex, z00);
+e[1][14] = thelabel.rt(btex Bit 30 etex, z00);
+e[1][15] = thelabel.rt(btex Bit 31 etex, z00);
+e[1][16] = thelabel.rt(btex +5 V etex, z00);
+e[1][17] = thelabel.rt(btex +5 V etex, z00);
+pickup pencircle scaled 0.75u;
+for i = 0 upto 17 :
+	drawdot (b[0][i], -a03/2 - a04);
+	drawdot (b[0][i], a03/2 + a04);
+	draw e[0][i] rotated a08 shifted (b[0][i], -a03/2 - a04);
+	draw e[1][i] rotated a08 shifted (b[0][i], a03/2 + a04);
+endfor
+
+endfig;
+% ==================================================================
+
+
+
 end
