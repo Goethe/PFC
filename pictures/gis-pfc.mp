@@ -172,22 +172,23 @@ c2 = c1 + 1/4;			c3 = 17/20;
 r0 = (-c0, -c0)--(c0, c0);
 r1 = (-c0, c0)--(c0, -c0);
 r2 = (-c0, -c0)--(c0, -c0)--(c0, c0)--(-c0, c0)--cycle;
-r3 = r2 scaled (c3**2);
-r4 = r0 scaled (c3**4);
-r5 = r1 scaled (c3**4);
-r6 = (-c1/2, -c2/2)--(c1/2, -c2/2){right}..{up}(c2/2, -c1/2)-- %
+r3 = r2 scaled sqrt(c3);
+r4 = r2 scaled (c3**2);
+r5 = r0 scaled (c3**4);
+r6 = r1 scaled (c3**4);
+r7 = (-c1/2, -c2/2)--(c1/2, -c2/2){right}..{up}(c2/2, -c1/2)-- %
 	(c2/2, c1/2){up}..{left}(c1/2, c2/2)-- %
 	(-c1/2, c2/2){left}..{down}(-c2/2, c1/2)-- %
 	(-c2/2, -c1/2){down}..{right}cycle;
-addto f0 contour r6 scaled escala shifted desplazamiento %
+addto f0 contour r7 scaled escala shifted desplazamiento %
 	withpen n0;
-addto f0 contour r2 scaled escala shifted desplazamiento %
-	withpen n0 withcolor white;
 addto f0 contour r3 scaled escala shifted desplazamiento %
+	withpen n0 withcolor white;
+addto f0 contour r4 scaled escala shifted desplazamiento %
 	withpen n0;
-addto f0 doublepath r4 scaled escala shifted desplazamiento %
-	withpen n2 withcolor white;
 addto f0 doublepath r5 scaled escala shifted desplazamiento %
+	withpen n2 withcolor white;
+addto f0 doublepath r6 scaled escala shifted desplazamiento %
 	withpen n2 withcolor white;
 
 % ------------------------------------------------------------------

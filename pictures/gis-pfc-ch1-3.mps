@@ -2,7 +2,7 @@
 %%BoundingBox: -174 -69 174 69 
 %%HiResBoundingBox: -173.60286 -68.42702 173.60286 68.42702 
 %%Creator: MetaPost 1.208
-%%CreationDate: 2010.10.01:1127
+%%CreationDate: 2010.10.02:2047
 %%Pages: 1
 %*Font: cmr12 11.95517 11.95517 13:8000008ffe0104609002e25d641
 %*Font: cmcsc10 11.95514 9.96265 2f:ffe0000000002ce5c
@@ -106,10 +106,10 @@ newpath -143.85811 -14.0551 moveto
 -144.68488 -13.68501 -144.31479 -14.0551 -143.85811 -14.0551 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath -143.85811 -13.22833 moveto
--137.24394 -13.22833 lineto
--137.24394 -6.61417 lineto
--143.85811 -6.61417 lineto
+newpath -143.60005 -12.97028 moveto
+-137.502 -12.97028 lineto
+-137.502 -6.87222 lineto
+-143.60005 -6.87222 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -137,10 +137,10 @@ newpath -143.85811 5.7874 moveto
 -144.68488 6.15749 -144.31479 5.7874 -143.85811 5.7874 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath -143.85811 6.61417 moveto
--137.24394 6.61417 lineto
--137.24394 13.22833 lineto
--143.85811 13.22833 lineto
+newpath -143.60005 6.87222 moveto
+-137.502 6.87222 lineto
+-137.502 12.97028 lineto
+-143.60005 12.97028 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -167,10 +167,10 @@ newpath -127.3227 -14.0551 moveto
 -128.14946 -13.68501 -127.77937 -14.0551 -127.3227 -14.0551 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath -127.3227 -13.22833 moveto
--120.70853 -13.22833 lineto
--120.70853 -6.61417 lineto
--127.3227 -6.61417 lineto
+newpath -127.06464 -12.97028 moveto
+-120.96658 -12.97028 lineto
+-120.96658 -6.87222 lineto
+-127.06464 -6.87222 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -197,10 +197,10 @@ newpath -127.3227 5.7874 moveto
 -128.14946 6.15749 -127.77937 5.7874 -127.3227 5.7874 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath -127.3227 6.61417 moveto
--120.70853 6.61417 lineto
--120.70853 13.22833 lineto
--127.3227 13.22833 lineto
+newpath -127.06464 6.87222 moveto
+-120.96658 6.87222 lineto
+-120.96658 12.97028 lineto
+-127.06464 12.97028 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -227,10 +227,10 @@ newpath -110.78728 -14.0551 moveto
 -111.61404 -13.68501 -111.24396 -14.0551 -110.78728 -14.0551 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath -110.78728 -13.22833 moveto
--104.17311 -13.22833 lineto
--104.17311 -6.61417 lineto
--110.78728 -6.61417 lineto
+newpath -110.52922 -12.97028 moveto
+-104.43117 -12.97028 lineto
+-104.43117 -6.87222 lineto
+-110.52922 -6.87222 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -257,10 +257,10 @@ newpath -110.78728 5.7874 moveto
 -111.61404 6.15749 -111.24396 5.7874 -110.78728 5.7874 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath -110.78728 6.61417 moveto
--104.17311 6.61417 lineto
--104.17311 13.22833 lineto
--110.78728 13.22833 lineto
+newpath -110.52922 6.87222 moveto
+-104.43117 6.87222 lineto
+-104.43117 12.97028 lineto
+-110.52922 12.97028 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -287,10 +287,10 @@ newpath -94.25186 -14.0551 moveto
 -95.07863 -13.68501 -94.70854 -14.0551 -94.25186 -14.0551 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath -94.25186 -13.22833 moveto
--87.6377 -13.22833 lineto
--87.6377 -6.61417 lineto
--94.25186 -6.61417 lineto
+newpath -93.9938 -12.97028 moveto
+-87.89575 -12.97028 lineto
+-87.89575 -6.87222 lineto
+-93.9938 -6.87222 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -317,10 +317,10 @@ newpath -94.25186 5.7874 moveto
 -95.07863 6.15749 -94.70854 5.7874 -94.25186 5.7874 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath -94.25186 6.61417 moveto
--87.6377 6.61417 lineto
--87.6377 13.22833 lineto
--94.25186 13.22833 lineto
+newpath -93.9938 6.87222 moveto
+-87.89575 6.87222 lineto
+-87.89575 12.97028 lineto
+-93.9938 12.97028 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -347,10 +347,10 @@ newpath -77.71645 -14.0551 moveto
 -78.54321 -13.68501 -78.17313 -14.0551 -77.71645 -14.0551 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath -77.71645 -13.22833 moveto
--71.10228 -13.22833 lineto
--71.10228 -6.61417 lineto
--77.71645 -6.61417 lineto
+newpath -77.45839 -12.97028 moveto
+-71.36034 -12.97028 lineto
+-71.36034 -6.87222 lineto
+-77.45839 -6.87222 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -377,10 +377,10 @@ newpath -77.71645 5.7874 moveto
 -78.54321 6.15749 -78.17313 5.7874 -77.71645 5.7874 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath -77.71645 6.61417 moveto
--71.10228 6.61417 lineto
--71.10228 13.22833 lineto
--77.71645 13.22833 lineto
+newpath -77.45839 6.87222 moveto
+-71.36034 6.87222 lineto
+-71.36034 12.97028 lineto
+-77.45839 12.97028 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -407,10 +407,10 @@ newpath -61.18103 -14.0551 moveto
 -62.0078 -13.68501 -61.63771 -14.0551 -61.18103 -14.0551 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath -61.18103 -13.22833 moveto
--54.56686 -13.22833 lineto
--54.56686 -6.61417 lineto
--61.18103 -6.61417 lineto
+newpath -60.92297 -12.97028 moveto
+-54.82492 -12.97028 lineto
+-54.82492 -6.87222 lineto
+-60.92297 -6.87222 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -437,10 +437,10 @@ newpath -61.18103 5.7874 moveto
 -62.0078 6.15749 -61.63771 5.7874 -61.18103 5.7874 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath -61.18103 6.61417 moveto
--54.56686 6.61417 lineto
--54.56686 13.22833 lineto
--61.18103 13.22833 lineto
+newpath -60.92297 6.87222 moveto
+-54.82492 6.87222 lineto
+-54.82492 12.97028 lineto
+-60.92297 12.97028 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -467,10 +467,10 @@ newpath -44.64561 -14.0551 moveto
 -45.47238 -13.68501 -45.1023 -14.0551 -44.64561 -14.0551 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath -44.64561 -13.22833 moveto
--38.03145 -13.22833 lineto
--38.03145 -6.61417 lineto
--44.64561 -6.61417 lineto
+newpath -44.38756 -12.97028 moveto
+-38.2895 -12.97028 lineto
+-38.2895 -6.87222 lineto
+-44.38756 -6.87222 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -497,10 +497,10 @@ newpath -44.64561 5.7874 moveto
 -45.47238 6.15749 -45.1023 5.7874 -44.64561 5.7874 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath -44.64561 6.61417 moveto
--38.03145 6.61417 lineto
--38.03145 13.22833 lineto
--44.64561 13.22833 lineto
+newpath -44.38756 6.87222 moveto
+-38.2895 6.87222 lineto
+-38.2895 12.97028 lineto
+-44.38756 12.97028 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -527,10 +527,10 @@ newpath -28.1102 -14.0551 moveto
 -28.93697 -13.68501 -28.56688 -14.0551 -28.1102 -14.0551 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath -28.1102 -13.22833 moveto
--21.49603 -13.22833 lineto
--21.49603 -6.61417 lineto
--28.1102 -6.61417 lineto
+newpath -27.85214 -12.97028 moveto
+-21.75409 -12.97028 lineto
+-21.75409 -6.87222 lineto
+-27.85214 -6.87222 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -557,10 +557,10 @@ newpath -28.1102 5.7874 moveto
 -28.93697 6.15749 -28.56688 5.7874 -28.1102 5.7874 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath -28.1102 6.61417 moveto
--21.49603 6.61417 lineto
--21.49603 13.22833 lineto
--28.1102 13.22833 lineto
+newpath -27.85214 6.87222 moveto
+-21.75409 6.87222 lineto
+-21.75409 12.97028 lineto
+-27.85214 12.97028 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -587,10 +587,10 @@ newpath -11.57478 -14.0551 moveto
 -12.40155 -13.68501 -12.03146 -14.0551 -11.57478 -14.0551 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath -11.57478 -13.22833 moveto
--4.96062 -13.22833 lineto
--4.96062 -6.61417 lineto
--11.57478 -6.61417 lineto
+newpath -11.31673 -12.97028 moveto
+-5.21867 -12.97028 lineto
+-5.21867 -6.87222 lineto
+-11.31673 -6.87222 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -617,10 +617,10 @@ newpath -11.57478 5.7874 moveto
 -12.40155 6.15749 -12.03146 5.7874 -11.57478 5.7874 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath -11.57478 6.61417 moveto
--4.96062 6.61417 lineto
--4.96062 13.22833 lineto
--11.57478 13.22833 lineto
+newpath -11.31673 6.87222 moveto
+-5.21867 6.87222 lineto
+-5.21867 12.97028 lineto
+-11.31673 12.97028 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -647,10 +647,10 @@ newpath 4.96063 -14.0551 moveto
 4.13387 -13.68501 4.50395 -14.0551 4.96063 -14.0551 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 4.96063 -13.22833 moveto
-11.5748 -13.22833 lineto
-11.5748 -6.61417 lineto
-4.96063 -6.61417 lineto
+newpath 5.21869 -12.97028 moveto
+11.31674 -12.97028 lineto
+11.31674 -6.87222 lineto
+5.21869 -6.87222 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -677,10 +677,10 @@ newpath 4.96063 5.7874 moveto
 4.13387 6.15749 4.50395 5.7874 4.96063 5.7874 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 4.96063 6.61417 moveto
-11.5748 6.61417 lineto
-11.5748 13.22833 lineto
-4.96063 13.22833 lineto
+newpath 5.21869 6.87222 moveto
+11.31674 6.87222 lineto
+11.31674 12.97028 lineto
+5.21869 12.97028 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -707,10 +707,10 @@ newpath 21.49605 -14.0551 moveto
 20.66928 -13.68501 21.03937 -14.0551 21.49605 -14.0551 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 21.49605 -13.22833 moveto
-28.11021 -13.22833 lineto
-28.11021 -6.61417 lineto
-21.49605 -6.61417 lineto
+newpath 21.7541 -12.97028 moveto
+27.85216 -12.97028 lineto
+27.85216 -6.87222 lineto
+21.7541 -6.87222 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -737,10 +737,10 @@ newpath 21.49605 5.7874 moveto
 20.66928 6.15749 21.03937 5.7874 21.49605 5.7874 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 21.49605 6.61417 moveto
-28.11021 6.61417 lineto
-28.11021 13.22833 lineto
-21.49605 13.22833 lineto
+newpath 21.7541 6.87222 moveto
+27.85216 6.87222 lineto
+27.85216 12.97028 lineto
+21.7541 12.97028 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -767,10 +767,10 @@ newpath 38.03146 -14.0551 moveto
 37.2047 -13.68501 37.57478 -14.0551 38.03146 -14.0551 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 38.03146 -13.22833 moveto
-44.64563 -13.22833 lineto
-44.64563 -6.61417 lineto
-38.03146 -6.61417 lineto
+newpath 38.28952 -12.97028 moveto
+44.38757 -12.97028 lineto
+44.38757 -6.87222 lineto
+38.28952 -6.87222 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -797,10 +797,10 @@ newpath 38.03146 5.7874 moveto
 37.2047 6.15749 37.57478 5.7874 38.03146 5.7874 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 38.03146 6.61417 moveto
-44.64563 6.61417 lineto
-44.64563 13.22833 lineto
-38.03146 13.22833 lineto
+newpath 38.28952 6.87222 moveto
+44.38757 6.87222 lineto
+44.38757 12.97028 lineto
+38.28952 12.97028 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -827,10 +827,10 @@ newpath 54.56688 -14.0551 moveto
 53.74011 -13.68501 54.1102 -14.0551 54.56688 -14.0551 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 54.56688 -13.22833 moveto
-61.18105 -13.22833 lineto
-61.18105 -6.61417 lineto
-54.56688 -6.61417 lineto
+newpath 54.82494 -12.97028 moveto
+60.92299 -12.97028 lineto
+60.92299 -6.87222 lineto
+54.82494 -6.87222 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -857,10 +857,10 @@ newpath 54.56688 5.7874 moveto
 53.74011 6.15749 54.1102 5.7874 54.56688 5.7874 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 54.56688 6.61417 moveto
-61.18105 6.61417 lineto
-61.18105 13.22833 lineto
-54.56688 13.22833 lineto
+newpath 54.82494 6.87222 moveto
+60.92299 6.87222 lineto
+60.92299 12.97028 lineto
+54.82494 12.97028 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -887,10 +887,10 @@ newpath 71.1023 -14.0551 moveto
 70.27553 -13.68501 70.64561 -14.0551 71.1023 -14.0551 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 71.1023 -13.22833 moveto
-77.71646 -13.22833 lineto
-77.71646 -6.61417 lineto
-71.1023 -6.61417 lineto
+newpath 71.36035 -12.97028 moveto
+77.4584 -12.97028 lineto
+77.4584 -6.87222 lineto
+71.36035 -6.87222 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -917,10 +917,10 @@ newpath 71.1023 5.7874 moveto
 70.27553 6.15749 70.64561 5.7874 71.1023 5.7874 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 71.1023 6.61417 moveto
-77.71646 6.61417 lineto
-77.71646 13.22833 lineto
-71.1023 13.22833 lineto
+newpath 71.36035 6.87222 moveto
+77.4584 6.87222 lineto
+77.4584 12.97028 lineto
+71.36035 12.97028 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -947,10 +947,10 @@ newpath 87.63771 -14.0551 moveto
 86.81094 -13.68501 87.18103 -14.0551 87.63771 -14.0551 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 87.63771 -13.22833 moveto
-94.25188 -13.22833 lineto
-94.25188 -6.61417 lineto
-87.63771 -6.61417 lineto
+newpath 87.89577 -12.97028 moveto
+93.99382 -12.97028 lineto
+93.99382 -6.87222 lineto
+87.89577 -6.87222 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -977,10 +977,10 @@ newpath 87.63771 5.7874 moveto
 86.81094 6.15749 87.18103 5.7874 87.63771 5.7874 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 87.63771 6.61417 moveto
-94.25188 6.61417 lineto
-94.25188 13.22833 lineto
-87.63771 13.22833 lineto
+newpath 87.89577 6.87222 moveto
+93.99382 6.87222 lineto
+93.99382 12.97028 lineto
+87.89577 12.97028 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -1007,10 +1007,10 @@ newpath 104.17313 -14.0551 moveto
 103.34636 -13.68501 103.71645 -14.0551 104.17313 -14.0551 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 104.17313 -13.22833 moveto
-110.7873 -13.22833 lineto
-110.7873 -6.61417 lineto
-104.17313 -6.61417 lineto
+newpath 104.43118 -12.97028 moveto
+110.52924 -12.97028 lineto
+110.52924 -6.87222 lineto
+104.43118 -6.87222 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -1037,10 +1037,10 @@ newpath 104.17313 5.7874 moveto
 103.34636 6.15749 103.71645 5.7874 104.17313 5.7874 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 104.17313 6.61417 moveto
-110.7873 6.61417 lineto
-110.7873 13.22833 lineto
-104.17313 13.22833 lineto
+newpath 104.43118 6.87222 moveto
+110.52924 6.87222 lineto
+110.52924 12.97028 lineto
+104.43118 12.97028 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -1067,10 +1067,10 @@ newpath 120.70854 -14.0551 moveto
 119.88177 -13.68501 120.25186 -14.0551 120.70854 -14.0551 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 120.70854 -13.22833 moveto
-127.32271 -13.22833 lineto
-127.32271 -6.61417 lineto
-120.70854 -6.61417 lineto
+newpath 120.9666 -12.97028 moveto
+127.06465 -12.97028 lineto
+127.06465 -6.87222 lineto
+120.9666 -6.87222 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -1097,10 +1097,10 @@ newpath 120.70854 5.7874 moveto
 119.88177 6.15749 120.25186 5.7874 120.70854 5.7874 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 120.70854 6.61417 moveto
-127.32271 6.61417 lineto
-127.32271 13.22833 lineto
-120.70854 13.22833 lineto
+newpath 120.9666 6.87222 moveto
+127.06465 6.87222 lineto
+127.06465 12.97028 lineto
+120.9666 12.97028 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -1127,10 +1127,10 @@ newpath 137.24396 -14.0551 moveto
 136.41719 -13.68501 136.78728 -14.0551 137.24396 -14.0551 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 137.24396 -13.22833 moveto
-143.85812 -13.22833 lineto
-143.85812 -6.61417 lineto
-137.24396 -6.61417 lineto
+newpath 137.50201 -12.97028 moveto
+143.60007 -12.97028 lineto
+143.60007 -6.87222 lineto
+137.50201 -6.87222 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
@@ -1157,10 +1157,10 @@ newpath 137.24396 5.7874 moveto
 136.41719 6.15749 136.78728 5.7874 137.24396 5.7874 curveto closepath
 gsave fill grestore stroke
  1 1 1 setrgbcolor
-newpath 137.24396 6.61417 moveto
-143.85812 6.61417 lineto
-143.85812 13.22833 lineto
-137.24396 13.22833 lineto
+newpath 137.50201 6.87222 moveto
+143.60007 6.87222 lineto
+143.60007 12.97028 lineto
+137.50201 12.97028 lineto
  closepath
 gsave fill grestore stroke
  0 0 0 setrgbcolor
