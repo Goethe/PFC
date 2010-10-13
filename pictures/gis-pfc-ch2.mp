@@ -5,7 +5,7 @@ verbatimtex
 \fontsize{12pt}{14.4pt}\selectfont
 etex
 
-filenametemplate "%j-%c.mps";
+filenametemplate "%j-%02c.mps";
 
 newinternal u, v;
 u := 1mm;
@@ -26,12 +26,13 @@ linecap := butt;
 
 % ==================================================================
 beginfig(2);
-numeric a[], i, j, k, pi;
+numeric a[];
 picture d[];
 pen l[];
 path p[], q[][];
 transform t[];
-string s[];
+ahlength := 4u;	ahangle := 20;
+ahinset := 5/100;
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
@@ -39,88 +40,159 @@ l3 = pencircle scaled 0.5u;
 pickup l1;
 
 % ------------------------------------------------------------------
-% constantes iniciales (relacionadas con la ventana del
-% osciloscopio)
-a00 = 3u/2;			a01 = 500;
-z00 = (0, 0);			z01 = (50a00, 40a00);
-z02 = (57a00, 47a00);
+% constantes
+% alturas
+a00 = 15u/4;		a01 = 3v;
+a02 = 9v/2 + 5u/2;	a03 = 11v/2;
+a04 = 6v + 5u/2;
+% switch, diferencias de altura entre terminales en T
+z00 = (8u, 0) rotated 20;
+% switches
+d0 = conmutadorA(u, (0, 0));
+d1 = conmutadorC(u, (0, 0));
+d2 = conmutadorT(u, (0, 0));
+p0 = bbox d2;
+begingroup
+	interim bboxmargin := 0; p1 = bbox d0 scaled 19/20;
+endgroup;
+% switch, ancho total (si no me equivoco 27/2 * escala)
+a05 = xpart(urcorner d0 - ulcorner d0);
+% cajas de señal
+d3 = thelabel.top(btex Se\~nal etex, (0, 0));
+z01 = llcorner d3;	z02 = lrcorner d3;
+addto d3 also thelabel.bot(btex $+$ etex, z01);
+addto d3 also thelabel.bot(btex $-$ etex, z02);
+p2 = bbox d3;
+% caja de señal, ancho total
+a06 = xpart(urcorner d3 - ulcorner d3);
+% posición etiquetas
+z03 = 1/2[ulcorner d3, urcorner d3] + %
+	5/8(ulcorner d3 - llcorner d3);
+% ajuste para centrar las etiquetas
+d4 = thelabel(btex 00 Lo/08 Hi etex, (0, 0));
+d5 = thelabel(btex 00 Hi etex, (0, 0));
+a07 = 11/20;			x04 = 0;
+(whatever, y04) = a07*(llcorner d5 - llcorner d4);
+% resto de anchos
+a08 = 15u/4;		a09 = a08/2;
+a10 = xpart(urcorner p0 - ulcorner p0);
+a11 = a06;		a12 = 6a08 + 2a05 + 2a06 + a11;
+a13 = 3u/2;		a14 = a13/2;
+a15 = a14/3;
+% puntos clave
+a16 = a05 + a08;	a17 = a05 + a06/2 + 3a08;
+a18 = a12 - a17;	a19 = a12 - a16;
+a20 = a12 + 2a08;
 
 % ------------------------------------------------------------------
-% curvas auxiliares para delimitar la imagen de la señal
-a02 = 4wi/5;
-p0 = (-a02/2, -y01/2)--(a02/2, -y01/2)--(a02/2, y01/2)-- %
-	(-a02/2, y01/2)--cycle;
-
-% ------------------------------------------------------------------
-% señal que entra al osciloscopio
-a03 = 20a00;			a04 = 34a00;
-a05 = 5u;
-p1 = sierra xscaled a03 yscaled a04;
-p2 = p1 shifted (-5a03/2, -a04/2) -- %
-	p1 shifted (-3a03/2, -a04/2) -- %
-	p1 shifted (-a03/2, -a04/2) -- %
-	p1 shifted (a03/2, -a04/2) -- %
-	p1 shifted (3a03/2, -a04/2);
-p3 = p2 shifted (a03/2 - a05, 0) cutbefore p0 cutafter p0;
-% cortes por cero de la señal
-a06 = -(2*mlog(50/99))/(3*mlog(99));
-a07 = 2/3 - (mlog(50/99))/(3*mlog(99));
-a08 = a03 * a06;		a09 = a03 * a07;
-
-% ------------------------------------------------------------------
-% ejes auxiliares
-a10 = 17wi/20;			a11 = he02/2;
-a12 = 3y01/8;			a13 = 19y01/20;
-a14 = wi/2 + a08 - a05;		a15 = y01/40;
-a16 = x01/2;			a17 = a16 * 3/4;
-a18 = wi - a10;
-p4 = (-a10/2, 0)--(a10/2, 0);
-p5 = (0, -a13/2)--(0, a13/2);
-p6 = p5 scaled 19/20;
-pickup l2;
-draw p3 shifted (wi/2, a11);
-pickup l1;
-drawgisarrow p4 shifted (wi/2, a11 - a12);
-drawgisarrow p5 shifted (3a18/4, a11 + a15);
-draw p4 shifted (wi/2, a11) dashed evenly;
-draw p6 shifted (a14 - a17, a11 + a15) dashed evenly;
-draw p6 shifted (a14 + a17, a11 + a15)cutbefore p4 %
-	shifted (wi/2, a11 - a12) dashed evenly shifted (u, 0);
-
-% ------------------------------------------------------------------
-% marcas de grafo
-a19 = 3u;			a20 = 5u/2;
-p7 = (0, 0)--(0, a19);
-draw p7 shifted (a18, a11 - a12);
-draw p7 shifted (a14 + a17 + a18/4, a11 - a12);
-draw p7 shifted (a14 + a17 + a18, a11 - a12);
-label(btex $t_0$ etex, (a18, a11 - a12 - a20));
-d0 = thelabel(btex $t_0 + T$ etex, %
-	(a14 + a17 + 18/4 + 3a19/2, a11 - a12 - a20));
-draw d0;
-label(btex $t_1$ etex, (a14 + a17 + a18, a11 - a12 - a20));
+% primera parte conmutada
+% dibujo las líneas centrales, los switches y las cajas de señal
+p3 = fullcircle scaled (a13);
+p4 = (0, 0)--(a09 + a05, 0)--(a09 + a05, a03)--(0, a03)--cycle;
+p5 = (a09/2 + a05/2, 3a00)--(a09/2 + a05/2, a01 - 3a00/2);
+d6 = thelabel.bot(btex Multiplexador etex, (a09/2 + a05/2, 0));
+draw (a20, a04)--(0, a04)--(0, a00)--(a08, a00)-- %
+	(a12 - a08, a00)--(a12, a00)--(a12, a02)--(a20, a02);
+for i = a00, a01, a02:
+	if not(i = a00):
+		pickup l3;
+		fill p3 shifted (0, i);
+		fill p3 shifted (a12, i);
+		pickup l1;
+		draw (0, i)--(a12, i);
+	fi
+	if i = a01: fill p3 shifted (a12/2, i); fi
+	pickup l0;
+	fill p1 shifted (a08, i) withcolor white;
+	fill p1 shifted (a19 + a09/2 - a15, i) withcolor white;
+	fill p2 shifted (a17, i) withcolor white;
+	if i = a01:
+		fill p2 shifted (a18, i) %
+			withcolor white; fi
+	pickup l1;
+	draw d0 xscaled -1 shifted (a16 - a13 - a15, i);
+	draw d3 shifted (a17, i);
+	if i = a01:
+		draw d1 shifted (a19 + a09/2 - a15, i);
+		draw d3 shifted (a18, i);
+		drawgisarrow (a12/2, i)-- %
+			(a12/2, i - v);
+	else :
+		draw d0 shifted (a19 + a09/2 - a15, i);
+	fi
+	pickup l2;
+	draw p2 shifted (a17, i);
+	if i = a01: draw p2 shifted (a18, i); fi
+endfor
+for i = (3a09/2 - a14), (a19 + a14 - a09):
+	draw p4 shifted (i, 0);
+	draw p5 shifted (i, 0) dashed withdots scaled 2;
+	draw d6 shifted (i, 0);
+endfor
 
 % ------------------------------------------------------------------
 % etiquetas
-a21 = 3u/2;
-p8 = (-a17 + a21, 0)--(a17 - a21, 0);
-drawdblgisarrow p8 shifted (a14, a11 + 19a13/40 + a15 - a21);
-d1 = thelabel(btex Ventana temporal etex, %
-	(a14, a11 + 19a13/40 + a15 - a21));
-fill bbox d1 withcolor white;
-draw d1;
-a22 = wi/2 + a08 - a03 - a05;
-a23 = wi/2 + a09 - a03 - a05;
-a24 = wi/2 + a09 - a05;
-z04 = 1/2[(a14, a11 - a12), (a24, a11)];
-d2 = thelabel(btex \begin{tabular}{c} Corte\\central %
-	\end{tabular} etex, z04);
-drawgisarrow z04--(a14, a11) shifted (a21, -a21) cutbefore bbox d2;
-draw d2;
-label.ulft(btex $p_0$ etex, (a22, a11));
-label.llft(btex $p_1$ etex, (a23, a11));
-label.ulft(btex $p_2$ etex, (a14, a11));
-label.llft(btex $p_3$ etex, (a24, a11));
+label(btex 00 Lo/08 Hi etex, z03 shifted (a18, a02));
+label(btex 01 Lo/09 Hi etex, z03 shifted (a18, a01));
+label(btex 07 Lo/15 Hi etex, z03 shifted (a18, a00));
+label(btex 00 Hi etex, z03 + z04 shifted (a17, a02));
+label(btex 01 Hi etex, z03 + z04 shifted (a17, a01));
+label(btex 07 Hi etex, z03 + z04 shifted (a17, a00));
+
+% ------------------------------------------------------------------
+% segunda parte conmutada
+pickup l1;
+a21 = a04 - 2y00;		a22 = a02 - 2y00;
+a23 = a21 + y00;		a24 = a22 + y00;
+a25 = a20 - a08;		a26 = a20 + a05 - a09;
+a27 = a26 + a08;
+draw (a20, a21)--(a25, a21)--(a25, a02);
+drawgisarrow (a20, a22)--(a25, a22)--(a25, a22 - v);
+draw (a26, a23)--(a27, a23);	draw (a26, a24)--(a27, a24);
+draw d2 shifted (a20, a21);	draw d2 shifted (a20, a22);
+pickup l2;
+draw p0 shifted (a20, a21);	draw p0 shifted (a20, a22);
+pickup l1;
+
+% ------------------------------------------------------------------
+% amplificador de instrumentación
+% defininciones
+z06 = 1/2[(a27, a23), (a27, a24)];
+p6 = amplificador;
+a28 = a23 - a24 + 3y00/2;
+a29 = a28/2 + 3a09;
+p7 = p6 scaled a28 shifted z06;
+z07 = center p7 shifted (-a09, 0);
+p8 = z07--z07 shifted (0, -3v);
+z08 = p8 intersectionpoint p7;
+d7 = thelabel(btex \textsc{ai} etex, z07);
+begingroup
+	interim bboxmargin := 3u; p9 = bbox d7;
+endgroup;
+p10 = z07 shifted (a08, a28/2)--z07 shifted (a29 - a08, a28/2);
+z09 = point (length p10)/2 of p10;
+% dibujo todos los elementos definidos previamente
+drawgisarrow z07--z08 shifted (0, -v);
+draw z07--z07 shifted (a29, 0);
+pickup l0;
+fill p7 withcolor white;
+fill fullcircle scaled (3u/2) shifted z07 shifted (a29, 0) %
+	withcolor white;
+pickup l2; 
+draw p7; 			
+pickup l1;
+draw fullcircle scaled (3u/2) shifted z07 shifted (a29, 0);
+draw d7;
+begingroup
+	interim ahlength := 2u; drawgisarrow p10;
+endgroup;
+
+% ------------------------------------------------------------------
+% etiquetas
+label(btex $+$ etex, ulcorner p9);
+label(btex $-$ etex, llcorner p9);
+label.top(btex \textsc{a/d} etex, z09);
+label.bot(btex \textsc{agnd} etex, z08 shifted (0, -25u/2));
 
 endfig;
 % ==================================================================
@@ -129,48 +201,90 @@ endfig;
 
 % ==================================================================
 beginfig(3);
-numeric a[], i, j, k, pi;
-picture d[];
+numeric a[], b[][];
+picture d[], e[][];
 pen l[];
 path p[], q[][];
 transform t[];
-string s[];
+ahlength := 4u;	ahangle := 20;
+ahinset := 5/100;
+bboxmargin := 4u;
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
+d0 = nullpicture;
 pickup l1;
 
 % ------------------------------------------------------------------
-% ventana del osciloscopio
-a00 = 3u/2;			a01 = 500;
-z00 = (0, 0);			z01 = (50a00, 40a00);
-z02 = (57a00, 47a00);
-d0 = osciloscopio(a00, z00);
-draw d0 shifted (wi/2, y02/2);
+% constantes
+a00 = 7u/3;			a01 = 5a00/2;
+a02 = 3a00;			a03 = 2a00 + a02 + 6a00;
+a04 = a00;			a05 = 18a01;
+a06 = a03 * sind(30)/cosd(30);	a07 = a06/3;
+a08 = 40;
+z00 = (0, 0);			z01 = (a06, 0) rotated 30;
+z02 = (a07, 0) rotated 210;	z03 = (a07, 0) rotated 150;
+z04 = (a06, 0) rotated 330;
 
 % ------------------------------------------------------------------
-% curvas auxiliares para delimitar la imagen de la señal
-p0 = (-x01/2, -y01/2)--(x01/2, -y01/2)--(x01/2, y01/2)-- %
-	(-x01/2, y01/2)--cycle;
+% conector
+draw conectorh(a00, z00);
 
 % ------------------------------------------------------------------
-% fragmento de señal representado en el osciloscopio
-a02 = 80a00/3;			a03 = 34a00;
-% cortes por cero de la señal
-a04 = -(2*mlog(50/99))/(3*mlog(99));
-a05 = 2/3 - (mlog(50/99))/(3*mlog(99));
-a06 = a02 * a04;		a07 = a02 * a05;
-p1 = sierra xscaled a02 yscaled a03;
-p2 = p1 shifted (-5a02/2, -a03/2) -- %
-	p1 shifted (-3a02/2, -a03/2) -- %
-	p1 shifted (-a02/2, -a03/2) --  %
-	p1 shifted (a02/2, -a03/2) -- %
-	p1 shifted (3a02/2, -a03/2);
-p3 = p2 shifted (a02/2 - a06, 0) cutbefore p0 %
-	cutafter p0;
-pickup l2;
-draw p3 shifted (wi/2, y02/2);
+% posiciones
+for i = 0 upto 17 :
+	b[0][i] =  a01/2 + i*a01 - a05/2;
+endfor
+
+% ------------------------------------------------------------------
+% etiquetas externas
+e[0][0] = thelabel.lft(btex \textsc{ip5} etex, z00);
+e[0][1] = thelabel.lft(btex \textsc{ip3} etex, z00);
+e[0][2] = thelabel.lft(btex \textsc{ip1} etex, z00);
+e[0][3] = thelabel.lft(btex \textsc{op5} etex, z00);
+e[0][4] = thelabel.lft(btex \textsc{op3} etex, z00);
+e[0][5] = thelabel.lft(btex \textsc{op1} etex, z00);
+e[0][6] = thelabel.lft(btex \textsc{dgnd} etex, z00);
+e[0][7] = thelabel.lft(btex \textsc{ch 07 lo/ch 15} etex, z00);
+e[0][8] = thelabel.lft(btex \textsc{ch 06 lo/ch 14} etex, z00);
+e[0][9] = thelabel.lft(btex \textsc{ch 05 lo/ch 13} etex, z00);
+e[0][10] = thelabel.lft(btex \textsc{ch 04 lo/ch 12} etex, z00);
+e[0][11] = thelabel.lft(btex \textsc{ch 03 lo/ch 11} etex, z00);
+e[0][12] = thelabel.lft(btex \textsc{ch 02 lo/ch 10} etex, z00);
+e[0][13] = thelabel.lft(btex \textsc{ch 01 lo/ch 09} etex, z00);
+e[0][14] = thelabel.lft(btex \textsc{ch 00 lo/ch 08} etex, z00);
+e[0][15] = thelabel.lft(btex Sin conexi\'on etex, z00);
+e[0][16] = thelabel.lft(btex \textsc{agnd} etex, z00);
+e[0][17] = thelabel.lft(btex \textsc{agnd} etex, z00);
+e[1][0] = thelabel.rt(btex \textsc{ip4} etex, z00);
+e[1][1] = thelabel.rt(btex \textsc{ip2} etex, z00);
+e[1][2] = thelabel.rt(btex \textsc{ip0} etex, z00);
+e[1][3] = thelabel.rt(btex \textsc{op4} etex, z00);
+e[1][4] = thelabel.rt(btex \textsc{op2} etex, z00);
+e[1][5] = thelabel.rt(btex \textsc{op0} etex, z00);
+e[1][6] = thelabel.rt(btex +5 V etex, z00);
+e[1][7] = thelabel.rt(btex \textsc{ch 07 hi} etex, z00);
+e[1][8] = thelabel.rt(btex \textsc{ch 06 hi} etex, z00);
+e[1][9] = thelabel.rt(btex \textsc{ch 05 hi} etex, z00);
+e[1][10] = thelabel.rt(btex \textsc{ch 04 hi} etex, z00);
+e[1][11] = thelabel.rt(btex \textsc{ch 03 hi} etex, z00);
+e[1][12] = thelabel.rt(btex \textsc{ch 02 hi} etex, z00);
+e[1][13] = thelabel.rt(btex \textsc{ch 01 hi} etex, z00);
+e[1][14] = thelabel.rt(btex \textsc{ch 00 hi} etex, z00);
+e[1][15] = thelabel.rt(btex +10 V etex, z00);
+e[1][16] = thelabel.rt(btex \textsc{dac1} etex, z00);
+e[1][17] = thelabel.rt(btex \textsc{dac0} etex, z00);
+pickup pencircle scaled 0.75u;
+for i = 0 upto 17 :
+	drawdot (b[0][i], -a03/2 - a04);
+	drawdot (b[0][i], a03/2 + a04);
+	draw e[0][i] rotated a08 shifted (b[0][i], -a03/2 - a04);
+	draw e[1][i] rotated a08 shifted (b[0][i], a03/2 + a04);
+endfor
+addto d0 also currentpicture;
+fill bbox d0 withcolor white;
+draw d0;
 
 endfig;
 % ==================================================================
@@ -179,505 +293,90 @@ endfig;
 
 % ==================================================================
 beginfig(4);
-numeric a[], b[][], i, j, k, pi;
+numeric a[], b[][];
 picture d[], e[][];
 pen l[];
 path p[], q[][];
 transform t[];
-string s[];
-l0 = pencircle scaled 0.15u;
-l1 = pencircle scaled 0.25u;
-l2 = pencircle scaled 0.35u;
-l3 = pencircle scaled 0.5u;
-pickup l1;
-
-% ------------------------------------------------------------------
-% constantes iniciales
-a00 = 3u/2;			a01 = 500;
-z00 = (0, 0);			z01 = (50a00, 40a00);
-z02 = (57a00, 47a00);
-
-% ------------------------------------------------------------------
-% curvas auxiliares para delimitar la imagen de la señal
-a02 = 4wi/5;
-p0 = (-a02/2, -y01/2)--(a02/2, -y01/2)--(a02/2, y01/2)-- %
-	(-a02/2, y01/2)--cycle;
-
-% ------------------------------------------------------------------
-% señal que entra al osciloscopio
-a03 = 34a00;			a04 = a03/2;
-a05 = 5u;
-p2 = sierra xscaled a04 yscaled a03;
-p3 = p2 shifted (-5a04/2, -a03/2) -- %
-	p2 shifted (-3a04/2, -a03/2) -- %
-	p2 shifted (-a04/2, -a03/2) -- %
-	p2 shifted (a04/2, -a03/2) -- %
-	p2 shifted (3a04/2, -a03/2);
-p4 = p3 shifted (a04/2 - a05, 0) cutbefore p0 cutafter p0;
-% cortes por cero de la señal
-a06 = -(2*mlog(50/99))/(3*mlog(99));
-a07 = 2/3 - (mlog(50/99))/(3*mlog(99));
-a08 = a04 * a06;		a09 = a04 * a07;
-
-% ------------------------------------------------------------------
-% ejes auxiliares
-a10 = 17wi/20;			a11 = he02/2;
-a12 = 3y01/8;			a13 = 19y01/20;
-a14 = wi/2 + a08 - a05;		a15 = y01/40;
-pickup l2;
-draw p4 shifted (wi/2, a11);
-pickup l1;
-p5 = (-a10/2, 0)--(a10/2, 0);
-p6 = (0, -a13/2)--(0, a13/2);
-p7 = p6 scaled 19/20;
-drawgisarrow p5 shifted (wi/2, a11 - a12);
-drawgisarrow p6 shifted (3*(wi - a10)/4, a11 + a15);
-draw p5 shifted (wi/2, a11) dashed evenly;
-
-% ------------------------------------------------------------------
-% etiquetas
-a16 = wi/20;			a17 = wi/2 + a16 - a02/2;
-a18 = wi/2 + a02/2 - a16;	a19 = 7;
-a20 = (a18 - a17)/a19;
-j := 0;
-for i = a17 step a20 until a18 :
-	draw p7 shifted (i, a11 + a15) dashed evenly;
-	b[0][j] = i;
-	j := j + 1; 
-endfor
-e[0][0] = thelabel.lrt(btex $t_0$ etex, (b[0][0] + u, a11 - u));
-e[0][1] = thelabel.lrt(btex $t_1$ etex, (b[0][1] + u, a11 - u));
-e[0][2] = thelabel.lrt(btex $t_2$ etex, (b[0][2] + u, a11 - u));
-e[0][3] = thelabel.lrt(btex $t_3$ etex, (b[0][3] + u, a11 - u));
-e[0][4] = thelabel.lrt(btex $t_4$ etex, (b[0][4] + u, a11 - u));
-e[0][5] = thelabel.lrt(btex $t_5$ etex, (b[0][5] + u, a11 - u));
-e[0][6] = thelabel.lrt(btex $t_6$ etex, (b[0][6] + u, a11 - u));
-e[0][7] = thelabel.lrt(btex $t_7$ etex, (b[0][7] + u, a11 - u));
-for i = 0 upto 7 :
-	fill bbox e[0][i] withcolor white;
-	draw e[0][i];
-endfor
-
-endfig;
-% ==================================================================
-
-
-
-% ==================================================================
-beginfig(5);
-numeric a[], i, j, k, pi;
-picture d[];
-pen l[];
-path p[], q[][];
-transform t[];
-string s[];
-l0 = pencircle scaled 0.15u;
-l1 = pencircle scaled 0.25u;
-l2 = pencircle scaled 0.35u;
-l3 = pencircle scaled 0.5u;
-pickup l1;
-
-% ------------------------------------------------------------------
-% ventanas del osciloscopio
-a00 = 9u/10;			a01 = 500;
-z00 = (0, 0);			z01 = (50a00, 40a00);
-z02 = (57a00, 47a00);
-d0 = osciloscopio(a00, z00);
-a02 = 2u;			a03 = 8;
-a04 = wi - 2y02 + a02*a03;	a05 = wi/4 + 4u;
-a06 = 3wi/4 - a04/8 + 4u;
-draw d0 shifted (a05, he02/2);
-draw d0 shifted (a06, he02/2);
-
-% ------------------------------------------------------------------
-% marcas de grafo
-a07 = 3u;			a08 = he02/2 - y02/2 - a07;
-a09 = 5u/2;
-p0 = (0, 0)--(0, a09);
-draw p0 shifted (a05, a08);
-draw p0 shifted (a06, a08);
-label(btex $t_1$ etex, (a05, a08 - a07));
-label(btex $t_2$ etex, (a06, a08 - a07));
-
-% ------------------------------------------------------------------
-% ejes coordenados y puntos suspensivos
-drawgisarrow (-a07, a08)--(wi + a07, a08);
-drawgisarrow (0, a08 - a07)--(0, he02/2 + y02/2 + 2a07);
-a10 = 2u;
-for i = (a05 - x02/2 - 3a10) step a10 until (a05 - x02/2 - a10) :
-	fill fullcircle scaled 0.5u shifted (i, he02/2);
-endfor
-for i = (x02/2 + a06 + a10) step a10 until (x02/2 + a06 + 3a10) :
-	fill fullcircle scaled 0.5u shifted (i, he02/2);
-endfor
-
-% ------------------------------------------------------------------
-% razón de compresión y razón de escalado
-a11 = 3/4;			% (7 * y01)/(5 * (a02' - 2a16'))
-a12 = 153u/8;			% a04' * a11
-
-% ------------------------------------------------------------------
-% fragmento de señal representado en las ventanas de osciloscopio
-% señal al completo
-a13 = 34a00;			a14 = 3*5u/4;
-p1 = sierra xscaled a12 yscaled a13;
-p2 = p1 shifted (-5a12/2, -a13/2) -- %
-	p1 shifted (-3a12/2, -a13/2) -- %
-	p1 shifted (-a12/2, -a13/2) -- %
-	p1 shifted (a12/2, -a13/2) -- %
-	p1 shifted (3a12/2, -a13/2);
-p3 = p2 shifted (a12/2 - a14, 0);
-% cortes por cero de la señal
-a15 = -(2*mlog(50/99))/(3*mlog(99));
-a16 = 2/3 - (mlog(50/99))/(3*mlog(99));
-a17 = a12 * a15;		a18 = a12 * a16;
-% línea delimitadora
-a19 = x01/5;
-p4 = (-a19/2, -y01/2)--(a19/2, -y01/2)--(a19/2, y01/2)-- %
-	(-a19/2, y01/2)--cycle;
-% fragmentos de señal
-p5 = p3 cutbefore p4 shifted (-3a19, 0) cutafter p4 %
-	shifted (-3a19, 0);
-p6 = p3 cutbefore p4 scaled 2 shifted (-5a19/2, 0) cutafter p4 %
-	scaled 2 shifted (-5a19/2, 0);
-pickup l2;
-draw p5 shifted (5a19, 0) shifted(a05, he02/2);
-draw p6 shifted (4a19, 0) shifted(a06, he02/2);
-
-endfig;
-% ==================================================================
-
-
-
-% ==================================================================
-beginfig(6);
-numeric a[], i, j, k, pi;
-picture d[];
-pen l[];
-path p[], q[][];
-transform t[];
-string s[];
-l0 = pencircle scaled 0.15u;
-l1 = pencircle scaled 0.25u;
-l2 = pencircle scaled 0.35u;
-l3 = pencircle scaled 0.5u;
-pickup l1;
-
-% ------------------------------------------------------------------
-% ventanas del osciloscopio
-a00 = 9u/10;			a01 = 500;
-z00 = (0, 0);			z01 = (50a00, 40a00);
-z02 = (57a00, 47a00);
-d0 = osciloscopio(a00, z00);
-a02 = 2u;			a03 = 8;
-a04 = wi - 2y02 + a02*a03;	a05 = wi/4 + 4u;
-a06 = 3wi/4 - a04/8 + 4u;
-draw d0 shifted (a05, he02/2);
-draw d0 shifted (a06, he02/2);
-
-% ------------------------------------------------------------------
-% marcas de grafo
-a07 = 3u;			a08 = he02/2 - y02/2 - a07;
-a09 = 5u/2;
-p0 = (0, 0)--(0, a09);
-draw p0 shifted (a05, a08);
-draw p0 shifted (a06, a08);
-label(btex $t_5$ etex, (a05, a08 - a07));
-label(btex $t_6$ etex, (a06, a08 - a07));
-
-% ------------------------------------------------------------------
-% ejes coordenados y puntos suspensivos
-drawgisarrow (-a07, a08)--(wi + a07, a08);
-drawgisarrow (0, a08 - a07)--(0, he02/2 + y02/2 + 2a07);
-a10 = 2u;
-for i = (a05 - x02/2 - 3a10) step a10 until (a05 - x02/2 - a10) :
-	fill fullcircle scaled 0.5u shifted (i, he02/2);
-endfor
-for i = (x02/2 + a06 + a10) step a10 until (x02/2 + a06 + 3a10) :
-	fill fullcircle scaled 0.5u shifted (i, he02/2);
-endfor
-
-% ------------------------------------------------------------------
-% razón de compresión y razón de escalado
-a11 = 3/4;			% (7 * y01)/(5 * (a02' - 2a16'))
-a12 = 153u/8;			% a04' * a11
-
-% ------------------------------------------------------------------
-% fragmento de señal representado en las ventanas de osciloscopio
-% señal al completo
-a13 = 34a00;			a14 = 3*5u/4;
-p1 = sierra xscaled a12 yscaled a13;
-p2 = p1 shifted (-5a12/2, -a13/2) -- %
-	p1 shifted (-3a12/2, -a13/2) -- %
-	p1 shifted (-a12/2, -a13/2) -- %
-	p1 shifted (a12/2, -a13/2) -- %
-	p1 shifted (3a12/2, -a13/2);
-p3 = p2 shifted (a12/2 - a14, 0);
-% cortes por cero de la señal
-a15 = -(2*mlog(50/99))/(3*mlog(99));
-a16 = 2/3 - (mlog(50/99))/(3*mlog(99));
-a17 = a12 * a15;		a18 = a12 * a16;
-% línea delimitadora
-a19 = x01/5;
-p4 = (-a19/2, -y01/2)--(a19/2, -y01/2)--(a19/2, y01/2)-- %
-	(-a19/2, y01/2)--cycle;
-% fragmentos de señal
-p5 = p3 cutbefore p4 scaled 5 shifted (-a19, 0) %
-	cutafter p4 scaled 5 shifted (-a19, 0);
-p6 = p3 cutbefore p4 scaled 5 cutafter p4 scaled 5;
-pickup l2;
-draw p5 shifted (a19, 0) shifted(a05, he02/2);
-draw p6 shifted(a06, he02/2);
-
-endfig;
-% ==================================================================
-
-
-
-% ==================================================================
-beginfig(7);
-numeric a[], i, j, k;
-picture d[];
-pen l[];
-path p[], q[][];
-transform t[];
-string s[];
+ahlength := 4u;	ahangle := 20;
+ahinset := 5/100;
+bboxmargin := 4u;
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
 d0 = nullpicture;
-d1 = nullpicture;
-d2 = nullpicture;
 pickup l1;
-interim bboxmargin := u;
 
 % ------------------------------------------------------------------
-% caja principal
-% dimensiones de la caja
-% recuerda que las proporciones de este dibujo están cambiadas, an-
-% cho = he01 y altura = wi
-a00 = 0.6he01;		a01 = 0.45wi;
-% dimensiones de las cajas de texto
-a02 = 0.5he01;		a03 = a01/5;
-a04 = (a00 - a02)/2;	a05 = a01/(a01/a03 - 1);
-p0 = 1/2(-a00, -a01)--1/2(a00, -a01)--1/2(a00, a01)-- %
-	1/2(-a00, a01)--cycle;
-p10 = bbox p0;
-p1 = 1/2(-a02, -a03)--1/2(a02, -a03)--1/2(a02, a03)-- %
-	1/2(-a02, a03)--cycle;
-p11 = bbox p1;
-z00 = center p1;
-t0 = identity shifted (a00/2, 0.6wi);
-t1 = identity transformed t0 shifted (0, a04 - 2a03 - a05);
-draw p0 transformed t0;
-for i = 1 upto 3:
-	draw p1 transformed t1 shifted (0, i*a05);
+% constantes
+a00 = 7u/3;			a01 = 5a00/2;
+a02 = 3a00;			a03 = 2a00 + a02 + 6a00;
+a04 = a00;			a05 = 18a01;
+a06 = a03 * sind(30)/cosd(30);	a07 = a06/3;
+a08 = 40;
+z00 = (0, 0);			z01 = (a06, 0) rotated 30;
+z02 = (a07, 0) rotated 210;	z03 = (a07, 0) rotated 150;
+z04 = (a06, 0) rotated 330;
+
+% ------------------------------------------------------------------
+% conector
+draw conectorh(a00, z00);
+
+% ------------------------------------------------------------------
+% posiciones
+for i = 0 upto 17 :
+	b[0][i] =  a01/2 + i*a01 - a05/2;
 endfor
 
 % ------------------------------------------------------------------
-% etiquetas en la caja principal
-label( %
-	btex \begin{tabular}{c} Adaptadores \\ %
-	de hardware \end{tabular} etex, %
-	z00 transformed t1 shifted (0, a05));
-label( %
-	btex \begin{tabular}{c} M\'aquina virtual de \\ %
-	adquisici\'on de datos \end{tabular} etex, %
-	z00 transformed t1 shifted (0, 2a05));
-label(btex Ficheros *.m etex, z00 transformed t1 shifted (0, 3a05));
-label(btex \emph{Data Acquisition Toolbox} etex, %
-	z00 transformed t1 shifted (0, a03 + 3a05));
-
-% ------------------------------------------------------------------
-% caja matlab
-% dimensiones de la caja
-a06 = a00/2;		a07 = a03;
-p2 = 1/2(-a06, -a07)--1/2(a06, -a07)--1/2(a06, a07)-- %
-	1/2(-a06, a07)--cycle;
-p12 = bbox p2;
-z01 = center p2;
-t2 = identity transformed t0 shifted (0, 0.4wi - a07/2);
-draw p2 transformed t2;
-label(btex \textsc{matlab} etex, z01 transformed t2);
-drawdblgisarrow center p0 transformed t0--center p2 transformed t2 %
-	cutbefore p10 transformed t0 cutafter p12 transformed t2;
-z02 = 1/2[(0, 0.6wi + a01/2), (a00, wi - a07)];
-label.rt(btex Comandos y datos interactivos etex, z02);
-
-% ------------------------------------------------------------------
-% caja driver
-% dimensiones de la caja
-t3 = identity transformed t0 shifted (0, a07/2 - 0.4wi);
-draw p2 transformed t3;
-label(btex Drivers etex, z01 transformed t3);
-drawdblgisarrow center p0 transformed t0--center p2 transformed t3 %
-	cutbefore p10 transformed t0 cutafter p12 transformed t3;
-z03 = 1/2[(0, 0.6wi - a01/2), (a00, 0.2wi + a07)];
-label.rt(btex Propiedades, datos y eventos etex, z03);
-
-% ------------------------------------------------------------------
-% hardware
-% dimensiones del hardware
-a08 = 4a07/5;		a09 = 6a07/5;
-a10 = a09 - a08;	a11 = 2a06/5;
-p3 = 1/2(-a06, -a08)--1/2(a06, -a08)--1/2(a06, a08)-- %
-	1/2(-a06, a08);
-p13 = bbox p3;
-p4 = 1/2(-a06, -a09)--1/2(-a06, a09)--1/2(-a06 - 2a10/3, a09);
-addto d1 doublepath p3;		addto d1 doublepath p4;
-% conector PCI
-p5 = 1/2(0, -1.1a10/2)--1/2(0, 1.1a10/2);
-p6 = 1/2(-a11, -a10/2)--1/2(a11, -a10/2)--1/2(a11, a10/2)-- %
-	1/2(-a11, a10/2)--cycle;
-a12 = 11;
-for i = 1 upto a12 - 1:
-	addto d0 doublepath p5 shifted (i*a11/a12 - a11/2, 0);
+% etiquetas externas
+e[0][0] = thelabel.lft(btex Bit 0 etex, z00);
+e[0][1] = thelabel.lft(btex Bit 1 etex, z00);
+e[0][2] = thelabel.lft(btex Bit 2 etex, z00);
+e[0][3] = thelabel.lft(btex Bit 3 etex, z00);
+e[0][4] = thelabel.lft(btex Bit 4 etex, z00);
+e[0][5] = thelabel.lft(btex Bit 5 etex, z00);
+e[0][6] = thelabel.lft(btex Bit 6 etex, z00);
+e[0][7] = thelabel.lft(btex Bit 7 etex, z00);
+e[0][8] = thelabel.lft(btex Bit 8 etex, z00);
+e[0][9] = thelabel.lft(btex Bit 9 etex, z00);
+e[0][10] = thelabel.lft(btex Bit 10 etex, z00);
+e[0][11] = thelabel.lft(btex Bit 11 etex, z00);
+e[0][12] = thelabel.lft(btex Bit 12 etex, z00);
+e[0][13] = thelabel.lft(btex Bit 13 etex, z00);
+e[0][14] = thelabel.lft(btex Bit 14 etex, z00);
+e[0][15] = thelabel.lft(btex Bit 15 etex, z00);
+e[0][16] = thelabel.lft(btex \textsc{dgnd} etex, z00);
+e[0][17] = thelabel.lft(btex \textsc{dgnd} etex, z00);
+e[1][0] = thelabel.rt(btex Bit 16 etex, z00);
+e[1][1] = thelabel.rt(btex Bit 17 etex, z00);
+e[1][2] = thelabel.rt(btex Bit 18 etex, z00);
+e[1][3] = thelabel.rt(btex Bit 19 etex, z00);
+e[1][4] = thelabel.rt(btex Bit 20 etex, z00);
+e[1][5] = thelabel.rt(btex Bit 21 etex, z00);
+e[1][6] = thelabel.rt(btex Bit 22 etex, z00);
+e[1][7] = thelabel.rt(btex Bit 23 etex, z00);
+e[1][8] = thelabel.rt(btex Bit 24 etex, z00);
+e[1][9] = thelabel.rt(btex Bit 25 etex, z00);
+e[1][10] = thelabel.rt(btex Bit 26 etex, z00);
+e[1][11] = thelabel.rt(btex Bit 27 etex, z00);
+e[1][12] = thelabel.rt(btex Bit 28 etex, z00);
+e[1][13] = thelabel.rt(btex Bit 29 etex, z00);
+e[1][14] = thelabel.rt(btex Bit 30 etex, z00);
+e[1][15] = thelabel.rt(btex Bit 31 etex, z00);
+e[1][16] = thelabel.rt(btex +5 V etex, z00);
+e[1][17] = thelabel.rt(btex +5 V etex, z00);
+pickup pencircle scaled 0.75u;
+for i = 0 upto 17 :
+	drawdot (b[0][i], -a03/2 - a04);
+	drawdot (b[0][i], a03/2 + a04);
+	draw e[0][i] rotated a08 shifted (b[0][i], -a03/2 - a04);
+	draw e[1][i] rotated a08 shifted (b[0][i], a03/2 + a04);
 endfor
-clip d0 to p6;
-addto d1 also d0 shifted 1/2(a06 - a11, -a08 - a10/2);
-addto d1 doublepath p6 shifted 1/2(a06 - a11, -a08 - a10/2);
-% figura completa
-t4 = identity transformed t3 shifted (0, a01/2 - 0.4wi);
-draw d1 transformed t4 withpen l1;
-label(btex Hardware etex, z01 transformed t4);
-drawdblgisarrow center p2 transformed t3--center p3 transformed t4 %
-	cutbefore p12 transformed t3 cutafter p13 transformed t4;
-z04 = 1/2[(a00, 0.2wi), (0, a01/2 + a07/2 + a10 - 0.2wi)];
-label.rt(btex Propiedades, datos y eventos etex, z04);
-
-% ------------------------------------------------------------------
-% disco duro
-a13 = 2a07;		a14 = a03/2;
-p7 = fullcircle xscaled a13 yscaled a14;
-p8 = 1/2(-a13, 2a14)--subpath (4, 8) of p7 shifted (0, -a14)-- %
-	1/2(a13, 2a14);
-p18 = bbox p8;
-addto d2 doublepath p8;
-addto d2 doublepath p7 shifted (0, a14);
-t5 = identity transformed t1 shifted (0, 2a05) %
-	shifted (he01/2, 0);
-t6 = identity transformed t5 shifted (-he01/2, 0);
-z05 = center d2;
-drawgisarrow z00 transformed t6--z05 transformed t5 %
-	cutbefore p11 transformed t6 cutafter p18 transformed t5;
-label(btex \begin{tabular}{c} Archivo \\ %
-	en disco \end{tabular} etex, z05 transformed t5 %
-	shifted (0, -a14/2));
-draw d2 transformed t5 withpen l1; 
-
-% ------------------------------------------------------------------
-% sensores y actuadores
-boxit.aa(btex Actuadores etex);
-aa.c = (a00/2 + he01/2, a01/2 + a10/6 - wi/5);
-z06 = (aa.ne - aa.nw);		z07 = (aa.ne - aa.se);
-z08 = aa.c + 3z07/2;		a15 = y07/3;
-drawboxed(aa);
-p9 = bpath aa;			draw p9 shifted 1.5z07;
-p19 = bbox p9;
-label(btex Sensores etex, z08);
-drawgisarrow aa.c--aa.c shifted (-he01/4, 0)-- %
-	aa.c shifted (-he01/4, a15)--aa.c shifted (-he01/2, a15) %
-	cutbefore p19 cutafter p13 transformed t4;
-drawgisarrow z08--z08 shifted (-he01/2, 0) cutbefore p19 %
-	shifted 1.5z07 cutafter p13 transformed t4;
-
-endfig;
-% ==================================================================
-
-
-
-% ==================================================================
-beginfig(8);
-numeric a[], i, j, k;
-picture d[];
-pen l[];
-path p[], q[][];
-transform t[];
-string s[];
-l0 = pencircle scaled 0.15u;
-l1 = pencircle scaled 0.25u;
-l2 = pencircle scaled 0.35u;
-l3 = pencircle scaled 0.5u;
-d0 = nullpicture;
-d1 = nullpicture;
-d2 = nullpicture;
-pickup l1;
-interim bboxmargin := u;
-
-% ------------------------------------------------------------------
-% hardware
-% dimensiones del hardware
-a00 = 7wi/10;		a01 = 3a00/5;
-a02 = 2a01/3;		a03 = a01 - a02;
-a04 = 2a00/5;		a05 = 11;
-p0 = 1/2(-a00, -a02)--1/2(a00, -a02)--1/2(a00, a02)-- %
-	1/2(-a00, a02);
-p1 = 1/2(-a00, -a01)--1/2(-a00, a01)--1/2(-a00 - 2a03/3, a01);
-addto d1 doublepath p0;		addto d1 doublepath p1;
-z00 = center p0;
-t0 = identity shifted (a00/2 + a03/3, a01/2);
-% conector PCI
-p2 = 1/2(0, -1.1a03/2)--1/2(0, 1.1a03/2);
-p3 = 1/2(-a04, -a03/2)--1/2(a04, -a03/2)--1/2(a04, a03/2)-- %
-	1/2(-a04, a03/2)--cycle;
-for i = 1 upto a05 - 1:
-	addto d0 doublepath p2 shifted (i*a04/a05 - a04/2, 0);
-endfor
-clip d0 to p3;
-addto d1 also d0 shifted 1/2(a00 - a04, -a02 - a03/2);
-addto d1 doublepath p3 shifted 1/2(a00 - a04, -a02 - a03/2);
-% figura completa
-draw d1 transformed t0 withpen l1;
-
-% ------------------------------------------------------------------
-% cajas de texto
-a07 = 3;		a08 = a00/(a07 + 1/2);
-a09 = (a00 - a07*a08)/(a07 + 1);
-a10 = a01/4;
-p4 = 1/2(-a08, -a10)--1/2(a08, -a10)--1/2(a08, a10)-- %
-		1/2(-a08, a10)--cycle;
-z01 = center p4;
-t1 = identity shifted (a03/3 + a08/2, a01/2);
-t2 = identity transformed t1 shifted (0, 4(a02 - a01/2));
-for i = 0 upto a07 - 1:
-	q[0][i] = p4 transformed t1 
-		shifted ((i + 1) * a09 + i*a08, 0);
-	z[1][i] = center q[0][i];
-	q[1][i] = p4 transformed t2 
-		shifted ((i + 1) * a09 + i*a08, 0);
-	z[2][i] = center q[1][i];
-	q[2][i] = bbox q[0][i];
-	q[3][i] = bbox q[1][i];
-	draw q[0][i];	draw q[1][i];
-	drawdblgisarrow z[1][i]--z[2][i] cutbefore q[2][i] %
-		cutafter q[3][i];
-endfor
-label(btex \begin{tabular}{c} Subsistema \\ \textsc{ai} %
-	\end{tabular} etex, z[1][0]);
-label(btex \begin{tabular}{c} Subsistema \\ \textsc{ao} %
-	\end{tabular} etex, z[1][1]);
-label(btex \begin{tabular}{c} Subsistema \\ \textsc{dio} %
-	\end{tabular} etex, z[1][2]);
-label(btex \begin{tabular}{c} Objeto \\ \textsc{ai} %
-	\end{tabular} etex, z[2][0]);
-label(btex \begin{tabular}{c} Objeto \\ \textsc{ao} %
-	\end{tabular} etex, z[2][1]);
-label(btex \begin{tabular}{c} Objeto \\ \textsc{dio} %
-	\end{tabular} etex, z[2][2]);
-
-% ------------------------------------------------------------------
-% etiquetas al lateral
-d3 = thelabel(btex \begin{tabular}{c} Subsistemas \\ del hardware %
-	\end{tabular} etex, (wi, a01/2));
-d4 = thelabel(btex \begin{tabular}{c} Objetos \\ dispositivo %
-	\end{tabular} etex, (wi, 4a02 - 3a01/2));
-p5 = (a00 + a03/3 + 2u, 0)--(a00 + a03/3 + 2u, he02);
-draw d3;		draw d4;
-drawgisarrow (wi, a01/2)--(a00/2, a01/2) cutbefore bbox d3 %
-		cutafter p5;
-drawgisarrow (wi, 4a02 - 3a01/2)--(a00/2, 4a02 - 3a01/2) %
-		cutbefore bbox d4 cutafter p5;
+addto d0 also currentpicture;
+fill bbox d0 withcolor white;
+draw d0;
 
 endfig;
 % ==================================================================

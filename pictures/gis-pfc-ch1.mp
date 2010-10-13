@@ -5,13 +5,14 @@ verbatimtex
 \fontsize{12pt}{14.4pt}\selectfont
 etex
 
-filenametemplate "%j-%c.mps";
+filenametemplate "%j-%02c.mps";
 
 newinternal u, v;
 u := 1mm;
 v := 10mm;
 
 input boxes
+input graph
 input gis-pfc
 
 wi = 12v;
@@ -25,261 +26,169 @@ linecap := butt;
 
 
 % ==================================================================
-beginfig(1);
-numeric a[];
+beginfig(2);
+numeric a[], i, j, k, x[], y[];
 picture d[];
 pen l[];
 path p[], q[][];
-transform t[];
-ahlength := 4u;	ahangle := 20;
-ahinset := 5/100;
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
+d1 = nullpicture;
 pickup l1;
 
 % ------------------------------------------------------------------
-% constantes
-% alturas
-a00 = 15u/4;		a01 = 3v;
-a02 = 9v/2 + 5u/2;	a03 = 11v/2;
-a04 = 6v + 5u/2;
-% switch, diferencias de altura entre terminales en T
-z00 = (8u, 0) rotated 20;
-% switches
-d0 = conmutadorA(u, (0, 0));
-d1 = conmutadorC(u, (0, 0));
-d2 = conmutadorT(u, (0, 0));
-p0 = bbox d2;
-begingroup
-	interim bboxmargin := 0; p1 = bbox d0 scaled 19/20;
-endgroup;
-% switch, ancho total (si no me equivoco 27/2 * escala)
-a05 = xpart(urcorner d0 - ulcorner d0);
-% cajas de señal
-d3 = thelabel.top(btex Se\~nal etex, (0, 0));
-z01 = llcorner d3;	z02 = lrcorner d3;
-addto d3 also thelabel.bot(btex $+$ etex, z01);
-addto d3 also thelabel.bot(btex $-$ etex, z02);
-p2 = bbox d3;
-% caja de señal, ancho total
-a06 = xpart(urcorner d3 - ulcorner d3);
-% posición etiquetas
-z03 = 1/2[ulcorner d3, urcorner d3] + %
-	5/8(ulcorner d3 - llcorner d3);
-% ajuste para centrar las etiquetas
-d4 = thelabel(btex 00 Lo/08 Hi etex, (0, 0));
-d5 = thelabel(btex 00 Hi etex, (0, 0));
-a07 = 11/20;			x04 = 0;
-(whatever, y04) = a07*(llcorner d5 - llcorner d4);
-% resto de anchos
-a08 = 15u/4;		a09 = a08/2;
-a10 = xpart(urcorner p0 - ulcorner p0);
-a11 = a06;		a12 = 6a08 + 2a05 + 2a06 + a11;
-a13 = 3u/2;		a14 = a13/2;
-a15 = a14/3;
-% puntos clave
-a16 = a05 + a08;	a17 = a05 + a06/2 + 3a08;
-a18 = a12 - a17;	a19 = a12 - a16;
-a20 = a12 + 2a08;
+% temporizador
+% ancho y alto
+% a00 = wi/5 = 24u; a02 = 45u; a02/a03 = 15/2; a02/a04 = 15/16;
+a00 = wi/5;		a01 = 3u/2;		a02 = 2a00 + 2a01;
+% a03 es el patrón de la cuadrícula
+a03 = 11u/2;		a04 = 8a03;		a05 = a01 - a02/2;
+p0 = -(a02, a04)/2--(a02, -a04)/2--(a02, a04)/2--(-a02, a04)/2-- %
+	cycle;
+p1 = (a03/2, 0)--(a03/2, a03)--halfcircle scaled a03 shifted (0, a03)-- %
+	(-a03/2, a03)--(-a03/2, 0);
+addto d1 also thelabel.rt(btex 1 \textsc{dis}(1) etex, (a05, a04/2 - a03));
+addto d1 also thelabel.rt(btex 2 \textsc{thr}(1) etex, (a05, a04/2 - 2a03));
+addto d1 also thelabel.rt(btex 3 \textsc{con}(1) etex, (a05, a04/2 - 3a03));
+addto d1 also thelabel.rt(btex 4 \textsc{res}(1) etex, (a05, a04/2 - 4a03));
+addto d1 also thelabel.rt(btex 5 \textsc{out}(1) etex, (a05, a04/2 - 5a03));
+addto d1 also thelabel.rt(btex 6 \textsc{tri}(1) etex, (a05, a04/2 - 6a03));
+addto d1 also thelabel.rt(btex 7 \textsc{gnd} etex, (a05, a04/2 - 7a03));
+addto d1 also thelabel.lft(btex \textsc{Vcc} 14 etex, (-a05, a04/2 - a03));
+addto d1 also thelabel.lft(btex \textsc{dis}(2) 13 etex, (-a05, a04/2 - 2a03));
+addto d1 also thelabel.lft(btex \textsc{thr}(2) 12 etex, (-a05, a04/2 - 3a03));
+addto d1 also thelabel.lft(btex \textsc{con}(2) 11 etex, (-a05, a04/2 - 4a03));
+addto d1 also thelabel.lft(btex \textsc{res}(2) 10 etex, (-a05, a04/2 - 5a03));
+addto d1 also thelabel.lft(btex \textsc{out}(2) 9 etex, (-a05, a04/2 - 6a03));
+addto d1 also thelabel.lft(btex \textsc{tri}(2) 8 etex, (-a05, a04/2 - 7a03));
+d0 = thelabel(btex \textsc{ne556} etex, center p0);
+addto d1 also d0 rotated 90;
+addto d1 doublepath p0 withpen l2;
+addto d1 doublepath p1 yscaled -1 shifted (0, a04/2) withpen l1;
+% centro del temporizador
+z00 = (a02/2 + 6a03, 6a03);
+draw d1 shifted z00;
 
 % ------------------------------------------------------------------
-% primera parte conmutada
-% dibujo las líneas centrales, los switches y las cajas de señal
-p3 = fullcircle scaled (a13);
-p4 = (0, 0)--(a09 + a05, 0)--(a09 + a05, a03)--(0, a03)--cycle;
-p5 = (a09/2 + a05/2, 3a00)--(a09/2 + a05/2, a01 - 3a00/2);
-d6 = thelabel.bot(btex Multiplexador etex, (a09/2 + a05/2, 0));
-draw (a20, a04)--(0, a04)--(0, a00)--(a08, a00)-- %
-	(a12 - a08, a00)--(a12, a00)--(a12, a02)--(a20, a02);
-for i = a00, a01, a02:
-	if not(i = a00):
-		pickup l3;
-		fill p3 shifted (0, i);
-		fill p3 shifted (a12, i);
-		pickup l1;
-		draw (0, i)--(a12, i);
-	fi
-	if i = a01: fill p3 shifted (a12/2, i); fi
-	pickup l0;
-	fill p1 shifted (a08, i) withcolor white;
-	fill p1 shifted (a19 + a09/2 - a15, i) withcolor white;
-	fill p2 shifted (a17, i) withcolor white;
-	if i = a01:
-		fill p2 shifted (a18, i) %
-			withcolor white; fi
-	pickup l1;
-	draw d0 xscaled -1 shifted (a16 - a13 - a15, i);
-	draw d3 shifted (a17, i);
-	if i = a01:
-		draw d1 shifted (a19 + a09/2 - a15, i);
-		draw d3 shifted (a18, i);
-		drawgisarrow (a12/2, i)-- %
-			(a12/2, i - v);
-	else :
-		draw d0 shifted (a19 + a09/2 - a15, i);
-	fi
-	pickup l2;
-	draw p2 shifted (a17, i);
-	if i = a01: draw p2 shifted (a18, i); fi
-endfor
-for i = (3a09/2 - a14), (a19 + a14 - a09):
-	draw p4 shifted (i, 0);
-	draw p5 shifted (i, 0) dashed withdots scaled 2;
-	draw d6 shifted (i, 0);
-endfor
-
-% ------------------------------------------------------------------
-% etiquetas
-label(btex 00 Lo/08 Hi etex, z03 shifted (a18, a02));
-label(btex 01 Lo/09 Hi etex, z03 shifted (a18, a01));
-label(btex 07 Lo/15 Hi etex, z03 shifted (a18, a00));
-label(btex 00 Hi etex, z03 + z04 shifted (a17, a02));
-label(btex 01 Hi etex, z03 + z04 shifted (a17, a01));
-label(btex 07 Hi etex, z03 + z04 shifted (a17, a00));
-
-% ------------------------------------------------------------------
-% segunda parte conmutada
-pickup l1;
-a21 = a04 - 2y00;		a22 = a02 - 2y00;
-a23 = a21 + y00;		a24 = a22 + y00;
-a25 = a20 - a08;		a26 = a20 + a05 - a09;
-a27 = a26 + a08;
-draw (a20, a21)--(a25, a21)--(a25, a02);
-drawgisarrow (a20, a22)--(a25, a22)--(a25, a22 - v);
-draw (a26, a23)--(a27, a23);	draw (a26, a24)--(a27, a24);
-draw d2 shifted (a20, a21);	draw d2 shifted (a20, a22);
+% red temporal del multivibrador astable
+p2 = resistencia scaled 2a03 rotated 90;
+d2 = condensador scaled (3a03/2) rotated 90;
+a06 = 3a03/16;		a07 = 3u/2;
+p3 = fullcircle scaled a07;
+draw (0, 3a03 - a06)--(0, 0)--(a02 + 22a03, 0)-- %
+	(a02 + 22a03, 5a03/2)--(a02 + 45a03/2, 5a03/2);
+draw (0, 3a03 + a06)--(0, 6a03);
+draw (5a03/2, 0)--(5a03/2, 3a03 - a06);
+draw (5a03/2, 3a03 + a06)--(5a03/2, 7a03)--(6a03, 7a03);
+draw (0, 8a03)--(0, 9a03)--(6a03, 9a03);
+draw (0, 9a03)--(0, 10a03);
+draw (0, 12a03)--(0, 13a03)--(a02 + 11a03, 13a03)-- %
+	(a02 + 11a03, 12a03);
+draw (6a03, 6a03)--(5a03, 6a03)--(5a03, 13a03);
+draw (6a03, 4a03)--(4a03, 4a03)--(4a03, 8a03)--(6a03, 8a03);
+draw (0, 5a03)--(4a03, 5a03);
+draw (6a03, 5a03)--(5a03, 5a03)--(5a03, a03)--(a02 + 7a03, a03)-- %
+	(a02 + 7a03, 3a03)--(a02 + 6a03, 3a03);
+draw (6a03, 3a03)--(4a03, 3a03)--(4a03, 0);
+fill p3 shifted (0, 5a03);	fill p3 shifted (0, 9a03);
+fill p3 shifted (5a03/2, 0);	fill p3 shifted (4a03, 0);
+fill p3 shifted (4a03, 5a03);	fill p3 shifted (5a03, 13a03);
 pickup l2;
-draw p0 shifted (a20, a21);	draw p0 shifted (a20, a22);
+draw p2 shifted (0, 7a03);	draw p2 shifted (0, 11a03);
+draw d2 shifted (0, 3a03) withpen l2;
+draw d2 shifted (5a03/2, 3a03) withpen l2;
 pickup l1;
 
 % ------------------------------------------------------------------
-% amplificador de instrumentación
-% defininciones
-z06 = 1/2[(a27, a23), (a27, a24)];
-p6 = amplificador;
-a28 = a23 - a24 + 3y00/2;
-a29 = a28/2 + 3a09;
-p7 = p6 scaled a28 shifted z06;
-z07 = center p7 shifted (-a09, 0);
-p8 = z07--z07 shifted (0, -3v);
-z08 = p8 intersectionpoint p7;
-d7 = thelabel(btex \textsc{ai} etex, z07);
-begingroup
-	interim bboxmargin := 3u; p9 = bbox d7;
-endgroup;
-p10 = z07 shifted (a08, a28/2)--z07 shifted (a29 - a08, a28/2);
-z09 = point (length p10)/2 of p10;
-% dibujo todos los elementos definidos previamente
-drawgisarrow z07--z08 shifted (0, -v);
-draw z07--z07 shifted (a29, 0);
-pickup l0;
-fill p7 withcolor white;
-fill fullcircle scaled (3u/2) shifted z07 shifted (a29, 0) %
-	withcolor white;
-pickup l2; 
-draw p7; 			
+% red temporal del multivibrador monoestable
+a08 = a02 + 6a03;
+draw (a08, 5a03)--(a08 + a03, 5a03)--(a08 + a03, 13a03);
+draw (a08, 9a03)--(a08 + a03, 9a03);
+draw (a08, 6a03)--(a08 + 5a03/2, 6a03)--(a08 + 5a03/2, 3a03 + a06);
+draw (a08 + 5a03/2, 0)--(a08 + 5a03/2, 3a03 - a06);
+draw (a08, 8a03)--(a08 + 5a03, 8a03);
+draw (a08, 7a03)--(a08 + 4a03, 7a03)--(a08 + 4a03, 8a03);
+draw (a08 + 5a03, 0)--(a08 + 5a03, 3a03 - a06);
+draw (a08 + 5a03, 3a03 + a06)--(a08 + 5a03, 10a03);
+draw (a08, 4a03)--(a08 + 10a03, 4a03);
+fill p3 shifted (a08 + a03, 13a03);
+fill p3 shifted (a08 + a03, 9a03);
+fill p3 shifted (a08 + 5a03/2, 0);
+fill p3 shifted (a08 + 4a03, 8a03);
+fill p3 shifted (a08 + 5a03, 8a03);
+fill p3 shifted (a08 + 5a03, 0);
+pickup l2;
+draw p2 shifted (a08 + 5a03, 11a03);
+draw d2 shifted (a08 + 5a03/2, 3a03) withpen l2;
+draw d2 shifted (a08 + 5a03, 3a03) withpen l2;
 pickup l1;
-draw fullcircle scaled (3u/2) shifted z07 shifted (a29, 0);
-draw d7;
-begingroup
-	interim ahlength := 2u; drawgisarrow p10;
-endgroup;
+
+% ------------------------------------------------------------------
+% red amplificadora
+p4 = amplificador scaled 5a03;
+d3 = trtrsimplificado scaled 2a03;
+z01 = center p4 shifted (a09 + 2a03, 49a03/8);
+a09 = a08 + 8a03;
+(whatever, a10) = 1/2[(0, 4a03), (0, 33a03/4)];
+draw (a09, 0)--(a09, a10 - a03);
+draw (a09, a03 + a10)--(a09, 33a03/4)--(a09 + 2a03, 33a03/4);
+draw (a09 + a03, 33a03/4)--(a09 + a03, 10a03)-- %
+	(a09 + 4a03, 10a03);
+draw (a09 + 6a03, 10a03)--(a09 + 8a03, 10a03)-- %
+	(a09 + 8a03, 7a03/2)--(a09 + 17a03/2, 7a03/2);;
+draw z01--(a09 + 8a03, y01);
+fill p3 shifted (a09, 0);	fill p3 shifted (a09 + 8a03, y01);
+fill p3 shifted (a09 + a03, 33a03/4);
+draw z01 shifted (0, -2a03)--z01 shifted (0, 2a03);
+pickup l0;
+fill p4 shifted (a09 + 2a03, 49a03/8) withcolor white;
+pickup l2;
+draw p2 shifted (a09, a10);
+draw p2 rotated -90 shifted (a09 + 5a03, 10a03);
+draw p4 shifted (a09 + 2a03, 49a03/8);
+draw d3 shifted (a09 + 19a03/2, 3a03) withpen l2;
+pickup l1;
+d4 = thelabel(btex \textsc{ne5534} etex, z01 shifted (-a03/2, 0));
+z02 = ulcorner d4;		z03 = llcorner d4;
+label.top(btex $-$ etex, z02 shifted (-a03/4, a03));
+label.bot(btex $+$ etex, z03 shifted (-a03/4, -a03));
+draw d4;
+
+% ------------------------------------------------------------------
+% referencias de tensión
+d5 = tierra scaled a03;
+draw (a02/2 + 6a03, 13a03)--(a02/2 + 6a03, 14a03);
+draw (a02/2 + 6a03, 0)--(a02/2 + 6a03, -a03);
+fill p3 shifted (a02/2 + 6a03, 13a03);
+fill p3 shifted (a02/2 + 6a03, 0);
+pickup l0;
+fill p3 shifted (a02/2 + 6a03, 14a03) withcolor white;
+fill p3 shifted (x01, y01 - 2a03) withcolor white;
+fill p3 shifted (x01, y01 + 2a03) withcolor white;
+pickup l1;
+draw p3 shifted (a02/2 + 6a03, 14a03);
+draw p3 shifted (x01, y01 - 2a03);
+draw p3 shifted (x01, y01 + 2a03);
+draw d5 shifted (a02/2 + 6a03, -a03) withpen l2;
 
 % ------------------------------------------------------------------
 % etiquetas
-label(btex $+$ etex, ulcorner p9);
-label(btex $-$ etex, llcorner p9);
-label.top(btex \textsc{a/d} etex, z09);
-label.bot(btex \textsc{agnd} etex, z08 shifted (0, -25u/2));
-
-endfig;
-% ==================================================================
-
-
-
-% ==================================================================
-beginfig(2);
-numeric a[], b[][];
-picture d[], e[][];
-pen l[];
-path p[], q[][];
-transform t[];
-ahlength := 4u;	ahangle := 20;
-ahinset := 5/100;
-l0 = pencircle scaled 0.15u;
-l1 = pencircle scaled 0.25u;
-l2 = pencircle scaled 0.35u;
-l3 = pencircle scaled 0.5u;
-pickup l1;
-
-% ------------------------------------------------------------------
-% constantes
-a00 = 7u/3;			a01 = 5a00/2;
-a02 = 3a00;			a03 = 2a00 + a02 + 6a00;
-a04 = a00;			a05 = 18a01;
-a06 = a03 * sind(30)/cosd(30);	a07 = a06/3;
-a08 = 40;
-z00 = (0, 0);			z01 = (a06, 0) rotated 30;
-z02 = (a07, 0) rotated 210;	z03 = (a07, 0) rotated 150;
-z04 = (a06, 0) rotated 330;
-
-% ------------------------------------------------------------------
-% conector
-draw conectorh(a00, z00);
-
-% ------------------------------------------------------------------
-% posiciones
-for i = 0 upto 17 :
-	b[0][i] =  a01/2 + i*a01 - a05/2;
-endfor
-
-% ------------------------------------------------------------------
-% etiquetas externas
-e[0][0] = thelabel.lft(btex \textsc{ip5} etex, z00);
-e[0][1] = thelabel.lft(btex \textsc{ip3} etex, z00);
-e[0][2] = thelabel.lft(btex \textsc{ip1} etex, z00);
-e[0][3] = thelabel.lft(btex \textsc{op5} etex, z00);
-e[0][4] = thelabel.lft(btex \textsc{op3} etex, z00);
-e[0][5] = thelabel.lft(btex \textsc{op1} etex, z00);
-e[0][6] = thelabel.lft(btex \textsc{dgnd} etex, z00);
-e[0][7] = thelabel.lft(btex \textsc{ch 07 lo/ch 15} etex, z00);
-e[0][8] = thelabel.lft(btex \textsc{ch 06 lo/ch 14} etex, z00);
-e[0][9] = thelabel.lft(btex \textsc{ch 05 lo/ch 13} etex, z00);
-e[0][10] = thelabel.lft(btex \textsc{ch 04 lo/ch 12} etex, z00);
-e[0][11] = thelabel.lft(btex \textsc{ch 03 lo/ch 11} etex, z00);
-e[0][12] = thelabel.lft(btex \textsc{ch 02 lo/ch 10} etex, z00);
-e[0][13] = thelabel.lft(btex \textsc{ch 01 lo/ch 09} etex, z00);
-e[0][14] = thelabel.lft(btex \textsc{ch 00 lo/ch 08} etex, z00);
-e[0][15] = thelabel.lft(btex Sin conexi\'on etex, z00);
-e[0][16] = thelabel.lft(btex \textsc{agnd} etex, z00);
-e[0][17] = thelabel.lft(btex \textsc{agnd} etex, z00);
-e[1][0] = thelabel.rt(btex \textsc{ip4} etex, z00);
-e[1][1] = thelabel.rt(btex \textsc{ip2} etex, z00);
-e[1][2] = thelabel.rt(btex \textsc{ip0} etex, z00);
-e[1][3] = thelabel.rt(btex \textsc{op4} etex, z00);
-e[1][4] = thelabel.rt(btex \textsc{op2} etex, z00);
-e[1][5] = thelabel.rt(btex \textsc{op0} etex, z00);
-e[1][6] = thelabel.rt(btex +5 V etex, z00);
-e[1][7] = thelabel.rt(btex \textsc{ch 07 hi} etex, z00);
-e[1][8] = thelabel.rt(btex \textsc{ch 06 hi} etex, z00);
-e[1][9] = thelabel.rt(btex \textsc{ch 05 hi} etex, z00);
-e[1][10] = thelabel.rt(btex \textsc{ch 04 hi} etex, z00);
-e[1][11] = thelabel.rt(btex \textsc{ch 03 hi} etex, z00);
-e[1][12] = thelabel.rt(btex \textsc{ch 02 hi} etex, z00);
-e[1][13] = thelabel.rt(btex \textsc{ch 01 hi} etex, z00);
-e[1][14] = thelabel.rt(btex \textsc{ch 00 hi} etex, z00);
-e[1][15] = thelabel.rt(btex +10 V etex, z00);
-e[1][16] = thelabel.rt(btex \textsc{dac1} etex, z00);
-e[1][17] = thelabel.rt(btex \textsc{dac0} etex, z00);
-pickup pencircle scaled 0.75u;
-for i = 0 upto 17 :
-	drawdot (b[0][i], -a03/2 - a04);
-	drawdot (b[0][i], a03/2 + a04);
-	draw e[0][i] rotated a08 shifted (b[0][i], -a03/2 - a04);
-	draw e[1][i] rotated a08 shifted (b[0][i], a03/2 + a04);
-endfor
+label.lft(btex $R_1$ etex, (-a03/2, 11a03));
+label.lft(btex $R_2$ etex, (-a03/2, 7a03));
+label.rt(btex $R_3$ etex, (a08 + 11a03/2, 11a03));
+label.ulft(btex $C_1$ etex, (-a03/2, 3a03 + 2a06));
+label.ulft(btex $C$ etex, (2a03, 3a03 + 2a06));
+label.lrt(btex $C$ etex, (a08 + 3a03, 3a03 - 2a06));
+label.lrt(btex $C_2$ etex, (a08 + 11a03/2, 3a03 - 2a06));
+label.lft(btex $R_b$ etex, (a09 - a03/2, a10));
+label.top(btex $R_a$ etex, (a09 + 5a03, 21a3/2));
+label.rt(btex $V\!cc_-$ etex, z01 shifted (a03/2, -2a03));
+label.rt(btex $V\!cc_+$ etex, z01 shifted (a03/2, 2a03));
+label.rt(btex $u(t)$ etex, (a09 + 33a03/4, y01));
+label.urt(btex $R_l$ etex, (a09 + 8a03, a03));
+label.rt(btex $V\!cc$ etex, (a02/2 + 13a03/2, 14a03));
 
 endfig;
 % ==================================================================
@@ -288,85 +197,186 @@ endfig;
 
 % ==================================================================
 beginfig(3);
-numeric a[], b[][];
-picture d[], e[][];
+numeric a[], b[], i, j, k;
+picture d[];
 pen l[];
 path p[], q[][];
-transform t[];
-ahlength := 4u;	ahangle := 20;
-ahinset := 5/100;
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
+l4 = pensquare scaled 0.15u;
+l5 = pensquare scaled 0.25u;
+l6 = pensquare scaled 0.35u;
+l7 = pensquare scaled 0.5u;
+d0 = nullpicture;
+d1 = nullpicture;
 pickup l1;
 
 % ------------------------------------------------------------------
-% constantes
-a00 = 7u/3;			a01 = 5a00/2;
-a02 = 3a00;			a03 = 2a00 + a02 + 6a00;
-a04 = a00;			a05 = 18a01;
-a06 = a03 * sind(30)/cosd(30);	a07 = a06/3;
-a08 = 40;
-z00 = (0, 0);			z01 = (a06, 0) rotated 30;
-z02 = (a07, 0) rotated 210;	z03 = (a07, 0) rotated 150;
-z04 = (a06, 0) rotated 330;
+% ejes coordenados
+a00 = 3he02/4;			a01 = u/10;
+pickup l5;
+drawgisarrow (0, -a01)--(wi, -a01);
+drawgisarrow (wi/2, 0)--(wi/2, a00);
+label.lrt(btex $u(t)$ etex, (wi/2 + u, a00));
 
 % ------------------------------------------------------------------
-% conector
-draw conectorh(a00, z00);
-
-% ------------------------------------------------------------------
-% posiciones
-for i = 0 upto 17 :
-	b[0][i] =  a01/2 + i*a01 - a05/2;
+% marcas de grafo
+a02 = 2.5u;		a03 = 3u;
+for i = 1 upto 5:
+	if not(i = 3): draw (i*wi/6, 0)--(i*wi/6, a02); fi
 endfor
+label(btex $-T$ etex, (wi/6, -a03));
+label(btex $0$ etex, (wi/2, -a03));
+label(btex $T$ etex, (5wi/6, -a03));
 
 % ------------------------------------------------------------------
-% etiquetas externas
-e[0][0] = thelabel.lft(btex Bit 0 etex, z00);
-e[0][1] = thelabel.lft(btex Bit 1 etex, z00);
-e[0][2] = thelabel.lft(btex Bit 2 etex, z00);
-e[0][3] = thelabel.lft(btex Bit 3 etex, z00);
-e[0][4] = thelabel.lft(btex Bit 4 etex, z00);
-e[0][5] = thelabel.lft(btex Bit 5 etex, z00);
-e[0][6] = thelabel.lft(btex Bit 6 etex, z00);
-e[0][7] = thelabel.lft(btex Bit 7 etex, z00);
-e[0][8] = thelabel.lft(btex Bit 8 etex, z00);
-e[0][9] = thelabel.lft(btex Bit 9 etex, z00);
-e[0][10] = thelabel.lft(btex Bit 10 etex, z00);
-e[0][11] = thelabel.lft(btex Bit 11 etex, z00);
-e[0][12] = thelabel.lft(btex Bit 12 etex, z00);
-e[0][13] = thelabel.lft(btex Bit 13 etex, z00);
-e[0][14] = thelabel.lft(btex Bit 14 etex, z00);
-e[0][15] = thelabel.lft(btex Bit 15 etex, z00);
-e[0][16] = thelabel.lft(btex \textsc{dgnd} etex, z00);
-e[0][17] = thelabel.lft(btex \textsc{dgnd} etex, z00);
-e[1][0] = thelabel.rt(btex Bit 16 etex, z00);
-e[1][1] = thelabel.rt(btex Bit 17 etex, z00);
-e[1][2] = thelabel.rt(btex Bit 18 etex, z00);
-e[1][3] = thelabel.rt(btex Bit 19 etex, z00);
-e[1][4] = thelabel.rt(btex Bit 20 etex, z00);
-e[1][5] = thelabel.rt(btex Bit 21 etex, z00);
-e[1][6] = thelabel.rt(btex Bit 22 etex, z00);
-e[1][7] = thelabel.rt(btex Bit 23 etex, z00);
-e[1][8] = thelabel.rt(btex Bit 24 etex, z00);
-e[1][9] = thelabel.rt(btex Bit 25 etex, z00);
-e[1][10] = thelabel.rt(btex Bit 26 etex, z00);
-e[1][11] = thelabel.rt(btex Bit 27 etex, z00);
-e[1][12] = thelabel.rt(btex Bit 28 etex, z00);
-e[1][13] = thelabel.rt(btex Bit 29 etex, z00);
-e[1][14] = thelabel.rt(btex Bit 30 etex, z00);
-e[1][15] = thelabel.rt(btex Bit 31 etex, z00);
-e[1][16] = thelabel.rt(btex +5 V etex, z00);
-e[1][17] = thelabel.rt(btex +5 V etex, z00);
-pickup pencircle scaled 0.75u;
-for i = 0 upto 17 :
-	drawdot (b[0][i], -a03/2 - a04);
-	drawdot (b[0][i], a03/2 + a04);
-	draw e[0][i] rotated a08 shifted (b[0][i], -a03/2 - a04);
-	draw e[1][i] rotated a08 shifted (b[0][i], a03/2 + a04);
+% tren de pulsos
+a04 = wi/13;		a05 = he02/2;
+p0 = (0, 0)--(0, a05)--(a04, a05)--(a04, 0);
+p2 = for i = 0 upto 2:
+	p0 shifted (wi/6 + i*wi/3, 0)--
+	endfor (11wi/12, 0);
+pickup l2;
+draw (wi/12, 0)--(wi/6, 0)--p2;
+label.ulft(btex $P$ etex, (wi/2 - u, a05));
+label.rt(btex $T_H$ etex, (15wi/26, -a03));
+
+% ------------------------------------------------------------------
+% puntos suspensivos
+draw (wi/24, a05/2)--(wi/8, a05/2) dashed withdots scaled 1.5;
+draw (a04 + 41wi/48, a05/2)--(95wi/96, a05/2) dashed withdots scaled 1.5;
+
+endfig;
+% ==================================================================
+
+
+
+% ==================================================================
+beginfig(4);
+numeric a[], b[][], i, j, k;
+picture d[];
+pen l[];
+path p[], q[][];
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+l4 = pensquare scaled 0.15u;
+l5 = pensquare scaled 0.25u;
+l6 = pensquare scaled 0.35u;
+l7 = pensquare scaled 0.5u;
+pickup l1;
+
+% ------------------------------------------------------------------
+% ejes para la representación de los pulsos
+% ancho y alto del gráfico
+a00 = 2wi/5;			a01 = he01/2;
+% desplazamiento del gráfico
+a02 = wi/20;			a03 = wi/2;
+a04 = u/10;
+% ejes coordenados
+p0 = (0, 0)--(0, 7a01/10);
+p1 = (0, 0)--(a00 + a02, 0);
+p2 = (0, 0)--(5a02/4, 0)--(3a02/2, sqrt(a02))-- %
+	(2a02, -sqrt(a02))--(9a02/4, 0)--(a00 + a02, 0);
+drawgisarrow p0 shifted (5a02/4, 2a01/5);
+drawgisarrow p1 shifted (a02/2, a01/2 - a04);
+drawgisarrow p0 shifted (5a02/4, 2a01/5) shifted (a03, 0);
+drawgisarrow p2 shifted (a02/2, a01/2 - a04) shifted (a03, 0);
+
+% ------------------------------------------------------------------
+% pulso rectangular
+% altura y duración del estado alto (Th)
+a05 = wi/10;			a06 = 4a01/10;
+% Th figurado, ancho del pulso rectangular
+p3 = (a02/4, 0)--(a05/2, 0)--(a05/2, a06)--(5a05/2, a06)--%
+	(5a05/2, 0)--(4a05, 0);
+z00 = (3a02/4, a01/2);		a07 = -a06/20;
+z01 = (a05/4, a06);		z02 = (3a05/8, a01/2);
+z03 = (a03 - 3a02/2, a07);
+pickup l2;
+draw p3 shifted z00;
+label.bot(btex $t_0$ etex, z00 shifted (9a05/16, a07));
+label.bot(btex $t_0 + T_H$ etex, z00 shifted (21a05/8, a07));
+label.lft(btex $P$ etex, z00 shifted z01);
+label.urt(btex $u(t)$ etex, z00 shifted z02);
+label.bot(btex $t$ etex, z00 shifted z03);
+
+% ------------------------------------------------------------------
+% pulso gausiano y portadora
+a08 = 100;			a09 = v/a08;
+a10 = 450;			a11 = 360/a10;
+a12 = 19;
+for i = 0 upto a10 :
+	b[0][i] = (i - a10/2)*a09;
+	b[1][i] = b[0][i]**2;
+	b[2][i] = -b[1][i]/2;
+	b[3][i] = mexp(b[2][i]);
+	b[4][i] = b[3][i]*sind(a11*a12*i);
 endfor
+p4 = (b[0][0]/16, b[3][0]) for i = 1 upto a10 :
+	..(b[0][i]/16, b[3][i]) endfor;
+p5 = (b[0][0]/16, b[4][0]) for i = 1 upto a10 :
+	..(b[0][i]/16, b[4][i]) endfor;
+z04 = (3a02/4 + a03, a01/2);
+begingroup
+	interim linejoin := rounded;
+	draw p5 xscaled (9a05/v) yscaled (28*a06/v) shifted z04 %
+		shifted (13a05/5, 0);
+	pickup l1;
+	draw p4 xscaled (9a05/v) yscaled (28*a06/v) shifted z04 %
+		shifted (13a05/5, 0) dashed evenly;
+endgroup;
+label.lft(btex $P^\prime$ etex, z04 shifted z01);
+label.urt(btex $v(t)$ etex, z04 shifted z02);
+label.bot(btex $t$ etex, z04 shifted z03);
+a13 = -3a06/5;				a14 = 6a05/5;
+a15 = 4a05;				a16 = a05/10;
+a17 = a05/8;				a18 = -2u;
+label.bot(btex $t_0 < t_1$ etex, z04 shifted (a14, a13));
+label.bot(btex $t_1 + T_H$ etex, z04 shifted (a15 + a17, a13));
+begingroup
+	interim ahlength := 3u/2;
+	drawgisarrow z04 shifted (a14, a13)-- %
+		z04 shifted (a14 + a16, a18);
+	drawgisarrow z04 shifted (a15, a13)-- %
+		z04 shifted (a15 - a16, a18);
+endgroup;
+
+% ------------------------------------------------------------------
+% diagrama de cajas
+a19 = 16he01/20;			a20 = 3u;
+a21 = 3a20/2 + 2u;			a22 = a20 + 7.5u;
+d0 = thelabel.rt(btex \begin{tabular}{c} Alimentaci\'on\\ %
+	el\'ectrica \end{tabular} etex, (0, a19));
+d2 = thelabel.lft(btex \begin{tabular}{c} Se\~nal\\ac\'ustica %
+	\end{tabular} etex, (wi, a19));
+z05 = 1/2[urcorner d0, lrcorner d0];
+z06 = 1/2[ulcorner d2, llcorner d2];
+(a23, whatever) = 1/2[z05, z06];
+a24 = 1.2;
+d1 = transductor(a24, (a23, a19));
+begingroup
+	interim bboxmargin := a20;
+	p6 = bbox d0;
+	p8 = bbox d2;
+	interim bboxmargin := 3a20/2;
+	p7 = bbox d1;
+	interim bboxmargin := a21;
+	p9 = bbox d1;
+endgroup;
+z07 = 1/2[ulcorner p7, llcorner p7];
+draw z07 shifted (3a20/4, 0)--z07 shifted (a22, 0);
+draw d0;	draw d1;	draw d2;
+draw p7;
+drawgisarrow center p6--center p7 cutbefore p6 cutafter p9;
+drawgisarrow center p7--center p8 cutbefore p9 cutafter p8;
+label.top(btex $u(t)$ etex, 1/2[center p6, center p7]);
+label.top(btex $v(t)$ etex, 9/16[center p7, center p8]);
+label.bot(btex Transductor etex, 1/2[llcorner p7, lrcorner p7] %
+	shifted (0, -u));
 
 endfig;
 % ==================================================================

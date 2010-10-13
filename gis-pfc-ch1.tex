@@ -1,331 +1,180 @@
-\chapter{Tarjeta de adquisición de señales}
+\chapter{Subsistema de interacción con el medio físico}
 
-Uno de los objetivos que persigue este proyecto desde el comienzo es constituir un sistema de adquisición y procesado de señales. La idea es utilizar el sistema a la hora de afrontar la segunda parte del proyecto, o parte principal podría decirse, la experimentación con palmeras, con sus troncos y madera, para evaluar la efectividad de los ensayos no destructivos, de esos que emplean los ultrasonidos como herramienta de exploración. Es esta sección del documento la que se ocupa en la materia de retratar la experiencia de componer un instrumento que muestrea una señal analógica y proporciona una versión digital de la misma, forma que permite su posterior procesado, almacenamiento y representación.\par
-La tarjeta \kpci{} adquiere un gran protagonismo en el sistema de adquisición y procesado, constituye la base del mismo. Este dispositivo constituye el fundamento a partir del cual se construye el resto del sistema de medida, incluyendo no sólo la etapa de adquisición si no también las de acondicionamiento y detección, parte de sus capacidades las hereda el sistema, sus limitaciones deben tenerse en cuenta en la fase de diseño, de ahí la importancia de estudiar a conciencia su comportamiento. Además, la \kpci{}, disponer de ella, es una de las razones principales por las que se ha optado por desarrollar un sistema de adquisición propio, de propósito, sin tener en cuenta la principal razón, como es obvio, contar con un sistema diseñado a medida.\par
-Resulta primordial pues conocer las características de una pieza tan importante del conjunto, de hecho es el primer paso que se toma en la ejecución del proyecto, estudiar el aparato y averiguar hasta dónde alcanzan sus posibilidades. En la memoria del proyecto queda plasmado el interés que suscita la tarjeta desde un punto de vista práctico en relación con la síntesis de un sistema de adquisición y procesado puesto que se dedica un capítulo completo a tratar en clave técnica y de forma resumida cómo funciona la tarjeta y cuáles son sus propiedades más destacadas.
+Esta sección está dedicada al proceso de diseño que se lleva a cabo para implementar mediante los recursos disponibles la instrumentación electrónica que junto con la tarjeta de adquisición y el software de control forman parte del aparato empleado en las mediciones efectuadas durante este proyecto fin de carrera.\par
+En apartados posteriores se observa que este primer diseño carece de las propiedades requeridas en los experimentos programados, pero igualmente se ha decidido incorporar a la memoria las notas correspondientes a esta fase del proyecto por considerar que al tratar una disciplina distinta con respecto al resto del documento \mbox{---diseño} e implementación de instrumentación electrónica--- enriquecen el contenido del mismo.
 
 
-\section{Características técnicas del hardware}\label{sec:technical}
+\subsection{Tipos de ensayo programados}
 
-La tarjeta \kpci{} puede emplearse para la adquisición y conversión de señales analógicas en señales digitales, para sintetizar señales analógicas a partir de señales digitales previamente generadas o almacenadas, o ---gracias a sus 32 puertos digitales de propósito general--- trabajar con señales digitales.\par
-El primer bloque del sistema electrónico de medida propuesto, es decir el sistema de adquisición y procesado de señales, tan sólo requiere de la función de adquisición analógica de la tarjeta. Por ello, de entre todas las características del dispositivo, se ha creído conveniente resumir a continuación aquellas que tienen relación directa con dicha función. Para obtener información detallada sobre la relación que estos atributos guardan con el proceso de adquisición de señales analógicas en la tarjeta \kpci{}, véase la \vref{sec:funcdesc}.
+Es la naturaleza de los experimentos la que dictamina cuales deben ser las características del instrumento de medida. Sin olvidar el propósito primero de este proyecto ---determinar un método efectivo para la detección de defectos en madera de palmera empleando para ello ensayos no destructivos con señales de ultrasonidos--- se programan dos tipos de prueba:
 
 \begin{itemize}
-	\item El módulo de adquisición analógica dispone de 16 puertos físicos.
-	\item La impedancia de entrada equivalente de cada puerto es aproximadamente igual a una capacidad de 200 pF en serie con una resistencia de valor inferior, pero aproximadamente igual, a 1 k$\Omega$.
-	\item En condiciones óptimas, es posible conseguir un rendimiento máximo de 100 KS/s (cien mil operaciones de conversión por segundo). Este valor está sujeto a un error relativo del $0.02\%$.
-	\item La resolución del conversor analógico digital es de 16 bits por muestra. El rango de amplitudes en el que opera depende de como esté configurado el modo de adquisición. Puede ir de 0 V a 10 V si el modo de adquisición es unipolar, o de -10 V a 10 V si es bipolar.
-	\item La cola de muestreo tiene capacidad para hasta 256 canales distintos. Cada uno de los cuales puede configurarse independientemente en términos de ganancia, frecuencia de muestreo, modo de adquisición o modo de terminación.
-	\item La ganancia, responsable en parte de la resolución con la que se cuantifica las muestras, puede tomar cada ciclo de reloj uno de entre 16 valores posibles (véase el \vref{tab:acqmodes}).
+	\item Por un lado, pruebas de laboratorio con madera de palmera talada y preparada.
+	\item Por otro, pruebas de campo con palmeras en un entorno natural, no siendo necesario que las palmeras sean silvestres, pudiendo encontrarse plantadas en un jardín o espacio similar.
 \end{itemize}
 
+Se escoge la técnica de transmisión, en defecto de la técnica de pulso"=eco, para la realización de los ensayos. El equipo disponible al inicio del trabajo experimental varía en función de la prueba: para los experimentos de laboratorio se cuenta con un sistema de adquisición como el conformado por el conjunto de la tarjeta de adquisición, un ordenador, el software de control y la caja de conexiones; y para las pruebas de campo con un osciloscopio y una fuente de alimentación, ambos alimentados con una batería. En ambos tipos de prueba deben emplearse también dos transductores, uno en transmisión y otro en recepción, junto con sus respectivos circuitos acondicionadores.
 
-\section{Descripción funcional}\label{sec:funcdesc}
 
-Es necesario programar el comportamiento de la tarjeta de adquisición antes de ponerla en funcionamiento. Desde la cola de muestreo se controlan los principales aspectos del proceso de adquisición, como por ejemplo, en que instantes se encuentra activo.\par
-La cola de muestreo, como su propio nombre indica, es una estructura de datos ordenada. Se encuentra almacenada en una memoria \sig{ram} de 256 entradas que forma parte del hardware de la tarjeta. En el \vref{tab:queue} puede verse una representación de un ejemplo de la cola de muestreo.\par
+\subsection{Requisitos del instrumento de medida}
+
+Para justificar cuales son los requisitos aplicables a los transductores y a las etapas acondicionadoras que los preceden, se recuerda aquí de forma resumida al lector una serie de conclusiones a las que se ha llegado a lo largo de la sección anterior (la \cref{sec:theory} con inicio en la \vpageref{sec:theory}).\par
+Los tres parámetros cruciales en el desempeño de un \sig{endus} son: la resolución, tanto axial como lateral; la profundidad de penetración; y la relación señal a ruido.
+
+\begin{itemize}
+	\item La resolución viene determinada principalmente por el tamaño y el tipo de transductores empleados. Cuanto mayor sea el ancho de banda de los transductores y menores sus dimensiones, se alcanzarán mejores resoluciones. Asimismo, una buena resolución depende de la forma y frecuencia de los pulsos ultrasónicos, siendo mejor cuanto más estrecho sea el pulso y mayor su frecuencia.
+	\item La profundidad de penetración, factor determinante en los experimentos realizados para este proyecto, depende fundamentalmente de la potencia transmitida en cada pulso y de su frecuencia de oscilación, siendo mayor cuanto mayor sean estos dos parámetros.
+	\item Sin embargo, la consecución de una buena relación señal a ruido está reñida con una buena profundidad de penetración. El ruido estructural, principal factor limitante de la relación señal a ruido, se agrava a medida que aumenta la frecuencia o la potencia del pulso ultrasónico. Para poder realizar ensayos capaces de detectar defectos en el medio a profundidades razonables sin sufrir en exceso los efectos del ruido de grano es determinante aplicar un buen algoritmo para la reducción del ruido.
+\end{itemize}
+
+Por supuesto, la calidad de un ensayo exige buenas configuraciones de estos tres parámetros. Sin embargo, y dado que los ensayos realizados para el proyecto no requieren la detección precisa del defecto, si no sólo su detección, una buena resolución no sería exigible aunque sí deseable. Por el contrario, el material objeto de este estudio es la madera de palmera, puesto que desde la planificación del proyecto se preven pruebas de campo en palmeras vivas, y además se opta por emplear la técnica de transmisión (léase el \cref{subsec:technics}), resulta imprescindible trabajar con una buena profundidad de penetración, de forma que la señal de ultrasonidos sea capaz, al menos, de atravesar el tronco de las palmeras.\par
+En base a los requisitos establecidos por las características de los ensayos se extraen las necesidades de potencia y frecuencia que deben cubrir los transductores y los circuitos acondicionadores, así como el resto de instrumentos utilizados.\par
+
+
+\paragraph{Requisitos de frecuencia.}
+
+La frecuencia de las señales ultrasónicas empleadas en ensayos no destructivos oscila generalmente entre los 20 kHz y los 25 MHz. Sin embargo, existen límites prácticos que impiden trabajar en un rango de frecuencias tan amplio. En primer lugar, el precio de los transductores aumenta significativamente a medida que aumenta su ancho de banda, la posibilidad de emitir pulsos de alta frecuencia también encarece el precio de estos dispositivos\footnote{Es habitual encontrar sensores que trabajan a frecuencias entorno a los 40 kHz por un precio entorno a las \mbox{5 \pounds{}}, mientras que sensores que funcionan a 300 kHz pueden costar aproximadamente unas \mbox{300 \pounds{}} (referencia extraída de la página web \href{http://uk.farnell.com}{uk.farnell.com})}. Por otro lado, la banda de paso de las etapas de acondicionamiento, la frecuencia máxima obtenible de la fuente de alimentación, y la frecuencia de muestreo máxima del instrumento de adquisición, limitan la frecuencia de la señal de ultrasonidos. \par
+Obviamente, es el límite más restrictivo el que se aplica. En este caso, el límite más restrictivo lo imponen los transductores y la tarjeta de adquisición. Los transductores a los que se ha tenido acceso en el desarrollo del proyecto son de bajo coste y su frecuencia de oscilación natural se ubica en los 40 kHz, podría decirse que en el límite inferior de la banda de frecuencias empleada en los \sig{endus}. Por su parte, la tarjeta de adquisición ofrece en condiciones óptimas una tasa de muestreo de 100 KS/s. Lo que implica que, para su correcta visualización en el dispositivo de adquisición empleado en el laboratorio, la frecuencia de la señal analógica que se muestrea debe encontrarse alrededor de los 20 kHz.\par
+Quizá el lector haya advertido que esta relación ---frecuencia de muestreo unas cinco veces superior a la frecuencia de la señal analógica--- supera con creces lo establecido por el teorema de Nyquist, $f_s = 2\Delta f$. Esto es debido a que el objetivo del muestreo es visualizar en el monitor del ordenador la forma de la señal a partir de la reconstrucción que \matlab{} hace de las muestras. Al contrario de lo que ocurre con el teorema de Nyquist"=Shannon, que determina la frecuencia de muestreo mínima para que una señal analógica pueda ser recuperada a partir de sus muestras no cuantificadas sin pérdida de información, para percibir la forma de una señal en una reconstrucción arbitraria de la misma realizada partiendo de sus muestras cuantificadas la frecuencia de muestreo necesaria debe ser muy superior a la indicada por el teorema.
+
+
+\paragraph{Requisitos de potencia.}
+
+Puesto que la frecuencia de oscilación de los pulsos ultrasónicos está limitada a los 40 kHz por los motivos prácticos citados en el apartado anterior, y dada la necesidad de una profundidad de penetración notable, los requisitos en cuanto a la potencia que debe manejarse en las etapas de transmisión y recepción se encuentran muy restringidos.\par
+Para suplir las carencias que los transductores tienen en frecuencia es lógico recurrir a señales de mayor potencia, sin embargo el precio reducido de los dispositivos empleados también limita su capacidad de emitir señales de alta potencia.\par
+Lo que en última instancia significa que, con ninguna de las posibles soluciones al alcance del proyecto puede obtenerse la profundidad de penetración adecuada para el tipo de experimentos que se desea realizar. Léase a continuación, en la \vpageref{subsec:solution}, la solución finalmente adoptada y la valoración preliminar que el autor hace con antelación a la fase de diseño.
+
+
+\subsection{Recursos disponibles al inicio de la etapa de diseño}
+
+Para la implementación del instrumental electrónico se dispone inicialmente de dos transductores ultrasónicos, uno destinado a funcionar como transistor y otro que realiza el papel de receptor. Ambos transductores manufacturados por el mismo fabricante y de una misma gama, con características similares. En el \vref{tab:transducers} se muestran las principales propiedades de ambos transductores.\par
+Además, el fabricante proporciona en la ficha técnica la respuesta característica del transmisor a un pulso rectangular. La curva, que puede observarse en la \cref{fig:response}, se asemeja a un pulso gaussiano que modula a una sinusoide de frecuencia igual a la frecuencia de resonancia del transductor. Esta respuesta a señales pulsadas de pulsos rectangulares hace que este tipo de transductor sea muy apropiado para su uso en \sig{endus}.\par
+En cuanto a su aspecto y dimensiones, los transductores se encuentran protegidos por un encapsulado plástico de color negro, pudiendo distinguir el transmisor gracias a un punto blanco situado en la pared exterior del encapsulado. Las dimensiones de los dos transductores coinciden, y son las mostradas en la figura esquemática \ref{fig:transducer}.
 
 \begin{table}
 	\centering
 	\begin{threeparttable}
-	\begin{tabular}{lccccccccc}
-		\toprule
-		Posición en la cola & 1 & 2 & 3 & 4 %
-		& \multicolumn{2}{c}{$\cdots$} & 254 & 255 & 256 \\
-		\midrule
-		Número de canal & 15 & 15 & 02 & 02 %
-		& \multicolumn{2}{c}{$\cdots$} & 17 & 13 & 01 \\
-		Número de puerto\tnote{a, b} & 07 & 07 & 11 & 11 %
-		& \multicolumn{2}{c}{$\cdots$} & 07 & 09 & 01 \\
-		Ganancia & 1 & 1 & 40 & 40 %
-		& \multicolumn{2}{c}{$\cdots$} & 200 & 8 & 80 \\
-		Modo de adquisición\tnote{c} & $\pm$ & $\pm$ & $+$ & $+$ %
-		& \multicolumn{2}{c}{$\cdots$} & $\pm$ & $+$ & $\pm$ \\
-		Modo de terminación\tnote{d} & \sig{d} & \sig{d} & \sig{m} %
-		& \sig{m} & \multicolumn{2}{c}{$\cdots$} & \sig{d} & \sig{m} %
-		& \sig{m} \\
-		\bottomrule
-	\end{tabular}
-	\begin{TableNotes}
-		\tnotetext{a}{Si el canal es diferencial el número de puerto identifica un par de puertos. Un canal diferencial no puede estar asociado a un número de puerto superior a 07.}
-		\tnotetext{b}{Dos canales pueden estar relacionados con los mismos puertos físicos.}
-		\tnotetext{c}{Se define: configuración bipolar ($\pm$); configuración unipolar ($+$).}
-		\tnotetext{d}{Se define: canal diferencial (\sig{d}); canal monoterminal (\sig{m}).}
-	\end{TableNotes}
+		\begin{tabular}{l c c}
+			\toprule
+			& \multicolumn{2}{c}{Transductor} \\
+			\cmidrule(l){2-3}
+			Propiedad & Transmisor & Receptor \\
+			\midrule
+			Sensibilidad en transmisión\tnote{a} & 110 dB & -- \\
+			Sensibilidad en recepción\tnote{b} & -- & -70 dB \\
+			Frecuencia de resonancia (kHz) & $40 \pm 1$ & $40 \pm 1$ \\
+			Ancho del lóbulo principal & 60\,º & -- \\
+			Tensión de alimentación máxima\tnote{c} & 10 Vef & -- \\
+			Máxima potencia admitida\tnote{d} & 200 m\!Wef & \\
+			Impedancia\tnote{e} & $700\ \Omega$ & $30\ \text{k}\Omega$ \\
+			Capacidad (nF) & $2 \pm 20\%$ & $2 \pm 20\%$ \\
+			Tiempo de subida del pulso & $700\ \mu\text{s}$ & -- \\
+			Tensión máxima admitida en modo pulsado & 20 V & -- \\
+			Rango de temperatura de funcionamiento (ºC) & (-20, 60) & (-20, 60) \\
+			\bottomrule
+		\end{tabular}
+		\begin{TableNotes}
+			\tnotetext{a}{Decibelios medidos con respecto a una referencia de 200 nbar a 30 cm cuando el transmisor se alimenta con una tensión eficaz de 10 Vef.}
+			\tnotetext{b}{Decibelios medidos con respecto a una referencia de 1 V/$\mu\text{bar}$.}
+			\tnotetext{c}{Esta es la tensión máxima que el transductor admite cuando se alimenta de forma continuada con una señal de alterna.}
+% 			\tnotetext{d}{Se emplea en este documento el símbolo Vef como sinónimo de la unidad de potencial eléctrico en corriente alterna, \emph{voltios eficaces}. Del mismo modo se utiliza Wef, \emph{vatios eficaces}, como unidad de potencia eficaz.}
+			\tnotetext{d}{Se refiere a la potencia máxima que el transductor puede disipar en modo pulsado, es decir, cuando la alimentación es interrumpida y periódica.}
+			\tnotetext{e}{En transmisión esta magnitud representa la impedancia de entrada equivalente del transductor. En recepción, por el contrario, representa la impedancia de salida del transductor.}
+		\end{TableNotes}
 	\end{threeparttable}
-	\caption[Ejemplo de cola de muestreo]{Ejemplo de cola de muestreo.}
-	\label{tab:queue}
+	\caption[Características de los transductores empleados en el dispositivo de medida]{Características de los transductores empleados en el dispositivo de medida (se proporcionan los valores típicos para cada propiedad).}
+	\label{tab:transducers}
 \end{table}
-
-Cada entrada en la memoria \sig{ram} se identifica con una posición en la cola. Las posiciones en la cola pueden encontrarse vacías o estar ocupadas por un canal. Varias posiciones en la cola, consecutivas o no, pueden estar ocupadas por un mismo canal. Por tanto, la cola puede estar ocupada, como máximo, por 256 canales independientes.\par
-Las posiciones ocupadas contienen información correspondiente al canal y a los atributos asociados a este. Un canal es una entidad lógica que relaciona un puerto físico con un búffer de información y una serie de atributos. Durante el proceso de adquisición un puntero recorre las distintas posiciones de la cola, una a una y en orden. El canal activo, aquel que ocupa la posición a la que apunta el puntero en cada ciclo de reloj, determina tres cosas:
-
-\begin{itemize}
-	\item De qué puerto debe proceder la señal analógica\footnote{Por convenio se ha elegido hablar de una sola señal que entra al amplificador. Si se ha hecho esta elección, es porque si bien al amplificador pueden entrar una o dos señales simultáneamente, esto no supone otra diferencia para el proceso que la expuesta en el \vref{subsubsec:termmodes}. Es por ello, y para mantener la claridad, que se ha omitido esta posibilidad.} que llega al amplificador de instrumentación interno de la tarjeta.
-	\item Dónde, en qué búffer, debe almacenarse el valor resultante de muestrear y cuantificar esta señal.
-	\item Por último, los atributos asociados al canal: ganancia, modo de adquisición y modo de terminación; indican, respectivamente: cual debe ser la ganancia del amplificador de instrumentación, cual debe ser el rango de trabajo del conversor analógico digital, y que se debe conectar a los terminales de entrada del amplificador de instrumentación. Se da más información al respecto en apartados subsiguientes.% la polaridad de las muestras y el número de terminales de entrada, uno o dos dependiendo de si la adquisición es diferencial o no, durante el ciclo actual.
-\end{itemize}
-
-Para concluir el apartado cabe remarcar lo siguiente. Es posible inferir dos cosas de esta mecánica de funcionamiento basada en la cola. Una de ellas es que el proceso de adquisición afecta a una sola señal cada vez. Y la segunda, que la frecuencia de muestreo ligada a un canal depende de dos factores, de la velocidad de la señal de reloj, y de la cantidad de veces que un canal aparece repetido en la cola.
-
-
-\subsection{Métodos de entrada}
-
-La \kpci{} permite dos modos de adquisición y dos modos de terminación. Aprender a diferenciar cuando es oportuno seleccionar entre cada uno de ellos beneficiará la calidad de la señal digital resultante.
-
-
-\subsubsection{Modos de adquisición}
-Una señal es bipolar cuando toma valores positivos y negativos. Por el contrario, se distingue a las señales unipolares porque todos sus valores mantienen la misma polaridad, ya sea ésta positiva o negativa. Para cada canal, debe configurarse el modo de adquisición como bipolar o unipolar\footnote{La tarjeta \kpci{} sólo admite señales unipolares de polaridad positiva.} atendiendo a la señal de interés.\par
-Si se sabe a ciencia cierta que la señal de entrada es unipolar debe emplearse el modo de adquisición unipolar. De ese modo, se duplica la resolución del conversor analógico digital.
-
-\begin{table}
-	\centering
-	\begin{tabular}{>{\raggedleft}p{1.2cm}d{5.2}d{3.1}+d{3.1}}
-		\toprule
-		& \multicolumn{2}{c}{Bipolar} & \multicolumn{2}{c}{Unipolar} \\
-		\cmidrule(r){2-3}\cmidrule(l){4-5}
-		\multicolumn{1}{c}{Ganancia}
-		& \multicolumn{1}{c}{Rango ($\pm\text{V}$)} %
-		& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} %
-		& \multicolumn{1}{c}{Rango (V)} %
-		& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} \\
-		\midrule
-		1 & 10,0 & 305 & 0/$10,0$ & 153 \\
-		2 & 5,0 & 153 & 0/$5,0$ & 76 \\
-		4 & 2,5 & 76 & 0/$2,5$ & 38 \\
-		8 & 1,25 & 38 & 0/$1,25$ & 19 \\
-		10 & 1,0 & 31 & 0/$1,0$ & 15 \\
-		\\
-		& \multicolumn{2}{c}{Bipolar} & \multicolumn{2}{c}{Unipolar} \\
-		\cmidrule(r){2-3}\cmidrule(l){4-5}
-		\multicolumn{1}{c}{Ganancia}
-		& \multicolumn{1}{c}{Rango ($\pm\text{mV}$)} %
-		& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} %
-		& \multicolumn{1}{c}{Rango (mV)} %
-		& \multicolumn{1}{c}{Precisión ($\mu\text{V}$)} \\
-		\midrule
-		20 & 500 & 15 & 0/500 & 7,6 \\
-		40 & 250 & 7,6 & 0/250 & 3,8 \\
-		80 & 125 & 3,8 & 0/125 & 1,9 \\
-		100 & 100 & 3,1 & 0/100 & 1,5 \\
-		200 & 50 & 1,5 & 0/50 & 0,8 \\
-		400 & 25 & 0,8 & 0/25 & 0,4 \\
-		800 & 12,5 & 0,4 & 0/$12,5$ & 0,2 \\
-		\bottomrule
-	\end{tabular}
-	\caption[Relación entre ganancia, rango de trabajo y resolución según el modo de adquisición]{Relación entre ganancia, rango de trabajo y resolución según el modo de adquisición.}
-	\label{tab:acqmodes}
-\end{table}
-
-
-\subsubsection{Modos de terminación}\label{subsubsec:termmodes}
-
-Internamente, la tarjeta \kpci{} emplea un amplificador de instrumentación diferencial. En principio este hecho implicaría que a cada canal se asociasen dos puertos físicos, uno por cada uno de los dos terminales de entrada del amplificador. No obstante, es posible configurar la tarjeta para que uno de los terminales del amplificador se conecte a masa. En ese caso, el terminal restante se conecta a un puerto físico. La \vref{fig:termmodes} muestra un ejemplo de esta configuración.\par
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch1-1.mps}
+		\includegraphics{gis-pfc-ch1-03.mps}
 	\end{center}
-	\caption[Ejemplo de configuración de terminación]{Figura que muestra el modo de terminación sencillo. La entrada superior del amplificador de instrumentación se conecta al puerto 9 y la entrada inferior se conecta a masa.}
-	\label{fig:termmodes}
-\end{figure}
-
-Para habilitar semejante configuración, cabría pensar que es suficiente con modificar el atributo que controla el modo de terminación del canal correspondiente. Al contrario de lo que pudiera parecer, el modo de terminación es una propiedad que no es atribuible al canal, si no que se atribuye a un par de puertos\footnote{Aunque según las especificaciones del fabricante es posible configurar cada par de puertos para que opere según un modo de terminación independiente del resto, el entorno de desarrollo utilizado durante el proyecto sólo admite un modo de terminación para el conjunto total de puertos (v. el \vref{subsec:environment}).}. En concreto, el modo de terminación afecta a los pares de puertos compuestos por un primero de entre los puertos 0 y 7, y un segundo cuyo número de puerto es igual al del primero más 8. De ahí que todos los canales relacionados con el mismo par de puertos deban estar configurados con el mismo modo de terminación, una configuración distinta no está permitida.\par
-Los dos modos de terminación posibles se conocen como: diferencial, si es que la señal que entra en cada terminal del amplificador procede de cada uno de los puertos del par; sencillo, en caso de que uno de los terminales de entrada del amplificador se conecte a la referencia de tensión. En este documento se llama canal diferencial a los canales cuyo modo de terminación sea diferencial, y canal con un sólo terminal o monoterminal a aquellos para los que el modo de terminación es sencillo. \par
-Las ventajas que presenta el uso de uno u otro tipo de canales son comprensibles. Emplear canales con un sólo terminal permite aplicar el proceso de adquisición sobre un mayor número de señales simultáneamente. Por el contrario, utilizar canales diferenciales redunda en una mayor inmunidad frente al ruido. Además, los amplificadores diferenciales eliminan de forma inherente la componente en continua.\par
-
-
-\subsection{Rendimiento}\label{subsec:throughput}
-
-Se entiende como rendimiento la cantidad máxima de operaciones de conversión que el dispositivo puede realizar por unidad de tiempo. Para que una de estas operaciones contribuya a la medida de rendimiento debe superar un requisito de precisión.\par
-El rendimiento óptimo de la tarjeta \kpci{} especificado por el fabricante es de cien mil operaciones por segundo (100 KS/s). No obstante se advierte, para obtener este nivel de rendimiento es necesario alimentar la tarjeta con una fuente de tensión ideal. Además, es importante que exista adaptación de impedancias entre el circuito de alimentación y el puerto por el que se quiere introducir la señal. Aún en estas condiciones el valor proporcionado por la casa Keithley está sujeto a un error relativo máximo del $0.02\%$, el cual supone un error absoluto máximo de dos mil operaciones por segundo (2 KS/s).\par
-Es bien sabido, a través del teorema de Nyquist, que la frecuencia de muestreo con la que debe muestrearse una señal analógica para que esta pueda ser recuperada a partir de la versión digital obtenida en el proceso de muestreo debe ser mayor o igual al doble de la mayor de las frecuencias con las que oscila la señal original, siempre que esta sea periódica y se encuentre limitada en banda. No obstante, en la práctica, para poder elaborar una representación visual aceptable de señales que no se encuentren sujetas a tales limitaciones ---ancho de banda finito y periodicidad de la señal--- la frecuencia de muestreo debe estar en torno a unas cinco veces el límite superior de frecuencias correspondiente a la señal que desea representarse. Por este motivo el rendimiento del dispositivo de adquisición y por ende del sistema de adquisición y procesado que en éste se sustenta es un factor limitante que determina la frecuencia de oscilación máxima de la señales con las que dicho sistema trabaja. En este caso, considerando el montaje propuesto para el desarrollo de los experimentos que atañen a este proyecto, el rendimiento de la \kpci{} limita la frecuencia de operación de los transductores empleados y, en consecuencia, la profundidad de penetración de los pulsos ultrasónicos y, por consiguiente, el espesor máximo de las muestras empleadas en los experimentos. Esta relación surge inequívocamente de las conclusiones que se extraen de los desarrollos llevados a cabo en este mismo documento en el \cref{subsec:field}, expuestas en parte en otro \nameref{subsec:quality}, el \vref{subsec:quality}.
-
-
-\subsubsection[Factores limitantes del rendimiento]{Amplificador de instrumentación y pérdida del rendimiento}
-
-El amplificador de instrumentación interno de la \kpci{} es de ganancia variable. Es posible configurar una ganancia distinta para cada canal. El propósito del amplificador es permitir al usuario modificar la amplitud de la señal que entra al conversor. La intención que se persigue es conseguir que la conversión se enfoque en los detalles de la señal que sean de mayor interés y se pierda la mínima información posible. Todo ello aún trabajando simultáneamente con múltiples señales cuyo rango de amplitudes es con frecuencia muy diferente.\par
-La desventaja que presenta esta configuración ---multiplexor, amplificador de instrumentación, conversor--- es una pérdida de rendimiento que se produce en situaciones determinadas a causa de la intervención del amplificador en la operación de adquisición.\par
-Cada ciclo de reloj cambia el canal activo y debe cambiar, si es oportuno, la señal que accede al amplificador. Este proceso no es inmediato. Tras conmutar el multiplexor que precede al amplificador, se da paso al puerto conveniente. No obstante, la señal que recibe el amplificador presenta, hasta transcurrido un determinado periodo de tiempo, una componente residual de la señal que se amplificó en el anterior ciclo de reloj. Transcurrido dicho periodo de tiempo la señal que entra al amplificador se ve libre de esa componente residual y se corresponde únicamente con la señal que entrega el multiplexor, se dice que se ha fijado la señal.\par
-Y es así como el amplificador es causa de pérdida de rendimiento, por medio de las componentes residuales. Si la conversión se realiza antes de fijar la señal, el conversor toma un valor de la señal corrompido por la componente residual de la señal precedente. Por tanto, la muestra resultante queda igualmente corrompida incluso hasta el punto de perder su validez. Las operaciones de conversión que tengan como resultado muestras inválidas sólo contribuyen a falsear la medida de rendimiento, haciendo que parezca mayor de lo que en realidad es.\par
-El fabricante da a entender que existe una solución de diseño que resuelve en parte el problema planteado por las componentes residuales. Esta solución consiste en alargar de forma deliberada la duración del ciclo de reloj, de esa forma se proporciona tiempo suficiente para fijar la señal. Sin embargo, esta solución presenta dos inconvenientes: no solventa el problema en la totalidad de los casos y es, asimismo, una forma de perder rendimiento. Lo cual conduce inevitablemente a una solución de compromiso, alargar el ciclo de reloj lo suficiente para que en la mayoría de los casos el efecto de las componentes residuales sobre la precisión de la conversión no invalide las muestras resultantes y se produzca, por tanto, una caída del rendimiento, sin que la duración del nuevo ciclo contribuya por sí misma a una pérdida notable de éste.\par
-
-
-\subsubsection{Optimización del rendimiento}
-
-Como se ha visto, la inclusión del amplificador en el diseño de la tarjeta es causa directa o indirecta de una pérdida de rendimiento. La magnitud de esa caída en el rendimiento depende de la configuración de la cola de muestreo y de la amplitud de la señal una vez llega ésta al dispositivo de adquisición.
-
-\begin{itemize}
-	\item Las señales cuya tensión absoluta se encuentra por debajo de los 100 mV al llegar a la \kpci{} sufren en mayor medida las consecuencias del empleo de un amplificador en la operación de conversión. En primer lugar la señal tarda más en fijarse de modo que el rendimiento se reduce a la mitad en las mejores condiciones, de 100 KS/s pasa a 50 KS/s. Esto es debido a que, al ser la amplitud de la señal y la del ruido comparables, especialmente después de que éste se vea reforzado por el efecto de las componentes residuales, se genera una mayor incertidumbre.\par
-	Por otro lado las señales que requieren que el amplificador opere con alta ganancia son las más perjudicadas por los problemas que causa el amplificador en configuraciones multiganancia, tal y como se explica a continuación.
-	\item Por lo general, el rendimiento se ve afectado de forma más pronunciada por el efecto de las componentes residuales en configuraciones multiganancia en las que se encadenan secuencias de canales con ganancia diferente. Una configuración multiganancia de la cola de muestreo implica que en diferentes ciclos de reloj el amplificador actúa con ganancias distintas. Eso con frecuencia significa que el rango en el que se encuentra comprendida la amplitud de las señales que están entrando al dispositivo de adquisición es diferente de una señal a otra. Cuando así ocurre puede sucederse en ocasiones que en ciclos de reloj consecutivos entren al amplificador dos señales de amplitud diferente, siendo la amplitud de la señal que ocupa el primer ciclo mucho mayor que la de la otra señal en el tiempo en el que ambas permanecen a la entrada del dispositivo. Por otro lado, parece lógico considerar que la componente residual asociada a una señal cuya amplitud sea predominantemente mayor que la de otra señal es de mayor amplitud inicial y mayor duración temporal que la asociada a la segunda señal. Por tanto si ocurre como se ha dicho y se tiene en cuenta la base probable que se ha propuesto, cuando la segunda de las señales se convierte en la señal activa la amplitud de la componente residual asociada a la primera de ellas puede ser suficiente, incluso, para enmascararla.\par No sólo eso, la amplitud de la señal que llega más tarde al amplificador puede ser, en términos absolutos, la mayor parte del tiempo, menor que la de la otra señal, al ser así lo más probable es que se amplifique empleando un mayor factor de ganancia. De ser así, la amplitud de la componente residual a la que se enfrenta esta señal puede provocar en el peor de los casos que el conversor sature y la pérdida de precisión sea mucho mayor. Sea cual sea el caso, es posible observar entonces, que en configuraciones multiganancia las muestras resultantes se obtienen de una conversión menos precisa, en especial si se trabaja con señales de pequeña amplitud ---tal y como se especificó en el punto anterior--- o si las ganancias configuradas en la cola de muestreo difieren mucho unas de otras. Aplicando la relación entre la validez de las muestras y el rendimiento de la que se habló anteriormente, la consecuencia de emplear configuraciones multiganancia es una mayor pérdida de rendimiento.
-	\item En configuraciones monoganancia el uso del amplificador supone una causa indirecta de la caída de rendimiento. El diseño del dispositivo de adquisición está pensado primordialmente para su uso en configuraciones multiganancia, de lo contrario la inclusión de un amplificador de ganancia variable en el esquemático de la tarjeta sería incomprensible. Por la misma razón, Keithley adopta una solución de diseño como la expuesta en el anterior apartado, para tratar de obtener un rendimiento óptimo en configuraciones multiganancia. Sin embargo, el efecto de las componentes residuales en configuraciones monoganancia es mínimo y la consecuente pérdida de rendimiento también lo es. Por tanto, una solución que consiste en alargar el ciclo de reloj resulta, en configuraciones monoganancia, innecesaria y perjudicial para el rendimiento.
-\end{itemize}
-
-Las acciones que el fabricante adopta para tratar de que el usuario obtenga el mayor rendimiento posible del dispositivo no se limitan a aplicar una solución de compromiso en el diseño de la duración del ciclo de reloj. En el manual de usuario se hacen una serie de recomendaciones de uso orientadas a conseguir este fin.\par
-Se proponen varias soluciones, la más trivial de las cuales pasa por preamplificar todas las señales que vayan a ser objeto del proceso de adquisición efectuado por la tarjeta consiguiendo que su amplitud varíe en un mismo rango. Si se hace así, es suficiente con emplear una configuración monoganancia para minimizar los efectos de las componentes residuales en el rendimiento. Además al preamplificar las señales, éstas presentan una mejor relación señal a ruido, es decir, son menos vulnerables al ruido. Aunque buena, esta solución no deja de ser trivial puesto que el amplificador de instrumentación de la tarjeta pierde toda funcionalidad y pasa a ser un estorbo en el proceso de adquisición.\par
-La solución de carácter práctico propuesta por Keithley radica configurar la cola de muestreo de forma minuciosa, persiguiendo optimizar el rendimiento. Como se ha visto, en determinadas ocasiones una configuración inapropiada de la cola de muestreo puede inducir que la pérdida de productividad que provoca la inclusión del amplificador en el circuito de adquisición sea todavía mayor. Para evitar que esto ocurra y sacar el máximo partido del dispositivo se dan en el manual dos condiciones que de cumplirse garantizan que la cola se encuentre configurada de forma óptima en términos de rendimiento.
-
-\begin{itemize}
-	\item La primera consiste en agrupar canales con distinta ganancia en posiciones consecutivas de la cola, aún si al hacerlo se pierde el orden de muestreo definido en una primera instancia por el usuario. Si como se presupuso en el apartado anterior, comúnmente dos señales que requieren ser amplificadas con el mismo factor de ganancia varían en el mismo rango de amplitudes, en estas secuencias monoganancia las consecuencias de las componentes residuales en la precisión de la conversión son mínimas.
-	\item A pesar de emplear una configuración como la anterior, la aparición de saltos de ganancia en la cola de muestreo es todavía probable. Por ejemplo, en la transición entre dos secuencias monoganancia como las descritas arriba. El salto es aún más problemático si la transición se realiza para dar paso a una secuencia de ganancia mayor. El primer canal de esta secuencia sufre en mayor proporción los efectos de las componentes residuales y el rendimiento asociado al canal se ve reducido dramáticamente. Para minimizar el impacto que en determinados canales como éste tienen los problemas causados por el amplificador, es posible modificar la configuración de la cola para que dichos canales ocupen varias posiciones consecutivas. Esta segunda condición persigue dar más tiempo para que se fije la señal cuando los mencionados canales están activos. Para ello se necesitan posiciones vacías en la cola, posiciones que es posible obtener desalojando canales previamente configurados.
-\end{itemize}
-
-
-\section{Comunicación con el periférico}
-
-Para la interacción con dispositivos externos, la \kpci{} dispone de dos conectores formato mini-\sig{d} de 36 terminales que cumplen con el estándar \sig{ieee} 1284 de protocolos de comunicación en paralelo. Si se observa la tarjeta como el rectángulo que forma desde un punto de vista geométrico y observándola de frente, los conectores quedan ubicados en un lado de la tarjeta contiguo a aquel en el que se sitúa la conexión \sig{pci}. Todo ello de forma que tras el montaje del periférico en la placa base los conectores quedan expuestos en la parte posterior de la carcasa en la que providencialmente debe encontrarse instalada dicha placa, tal y como es habitual en este tipo de dispositivos.\par
-En las \cref{fig:portanalog,fig:portdigital} se etiqueta cada terminal según su ubicación relativa con respecto al conector y al resto de terminales en el mismo, para cada conector, mostrando la distribución definida por el fabricante. Los \cref{tab:analog,tab:digital} describen el propósito de cada terminal y se especifica que tipo de señal debe circular por los mismos.
-
-\begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch1-2.mps}
-	\end{center}
-	\caption[Conector etiquetado como \emph{analog}]{Conector etiquetado como \emph{analog}.}
-	\label{fig:portanalog}
+	\caption[Respuesta del transmisor a un pulso rectangular]{Respuesta del transmisor a un pulso rectangular.}
+	\label{fig:response}
 \end{figure}
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch1-3.mps}
+		\includegraphics{gis-pfc-ch1-03.mps}
 	\end{center}
-	\caption[Conector etiquetado como \emph{digital}]{Conector etiquetado como \emph{digital}.}
-	\label{fig:portdigital}
+	\caption[Dimensiones de los transductores de ultrasonidos]{Dimensiones de los transductores de ultrasonidos.}
+	\label{fig:transducer}
+\end{figure}
+
+El resto de componentes empleados en la implementación de las etapas de acondicionamiento se encontraban disponibles en el laboratorio de teoría de la señal en el que esta tarea se lleva a cabo. Entre ellos cabe destacar el \sig{TL}082, un amplificador operacional de propósito general cuyas prestaciones superan ampliamente a las ofrecidas por el clásico \AOUA{} en términos de banda de frecuencias amplificada. Mientras que el \AOUA{} convencional mantiene su máxima ganancia para señales de entrada de frecuencia alrededor de los 7 kHz, el amplificador empleado consigue amplificar con su máximo factor de ganancia señales que oscilan con frecuencias máximas de 90 kHz. Es imprescindible disponer de un amplificador que conserve su ganancia por encima de los 40 kHz, ya que esta es la frecuencia de resonancia de los transductores, y la frecuencia de trabajo seleccionada para el dispositivo de medida.
+
+
+\subsection{Solución adoptada}\label{subsec:solution}
+
+
+\subsubsection{Valoración preliminar}
+
+A la vista de los requisitos que exige una aplicación como la propuesta en este proyecto, las necesidades que surgen durante su diseño y los medios y recursos disponibles, parece previsible un fracaso en el desarrollo de la parte experimental de este \sig{pfc}. Pese a todo, y puesto que el coste de implementar los circuitos y realizar las pruebas es en la práctica suficientemente reducido, se decide proseguir con los experimentos ya que el verdadero fin del proyecto es obtener una serie de resultados, sean estos los esperados o no, y de estos deducir una serie de conclusiones.\par
+En el momento en el que se desarrolla esta fase del proyecto se contempla la posibilidad de inferir dos conclusiones distintas a partir de los resultados: si los resultados no son buenos, determinar cuáles son en realidad los requisitos que deben cumplirse para poder aplicar los \sig{endus} de manera efectiva en la detección de defectos en madera de palmera, y sabiendo esto justificar la ausencia de resultados válidos; y, en el caso contrario, en caso de que los resultados fueran satisfactorios, verificar la validez de aplicar este método con un mismo propósito y en unas condiciones similares.\par
+Posteriormente, tal como se relata en la {\color{red}sección ??} se tiene acceso a unos transductores distintos, que por su modo de funcionamiento permiten llevar a cabo de modo satisfactorio las pruebas programadas.
+
+
+\subsubsection{Montaje seleccionado}
+
+En vista de las conclusiones extraídas en apartados anteriores, y teniendo en cuenta las soluciones a las que se tiene acceso, con el propósito de obtener los mejores resultados posibles, se opta por un montaje que exprime al máximo el transmisor y que en la sección de recepción utiliza un amplificador de instrumentación cuyo factor de ganancia es muy elevado.\par % Para ello, de las soluciones a las que se tiene acceso
+Esta solución, que en una primera instancia parece adecuada, presenta no obstante importantes inconvenientes, de entre los cuales destaca la baja calidad de relación señal a ruido que proporciona.\par
+En principio, el uso de señales de elevada potencia que oscilan a bajas frecuencias es propicio para evitar las complicaciones que en un ensayo introduce el ruido de grano. Si bien la señal que emite el transductor de la sección de transmisión no es de una potencia considerable, las bajas frecuencias a las que oscila garantizan que se consiga en parte este objetivo.\par
+No obstante no es el ruido de grano el más perjudicial en esta configuración. Los transductores de ultrasonidos son transductores piezoeléctricos y, por tanto, el sensor empleado en recepción se engloba en la categoría de los sensores generadores. Es decir, que en respuesta a una actividad ultrasónica genera una determinada señal eléctrica. La frecuencia y amplitud de la señal eléctrica que proporciona el sensor dependen de la señal acústica detectada. Y, si como ocurre en este caso, la señal ultrasónica que alcanza el sensor es muy tenue, la señal eléctrica correspondiente muestra un recorrido de tensión muy reducido. De tal forma que incluso puede ser comparable al ruido presente a la entrada del circuito de adquisición o a otras señales indeseadas.\par
+Por consiguiente, es, en la sección de recepción, el ruido electrónico procedente de la etapa de acondicionamiento el más significativo y el de más difícil solución. Por tres razones que se detallan a continuación.
+
+\begin{itemize}
+	\item En primer lugar, debido a que la procedencia del ruido nada tiene que ver con la interacción de la señal acústica con el medio, las técnicas de postprocesado cuyo objetivo es eliminar el ruido procedente del entorno no son aplicables.
+	\item En principio, es posible aplicar las técnicas destinadas a reducir la presencia de ruido gaussiano vistas en el \cref{subsec:noise}. Sin embargo, con dificultad pueden obtenerse mejoras aceptables de la \sig{snr} en circunstancias como las aquí expuestas.
+	\item Otra posible solución podría encontrarse al abordar el problema desde el prisma de la teoría de la instrumentación electrónica. Esta teoría ha mostrado ser eficaz resolviendo problemas similares en el acondicionamiento de sensores de múltiples tipos. Pueden citarse como ejemplo: el uso del puente de Wheatstone en el acondicionamiento de sensores resistivos, circuito que elimina la componente de señal invariante que introduce el divisor de tensión; o la utilización de células isotermas y fuentes de corriente dependientes de la temperatura para eliminar la componente de señal que generan las uniones de un termopar con los cables de medida.\par
+		No obstante dadas las características del sensor y de la señal que genera, la aplicación de una solución semejante es ciertamente difícil.
+\end{itemize}
+
+
+\subsection{Diseño de la etapa de transmisión} % {Requisitos concretos aplicables a la etapa de acondicionamiento en transmisión} % [Requisitos de la etapa de transmisión]
+
+El propósito del circuito acondicionador de la etapa de transmisión es proporcionar una señal de alimentación que se ajuste a las limitaciones del transductor y a los requisitos especificados en la etapa anterior de la fase de diseño.
+
+
+\subsubsection{La señal de alimentación}
+
+Las especificaciones 
+Los requisitos de la etapa de transmisión pueden obtenerse al juzgar por un lado los límites del transductor de ultrasonidos que se emplea como transmisor y por otro las especificaciones que debe cumplir la señal acústica transmitida.\par
+En \sig{endus}, la técnica de transmisión exige una señal pulsada como la que proporciona el transmisor cuando es alimentado por un pulso rectangular. Por otro lado, una de las condiciones de diseño consiste en emitir a la máxima potencia posible. La señal acústica es emitida por el transmisor de ultrasonidos, por consiguiente la potencia de esta señal depende de los límites del transductor y de como se encuentra alimentado.\par
+% Estoy hablando de las características de la señal de alimentación, porqué no hacer una subsubsección hablando del tema. Es decir, a partir de los datos que tengo razono como debe ser la señal de alimentación y luego digo como la implemento.
+Consultando el \vref{tab:transducers} puede observarse que la máxima potencia que puede disipar el transductor es de 200 m\!Wef en modo pulsado. Puesto que la impedancia de entrada típica interna del transductor es de $700\ \Omega$ pueden calcularse de forma sencilla valores para la potencia instantánea y, a partir de este último dato, el nivel de tensión máximo con el que debe alimentarse el transductor. Para realizar estos cálculos, primero debe fijarse otro parámetro: la forma de la señal de alimentación y sus características temporales.\par
+% ¿Por qué elijo una señal pulsada? Porque así se generan pulsos de forma automática sin necesidad de presionar ningún botón, ni realizar ninguna otra acción. Esto es bueno porque me ahorro interruptores que quizá deban ser reemplazados en el futuro por perder parte de sus cualidades. El periodo con el que se generan los pulsos no debería ser demasiado corto, lo que impediría explotar al máximo el transductor, y debe permitirme seguir los cambios de señal en el monitor del osciloscopio.
+Resulta conveniente elegir una señal pulsada para la alimentación, en concreto un tren de pulsos rectangulares, dado el comportamiento del transductor frente a este tipo de pulsos. En cuanto al ciclo de trabajo por conveniencia se elige, respectivamente: la duración del estado alto, 375 $\mu$s, equivalente a 15 periodos de la portadora; y una frecuencia de aproximadamente 1 Hz. % Una frecuencia tan baja permite un seguimiento visual de la señal, de ese modo es posible congelar el osciloscopio manualmente y eso simplifica el proceso de medida.\par
+% Consultando el \vref{tab:transducers} puede observarse que la máxima tensión admitida por el transductor en modo pulsado es de 20 V, y la máxima potencia que puede disipar es de 200 mW. Por lo tanto, la corriente de la señal de alimentación debe limitarse a 10 mA, algo que puede lograrse mediante una carga adicional. En cuanto a la duración de los pulsos y el periodo de la señal pulsada, por conveniencia se elige respectivamente un tiempo de 375 $\mu$s, equivalente a 15 periodos de la portadora, y una frecuencia de $1/4$ Hz. Una frecuencia tan baja permite un seguimiento visual de la señal, de ese modo es posible disparar el osciloscopio manualmente y eso simplifica el proceso de medida.\par
+% Consultando el \vref{tab:transducers} y la \cref{fig:response} puede deducirse cuales son las características de la señal de alimentación que debe proporcionar la etapa de acondicionamiento en transmisión. Al emplear la técnica de transmisión es necesario que la señal que emite el transductor sea una señal pulsada
+En las pruebas de laboratorio basta con emplear el generador de señales y, si se requiere, un pequeño amplificador de ganancia moderada. Por ejemplo, el generador dispuesto para el proyecto proporciona una señal con valor de pico a pico máximo de 10 voltios pico"=pico (en adelante Vpp), puesto que va a emplearse el transmisor en modo pulsado, la ganancia del amplificador debe ser de 2 V/V. Ganancia que puede obtenerse fácilmente con un amplificador monoetapa basado en un amplificador operacional de propósito general.\par
+Para las pruebas de campo se diseña un circuito capaz de emitir una señal pulsada, de pulsos rectangulares, que pueda ser alimentado con la misma fuente de alimentación con la que es alimentado el acondicionador de la sección de recepción. De ese modo se evita el consumo extra que el generador de señales hace de la batería al mismo tiempo que se transporta un equipo menos. El circuito mencionado se basa en el temporizador integrado 555, concretamente en el integrado 556 que contiene dos 555 en un mismo encapsulado, y el amplificador de uso común \AOUA{}.\par
+El 555 en su configuración como multivibrador astable es capaz de producir una señal periódica de pulsos rectangulares en los que la duración del estado alto y del estado bajo ---y, por tanto, del periodo--- dependen de la configuración de la red temporal a la que se conecta el circuito. Además tiene la capacidad de permanecer en reposo mientras se mantiene activada la puerta de reset (activa a nivel bajo). El ciclo de trabajo de la señal que genera el 555 es siempre superior al 50\% lo que implica que para lograr una señal como la que se necesita para alimentar al transmisor es necesario otro 555, en este caso en la configuración de multivibrador monoestable.\par
+En su configuración monoestable, el 555 es capaz de generar pulsos rectangulares de duración muy precisa. El inicio del pulso lo provoca una caída del nivel en la puerta de disparo por debajo del umbral de comparación que establece la tensión de alimentación, en concreto el umbral se establece en una tensión equivalente a un tercio de Vcc. Es decir que el circuito es activo a nivel bajo. Por otro lado, la duración del pulso viene definida por la red RC que se conecta a los terminales del integrado.\par
+% Aquí tengo que hablar del amplificador que hago con el uA741, (con el BJT es imposible, Vbe es muy superior a 10 mVpp), y de como cargo la salida de este con el transductor y una resistencia adicional para que la corriente en bornes del transmisor no supere los 10 mA.
+% En el párrafo a continuación tengo que decir que en el cuadro aparecen también los valores de consumo del circuito y, si acaso, debo decir porque no puedo alimentarlo con una pila.
+La configuración propuesta se muestra en la \vref{fig:traconditioner}, y los valores de tiempos y frecuencia correspondientes a ésta pueden verse a continuación en el \cref{tab:traconditioner}.\par
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch1-03.mps}
+	\end{center}
+	\caption[Acondicionador en la sección de transmisión]{Configuración seleccionada para el acondicionador en la sección de transmisión.}
+	\label{fig:traconditioner}
 \end{figure}
 
 \begin{table}
 	\centering
-	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
-		\toprule
-		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
-		\midrule
-		1 & ip5 & \multirow{12}{0.6\textwidth}{Bits digitales de entrada multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Base temporal para el contador/temporizador y/o entrada a \emph{gate} \\\item Reloj externo para conversiones A/D o D/A \\\item Disparador digital externo \\\item Entrada digital en el modo \emph{target-mode}}} \\
-		2 & ip3 & \\
-		3 & ip1 & \\
-		\\\\\\\\\\\\\\\\
-		\midrule
-		4 & op5 & \multirow{12}{0.6\textwidth}{Bits digitales de salida multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Salidas del contador/temporizador\\\item Salida del disparador\\\item Salida de control para accesorios\\\item Salida del reloj interno\\\item Salida digital en el modo \emph{target-mode}}} \\
-		5 & op3 & \\
-		6 & op1 & \\
-		\\\\\\\\\\\\\\\\
-		\midrule
-		7 & dgnd & \multicolumn{1}{c}{Tierra digital} \\
-		\midrule
-		8 & ch07 lo/ch15 & \multirow{4}{0.6\textwidth}{Entradas analógicas, cuya función depende del modo de terminación configurado: puerto asociado a un canal monoterminal o puerto bajo de un canal diferencial} \\
-		9 & ch06 lo/ch14 & \\
-		10 & ch05 lo/ch13 & \\
-		$\vdots$ & $\vdots$ & \\
-		15 & ch00 lo/ch08 & \\
-		\midrule
-		16 & {\upshape Sin conexión} & \\
-		\midrule
-		\multicolumn{1}{l}{17, 18} & agnd & Tierra analógica \\
-		\bottomrule
-	\end{tabular}
-	\caption[Relación entre los puertos y terminales en el conector \emph{analog}]{Relación entre los puertos y terminales que presenta el conector trasero de la \kpci{} etiquetado como \emph{analog}.}
-	\label{tab:analog}
+		\includegraphics{gis-pfc-ch1-03.mps}
+% 	\begin{tabular}{<+dimensions+>}
+% 		<++>
+% 	\end{tabular}
+		\caption{Valores temporales y de frecuencia para la configuración mostrada en la \cref{fig:traconditioner}.}
+	\label{tab:traconditioner}
 \end{table}
 
-\begin{table}\ContinuedFloat
-	\centering
-	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
-		\toprule
-		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
-		\midrule
-		19 & ip4 & \multirow{12}{0.6\textwidth}{Bits digitales de entrada multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Base temporal para el contador/temporizador y/o entrada a \emph{gate} \\\item Reloj externo para conversiones A/D o D/A \\\item Disparador digital externo \\\item Entrada digital en el modo \emph{target-mode}}} \\
-		20 & ip2 & \\
-		21 & ip0 & \\
-		\\\\\\\\\\\\\\\\
-		\midrule
-		22 & op4 & \multirow{12}{0.6\textwidth}{Bits digitales de salida multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Salidas del contador/temporizador\\\item Salida del disparador\\\item Salida de control para accesorios\\\item Salida del reloj interno\\\item Salida digital en el modo \emph{target-mode}}} \\
-		22 & op2 & \\
-		21 & op0 & \\
-		\\\\\\\\\\\\\\\\
-		\midrule
-		25 & {\upshape +5 V} & \multirow{2}{0.6\textwidth}{Referencia de tensión de 5 voltios de corriente continua extraídos del bus \sig{pci} del ordenador} \\
-		& & \\
-		\midrule
-		26 & ch07 hi & \multirow{3}{0.6\textwidth}{Entradas analógicas restantes, en el modo de terminación diferencial representan el puerto alto de un canal diferencial} \\
-		27 & ch06 hi & \\
-		28 & ch05 hi & \\
-		$\vdots$ & $\vdots$ & \\
-		33 & ch00 hi & \\
-		\midrule
-		34 & {\upshape +10 V} & \multirow{6}{.6\textwidth}{Entrada diseñada para proporcionar al dispositivo una referencia externa de precisión de 10 voltios mediante una fuente de alta impedancia de salida (La impedancia de entrada de este puerto es equivalente a una resistencia de 1 k$\Omega$ en serie con la impedancia de entrada de la fuente)} \\
-		\\\\\\\\\\
-		\bottomrule
-	\end{tabular}
-	\caption[]{Continuación del \vref{tab:analog}.}
-\end{table}
-
-\begin{table}\ContinuedFloat
-	\centering
-	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
-		\toprule
-		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
-		\midrule
-		35 & dac1 & \multirow{2}{.6\textwidth}{Salida número 1 del conversor digital a analógico de la \kpci{}} \\
-		\\
-		\midrule
-		36 & dac0 & \multirow{2}{.6\textwidth}{Salida número 0 del conversor digital a analógico de la \kpci{}} \\
-		\\
-		\bottomrule
-	\end{tabular}
-	\caption[]{Continuación del \vref{tab:analog}.}
-\end{table}
-
-\begin{table}
-	\centering
-	\begin{tabular}{>{\raggedleft}p{1cm} >{\scshape}c >{\arraybackslash}l}
-		\toprule
-		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
-		\midrule
-		1 & {\upshape Bit 0} & \multirow{6}{0.6\textwidth}{Canal 0 de bits de entrada/salida de propósito general (En la \kpci{} los bits digitales se agrupan de en ocho en ocho en canales. Los canales de este tipo puede configurarse para que los bits que lo integran se comporten como todo salidas o todo entradas)} \\
-		2 & {\upshape Bit 1} & \\
-		3 & {\upshape Bit 2} & \\
-		$\vdots$ & $\vdots$ & \\
-		8 & {\upshape Bit 7} & \\
-		\\
-		\midrule
-		9 & {\upshape Bit 8} & \multirow{2}{0.6\textwidth}{Canal 1 de bits de entrada/salida de propósito general} \\
-		10 & {\upshape Bit 9} & \\
-		11 & {\upshape Bit 10} & \\
-		$\vdots$ & $\vdots$ & \\
-		16 & {\upshape Bit 15} & \\
-		\midrule
-		\multicolumn{1}{l}{17, 18} & dgnd & Tierras digitales \\
-		\midrule
-		19 & {\upshape Bit 16} & \multirow{2}{0.6\textwidth}{Canal 2 de bits de entrada/salida de propósito general} \\
-		20 & {\upshape Bit 17} & \\
-		21 & {\upshape Bit 18} & \\
-		$\vdots$ & $\vdots$ & \\
-		26 & {\upshape Bit 23} & \\
-		\midrule
-		27 & {\upshape Bit 24} & \multirow{2}{0.6\textwidth}{Canal 3 de bits de entrada/salida de propósito general} \\
-		28 & {\upshape Bit 25} & \\
-		29 & {\upshape Bit 26} & \\
-		$\vdots$ & $\vdots$ & \\
-		34 & {\upshape Bit 31} & \\
-		\midrule
-		\multicolumn{1}{l}{35, 36} & {\upshape +5 V} & +5 V\sig{dc} desde el bus del ordenador \\
-		\bottomrule
-	\end{tabular}
-	\caption[Relación entre los puertos y terminales en el conector \emph{digital}]{Relación entre los puertos y terminales que presenta el conector trasero de la \kpci{} etiquetado como \emph{digital}.}
-	\label{tab:digital}
-\end{table}
-
-
-\subsection{Desarrollo de una nueva interfaz}\label{subsec:conbox}
-
-Por razones prácticas, la interfaz original de la \kpci{} basada en dos conectores mini-\sig{d} no se acomoda a las necesidades que se prevé surgirán durante el desarrollo de las pruebas requeridas para la finalización de este proyecto de fin de carrera. En consecuencia, con el propósito de agilizar en la medida de lo posible la realización de estos ensayos, se decide ampliar la interfaz existente.\par
-Para ello se parte de dos extremos de cable terminados en un conector tipo macho y desprovistos de cubierta, de cada uno de los cuales surgen 36 hilos de cobre recubiertos de plástico flexible coloreado. El patrón de coloreado de las cubiertas individuales es único y no se repite en ninguno de los 36 hilos de que se compone cada extremo de cable. A partir de ahí, se identifica cada terminal de cada conector con el hilo de cobre correspondiente, relacionando las etiquetas que el fabricante pone a los terminales con el código de colores de la cubiertas individuales.\par
-Una vez recopilada esta información, se planea la construcción de una caja de conexiones. El diseño de la caja contempla que se equipe ésta con 72 conectores banana hembra soldados a los 72 hilos de cobre y que comunican con los terminales de los conectores mini-\sig{d} en los que termina el otro extremo de los cables. Además se planifica la inclusión de cuatro conectores coaxiales con rosca con conexiones redundantes a las que se presupone son las cuatro puertas cuyo uso será más frecuente, las correspondientes al primer canal analógico diferencial y las tierras analógicas; para así facilitar el uso continuado de las mismas. Por último se decide etiquetar la caja de conexiones con marbetes que reproduzcan la nomenclatura visible en las \vref{fig:portanalog,fig:portdigital}.\par
-Puede observarse una representación de la caja de conexiones ya terminada en la \vref{fig:conbox}.
-
-\begin{figure}
-	\begin{center}
-		\includegraphics[scale=1, keepaspectratio=true]{gis-pfc-ch1-4.jpg}
-	\end{center}
-	\caption[Plano de la caja de conexiones ya terminada]{Plano de la caja de conexiones ya terminada.}
-	\label{fig:conbox}
-\end{figure}
+% DEBERÍA HABLAR SOBRE LOS REQUISITOS QUE SE APLICAN A LOS CIRCUITOS ACONDICIONADORES TAMBIÉN
+% Podría llamar a unos nuevos subapartados, requisitos concretos de la etapa de acondicionamiento en transmisión/recepción.
+% La etapa de transmisión debe proporcionar una señal que alimente al transductor, señal de 40 kHz de amplitud variable, controlada por el usuario (control por tensión).
+% La etapa de recepción debe cargar adecuadamente el sensor, amplificar la señal procedente de éste (por tanto, la banda amplificada debe encontrarse centrada en la frecuencia de resonancia del sensor, en los 20 kHz), y en principio debe evitarse la distorsión en la fase lo que perjudicaría los resultados de una hipotética aplicación de técnicas de postprocesado como la \sig{ssp}
+% El razonamiento para obtener las condiciones de diseño de la etapa de acondicionamiento en recepción es similar si no bien el inverso. La banda de paso de amplificación debe ser la misma (desde los 10 hasta aproximadamente los 40 kHz) y la ganancia la máxima que pueda obtenerse sin distorsión ---especialmente de la fase---, debido fundamentalmente a que se trabaja con señales muy atenuadas y a que se preve trabajar en la fase de post"=adquisición con técnicas de \textsc{ssp}.

@@ -50,7 +50,7 @@ Más allá del campo cercano encontramos el campo lejano. En el campo lejano el fr
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch3-01.mps}
+		\includegraphics{gis-pfc-ch5-01.mps}
 	\end{center}
 	\caption[Campo acústico generado por un transductor cilíndrico]{Diagrama simplificado que muestra el campo acústico generado por un transductor cilíndrico.}
 	\label{fig:transceiver}
@@ -66,8 +66,15 @@ Atendiendo a la situación del receptor en los ensayos no destructivos mediante u
 
 \begin{figure}
 	\begin{center}
-		\subfloat[Inspección ultrasónica por transmisión]{\includegraphics{gis-pfc-ch3-02.mps}}\bigskip\par
-		\subfloat[Inspección ultrasónica por pulso"=eco]{\includegraphics{gis-pfc-ch3-03.mps}}
+		\subfloat[Inspección ultrasónica por transmisión]{
+			\begin{minipage}{.9\textwidth}
+				\centering\includegraphics{gis-pfc-ch5-02.mps}
+			\end{minipage}}
+			\vspace*{.1\textheight}
+		\subfloat[Inspección ultrasónica por pulso"=eco]{
+			\begin{minipage}{.9\textwidth}
+				\centering\includegraphics{gis-pfc-ch5-03.mps}
+			\end{minipage}}
 	\end{center}
 	\caption[Técnicas empleadas en ensayos no destructivos mediante ultrasonidos]{Diferencias en cuanto al número y posición de los transductores según la técnica empleada en una evaluación mediante ultrasonidos.}
 	\label{fig:technics}
@@ -168,7 +175,7 @@ La \vref{fig:emirecmodel} muestra un diagrama de bloques que representa el proce
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[scale=1, keepaspectratio=true]{gis-pfc-ch3-04.mps}
+		\includegraphics[scale=1, keepaspectratio=true]{gis-pfc-ch5-04.mps}
 	\end{center}
 	\caption[Proceso de emisión"=recepción y elementos que en él intervienen]{Diagrama de bloques que representa el proceso de emisión"=recepción y todos los elementos que en el intervienen (considerando el modelo propuesto).}
 	\label{fig:emirecmodel}
@@ -234,7 +241,7 @@ El coeficiente de dispersión de un material no homogéneo de naturaleza granulosa
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[scale=1, keepaspectratio=true]{gis-pfc-ch3-05.mps}
+		\includegraphics[scale=1, keepaspectratio=true]{gis-pfc-ch5-05.mps}
 	\end{center}
 	\caption[Modelo de pequeños receptores]{Modelo de pequeños receptores para la estimación del coeficiente de dispersión.}
 	\label{fig:matrix}
@@ -272,7 +279,7 @@ Mediante esta expresión y la \cref{eq:independentloss}, aplicando la \cref{eq:lo
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch3-06.jpg}
+		\includegraphics{gis-pfc-ch5-06.jpg}
 	\end{center}
 	\caption[Comportamiento del coeficiente de atenuación en las distintas regiones del medio]{Representación del coeficiente de atenuación que muestra su comportamiento en las distintas regiones del material.}
 	\label{fig:losscoefficient}
@@ -339,11 +346,35 @@ Las diferencias entre el carácter estadístico del ruido y de la señal procedente
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch3-07.mps}
+		\includegraphics{gis-pfc-ch5-07.mps}
 	\end{center}
 	\caption[Parámetros de configuración del banco de filtros]{Representación esquemática en la que pueden observarse los parámetros empleados en la configuración del banco de filtros comparados con el espectro de la señal de audio.}
 	\label{fig:filter}
 \end{figure}
 
-% He hecho un corte del fichero aquí porque el realzado de sintaxis de Vim no interpreta correctamente el código que configura la disposición de las columnas en el entorno tabulado etiquetado con <<tab:sspfeatures>>, en consecuencia considera todo el texto posterior incluido en una ecuación matemática y no resalta la ortografía.
-\input{gis-pfc-ch3-2}
+La eficacia de las técnicas de \sig{ssp} no está garantizada, depende en gran parte de dos de los parámetros listados en el \cref{tab:sspfeatures}.
+
+\begin{itemize}
+	\item Por un lado está la configuración del banco de filtros, a destacar dos aspectos:
+		\begin{itemize}
+			\item El tipo de filtro empleado. Según afirma M.\,A. Izquierdo en (\cite{garcia2000mrsr}), trabajos realizados a principios de los noventa como los de P.\,Karpur apuntan a la existencia de una relación entre el factor de forma de los filtros que se utilizan para realizar la partición de espectro y la bondad de los resultados aportados por la técnica de \sig{ssp}. Señala M.\,A. Izquierdo que, a pesar de que la influencia que ejerce este parámetro en la calidad del ensayo haya mostrado ser notable, estudios posteriores no han tenido en cuenta las conclusiones alcanzadas por Karpur.
+			\item La zona del espectro en la que se aplica el método. La región del espectro que queda bajo el banco de filtros puede configurarse ajustando las frecuencias de corte superior e inferior del banco ---quedando indirectamente condicionados el ancho de banda de los filtros y la separación entre los mismos---. Es importante evitar que la banda de paso del banco coincida con alguna porción de la señal en la que la información espectral que indica la presencia del defecto quede enmascarada por el ruido de grano. Cuando así ocurre la efectividad del método se reduce en gran medida.
+		\end{itemize}
+	\item El parámetro que resta por considerar no es otro que el algoritmo de reconstrucción que permite recuperar la traza definitiva. Las técnicas de \sig{ssp} se basan en la estabilidad de la fase de ahí su precaria robustez. El algoritmo de reconstrucción empleado es un factor determinante del que depende en gran parte la robustez de la técnica. Por tanto, aplicar un algoritmo de reconstrucción adecuado a las muestras es crucial para obtener buenos resultados. Los algoritmos más empleados son el de mínimo del ensamble y el del umbral de polaridad (\emph{Polarity Thresholding}) o combinación de ambos, a continuación se citan otros.
+\end{itemize}
+
+Los trabajos mencionados en este apartado siguen todos una misma línea de investigación, descubrir qué configuración del banco de filtros y qué método de reconstrucción optimizan los resultados de aplicar las técnicas de \sig{ssp} en un \sig{endus}. Se ha dicho que el término \sig{ssp} agrupa a un conjunto de técnicas, lo que las diferencia precisamente es, o bien el algoritmo de reconstrucción que emplean, o bien la forma en la que se configura el banco de filtros, en ocasiones ambos.\par
+En cuanto a la configuración del banco de filtros, algunos trabajos, es especial algunos de Karpur, aportan avances significativos. El autor encuentra para el algoritmo de mínimos, de forma analítica y apoyándose en un modelo estacionario del ruido de grano, los parámetros que optimizan el rendimiento de la técnica de \sig{ssp}. Los valores hallados son los siguientes:
+
+\begin{equation}
+	\begin{split}
+		N & = B\cdot T_y + 1 \\	
+		b & = \Delta f = \frac{1}{T_y}
+	\end{split}
+\end{equation}
+
+Donde $N$ representa el número óptimo de filtros, $B$ el ancho de banda del transductor en el segmento de recepción, $T_y$ la duración de la señal recibida, $b$ el ancho de banda de cada filtro, y $\Delta f$ la separación entre filtros.\par
+Por otro lado Karpur afirma en otro de sus estudios, esta vez apoyándose en la expresión para la atenuación en la región de Rayleigh, que el banco de filtros debe aplicarse en las frecuencias más bajas del espectro de la señal, ya que es en esa zona en la que se concentra la mayor parte de la energía correspondiente a la radiación que tiene origen en el defecto.\par
+Otros estudios utilizan la información relativa a la distribución espectral de la \sig{snr}, obtenida mediante algoritmos como el del histograma espectral o a partir de estadísticos del retardo de grupo como p.e. la entropía móvil, para determinar cuál es la región del espectro de la señal en la que es óptimo aplicar el filtrado.\par
+En cuanto a los algoritmos de reconstrucción J.\,Saniie llega a la conclusión, en su trabajo de 1991 en el que estudia los filtros de orden aplicados como algoritmos de composición, de que los mejores resultados se obtienen cuando la señal proviniente del defecto y el ruido estructural están estadísticamente separados en un determinado cuantil. Dependiendo de las distribuciones de probabilidad del ruido y del defecto, resulta apropiado emplear algoritmos de mínimos, mediana o máximos del ensamble, aunque por lo general el algoritmo de mínimos es el que mejores resultados proporciona.\par
+Por su parte M.\,G.\,Gustafsson propone una variante en el conjunto de las técnicas de \sig{ssp} en la que, basándose en la teoría bayesiana de detección y a partir de la información de la señal y el ruido coherente, pueden encontrarse todos los parámetros necesarios para aplicar la técnica de \sig{ssp}. El nombre que recibe usualmente esta variante es técnica de \sig{ssp} con detección óptima.

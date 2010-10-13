@@ -1,5 +1,6 @@
 \documentclass[a4paper, 12pt]{book}
-\includeonly{gis-pfc-pro, gis-pfc-ch1, gis-pfc-ch2, gis-pfc-ch3-1, gis-pfc-appa, gis-pfc-appb}
+\includeonly{gis-pfc-pro, gis-pfc-ch1, gis-pfc-ch2, gis-pfc-ch3, gis-pfc-ch4, gis-pfc-ch5, %
+	gis-pfc-appa, gis-pfc-appb}
 \usepackage[paper=a4, BCOR1cm]{typearea}
 \usepackage[english, spanish, es-ucroman]{babel}
 \usepackage[format=hang, font=small, labelfont=bf, labelsep=endash, width=.9\textwidth]{caption}
@@ -11,7 +12,7 @@
 \usepackage[bf, sf]{titlesec}
 \usepackage[nottoc]{tocbibind}
 \usepackage[spanish]{varioref}
-\usepackage[draft]{graphicx}
+\usepackage{graphicx}
 \usepackage{amsfonts, amsmath, amssymb, calc, color, fancyhdr, hyperref, ifthen, layouts, %
 	listings, nextpage, textcase}
 \usepackage{array, booktabs, tabularx, tabulary, dcolumn, multirow, threeparttable}
@@ -23,7 +24,7 @@
 	pdftitle=Proceso de adquisición y tratamiento de señales de %
 	ultrasonidos, pdfauthor=José Ramón Gisbert Valls, pdfcreator=Vim 7.2,%
 	pdfstartview=FitH, colorlinks=true, pdfdisplaydoctitle=true,%
-	linkcolor=black, citecolor=black, bookmarksopen=true, bookmarksopenlevel=1, %
+	linkcolor=black, citecolor=black, bookmarksopen=true, bookmarksopenlevel=0, %
 	urlcolor=black
 }
 \fancypagestyle{plain}{%
@@ -106,15 +107,19 @@
 
 \mainmatter
 
-\part{Sistema de adquisición y procesado de señales}
+\part[Implementación del sistema digital de medida]{Diseño e implementación del sistema digital de medida}
 
 \include{gis-pfc-ch1}
 
 \include{gis-pfc-ch2}
 
-\part{Ensayos no destructivos con ultrasonidos}
+\include{gis-pfc-ch3}
 
-\include{gis-pfc-ch3-1}
+\include{gis-pfc-ch4}
+
+\part[\emph{ENDUS} en madera de palmera]{Ensayos no destructivos en madera de palmera}
+
+\include{gis-pfc-ch5}
 
 \part*{Apéndices}
 
@@ -129,6 +134,7 @@
 \addtocounter{totalpages}{\value{page}}
 \addtocounter{totalpages}{-1}
 \setcounter{page}{1}
+
 \include{gis-pfc-appb}
 
 \backmatter

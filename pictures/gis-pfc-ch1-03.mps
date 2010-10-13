@@ -2,12 +2,12 @@
 %%BoundingBox: -1 -14 341 144 
 %%HiResBoundingBox: -0.35434 -13.48528 340.5112 143.85802 
 %%Creator: MetaPost 1.208
-%%CreationDate: 2010.09.29:1439
+%%CreationDate: 2010.10.13:1354
 %%Pages: 1
 %*Font: cmsy10 11.95514 9.96265 00:8
-%*Font: cmmi12 11.95517 11.95517 0d:808000000002070115400e5211cc
-%*Font: cmr12 11.95517 11.95517 01:8008200001a9ff88b8085000feff7b5
-%*Font: cmmi8 7.97011 7.97011 48:8020006c0e28
+%*Font: cmr12 11.95517 11.95517 28:d0ffc
+%*Font: cmmi12 11.95517 11.95517 43:8005500080006
+%*Font: cmmi8 7.97011 7.97011 48:8000006008
 %%BeginProlog
 %%EndProlog
 %%Page: 1 1
