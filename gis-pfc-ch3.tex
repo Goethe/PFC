@@ -1,0 +1,349 @@
+\chapter{Aplicación para el control de la tarjeta}
+
+\section{Introducción}
+
+La consecuencia directa de emplear la \kpci{} como instrumento principal en la adquisición de señales analógicas en contraposición con un dispositivo de adquisición autónomo que no requiera de un \pc{} que lo gobierne, es la necesidad de un software de control que se ocupe entre otras de las siguientes tareas:
+
+\begin{itemize}
+	\item Iniciar y detener la sesión de adquisición.
+	\item Interactuar con los drivers de la tarjeta por medio del sistema operativo para controlar por voluntad del usuario parámetros de la sesión de adquisición como pueden ser, por ejemplo, puertos de entrada, modos de adquisición y terminación, o frecuencia de muestreo.
+	\item Realizar el mantenimiento de los buffers de memoria. Tarea que puede dividirse o consta a su vez de dos tareas de menor complejidad: dar formato a las muestras almacenadas en el o los buffers situados en la memoria interna de la tarjeta para su comprensión por parte del ordenador anfitrión; trasladar las muestras formateadas adecuadamente a la memoria del \pc{} para que de ese modo puedan ser manipuladas por el usuario.
+\end{itemize}
+
+La idea original consistía en dotar al software de control de una interfaz de usuario con la que controlar cómodamente todos estos aspectos de la sesión de adquisición. A partir de ahí y puesto que ha de hacerse un esfuerzo para desarrollar la aplicación de control se decide diseñar el software de forma que pueda desarrollar competencias adicionales. Así, además de las tareas básicas que corresponden al software de control, se diseña la aplicación para que pueda cumplir con los siguientes cometidos.
+
+\begin{itemize}
+	\item Mostrar en un visor el valor de las muestras resultantes de muestrear la señal a 4 muestras por segundo.
+	\item En un modo de funcionamiento diferente, mostrar en el mismo visor, cada cuarto de segundo aproximadamente, la media aritmética del valor de las muestras recogidas en dicho periodo a una frecuencia de muestreo especificada por el usuario.
+	\item Funcionando en el modo gráfico, representar la señal y el espectro en frecuencia de la misma en dos espacios de coordenadas separados. A voluntad del usuario pueden ser habilitadas o deshabilitadas cualquiera de estas dos representaciones o ambas.
+\end{itemize}
+
+
+\subsection{Funcionamiento de un osciloscopio}
+
+El propósito de este segundo capítulo es guiar al lector en el proceso de elaboración y prueba del software de control. Como se ha mencionado anteriormente, en el proceso de diseño previo a la programación del software se decide incluir en la aplicación un modo de funcionamiento que permita representar la forma de la señal y su espectro en frecuencia. Una parte importante del código fuente del software de control lo ocupan las rutinas con las que se implementa dicho modo de funcionamiento. Además, la influencia que ejerce este conjunto de rutinas sobre el resto es notable. De hecho, del resto de funciones, muchas se han escrito a partir de éste núcleo de código, acomodándose a él.\par
+Muchas de las ideas que han resultado ser imprescindibles para llevar a término el proceso de desarrollo del software se han obtenido tras observar el comportamiento de un osciloscopio de laboratorio. Una serie de conceptos que han influido en la forma y estructura del código fuente final. La elección de un osciloscopio digital como modelo es intencionada ya que desde un principio lo que se persigue es obtener unas prestaciones similares, prestaciones que se observan en el resultado final (véase el \vref{chap:appendixA}).\par
+Por todo ello, para comprender como se ha ido desarrollando el software, para entender como funciona la aplicación de usuario, es conveniente conocer las claves que se siguieron durante el curso de su desarrollo, en definitiva, las pautas de comportamiento de un osciloscopio. De una forma resumida se expone aquí un texto en relación con dicha materia para que el lector pueda llegar a estas conclusiones.
+
+
+\subsection{Osciloscopios analógicos, osciloscopios digitales y retardo}
+
+Los osciloscopios analógicos emplean un tubo de rayos catódicos y un monitor de fósforo para generar una imagen de la señal. El cursor que el tubo dibuja en el monitor lo va barriendo de izquierda a derecha con periodicidad, y su posición vertical refleja a cada momento el valor de tensión de la señal eléctrica que entra al osciloscopio. El monitor preserva durante breves instantes una traza del cursor y así se forma la imagen que representa a la señal.\par
+En la actualidad suelen emplearse osciloscopios digitales. El procedimiento que sigue un osciloscopio digital para representar señales es completamente diferente al que siguen los osciloscopios analógicos. No existe ningún cursor, se generan fotogramas de la señal en seguimiento\footnote{En realidad, los osciloscopios digitales modernos pueden representar por pantalla varias señales simultáneamente.}, imágenes completas que cubren la pantalla entera con un fragmento de señal, una vez aparece una imagen por pantalla permanece estática hasta que una nueva imagen la sustituye. La dimensión temporal de la representación determina en teoría cuanto debe esperar el osciloscopio desde que se muestra por pantalla una imagen hasta que se puede generar la siguiente. La espera resulta evidente puesto que la señal no se conoce de antemano, al contrario que ocurre con los osciloscopios analógicos que representan la señal en tiempo real, si se desea representar por pantalla un fragmento de la señal de una determinada duración el osciloscopio debe esperar hasta que transcurra dicho periodo de tiempo. En otras palabras, aparece un retardo que depende exclusivamente de la duración del fragmento de señal necesario para cubrir la ventana del osciloscopio, o lo que es lo mismo, el retardo es independiente de otros parámetros como son la velocidad de muestreo o la potencia de procesado del osciloscopio.\par
+Este modo de proceder tiene un inconveniente, el objetivo de un osciloscopio es mostrar en cada momento como es la forma de la señal, si el retardo introducido es demasiado alto el osciloscopio deja de ser eficaz pues la información que proporciona cada imagen es obsoleta. Problema que se ve agravado por la posibilidad de configurar el eje de tiempos. Así es, tanto los osciloscopios analógicos (variando la frecuencia de barrido del cursor) como los osciloscopios digitales, permiten que el usuario modifique la cantidad de tiempo que refleja el eje horizontal de la representación, pudiendo ser ésta mayor o menor. A efectos prácticos, en los osciloscopios digitales el tiempo abarcado por el eje temporal actúa como el inverso de la frecuencia de refresco del monitor, por tanto, cuanto mayor sea ese tiempo con mayor lentitud se sucederán las imágenes y habrá un mayor desfase entre la señal y la representación de ésta.
+
+
+\subsection{Modos de representación en los osciloscopios digitales}\label{subsec:repmodes}
+
+Para evitar que en determinadas configuraciones del eje temporal del osciloscopio el retardo sea excesivo, la mayoría de estos dispositivos implementan dos modos de funcionamiento: el modo convencional que se aplica en situaciones en las que el retardo no se considera importante; y una especie de modo continuo. Existen dos criterios que se siguen de manera habitual para diferenciar en que momento es más apropiado el uso de uno u otro modo:
+
+\begin{itemize}
+	\item El primer criterio evalúa el correcto funcionamiento del modo convencional. Como se verá más adelante, el modo convencional de representación en un osciloscopio requiere que la cantidad de imágenes que salen por pantalla cada segundo sea lo suficiente grande como para que se simule el movimiento. Por tanto para satisfacer el primer criterio, la tasa de refresco del monitor del osciloscopio debe superar las veintiséis imágenes por segundo o encontrarse alrededor de esta cifra.
+	\item El segundo criterio está relacionado con la función de disparo que se da en el modo convencional de representación. Para poder efectuar correctamente el disparo sobre señales de baja frecuencia, al generar cada imagen el osciloscopio debe haber registrado al menos un ciclo de la señal pertinente\footnote{En la práctica se necesita algo más de un ciclo de una señal para poder garantizar el correcto disparo de ésta. Sin embargo, es común conseguir disparar una señal aunque la configuración del eje de tiempos del osciloscopio permita sólo obtener una fracción del ciclo completo de esa señal durante la realización de cada fotograma.}. Lo cual reduce la tasa mínima de refresco a la frecuencia de la señal más lenta que se desee representar de forma correcta en el modo convencional de representación del osciloscopio.
+\end{itemize}
+
+Como puede verse el segundo criterio es más restrictivo pues depende de la frecuencia de la señal y ésta puede ser en efecto inferior a un hercio, es por ello que se emplea habitualmente. Siendo así, la tasa de refresco mínima que se permite en el modo convencional en la gran mayoría de dispositivos y que se ha adoptado para el software de control, es de cinco imágenes por segundo (5 Hz). Cuando se configura un osciloscopio en el modo convencional para que trabaje a esta tasa de refresco es habitual poder visualizar señales de frecuencia cercana a 1 Hz, sin embargo la representación se optimiza para configuraciones en las que el osciloscopio muestra, al menos, veinticinco imágenes por segundo, lo cual es apropiado para señales con una frecuencia mínima de 50 Hz. Si la configuración del eje de tiempos del osciloscopio obligara al dispositivo a trabajar con una frecuencia de refresco inferior a la especificada, automáticamente conmuta para funcionar en el modo continuo.
+
+
+\subsubsection{Representación en modo continuo}
+
+Una vez visto cual es la frecuencia umbral a la que el dispositivo conmuta entre los dos modos, debe explicarse que diferencia un modo de funcionamiento de otro. Para ello se expone a continuación cuales son los fundamentos de uno y otro modo. La representación en \emph{modo continuo} es, por decirlo así, ininterrumpida. La imagen de la señal de interés se desplaza de derecha izquierda a medida que transcurre el tiempo. Para lograr este efecto se aumenta la frecuencia de refresco a expensas de que, como es sabido, el fragmento de señal obtenido para cada imagen no cubrirá la pantalla al completo. Ocurre así por que la frecuencia de refresco es muy alta para el eje temporal que representa una gran cantidad de tiempo, por tanto, entre dos imágenes no transcurre el tiempo abarcado por la dimensión horizontal de la representación. La primera imagen sitúa el fragmento de señal que se ha digitalizado en el extremo derecho de la representación, el resto se deja en blanco. Con cada nueva imagen se desplaza el fragmento de señal representado hasta el momento el suficiente espacio hacia la izquierda como para incorporar un nuevo fragmento de señal. Así la porción de señal representada aumenta cada vez más hasta que el extremo izquierdo de la figura alcanza el margen izquierdo de la ventana del osciloscopio. Cuando esto ocurre, empieza un desplazamiento cíclico, al incorporar un nuevo fragmento de señal a la derecha se retira un fragmento de la misma proporción temporal al otro extremo. La alta tasa con la que aparecen las imágenes por pantalla garantizan que la representación siga casi en tiempo real ---por lo menos así lo percibe el ojo humano--- a la señal verdadera. Debe notarse, no obstante, que este método de representación no es adecuado para señales de alta frecuencia pues aunque el eje temporal abarque un tiempo mayor, la dimensión del monitor obviamente no varía y las señales de alta frecuencia aparecerán en exceso comprimidas.\par
+
+
+\subsubsection{Representación en modo convencional}
+
+El \emph{modo convencional} de representación es algo más complicado. Como se ha declarado con anterioridad en este mismo apartado, la representación convencional basa su funcionamiento en imágenes que muestran fragmentos de señal que cubren la dimensión temporal de la ventana del osciloscopio y que se suceden unas a otras con presteza. La idea que persigue este método es la de conseguir algo semejante a una película de la señal. Para ello, no es sólo suficiente con que aparezcan muchas imágenes por segundo en el monitor del osciloscopio, esas imágenes deben estar de algún modo relacionadas entre sí. Si las imágenes que aparecen en el monitor son de forma consecutiva muy diferentes es probable que no pueda discernirse nada claro, y de nada valdrá la representación.\par
+Ahí es donde entra en juego el procesado y la función de disparo de un osciloscopio digital. Cuando un fragmento suficientemente largo como para cubrir la ventana de representación se digitaliza y se almacena en memoria, empieza el procesado digital del mismo. El propósito del procesado es, ente otras cosas, eliminar las posible componente en continua, averiguar información adicional de la señal en la medida de lo posible, como p. ej. su valor de pico a pico, o implementar una función de disparo. La función de disparo del osciloscopio persigue alinear los ejes verticales de la ventana donde se representa con los cruces de la señal con respecto a un determinado valor de umbral que puede ser configurado por el usuario. La idea es alinear al menos el cruce más centrado de cada fragmento de señal con el eje de abscisas que corta en dos mitades la ventana. Para conseguirlo, durante el procesado se detectan todos los cortes de la señal con el umbral y después se desplaza el fragmento de señal para que el corte más centrado case con el eje de abscisas. Si la señal es periódica las variaciones entre un fotograma y el siguiente serán mínimas, puesto que ambos estarán alineados, y se simulará con éxito el movimiento.\par
+No obstante, la necesidad de desplazar el fragmento de señal que va a representarse presenta un inconveniente importante. Para poder desplazar el fragmento de señal y que se cubra completamente la ventana del osciloscopio su duración, la del fragmento de señal digitalizado, debe ser superior al tiempo reflejado en el eje de tiempos de la ventana. De lo contrario la señal aparecerá truncada, se mostrará un espacio en blanco y, con una tasa de refresco alta, la visualización será confusa. Desplazar fragmentos de señal implica dos cosas: por un lado el osciloscopio debe esperar más tiempo para refrescar la pantalla, es decir, se reduce la tasa de refresco para una misma configuración del eje de tiempos; y por otro, al tener para representar un fragmento de señal de mayor duración que la reflejada por el eje temporal de la ventana parte del fragmento queda ahora fuera de la representación.\par
+Este inconveniente se ve paliado por el hecho de que el modo convencional contempla en principio trabajar con señales de alta frecuencia. Estas señales cambian de forma tan rápida que de no ser por el disparo sería imposible observar los cambios. Por otro lado puede seleccionarse que información que se muestra por pantalla accionando un control de desplazamiento temporal o modificando el valor de umbral de disparo y, generalmente, la pérdida de información a causa del disparo no es significativa.
+%\vspace*{99pt}
+
+
+\section{Elaboración del software de control}
+
+
+\subsection{Elección del entorno de desarrollo}\label{subsec:environment}
+
+El lenguaje o, mejor dicho, plataforma que se ha empleado para el desarrollo del software de control es \matlab{}, la razón, su inmejorable compatibilidad con el hardware disponible. A partir de ahí, los componentes de \matlab{} que se han empleado para conseguir que el software de control gozase de las características previstas en la etapa de diseño son dos: el entorno de desarrollo de interfaces gráficas de usuario (\emph{Graphical user interface}, en lo sucesivo \psig{gui}) de \matlab{}, más conocido como \psig{guide} (\emph{Graphical user interface development environment}); y la herramienta de adquisición de datos de \matlab{} (\emph{Data acquisition toolbox}, en adelante \psig{DAT}) . El primero de ellos se ha empleado para, como su nombre indica, crear la interfaz que comunica el dispositivo con el usuario. Esta comunicación se hace a través del segundo de los componentes mencionados, éste permite, mediante comandos de \matlab{} que pueden incluirse en rutinas o llamarse por separado, manejar el dispositivo ---convocarlo a muestrear, configurar sus propiedades--- y administra automáticamente los resultados almacenándolos en búffers situados en la memoria volátil del ordenador, haciéndolos de este modo accesibles al administrador de la tarjeta.
+
+
+\subsection{Data Acquisition Toolbox}
+
+La práctica de emplear \gui{} como fondo para aplicaciones desarrolladas con \matlab{} es bastante habitual, así como lo es programar esas interfaces mediante \guide{}. Por ello, y dado que la documentación que se ciñe a tratar la problemática que envuelve esta actividad es abundante, se ha preferido dejar a cargo de dichos documentos este asunto y centrar este escrito en presentar con concisión los principios necesarios para emplear con éxito la \datx{} de \matlab{} en el manejo de dispositivos para la adquisición de señales analógicas. La fórmula elegida con tal propósito consiste en describir cual es el procedimiento habitual en una sesión de adquisición de datos y en cada paso detallar las opciones más significativas y proporcionar ejemplos explicativos extraídos del mismo código que integra el software de control.\par
+En cuanto a la documentación adicional que el lector puede consultar a continuación se citan varios documentos clasificados en función del tema que tratan. Para la programación de \gui{} con \matlab{} puede consultarse el manual de usuario, cite, disponible en la web del fabricante. Esta sección se basa en la guía rápida sobre el uso de la \datx{}, también a cargo de \emph{The MathWorks, Inc.}, la compañía que mantiene la suite matemática en cuya web puede obtenerse un documento extendido.
+
+
+\subsubsection{Componentes de la herramienta}
+
+Los elementos de \matlab{} que juegan un papel suficientemente importante en el funcionamiento de la \datx{} son los listados en el \cref{tab:toolcomp}. El diagrama representado en la \vref{fig:toolcomp} muestra las interdependencias que existen entre los elementos que aparecen en dicho cuadro.
+
+\begin{table}
+	\centering
+	\begin{tabulary}{.9\textwidth}{C L}
+		\toprule
+		Componente & \multicolumn{1}{c}{Propósito} \\
+		\midrule
+		Ficheros *.m & Se emplean para automatizar la creación de objetos dispositivo, adquirir datos, configurar las propiedades del dispositivo y la sesión, y evaluar el estado de la adquisición y los recursos.\\
+		\midrule
+		Máquina virtual de adquisición de datos & Almacena objetos dispositivo y sus propiedades, controla el almacenamiento de los datos adquiridos y controla la sincronización de eventos.\\
+		\midrule
+		Adaptadores & Son la vía de comunicación entre la máquina virtual de adquisición de datos y el hardware por la cual se transmiten propiedades, datos y eventos.\\
+		\bottomrule
+	\end{tabulary}
+	\caption[Descripción de los componentes de la \datx{}]{Descripción de los componentes de la \datx{}.}
+	\label{tab:toolcomp}
+\end{table}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-07.mps}
+	\end{center}
+	\caption[Elementos que intervienen en el funcionamiento de la \datx{}]{Elementos que intervienen en el funcionamiento de la \datx{}.}
+	\label{fig:toolcomp}
+\end{figure}
+
+\subsubsection{Objetos dispositivo}
+
+Los objetos dispositivo permiten el acceso a subsistemas específicos del hardware. Los objetos dispositivo soportados por la \datx{} son los objetos de entrada analógica o \emph{analog imput objects} (\psig{ai}), los objetos de salida analógica o \emph{analog output objects} (\psig{ao}) y los objetos de entrada/salida digital o \emph{digital I/O objects} (\psig{dio}).
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-08.mps}
+	\end{center}
+	\caption[Comunicación entre los subsistemas del hardware y los objetos dispositivo]{Grafo que representa la comunicación entre los subsistemas del hardware y los objetos dispositivo.}
+	\label{fig:subsystemsOO}
+\end{figure}
+
+
+\subsection{La sesión de adquisición de datos}
+
+Una sesión completa de adquisición de datos consiste en cinco pasos:
+
+\begin{enumerate}
+	\item Crear el objeto dispositivo.
+	\item Añadir canales al objeto dispositivo.
+	\item Configurar las propiedades del objeto dispositivo y los canales añadidos para controlar el comportamiento de la aplicación de adquisición de datos.
+	\item Adquirir los datos.
+	\item Eliminar el objeto dispositivo.
+\end{enumerate}
+
+Cada uno de los pasos se detalla en los puntos subsiguientes.
+
+
+\subsubsection{Crear el objeto dispositivo}
+
+Para crear un objeto dispositivo, se debe llamar a la función de creación apropiada o constructor. Como se muestra en el \vref{tab:constructors}, los constructores reciben un nombre particular en función del tipo de objetos dispositivo que crean. Para iniciar una sesión de adquisición de datos analógicos es necesario un comando como el siguiente, \func{analoginput(`adaptador', ID)}. Un ejemplo extraído del código fuente de la aplicación de control muestra cómo hacerlo en el \cref{cod:constructor}.\par
+
+\begin{table}
+	\centering
+	\begin{tabular}{l >{\tt}l}
+		\toprule
+		\multicolumn{1}{c}{Tipo de subsistema} & \multicolumn{1}{c}{\rm Constructor} \\
+		\midrule
+		Entrada analógica & analoginput(`adaptador', ID); \\
+		\midrule
+		Salida analógica & analogoutput(`adaptador', ID); \\
+		\midrule
+		Entrada / Salida digital & digitalio(`adaptador', ID); \\
+		\bottomrule
+	\end{tabular}
+	\caption[Tipos de constructor en función del objeto dispositivo creado]{Tipos de función de creación de acuerdo con el tipo subsistema al que se orienta el objeto dispositivo creado.}
+	\label{tab:constructors}
+\end{table}
+
+\begin{lstlisting}[style=displayed, caption={[Método a seguir para crear un objeto dispositivo]Método que evalúa la existencia de un objeto dispositivo previo a la llamada de la aplicación, en caso positivo lo hereda para su uso posterior, de lo contrario crea uno nuevo.}, label={cod:constructor}]
+	handles.ai = [];
+
+	if ~isempty(daqfind)
+		oldObj = daqfind;
+
+		for i = 1:length(oldObj);
+			auxStr = daqhwinfo(oldObj(i));
+			auxNum = findstr(' ', auxStr.DeviceName) - 1;
+			if strcmp('KPCI-3108', ...
+				auxStr.DeviceName(1:auxNum)) && ...
+				strcmpi('analoginput', auxStr.SubsystemType);
+				handles.ai = oldObj(i);
+				warning('El dispositivo está en uso.');
+				break
+			end
+		end
+
+	end
+
+	if isempty(handles.ai)
+		try
+			handles.ai = analoginput('keithley');
+		catch
+			errordlg('No pudo crearse el manejador de dispositivo.');
+		end
+	end
+\end{lstlisting}
+
+El argumento \func{id} es un indicador de dispositivo hardware. Se trata de un argumento opcional para tarjetas de sonido con \func{id} 0. El argumento \func{adaptador} requiere el nombre del adaptador de dispositivo hardware. A continuación, en el \cref{tab:adaptors} se muestra una relación con los adaptadores de dispositivo cuyo uso es más frecuente y el nombre de adaptador que debe introducirse como argumento de la llamada a \func{analoginput}. Por conveniencia se ha añadido Keithley a esta lista.
+
+\begin{table}
+	\centering
+	\begin{tabular}{l >{\tt\qquad}l}
+		\toprule
+		\multicolumn{1}{c}{Fabricante de Hardware} & \multicolumn{1}{c}{\rm Nombre de adaptador} \\
+		\midrule
+		Advantech & advantech \\
+		\midrule
+		Measurement Computing & mcc \\
+		\midrule
+		National Instruments & nidaq \\
+		\midrule
+		Parallel port & parallel \\
+		\midrule
+		Microsoft Windows & winsound \\
+		\midrule
+		Keithley Instruments, Inc. & keithley \\
+		\bottomrule
+	\end{tabular}
+	\caption[Argumento que debe emplearse en la llamada a \func{analoginput} en función del fabricante]{Argumento que debe emplearse en la llamada a \func{analoginput} en función del fabricante.}
+	\label{tab:adaptors}
+\end{table}
+
+
+\subsubsection{Añadiendo canales}
+
+Antes de poder utilizarse, deben añadirse canales al objeto dispositivo. Para ello, debe emplearse la función \func{addchannel}. Puede pensarse en un objeto dispositivo como un contenedor de grupos de canales y en los canales añadidos a un objeto dispositivo como un grupo de canales. Si se desean añadir dos canales al objeto dispositivo \func{objeto} puede utilizarse la siguiente llamada \func{cans = addchannel(objeto, 1:2);}.
+
+
+\subsubsection{Configurando propiedades}
+
+Puede controlarse el comportamiento de una sesión de adquisición de datos o de una aplicación creada con tal propósito configurando las propiedades de los objetos dispositivo que intervienen en el proceso de adquisición y de los canales que dicho objeto contiene. Estas son las reglas principales en la configuración de propiedades desde la \datx{}.
+
+\begin{itemize}
+	\item Los nombres de las propiedades pueden escribirse en mayúsculas, minúsculas o combinación de ambas.
+	\item Los nombres de las propiedades pueden abreviarse como se mostrará a continuación. % Hay que confirmar que se explican las reglas de abreviatura
+	\item La función \func{set} aplicada a un objeto dispositivo ---\func{set(objeto)}--- devuelve todas las propiedades configurables de ese objeto. Si se llama a \func{set} utilizando como argumento un canal ---\func{set(objeto.Channel(índice)}---, la función devolverá todas las propiedades configurables de dicho canal.
+	\item La función \func{get} devuelve todas las propiedades de un canal u objeto y el valor que toman en el momento en el que se llama a la función si se emplea como único argumento dicho canal u objeto ---\func{get(objeto)}, \\ \func{get(objeto.Channel(índice)}---.
+\end{itemize}
+
+Se distinguen dos tipos de propiedades distintas asociadas a los canales contenidos en un objeto dispositivo.
+
+\begin{itemize}
+	\item \emph{Propiedades comunes} que se aplican a cada canal contenido en un objeto dispositivo.
+	\item Y \emph{propiedades de canal} que pueden configurarse individualmente por canal.
+\end{itemize}
+
+Dentro de las propiedades comunes de los canales existen las \emph{propiedades básicas}, que se aplican a todos los subsistemas de un determinado tipo (\textsc{ai, ao, dio}); y \emph{propiedades específicas de dispositivo} aplicables únicamente al hardware específico que se está empleando.\par
+Existen tres formas de configurar u obtener el valor de una propiedad: utilizando las funciones \func{set} y \func{get}; empleando la notación de punto; o recurriendo a los nombres indexados.
+
+\begin{itemize}
+	\item La sintaxis de las funciones \func{get} y \func{set} es similar a la empleada en la herramienta de \matlab{} \emph{Handle Graphics}.
+		\begin{lstlisting}[gobble=16]
+			out = get(objeto, `SampleRate');
+			set(objeto, `SampleRate', 11025)
+		\end{lstlisting}
+	\item La notación de punto se emplea del siguiente modo:
+		\begin{lstlisting}[gobble=16]
+			out = objeto.SampleRate;
+			objeto.SampleRate = 11025;
+		\end{lstlisting}
+	\item Por último, los nombres indexados permiten asociar un nombre descriptivo a cada canal. Por ejemplo para asociar el nombre \func{Can1} con el primer canal contenido en \func{objeto} debe procederse como se enuncia a continuación.
+		\begin{lstlisting}[gobble=16]
+			set(objeto.Channel(1), `ChannelName', `Can1');
+			out = objeto.Can1.UnitsRange;
+			objeto.Can1.UnitsRange = [0, 10];
+		\end{lstlisting}
+\end{itemize}
+
+
+\subsubsection{Adquisición de datos}
+
+La adquisición de datos puede dividirse en tres tareas básicas: iniciar el objeto dispositivo; registrar datos y detener el objeto dispositivo.\par
+La función que se utiliza para iniciar un objeto dispositivo es la función \func{start}, p.e. para iniciar el objeto dispositivo \func{objeto} habría que llamar a la función de esta forma \func{start(objeto)}. Tras iniciar un objeto su propiedad \textsf{Running} pasa de manera automática al valor \textsf{On}.\par
+No obstante haber iniciado el dispositivo, este no empieza a registrar datos hasta que no ocurre un trigger o disparo. Hay diversos tipos de trigger, en el \vref{tab:triggers} se muestran aquellos soportados por todos los dispositivos. Tras un trigger el dispositivo hardware inicia la adquisición de datos y la propiedad \textsf{Logging} del objeto dispositivo asociado conmuta al estado \textsf{On}.
+
+\begin{table}
+	\centering
+	\begin{threeparttable}
+	\begin{tabulary}{.9\linewidth}{>{\sf}c L}
+		\toprule
+		{\rm Tipo de disparo} & \multicolumn{1}{c}{Descripción} \\
+		\midrule
+		Inmediato & El disparo ocurre justo después de la llamada a \func{start}. Este es el tipo de trigger predeterminado. \\
+		\midrule
+		Manual & El disparo ocurre después de llamar manualmente a la función \func{trigger}. \\
+		\midrule
+		Software & El disparo sucede cuando se detecta una señal que satisface una determinada condición especificada de antemano. El objeto dispositivo debe disponer de más de un canal que hará las veces de la señal de disparo. Debe especificarse, como es obvio, que canal actúa como fuente del disparo. \\
+		\midrule
+		Reloj interno\tnote{\rm a} & Por añadidura, la \kpci{} cuenta con la posibilidad de recibir el disparo de la fuente de reloj interna. \\
+		\bottomrule
+	\end{tabulary}
+	\begin{TableNotes}
+		\tnotetext{a}{Se ha añadido esta característica de la \kpci{} a la lista original.}
+	\end{TableNotes}
+	\end{threeparttable}
+	\caption[Tipos de disparo soportados por el hardware compatible con \matlab{}]{Tipos de disparo soportados por el hardware compatible con \matlab{} y una breve descripción de los mismos.}
+	\label{tab:triggers}
+\end{table}
+
+Por último, existen tres causas por las que un objeto dispositivo puede detenerse: \matlab{} detiene un objeto dispositivo iniciado una vez obtenidos los datos precisados por el usuario; al ocurrir un error de tiempo de ejecución en relación con la actividad de un objeto dispositivo éste es detenido también; y tan sólo resta el método manual, que consiste en llamar a la función \func{stop}, por ejemplo \func{stop(objeto)}.\par
+Como se ha mencionado la máquina virtual de adquisición de datos registra y controla los datos que extrae de un objeto dispositivo. Un usuario puede acceder a esos datos de dos formas diferentes:
+
+\begin{itemize}
+	\item La primera de ellas se conoce como previsualizar los datos. Se emplea con ese propósito la función \func{peekdata}. Si, por ejemplo, se quisiese previsualizar 1000 muestras obtenidas con el objeto dispositivo \func{objeto}, la llamada a \func{peekdata} sería la siguiente: \func{out = peekdata(objeto, 1000);}. La función \func{peekdata} devuelve el control a \matlab{} de inmediato y no elimina los datos previsualizados de la máquina virtual de adquisición.
+	\item En cualquier momento tras adquirir datos mediante un objeto dispositivo estos pueden extraerse de la máquina virtual de adquisición mediante la función \func{getdata}. Partiendo del ejemplo anterior, si se desea extraer 1000 muestras procedentes del objeto dispositivo \func{objeto}, esta es la llamada adecuada \func{out = getdata(objeto, 1000);}. Al contrario que la función \func{peekdata}, \func{getdata} no devuelve el control a \matlab{} hasta haber extraído todas las muestras solicitadas. Es evidente que las muestras extraídas dejarán de estar disponibles en la máquina virtual de adquisición.
+\end{itemize}
+
+Es importante señalar que en cualquiera de los procedimientos descritos intentar acceder a más datos de los obtenidos en un determinado momento causará un error que detendrá el funcionamiento del objeto dispositivo.
+
+
+\subsubsection{Eventos y Callbacks}
+
+Puede decirse que un evento sucede en un determinado instante después de que una cierta condición se cumple. A menos que ocurra un error, en todas las sesiones de adquisición de datos debe producirse un evento de inicio, uno de disparo y uno de parada. Puede accederse a la información que transporta un evento mediante la propiedad \textsf{EventLog}:
+
+\begin{lstlisting}
+	Events = ai.EventLog;
+	EventTypes = {Events.Types}
+	EventTypes =
+		`Start'    `Trigger'	`Stop'
+\end{lstlisting}
+
+Cuando se produce un evento, puede ejecutarse una función de \emph{callback}. Es posible seleccionar una función para un callback especificando como valor de la propiedad asociada a dicho callback el nombre de la función (si ésta se encuentra en el mismo fichero *.m que contiene el código que ejecuta la aplicación que realiza la adquisición de datos), o el nombre del fichero *.m con el código de la función. Así mismo, pueden pasarse argumentos de entrada a la función de callback asignándolos a la mencionada propiedad.\par
+Por ejemplo, los siguientes comandos configuran \func{objeto} de forma que la función \func{datadqcallback} se ejecute desde el fichero cuyo nombre está compuesto por una raíz idéntica al nombre de la función y con extensión *.m, cuando se produzca un evento de trigger o de parada durante la actividad del objeto dispositivo. Además se pasa como argumento de la función el valor de la propiedad \textsf{Running} de \func{objeto} en el momento del callback.
+
+\begin{lstlisting}
+	set(objeto, `TriggerFcn', @datadqcallback, objeto.Running)
+	set(objeto, `StopFcn', @datadqcallback, objeto.Running)
+\end{lstlisting}
+
+Un segundo ejemplo, este extraído del código fuente de la aplicación de control muestra como pasar argumentos a la función de callback y cuál es la sintaxis de la definición de la misma en el \cref{cod:callback}.
+
+\begin{lstlisting}[style=displayed, caption={[Configuración de \emph{callback}]{Configuración de \emph{callback} para responder a eventos en la sesión de muestreo, la función de \emph{callback} recibe un argumento.}}, label={cod:callback}]
+	set(handles.ai, 'TriggerType', 'Immediate', 'TimerFcn', '', ...
+		'SamplesAcquiredFcn', {@localDaqCallback, gcbo});
+
+				[...]
+
+	function localDaqCallback(obj, event, hObject)
+		handles = guidata(hObject);
+		EventType = event.Type;
+
+		switch lower(EventType)
+			case 'samplesacquired'
+
+				[...]
+
+			case 'timer'
+
+				[...]
+
+		end
+\end{lstlisting}
+
+\subsubsection{Suprimiendo y borrando las trazas de los objetos dispositivo}
+
+La función \func{delete} elimina el objeto dispositivo especificado de la máquina virtual de adquisición, pero no del espacio de trabajo de \matlab{}, ---\func{delete(objeto)}---. Tras una llamada semejante \func{objeto} sigue apareciendo en el espacio de trabajo de \matlab{}, pero se trata de un objeto inválido desde el momento en el que deja de encontrarse ligado al hardware. Deben suprimirse los objetos dispositivo faltos de validez con el comando \func{clear}, p.e., \func{clear objeto}.\par
+Si se suprime un objeto dispositivo del espacio de trabajo de \matlab{} no deja de existir en la máquina virtual. Para poder recuperar objetos borrados accidentalmente puede utilizarse la función \func{daqfind}.
+
+\begin{lstlisting}
+	out = daqfind;
+	ai = out(1);
+\end{lstlisting}
+
+

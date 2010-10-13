@@ -1,0 +1,529 @@
+%!PS
+%%BoundingBox: 0 -97 357 189 
+%%HiResBoundingBox: 0.8133 -96.27461 356.02432 188.5019 
+%%Creator: MetaPost 1.208
+%%CreationDate: 2010.10.13:1354
+%%Pages: 1
+%*Font: cmmi12 11.95517 11.95517 0d:80000000000201010000081011cc
+%*Font: cmr12 11.95517 11.95517 13:800006200002e0014003fbfdec4
+%*Font: cmsy8 7.97011 7.97011 30:8
+%*Font: cmmi8 7.97011 7.97011 52:80003010a
+%%BeginProlog
+%%EndProlog
+%%Page: 1 1
+ 0 0 0 setrgbcolor
+28.67805 25.3576 moveto
+(h) cmmi12 11.95517 fshow
+35.41666 23.5643 moveto
+(tr) cmmi8 7.97011 fshow
+43.02936 25.3576 moveto
+(\() cmr12 11.95517 fshow
+47.58165 25.3576 moveto
+(t) cmmi12 11.95517 fshow
+51.80885 25.3576 moveto
+(\)) cmr12 11.95517 fshow
+ 0 0.70866 dtransform truncate idtransform setlinewidth pop [] 0 setdash
+ 0 setlinejoin 10 setmiterlimit
+newpath 25.67805 19.3688 moveto
+59.36116 19.3688 lineto
+59.36116 37.324 lineto
+25.67805 37.324 lineto
+ closepath stroke
+128.22325 25.3576 moveto
+(a) cmmi12 11.95517 fshow
+134.36815 25.3576 moveto
+(\() cmr12 11.95517 fshow
+138.92055 25.3576 moveto
+(z) cmmi12 11.95517 fshow
+144.89114 25.3576 moveto
+(;) cmmi12 11.95517 fshow
+150.13525 25.3576 moveto
+(t) cmmi12 11.95517 fshow
+154.36246 25.3576 moveto
+(\)) cmr12 11.95517 fshow
+newpath 125.22325 19.3688 moveto
+161.91475 19.3688 lineto
+161.91475 37.324 lineto
+125.22325 37.324 lineto
+ closepath stroke
+192.86496 25.3576 moveto
+(h) cmmi12 11.95517 fshow
+199.60356 23.5643 moveto
+(d) cmmi8 7.97011 fshow
+204.45895 25.3576 moveto
+(\() cmr12 11.95517 fshow
+209.01126 25.3576 moveto
+(z) cmmi12 11.95517 fshow
+214.98186 25.3576 moveto
+(;) cmmi12 11.95517 fshow
+220.22606 25.3576 moveto
+(t) cmmi12 11.95517 fshow
+224.45326 25.3576 moveto
+(\)) cmr12 11.95517 fshow
+newpath 189.86496 19.3688 moveto
+232.00555 19.3688 lineto
+232.00555 37.324 lineto
+189.86496 37.324 lineto
+ closepath stroke
+28.74216 133.08878 moveto
+(h) cmmi12 11.95517 fshow
+35.48076 131.29547 moveto
+(te) cmmi8 7.97011 fshow
+42.96526 133.08878 moveto
+(\() cmr12 11.95517 fshow
+47.51756 133.08878 moveto
+(t) cmmi12 11.95517 fshow
+51.74475 133.08878 moveto
+(\)) cmr12 11.95517 fshow
+newpath 25.74216 127.09996 moveto
+59.29706 127.09996 lineto
+59.29706 145.05518 lineto
+25.74216 145.05518 lineto
+ closepath stroke
+195.58951 133.08879 moveto
+(a) cmmi12 11.95517 fshow
+201.7344 133.08879 moveto
+(\() cmr12 11.95517 fshow
+206.2868 133.08879 moveto
+(z) cmmi12 11.95517 fshow
+212.2574 133.08879 moveto
+(;) cmmi12 11.95517 fshow
+217.50151 133.08879 moveto
+(t) cmmi12 11.95517 fshow
+221.72871 133.08879 moveto
+(\)) cmr12 11.95517 fshow
+newpath 192.58951 127.1 moveto
+229.281 127.1 lineto
+229.281 145.05519 lineto
+192.58951 145.05519 lineto
+ closepath stroke
+125.4987 133.08879 moveto
+(h) cmmi12 11.95517 fshow
+132.2373 131.29549 moveto
+(d) cmmi8 7.97011 fshow
+137.0927 133.08879 moveto
+(\() cmr12 11.95517 fshow
+141.645 133.08879 moveto
+(z) cmmi12 11.95517 fshow
+147.6156 133.08879 moveto
+(;) cmmi12 11.95517 fshow
+152.8598 133.08879 moveto
+(t) cmmi12 11.95517 fshow
+157.087 133.08879 moveto
+(\)) cmr12 11.95517 fshow
+newpath 122.4987 127.1 moveto
+164.6393 127.1 lineto
+164.6393 145.05519 lineto
+122.4987 145.05519 lineto
+ closepath stroke
+265.98895 79.2232 moveto
+(h) cmmi12 11.95517 fshow
+272.72755 77.4299 moveto
+(r) cmmi8 7.97011 fshow
+277.28226 79.2232 moveto
+(\() cmr12 11.95517 fshow
+281.83455 79.2232 moveto
+(t) cmmi12 11.95517 fshow
+286.06175 79.2232 moveto
+(\)) cmr12 11.95517 fshow
+newpath 262.98895 73.23439 moveto
+293.61407 73.23439 lineto
+293.61407 91.1896 lineto
+262.98895 91.1896 lineto
+ closepath stroke
+124.10115 -82.37358 moveto
+(h) cmmi12 11.95517 fshow
+130.83975 -84.16689 moveto
+(d) cmmi8 7.97011 fshow
+135.69514 -82.37358 moveto
+(\() cmr12 11.95517 fshow
+140.24745 -82.37358 moveto
+(z) cmmi12 11.95517 fshow
+146.21805 -78.03519 moveto
+(0) cmsy8 7.97011 fshow
+149.01315 -82.37358 moveto
+(;) cmmi12 11.95517 fshow
+154.25735 -82.37358 moveto
+(t) cmmi12 11.95517 fshow
+158.48445 -82.37358 moveto
+(\)) cmr12 11.95517 fshow
+newpath 121.10115 -88.3624 moveto
+166.03685 -88.3624 lineto
+166.03685 -70.40718 lineto
+121.10115 -70.40718 lineto
+ closepath stroke
+194.19194 -82.37358 moveto
+(a) cmmi12 11.95517 fshow
+200.33684 -82.37358 moveto
+(\() cmr12 11.95517 fshow
+204.88924 -82.37358 moveto
+(z) cmmi12 11.95517 fshow
+210.85983 -78.03519 moveto
+(0) cmsy8 7.97011 fshow
+213.65485 -82.37358 moveto
+(;) cmmi12 11.95517 fshow
+218.89905 -82.37358 moveto
+(t) cmmi12 11.95517 fshow
+223.12624 -82.37358 moveto
+(\)) cmr12 11.95517 fshow
+newpath 191.19194 -88.3624 moveto
+230.67856 -88.3624 lineto
+230.67856 -70.40718 lineto
+191.19194 -70.40718 lineto
+ closepath stroke
+298.14307 -82.37358 moveto
+(h) cmmi12 11.95517 fshow
+304.88167 -84.16689 moveto
+(tr) cmmi8 7.97011 fshow
+312.49437 -82.37358 moveto
+(\() cmr12 11.95517 fshow
+317.04666 -82.37358 moveto
+(t) cmmi12 11.95517 fshow
+321.27386 -82.37358 moveto
+(\)) cmr12 11.95517 fshow
+newpath 295.14307 -88.3624 moveto
+328.82617 -88.3624 lineto
+328.82617 -70.40718 lineto
+295.14307 -70.40718 lineto
+ closepath stroke
+ [3.59999 3.59999 ] 6.94998 setdash 0 setlinecap
+newpath 113.2542 119.91791 moveto
+241.25006 119.91791 lineto
+241.25006 188.14757 lineto
+113.2542 188.14757 lineto
+ closepath stroke
+ [3.59999 3.59999 ] 1.75 setdash
+newpath 113.2542 12.18672 moveto
+241.25006 12.18672 lineto
+241.25006 80.41638 lineto
+113.2542 80.41638 lineto
+ closepath stroke
+ [3.59999 3.59999 ] 6.94998 setdash
+newpath 113.2542 -95.54446 moveto
+241.25005 -95.54446 lineto
+241.25005 -27.31482 lineto
+113.2542 -27.31482 lineto
+ closepath stroke
+182.16011 148.05519 moveto
+(A) cmr12 11.95517 fshow
+190.6103 148.05519 moveto
+(ten) cmr12 11.95517 fshow
+206.54341 148.05519 moveto
+(uaci\023) cmr12 11.95517 fshow
+227.354 148.05519 moveto
+(on) cmr12 11.95517 fshow
+114.79385 40.324 moveto
+(A) cmr12 11.95517 fshow
+123.24405 40.324 moveto
+(ten) cmr12 11.95517 fshow
+139.17715 40.324 moveto
+(uaci\023) cmr12 11.95517 fshow
+159.98775 40.324 moveto
+(on) cmr12 11.95517 fshow
+182.16011 -67.40718 moveto
+(A) cmr12 11.95517 fshow
+190.6103 -67.40718 moveto
+(ten) cmr12 11.95517 fshow
+206.54341 -67.40718 moveto
+(uaci\023) cmr12 11.95517 fshow
+227.354 -67.40718 moveto
+(on) cmr12 11.95517 fshow
+117.47545 148.05519 moveto
+(Difracci\023) cmr12 11.95517 fshow
+157.30624 148.05519 moveto
+(on) cmr12 11.95517 fshow
+184.8417 40.324 moveto
+(Difracci\023) cmr12 11.95517 fshow
+224.6725 40.324 moveto
+(on) cmr12 11.95517 fshow
+117.47545 -67.40718 moveto
+(Difracci\023) cmr12 11.95517 fshow
+157.30624 -67.40718 moveto
+(on) cmr12 11.95517 fshow
+21.92136 148.05518 moveto
+(Emisi\023) cmr12 11.95517 fshow
+50.76155 148.05518 moveto
+(on) cmr12 11.95517 fshow
+16.58865 42.64862 moveto
+(Recep) cmr12 11.95517 fshow
+47.63995 42.64862 moveto
+(ci\023) cmr12 11.95517 fshow
+56.09425 42.64862 moveto
+(on) cmr12 11.95517 fshow
+286.05367 -65.08257 moveto
+(Recep) cmr12 11.95517 fshow
+317.10497 -65.08257 moveto
+(ci\023) cmr12 11.95517 fshow
+325.55927 -65.08257 moveto
+(on) cmr12 11.95517 fshow
+251.49261 96.51422 moveto
+(Disp) cmr12 11.95517 fshow
+275.13011 96.51422 moveto
+(ersi\023) cmr12 11.95517 fshow
+292.75412 96.51422 moveto
+(on) cmr12 11.95517 fshow
+157.61522 168.99919 moveto
+(h) cmmi12 11.95517 fshow
+164.35382 167.20589 moveto
+(m) cmmi8 7.97011 fshow
+172.34242 168.99919 moveto
+(\() cmr12 11.95517 fshow
+176.89471 168.99919 moveto
+(z) cmmi12 11.95517 fshow
+182.86533 168.99919 moveto
+(;) cmmi12 11.95517 fshow
+188.10951 168.99919 moveto
+(t) cmmi12 11.95517 fshow
+192.33672 168.99919 moveto
+(\)) cmr12 11.95517 fshow
+157.61522 61.268 moveto
+(h) cmmi12 11.95517 fshow
+164.35382 59.4747 moveto
+(m) cmmi8 7.97011 fshow
+172.34242 61.268 moveto
+(\() cmr12 11.95517 fshow
+176.89471 61.268 moveto
+(z) cmmi12 11.95517 fshow
+182.86533 61.268 moveto
+(;) cmmi12 11.95517 fshow
+188.10951 61.268 moveto
+(t) cmmi12 11.95517 fshow
+192.33672 61.268 moveto
+(\)) cmr12 11.95517 fshow
+156.21767 -46.46318 moveto
+(h) cmmi12 11.95517 fshow
+162.95627 -48.25648 moveto
+(m) cmmi8 7.97011 fshow
+170.94487 -46.46318 moveto
+(\() cmr12 11.95517 fshow
+175.49716 -46.46318 moveto
+(z) cmmi12 11.95517 fshow
+181.46777 -42.12479 moveto
+(0) cmsy8 7.97011 fshow
+184.26286 -46.46318 moveto
+(;) cmmi12 11.95517 fshow
+189.50706 -46.46318 moveto
+(t) cmmi12 11.95517 fshow
+193.73416 -46.46318 moveto
+(\)) cmr12 11.95517 fshow
+214.09497 97.1784 moveto
+(p) cmmi12 11.95517 fshow
+219.97008 97.1784 moveto
+(\() cmr12 11.95517 fshow
+224.52248 97.1784 moveto
+(z) cmmi12 11.95517 fshow
+230.49307 97.1784 moveto
+(;) cmmi12 11.95517 fshow
+235.73717 97.1784 moveto
+(t) cmmi12 11.95517 fshow
+239.96437 97.1784 moveto
+(\)) cmr12 11.95517 fshow
+67.63412 16.38008 moveto
+(p) cmmi12 11.95517 fshow
+73.50923 14.58678 moveto
+(R) cmmi8 7.97011 fshow
+80.43472 16.38008 moveto
+(\() cmr12 11.95517 fshow
+84.98712 16.38008 moveto
+(z) cmmi12 11.95517 fshow
+90.95772 16.38008 moveto
+(;) cmmi12 11.95517 fshow
+96.20183 16.38008 moveto
+(t) cmmi12 11.95517 fshow
+100.42903 16.38008 moveto
+(\)) cmr12 11.95517 fshow
+76.5655 142.06645 moveto
+(v) cmmi12 11.95517 fshow
+82.6537 142.06645 moveto
+(\() cmr12 11.95517 fshow
+87.20601 142.06645 moveto
+(t) cmmi12 11.95517 fshow
+91.43321 142.06645 moveto
+(\)) cmr12 11.95517 fshow
+0.8133 122.17653 moveto
+(u) cmmi12 11.95517 fshow
+7.4757 122.17653 moveto
+(\() cmr12 11.95517 fshow
+12.02809 122.17653 moveto
+(t) cmmi12 11.95517 fshow
+16.25519 122.17653 moveto
+(\)) cmr12 11.95517 fshow
+1.27492 14.44536 moveto
+(y) cmmi12 11.95517 fshow
+7.41151 14.44536 moveto
+(\() cmr12 11.95517 fshow
+11.96391 14.44536 moveto
+(t) cmmi12 11.95517 fshow
+16.19102 14.44536 moveto
+(\)) cmr12 11.95517 fshow
+333.76082 -93.28581 moveto
+(y) cmmi12 11.95517 fshow
+339.89742 -88.94742 moveto
+(0) cmsy8 7.97011 fshow
+342.69252 -93.28581 moveto
+(\() cmr12 11.95517 fshow
+347.24481 -93.28581 moveto
+(t) cmmi12 11.95517 fshow
+351.47202 -93.28581 moveto
+(\)) cmr12 11.95517 fshow
+ [] 0 setdash
+newpath 8.83649 136.07758 moveto
+17.52145 136.07758 lineto stroke
+newpath 17.32422 135.09314 moveto
+22.90727 136.07758 lineto
+17.32422 137.06201 lineto
+17.6034 136.07758 lineto
+ closepath
+gsave fill grestore stroke
+newpath 22.84355 28.3464 moveto
+14.2223 28.3464 lineto stroke
+newpath 14.41954 29.33084 moveto
+8.83649 28.3464 lineto
+14.41954 27.36197 lineto
+14.14037 28.3464 lineto
+ closepath
+gsave fill grestore stroke
+newpath 331.66068 -79.38478 moveto
+340.28192 -79.38478 lineto stroke
+newpath 340.08469 -80.36922 moveto
+345.66774 -79.38478 lineto
+340.08469 -78.40034 lineto
+340.36386 -79.38478 lineto
+ closepath
+gsave fill grestore stroke
+newpath 167.47346 136.07759 moveto
+184.36906 136.07759 lineto stroke
+newpath 184.17169 135.09315 moveto
+189.75479 136.07759 lineto
+184.17169 137.06203 lineto
+184.45087 136.07759 lineto
+ closepath
+gsave fill grestore stroke
+newpath 187.03079 28.3464 moveto
+170.1352 28.3464 lineto stroke
+newpath 170.33257 29.33084 moveto
+164.74947 28.3464 lineto
+170.33257 27.36197 lineto
+170.05339 28.3464 lineto
+ closepath
+gsave fill grestore stroke
+newpath 168.87143 -79.38478 moveto
+182.97133 -79.38478 lineto stroke
+newpath 182.77412 -80.3692 moveto
+188.35715 -79.38478 lineto
+182.77412 -78.40036 lineto
+183.05331 -79.38478 lineto
+ closepath
+gsave fill grestore stroke
+ 1 1 1 setrgbcolor
+newpath 62.13249 133.37033 moveto
+119.66472 133.37035 lineto
+119.66472 138.78484 lineto
+119.66472 138.78484 lineto
+62.13249 138.78482 lineto
+ closepath fill
+newpath 122.388 31.05382 moveto
+62.19539 31.05382 lineto
+62.19539 25.63899 lineto
+62.19539 25.63899 lineto
+122.388 25.63899 lineto
+ closepath fill
+newpath 232.11575 133.37035 moveto
+244.61842 133.37035 lineto
+244.61844 82.4973 lineto
+260.15453 82.4973 lineto
+260.15453 87.91179 lineto
+260.15453 87.91179 lineto
+244.61844 87.91179 lineto
+244.61842 138.78484 lineto
+232.11575 138.78484 lineto
+ closepath fill
+newpath 260.15443 81.92667 moveto
+244.61835 81.92667 lineto
+244.61833 31.0536 lineto
+234.84018 31.0536 lineto
+234.84018 25.6392 lineto
+234.84018 25.6392 lineto
+244.61833 25.6392 lineto
+244.61835 76.51227 lineto
+260.15443 76.51227 lineto
+ closepath fill
+newpath 296.4486 79.50471 moveto
+311.98468 79.50471 lineto
+311.98468 7.68391 lineto
+76.2028 -10.27127 lineto
+76.2028 -82.09207 lineto
+118.26662 -82.09207 lineto
+118.26662 -76.67749 lineto
+118.26662 -76.67749 lineto
+76.2028 -76.67749 lineto
+76.2028 -4.85669 lineto
+311.98468 13.0985 lineto
+311.98468 84.9193 lineto
+296.4486 84.9193 lineto
+ closepath fill
+newpath 233.51315 -82.0919 moveto
+292.30809 -82.0919 lineto
+292.30809 -76.67766 lineto
+292.30809 -76.67766 lineto
+233.51315 -76.67766 lineto
+ closepath fill
+ 0 0 0 setrgbcolor
+newpath 62.13245 136.07758 moveto
+114.27895 136.07759 lineto stroke
+newpath 114.08153 135.09314 moveto
+119.66467 136.07759 lineto
+114.08153 137.06204 lineto
+114.36061 136.07759 lineto
+ closepath
+gsave fill grestore stroke
+newpath 122.38805 28.3464 moveto
+67.58133 28.3464 lineto stroke
+newpath 67.77895 29.33092 moveto
+62.19543 28.3464 lineto
+67.77895 27.3619 lineto
+67.49986 28.3464 lineto
+ closepath
+gsave fill grestore stroke
+newpath 232.1157 136.07759 moveto
+244.61838 136.07759 lineto
+244.6184 85.20454 lineto
+254.76866 85.20454 lineto stroke
+newpath 254.57129 84.2201 moveto
+260.15448 85.20454 lineto
+254.57129 86.189 lineto
+254.85037 85.20454 lineto
+ closepath
+gsave fill grestore stroke
+newpath 260.15448 79.21947 moveto
+244.6184 79.21947 lineto
+244.61838 28.3464 lineto
+240.226 28.3464 lineto stroke
+newpath 240.42332 29.33084 moveto
+234.84023 28.3464 lineto
+240.42332 27.36197 lineto
+240.14415 28.3464 lineto
+ closepath
+gsave fill grestore stroke
+newpath 296.44855 82.212 moveto
+311.98463 82.212 lineto
+311.98463 10.3912 lineto
+76.20276 -7.56398 lineto
+76.20276 -79.38478 lineto
+112.88089 -79.38478 lineto stroke
+newpath 112.68333 -80.36925 moveto
+118.26657 -79.38478 lineto
+112.68333 -78.40031 lineto
+112.96242 -79.38478 lineto
+ closepath
+gsave fill grestore stroke
+newpath 233.51315 -79.38478 moveto
+286.92255 -79.38478 lineto stroke
+newpath 286.7252 -80.36919 moveto
+292.30809 -79.38478 lineto
+286.7252 -78.40038 lineto
+287.0043 -79.38478 lineto
+ closepath
+gsave fill grestore stroke
+showpage
+%%EOF
