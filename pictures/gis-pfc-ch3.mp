@@ -25,6 +25,7 @@ linecap := butt;
 
 
 % ==================================================================
+% señal que entra al osciloscopio
 beginfig(2);
 numeric a[], i, j, k, pi;
 picture d[];
@@ -107,11 +108,16 @@ p8 = (-a17 + a21, 0)--(a17 - a21, 0);
 drawdblgisarrow p8 shifted (a14, a11 + 19a13/40 + a15 - a21);
 d1 = thelabel(btex Ventana temporal etex, %
 	(a14, a11 + 19a13/40 + a15 - a21));
-fill bbox d1 withcolor white;
+begingroup
+	interim bboxmargin := 2u;
+	p9 = bbox d1;
+endgroup;
+fill p9 withcolor white;
 draw d1;
 a22 = wi/2 + a08 - a03 - a05;
 a23 = wi/2 + a09 - a03 - a05;
 a24 = wi/2 + a09 - a05;
+a25 = wi/2 + a03 + a08 - a05;
 z04 = 1/2[(a14, a11 - a12), (a24, a11)];
 d2 = thelabel(btex \begin{tabular}{c} Corte\\central %
 	\end{tabular} etex, z04);
@@ -121,6 +127,7 @@ label.ulft(btex $p_0$ etex, (a22, a11));
 label.llft(btex $p_1$ etex, (a23, a11));
 label.ulft(btex $p_2$ etex, (a14, a11));
 label.llft(btex $p_3$ etex, (a24, a11));
+label.lrt(btex $p_4$ etex, (a25, a11));
 
 endfig;
 % ==================================================================
@@ -128,6 +135,7 @@ endfig;
 
 
 % ==================================================================
+% ventana del osciloscopio (modo disparado de funcionamiento)
 beginfig(3);
 numeric a[], i, j, k, pi;
 picture d[];
@@ -178,6 +186,7 @@ endfig;
 
 
 % ==================================================================
+% señal que entra al osciloscopio II
 beginfig(4);
 numeric a[], b[][], i, j, k, pi;
 picture d[], e[][];
@@ -264,6 +273,7 @@ endfig;
 
 
 % ==================================================================
+% ventana del osciloscopio (modo continuo de funcionamiento)
 beginfig(5);
 numeric a[], i, j, k, pi;
 picture d[];
@@ -304,12 +314,15 @@ label(btex $t_2$ etex, (a06, a08 - a07));
 drawgisarrow (-a07, a08)--(wi + a07, a08);
 drawgisarrow (0, a08 - a07)--(0, he02/2 + y02/2 + 2a07);
 a10 = 2u;
-for i = (a05 - x02/2 - 3a10) step a10 until (a05 - x02/2 - a10) :
-	fill fullcircle scaled 0.5u shifted (i, he02/2);
-endfor
-for i = (x02/2 + a06 + a10) step a10 until (x02/2 + a06 + 3a10) :
-	fill fullcircle scaled 0.5u shifted (i, he02/2);
-endfor
+pickup l3;
+linejoin := rounded;
+linecap := rounded;
+draw (a05 - x02/2 - 7a10/2, he02/2)--(a05 - x02/2 - a10/2, he02/2) %
+	dashed withdots;
+draw (x02/2 + a06 + a10/2, he02/2)--(x02/2 + a06 + 7a10/2, he02/2) %
+	dashed withdots;
+linejoin := mitered;
+linecap := butt;
 
 % ------------------------------------------------------------------
 % razón de compresión y razón de escalado
@@ -350,6 +363,7 @@ endfig;
 
 
 % ==================================================================
+% ventana del osciloscopio (modo continuo de funcionamiento) II
 beginfig(6);
 numeric a[], i, j, k, pi;
 picture d[];
@@ -390,12 +404,15 @@ label(btex $t_6$ etex, (a06, a08 - a07));
 drawgisarrow (-a07, a08)--(wi + a07, a08);
 drawgisarrow (0, a08 - a07)--(0, he02/2 + y02/2 + 2a07);
 a10 = 2u;
-for i = (a05 - x02/2 - 3a10) step a10 until (a05 - x02/2 - a10) :
-	fill fullcircle scaled 0.5u shifted (i, he02/2);
-endfor
-for i = (x02/2 + a06 + a10) step a10 until (x02/2 + a06 + 3a10) :
-	fill fullcircle scaled 0.5u shifted (i, he02/2);
-endfor
+pickup l3;
+linejoin := rounded;
+linecap := rounded;
+draw (a05 - x02/2 - 7a10/2, he02/2)--(a05 - x02/2 - a10/2, he02/2) %
+	dashed withdots;
+draw (x02/2 + a06 + a10/2, he02/2)--(x02/2 + a06 + 7a10/2, he02/2) %
+	dashed withdots;
+linejoin := mitered;
+linecap := butt;
 
 % ------------------------------------------------------------------
 % razón de compresión y razón de escalado
@@ -435,6 +452,7 @@ endfig;
 
 
 % ==================================================================
+% funcionamiento de la data acquisition toolbox con matlab
 beginfig(7);
 numeric a[], i, j, k;
 picture d[];
@@ -588,6 +606,7 @@ endfig;
 
 
 % ==================================================================
+% objetos dispositivo y su función con respecto al hardware
 beginfig(8);
 numeric a[], i, j, k;
 picture d[];

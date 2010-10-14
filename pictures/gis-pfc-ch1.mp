@@ -26,6 +26,116 @@ linecap := butt;
 
 
 % ==================================================================
+% esquema con las distintas unidades funcionales del sistema de
+% medida digital
+beginfig(1);
+numeric a[], i, j, k, x[], y[];
+picture d[];
+pen l[];
+path p[], q[][];
+transform t[][];
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+d1 = nullpicture;
+pickup l1;
+
+% ------------------------------------------------------------------
+% constantes
+a00 = 2u;		a01 = a00;		a02 = 4a00;
+a03 = 3/2;		a04 = (3/2)**2;		a05 = 12/10;
+a06 = 1 - a05;		a08 = a04*4/3;
+d0 = thelabel(btex \begin{tabular}{c}Acondicionador\\ %
+	Acondicionador \end{tabular} etex, (0, 0));
+begingroup
+	interim bboxmargin := a01;
+	p0 = bbox d0;
+	interim bboxmargin := a01*a05;
+	p1 = bbox d0;
+endgroup;
+
+(whatever, a07) = urcorner d0 shifted (0, a02);
+z00 = (wi/2, a07);			% centro bajo
+z01 = a03*(urcorner d0 - ulcorner d0);	% desplazamiento horizontal
+z02 = a04*(ulcorner d0 - llcorner d0);	% desplazamiento vertical
+z03 = a08*z02/a04;			% desplazamiento vertical II
+
+% ------------------------------------------------------------------
+% cajas
+for i = 0 upto 3 :
+	t[0][i] = identity shifted (wi/2, wi/2 - 3y02/2) %
+		shifted (-z01) shifted (i*z02);
+	draw p0 transformed t[0][i];
+endfor
+for i = 0 upto 2 :
+	t[1][i] = identity shifted (wi/2, wi/2 - y03) %
+		shifted (z01) shifted (i*z03);
+	draw p0 transformed t[1][i];
+
+endfor
+draw p0 shifted z00;
+draw p0 shifted z00 shifted (0, wi - 2a07);
+
+% ------------------------------------------------------------------
+% flechas
+for i = 0 upto 2 :
+	drawgisarrow (0, 0) transformed t[0][i]-- %
+		(0, 0) transformed t[0][i + 1] %
+		cutbefore p0 transformed t[0][i] %
+		cutafter p1 transformed t[0][i + 1] %
+		shifted (0, a01*a06);
+endfor
+for i = 0 upto 1 :
+	drawgisarrow (0, 0) transformed t[1][2 - i]-- %
+		(0, 0) transformed t[1][1 - i] %
+		cutbefore p0 transformed t[1][2 - i] %
+		cutafter p1 transformed t[1][1 - i] %
+		shifted (0, -a01*a06);
+endfor
+drawgisarrow z00--z00 shifted -z01--(0, 0) transformed t[0][0] %
+	cutbefore p0 shifted z00 cutafter p1 transformed t[0][0] %
+	shifted (0, a01*a06);
+drawgisarrow (0, 0) transformed t[1][0]--z00 shifted z01--z00 %
+	cutbefore p0 transformed t[1][0] cutafter p1 shifted z00 %
+	shifted (-a01*a06, 0);
+a09 = 2u;
+z04 = (0, 0) transformed t[0][3] shifted z01 shifted (-a09, 0);
+z05 = (0, 0) transformed t[1][2] shifted -z01 shifted (a09, 0);
+drawgisarrow (0, 0) transformed t[0][3]--z04--z00 %
+	shifted (-a09, wi - 2a07) cutbefore p0 transformed t[0][3] %
+	cutafter p1 shifted z00 shifted (0, wi + a01*a06 - 2a07);
+drawgisarrow z00 shifted (a09, wi - 2a07)--z05--(0, 0) %
+	transformed t[1][2] cutbefore p0 shifted z00 %
+	shifted (0, wi - 2a07) cutafter p1 transformed t[1][2] %
+	shifted (a01*a06, 0);
+
+% ------------------------------------------------------------------
+% etiquetas
+label(btex Medio etex, z00);
+label(btex Supervisor etex, z00 shifted (0, wi - 2a07));
+label(btex Sensor etex, (0, 0) transformed t[0][0]);
+label(btex Acondicionador etex, (0, 0) transformed t[0][1]);
+label(btex Adquisici\'on etex, (0, 0) transformed t[0][2]);
+label(btex Presentaci\'on etex, (0, 0) transformed t[0][3]);
+label(btex Actuador etex, (0, 0) transformed t[1][0]);
+label(btex Acondicionador etex, (0, 0) transformed t[1][1]);
+label(btex \begin{tabular}{c} Control\\Manual \end{tabular} etex, %
+	(0, 0) transformed t[1][2]);
+% ------------------------------------------------------------------
+% marco
+pickup l2;
+% draw (wi/2, 0)--(wi/2, wi) withcolor blue dashed evenly;
+% draw (0, wi/2)--(wi, wi/2) withcolor blue dashed evenly;
+% draw (0, 0)--(wi, 0)--(wi, wi)--(0, wi)--cycle;
+
+endfig;
+% ==================================================================
+
+
+
+% ==================================================================
+% esquema del circuito acondicionador en la sección de emisión
 beginfig(2);
 numeric a[], i, j, k, x[], y[];
 picture d[];
@@ -196,6 +306,8 @@ endfig;
 
 
 % ==================================================================
+% señal generada por el circuito acondicionador de la sección de
+% emisión
 beginfig(3);
 numeric a[], b[], i, j, k;
 picture d[];
@@ -245,8 +357,12 @@ label.rt(btex $T_H$ etex, (15wi/26, -a03));
 
 % ------------------------------------------------------------------
 % puntos suspensivos
+linejoin := rounded;
+linecap := rounded;
 draw (wi/24, a05/2)--(wi/8, a05/2) dashed withdots scaled 1.5;
 draw (a04 + 41wi/48, a05/2)--(95wi/96, a05/2) dashed withdots scaled 1.5;
+linejoin := mitered;
+linecap := butt;
 
 endfig;
 % ==================================================================
@@ -254,6 +370,7 @@ endfig;
 
 
 % ==================================================================
+% pulso acústico generado por el transductor
 beginfig(4);
 numeric a[], b[][], i, j, k;
 picture d[];

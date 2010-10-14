@@ -26,6 +26,7 @@ linecap := butt;
 
 
 % ==================================================================
+% campo acústico generado por un transductor
 beginfig(1);
 numeric a[], i, j, k, x[], y[];
 picture d[];
@@ -119,6 +120,7 @@ endfig;
 
 
 % ==================================================================
+% técnica de transmisión
 beginfig(2);
 numeric a[], i, j, k;
 picture d[];
@@ -212,6 +214,7 @@ endfig;
 
 
 % ==================================================================
+% técnica de pulso-eco
 beginfig(3);
 numeric a[], i, j, k;
 picture d[];
@@ -292,6 +295,7 @@ endfig;
 
 
 % ==================================================================
+% esquema para el cálculo de la respuesta al impulso del sistema
 beginfig(4);
 numeric a[];
 pen l[];
@@ -439,6 +443,7 @@ endfig;
 
 
 % ==================================================================
+% modelo de matriz de pequeños reflectores
 beginfig(5);
 numeric a[], i, j, k;
 picture d[];
@@ -531,6 +536,7 @@ endfig;
 
 
 % ==================================================================
+% banco de filtros empleado en las técnicas de SSP
 beginfig(7);
 numeric a[], b[], i, j, k;
 picture d[];
@@ -601,8 +607,12 @@ fill bbox d3 withcolor white;	draw d3;
 a12 = a08/5;
 z14 = 1/2[(x02 + a08, a07/2), (x03, a07/2)];
 pickup l3;
+linejoin := rounded;
+linecap := rounded;
 draw z14 shifted (-a12, 0)--z14 shifted (a12, 0) dashed %
 	withdots scaled 1.5;
+linejoin := mitered;
+linecap := butt;
 pickup l1;
 
 % ------------------------------------------------------------------

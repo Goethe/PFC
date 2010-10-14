@@ -25,6 +25,7 @@ linecap := butt;
 
 
 % ==================================================================
+% ejemplo de modos de terminación de la kpci-3108
 beginfig(2);
 numeric a[];
 picture d[];
@@ -126,7 +127,11 @@ for i = a00, a01, a02:
 endfor
 for i = (3a09/2 - a14), (a19 + a14 - a09):
 	draw p4 shifted (i, 0);
+	linejoin := rounded;
+	linecap := rounded;
 	draw p5 shifted (i, 0) dashed withdots scaled 2;
+	linejoin := mitered;
+	linecap := butt;
 	draw d6 shifted (i, 0);
 endfor
 
@@ -200,14 +205,13 @@ endfig;
 
 
 % ==================================================================
+% conector etiquetado como analog
 beginfig(3);
 numeric a[], b[][];
 picture d[], e[][];
 pen l[];
 path p[], q[][];
 transform t[];
-ahlength := 4u;	ahangle := 20;
-ahinset := 5/100;
 bboxmargin := 4u;
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
@@ -292,14 +296,13 @@ endfig;
 
 
 % ==================================================================
+% conector etiquetado como digital
 beginfig(4);
 numeric a[], b[][];
 picture d[], e[][];
 pen l[];
 path p[], q[][];
 transform t[];
-ahlength := 4u;	ahangle := 20;
-ahinset := 5/100;
 bboxmargin := 4u;
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;

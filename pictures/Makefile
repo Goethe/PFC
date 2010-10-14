@@ -1,8 +1,10 @@
 LIB = gis-pfc.mp
-CH1 = gis-pfc-ch1-?.mps
-CH2 = gis-pfc-ch2-?.mps
-CH3 = gis-pfc-ch3-?.mps
-CH5 = gis-pfc-ch5-??.mps
+CH1 = gis-pfc-ch1-01.mps gis-pfc-ch1-02.mps gis-pfc-ch1-03.mps gis-pfc-ch1-04.mps
+CH2 = gis-pfc-ch2-02.mps gis-pfc-ch2-03.mps gis-pfc-ch2-04.mps
+CH3 = gis-pfc-ch3-02.mps gis-pfc-ch3-03.mps gis-pfc-ch3-04.mps gis-pfc-ch3-05.mps \
+      gis-pfc-ch3-06.mps gis-pfc-ch3-07.mps gis-pfc-ch3-08.mps
+CH5 = gis-pfc-ch5-01.mps gis-pfc-ch5-02.mps gis-pfc-ch5-03.mps gis-pfc-ch5-04.mps \
+      gis-pfc-ch5-05.mps gis-pfc-ch5-07.mps
 CH1SRC = gis-pfc-ch1.mp
 CH2SRC = gis-pfc-ch2.mp
 CH3SRC = gis-pfc-ch3.mp
