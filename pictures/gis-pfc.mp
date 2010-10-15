@@ -1,4 +1,4 @@
-string base_name, base_version;	base_name="gis-pfc"; base_version="0.1";
+string base_name, base_version;	base_name="gis-pfc"; base_version="0.5";
 message "Preloading the gis-pfc file, version "&base_version;
 
 
@@ -31,7 +31,7 @@ n2 = pencircle scaled 0.35u;
 n3 = pencircle scaled 0.5u;
 f0 = nullpicture;
 
-% ------------------------------------------------------------------
+% ··································································
 % constantes: radio conectores, distancia entre estos y longitud de
 % la patilla
 c00 = 3/2;		c01 = 5;		c02 = c01 + 2c00;
@@ -52,7 +52,7 @@ addto f0 contour r0 shifted z01 scaled escala %
 addto f0 doublepath r0 shifted z01 scaled escala %
 	shifted desplazamiento withpen n1;
 
-% ------------------------------------------------------------------
+% ··································································
 % cierro la definición
 (f0)
 endgroup
@@ -74,7 +74,7 @@ n2 = pencircle scaled 0.35u;
 n3 = pencircle scaled 0.5u;
 f0 = nullpicture;
 
-% ------------------------------------------------------------------
+% ··································································
 % constantes: radio conectores, distancia entre estos y longitud de
 % la patilla
 c00 = 3/2;		c01 = 5;		c02 = c01 + 2c00;
@@ -94,7 +94,7 @@ addto f0 contour r0 shifted z01 scaled escala %
 addto f0 doublepath r0 shifted z01 scaled escala %
 	shifted desplazamiento withpen n1;
 
-% ------------------------------------------------------------------
+% ··································································
 % cierro la definición
 (f0)
 endgroup
@@ -116,7 +116,7 @@ n2 = pencircle scaled 0.35u;
 n3 = pencircle scaled 0.5u;
 f0 = nullpicture;
 
-% ------------------------------------------------------------------
+% ··································································
 % constantes: radio conectores, distancia entre estos y longitud de
 % la patilla
 c00 = 3/2;			c01 = 5;
@@ -143,7 +143,7 @@ addto f0 contour r0 shifted z02 scaled escala %
 addto f0 doublepath r0 shifted z02 scaled escala %
 	shifted desplazamiento withpen n1;
 
-% ------------------------------------------------------------------
+% ··································································
 % cierro la definición
 (f0)
 endgroup
@@ -164,7 +164,7 @@ n2 = pencircle scaled 0.35u;
 n3 = pencircle scaled 0.5u;
 f0 = nullpicture;
 
-% ------------------------------------------------------------------
+% ··································································
 % estoy contento con el resultado pero podría haber sido mucho más
 % fácil definirlo
 c0 = 1/2;			c1 = 1;
@@ -191,7 +191,7 @@ addto f0 doublepath r5 scaled escala shifted desplazamiento %
 addto f0 doublepath r6 scaled escala shifted desplazamiento %
 	withpen n2 withcolor white;
 
-% ------------------------------------------------------------------
+% ··································································
 % cierro la definición
 (f0)
 endgroup
@@ -212,7 +212,7 @@ n2 = pencircle scaled 0.35u;
 n3 = pencircle scaled 0.5u;
 f0 = nullpicture;
 
-% ------------------------------------------------------------------
+% ··································································
 % constantes
 c00 = escala;			c01 = 5c00/2;
 c02 = 3c00;			c03 = 2c00 + c02 + 6c00;
@@ -222,7 +222,7 @@ z00 = (0, 0);			z01 = (c06, 0) rotated 30;
 z02 = (c07, 0) rotated 210;	z03 = (c07, 0) rotated 150;
 z04 = (c06, 0) rotated 330;
 
-% ------------------------------------------------------------------
+% ··································································
 % cubierta
 r0 = (-c03/2, -c05/2){down}.. %
 	{dir 30}z01 shifted (-c03/2, -c05/2 - c06)-- %
@@ -233,7 +233,7 @@ r0 = (-c03/2, -c05/2){down}.. %
 	(-c03/2, c05/2)--cycle;
 addto f0 doublepath r0 rotated 90 shifted desplazamiento withpen n2;
 
-% ------------------------------------------------------------------
+% ··································································
 % pines y posiciones
 f1 = pin(c00, z00);
 for i = 0 upto 17 :
@@ -244,7 +244,7 @@ for i = 0 upto 17 :
 		shifted desplazamiento;
 endfor
 
-% ------------------------------------------------------------------
+% ··································································
 % etiquetas internas
 label.bot(btex 1 etex, (d[0][0], -c00 - c02/2) %
 	shifted desplazamiento);
@@ -319,7 +319,7 @@ label.top(btex 35 etex, (d[0][16], c00 + c02/2) %
 label.top(btex 36 etex, (d[0][17], c00 + c02/2) %
 	shifted desplazamiento);
 
-% ------------------------------------------------------------------
+% ··································································
 % cierro la definición
 (f0)
 endgroup
@@ -340,7 +340,7 @@ n2 = pencircle scaled 0.35u;
 n3 = pencircle scaled 0.5u;
 f0 = nullpicture;
 
-% ------------------------------------------------------------------
+% ··································································
 % constantes
 c00 = escala;			c01 = 5c00/2;
 c02 = 3c00;			c03 = 2c00 + c02 + 6c00;
@@ -350,7 +350,7 @@ z00 = (0, 0);			z01 = (c06, 0) rotated 30;
 z02 = (c07, 0) rotated 210;	z03 = (c07, 0) rotated 150;
 z04 = (c06, 0) rotated 330;
 
-% ------------------------------------------------------------------
+% ··································································
 % cubierta
 r0 = (-c03/2, -c05/2){down}.. %
 	{dir 30}z01 shifted (-c03/2, -c05/2 - c06)-- %
@@ -361,7 +361,7 @@ r0 = (-c03/2, -c05/2){down}.. %
 	(-c03/2, c05/2)--cycle;
 addto f0 doublepath r0 shifted desplazamiento withpen n2;
 
-% ------------------------------------------------------------------
+% ··································································
 % pines y posiciones
 f1 = pin(c00, z00);
 for i = 0 upto 17 :
@@ -372,7 +372,7 @@ for i = 0 upto 17 :
 		shifted desplazamiento;
 endfor
 
-% ------------------------------------------------------------------
+% ··································································
 % etiquetas internas
 label.lft(btex 1 etex, (-c00 - c02/2, d[0][0]) %
 	shifted desplazamiento);
@@ -447,7 +447,7 @@ label.rt(btex 35 etex, (c00 + c02/2, d[0][16]) %
 label.rt(btex 36 etex, (c00 + c02/2, d[0][17]) %
 	shifted desplazamiento);
 
-% ------------------------------------------------------------------
+% ··································································
 % cierro la definición
 (f0)
 endgroup
@@ -463,7 +463,7 @@ begingroup
 save c,d,r;
 numeric c[], d[][]; path r[];
 
-% ------------------------------------------------------------------
+% ··································································
 % primer periodo de una función diente de sierra con Th = 2/3, Tl =
 % 1/3 (T = 1).
 c0 = 1/100;			c1 = 1 - c0;	% Vtl y Vth
@@ -490,7 +490,7 @@ r0 = (d[0][0], d[3][0]) for i = 1 upto c8 :
 		(d[0][i], d[3][i]).. endfor %
 	(d[0][c5], d[3][c5]);
 
-% ------------------------------------------------------------------
+% ··································································
 % cierro la definición
 (r0)
 endgroup
@@ -515,7 +515,7 @@ f1 = nullpicture;
 f2 = nullpicture;
 f3 = nullpicture;
 
-% ------------------------------------------------------------------
+% ··································································
 % constantes necesarias para formar la cuadrícula
 c0 = 1;				c1 = 5c00; % cuadro pequeño/grande
 c2 = c0/2;			c3 = 10c1; % tick/ancho total
@@ -536,7 +536,7 @@ for i = -c4/2, (c4/2 - c2) :
 	endfor
 endfor
 
-% ------------------------------------------------------------------
+% ··································································
 % cuadrícula punteada
 for i = (c0 - c4/2) step c0 until -c0 :
 	addto f0 doublepath r1 shifted (0, i);
@@ -585,7 +585,7 @@ endfor
 % punto central
 addto f1 contour makepath(n1 scaled (1/escala)) shifted (0, 0);
 
-% ------------------------------------------------------------------
+% ··································································
 % marcos o ventanas externas
 c5 = 3c0;			c6 = c3/2 + c5;
 c7 = c4/2 + c5;			c8 = c6 + c0/2;
@@ -597,7 +597,7 @@ r3 = (-c6, -c9)--(c6, -c9){right}..{up}(c8, -c7)--(c8, c7){up}.. %
 addto f2 contour r3;
 addto f2 contour r2 withcolor white;
 
-% ------------------------------------------------------------------
+% ··································································
 % cierro la definición
 addto f3 also f2 scaled escala shifted desplazamiento withpen n0;
 addto f3 also f0 scaled escala shifted desplazamiento withpen n1;
@@ -628,7 +628,7 @@ f4 = nullpicture;
 f5 = nullpicture;
 f6 = nullpicture;
 
-% ------------------------------------------------------------------
+% ··································································
 % agarre
 % dimensiones de las barras
 c00 = v;		c01 = v;
@@ -647,7 +647,7 @@ for i = -1 upto c03/c04 + 1:
 endfor
 clip f0 to r3;
 
-% ------------------------------------------------------------------
+% ··································································
 % contorno del transistor
 % dimensiones del transistor
 c06 = v;				c07 = 4c02;
@@ -662,12 +662,13 @@ r4 = z08{down}..z09..{dir 340}z10--z11--z12{up}.. %
 		{up}z18--z17--z16{dir 200}..z15..z14{down}--cycle;
 r5 = z12..z13--z19..z18--cycle;
 
-% ------------------------------------------------------------------
+% ··································································
 % tornillo
 % dimensiones e inclinación de las barras
 c08 = 8u;	c09 = 75;
 r6 = (-c08/2, 0)--(c08/2, 0);	r6 := r6 rotated c09;
-% dimensiones del tornillo (alto, ancho, separación entre barras y offset)
+% dimensiones del tornillo (alto, ancho, separación entre barras y
+% offset)
 c10 = c08/3;	c11 = 2.5u;	c12 = 1.25u;	c13 = c11/5;
 for i = 0 upto c11/c12:
 	addto f1 doublepath r6 shifted (i*c12 - c11/2, 0);
@@ -685,7 +686,7 @@ r7 = z20.. %
 	z23--cycle;
 clip f1 to r7;
 
-% ------------------------------------------------------------------
+% ··································································
 % transductor completo
 f0 := f0 shifted (x10 + (x11 - x10)/2, 0);
 f1 := f1 shifted (-c07/2 - c11/20, 0);
@@ -783,86 +784,5 @@ addto f0 doublepath (0, -1/2)--(1/2, -1/2 - c0)-- %
 (f0)
 endgroup
 
-enddef;
-% ==================================================================
-
-
-
-% ==================================================================
-% redefino la forma en que se dibujan las flechas
-newinternal ahinset;
-ahinset := 0; % The arrowhead's inset must have a value between 0 and 1
-
-
-
-vardef arrowhead expr p =
-	save q,e,i,qq,pp; path i,q; pair e,qq[];
-	numeric pp;
-	e = point length p of p;
-	q = gobble(p shifted -e %
-		cutafter makepath(pencircle scaled 2ahlength))
-		cuttings;
-	qq0 = point 0 of (q rotated .5ahangle);
-	qq1 = point 0 of (q rotated -.5ahangle);
-	(pp, whatever) = q intersectiontimes (qq0--qq1);
-	i = subpath (pp, length q) of q;
-	qq2 = point (arctime (ahinset*arclength i) of i) of i;
-	(q rotated .5ahangle & reverse q rotated -.5ahangle -- %
-		qq2 -- cycle)  shifted e
-enddef;
-
-vardef arpth expr p =
-	save q,e; path q[]; pair e;
-	e = point length p of p;
-	q0 = gobble(p shifted -e cutbefore makepath %
-		(pencircle scaled (2ahlength*(1 - ahinset))))
-		cuttings;
-	q1 = q0 shifted e;
-	(q1)
-enddef;
-
-vardef darpth expr p =
-	save q,e; path q[]; pair e[];
-	e0 = point 0 of p;
-	q0 = gobble(p shifted -e0 cutafter makepath %
-		(pencircle scaled (2ahlength*(1 - ahinset))))
-		cuttings;
-	q1 = q0 shifted e0;
-	e1 = point length q1 of q1;
-	q2 = gobble(q1 shifted -e1 cutbefore makepath %
-		(pencircle scaled (2ahlength*(1 - ahinset))))
-		cuttings;
-	q3 = q2 shifted e1;
-	(q3)
-enddef;
-
-def drawemptyarrow expr p = _apth:=p; _finearr enddef;
-def drawdblemptyarrow expr p = _apth:=p; _findearr enddef;
-def drawgisarrow expr p = _apth:=p; _fingearr enddef;
-def drawdblgisarrow expr p = _apth:=p; _fingdearr enddef;
-
-def _finearr text t =
-	draw _apth t;
-	unfilldraw arrowhead _apth  t;
-	draw arrowhead _apth  t;
-enddef;
-
-def _findearr text t =
-	draw _apth t;
-	unfilldraw arrowhead _apth withpen currentpen  t;
-	draw arrowhead _apth withpen currentpen  t;
-	unfilldraw arrowhead  reverse _apth  withpen currentpen  t;
-	draw arrowhead  reverse _apth  withpen currentpen  t
-enddef;
-
-def _fingearr text t =
-	draw arpth _apth t;
-	filldraw arrowhead _apth withpen currentpen  t
-enddef;
-
-def _fingdearr text t =
-	draw darpth _apth t;
-	filldraw arrowhead _apth withpen currentpen  t;
-	filldraw arrowhead  reverse _apth  withpen currentpen  t
 enddef;
 % ==================================================================

@@ -12,6 +12,7 @@ u := 1mm;
 v := 10mm;
 
 input boxes
+input gis-pfc-arr
 input gis-pfc
 
 wi = 12v;
@@ -21,6 +22,100 @@ ahlength := 2u;	ahangle := 20;
 ahinset := 5/100;
 linejoin := mitered;
 linecap := butt;
+
+
+
+% ==================================================================
+% esquema que represental los distintos elementos funcionales que
+% comprende el subsistema de adquisición
+beginfig(1);
+numeric a[], i, j, k, x[], y[];
+picture d[];
+pen l[];
+path p[], q[][];
+transform t[][];
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+d1 = nullpicture;
+pickup l1;
+
+% ··································································
+% constantes
+a00 = 2u;		a01 = a00;		a02 = 4a00;
+a03 = 3/2;		a04 = (3/2)**2;		a05 = 12/10;
+a06 = 1 - a05;		a08 = a04*4/3;
+d0 = thelabel(btex \begin{tabular}{c}Acondicionador\\ %
+	Acondicionador \end{tabular} etex, (0, 0));
+begingroup
+	interim bboxmargin := a01;
+	p0 = bbox d0;
+	interim bboxmargin := a01*a05;
+	p1 = bbox d0;
+endgroup;
+
+(whatever, 2a07) = urcorner p0 - lrcorner p0;
+z00 = (wi/2, a07);			% centro bajo
+z01 = a03*(urcorner d0 - ulcorner d0);	% desplazamiento horizontal
+z02 = a04*(ulcorner d0 - llcorner d0);	% desplazamiento vertical
+z03 = a08*z02/a04;			% desplazamiento vertical II
+z04 = z00 shifted (0, wi - 2a07);
+z05 = (0, a01*a06);			z06 = (y05, 0);
+
+% ··································································
+% cajas y variables auxiliares
+for i = 0 upto 3 :
+	t[0][i] = identity shifted (wi/2, wi/2 - 7y02/4) %
+		shifted -z01 shifted (i*z02);
+	t[1][i] = identity transformed t[0][i] shifted 2z01;
+	z[i + 7] = (0, 0) transformed t[0][i];
+	z[i + 11] = (0, 0) transformed t[1][i];
+	if (i = 1) or (i = 3) : 
+		draw p0 transformed t[0][i] dashed evenly;
+		draw p0 transformed t[1][i] dashed evenly;
+	fi
+endfor
+draw p0 transformed t[0][2];
+z15 = (2u, 0);
+z16 = z10 shifted z01 shifted -z15;
+z17 = z14 shifted -z01 shifted z15;
+
+% ··································································
+% flechas
+for i = 0 upto 2 :
+	drawgisarrow z[i + 7]--z[i + 8] cutbefore p0 %
+		transformed t[0][i] cutafter p1 %
+		transformed t[0][i + 1] shifted z05;
+endfor
+drawgisarrow z10--z16--z04 shifted -z15 cutbefore p0 %
+	transformed t[0][3] cutafter p1 shifted z04 shifted z05 %
+	dashed evenly;
+drawgisarrow z04 shifted z15--z17--z14 cutbefore p0 %
+	shifted z04 cutafter p1 transformed t[1][3] shifted z06 %
+	dashed evenly;
+
+% ··································································
+% etiquetas
+label(btex Acondicionador etex, z08);
+label(btex Adquisici\'on etex, z09);
+label(btex Presentaci\'on etex, z10);
+label(btex Acondicionador etex, z12);
+label(btex Control etex, z14);
+
+% ··································································
+% figura recortada
+d2 = nullpicture;
+addto d2 also currentpicture;
+currentpicture := nullpicture;
+p2 = (0, 0)--(wi, 0)--(wi, he02)--(0, he02)--cycle;
+clip d2 to p2 shifted (-x01/2, y09 - he02/2);
+draw d2 shifted (x01/2, he02/2 - y09);
+pickup l2;
+draw p2;
+
+endfig;
+% ==================================================================
 
 
 
@@ -40,7 +135,7 @@ l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
 pickup l1;
 
-% ------------------------------------------------------------------
+% ··································································
 % constantes
 % alturas
 a00 = 15u/4;		a01 = 3v;
@@ -85,7 +180,7 @@ a16 = a05 + a08;	a17 = a05 + a06/2 + 3a08;
 a18 = a12 - a17;	a19 = a12 - a16;
 a20 = a12 + 2a08;
 
-% ------------------------------------------------------------------
+% ··································································
 % primera parte conmutada
 % dibujo las líneas centrales, los switches y las cajas de señal
 p3 = fullcircle scaled (a13);
@@ -135,7 +230,7 @@ for i = (3a09/2 - a14), (a19 + a14 - a09):
 	draw d6 shifted (i, 0);
 endfor
 
-% ------------------------------------------------------------------
+% ··································································
 % etiquetas
 label(btex 00 Lo/08 Hi etex, z03 shifted (a18, a02));
 label(btex 01 Lo/09 Hi etex, z03 shifted (a18, a01));
@@ -144,7 +239,7 @@ label(btex 00 Hi etex, z03 + z04 shifted (a17, a02));
 label(btex 01 Hi etex, z03 + z04 shifted (a17, a01));
 label(btex 07 Hi etex, z03 + z04 shifted (a17, a00));
 
-% ------------------------------------------------------------------
+% ··································································
 % segunda parte conmutada
 pickup l1;
 a21 = a04 - 2y00;		a22 = a02 - 2y00;
@@ -159,7 +254,7 @@ pickup l2;
 draw p0 shifted (a20, a21);	draw p0 shifted (a20, a22);
 pickup l1;
 
-% ------------------------------------------------------------------
+% ··································································
 % amplificador de instrumentación
 % defininciones
 z06 = 1/2[(a27, a23), (a27, a24)];
@@ -192,7 +287,7 @@ begingroup
 	interim ahlength := 2u; drawgisarrow p10;
 endgroup;
 
-% ------------------------------------------------------------------
+% ··································································
 % etiquetas
 label(btex $+$ etex, ulcorner p9);
 label(btex $-$ etex, llcorner p9);
@@ -220,7 +315,7 @@ l3 = pencircle scaled 0.5u;
 d0 = nullpicture;
 pickup l1;
 
-% ------------------------------------------------------------------
+% ··································································
 % constantes
 a00 = 7u/3;			a01 = 5a00/2;
 a02 = 3a00;			a03 = 2a00 + a02 + 6a00;
@@ -231,17 +326,17 @@ z00 = (0, 0);			z01 = (a06, 0) rotated 30;
 z02 = (a07, 0) rotated 210;	z03 = (a07, 0) rotated 150;
 z04 = (a06, 0) rotated 330;
 
-% ------------------------------------------------------------------
+% ··································································
 % conector
 draw conectorh(a00, z00);
 
-% ------------------------------------------------------------------
+% ··································································
 % posiciones
 for i = 0 upto 17 :
 	b[0][i] =  a01/2 + i*a01 - a05/2;
 endfor
 
-% ------------------------------------------------------------------
+% ··································································
 % etiquetas externas
 e[0][0] = thelabel.lft(btex \textsc{ip5} etex, z00);
 e[0][1] = thelabel.lft(btex \textsc{ip3} etex, z00);
@@ -311,7 +406,7 @@ l3 = pencircle scaled 0.5u;
 d0 = nullpicture;
 pickup l1;
 
-% ------------------------------------------------------------------
+% ··································································
 % constantes
 a00 = 7u/3;			a01 = 5a00/2;
 a02 = 3a00;			a03 = 2a00 + a02 + 6a00;
@@ -322,17 +417,17 @@ z00 = (0, 0);			z01 = (a06, 0) rotated 30;
 z02 = (a07, 0) rotated 210;	z03 = (a07, 0) rotated 150;
 z04 = (a06, 0) rotated 330;
 
-% ------------------------------------------------------------------
+% ··································································
 % conector
 draw conectorh(a00, z00);
 
-% ------------------------------------------------------------------
+% ··································································
 % posiciones
 for i = 0 upto 17 :
 	b[0][i] =  a01/2 + i*a01 - a05/2;
 endfor
 
-% ------------------------------------------------------------------
+% ··································································
 % etiquetas externas
 e[0][0] = thelabel.lft(btex Bit 0 etex, z00);
 e[0][1] = thelabel.lft(btex Bit 1 etex, z00);

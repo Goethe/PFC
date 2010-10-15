@@ -12,6 +12,7 @@ u := 1mm;
 v := 10mm;
 
 input boxes
+input gis-pfc-arr
 input gis-pfc
 
 wi = 12v;
@@ -21,6 +22,98 @@ ahlength := 2u;	ahangle := 20;
 ahinset := 5/100;
 linejoin := mitered;
 linecap := butt;
+
+
+
+% ==================================================================
+% esquema que represental los distintos elementos funcionales que
+% comprende el subsistema de control y presentación
+beginfig(1);
+numeric a[], i, j, k, x[], y[];
+picture d[];
+pen l[];
+path p[], q[][];
+transform t[][];
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+d1 = nullpicture;
+pickup l1;
+
+% ··································································
+% constantes
+a00 = 2u;		a01 = a00;		a02 = 4a00;
+a03 = 3/2;		a04 = (3/2)**2;		a05 = 12/10;
+a06 = 1 - a05;		a08 = a04*4/3;
+d0 = thelabel(btex \begin{tabular}{c}Acondicionador\\ %
+	Acondicionador \end{tabular} etex, (0, 0));
+begingroup
+	interim bboxmargin := a01;
+	p0 = bbox d0;
+	interim bboxmargin := a01*a05;
+	p1 = bbox d0;
+endgroup;
+
+(whatever, 2a07) = urcorner p0 - lrcorner p0;
+z00 = (wi/2, a07);			% centro bajo
+z01 = a03*(urcorner d0 - ulcorner d0);	% desplazamiento horizontal
+z02 = a04*(ulcorner d0 - llcorner d0);	% desplazamiento vertical
+z03 = a08*z02/a04;			% desplazamiento vertical II
+z04 = z00 shifted (0, wi - 2a07);
+z05 = (0, a01*a06);			z06 = (y05, 0);
+
+% ··································································
+% cajas y variables auxiliares
+for i = 0 upto 3 :
+	t[0][i] = identity shifted (wi/2, wi/2 - 7y02/4) %
+		shifted -z01 shifted (i*z02);
+	t[1][i] = identity transformed t[0][i] shifted 2z01;
+	z[i + 7] = (0, 0) transformed t[0][i];
+	z[i + 11] = (0, 0) transformed t[1][i];
+endfor
+draw p0 transformed t[0][2] dashed evenly;
+draw p0 transformed t[0][3];
+draw p0 transformed t[1][3];
+z15 = (2u, 0);
+z16 = z10 shifted z01 shifted -z15;
+z17 = z14 shifted -z01 shifted z15;
+draw p0 shifted z04;
+
+% ··································································
+% flechas
+for i = 1 upto 2 :
+	drawgisarrow z[i + 7]--z[i + 8] cutbefore p0 %
+		transformed t[0][i] cutafter p1 %
+		transformed t[0][i + 1] shifted z05;
+endfor
+drawgisarrow z[14]--z[12] cutbefore p0 transformed t[1][3] %
+	cutafter p1 transformed t[1][1] shifted -z05 dashed evenly;
+drawgisarrow z10--z16--z04 shifted -z15 cutbefore p0 %
+	transformed t[0][3] cutafter p1 shifted z04 shifted z05;
+drawgisarrow z04 shifted z15--z17--z14 cutbefore p0 %
+	shifted z04 cutafter p1 transformed t[1][3] shifted z06;
+
+% ··································································
+% etiquetas
+label(btex Supervisor etex, z04);
+label(btex Adquisici\'on etex, z09);
+label(btex Presentaci\'on etex, z10);
+label(btex Control etex, z14);
+
+% ··································································
+% figura recortada
+d2 = nullpicture;
+addto d2 also currentpicture;
+currentpicture := nullpicture;
+p2 = (0, 0)--(wi, 0)--(wi, he02)--(0, he02)--cycle;
+clip d2 to p2 shifted (0, y10 - he02/2);
+draw d2 shifted (0, he02/2 - y10);
+pickup l2;
+draw p2;
+
+endfig;
+% ==================================================================
 
 
 
@@ -39,20 +132,20 @@ l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
 pickup l1;
 
-% ------------------------------------------------------------------
+% ··································································
 % constantes iniciales (relacionadas con la ventana del
 % osciloscopio)
 a00 = 3u/2;			a01 = 500;
 z00 = (0, 0);			z01 = (50a00, 40a00);
 z02 = (57a00, 47a00);
 
-% ------------------------------------------------------------------
+% ··································································
 % curvas auxiliares para delimitar la imagen de la señal
 a02 = 4wi/5;
 p0 = (-a02/2, -y01/2)--(a02/2, -y01/2)--(a02/2, y01/2)-- %
 	(-a02/2, y01/2)--cycle;
 
-% ------------------------------------------------------------------
+% ··································································
 % señal que entra al osciloscopio
 a03 = 20a00;			a04 = 34a00;
 a05 = 5u;
@@ -68,7 +161,7 @@ a06 = -(2*mlog(50/99))/(3*mlog(99));
 a07 = 2/3 - (mlog(50/99))/(3*mlog(99));
 a08 = a03 * a06;		a09 = a03 * a07;
 
-% ------------------------------------------------------------------
+% ··································································
 % ejes auxiliares
 a10 = 17wi/20;			a11 = he02/2;
 a12 = 3y01/8;			a13 = 19y01/20;
@@ -88,7 +181,7 @@ draw p6 shifted (a14 - a17, a11 + a15) dashed evenly;
 draw p6 shifted (a14 + a17, a11 + a15)cutbefore p4 %
 	shifted (wi/2, a11 - a12) dashed evenly shifted (u, 0);
 
-% ------------------------------------------------------------------
+% ··································································
 % marcas de grafo
 a19 = 3u;			a20 = 5u/2;
 p7 = (0, 0)--(0, a19);
@@ -101,7 +194,7 @@ d0 = thelabel(btex $t_0 + T$ etex, %
 draw d0;
 label(btex $t_1$ etex, (a14 + a17 + a18, a11 - a12 - a20));
 
-% ------------------------------------------------------------------
+% ··································································
 % etiquetas
 a21 = 3u/2;
 p8 = (-a17 + a21, 0)--(a17 - a21, 0);
@@ -128,6 +221,9 @@ label.llft(btex $p_1$ etex, (a23, a11));
 label.ulft(btex $p_2$ etex, (a14, a11));
 label.llft(btex $p_3$ etex, (a24, a11));
 label.lrt(btex $p_4$ etex, (a25, a11));
+pickup pencircle scaled u;
+drawdot (a22, a11);	drawdot (a23, a11);	drawdot (a14, a11);
+drawdot (a24, a11);	drawdot (a25, a11);
 
 endfig;
 % ==================================================================
@@ -149,20 +245,21 @@ l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
 pickup l1;
 
-% ------------------------------------------------------------------
+% ··································································
 % ventana del osciloscopio
 a00 = 3u/2;			a01 = 500;
 z00 = (0, 0);			z01 = (50a00, 40a00);
 z02 = (57a00, 47a00);
 d0 = osciloscopio(a00, z00);
 draw d0 shifted (wi/2, y02/2);
+label.ulft(btex $p_2$ etex, (wi/2, y02/2));
 
-% ------------------------------------------------------------------
+% ··································································
 % curvas auxiliares para delimitar la imagen de la señal
 p0 = (-x01/2, -y01/2)--(x01/2, -y01/2)--(x01/2, y01/2)-- %
 	(-x01/2, y01/2)--cycle;
 
-% ------------------------------------------------------------------
+% ··································································
 % fragmento de señal representado en el osciloscopio
 a02 = 80a00/3;			a03 = 34a00;
 % cortes por cero de la señal
@@ -200,19 +297,19 @@ l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
 pickup l1;
 
-% ------------------------------------------------------------------
+% ··································································
 % constantes iniciales
 a00 = 3u/2;			a01 = 500;
 z00 = (0, 0);			z01 = (50a00, 40a00);
 z02 = (57a00, 47a00);
 
-% ------------------------------------------------------------------
+% ··································································
 % curvas auxiliares para delimitar la imagen de la señal
 a02 = 4wi/5;
 p0 = (-a02/2, -y01/2)--(a02/2, -y01/2)--(a02/2, y01/2)-- %
 	(-a02/2, y01/2)--cycle;
 
-% ------------------------------------------------------------------
+% ··································································
 % señal que entra al osciloscopio
 a03 = 34a00;			a04 = a03/2;
 a05 = 5u;
@@ -228,7 +325,7 @@ a06 = -(2*mlog(50/99))/(3*mlog(99));
 a07 = 2/3 - (mlog(50/99))/(3*mlog(99));
 a08 = a04 * a06;		a09 = a04 * a07;
 
-% ------------------------------------------------------------------
+% ··································································
 % ejes auxiliares
 a10 = 17wi/20;			a11 = he02/2;
 a12 = 3y01/8;			a13 = 19y01/20;
@@ -243,7 +340,7 @@ drawgisarrow p5 shifted (wi/2, a11 - a12);
 drawgisarrow p6 shifted (3*(wi - a10)/4, a11 + a15);
 draw p5 shifted (wi/2, a11) dashed evenly;
 
-% ------------------------------------------------------------------
+% ··································································
 % etiquetas
 a16 = wi/20;			a17 = wi/2 + a16 - a02/2;
 a18 = wi/2 + a02/2 - a16;	a19 = 7;
@@ -287,7 +384,7 @@ l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
 pickup l1;
 
-% ------------------------------------------------------------------
+% ··································································
 % ventanas del osciloscopio
 a00 = 9u/10;			a01 = 500;
 z00 = (0, 0);			z01 = (50a00, 40a00);
@@ -299,7 +396,7 @@ a06 = 3wi/4 - a04/8 + 4u;
 draw d0 shifted (a05, he02/2);
 draw d0 shifted (a06, he02/2);
 
-% ------------------------------------------------------------------
+% ··································································
 % marcas de grafo
 a07 = 3u;			a08 = he02/2 - y02/2 - a07;
 a09 = 5u/2;
@@ -309,7 +406,7 @@ draw p0 shifted (a06, a08);
 label(btex $t_1$ etex, (a05, a08 - a07));
 label(btex $t_2$ etex, (a06, a08 - a07));
 
-% ------------------------------------------------------------------
+% ··································································
 % ejes coordenados y puntos suspensivos
 drawgisarrow (-a07, a08)--(wi + a07, a08);
 drawgisarrow (0, a08 - a07)--(0, he02/2 + y02/2 + 2a07);
@@ -324,12 +421,12 @@ draw (x02/2 + a06 + a10/2, he02/2)--(x02/2 + a06 + 7a10/2, he02/2) %
 linejoin := mitered;
 linecap := butt;
 
-% ------------------------------------------------------------------
+% ··································································
 % razón de compresión y razón de escalado
 a11 = 3/4;			% (7 * y01)/(5 * (a02' - 2a16'))
 a12 = 153u/8;			% a04' * a11
 
-% ------------------------------------------------------------------
+% ··································································
 % fragmento de señal representado en las ventanas de osciloscopio
 % señal al completo
 a13 = 34a00;			a14 = 3*5u/4;
@@ -377,7 +474,7 @@ l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
 pickup l1;
 
-% ------------------------------------------------------------------
+% ··································································
 % ventanas del osciloscopio
 a00 = 9u/10;			a01 = 500;
 z00 = (0, 0);			z01 = (50a00, 40a00);
@@ -389,7 +486,7 @@ a06 = 3wi/4 - a04/8 + 4u;
 draw d0 shifted (a05, he02/2);
 draw d0 shifted (a06, he02/2);
 
-% ------------------------------------------------------------------
+% ··································································
 % marcas de grafo
 a07 = 3u;			a08 = he02/2 - y02/2 - a07;
 a09 = 5u/2;
@@ -399,7 +496,7 @@ draw p0 shifted (a06, a08);
 label(btex $t_5$ etex, (a05, a08 - a07));
 label(btex $t_6$ etex, (a06, a08 - a07));
 
-% ------------------------------------------------------------------
+% ··································································
 % ejes coordenados y puntos suspensivos
 drawgisarrow (-a07, a08)--(wi + a07, a08);
 drawgisarrow (0, a08 - a07)--(0, he02/2 + y02/2 + 2a07);
@@ -414,12 +511,12 @@ draw (x02/2 + a06 + a10/2, he02/2)--(x02/2 + a06 + 7a10/2, he02/2) %
 linejoin := mitered;
 linecap := butt;
 
-% ------------------------------------------------------------------
+% ··································································
 % razón de compresión y razón de escalado
 a11 = 3/4;			% (7 * y01)/(5 * (a02' - 2a16'))
 a12 = 153u/8;			% a04' * a11
 
-% ------------------------------------------------------------------
+% ··································································
 % fragmento de señal representado en las ventanas de osciloscopio
 % señal al completo
 a13 = 34a00;			a14 = 3*5u/4;
@@ -470,7 +567,7 @@ d2 = nullpicture;
 pickup l1;
 interim bboxmargin := u;
 
-% ------------------------------------------------------------------
+% ··································································
 % caja principal
 % dimensiones de la caja
 % recuerda que las proporciones de este dibujo están cambiadas, an-
@@ -493,7 +590,7 @@ for i = 1 upto 3:
 	draw p1 transformed t1 shifted (0, i*a05);
 endfor
 
-% ------------------------------------------------------------------
+% ··································································
 % etiquetas en la caja principal
 label( %
 	btex \begin{tabular}{c} Adaptadores \\ %
@@ -507,7 +604,7 @@ label(btex Ficheros *.m etex, z00 transformed t1 shifted (0, 3a05));
 label(btex \emph{Data Acquisition Toolbox} etex, %
 	z00 transformed t1 shifted (0, a03 + 3a05));
 
-% ------------------------------------------------------------------
+% ··································································
 % caja matlab
 % dimensiones de la caja
 a06 = a00/2;		a07 = a03;
@@ -523,7 +620,7 @@ drawdblgisarrow center p0 transformed t0--center p2 transformed t2 %
 z02 = 1/2[(0, 0.6wi + a01/2), (a00, wi - a07)];
 label.rt(btex Comandos y datos interactivos etex, z02);
 
-% ------------------------------------------------------------------
+% ··································································
 % caja driver
 % dimensiones de la caja
 t3 = identity transformed t0 shifted (0, a07/2 - 0.4wi);
@@ -534,7 +631,7 @@ drawdblgisarrow center p0 transformed t0--center p2 transformed t3 %
 z03 = 1/2[(0, 0.6wi - a01/2), (a00, 0.2wi + a07)];
 label.rt(btex Propiedades, datos y eventos etex, z03);
 
-% ------------------------------------------------------------------
+% ··································································
 % hardware
 % dimensiones del hardware
 a08 = 4a07/5;		a09 = 6a07/5;
@@ -564,7 +661,7 @@ drawdblgisarrow center p2 transformed t3--center p3 transformed t4 %
 z04 = 1/2[(a00, 0.2wi), (0, a01/2 + a07/2 + a10 - 0.2wi)];
 label.rt(btex Propiedades, datos y eventos etex, z04);
 
-% ------------------------------------------------------------------
+% ··································································
 % disco duro
 a13 = 2a07;		a14 = a03/2;
 p7 = fullcircle xscaled a13 yscaled a14;
@@ -584,7 +681,7 @@ label(btex \begin{tabular}{c} Archivo \\ %
 	shifted (0, -a14/2));
 draw d2 transformed t5 withpen l1; 
 
-% ------------------------------------------------------------------
+% ··································································
 % sensores y actuadores
 boxit.aa(btex Actuadores etex);
 aa.c = (a00/2 + he01/2, a01/2 + a10/6 - wi/5);
@@ -624,7 +721,7 @@ d2 = nullpicture;
 pickup l1;
 interim bboxmargin := u;
 
-% ------------------------------------------------------------------
+% ··································································
 % hardware
 % dimensiones del hardware
 a00 = 7wi/10;		a01 = 3a00/5;
@@ -649,7 +746,7 @@ addto d1 doublepath p3 shifted 1/2(a00 - a04, -a02 - a03/2);
 % figura completa
 draw d1 transformed t0 withpen l1;
 
-% ------------------------------------------------------------------
+% ··································································
 % cajas de texto
 a07 = 3;		a08 = a00/(a07 + 1/2);
 a09 = (a00 - a07*a08)/(a07 + 1);
@@ -685,7 +782,7 @@ label(btex \begin{tabular}{c} Objeto \\ \textsc{ao} %
 label(btex \begin{tabular}{c} Objeto \\ \textsc{dio} %
 	\end{tabular} etex, z[2][2]);
 
-% ------------------------------------------------------------------
+% ··································································
 % etiquetas al lateral
 d3 = thelabel(btex \begin{tabular}{c} Subsistemas \\ del hardware %
 	\end{tabular} etex, (wi, a01/2));
