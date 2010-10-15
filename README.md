@@ -2,7 +2,7 @@ Copyright (C)  2010  José Ramón Gisbert Valls.
 
 Ensayos no destructivos con ultrasonidos en madera de palmera
 =============================================================
-###(Adquisición y tratamiento digital de señales)
+###(Adquisición y tratamiento digital de señales ultrasónicas)
 
 Proyecto Fin de Carrera (PFC), [Universidad Miguel Hernández](http://www.umh.es).
 
@@ -14,12 +14,12 @@ Autor
 Requisitos para compilar el proyecto
 ------------------------------------
 
-* Una distribución operativa de LaTeX que incluya:
-   ** pdfTeX 3.1415926-1.40.10-2.2
-   ** Latexmk 4.13a
-   ** Metapost 1.208
-* GNU Make 3.81
-* perl v5.10.1 (para Latexmk)
+1. Una distribución operativa de LaTeX que incluya:
+* pdfTeX 3.1415926-1.40.10-2.2
+* Latexmk 4.13a
+* Metapost 1.208
+2. GNU Make 3.81
+3. perl v5.10.1 (para Latexmk)
 
 Licencia
 --------
