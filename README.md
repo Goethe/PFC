@@ -9,17 +9,14 @@ Proyecto Fin de Carrera (PFC), [Universidad Miguel Hernández](http://www.umh.es
 Autor
 -----
 
-* José Ramón Gisbert Valls (Ingeniero de Telecomunicaciones).
+* José Ramón Gisbert Valls (Ingeniería de Telecomunicaciones).
 
 Requisitos para compilar el proyecto
 ------------------------------------
 
-1. Una distribución operativa de LaTeX que incluya:
-* pdfTeX 3.1415926-1.40.10-2.2
-* Latexmk 4.13a
-* Metapost 1.208
-2. GNU Make 3.81
-3. perl v5.10.1 (para Latexmk)
+* Una distribución operativa de LaTeX que incluya: pdfTeX 3.1415926-1.40.10-2.2, Latexmk 4.13a, Metapost 1.208
+* GNU Make 3.81
+* perl v5.10.1 (para Latexmk)
 
 Licencia
 --------
