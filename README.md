@@ -14,7 +14,11 @@ Autor
 Requisitos para compilar el proyecto
 ------------------------------------
 
-* Una distribución operativa de LaTeX que incluya: pdfTeX 3.1415926-1.40.10-2.2, Latexmk 4.13a, Metapost 1.208
+* Una distribución operativa de LaTeX que incluya: pdfTeX 1.40.10 y Metapost 1.208
+
+### Opcionales
+
+* Latexmk 4.13a
 * GNU Make 3.81
 * perl v5.10.1 (para Latexmk)
 
