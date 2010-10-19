@@ -2,7 +2,17 @@
 
 \section{Introducción}
 
-La consecuencia directa de emplear la \kpci{} como instrumento principal en la adquisición de señales analógicas en contraposición con un dispositivo de adquisición autónomo que no requiera de un \pc{} que lo gobierne, es la necesidad de un software de control que se ocupe entre otras de las siguientes tareas:
+El último de los subsistemas que conforma el sistema de medida digital es el subsistema de control y presentación. Es el subsistema de más alto nivel en la jerarquía de capas definida en el prólogo. El subsistema de control y presentación está constituido por los bloques de control y presentación propiamente dichos, tal y como muestra la \cref{fig:subconpre}. Sin embargo, en la práctica estos dos bloques se engloban en una misma entidad que en este documento se denomina \emph{software de control}.\par
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-01.mps}
+	\end{center}
+	\caption[Subsistema de control y presentación]{Bloques de control y presentación dentro del subsistema de control y presentación.}
+	\label{fig:subconpre}
+\end{figure}
+
+Las tareas correspondientes al bloque de control que debe desempeñar el software son las siguientes:
 
 \begin{itemize}
 	\item Iniciar y detener la sesión de adquisición.
@@ -10,13 +20,15 @@ La consecuencia directa de emplear la \kpci{} como instrumento principal en la a
 	\item Realizar el mantenimiento de los buffers de memoria. Tarea que puede dividirse o consta a su vez de dos tareas de menor complejidad: dar formato a las muestras almacenadas en el o los buffers situados en la memoria interna de la tarjeta para su comprensión por parte del ordenador anfitrión; trasladar las muestras formateadas adecuadamente a la memoria del \pc{} para que de ese modo puedan ser manipuladas por el usuario.
 \end{itemize}
 
-La idea original consistía en dotar al software de control de una interfaz de usuario con la que controlar cómodamente todos estos aspectos de la sesión de adquisición. A partir de ahí y puesto que ha de hacerse un esfuerzo para desarrollar la aplicación de control se decide diseñar el software de forma que pueda desarrollar competencias adicionales. Así, además de las tareas básicas que corresponden al software de control, se diseña la aplicación para que pueda cumplir con los siguientes cometidos.
+Por otro lado se encuentran las funciones que debe proveer el bloque de presentación, cuyo objetivo no es otro que mostrar información de utilidad al supervisor a partir de la señal digital obtenida del subsistema de adquisición.
 
 \begin{itemize}
 	\item Mostrar en un visor el valor de las muestras resultantes de muestrear la señal a 4 muestras por segundo.
 	\item En un modo de funcionamiento diferente, mostrar en el mismo visor, cada cuarto de segundo aproximadamente, la media aritmética del valor de las muestras recogidas en dicho periodo a una frecuencia de muestreo especificada por el usuario.
 	\item Funcionando en el modo gráfico, representar la señal y el espectro en frecuencia de la misma en dos espacios de coordenadas separados. A voluntad del usuario pueden ser habilitadas o deshabilitadas cualquiera de estas dos representaciones o ambas.
 \end{itemize}
+
+
 
 
 \subsection{Funcionamiento de un osciloscopio}

@@ -1,13 +1,13 @@
-PRO = gis-pfc-pro-01.mps
+P1 = gis-pfc-part1-01.mps
 CH1 = gis-pfc-ch1-01.mps gis-pfc-ch1-02.mps gis-pfc-ch1-03.mps gis-pfc-ch1-04.mps
 CH2 = gis-pfc-ch2-01.mps gis-pfc-ch2-02.mps gis-pfc-ch2-03.mps gis-pfc-ch2-04.mps
 CH3 = gis-pfc-ch3-01.mps gis-pfc-ch3-02.mps gis-pfc-ch3-03.mps gis-pfc-ch3-04.mps \
       gis-pfc-ch3-05.mps gis-pfc-ch3-06.mps gis-pfc-ch3-07.mps gis-pfc-ch3-08.mps
 CH5 = gis-pfc-ch5-01.mps gis-pfc-ch5-02.mps gis-pfc-ch5-03.mps gis-pfc-ch5-04.mps \
       gis-pfc-ch5-05.mps gis-pfc-ch5-07.mps
-OBJ = $(PRO) $(CH1) $(CH2) $(CH3) $(CH5)
+OBJ = $(P1) $(CH1) $(CH2) $(CH3) $(CH5)
 LIB = gis-pfc.mp gis-pfc-arr.mp
-PROSRC = gis-pfc-pro.mp
+P1SRC = gis-pfc-part1.mp
 CH1SRC = gis-pfc-ch1.mp
 CH2SRC = gis-pfc-ch2.mp
 CH3SRC = gis-pfc-ch3.mp
@@ -36,8 +36,8 @@ force :	$(TEX) $(OBJ)
 verbose : $(TEX) $(OBJ) 
 	$(LM) $(LMOPTS) $(TEX)
 
-$(PRO) : $(PROSRC) $(LIB)
-	$(MP) $(PROSRC)
+$(P1) : $(P1SRC) $(LIB)
+	$(MP) $(P1SRC)
 
 $(CH1) : $(CH1SRC) $(LIB)
 	$(MP) $(CH1SRC)
