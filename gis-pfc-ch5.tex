@@ -67,14 +67,10 @@ Atendiendo a la situación del receptor en los ensayos no destructivos mediante u
 \begin{figure}
 	\begin{center}
 		\subfloat[Inspección ultrasónica por transmisión]{
-			\begin{minipage}{.9\textwidth}
-				\centering\includegraphics{gis-pfc-ch5-02.mps}
-			\end{minipage}}
+			\includegraphics{gis-pfc-ch5-02.mps}}
 			\vspace*{.1\textheight}
 		\subfloat[Inspección ultrasónica por pulso"=eco]{
-			\begin{minipage}{.9\textwidth}
-				\centering\includegraphics{gis-pfc-ch5-03.mps}
-			\end{minipage}}
+			\includegraphics{gis-pfc-ch5-03.mps}}
 	\end{center}
 	\caption[Técnicas empleadas en ensayos no destructivos mediante ultrasonidos]{Diferencias en cuanto al número y posición de los transductores según la técnica empleada en una evaluación mediante ultrasonidos.}
 	\label{fig:technics}
@@ -166,9 +162,11 @@ Finalmente, la presión $p_R$ se traduce en una señal eléctrica en bornes del tra
 
 Por consiguiente el proceso de emisión"=recepción en el que se fundamentan los \sig{endus} puede describirse mediante la respuesta impulsional en cascada de todos los fenómenos descritos.
 
-\begin{equation}
-	y(t) = \rho_0\frac{\partial}{\partial t}\left\{u(t)\otimes h_{te}(t)\otimes h_d(z, t)\otimes a(z, t)\otimes h_r(t)\otimes h_d(z, t)\otimes a(z, t)\otimes h_{tr}(t)\right\}
-	\label{eq:emirec}
+\begin{equation}\label{eq:emirec}
+	\begin{split}
+		y(t) = \rho_0\frac{\partial}{\partial t}\{u(t)&\otimes h_{te}(t)\otimes h_d(z, t)\otimes a(z, t)\otimes \\
+		h_r(t)&\otimes h_d(z, t)\otimes a(z, t)\otimes h_{tr}(t)\}
+	\end{split}
 \end{equation}
 
 La \vref{fig:emirecmodel} muestra un diagrama de bloques que representa el proceso de emisión"=recepción y todos los fenómenos que en el intervienen según el modelo empleado en este documento. La función de transferencia del sistema puede obtenerse de modo sencillo aplicando el teorema de la convolución.
@@ -357,7 +355,7 @@ La eficacia de las técnicas de \sig{ssp} no está garantizada, depende en gran pa
 \begin{itemize}
 	\item Por un lado está la configuración del banco de filtros, a destacar dos aspectos:
 		\begin{itemize}
-			\item El tipo de filtro empleado. Según afirma M.\,A. Izquierdo en (\cite{garcia2000mrsr}), trabajos realizados a principios de los noventa como los de P.\,Karpur apuntan a la existencia de una relación entre el factor de forma de los filtros que se utilizan para realizar la partición de espectro y la bondad de los resultados aportados por la técnica de \sig{ssp}. Señala M.\,A. Izquierdo que, a pesar de que la influencia que ejerce este parámetro en la calidad del ensayo haya mostrado ser notable, estudios posteriores no han tenido en cuenta las conclusiones alcanzadas por Karpur.
+			\item El tipo de filtro empleado. Según afirma M.\,A. Izquierdo (en \cite{garcia2000mrsr}), trabajos realizados a principios de los noventa como los de P.\,Karpur apuntan a la existencia de una relación entre el factor de forma de los filtros que se utilizan para realizar la partición de espectro y la bondad de los resultados aportados por la técnica de \sig{ssp}. Señala M.\,A. Izquierdo que, a pesar de que la influencia que ejerce este parámetro en la calidad del ensayo haya mostrado ser notable, estudios posteriores no han tenido en cuenta las conclusiones alcanzadas por Karpur.
 			\item La zona del espectro en la que se aplica el método. La región del espectro que queda bajo el banco de filtros puede configurarse ajustando las frecuencias de corte superior e inferior del banco ---quedando indirectamente condicionados el ancho de banda de los filtros y la separación entre los mismos---. Es importante evitar que la banda de paso del banco coincida con alguna porción de la señal en la que la información espectral que indica la presencia del defecto quede enmascarada por el ruido de grano. Cuando así ocurre la efectividad del método se reduce en gran medida.
 		\end{itemize}
 	\item El parámetro que resta por considerar no es otro que el algoritmo de reconstrucción que permite recuperar la traza definitiva. Las técnicas de \sig{ssp} se basan en la estabilidad de la fase de ahí su precaria robustez. El algoritmo de reconstrucción empleado es un factor determinante del que depende en gran parte la robustez de la técnica. Por tanto, aplicar un algoritmo de reconstrucción adecuado a las muestras es crucial para obtener buenos resultados. Los algoritmos más empleados son el de mínimo del ensamble y el del umbral de polaridad (\emph{Polarity Thresholding}) o combinación de ambos, a continuación se citan otros.

@@ -1,15 +1,15 @@
-\documentclass[a4paper, 12pt, draft]{book}
-\includeonly{gis-pfc-pro, gis-pfc-part1, gis-pfc-ch1, gis-pfc-ch2, gis-pfc-ch3, gis-pfc-ch4, %
-	gis-pfc-ch5, gis-pfc-appa, gis-pfc-appb}
+\documentclass[a4paper, draft]{book}
+\includeonly{gis-pfc-pro, gis-pfc-ch1, gis-pfc-ch2, gis-pfc-ch3, %
+	gis-pfc-ch4, gis-pfc-ch5, gis-pfc-appa, gis-pfc-appb}
 \usepackage[paper=a4, BCOR1cm]{typearea}
-\usepackage[english, spanish, es-ucroman]{babel}
+\usepackage[english, spanish]{babel}
 \usepackage[format=hang, font=small, labelfont=bf, labelsep=endash, width=.9\textwidth]{caption}
 \usepackage[listofformat=subsimple, format=hang, labelfont=footnotesize, %
 	textfont={it, footnotesize}]{subfig}
-\usepackage[color]{changebar}
 \usepackage[latin1]{inputenc}
-\usepackage[OT1]{fontenc}
-\usepackage[bf, sf]{titlesec}
+\usepackage[nofontinfo]{lucidabr}
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
 \usepackage[nottoc]{tocbibind}
 \usepackage[spanish]{varioref}
 \usepackage{graphicx}
@@ -43,7 +43,6 @@
 \crefname{lstlisting}{fragmento de código}{fragmentos de código}
 \crefname{subsection}{subapartado}{subapartados}
 \crefname{subsubsection}{subapartado}{subapartados}
-\cbcolor{red}
 \graphicspath{{./pictures/}{../pictures/}}
 \DeclareCaptionLabelFormat{cont}{#1~#2\alph{ContinuedFloat}}
 \captionsetup[ContinuedFloat]{labelformat=cont}
@@ -71,7 +70,6 @@
 \newcommand\pc{\sig{pc}}
 \newcommand\ram{\sig{ram}}
 \newcommand\AOUA{$\mu$\sig{a}741}
-\newcommand\iscurrentchapter[1]{\ifthenelse{\equal{#1}{\thechapter}}{  en el Capítulo~#1}}
 \newcommand\miniit[1]{\begin{itemize} #1 \end{itemize}}
 \newcommand\tnotetext[2]{\item\hspace*{-5pt}\raisebox{.7ex}%
 	{\fontsize{7pt}{8.4pt}\selectfont\normalfont #1}{\footnotesize #2}}
@@ -82,8 +80,9 @@
 \newcolumntype{+}{D{/}{\mbox{\ --\ }}{5}}
 \begin{document}
 
+\setuplayouts
 \fancyhf{}
-\cfoot{\sffamily\bfseries\thepage}
+\cfoot{\bfseries\scshape\thepage}
 \renewcommand\headrulewidth{0pt}
 \pagestyle{fancy}
 
@@ -109,8 +108,6 @@
 
 \part[Implementación del sistema digital de medida]{Diseño e implementación del sistema digital de medida}
 
-\include{gis-pfc-part1}
-
 \include{gis-pfc-ch1}
 
 \include{gis-pfc-ch2}
@@ -119,7 +116,7 @@
 
 \include{gis-pfc-ch4}
 
-\part[ENDUS en madera de palmera]{Ensayos no destructivos en madera de palmera}
+\part[\textsc{endus} en madera de palmera]{Ensayos no destructivos en madera de palmera}
 
 \include{gis-pfc-ch5}
 
@@ -145,7 +142,7 @@
 \addtocounter{totalpages}{-1}
 \setcounter{page}{\value{totalpages}}
 \renewcommand\thepage{\arabic{page}}
-\nocite{mittelbach2004lc, stutzman1997atd, garcia2000mrsr}
+\nocite{mittelbach2004lc, stutzman1997atd, garcia2000mrsr, pallas2004sas}
 \bibliographystyle{bababbrv-lf}
 \bibliography{gis-pfc}
 

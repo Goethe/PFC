@@ -1,8 +1,8 @@
-\chapter{Aplicación para el control de la tarjeta}
+\chapter{Subsistema para el control y la presentación}
 
 \section{Introducción}
 
-El último de los subsistemas que conforma el sistema de medida digital es el subsistema de control y presentación. Es el subsistema de más alto nivel en la jerarquía de capas definida en el prólogo. El subsistema de control y presentación está constituido por los bloques de control y presentación propiamente dichos, tal y como muestra la \cref{fig:subconpre}. Sin embargo, en la práctica estos dos bloques se engloban en una misma entidad que en este documento se denomina \emph{software de control}.\par
+El último de los subsistemas que conforma el sistema de medida digital es el subsistema de control y presentación. Es el subsistema de más alto nivel de entre los que integran el sistema por interactuar directamente con el supervisor. El subsistema de control y presentación está constituido por los bloques de control y presentación propiamente dichos, tal y como muestra la \cref{fig:subconpre}. Sin embargo, en la práctica estos dos bloques se engloban en una misma entidad que en este documento se denomina \emph{software de control}.\par
 
 \begin{figure}
 	\begin{center}
@@ -12,30 +12,30 @@ El último de los subsistemas que conforma el sistema de medida digital es el sub
 	\label{fig:subconpre}
 \end{figure}
 
-Las tareas correspondientes al bloque de control que debe desempeñar el software son las siguientes:
+El subsistema de control y presentación, al actuar como interfaz entre el supervisor y el sistema de medida, debe ser capaz de poner en práctica las órdenes que administra el supervisor y gestionar el funcionamiento del resto de subsistemas. De entre los dos bloques que conforman el subsistema, es el bloque de control como su nombre indica el encargado de esta actividad. Como tal, es responsabilidad suya la ejecución de las siguientes tareas:
 
 \begin{itemize}
 	\item Iniciar y detener la sesión de adquisición.
-	\item Interactuar con los drivers de la tarjeta por medio del sistema operativo para controlar por voluntad del usuario parámetros de la sesión de adquisición como pueden ser, por ejemplo, puertos de entrada, modos de adquisición y terminación, o frecuencia de muestreo.
-	\item Realizar el mantenimiento de los buffers de memoria. Tarea que puede dividirse o consta a su vez de dos tareas de menor complejidad: dar formato a las muestras almacenadas en el o los buffers situados en la memoria interna de la tarjeta para su comprensión por parte del ordenador anfitrión; trasladar las muestras formateadas adecuadamente a la memoria del \pc{} para que de ese modo puedan ser manipuladas por el usuario.
+	\item Interactuar con los drivers de la tarjeta por medio del sistema operativo para controlar parámetros de la sesión de adquisición como pueden ser, por ejemplo, puertos de entrada, modos de adquisición y terminación, o frecuencia de muestreo.
+	\item Realizar el mantenimiento de los buffers de memoria. Tarea que puede dividirse o consta a su vez de dos tareas de menor complejidad: dar formato a las muestras almacenadas en el o los buffers situados en la memoria interna de la tarjeta para su comprensión por parte del ordenador anfitrión; trasladar las muestras formateadas adecuadamente a la memoria del \pc{} para que de ese modo puedan ser manipuladas por el usuario administrador.
 \end{itemize}
 
-Por otro lado se encuentran las funciones que debe proveer el bloque de presentación, cuyo objetivo no es otro que mostrar información de utilidad al supervisor a partir de la señal digital obtenida del subsistema de adquisición.
+Por su parte, al bloque de presentación le corresponde la tarea de presentar al supervisor información de utilidad a partir de los datos obtenidos del subsistema de adquisición, en este caso de la señal digital. La información debe mostrarse al supervisor de forma que este sea capaz de interpretarla. En consecuencia, y por criterio propio, se decide por diseñar el software de control para que sea capaz de proporcionar al supervisor la siguiente información de la señal:
 
 \begin{itemize}
-	\item Mostrar en un visor el valor de las muestras resultantes de muestrear la señal a 4 muestras por segundo.
-	\item En un modo de funcionamiento diferente, mostrar en el mismo visor, cada cuarto de segundo aproximadamente, la media aritmética del valor de las muestras recogidas en dicho periodo a una frecuencia de muestreo especificada por el usuario.
-	\item Funcionando en el modo gráfico, representar la señal y el espectro en frecuencia de la misma en dos espacios de coordenadas separados. A voluntad del usuario pueden ser habilitadas o deshabilitadas cualquiera de estas dos representaciones o ambas.
+	\item El valor instantáneo cada 250 ms.
+	\item El valor medio en el mismo intervalo de tiempo. Este valor debe calcularse a partir de las muestras obtenidas en dicho periodo a una frecuencia de muestreo que queda a elección del supervisor. Debe ser posible seleccionar la frecuencia de muestreo desde el propio software de control.
+	\item La forma instantánea de la señal, de un fragmento de una duración determinada. Debe ser posible también seleccionar la duración del fragmento. Simultáneamente debe representarse el espectro en frecuencia del fragmento de señal que aparece en pantalla.
 \end{itemize}
 
-
+Se impone una condición de diseño adicional al software de control, debe ser poco exigente con respecto al \pc{} anfitrión en cuanto a capacidad de procesado y memoria principal utilizada. Para lograrlo se propone la siguiente solución: en lugar de mostrar al mismo tiempo el valor instantáneo de la señal, el valor medio y su forma, se concibe la aplicación para que el usuario pueda elegir uno de estos tres aspectos de la señal y sólo ese se muestra por pantalla. Se dice que en el modo gráfico la aplicación muestra gráficas que representan la forma de la señal y de su espectro en frecuencia, mientras que en los modos numéricos o no gráficos lo que aparece en pantalla es un valor numérico relacionado con la magnitud variable de la señal ---el voltaje---. Aplicando de nuevo el criterio de austeridad por el cual la aplicación debe ser lo menos exigente posible, se consigue economizar recursos en el modo gráfico de funcionamiento si se permite al supervisor seleccionar si son ambos, forma y espectro de la señal, los representados, sólo uno y cual, o ninguno de ellos.
 
 
 \subsection{Funcionamiento de un osciloscopio}
 
-El propósito de este segundo capítulo es guiar al lector en el proceso de elaboración y prueba del software de control. Como se ha mencionado anteriormente, en el proceso de diseño previo a la programación del software se decide incluir en la aplicación un modo de funcionamiento que permita representar la forma de la señal y su espectro en frecuencia. Una parte importante del código fuente del software de control lo ocupan las rutinas con las que se implementa dicho modo de funcionamiento. Además, la influencia que ejerce este conjunto de rutinas sobre el resto es notable. De hecho, del resto de funciones, muchas se han escrito a partir de éste núcleo de código, acomodándose a él.\par
-Muchas de las ideas que han resultado ser imprescindibles para llevar a término el proceso de desarrollo del software se han obtenido tras observar el comportamiento de un osciloscopio de laboratorio. Una serie de conceptos que han influido en la forma y estructura del código fuente final. La elección de un osciloscopio digital como modelo es intencionada ya que desde un principio lo que se persigue es obtener unas prestaciones similares, prestaciones que se observan en el resultado final (véase el \vref{chap:appendixA}).\par
-Por todo ello, para comprender como se ha ido desarrollando el software, para entender como funciona la aplicación de usuario, es conveniente conocer las claves que se siguieron durante el curso de su desarrollo, en definitiva, las pautas de comportamiento de un osciloscopio. De una forma resumida se expone aquí un texto en relación con dicha materia para que el lector pueda llegar a estas conclusiones.
+El propósito de este capítulo es guiar al lector en el proceso de elaboración del software de control. Como se ha mencionado anteriormente, en el proceso de diseño previo a la programación del software se decide incluir en la aplicación un modo de funcionamiento que permita representar la forma de la señal y su espectro en frecuencia. Una parte importante del código fuente del software de control elaborado para el proyecto lo ocupan las rutinas con las que se implementa dicho modo de funcionamiento. Además, la influencia que ejerce este conjunto de rutinas sobre el resto es notable. De hecho, del resto de funciones, muchas se han escrito a partir de éste núcleo de código, acomodándose a él.\par
+Muchas de las ideas que han resultado ser imprescindibles para llevar a término el proceso de desarrollo del software se han obtenido tras observar el comportamiento de un osciloscopio de laboratorio. Una serie de conceptos que han influido en la forma y estructura del código fuente final. La elección de un osciloscopio digital como modelo es intencionada ya que desde un principio lo que se persigue es obtener unas prestaciones similares, prestaciones que se observan en el resultado final (véase el \vref{chap:part1conclusions} y el \vref{chap:appendixA}).\par
+Por todo ello, para comprender como se ha ido desarrollando el software, para entender como funciona la aplicación de usuario, es conveniente conocer las claves que se siguieron durante el curso de su desarrollo, en definitiva, las pautas de comportamiento de un osciloscopio. De una forma resumida se expone aquí un texto en relación con dicha materia para una mejor compresión de la versión definitiva del software.
 
 
 \subsection{Osciloscopios analógicos, osciloscopios digitales y retardo}
@@ -54,21 +54,67 @@ Para evitar que en determinadas configuraciones del eje temporal del osciloscopi
 	\item El segundo criterio está relacionado con la función de disparo que se da en el modo convencional de representación. Para poder efectuar correctamente el disparo sobre señales de baja frecuencia, al generar cada imagen el osciloscopio debe haber registrado al menos un ciclo de la señal pertinente\footnote{En la práctica se necesita algo más de un ciclo de una señal para poder garantizar el correcto disparo de ésta. Sin embargo, es común conseguir disparar una señal aunque la configuración del eje de tiempos del osciloscopio permita sólo obtener una fracción del ciclo completo de esa señal durante la realización de cada fotograma.}. Lo cual reduce la tasa mínima de refresco a la frecuencia de la señal más lenta que se desee representar de forma correcta en el modo convencional de representación del osciloscopio.
 \end{itemize}
 
-Como puede verse el segundo criterio es más restrictivo pues depende de la frecuencia de la señal y ésta puede ser en efecto inferior a un hercio, es por ello que se emplea habitualmente. Siendo así, la tasa de refresco mínima que se permite en el modo convencional en la gran mayoría de dispositivos y que se ha adoptado para el software de control, es de cinco imágenes por segundo (5 Hz). Cuando se configura un osciloscopio en el modo convencional para que trabaje a esta tasa de refresco es habitual poder visualizar señales de frecuencia cercana a 1 Hz, sin embargo la representación se optimiza para configuraciones en las que el osciloscopio muestra, al menos, veinticinco imágenes por segundo, lo cual es apropiado para señales con una frecuencia mínima de 50 Hz. Si la configuración del eje de tiempos del osciloscopio obligara al dispositivo a trabajar con una frecuencia de refresco inferior a la especificada, automáticamente conmuta para funcionar en el modo continuo.
+Como puede verse el segundo criterio es más restrictivo pues depende de la frecuencia de la señal y ésta puede ser en efecto inferior a un hercio, es por ello que se emplea habitualmente. Siendo así, la tasa de refresco mínima que se permite en el modo convencional en la gran mayoría de dispositivos y que se ha adoptado para el software de control, es de cinco imágenes por segundo (5 Hz). Cuando se configura un osciloscopio en el modo convencional para que trabaje a esta tasa de refresco es habitual poder visualizar señales de frecuencia cercana a 1 Hz, sin embargo la representación se optimiza para configuraciones en las que el osciloscopio muestra, al menos, veinticinco imágenes por segundo, lo cual es apropiado para señales con una frecuencia mínima de 50 Hz. Si la configuración del eje de tiempos del osciloscopio obligara al dispositivo a trabajar con una frecuencia de refresco inferior a la especificada, automáticamente conmuta para funcionar en el modo continuo.\par
+Una vez visto cual es la frecuencia umbral a la que el dispositivo conmuta entre los dos modos, debe explicarse que diferencia un modo de funcionamiento de otro. Para ello se expone a continuación cuales son los fundamentos de uno y otro modo.
 
 
 \subsubsection{Representación en modo continuo}
 
-Una vez visto cual es la frecuencia umbral a la que el dispositivo conmuta entre los dos modos, debe explicarse que diferencia un modo de funcionamiento de otro. Para ello se expone a continuación cuales son los fundamentos de uno y otro modo. La representación en \emph{modo continuo} es, por decirlo así, ininterrumpida. La imagen de la señal de interés se desplaza de derecha izquierda a medida que transcurre el tiempo. Para lograr este efecto se aumenta la frecuencia de refresco a expensas de que, como es sabido, el fragmento de señal obtenido para cada imagen no cubrirá la pantalla al completo. Ocurre así por que la frecuencia de refresco es muy alta para el eje temporal que representa una gran cantidad de tiempo, por tanto, entre dos imágenes no transcurre el tiempo abarcado por la dimensión horizontal de la representación. La primera imagen sitúa el fragmento de señal que se ha digitalizado en el extremo derecho de la representación, el resto se deja en blanco. Con cada nueva imagen se desplaza el fragmento de señal representado hasta el momento el suficiente espacio hacia la izquierda como para incorporar un nuevo fragmento de señal. Así la porción de señal representada aumenta cada vez más hasta que el extremo izquierdo de la figura alcanza el margen izquierdo de la ventana del osciloscopio. Cuando esto ocurre, empieza un desplazamiento cíclico, al incorporar un nuevo fragmento de señal a la derecha se retira un fragmento de la misma proporción temporal al otro extremo. La alta tasa con la que aparecen las imágenes por pantalla garantizan que la representación siga casi en tiempo real ---por lo menos así lo percibe el ojo humano--- a la señal verdadera. Debe notarse, no obstante, que este método de representación no es adecuado para señales de alta frecuencia pues aunque el eje temporal abarque un tiempo mayor, la dimensión del monitor obviamente no varía y las señales de alta frecuencia aparecerán en exceso comprimidas.\par
+La representación en \emph{modo continuo} es, por decirlo así, ininterrumpida. La imagen de la señal de interés se desplaza de derecha izquierda a medida que transcurre el tiempo. Para lograr este efecto se aumenta la frecuencia de refresco a expensas de que, como es sabido, el fragmento de señal obtenido para cada imagen no puede cubrir la pantalla al completo. Ocurre así por que la frecuencia de refresco es muy alta para el eje temporal, que en este caso representa un periodo tiempo relativamente alto. Por consiguiente, en el intervalo en el que una imagen de la señal da paso a la siguiente en la ventana del osciloscopio, no transcurre el tiempo suficiente como para captar un fragmento de señal de duración igual a la abarcada por el eje de tiempos.\par
+Las figuras \cref{fig:freesignalcont,fig:modconti} muestran con detalle estos aspectos del modo de representación continuo. En la \cref{fig:freesignalcont} aparece la señal que entra en el osciloscopio, se muestran además unas marcas de tiempo que indican los instantes en los que la imagen que muestra el osciloscopio cambia\footnote{Se ha considerado el \emph{periodo de refresco} de la ventana del osciloscopio igual a la suma de la \emph{ventana de adquisición} y un \emph{periodo de inactividad} en la adquisición ocupado por el procesado de las muestras. La ventana de adquisición es equivalente a la cantidad de tiempo que el sistema necesita para adquirir un fragmento de señal suficiente para cubrir una porción del eje de tiempos (en el caso del modo de funcionamiento continuo) o para cubrir el eje de tiempos por completo más las muestras de descarte (en el modo disparado). El periodo de inactividad es igual al tiempo requerido para procesar el fragmento de señal adquirido en el espacio de una ventana de adquisición.}. La \cref{fig:modconti} muestra cual es el aspecto del osciloscopio en dos instantes posteriores al instante inicial en el que empieza a monitorizarse la señal.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-04.mps}
+	\end{center}
+	\caption[Fragmentos de señal ordenados según el orden en el que llegan al sistema]{Fragmentos de señal ordenados según el orden en el que llegan al sistema. Cada instante marcado se encuentra separado de los adyacentes por un periodo de refresco. Debe recordarse que el modo de funcionamiento continuo se emplea en la monitorización de señales lentas, por lo que el periodo de inactividad es en este caso despreciable frente a la duración de la ventana de adquisición.}
+	\label{fig:freesignalcont}
+\end{figure}
+
+\begin{figure}\ContinuedFloat
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-05.mps}
+	\end{center}
+	\caption[Modo de funcionamiento continuo]{Modo de funcionamiento continuo del osciloscopio. Puede observarse como la llegada de un nuevo fragmento de señal al sistema en el instante $t_2$ desplaza el fragmento previamente representado en la ventana del osciloscopio una periodo de refresco a la derecha.}
+	\label{fig:modconti}
+\end{figure}
+
+En el instante $t_1$ el fragmento de señal que se ha digitalizado aparece en el extremo derecho de la representación, el resto se deja en blanco. En cada nuevo fotograma se desplazan los fragmentos de señal representados hasta el momento el suficiente espacio hacia la izquierda como para incorporar un nuevo fragmento de señal. Así la porción de señal representada aumenta cada vez más hasta que el extremo izquierdo de la figura alcanza el margen izquierdo de la ventana del osciloscopio. Cuando esto ocurre, empieza un desplazamiento cíclico, al incorporar un nuevo fragmento de señal a la derecha se retira un fragmento de la misma proporción temporal al otro extremo. Este fenómeno bien puede observarse en la \cref{fig:modcontii}, en el ejemplo el eje temporal es equivalente a cinco ventanas de adquisición, la llegada de un sexto fragmento de señal al sistema conduce al inicio de la representación cíclica.\par
+
+\begin{figure}\ContinuedFloat
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-06.mps}
+	\end{center}
+	\caption[Modo de funcionamiento continuo]{La ventana temporal tiene, en este ejemplo, una duración de cinco ventanas de adquisición. Al llegar al sistema el sexto fragmento de señal, la representación avanza a la derecha retirándose el primer fragmento representado para dar cabida al fragmento obtenido recientemente.}
+	\label{fig:modcontii}
+\end{figure}
+
+La alta tasa con la que aparecen las imágenes por pantalla garantizan que la representación siga casi en tiempo real ---por lo menos así lo percibe el ojo humano--- a la señal verdadera. Debe notarse, no obstante, que este método de representación no es adecuado para señales de alta frecuencia pues aunque el eje temporal abarque un tiempo mayor, la dimensión del monitor obviamente no varía y las señales de alta frecuencia aparecerán en exceso comprimidas.\par
 
 
 \subsubsection{Representación en modo convencional}
 
 El \emph{modo convencional} de representación es algo más complicado. Como se ha declarado con anterioridad en este mismo apartado, la representación convencional basa su funcionamiento en imágenes que muestran fragmentos de señal que cubren la dimensión temporal de la ventana del osciloscopio y que se suceden unas a otras con presteza. La idea que persigue este método es la de conseguir algo semejante a una película de la señal. Para ello, no es sólo suficiente con que aparezcan muchas imágenes por segundo en el monitor del osciloscopio, esas imágenes deben estar de algún modo relacionadas entre sí. Si las imágenes que aparecen en el monitor son de forma consecutiva muy diferentes es probable que no pueda discernirse nada claro, y de nada valdrá la representación.\par
-Ahí es donde entra en juego el procesado y la función de disparo de un osciloscopio digital. Cuando un fragmento suficientemente largo como para cubrir la ventana de representación se digitaliza y se almacena en memoria, empieza el procesado digital del mismo. El propósito del procesado es, ente otras cosas, eliminar las posible componente en continua, averiguar información adicional de la señal en la medida de lo posible, como p. ej. su valor de pico a pico, o implementar una función de disparo. La función de disparo del osciloscopio persigue alinear los ejes verticales de la ventana donde se representa con los cruces de la señal con respecto a un determinado valor de umbral que puede ser configurado por el usuario. La idea es alinear al menos el cruce más centrado de cada fragmento de señal con el eje de abscisas que corta en dos mitades la ventana. Para conseguirlo, durante el procesado se detectan todos los cortes de la señal con el umbral y después se desplaza el fragmento de señal para que el corte más centrado case con el eje de abscisas. Si la señal es periódica las variaciones entre un fotograma y el siguiente serán mínimas, puesto que ambos estarán alineados, y se simulará con éxito el movimiento.\par
-No obstante, la necesidad de desplazar el fragmento de señal que va a representarse presenta un inconveniente importante. Para poder desplazar el fragmento de señal y que se cubra completamente la ventana del osciloscopio su duración, la del fragmento de señal digitalizado, debe ser superior al tiempo reflejado en el eje de tiempos de la ventana. De lo contrario la señal aparecerá truncada, se mostrará un espacio en blanco y, con una tasa de refresco alta, la visualización será confusa. Desplazar fragmentos de señal implica dos cosas: por un lado el osciloscopio debe esperar más tiempo para refrescar la pantalla, es decir, se reduce la tasa de refresco para una misma configuración del eje de tiempos; y por otro, al tener para representar un fragmento de señal de mayor duración que la reflejada por el eje temporal de la ventana parte del fragmento queda ahora fuera de la representación.\par
+Ahí es donde entra en juego el procesado y la función de disparo de un osciloscopio digital. Cuando un fragmento suficientemente largo como para cubrir la ventana de representación se digitaliza y se almacena en memoria, empieza el procesado digital del mismo. El propósito del procesado es, ente otras cosas, eliminar las posible componente en continua, averiguar información adicional de la señal en la medida de lo posible, como p. ej. su valor de pico a pico, o implementar la función de disparo. La función de disparo del osciloscopio persigue alinear los ejes verticales de la ventana donde se representa con los cruces de la señal con respecto a un determinado valor de umbral que puede ser configurado por el usuario. La idea es alinear al menos el cruce más centrado de cada fragmento de señal con el eje de abscisas que corta en dos mitades la ventana. Para conseguirlo, durante el procesado se detectan todos los cortes de la señal con el umbral y después se desplaza el fragmento de señal para que el corte más centrado case con el eje de abscisas. Si la señal es periódica las variaciones entre un fotograma y el siguiente serán mínimas, puesto que ambos estarán alineados, y se simulará con éxito el movimiento.\par
+No obstante, la necesidad de desplazar el fragmento de señal que va a representarse presenta un inconveniente importante. Para poder desplazar el fragmento de señal y que se cubra completamente la ventana del osciloscopio su duración, la del fragmento de señal digitalizado, debe ser superior al tiempo reflejado en el eje de tiempos de la ventana. De lo contrario la señal aparecerá truncada, se mostrará un espacio en blanco y con una tasa de refresco alta la visualización será confusa. Desplazar fragmentos de señal implica dos cosas: por un lado el osciloscopio debe esperar más tiempo para refrescar la pantalla, es decir, se reduce la tasa de refresco para una misma configuración del eje de tiempos; y por otro, al tener para representar un fragmento de señal de mayor duración que la reflejada por el eje temporal de la ventana parte del fragmento queda ahora fuera de la representación.\par
 Este inconveniente se ve paliado por el hecho de que el modo convencional contempla en principio trabajar con señales de alta frecuencia. Estas señales cambian de forma tan rápida que de no ser por el disparo sería imposible observar los cambios. Por otro lado puede seleccionarse que información que se muestra por pantalla accionando un control de desplazamiento temporal o modificando el valor de umbral de disparo y, generalmente, la pérdida de información a causa del disparo no es significativa.
-%\vspace*{99pt}
+Para terminar este apartado se muestran las \cref{fig:freesignaltrig,fig:modtrig} que muestran los distintos aspectos del modo disparado de funcionamiento del osciloscopio que se han expuesto aquí. La \cref{fig:freesignaltrig} muestra la señal que entra al sistema, se han marcado los instantes que coinciden con: el inicio de la monitorización; el término de la ventana de adquisición; el término del periodo de refresco como suma de la ventana de adquisición y del periodo de inactividad asociado al procesado de las muestras; y los cortes de la señal con el umbral, en especial el corte central o más centrado en el cual se centra posteriormente la representación en la ventana del osciloscopio. También se muestran el nivel de umbral y la porción de fragmento de señal que coincide con las muestras descartadas. Otra figura, la \cref{fig:modtrig} muestra cual es el resultado de representar el fragmento de señal en la ventana del osciloscopio.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-02.mps}
+	\end{center}
+	\caption[Fragmento de señal adquirido por el osciloscopio en el espacio de una ventana de adquisición]{Fragmento de señal adquirido por el osciloscopio en el espacio de una ventana de adquisición. En esta figura se ha representado también la duración de la ventana temporal del osciloscopio, pudiendo observarse que información se descarta. También se indica el instante en el que se inicia una nueva instancia del proceso de adquisición, de lo que puede deducirse que información se pierde entre instancias. Los cortes de la señal con el nivel de disparo también están representados.}
+	\label{fig:freesignaltrig}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-03.mps}
+	\end{center}
+	\caption[Modo de funcionamiento disparado]{Modo de funcionamiento disparado. La representación se centra en el corte central (veáse la \vref{fig:freesignaltrig}).}
+	\label{fig:modtrig}
+\end{figure}
 
 
 \section{Elaboración del software de control}
@@ -144,7 +190,7 @@ Cada uno de los pasos se detalla en los puntos subsiguientes.
 
 \subsubsection{Crear el objeto dispositivo}
 
-Para crear un objeto dispositivo, se debe llamar a la función de creación apropiada o constructor. Como se muestra en el \vref{tab:constructors}, los constructores reciben un nombre particular en función del tipo de objetos dispositivo que crean. Para iniciar una sesión de adquisición de datos analógicos es necesario un comando como el siguiente, \func{analoginput(`adaptador', ID)}. Un ejemplo extraído del código fuente de la aplicación de control muestra cómo hacerlo en el \cref{cod:constructor}.\par
+Para crear un objeto dispositivo, se debe llamar a la función de creación apropiada o constructor. Como se muestra en el \cref{tab:constructors}, los constructores reciben un nombre particular en función del tipo de objetos dispositivo que crean. Para iniciar una sesión de adquisición de datos analógicos es necesario un comando como el siguiente, \func{analoginput(`adaptador', ID)}. Un ejemplo extraído del código fuente de la aplicación de control muestra cómo hacerlo en el \cref{cod:constructor}.\par
 
 \begin{table}
 	\centering
@@ -272,7 +318,6 @@ No obstante haber iniciado el dispositivo, este no empieza a registrar datos has
 
 \begin{table}
 	\centering
-	\begin{threeparttable}
 	\begin{tabulary}{.9\linewidth}{>{\sf}c L}
 		\toprule
 		{\rm Tipo de disparo} & \multicolumn{1}{c}{Descripción} \\
@@ -283,13 +328,9 @@ No obstante haber iniciado el dispositivo, este no empieza a registrar datos has
 		\midrule
 		Software & El disparo sucede cuando se detecta una señal que satisface una determinada condición especificada de antemano. El objeto dispositivo debe disponer de más de un canal que hará las veces de la señal de disparo. Debe especificarse, como es obvio, que canal actúa como fuente del disparo. \\
 		\midrule
-		Reloj interno\tnote{\rm a} & Por añadidura, la \kpci{} cuenta con la posibilidad de recibir el disparo de la fuente de reloj interna. \\
+		Reloj interno & Por añadidura, la \kpci{} cuenta con la posibilidad de recibir el disparo de la fuente de reloj interna. \\
 		\bottomrule
 	\end{tabulary}
-	\begin{TableNotes}
-		\tnotetext{a}{Se ha añadido esta característica de la \kpci{} a la lista original.}
-	\end{TableNotes}
-	\end{threeparttable}
 	\caption[Tipos de disparo soportados por el hardware compatible con \matlab{}]{Tipos de disparo soportados por el hardware compatible con \matlab{} y una breve descripción de los mismos.}
 	\label{tab:triggers}
 \end{table}
@@ -354,8 +395,5 @@ La función \func{delete} elimina el objeto dispositivo especificado de la máquin
 Si se suprime un objeto dispositivo del espacio de trabajo de \matlab{} no deja de existir en la máquina virtual. Para poder recuperar objetos borrados accidentalmente puede utilizarse la función \func{daqfind}.
 
 \begin{lstlisting}
-	out = daqfind;
-	ai = out(1);
+	out = daqfind;	ai = out(1);
 \end{lstlisting}
-
-

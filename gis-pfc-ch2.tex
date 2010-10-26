@@ -1,6 +1,6 @@
 \chapter{Subsistema de adquisición}
 
-El subsistema de adquisición es el encargado de recibir la señal analógica procedente del subsistema para la interacción con el medio físico, muestrearla y proporcionar a las capas superiores una versión digital de la misma. Forma parte del bloque de adquisición y procesado de señales que debe estar presente en cualquier sistema digital de medida. En la \cref{fig:subacqui} se muestra una ventana parcial del sistema de medida digital centrada en las unidades funcionales que conforman el subsistema de adquisición.\par
+El subsistema de adquisición es el encargado de recibir la señal analógica procedente del subsistema para la interacción con el medio físico, muestrearla y proporcionar a las capas superiores una versión digital de la misma. Es un subsistema exclusivo, y al mismo tiempo distintivo de los sistemas digitales de medida. En la \cref{fig:subacqui} se muestra una ventana parcial del sistema de medida digital centrada en las unidades funcionales que conforman el subsistema de adquisición.\par
 
 \begin{figure}
 	\begin{center}
@@ -10,14 +10,14 @@ El subsistema de adquisición es el encargado de recibir la señal analógica proce
 	\label{fig:subacqui}
 \end{figure}
 
-Todo el subsistema se engloba en un sólo bloque, el bloque que representa la tarjeta de adquisición. La tarjeta \kpci{} es el fundamento en el que se basa, no sólo el subsistema de adquisición, si no el sistema digital de medida al completo. Sus capacidades y muchas de sus limitaciones las hereda el sistema, y constituyen los principios de diseño del resto de subsistemas. El subsistema para la interacción con el medio debe proveer al subsistema de adquisición con una señal que se ajuste a las especificaciones de la tarjeta, además el circuito acondicionador de recepción debe adaptar la impedancia de entrada mostrada por el dispositivo. Por su parte, el subsistema de control y presentación debe ser capaz de gestionar el funcionamiento de este instrumento y administrar los valores de señal que proporciona. Además, la \kpci{}, disponer de ella, es una de las razones principales por las que se ha optado por desarrollar un sistema de adquisición propio, de propósito, sin tener en cuenta las principales razones, como es obvio, uno de los objetivos del proyecto, adquirir conocimientos prácticos en el campo del tratamiento digital de señales y, por supuesto, contar con un sistema diseñado a medida. Por todas estas razones, resulta comprensible realizar un estudio previo acerca de las propiedades y el comportamiento de un instrumento de tan singular importancia para este proyecto.\par
+El subsistema de adquisición del sistema digital de medida propuesto para el proyecto comprende un único bloque, un bloque de adquisición en el que se ubica una tarjeta de adquisición. La tarjeta \kpci{} es el fundamento en el que se basa, no sólo el subsistema de adquisición, si no el sistema digital de medida al completo. Sus capacidades y muchas de sus limitaciones las hereda el sistema, y constituyen los principios de diseño del resto de subsistemas. El subsistema para la interacción con el medio debe proveer al subsistema de adquisición con una señal que se ajuste a las especificaciones de la tarjeta, además el circuito acondicionador de recepción debe adaptar la impedancia de entrada mostrada por el dispositivo. Por su parte, el subsistema de control y presentación debe ser capaz de gestionar el funcionamiento de este instrumento y administrar los valores de señal que proporciona. Además, la \kpci{}, disponer de ella, es una de las razones principales por las que se ha optado por desarrollar un sistema de adquisición propio, de propósito, sin tener en cuenta las principales razones, como es obvio, uno de los objetivos del proyecto, adquirir conocimientos prácticos en el campo del tratamiento digital de señales y, por supuesto, contar con un sistema diseñado a medida. Por todas estas razones, resulta comprensible realizar un estudio previo acerca de las propiedades y el comportamiento de un instrumento de tan singular importancia para este proyecto.\par
 Esta memoria dedica un capítulo completo a exponer las características de la tarjeta \kpci{}. Una breve relación de las características técnicas del hardware da paso a la descripción funcional, en la que se explica cual es el comportamiento interno de la tarjeta, como se implementan las distintas funciones que ofrece. Para terminar el capítulo se reproducen los consejos que el fabricante proporciona en el manual de usuario con la premisa de que los usuarios consigan el máximo rendimiento de la tarjeta (punto \ref{subsec:throughput} en la página \pageref{subsec:throughput}) y se muestra la caja de conexiones elaborada expresamente para este proyecto.
 
 
 \section{Características técnicas del hardware}\label{sec:technical}
 
 La tarjeta \kpci{} puede emplearse para la adquisición y conversión de señales analógicas en señales digitales, para sintetizar señales analógicas a partir de señales digitales previamente generadas o almacenadas, o ---gracias a sus 32 puertos digitales de propósito general--- trabajar con señales digitales.\par
-El primer bloque del sistema electrónico de medida propuesto, es decir el sistema de adquisición y procesado de señales, tan sólo requiere de la función de adquisición analógica de la tarjeta. Por ello, de entre todas las características del dispositivo, se ha creído conveniente resumir a continuación aquellas que tienen relación directa con dicha función. Para obtener información detallada sobre la relación que estos atributos guardan con el proceso de adquisición de señales analógicas en la tarjeta \kpci{}, véase la \vref{sec:funcdesc}.
+El subsistema de adquisición dentro del sistema de medida digital requiere únicamente de la función de adquisición analógica de la tarjeta. Por ello, de entre todas las características del dispositivo, se ha creído conveniente resumir a continuación aquellas que tienen relación directa con dicha función. Para obtener información detallada sobre la relación que estos atributos guardan con el proceso de adquisición de señales analógicas en la tarjeta \kpci{}, véase la \vref{sec:funcdesc}.
 
 \begin{itemize}
 	\item El módulo de adquisición analógica dispone de 16 puertos físicos.
@@ -44,22 +44,20 @@ La cola de muestreo, como su propio nombre indica, es una estructura de datos or
 		\midrule
 		Número de canal & 15 & 15 & 02 & 02 %
 		& \multicolumn{2}{c}{$\cdots$} & 17 & 13 & 01 \\
-		Número de puerto\tnote{a, b} & 07 & 07 & 11 & 11 %
+		Número de puerto & 07 & 07 & 11 & 11 %
 		& \multicolumn{2}{c}{$\cdots$} & 07 & 09 & 01 \\
 		Ganancia & 1 & 1 & 40 & 40 %
 		& \multicolumn{2}{c}{$\cdots$} & 200 & 8 & 80 \\
-		Modo de adquisición\tnote{c} & $\pm$ & $\pm$ & $+$ & $+$ %
+		Modo de adquisición\tnote{a} & $\pm$ & $\pm$ & $+$ & $+$ %
 		& \multicolumn{2}{c}{$\cdots$} & $\pm$ & $+$ & $\pm$ \\
-		Modo de terminación\tnote{d} & \sig{d} & \sig{d} & \sig{m} %
+		Modo de terminación\tnote{b} & \sig{d} & \sig{d} & \sig{m} %
 		& \sig{m} & \multicolumn{2}{c}{$\cdots$} & \sig{d} & \sig{m} %
 		& \sig{m} \\
 		\bottomrule
 	\end{tabular}
 	\begin{TableNotes}
-		\tnotetext{a}{Si el canal es diferencial el número de puerto identifica un par de puertos. Un canal diferencial no puede estar asociado a un número de puerto superior a 07.}
-		\tnotetext{b}{Dos canales pueden estar relacionados con los mismos puertos físicos.}
-		\tnotetext{c}{Se define: configuración bipolar ($\pm$); configuración unipolar ($+$).}
-		\tnotetext{d}{Se define: canal diferencial (\sig{d}); canal monoterminal (\sig{m}).}
+		\tnotetext{a}{Configuración bipolar ($\pm$), configuración unipolar ($+$).}
+		\tnotetext{b}{Canal diferencial (\sig{d}), canal monoterminal (\sig{m}).}
 	\end{TableNotes}
 	\end{threeparttable}
 	\caption[Ejemplo de cola de muestreo]{Ejemplo de cola de muestreo.}
@@ -146,9 +144,9 @@ Las ventajas que presenta el uso de uno u otro tipo de canales son comprensibles
 
 \subsection{Rendimiento}\label{subsec:throughput}
 
-Se entiende como rendimiento la cantidad máxima de operaciones de conversión que el dispositivo puede realizar por unidad de tiempo. Para que una de estas operaciones contribuya a la medida de rendimiento debe superar un requisito de precisión.\par
+En el ámbito de este documento se entiende como rendimiento de la tarjeta de adquisición la cantidad máxima de operaciones de conversión que el dispositivo puede realizar por unidad de tiempo. Para que una de estas operaciones contribuya a la medida de rendimiento debe superar un requisito de precisión.\par
 El rendimiento óptimo de la tarjeta \kpci{} especificado por el fabricante es de cien mil operaciones por segundo (100 KS/s). No obstante se advierte, para obtener este nivel de rendimiento es necesario alimentar la tarjeta con una fuente de tensión ideal. Además, es importante que exista adaptación de impedancias entre el circuito de alimentación y el puerto por el que se quiere introducir la señal. Aún en estas condiciones el valor proporcionado por la casa Keithley está sujeto a un error relativo máximo del $0.02\%$, el cual supone un error absoluto máximo de dos mil operaciones por segundo (2 KS/s).\par
-Es bien sabido, a través del teorema de Nyquist, que la frecuencia de muestreo con la que debe muestrearse una señal analógica para que esta pueda ser recuperada a partir de la versión digital obtenida en el proceso de muestreo debe ser mayor o igual al doble de la mayor de las frecuencias con las que oscila la señal original, siempre que esta sea periódica y se encuentre limitada en banda. No obstante, en la práctica, para poder elaborar una representación visual aceptable de señales que no se encuentren sujetas a tales limitaciones ---ancho de banda finito y periodicidad de la señal--- la frecuencia de muestreo debe estar en torno a unas cinco veces el límite superior de frecuencias correspondiente a la señal que desea representarse. Por este motivo el rendimiento del dispositivo de adquisición y por ende del sistema de adquisición y procesado que en éste se sustenta es un factor limitante que determina la frecuencia de oscilación máxima de la señales con las que dicho sistema trabaja. En este caso, considerando el montaje propuesto para el desarrollo de los experimentos que atañen a este proyecto, el rendimiento de la \kpci{} limita la frecuencia de operación de los transductores empleados y, en consecuencia, la profundidad de penetración de los pulsos ultrasónicos y, por consiguiente, el espesor máximo de las muestras empleadas en los experimentos. Esta relación surge inequívocamente de las conclusiones que se extraen de los desarrollos llevados a cabo en este mismo documento en el \cref{subsec:field}, expuestas en parte en otro \nameref{subsec:quality}, el \vref{subsec:quality}.
+En los \sig{endus}, la frecuencia de la señal ultrasónica determina el alcance del ensayo, siendo mayor la profundidad a la que penetran las ondas acústicas cuanto mayor sea su frecuencia. Los transductores utilizados en el ensayo se comportan como filtros además de como transductores, ya que por un lado sólo dejan pasar determinadas componentes de frecuencia y por otro transforman variaciones de la tensión eléctrica en variaciones de presión o viceversa. Imponen un límite físico a la frecuencia de oscilación de la señal ultrasónica y, por tanto, en el alcance del ensayo. Para trabajar con señales acústicas de alta frecuencia son necesarios transductores adecuados que presenten un gran ancho de banda y sean capaces de transmitir las altas frecuencias. El receptor transforma el pulso acústico en un pulso eléctrico filtrado, después esta señal se acondiciona y deja el subsistema para la interacción con el medio físico para pasar al subsistema de adquisición. En el subsistema de adquisición el pulso eléctrico se muestrea y es ahí donde entra en juego el rendimiento de la \kpci{}. El teorema de Nyquist estipula una frecuencia de muestreo mínima para la cual no se produce una pérdida de información al muestrear una señal periódica y limitada en banda. La frecuencia de Nyquist es igual al doble de la frecuencia de oscilación máxima de la señal que se preve muestrear. Si una señal se muestrea a una tasa inferior se da una pérdida de información y no es posible recuperar la señal original. En otras palabras, para una frecuencia de muestreo fija, sólo las señales que oscilan a frecuencias por debajo de la mitad de la frecuencia de muestreo son correctamente muestreadas. De lo que se deduce que, cuanto mayor sea el rendimiento del bloque de adquisición, mayor la frecuencia de las señales que pueden muestrearse sin pérdidas, lo que implica que no existe impedimento para emplear un receptor de mayor frecuencia, y asimismo es posible alcanzar una mayor profundidad de penetración en el ensayo. Si se emplean transductores de alta frecuencia, y el receptor genera una señal de frecuencia superior a la mitad del rendimiento del dispositivo de adquisición, el beneficio de trabajar con señales de alta frecuencia no es real. Este es el principal motivo que fomenta el interés por extraer el mayor rendimiento de la tarjeta \kpci{}. Para lograrlo es necesario conocer por un lado que factores limitan el rendimiento de la tarjeta y, por otro, como debe configurarse el dispositivo para que la influencia de esos factores sea mínima.
 
 
 \subsubsection[Factores limitantes del rendimiento]{Amplificador de instrumentación y pérdida del rendimiento}
@@ -188,21 +186,20 @@ En las \cref{fig:portanalog,fig:portdigital} se etiqueta cada terminal según su 
 
 \begin{figure}
 	\begin{center}
-		\subfloat[Conector etiquetado como \emph{analog}][Conector etiquetado como \emph{analog}.]{
+		\subfloat[Conector etiquetado como \guillemotleft analog\guillemotright][Conector etiquetado como \guillemotleft analog\guillemotright.]{
 			\label{fig:portanalog}
-			\begin{minipage}{.9\textwidth}
-				\centering\includegraphics{gis-pfc-ch2-03.mps}
-			\end{minipage}}
+			\includegraphics{gis-pfc-ch2-03.mps}}
 			\vspace*{.1\textheight}
-		\subfloat[Conector etiquetado como \emph{digital}][Conector etiquetado como \emph{digital}.]{
+		\subfloat[Conector etiquetado como \guillemotleft digital\guillemotright][Conector etiquetado como \guillemotleft digital\guillemotright.]{
 			\label{fig:portdigital}
-			\begin{minipage}{.9\textwidth}
-				\centering\includegraphics{gis-pfc-ch2-04.mps}
-			\end{minipage}}
+			\includegraphics{gis-pfc-ch2-04.mps}}
 	\end{center}
 	\caption[Conectores traseros de la tarjeta de adquisición]{Conectores traseros de la tarjeta de adquisición.}
 	\label{fig:ports}
 \end{figure}
+
+\newlength\tablewidth
+\setlength\tablewidth{.5\linewidth}
 
 \begin{table}
 	\centering
@@ -210,19 +207,19 @@ En las \cref{fig:portanalog,fig:portdigital} se etiqueta cada terminal según su 
 		\toprule
 		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
 		\midrule
-		1 & ip5 & \multirow{12}{0.6\textwidth}{Bits digitales de entrada multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Base temporal para el contador/temporizador y/o entrada a \emph{gate} \\\item Reloj externo para conversiones A/D o D/A \\\item Disparador digital externo \\\item Entrada digital en el modo \emph{target-mode}}} \\
+		1 & ip5 & \multirow{16}{\tablewidth}{Bits digitales de entrada multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Base temporal para el contador/temporizador y/o entrada a \emph{gate} \\\item Reloj externo para conversiones A/D o D/A \\\item Disparador digital externo \\\item Entrada digital en el modo \emph{target-mode}}} \\
 		2 & ip3 & \\
 		3 & ip1 & \\
-		\\\\\\\\\\\\\\\\
+		\\\\\\\\\\\\\\\\\\\\\\\\
 		\midrule
-		4 & op5 & \multirow{12}{0.6\textwidth}{Bits digitales de salida multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Salidas del contador/temporizador\\\item Salida del disparador\\\item Salida de control para accesorios\\\item Salida del reloj interno\\\item Salida digital en el modo \emph{target-mode}}} \\
+		4 & op5 & \multirow{15}{\tablewidth}{Bits digitales de salida multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Salidas del contador/temporizador\\\item Salida del disparador\\\item Salida de control para accesorios\\\item Salida del reloj interno\\\item Salida digital en el modo \emph{target-mode}}} \\
 		5 & op3 & \\
 		6 & op1 & \\
-		\\\\\\\\\\\\\\\\
+		\\\\\\\\\\\\\\\\\\\\\\
 		\midrule
-		7 & dgnd & \multicolumn{1}{c}{Tierra digital} \\
+		7 & dgnd & Tierra digital \\
 		\midrule
-		8 & ch07 lo/ch15 & \multirow{4}{0.6\textwidth}{Entradas analógicas, cuya función depende del modo de terminación configurado: puerto asociado a un canal monoterminal o puerto bajo de un canal diferencial} \\
+		8 & ch07 lo/ch15 & \multirow{5}{\tablewidth}{Entradas analógicas, cuya función depende del modo de terminación configurado: puerto asociado a un canal monoterminal o puerto bajo de un canal diferencial} \\
 		9 & ch06 lo/ch14 & \\
 		10 & ch05 lo/ch13 & \\
 		$\vdots$ & $\vdots$ & \\
@@ -243,27 +240,24 @@ En las \cref{fig:portanalog,fig:portdigital} se etiqueta cada terminal según su 
 		\toprule
 		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
 		\midrule
-		19 & ip4 & \multirow{12}{0.6\textwidth}{Bits digitales de entrada multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Base temporal para el contador/temporizador y/o entrada a \emph{gate} \\\item Reloj externo para conversiones A/D o D/A \\\item Disparador digital externo \\\item Entrada digital en el modo \emph{target-mode}}} \\
+		19 & ip4 & \multirow{16}{\tablewidth}{Bits digitales de entrada multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Base temporal para el contador/temporizador y/o entrada a \emph{gate} \\\item Reloj externo para conversiones A/D o D/A \\\item Disparador digital externo \\\item Entrada digital en el modo \emph{target-mode}}} \\
 		20 & ip2 & \\
 		21 & ip0 & \\
-		\\\\\\\\\\\\\\\\
+		\\\\\\\\\\\\\\\\\\\\\\\\
 		\midrule
-		22 & op4 & \multirow{12}{0.6\textwidth}{Bits digitales de salida multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Salidas del contador/temporizador\\\item Salida del disparador\\\item Salida de control para accesorios\\\item Salida del reloj interno\\\item Salida digital en el modo \emph{target-mode}}} \\
+		22 & op4 & \multirow{15}{\tablewidth}{Bits digitales de salida multifunción. Pueden ser configurados por el usuario para que ejerzan la función de:\miniit{\item Salidas del contador/temporizador\\\item Salida del disparador\\\item Salida de control para accesorios\\\item Salida del reloj interno\\\item Salida digital en el modo \emph{target-mode}}} \\
 		22 & op2 & \\
 		21 & op0 & \\
-		\\\\\\\\\\\\\\\\
+		\\\\\\\\\\\\\\\\\\\\\\
 		\midrule
-		25 & {\upshape +5 V} & \multirow{2}{0.6\textwidth}{Referencia de tensión de 5 voltios de corriente continua extraídos del bus \sig{pci} del ordenador} \\
-		& & \\
+		25 & {\upshape +5 V} & \multirow{3}{\tablewidth}{Referencia de tensión de 5 voltios de corriente continua extraídos del bus \sig{pci} del ordenador} \\
+		\\\\
 		\midrule
-		26 & ch07 hi & \multirow{3}{0.6\textwidth}{Entradas analógicas restantes, en el modo de terminación diferencial representan el puerto alto de un canal diferencial} \\
+		26 & ch07 hi & \multirow{4}{\tablewidth}{Entradas analógicas restantes, en el modo de terminación diferencial representan el puerto alto de un canal diferencial} \\
 		27 & ch06 hi & \\
 		28 & ch05 hi & \\
 		$\vdots$ & $\vdots$ & \\
 		33 & ch00 hi & \\
-		\midrule
-		34 & {\upshape +10 V} & \multirow{6}{.6\textwidth}{Entrada diseñada para proporcionar al dispositivo una referencia externa de precisión de 10 voltios mediante una fuente de alta impedancia de salida (La impedancia de entrada de este puerto es equivalente a una resistencia de 1 k$\Omega$ en serie con la impedancia de entrada de la fuente)} \\
-		\\\\\\\\\\
 		\bottomrule
 	\end{tabular}
 	\caption[]{Continuación del \vref{tab:analog}.}
@@ -275,10 +269,13 @@ En las \cref{fig:portanalog,fig:portdigital} se etiqueta cada terminal según su 
 		\toprule
 		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
 		\midrule
-		35 & dac1 & \multirow{2}{.6\textwidth}{Salida número 1 del conversor digital a analógico de la \kpci{}} \\
+		34 & {\upshape +10 V} & \multirow{8}{\tablewidth}{Entrada diseñada para proporcionar al dispositivo una referencia externa de precisión de 10 voltios mediante una fuente de alta impedancia de salida (La impedancia de entrada de este puerto es equivalente a una resistencia de 1 k$\Omega$ en serie con la impedancia de entrada de la fuente)} \\
+		\\\\\\\\\\\\\\
+		\midrule
+		35 & dac1 & \multirow{2}{\tablewidth}{Salida número 1 del conversor digital a analógico de la \kpci{}} \\
 		\\
 		\midrule
-		36 & dac0 & \multirow{2}{.6\textwidth}{Salida número 0 del conversor digital a analógico de la \kpci{}} \\
+		36 & dac0 & \multirow{2}{\tablewidth}{Salida número 0 del conversor digital a analógico de la \kpci{}} \\
 		\\
 		\bottomrule
 	\end{tabular}
@@ -291,14 +288,14 @@ En las \cref{fig:portanalog,fig:portdigital} se etiqueta cada terminal según su 
 		\toprule
 		\multicolumn{1}{c}{Terminal} & {\upshape Puerto asignado} & \multicolumn{1}{c}{Descripción} \\
 		\midrule
-		1 & {\upshape Bit 0} & \multirow{6}{0.6\textwidth}{Canal 0 de bits de entrada/salida de propósito general (En la \kpci{} los bits digitales se agrupan de en ocho en ocho en canales. Los canales de este tipo puede configurarse para que los bits que lo integran se comporten como todo salidas o todo entradas)} \\
+		1 & {\upshape Bit 0} & \multirow{7}{\tablewidth}{Canal 0 de bits de entrada/salida de propósito general (En la \kpci{} los bits digitales se agrupan de en ocho en ocho en canales. Los canales de este tipo puede configurarse para que los bits que lo integran se comporten como todo salidas o todo entradas)} \\
 		2 & {\upshape Bit 1} & \\
 		3 & {\upshape Bit 2} & \\
 		$\vdots$ & $\vdots$ & \\
 		8 & {\upshape Bit 7} & \\
-		\\
+		\\\\
 		\midrule
-		9 & {\upshape Bit 8} & \multirow{2}{0.6\textwidth}{Canal 1 de bits de entrada/salida de propósito general} \\
+		9 & {\upshape Bit 8} & \multirow{2}{\tablewidth}{Canal 1 de bits de entrada/salida de propósito general} \\
 		10 & {\upshape Bit 9} & \\
 		11 & {\upshape Bit 10} & \\
 		$\vdots$ & $\vdots$ & \\
@@ -306,13 +303,13 @@ En las \cref{fig:portanalog,fig:portdigital} se etiqueta cada terminal según su 
 		\midrule
 		\multicolumn{1}{l}{17, 18} & dgnd & Tierras digitales \\
 		\midrule
-		19 & {\upshape Bit 16} & \multirow{2}{0.6\textwidth}{Canal 2 de bits de entrada/salida de propósito general} \\
+		19 & {\upshape Bit 16} & \multirow{2}{\tablewidth}{Canal 2 de bits de entrada/salida de propósito general} \\
 		20 & {\upshape Bit 17} & \\
 		21 & {\upshape Bit 18} & \\
 		$\vdots$ & $\vdots$ & \\
 		26 & {\upshape Bit 23} & \\
 		\midrule
-		27 & {\upshape Bit 24} & \multirow{2}{0.6\textwidth}{Canal 3 de bits de entrada/salida de propósito general} \\
+		27 & {\upshape Bit 24} & \multirow{2}{\tablewidth}{Canal 3 de bits de entrada/salida de propósito general} \\
 		28 & {\upshape Bit 25} & \\
 		29 & {\upshape Bit 26} & \\
 		$\vdots$ & $\vdots$ & \\

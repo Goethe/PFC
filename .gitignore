@@ -11,9 +11,9 @@
 *.swp
 *.toc
 *.txt
+*latexmk
 bibliografia
 gis-pfc.pdf
-gis-pfc.fdb_latexmk
 application
 pictures/*.jpg
 pictures/*.mps
@@ -22,6 +22,7 @@ pictures/*.old*
 pictures/*.pdf
 pictures/*.skp
 pictures/*.svg
+pictures/mpxerr.tex
 !pictures/gis-pfc-ch2-05.jpg
 !pictures/gis-pfc-ch2-06.pdf
 !pictures/gis-pfc-ch2-06.svg
