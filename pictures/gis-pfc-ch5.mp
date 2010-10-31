@@ -1,8 +1,10 @@
 verbatimtex
 %&latex
 \documentclass{minimal}
+\usepackage[T1]{fontenc}
+\usepackage{lucidabr}
 \begin{document}
-\fontsize{12pt}{14.4pt}\selectfont
+\fontsize{11pt}{13.2pt}\selectfont
 etex
 
 filenametemplate "%j-%02c.mps";
@@ -437,6 +439,8 @@ pickup l1;
 drawgisarrow p15;			drawgisarrow p16;
 drawgisarrow p17;			drawgisarrow p18;
 drawgisarrow p19;			drawgisarrow p20;
+pickup l2;
+draw (0, 0)--(wi, 0)--(wi, he02)--(0, he02)--cycle;
 
 endfig;
 % ==================================================================

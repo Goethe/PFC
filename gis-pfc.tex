@@ -1,7 +1,6 @@
-\documentclass[a4paper, draft]{book}
+\documentclass[a4paper, 12pt]{book}
 \includeonly{gis-pfc-pro, gis-pfc-ch1, gis-pfc-ch2, gis-pfc-ch3, %
 	gis-pfc-ch4, gis-pfc-ch5, gis-pfc-appa, gis-pfc-appb}
-\usepackage[paper=a4, BCOR1cm]{typearea}
 \usepackage[english, spanish]{babel}
 \usepackage[format=hang, font=small, labelfont=bf, labelsep=endash, width=.9\textwidth]{caption}
 \usepackage[listofformat=subsimple, format=hang, labelfont=footnotesize, %
@@ -18,8 +17,10 @@
 \usepackage{array, booktabs, tabularx, tabulary, dcolumn, multirow, threeparttable}
 \usepackage[fixlanguage, noisbn]{babelbib}
 \usepackage[spanish]{cleveref}
-\titleformat{\part}[display]{\centering\huge\sffamily\bfseries}{\partname\ \thepart}%
+\titleformat{\part}[display]{\centering\huge\bfseries}{\partname\ \thepart}%
 	{.5\baselineskip}{}
+\titleformat{\subsubsection}[leftmargin]{\small\scshape\filleft}{\thesubsubsection}{.5em}{}
+\titlespacing{\subsubsection}{4pc}{1.5ex plus .1ex minus .2ex}{1pc}
 \hypersetup{%
 	pdftitle=Proceso de adquisición y tratamiento de señales de %
 	ultrasonidos, pdfauthor=José Ramón Gisbert Valls, pdfcreator=Vim 7.2,%
@@ -49,6 +50,9 @@
 \captionsetup[ContinuedFloat]{labelformat=cont}
 \selectbiblanguage{spanish}
 \setbtxfallbacklanguage{english}
+\setlength\marginparsep{12pt}
+\setlength\marginparwidth{\pdfpagewidth - \textwidth - \oddsidemargin - %
+	2\marginparsep - 1in}
 % Se aplica el siguiente convenio tipográfico a la primera aparición de una sigla.
 \newcommand\psig[1]{\emph{\MakeTextUppercase{#1}}}
 % Se aplica el siguiente convenio tipográfico a siglas.
@@ -98,12 +102,12 @@
 \include{gis-pfc-pro}
 
 \fancyhf{}
-\fancyhead[RO, LE]{\sffamily\bfseries\thepage}
-\fancyhead[LO]{\sffamily\nouppercase{\rightmark}}
-\fancyhead[RE]{\sffamily\nouppercase{\leftmark}}
-\renewcommand\headrulewidth{0.4pt}
-\pagestyle{fancy}
+\fancyhead[RO, LE]{\footnotesize\sffamily\bfseries\thepage}
+\fancyhead[LO]{\footnotesize\sffamily\nouppercase{\rightmark}}
+\fancyhead[RE]{\footnotesize\sffamily\nouppercase{\leftmark}}
+\renewcommand\headrulewidth{0pt}
 \renewcommand\chaptermark[1]{\markboth{#1}{}}
+\pagestyle{fancy}
 
 \mainmatter
 

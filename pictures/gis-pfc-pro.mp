@@ -1,8 +1,10 @@
 verbatimtex
 %&latex
 \documentclass{minimal}
+\usepackage[T1]{fontenc}
+\usepackage{lucidabr}
 \begin{document}
-\fontsize{12pt}{14.4pt}\selectfont
+\fontsize{11pt}{13.2pt}\selectfont
 etex
 
 filenametemplate "%j-%02c.mps";
