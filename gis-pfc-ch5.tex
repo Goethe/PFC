@@ -99,7 +99,7 @@ En ensayos no destructivos mediante ultrasonidos, la señal de interés y el \emph
 
 \subsection{Fundamentos físicos del ruido estructural}
 
-El ruido estructural es una consecuencia directa de la dispersión. Cuando un frente de ondas incide sobre una partícula de tamaño comparable a su longitud de onda, la energía que transporta se dispersa por la acción de esa partícula. Dicha partícula actúa como un reflector esférico y selectivo en frecuencia ---afectando más a las altas frecuencias\footnote{Según la relación $c = \lambda\cdot f$, si se mantiene $c$, a medida que aumenta $f$ disminuirá la longitud de onda y, por tanto, el tamaño de la partícula con respecto a la longitud de onda aumentará.}--- que refleja la señal en todas direcciones. De este modo, aquellos materiales que contienen un número considerable de partículas susceptibles de interferir del modo descrito en la propagación de un determinado frente de ondas, son considerados materiales dispersivos.\par
+El ruido estructural es una consecuencia directa de la dispersión. Cuando un frente de ondas incide sobre una partícula de tamaño comparable a su longitud de onda, la energía que transporta se dispersa por la acción de esa partícula. Dicha partícula actúa como un reflector esférico y selectivo en frecuencia ---afectando más a las altas frecuencias\footnote{Según la relación $c = \lambda\cdot f$, si se mantiene $c$, a medida que aumenta $f$ disminuye la longitud de onda y, por tanto, el tamaño de la partícula con respecto a la longitud de onda aumenta.}--- que refleja la señal en todas direcciones. De este modo, aquellos materiales que contienen un número considerable de partículas susceptibles de interferir del modo descrito en la propagación de un determinado frente de ondas, son considerados materiales dispersivos.\par
 En el caso de un frente de ondas acústicas que incide sobre un determinado material dispersivo, la energía que tras el proceso de reflexión se propaga en sentido contrario al sentido de propagación del frente de ondas se conoce como \emph{back-scattering}. Por su parte, la energía perturbada por la acción del reflector que continúa propagándose en el mismo sentido suele denominarse \emph{forward-scattering}. En los \sig{endus} dependiendo de la técnica empleada es uno u otro tipo de dispersión el que causa un mayor deterioro de los resultados: si la técnica empleada es de pulso"=eco, el \emph{back-scattering} será el más perjudicial; si, por el contrario, se está empleando la técnica de transmisión, será el \emph{forward-scattering} el más nocivo para el proceso.\par
 Para poder estudiar el efecto del ruido estructural en las inspecciones ultrasónicas de forma adecuada es necesario caracterizar el proceso de emisión"=recepción que se da en un ensayo mediante ultrasonidos desde el punto de vista de la respuesta al impulso o régimen transitorio.
 
@@ -165,7 +165,7 @@ Por consiguiente el proceso de emisión"=recepción en el que se fundamentan los \
 \begin{equation}\label{eq:emirec}
 	\begin{split}
 		y(t) = \rho_0\frac{\partial}{\partial t}\{u(t)&\otimes h_{te}(t)\otimes h_d(z, t)\otimes a(z, t)\otimes \\
-		h_r(t)&\otimes h_d(z, t)\otimes a(z, t)\otimes h_{tr}(t)\}
+		&\otimes h_r(t)\otimes h_d(z, t)\otimes a(z, t)\otimes h_{tr}(t)\}
 	\end{split}
 \end{equation}
 
@@ -215,8 +215,7 @@ La atenuación es el fenómeno en el que se manifiesta la influencia del medio en 
 	\label{eq:independentloss}
 \end{equation}
 
-Donde, como se anticipó en \eqref{eq:loss}, $\alpha(\omega)$ es el coeficiente de atenuación.\par
-Cuando el material por el que se propaga la onda es no homogéneo, la atenuación se debe a dos fenómenos:
+Donde, como se anticipó en \eqref{eq:loss}, $\alpha(\omega)$ es el coeficiente de atenuación. Cuando el material por el que se propaga la onda es no homogéneo, la atenuación se debe a dos fenómenos:
 
 \begin{description}
 	\item[Absorción] Fenómeno que también aparece en medios homogéneos y por el cual la energía que transporta la onda se transforma en otro tipo de energía, por lo general en calor.

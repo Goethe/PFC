@@ -8,19 +8,21 @@
 \usepackage[latin1]{inputenc}
 \usepackage[nofontinfo]{lucidabr}
 \usepackage[T1]{fontenc}
-\usepackage{titlesec}
+\usepackage[clearempty]{titlesec}
 \usepackage[nottoc]{tocbibind}
 \usepackage[spanish]{varioref}
 \usepackage{graphicx}
 \usepackage{amsfonts, amsmath, amssymb, calc, color, fancyhdr, hyperref, ifthen, layouts, %
-	listings, nextpage, textcase}
+	listings, textcase}
 \usepackage{array, booktabs, tabularx, tabulary, dcolumn, multirow, threeparttable}
 \usepackage[fixlanguage, noisbn]{babelbib}
 \usepackage[spanish]{cleveref}
 \titleformat{\part}[display]{\centering\huge\bfseries}{\partname\ \thepart}%
 	{.5\baselineskip}{}
-\titleformat{\subsubsection}[leftmargin]{\small\scshape\filleft}{\thesubsubsection}{.5em}{}
-\titlespacing{\subsubsection}{4pc}{1.5ex plus .1ex minus .2ex}{1pc}
+\titleformat{name=\subsubsection,page=even}[leftmargin]{\small\scshape\filleft}{\thesubsubsection}{\margiparsep}{}
+\titleformat{name=\subsubsection,page=odd}[rightmargin]{\small\scshape\filright}{\thesubsubsection}{\margiparsep}{}
+\titlespacing{\subsubsection}{\marginparwidth}{3.5ex plus 1ex minus .2ex}{\marginparsep}
+\titlespacing*{\subparagraph}{\parindent}{3.5ex plus 1ex minus .2ex}{1em}
 \hypersetup{%
 	pdftitle=Proceso de adquisición y tratamiento de señales de %
 	ultrasonidos, pdfauthor=José Ramón Gisbert Valls, pdfcreator=Vim 7.2,%
@@ -80,7 +82,6 @@
 	{\fontsize{7pt}{8.4pt}\selectfont\normalfont #1}{\footnotesize #2}}
 \newenvironment{TableNotes}{\begin{tablenotes}\vspace{\footnotesep}%
 	\footnoterule\vspace{.2ex}}{\end{tablenotes}}
-\renewcommand\cleardoublepage{\cleartooddpage[\thispagestyle{empty}]}
 \newcolumntype{d}[1]{D{,}{,}{#1}}
 \newcolumntype{+}{D{/}{\mbox{\ --\ }}{5}}
 \begin{document}
@@ -105,7 +106,7 @@
 \fancyhead[RO, LE]{\footnotesize\sffamily\bfseries\thepage}
 \fancyhead[LO]{\footnotesize\sffamily\nouppercase{\rightmark}}
 \fancyhead[RE]{\footnotesize\sffamily\nouppercase{\leftmark}}
-\renewcommand\headrulewidth{0pt}
+\renewcommand\headrulewidth{0.4pt}
 \renewcommand\chaptermark[1]{\markboth{#1}{}}
 \pagestyle{fancy}
 

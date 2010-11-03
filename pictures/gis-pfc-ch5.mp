@@ -361,7 +361,7 @@ atb.c = reb.c + 3(z11);			difb.c = atb.c + 2(z11);
 ema.c = reb.c + 6(z12);			ata.c = difb.c + 6(z12);
 difa.c = atb.c + 6(z12);
 disp.c = difb.c + 2(z11) + 3(z12);
-difc.c = atb.c - 6(z12);		atc.c = difc.c + 2(z11);
+difc.c = atb.c -3(z11)/2 - 12(z12);	atc.c = difc.c + 2(z11);
 rec.c = atc.c + 3(z11);
 hma.sw = difa.c - 9/10(z11) - 9/10(z12);
 hma.ne = ata.c + 9/10(z11) + 29/10(z12);
@@ -439,8 +439,6 @@ pickup l1;
 drawgisarrow p15;			drawgisarrow p16;
 drawgisarrow p17;			drawgisarrow p18;
 drawgisarrow p19;			drawgisarrow p20;
-pickup l2;
-draw (0, 0)--(wi, 0)--(wi, he02)--(0, he02)--cycle;
 
 endfig;
 % ==================================================================

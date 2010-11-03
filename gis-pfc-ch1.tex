@@ -1,6 +1,37 @@
 \chapter{Subsistema de interacción con el medio físico}
 
+\section{Introducción al sistema digital de medida}
 
+Un sistema de medida es cualquier instrumento formado por más de un elemento que permite a quien lo usa evaluar una determinada propiedad de un objeto, medio o evento. Para una definición más rigurosa de un sistema electrónico de medida puede optarse por la encontrada en \cite{pallas2004sas}, y dice lo siguiente:
+
+{\small\begin{quotation}
+	Se denomina sistema a la combinación de dos o más elementos, subconjuntos y partes necesarias para realizar una o varias funciones. En los sistemas de medida, esta función es la asignación objetiva y empírica de un número a una propiedad o cualidad de un objeto o evento, de tal forma que la describa.
+\end{quotation}}
+
+Un sistema de medida digital está constituido habitualmente por los elementos mostrados en el esquema de la \cref{fig:digmeasstm}. Pueden agruparse estos elementos según la función que desempeñan en el sistema, si se hace de ese modo se encuentran tres subsistemas: un subsistema para la interacción con el medio físico, un subsistema de adquisición, y un subsistema de control y presentación. Puede observarse entonces el sistema como una pila de capas superpuestas, en el que cada capa provee de servicio a la capa inmediatamente superior y abstrae las capas inferiores, en cada una de las capas se situaría cada uno de los subsistemas propuestos. De ese modo cada subsistema puede estudiarse por separado con independencia de los demás, así se ha hecho en esta memoria. Consecuentemente cada subsistema da lugar a cada uno de los tres capítulos que empezando por este describen el sistema digital de medida implementado durante el curso del desarrollo de este proyecto.\par
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch1-01.mps}
+	\end{center}
+	\caption[Sistema digital de medida]{Distintos elementos funcionales que conforman el sistema digital de medida.}
+	\label{fig:digmeasstm}
+\end{figure}
+
+Si se define una jerarquía en la que el nivel más bajo es aquel ocupado por los elementos en contacto directo con el medio, y se tiene como nivel más alto aquel en el que se encuentran los elementos que interactúan con el supervisor, entonces los niveles ordenados de inferior a superior en la jerarquía establecida se encuentran ocupados por los subsistemas precisados anteriormente del siguiente modo: subsistema para la interacción con el medio, subsistema de adquisición, y subsistema de control y presentación. El orden en el que se han dispuesto los capítulos que tratan acerca de la configuración del sistema digital de medida, los tres primeros capítulos, coincide con el orden que guardan los distintos subsistemas en esta jerarquía.
+
+
+\section{Introducción}
+
+El primero de los subsistemas estudiado en este documento es el subsistema para la interacción con el medio físico. Es el subsistema que ocupa la capa de menor nivel y agrupa los elementos que pueden observarse en la \cref{fig:submedium}.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch1-02.mps}
+	\end{center}
+	\caption[Subsistema para la interacción con el medio físico]{Elementos del sistema digital de medida que también se incluyen en el subsistema para la interacción con el medio físico.}
+	\label{fig:submedium}
+\end{figure}
 
 % ====================================================================
 % ANOTACIONES EXTRAÍDAS DEL ANTIGUO TERCER CAPÍTULO EN LA SECCIÓN
@@ -28,7 +59,7 @@
 % 
 % \begin{itemize}
 % 	\item La resolución viene determinada principalmente por el tamaño y el tipo de transductores empleados. Cuanto mayor sea el ancho de banda de los transductores y menores sus dimensiones, se alcanzarán mejores resoluciones. Asimismo, una buena resolución depende de la forma y frecuencia de los pulsos ultrasónicos, siendo mejor cuanto más estrecho sea el pulso y mayor su frecuencia.
-% 	\item La profundidad de penetración, factor determinante en los experimentos realizados para este proyecto, depende fundamentalmente de la potencia transmitida en cada pulso y de su frecuencia de oscilación, siendo mayor cuanto mayor sean estos dos parámetros.
+% 	\item La profundidad de penetración, factor determinante en los experimentos realizados para este proyecto, depende fundamentalmente de la potencia transmitida en cada pulso y de su frecuencia de oscilación, siendo mayor cuanto mayor sean estos dos parámetros.% Aumenta la profundidad de penetración a medida que aumenta la potencia transmitida y DISMINUYE la frecuencia de oscilación del pulso.
 % 	\item Sin embargo, la consecución de una buena relación señal a ruido está reñida con una buena profundidad de penetración. El ruido estructural, principal factor limitante de la relación señal a ruido, se agrava a medida que aumenta la frecuencia o la potencia del pulso ultrasónico. Para poder realizar ensayos capaces de detectar defectos en el medio a profundidades razonables sin sufrir en exceso los efectos del ruido de grano es determinante aplicar un buen algoritmo para la reducción del ruido.
 % \end{itemize}
 % 

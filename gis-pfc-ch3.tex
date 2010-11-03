@@ -1,4 +1,4 @@
-\chapter{Subsistema para el control y la presentación}
+\chapter{Subsistema de control y presentación}
 
 \section{Introducción}
 
@@ -41,23 +41,6 @@ Para tratar de imitar el funcionamiento del osciloscopio digital en el software 
 	\item El primero y más inmediato, permitirle ubicar de forma muy precisa los objetivos del proceso de programación. De forma que le sea posible identificar, en cierto modo, que rutinas son necesarias para lograr el resultado final.
 	\item Y además puede servirle como nota introductoria al \cref{chap:part1conclusions} en el que se comparan los resultados obtenidos en un experimento realizado primero mediante el sistema digital de medida y, posteriormente, utilizando un osciloscopio digital en conjunción con el subsistema para la interacción con el medio físico.
 \end{itemize}
-
-
-% El propósito de este capítulo es documentar el proceso de desarrollo del subsistema de control y presentación o, en resumidas cuentas, el software de control. El objetivo más ambicioso del software de control es implementar un modo gráfico capaz de representar la forma de una señal al estilo de un osciloscopio digital, pero además, acompañar el fragmento representado de señal con la representación de su espectro en frecuencia y, por supuesto, permitir al usuario supervisor controlar la sesión de adquisición. La mayoría de las rutinas programadas en el código que conforma el software de control están destinadas a cubrir estos tres aspectos.
-% Para conseguir una funcionalidad como la que ofrecen los osciloscopios digitales el software de control debe reunir una serie de requisitos mínimos:
-% 
-% \begin{itemize}
-% 	\item En la representación de señales, debe ser capaz de representar el aspecto actual (con un retraso invisible al ojo humano) de una señal. La representación debe mostrar la señal disparada con respecto a un determinado de umbral y filtrada con el propósito de eliminar la componente en continua.
-% 	\item Debe, asimismo, permitir al usuario modificar aspectos de la representación. Fundamentalmente la escala de los valores representados y duración del fragmento de señal representado.
-% \end{itemize}
-% 
-% Vale, lo tengo casi claro. La idea es decir que a parte de dar una imagen de lo que se quiere lograr, lo que facilita ubicar de forma muy precisa que funciones se tiene que implementar y como, como van a ser las rutinas que conforman el modo gráfico, también se da una imagen del producto final
-% Antes de ponerme a programar decidí a que se iba a parecer el software. Quise que se pareciera a un osciloscopio digital, que representara la señal como lo hacen los osciloscopios (que eliminase la componente en continua, que pudiese disparar la señal,..) y que pudiese controlar determinados aspectos de la representación (como la escala con que se representan las señales y la duración de la ventana).
-
-
-% El propósito de este capítulo es guiar al lector en el proceso de elaboración del software de control. Como se ha mencionado anteriormente, en el proceso de diseño previo a la programación del software se decide incluir en la aplicación un modo de funcionamiento que permita representar la forma de la señal y su espectro en frecuencia. Una parte importante del código fuente del software de control elaborado para el proyecto lo ocupan las rutinas con las que se implementa dicho modo de funcionamiento. Además, la influencia que ejerce este conjunto de rutinas sobre el resto es notable. De hecho, del resto de funciones, muchas se han escrito a partir de éste núcleo de código, acomodándose a él.\par
-% Muchas de las ideas que han resultado ser imprescindibles para llevar a término el proceso de desarrollo del software se han obtenido tras observar el comportamiento de un osciloscopio de laboratorio. Una serie de conceptos que han influido en la forma y estructura del código fuente final. La elección de un osciloscopio digital como modelo es intencionada ya que desde un principio lo que se persigue es obtener unas prestaciones similares, prestaciones que se observan en el resultado final (véase el \vref{chap:part1conclusions} y el \vref{chap:appendixA}).\par
-% Por todo ello, para comprender como se ha ido desarrollando el software, para entender como funciona la aplicación de usuario, es conveniente conocer las claves que se siguieron durante el curso de su desarrollo, en definitiva, las pautas de comportamiento de un osciloscopio. De una forma resumida se expone aquí un texto en relación con dicha materia para una mejor compresión de la versión definitiva del software.
 
 
 \subsection{Osciloscopios analógicos, osciloscopios digitales y retardo}
