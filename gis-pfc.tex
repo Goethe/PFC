@@ -5,7 +5,7 @@
 \usepackage[format=hang, font=small, labelfont=bf, labelsep=endash, width=.9\textwidth]{caption}
 \usepackage[listofformat=subsimple, format=hang, labelfont=footnotesize, %
 	textfont={it, footnotesize}]{subfig}
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[nofontinfo]{lucidabr}
 \usepackage[T1]{fontenc}
 \usepackage[clearempty]{titlesec}
@@ -22,10 +22,9 @@
 \titleformat{name=\subsubsection,page=even}[leftmargin]{\small\scshape\filleft}{\thesubsubsection}{\margiparsep}{}
 \titleformat{name=\subsubsection,page=odd}[rightmargin]{\small\scshape\filright}{\thesubsubsection}{\margiparsep}{}
 \titlespacing{\subsubsection}{\marginparwidth}{3.5ex plus 1ex minus .2ex}{\marginparsep}
-\titlespacing*{\subparagraph}{\parindent}{3.5ex plus 1ex minus .2ex}{1em}
 \hypersetup{%
-	pdftitle=Proceso de adquisiciÛn y tratamiento de seÒales de %
-	ultrasonidos, pdfauthor=JosÈ RamÛn Gisbert Valls, pdfcreator=Vim 7.2,%
+	pdftitle=Proceso de adquisici√≥n y tratamiento de se√±ales de %
+	ultrasonidos, pdfauthor=Jos√© Ram√≥n Gisbert Valls, pdfcreator=Vim 7.2,%
 	pdfstartview=FitH, colorlinks=true, pdfdisplaydoctitle=true,%
 	linkcolor=black, citecolor=black, bookmarksopen=true, bookmarksopenlevel=0, %
 	urlcolor=black
@@ -43,8 +42,8 @@
 \lstdefinestyle{displayed}{float=tpbh, frame=l, tabsize=5, framerule=1.2pt, %
 	abovecaptionskip=\medskipamount, gobble=4, %
 	linewidth=.975\textwidth, xleftmargin=.05\textwidth}
-\crefname{lstlisting}{fragmento de cÛdigo}{fragmentos de cÛdigo}
-\crefname{listing}{fragmento de cÛdigo}{fragmentos de cÛdigo}
+\crefname{lstlisting}{fragmento de c√≥digo}{fragmentos de c√≥digo}
+\crefname{listing}{fragmento de c√≥digo}{fragmentos de c√≥digo}
 \crefname{subsection}{subapartado}{subapartados}
 \crefname{subsubsection}{subapartado}{subapartados}
 \graphicspath{{./pictures/}{../pictures/}}
@@ -55,19 +54,19 @@
 \setlength\marginparsep{12pt}
 \setlength\marginparwidth{\pdfpagewidth - \textwidth - \oddsidemargin - %
 	2\marginparsep - 1in}
-% Se aplica el siguiente convenio tipogr·fico a la primera apariciÛn de una sigla.
+% Se aplica el siguiente convenio tipogr√°fico a la primera aparici√≥n de una sigla.
 \newcommand\psig[1]{\emph{\MakeTextUppercase{#1}}}
-% Se aplica el siguiente convenio tipogr·fico a siglas.
+% Se aplica el siguiente convenio tipogr√°fico a siglas.
 \newcommand\sig[1]{\textsc{\MakeTextLowercase{#1}}}
-% Se aplica el siguiente convenio tipogr·fico a funciones.
+% Se aplica el siguiente convenio tipogr√°fico a funciones.
 \newcommand\func[1]{\texttt{#1}}
-% Se aplica el siguiente convenio a argumentos de funciÛn distintos de propiedades.
+% Se aplica el siguiente convenio a argumentos de funci√≥n distintos de propiedades.
 \newcommand\argu[1]{\texttt{#1}}
-% Se aplica el siguiente convenio tipogr·fico a propiedades.
+% Se aplica el siguiente convenio tipogr√°fico a propiedades.
 \newcommand\prop[1]{\textsf{#1}}
 % Se aplica el siguiente convenio a atributos de propiedades.
 \newcommand\atr[1]{\textsf{#1}}
-% Se aplica el siguiente convenio tipogr·fico a nombres de canal o puerto.
+% Se aplica el siguiente convenio tipogr√°fico a nombres de canal o puerto.
 \newcommand\can[1]{\sig{#1}}
 \newcommand\matlab{\sig{MATLAB}}
 \newcommand\kpci{\sig{KPCI}-3108}
@@ -112,7 +111,7 @@
 
 \mainmatter
 
-\part[ImplementaciÛn del sistema digital de medida]{DiseÒo e implementaciÛn del sistema digital de medida}
+\part[Implementaci√≥n del sistema digital de medida]{Dise√±o e implementaci√≥n del sistema digital de medida}
 
 \include{gis-pfc-ch1}
 
@@ -126,7 +125,7 @@
 
 \include{gis-pfc-ch5}
 
-\part*{ApÈndices}
+\part*{Ap√©ndices}
 
 \newcounter{totalpages}
 \setcounter{totalpages}{\value{page}}
