@@ -1,11 +1,11 @@
 \chapter{Pruebas y contenidos adicionales}
 
-Este apÈndice no debe adjuntarse en el documento final, en el se anotar·n ideas para modificar el contenido del grueso del documento y bases para generar los contenidos adicionales.
+Este ap√©ndice no debe adjuntarse en el documento final, en el se anotar√°n ideas para modificar el contenido del grueso del documento y bases para generar los contenidos adicionales.
 
 
-\section{ConfiguraciÛn de p·gina}
+\section{Configuraci√≥n de p√°gina}
 
-La configuraciÛn actual se ha hecho utilizando el paquete \textsf{typearea} que forma parte del conjunto del \textsc{koma}-\textsc{s}cript. Las opciones m·s importantes que deben pasarse a este paquete son el tipo de papel (A4, A3, A5, letter,\dots) y el espacio de correcciÛn necesario para evitar fallos en la encuadernaciÛn (\textsc{bcor} = \texttt{magnitud} o directamente \textsc{bcor}\texttt{magnitud}). Utilizando el paquete \textsf{layouts} pueden crearse figuras que representen la configuraciÛn de p·gina actual.
+La configuraci√≥n actual se ha hecho utilizando el paquete \textsf{typearea} que forma parte del conjunto del \textsc{koma}-\textsc{s}cript. Las opciones m√°s importantes que deben pasarse a este paquete son el tipo de papel (A4, A3, A5, letter,\dots) y el espacio de correcci√≥n necesario para evitar fallos en la encuadernaci√≥n (\textsc{bcor} = \texttt{magnitud} o directamente \textsc{bcor}\texttt{magnitud}). Utilizando el paquete \textsf{layouts} pueden crearse figuras que representen la configuraci√≥n de p√°gina actual.
 
 \newlength{\auxmm}
 \newlength{\auxin}
@@ -13,38 +13,53 @@ La configuraciÛn actual se ha hecho utilizando el paquete \textsf{typearea} que 
 \setlength{\auxmm}{1mm}
 \setlength{\auxin}{1in}
 \setlength{\auxpt}{1pt}
+\newsavebox\caja
+\sbox\caja{\includegraphics{gis-pfc-ch2-02.mps}}
 
 \begin{table}
 	\centering
-	\printinunitsof{mm}\pagevalues
-	\hspace*{-22pt}\begin{tabular}{>{\raggedright}p{175pt} >{\raggedright\arraybackslash}p{140pt}}
+	\printinunitsof{mm}\pagevalues\medskip\par
+
+	\begin{tabular}{l l}
+		\toprule
 		1in = \printinunitsof{mm}\prntlen{\auxin} & 1pt = \printinunitsof{mm}\prntlen{\auxpt} \\
-		1mm = \printinunitsof{in}\prntlen{\auxmm} & 1mm = \printinunitsof{pt}\prntlen{\auxmm}
+		1mm = \printinunitsof{in}\prntlen{\auxmm} & 1mm = \printinunitsof{pt}\prntlen{\auxmm} \\
+		Alto de \texttt{gis-ch2-02.mps} & \printinunitsof{mm}\prntlen{\ht\caja} \\
+		Ancho de \texttt{gis-ch2-02.mps} & \printinunitsof{mm}\prntlen{\wd\caja} \\
+		marginparwidth = \printinunitsof{pt}\prntlen{\marginparwidth} & marginparsep = \printinunitsof{pt}\prntlen{\marginparsep} \\
+		\bottomrule
 	\end{tabular}
-	\caption[Valores actuales de la distribuciÛn de p·gina]{Valores que completan el diagrama representado en la \vref{fig:layouts} sustituir la nomenclatura de referencia por los valores correspondientes}
+	\caption[Valores actuales de la distribuci√≥n de p√°gina]{Valores que completan el diagrama representado en la \vref{fig:layouts} sustituir la nomenclatura de referencia por los valores correspondientes}
 \end{table}
 
-El lector puede fijarse que se cumple la regla de construcciÛn que aplica el paquete \textsf{typearea} en la que el margen inferior es dos veces el margen inferior, y que el margen interior de p·gina ---una vez eliminado el centÌmetro (\textsc{bcor}\texttt{1cm}) que se deja para compensar el encuadernado--- es la mitad del margen exterior de p·gina. De ese modo se crea una distribuciÛn de p·gina en la que el margen interior de p·gina de las p·ginas par e impar juntas es igual a cada uno de los m·rgenes exteriores de ambas p·ginas.
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch2-02.mps}
+	\end{center}
+	\caption[Segunda figura del segundo cap√≠tulo]{Segunda figura del segundo cap√≠tulo.}
+	\label{fig:ch102}
+\end{figure}
+
+El lector puede fijarse que se cumple la regla de construcci√≥n que aplica el paquete \textsf{typearea} en la que el margen inferior es dos veces el margen inferior, y que el margen interior de p√°gina ---una vez eliminado el cent√≠metro (\textsc{bcor}\texttt{1cm}) que se deja para compensar el encuadernado--- es la mitad del margen exterior de p√°gina. De ese modo se crea una distribuci√≥n de p√°gina en la que el margen interior de p√°gina de las p√°ginas par e impar juntas es igual a cada uno de los m√°rgenes exteriores de ambas p√°ginas.
 
 \begin{figure}
 	\pagediagram
-	\caption{DistribuciÛn del texto en las p·ginas de este documento}
+	\caption{Distribuci√≥n del texto en las p√°ginas de este documento}
 	\label{fig:layouts}
 \end{figure}
 
 \begin{figure}\ContinuedFloat
 	\currentpage
 	\pagedesign
-	\caption[]{ContinuaciÛn del \vref{fig:layouts}}
+	\caption[]{Continuaci√≥n del \vref{fig:layouts}}
 \end{figure}
 
 
-\section{Gr·ficos con MetaPost}
+\section{Gr√°ficos con MetaPost}
 
-Anotaciones destinadas a obtener gr·ficos escalables de calidad empleando el paquete MetaPost para la creaciÛn de gr·ficos en PostScript.
+Anotaciones destinadas a obtener gr√°ficos escalables de calidad empleando el paquete MetaPost para la creaci√≥n de gr√°ficos en PostScript.
 
 
-\subsection{Perspectiva isomÈtrica}
+\subsection{Tama√±o}
 
-La perspectiva isomÈtrica o caballera pueden, en teorÌa, conseguirse aplicando una transformaciÛn a los objetos protagonistas del gr·fico, como circunferencias y cuadrados. Esta transformaciÛn puede almacenarse en una variable que se crear· a tal efecto en el fichero \textsf{*.mp}. A diferencia de estas dos perspectivas, la perspectiva cÛnica no puede obtenerse de este modo ya que la proyecciÛn en el plano depende de la posiciÛn del espectador y de la posiciÛn del objeto proyectado.\par
-Finalmente se demuestra que a partir de las transformaciones b·sicas de que dispone MetaPost tampoco es posible obtener la perspectiva caballera o isomÈtrica de un trazo, sÛlo de puntos aislados. Para obtener la perspectiva caballera de una circunferencia puede aplicarse el mÈtodo tradicional, sin embargo el resultado obtenido con curvas Beizer dista de ser aceptable. Parece conveniente hallar la expresiÛn correspondiente a la elipse que es la forma que adquiere la circunferencia en dicha perspectiva.
+Tengo que modificar el tama√±o de algunas figuras al haber cambiado la tipograf√≠a predeterminada de la \emph{Computer Roman} a \emph{Lucida}. Lo que quiero que aparezca en este apartado es un cuadro con los distintos tama√±os de letra que aparecen en el documento.

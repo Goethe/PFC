@@ -1,26 +1,28 @@
 \documentclass[a4paper,12pt]{article}
-\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[nofontinfo]{lucidabr}
 \usepackage{calc, graphicx}
 \usepackage[format=hang, font=small, labelfont=bf, labelsep=endash, width=.9\textwidth]{caption}
 \usepackage[listofformat=subsimple, format=hang, labelfont=footnotesize, textfont={it, footnotesize}]{subfig}
 \title{Figuras elaboradas con MetaPost}
-\author{JosÈ RamÛn Gisbert Valls}
-\newcommand\texto{Este manual est· destinado a todo aquel usuario interesado en la representaciÛn de seÒales elÈctricas en el contexto que se ha expuesto anteriormente en el libro. En concreto, puede ser de especial interÈs para aquellos usuarios que deseen representar el espectro en frecuencia de una seÒal elÈctrica en tiempo real, de forma que al mismo tiempo pueda visualizarse la seÒal correspondiente a dicho espectro.}
+\author{Jos√© Ram√≥n Gisbert Valls}
+\newcommand\texto{Este manual est√° destinado a todo aquel usuario interesado en la representaci√≥n de se√±ales el√©ctricas en el contexto que se ha expuesto anteriormente en el libro. En concreto, puede ser de especial inter√©s para aquellos usuarios que deseen representar el espectro en frecuencia de una se√±al el√©ctrica en tiempo real, de forma que al mismo tiempo pueda visualizarse la se√±al correspondiente a dicho espectro.}
 \begin{document}
 
 
 \maketitle{}
 
 \begin{abstract}
-	Este documento me permite seguir el aspecto que muestran las figuras elaboradas en MetaPost para su inclusiÛn en la memoria al ritmo en el que las voy desarrollando.
+	Este documento me permite seguir el aspecto que muestran las figuras elaboradas en MetaPost para su inclusi√≥n en la memoria al ritmo en el que las voy desarrollando.
 \end{abstract}
 
 \listoffigures
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-pro-01.mps}
+		\includegraphics{gis-pfc-ch1-01.mps}
 	\end{center}
 	\caption[Sistema digital de medida]{Esquema que muestra las distintas unidades funcionales de un sistema digital de medida.}
 	\label{fig:digmeasstm}
@@ -28,25 +30,25 @@
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch1-01.mps}
+		\includegraphics{gis-pfc-ch1-02.mps}
 	\end{center}
-	\caption[Subsistema para la interacciÛn con el medio]{Subsistema para la interacciÛn con el medio.}
+	\caption[Subsistema para la interacci√≥n con el medio]{Subsistema para la interacci√≥n con el medio.}
 	\label{fig:submedium}
 \end{figure}
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[angle=90]{gis-pfc-ch1-02.mps}
+		\includegraphics[angle=90]{gis-pfc-ch1-03.mps}
 	\end{center}
-	\caption[Circuito acondicionador de la secciÛn de transmisiÛn]{Circuito acondicionador de la secciÛn de transmisiÛn.}
+	\caption[Circuito acondicionador de la secci√≥n de transmisi√≥n]{Circuito acondicionador de la secci√≥n de transmisi√≥n.}
 	\label{fig:txaconditioner}
 \end{figure}
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch1-03.mps}
+		\includegraphics{gis-pfc-ch1-04.mps}
 	\end{center}
-	\caption[SeÒal a la salida del amplificador \textsc{ne5534}, $u(t)$]{SeÒal generada por el acondicionador de transmisiÛn medida a la salida del amplificador \textsc{ne5534}, $u(t)$.}
+	\caption[Se√±al a la salida del amplificador \textsc{ne5534}, $u(t)$]{Se√±al generada por el acondicionador de transmisi√≥n medida a la salida del amplificador \textsc{ne5534}, $u(t)$.}
 	\label{fig:txacvo}
 \end{figure}
 
@@ -54,9 +56,9 @@
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch1-04.mps}
+		\includegraphics{gis-pfc-ch1-05.mps}
 	\end{center}
-	\caption[Pulso ac˙stico generado por el transductor]{Pulso ac˙stico generado por el transductor cuando se alimenta con un pulso rectangular.}
+	\caption[Pulso ac√∫stico generado por el transductor]{Pulso ac√∫stico generado por el transductor cuando se alimenta con un pulso rectangular.}
 	\label{fig:pulse}
 \end{figure}
 
@@ -64,7 +66,7 @@
 	\begin{center}
 		\includegraphics{gis-pfc-ch2-01.mps}
 	\end{center}
-	\caption[Subsistema de adquisiciÛn]{Subsistema de adquisiciÛn.}
+	\caption[Subsistema de adquisici√≥n]{Subsistema de adquisici√≥n.}
 	\label{fig:subacqui}
 \end{figure}
 
@@ -72,7 +74,7 @@
 	\begin{center}
 		\includegraphics{gis-pfc-ch2-02.mps}
 	\end{center}
-	\caption[Ejemplo de configuraciÛn de terminaciÛn]{Figura que muestra el modo de terminaciÛn sencillo. La entrada superior del amplificador de instrumentaciÛn se conecta al puerto 9 y la entrada inferior se conecta a masa.}
+	\caption[Ejemplo de configuraci√≥n de terminaci√≥n]{Figura que muestra el modo de terminaci√≥n sencillo. La entrada superior del amplificador de instrumentaci√≥n se conecta al puerto 9 y la entrada inferior se conecta a masa.}
 	\label{fig:termmodes}
 \end{figure}
 
@@ -98,7 +100,7 @@
 	\begin{center}
 		\includegraphics{gis-pfc-ch3-01.mps}
 	\end{center}
-	\caption[Subsistema de control y presentaciÛn]{Subsistema de control y presentaciÛn.}
+	\caption[Subsistema de control y presentaci√≥n]{Subsistema de control y presentaci√≥n.}
 	\label{sub:control}
 \end{figure}
 
@@ -106,7 +108,7 @@
 	\begin{center}
 		\includegraphics{gis-pfc-ch3-02.mps}
 	\end{center}
-	\caption[Fragmento de seÒal adquirido por el osciloscopio en el espacio de una ventana de adquisiciÛn]{Fragmento de seÒal adquirido por el osciloscopio en el espacio de una ventana de adquisiciÛn. En esta figura se ha representado tambiÈn la duraciÛn de la ventana temporal del osciloscopio, pudiendo observarse que informaciÛn se descarta. TambiÈn se indica el instante en el que se inicia una nueva instancia del proceso de adquisiciÛn, de lo que puede deducirse que informaciÛn se pierde entre instancias. Los cortes de la seÒal con el nivel de disparo tambiÈn est·n representados.}
+	\caption[Fragmento de se√±al adquirido por el osciloscopio en el espacio de una ventana de adquisici√≥n]{Fragmento de se√±al adquirido por el osciloscopio en el espacio de una ventana de adquisici√≥n. En esta figura se ha representado tambi√©n la duraci√≥n de la ventana temporal del osciloscopio, pudiendo observarse que informaci√≥n se descarta. Tambi√©n se indica el instante en el que se inicia una nueva instancia del proceso de adquisici√≥n, de lo que puede deducirse que informaci√≥n se pierde entre instancias. Los cortes de la se√±al con el nivel de disparo tambi√©n est√°n representados.}
 	\label{fig:freesignal}
 \end{figure}
 
@@ -114,7 +116,7 @@
 	\begin{center}
 		\includegraphics{gis-pfc-ch3-03.mps}
 	\end{center}
-	\caption[Modo de funcionamiento disparado]{Modo de funcionamiento disparado. La representaciÛn se centra en el corte central (ve·se la figura anterior).}
+	\caption[Modo de funcionamiento disparado]{Modo de funcionamiento disparado. La representaci√≥n se centra en el corte central (ve√°se la figura anterior).}
 	\label{fig:digtrigosc}
 \end{figure}
 
@@ -124,7 +126,7 @@
 	\begin{center}
 		\includegraphics{gis-pfc-ch3-04.mps}
 	\end{center}
-	\caption[Fragmentos de seÒal ordenados seg˙n llegan al osciloscopio]{Fragmentos de seÒal adquiridos por el osciloscopio en el modo continuo de funcionamiento. Se empieza a monitorizar la seÒal en $t_0$, los instantes posteriores est·n separados entre sÌ una ventana de adquisiciÛn. Debe recordarse que en el modo continuo se emplea con seÒales <<lentas>> por lo que la separaciÛn entre instancias es de adquisiciÛn es pr·cticamente nula en comparaciÛn con el periodo de la seÒal.}
+	\caption[Fragmentos de se√±al ordenados seg√∫n llegan al osciloscopio]{Fragmentos de se√±al adquiridos por el osciloscopio en el modo continuo de funcionamiento. Se empieza a monitorizar la se√±al en $t_0$, los instantes posteriores est√°n separados entre s√≠ una ventana de adquisici√≥n. Debe recordarse que en el modo continuo se emplea con se√±ales <<lentas>> por lo que la separaci√≥n entre instancias es de adquisici√≥n es pr√°cticamente nula en comparaci√≥n con el periodo de la se√±al.}
 	\label{fig:freesignalcont}
 \end{figure}
 
@@ -132,7 +134,7 @@
 	\begin{center}
 		\includegraphics{gis-pfc-ch3-05.mps}
 	\end{center}
-	\caption[Modo de funcionamiento continuo del osciloscopio]{Modo de funcionamiento continuo. Puede observarse como el fragmento de seÒal representado en primer lugar es desplazado a la derecha para poder insertar el nuevo fragmento de seÒal. Obviamente, en $t_0$ la pantalla del osciloscopio estar· en blanco.}
+	\caption[Modo de funcionamiento continuo del osciloscopio]{Modo de funcionamiento continuo. Puede observarse como el fragmento de se√±al representado en primer lugar es desplazado a la derecha para poder insertar el nuevo fragmento de se√±al. Obviamente, en $t_0$ la pantalla del osciloscopio estar√° en blanco.}
 	\label{fig:digcontosc}
 \end{figure}
 
@@ -140,7 +142,7 @@
 	\begin{center}
 		\includegraphics{gis-pfc-ch3-06.mps}
 	\end{center}
-	\caption[Modo de funcionamiento continuo]{La ventana temporal tiene, en este ejemplo, una duraciÛn de cinco ventanas de adquisiciÛn. Al llegar el osciloscopio el sexto fragmento de seÒal, la representaciÛn avanza a la derecha, retir·ndose el primer fragmento representado para dar lugar al fragmento obtenido recientemente.}
+	\caption[Modo de funcionamiento continuo]{La ventana temporal tiene, en este ejemplo, una duraci√≥n de cinco ventanas de adquisici√≥n. Al llegar el osciloscopio el sexto fragmento de se√±al, la representaci√≥n avanza a la derecha, retir√°ndose el primer fragmento representado para dar lugar al fragmento obtenido recientemente.}
 	\label{fig:digcontosccont}
 \end{figure}
 
@@ -174,7 +176,7 @@
 	\begin{center}
 		\includegraphics{gis-pfc-ch5-02.mps}
 	\end{center}
-	\caption[\textsc{endus} por transmisiÛn]{\textsc{endus} por transmisiÛn.}
+	\caption[\textsc{endus} por transmisi√≥n]{\textsc{endus} por transmisi√≥n.}
 	\label{fig:transmission}
 \end{figure}
 
@@ -192,7 +194,7 @@
 	\begin{center}
 		\includegraphics{gis-pfc-ch5-04.mps}
 	\end{center}
-	\caption[Modelo de emisiÛn"=transmisiÛn]{Diagrama de bloques que muestra el modelo empleado para calcular la respuesta al impulso de emisiÛn"=recepciÛn.}
+	\caption[Modelo de emisi√≥n"=transmisi√≥n]{Diagrama de bloques que muestra el modelo empleado para calcular la respuesta al impulso de emisi√≥n"=recepci√≥n.}
 	\label{fig:model}
 \end{figure}
 
@@ -200,7 +202,7 @@
 	\begin{center}
 		\includegraphics{gis-pfc-ch5-05.mps}
 	\end{center}
-	\caption[Modelo de matriz de pequeÒos reflectores]{Modelo de matriz de pequeÒos reflectores.}
+	\caption[Modelo de matriz de peque√±os reflectores]{Modelo de matriz de peque√±os reflectores.}
 	\label{fig:matrix}
 \end{figure}
 
@@ -208,7 +210,7 @@
 	\begin{center}
 		\includegraphics{gis-pfc-ch5-07.mps}
 	\end{center}
-	\caption[Par·metros del banco de filtros]{RepresentaciÛn esquematizada en el que se identifican los par·metros de la \textsc{fft} y su relaciÛn con respecto a la seÒal.}
+	\caption[Par√°metros del banco de filtros]{Representaci√≥n esquematizada en el que se identifican los par√°metros de la \textsc{fft} y su relaci√≥n con respecto a la se√±al.}
 	\label{fig:filter}
 \end{figure}
 % 
@@ -223,7 +225,7 @@
 % 	\begin{center}
 % 		\hspace*{\txwidth}\includegraphics{palm-trees-01.mps}
 % 	\end{center}
-% 	\caption[Ejemplo de gr·fica]{Ejemplo de gr·fica con dimensiones de 120 mm de largo por 90 mm de alto.}
+% 	\caption[Ejemplo de gr√°fica]{Ejemplo de gr√°fica con dimensiones de 120 mm de largo por 90 mm de alto.}
 % 	\label{fig:palmone}
 % \end{figure}
 

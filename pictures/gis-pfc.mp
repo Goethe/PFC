@@ -3,6 +3,17 @@ message "Preloading the gis-pfc file, version "&base_version;
 
 
 
+verbatimtex
+%&latex
+\documentclass{minimal}
+\usepackage[T1]{fontenc}
+\usepackage[nofontinfo]{lucidabr}
+\begin{document}
+\fontsize{11pt}{13.2pt}\selectfont
+etex
+
+
+
 % ==================================================================
 def amplificador =
 begingroup

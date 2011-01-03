@@ -1,8 +1,10 @@
 verbatimtex
 %&latex
 \documentclass{minimal}
+\usepackage[T1]{fontenc}
+\usepackage{lucidabr}
 \begin{document}
-\fontsize{12pt}{14.4pt}\selectfont
+\fontsize{11pt}{13.2pt}\selectfont
 etex
 
 filenametemplate "%j-%02c.mps";
@@ -382,7 +384,10 @@ for i = 0 upto 17 :
 	draw e[1][i] rotated a08 shifted (b[0][i], a03/2 + a04);
 endfor
 addto d0 also currentpicture;
-fill bbox d0 withcolor white;
+begingroup
+	interim bboxmargin := 0;
+	fill bbox d0 withcolor white;
+endgroup;
 draw d0;
 
 endfig;
@@ -473,7 +478,10 @@ for i = 0 upto 17 :
 	draw e[1][i] rotated a08 shifted (b[0][i], a03/2 + a04);
 endfor
 addto d0 also currentpicture;
-fill bbox d0 withcolor white;
+begingroup
+	interim bboxmargin := 0;
+	fill bbox d0 withcolor white;
+endgroup;
 draw d0;
 
 endfig;

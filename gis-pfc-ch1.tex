@@ -1,180 +1,238 @@
-\chapter{Subsistema de interacciÛn con el medio fÌsico}
+\chapter{Subsistema de interacci√≥n con el medio f√≠sico}
 
-Esta secciÛn est· dedicada al proceso de diseÒo que se lleva a cabo para implementar mediante los recursos disponibles la instrumentaciÛn electrÛnica que junto con la tarjeta de adquisiciÛn y el software de control forman parte del aparato empleado en las mediciones efectuadas durante este proyecto fin de carrera.\par
-En apartados posteriores se observa que este primer diseÒo carece de las propiedades requeridas en los experimentos programados, pero igualmente se ha decidido incorporar a la memoria las notas correspondientes a esta fase del proyecto por considerar que al tratar una disciplina distinta con respecto al resto del documento \mbox{---diseÒo} e implementaciÛn de instrumentaciÛn electrÛnica--- enriquecen el contenido del mismo.
+\section{Introducci√≥n al sistema digital de medida}
 
+Un sistema de medida es cualquier instrumento formado por m√°s de un elemento que permite a quien lo usa evaluar una determinada propiedad de un objeto, medio o evento. Para una definici√≥n m√°s rigurosa de un sistema electr√≥nico de medida puede optarse por la encontrada en \cite{pallas2004sas}, y dice lo siguiente:
 
-\subsection{Tipos de ensayo programados}
+{\small\begin{quotation}
+	Se denomina sistema a la combinaci√≥n de dos o m√°s elementos, subconjuntos y partes necesarias para realizar una o varias funciones. En los sistemas de medida, esta funci√≥n es la asignaci√≥n objetiva y emp√≠rica de un n√∫mero a una propiedad o cualidad de un objeto o evento, de tal forma que la describa.
+\end{quotation}}
 
-Es la naturaleza de los experimentos la que dictamina cuales deben ser las caracterÌsticas del instrumento de medida. Sin olvidar el propÛsito primero de este proyecto ---determinar un mÈtodo efectivo para la detecciÛn de defectos en madera de palmera empleando para ello ensayos no destructivos con seÒales de ultrasonidos--- se programan dos tipos de prueba:
-
-\begin{itemize}
-	\item Por un lado, pruebas de laboratorio con madera de palmera talada y preparada.
-	\item Por otro, pruebas de campo con palmeras en un entorno natural, no siendo necesario que las palmeras sean silvestres, pudiendo encontrarse plantadas en un jardÌn o espacio similar.
-\end{itemize}
-
-Se escoge la tÈcnica de transmisiÛn, en defecto de la tÈcnica de pulso"=eco, para la realizaciÛn de los ensayos. El equipo disponible al inicio del trabajo experimental varÌa en funciÛn de la prueba: para los experimentos de laboratorio se cuenta con un sistema de adquisiciÛn como el conformado por el conjunto de la tarjeta de adquisiciÛn, un ordenador, el software de control y la caja de conexiones; y para las pruebas de campo con un osciloscopio y una fuente de alimentaciÛn, ambos alimentados con una baterÌa. En ambos tipos de prueba deben emplearse tambiÈn dos transductores, uno en transmisiÛn y otro en recepciÛn, junto con sus respectivos circuitos acondicionadores.
-
-
-\subsection{Requisitos del instrumento de medida}
-
-Para justificar cuales son los requisitos aplicables a los transductores y a las etapas acondicionadoras que los preceden, se recuerda aquÌ de forma resumida al lector una serie de conclusiones a las que se ha llegado a lo largo de la secciÛn anterior (la \cref{sec:theory} con inicio en la \vpageref{sec:theory}).\par
-Los tres par·metros cruciales en el desempeÒo de un \sig{endus} son: la resoluciÛn, tanto axial como lateral; la profundidad de penetraciÛn; y la relaciÛn seÒal a ruido.
-
-\begin{itemize}
-	\item La resoluciÛn viene determinada principalmente por el tamaÒo y el tipo de transductores empleados. Cuanto mayor sea el ancho de banda de los transductores y menores sus dimensiones, se alcanzar·n mejores resoluciones. Asimismo, una buena resoluciÛn depende de la forma y frecuencia de los pulsos ultrasÛnicos, siendo mejor cuanto m·s estrecho sea el pulso y mayor su frecuencia.
-	\item La profundidad de penetraciÛn, factor determinante en los experimentos realizados para este proyecto, depende fundamentalmente de la potencia transmitida en cada pulso y de su frecuencia de oscilaciÛn, siendo mayor cuanto mayor sean estos dos par·metros.
-	\item Sin embargo, la consecuciÛn de una buena relaciÛn seÒal a ruido est· reÒida con una buena profundidad de penetraciÛn. El ruido estructural, principal factor limitante de la relaciÛn seÒal a ruido, se agrava a medida que aumenta la frecuencia o la potencia del pulso ultrasÛnico. Para poder realizar ensayos capaces de detectar defectos en el medio a profundidades razonables sin sufrir en exceso los efectos del ruido de grano es determinante aplicar un buen algoritmo para la reducciÛn del ruido.
-\end{itemize}
-
-Por supuesto, la calidad de un ensayo exige buenas configuraciones de estos tres par·metros. Sin embargo, y dado que los ensayos realizados para el proyecto no requieren la detecciÛn precisa del defecto, si no sÛlo su detecciÛn, una buena resoluciÛn no serÌa exigible aunque sÌ deseable. Por el contrario, el material objeto de este estudio es la madera de palmera, puesto que desde la planificaciÛn del proyecto se preven pruebas de campo en palmeras vivas, y adem·s se opta por emplear la tÈcnica de transmisiÛn (lÈase el \cref{subsec:technics}), resulta imprescindible trabajar con una buena profundidad de penetraciÛn, de forma que la seÒal de ultrasonidos sea capaz, al menos, de atravesar el tronco de las palmeras.\par
-En base a los requisitos establecidos por las caracterÌsticas de los ensayos se extraen las necesidades de potencia y frecuencia que deben cubrir los transductores y los circuitos acondicionadores, asÌ como el resto de instrumentos utilizados.\par
-
-
-\paragraph{Requisitos de frecuencia.}
-
-La frecuencia de las seÒales ultrasÛnicas empleadas en ensayos no destructivos oscila generalmente entre los 20 kHz y los 25 MHz. Sin embargo, existen lÌmites pr·cticos que impiden trabajar en un rango de frecuencias tan amplio. En primer lugar, el precio de los transductores aumenta significativamente a medida que aumenta su ancho de banda, la posibilidad de emitir pulsos de alta frecuencia tambiÈn encarece el precio de estos dispositivos\footnote{Es habitual encontrar sensores que trabajan a frecuencias entorno a los 40 kHz por un precio entorno a las \mbox{5 \pounds{}}, mientras que sensores que funcionan a 300 kHz pueden costar aproximadamente unas \mbox{300 \pounds{}} (referencia extraÌda de la p·gina web \href{http://uk.farnell.com}{uk.farnell.com})}. Por otro lado, la banda de paso de las etapas de acondicionamiento, la frecuencia m·xima obtenible de la fuente de alimentaciÛn, y la frecuencia de muestreo m·xima del instrumento de adquisiciÛn, limitan la frecuencia de la seÒal de ultrasonidos. \par
-Obviamente, es el lÌmite m·s restrictivo el que se aplica. En este caso, el lÌmite m·s restrictivo lo imponen los transductores y la tarjeta de adquisiciÛn. Los transductores a los que se ha tenido acceso en el desarrollo del proyecto son de bajo coste y su frecuencia de oscilaciÛn natural se ubica en los 40 kHz, podrÌa decirse que en el lÌmite inferior de la banda de frecuencias empleada en los \sig{endus}. Por su parte, la tarjeta de adquisiciÛn ofrece en condiciones Ûptimas una tasa de muestreo de 100 KS/s. Lo que implica que, para su correcta visualizaciÛn en el dispositivo de adquisiciÛn empleado en el laboratorio, la frecuencia de la seÒal analÛgica que se muestrea debe encontrarse alrededor de los 20 kHz.\par
-Quiz· el lector haya advertido que esta relaciÛn ---frecuencia de muestreo unas cinco veces superior a la frecuencia de la seÒal analÛgica--- supera con creces lo establecido por el teorema de Nyquist, $f_s = 2\Delta f$. Esto es debido a que el objetivo del muestreo es visualizar en el monitor del ordenador la forma de la seÒal a partir de la reconstrucciÛn que \matlab{} hace de las muestras. Al contrario de lo que ocurre con el teorema de Nyquist"=Shannon, que determina la frecuencia de muestreo mÌnima para que una seÒal analÛgica pueda ser recuperada a partir de sus muestras no cuantificadas sin pÈrdida de informaciÛn, para percibir la forma de una seÒal en una reconstrucciÛn arbitraria de la misma realizada partiendo de sus muestras cuantificadas la frecuencia de muestreo necesaria debe ser muy superior a la indicada por el teorema.
-
-
-\paragraph{Requisitos de potencia.}
-
-Puesto que la frecuencia de oscilaciÛn de los pulsos ultrasÛnicos est· limitada a los 40 kHz por los motivos pr·cticos citados en el apartado anterior, y dada la necesidad de una profundidad de penetraciÛn notable, los requisitos en cuanto a la potencia que debe manejarse en las etapas de transmisiÛn y recepciÛn se encuentran muy restringidos.\par
-Para suplir las carencias que los transductores tienen en frecuencia es lÛgico recurrir a seÒales de mayor potencia, sin embargo el precio reducido de los dispositivos empleados tambiÈn limita su capacidad de emitir seÒales de alta potencia.\par
-Lo que en ˙ltima instancia significa que, con ninguna de las posibles soluciones al alcance del proyecto puede obtenerse la profundidad de penetraciÛn adecuada para el tipo de experimentos que se desea realizar. LÈase a continuaciÛn, en la \vpageref{subsec:solution}, la soluciÛn finalmente adoptada y la valoraciÛn preliminar que el autor hace con antelaciÛn a la fase de diseÒo.
-
-
-\subsection{Recursos disponibles al inicio de la etapa de diseÒo}
-
-Para la implementaciÛn del instrumental electrÛnico se dispone inicialmente de dos transductores ultrasÛnicos, uno destinado a funcionar como transistor y otro que realiza el papel de receptor. Ambos transductores manufacturados por el mismo fabricante y de una misma gama, con caracterÌsticas similares. En el \vref{tab:transducers} se muestran las principales propiedades de ambos transductores.\par
-Adem·s, el fabricante proporciona en la ficha tÈcnica la respuesta caracterÌstica del transmisor a un pulso rectangular. La curva, que puede observarse en la \cref{fig:response}, se asemeja a un pulso gaussiano que modula a una sinusoide de frecuencia igual a la frecuencia de resonancia del transductor. Esta respuesta a seÒales pulsadas de pulsos rectangulares hace que este tipo de transductor sea muy apropiado para su uso en \sig{endus}.\par
-En cuanto a su aspecto y dimensiones, los transductores se encuentran protegidos por un encapsulado pl·stico de color negro, pudiendo distinguir el transmisor gracias a un punto blanco situado en la pared exterior del encapsulado. Las dimensiones de los dos transductores coinciden, y son las mostradas en la figura esquem·tica \ref{fig:transducer}.
-
-\begin{table}
-	\centering
-	\begin{threeparttable}
-		\begin{tabular}{l c c}
-			\toprule
-			& \multicolumn{2}{c}{Transductor} \\
-			\cmidrule(l){2-3}
-			Propiedad & Transmisor & Receptor \\
-			\midrule
-			Sensibilidad en transmisiÛn\tnote{a} & 110 dB & -- \\
-			Sensibilidad en recepciÛn\tnote{b} & -- & -70 dB \\
-			Frecuencia de resonancia (kHz) & $40 \pm 1$ & $40 \pm 1$ \\
-			Ancho del lÛbulo principal & 60\,∫ & -- \\
-			TensiÛn de alimentaciÛn m·xima\tnote{c} & 10 Vef & -- \\
-			M·xima potencia admitida\tnote{d} & 200 m\!Wef & \\
-			Impedancia\tnote{e} & $700\ \Omega$ & $30\ \text{k}\Omega$ \\
-			Capacidad (nF) & $2 \pm 20\%$ & $2 \pm 20\%$ \\
-			Tiempo de subida del pulso & $700\ \mu\text{s}$ & -- \\
-			TensiÛn m·xima admitida en modo pulsado & 20 V & -- \\
-			Rango de temperatura de funcionamiento (∫C) & (-20, 60) & (-20, 60) \\
-			\bottomrule
-		\end{tabular}
-		\begin{TableNotes}
-			\tnotetext{a}{Decibelios medidos con respecto a una referencia de 200 nbar a 30 cm cuando el transmisor se alimenta con una tensiÛn eficaz de 10 Vef.}
-			\tnotetext{b}{Decibelios medidos con respecto a una referencia de 1 V/$\mu\text{bar}$.}
-			\tnotetext{c}{Esta es la tensiÛn m·xima que el transductor admite cuando se alimenta de forma continuada con una seÒal de alterna.}
-% 			\tnotetext{d}{Se emplea en este documento el sÌmbolo Vef como sinÛnimo de la unidad de potencial elÈctrico en corriente alterna, \emph{voltios eficaces}. Del mismo modo se utiliza Wef, \emph{vatios eficaces}, como unidad de potencia eficaz.}
-			\tnotetext{d}{Se refiere a la potencia m·xima que el transductor puede disipar en modo pulsado, es decir, cuando la alimentaciÛn es interrumpida y periÛdica.}
-			\tnotetext{e}{En transmisiÛn esta magnitud representa la impedancia de entrada equivalente del transductor. En recepciÛn, por el contrario, representa la impedancia de salida del transductor.}
-		\end{TableNotes}
-	\end{threeparttable}
-	\caption[CaracterÌsticas de los transductores empleados en el dispositivo de medida]{CaracterÌsticas de los transductores empleados en el dispositivo de medida (se proporcionan los valores tÌpicos para cada propiedad).}
-	\label{tab:transducers}
-\end{table}
+Un sistema de medida digital est√° constituido habitualmente por los elementos mostrados en el esquema de la \cref{fig:digmeasstm}. Pueden agruparse estos elementos seg√∫n la funci√≥n que desempe√±an en el sistema, si se hace de ese modo se encuentran tres subsistemas: un subsistema para la interacci√≥n con el medio f√≠sico, un subsistema de adquisici√≥n, y un subsistema de control y presentaci√≥n. Puede observarse entonces el sistema como una pila de capas superpuestas, en el que cada capa provee de servicio a la capa inmediatamente superior y abstrae las capas inferiores, en cada una de las capas se situar√≠a cada uno de los subsistemas propuestos. De ese modo cada subsistema puede estudiarse por separado con independencia de los dem√°s, as√≠ se ha hecho en esta memoria. Consecuentemente cada subsistema da lugar a cada uno de los tres cap√≠tulos que empezando por este describen el sistema digital de medida implementado durante el curso del desarrollo de este proyecto.\par
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch1-03.mps}
+		\includegraphics{gis-pfc-ch1-01.mps}
 	\end{center}
-	\caption[Respuesta del transmisor a un pulso rectangular]{Respuesta del transmisor a un pulso rectangular.}
-	\label{fig:response}
+	\caption[Sistema digital de medida]{Distintos elementos funcionales que conforman el sistema digital de medida.}
+	\label{fig:digmeasstm}
 \end{figure}
+
+Si se define una jerarqu√≠a en la que el nivel m√°s bajo es aquel ocupado por los elementos en contacto directo con el medio, y se tiene como nivel m√°s alto aquel en el que se encuentran los elementos que interact√∫an con el supervisor, entonces los niveles ordenados de inferior a superior en la jerarqu√≠a establecida se encuentran ocupados por los subsistemas precisados anteriormente del siguiente modo: subsistema para la interacci√≥n con el medio, subsistema de adquisici√≥n, y subsistema de control y presentaci√≥n. El orden en el que se han dispuesto los cap√≠tulos que tratan acerca de la configuraci√≥n del sistema digital de medida, los tres primeros cap√≠tulos, coincide con el orden que guardan los distintos subsistemas en esta jerarqu√≠a.
+
+
+\section{Introducci√≥n}
+
+El primero de los subsistemas estudiado en este documento es el subsistema para la interacci√≥n con el medio f√≠sico. Es el subsistema que ocupa la capa de menor nivel y agrupa los elementos que pueden observarse en la \cref{fig:submedium}.
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch1-03.mps}
+		\includegraphics{gis-pfc-ch1-02.mps}
 	\end{center}
-	\caption[Dimensiones de los transductores de ultrasonidos]{Dimensiones de los transductores de ultrasonidos.}
-	\label{fig:transducer}
+	\caption[Subsistema para la interacci√≥n con el medio f√≠sico]{Elementos del sistema digital de medida que tambi√©n se incluyen en el subsistema para la interacci√≥n con el medio f√≠sico.}
+	\label{fig:submedium}
 \end{figure}
 
-El resto de componentes empleados en la implementaciÛn de las etapas de acondicionamiento se encontraban disponibles en el laboratorio de teorÌa de la seÒal en el que esta tarea se lleva a cabo. Entre ellos cabe destacar el \sig{TL}082, un amplificador operacional de propÛsito general cuyas prestaciones superan ampliamente a las ofrecidas por el cl·sico \AOUA{} en tÈrminos de banda de frecuencias amplificada. Mientras que el \AOUA{} convencional mantiene su m·xima ganancia para seÒales de entrada de frecuencia alrededor de los 7 kHz, el amplificador empleado consigue amplificar con su m·ximo factor de ganancia seÒales que oscilan con frecuencias m·ximas de 90 kHz. Es imprescindible disponer de un amplificador que conserve su ganancia por encima de los 40 kHz, ya que esta es la frecuencia de resonancia de los transductores, y la frecuencia de trabajo seleccionada para el dispositivo de medida.
+% ====================================================================
+% ANOTACIONES EXTRA√çDAS DEL ANTIGUO TERCER CAP√çTULO EN LA SECCI√ìN
+% DEDICADA AL DISE√ëO DEL DISPOSITIVO
+% Esta secci√≥n est√° dedicada al proceso de dise√±o que se lleva a cabo para implementar mediante los recursos disponibles la instrumentaci√≥n electr√≥nica que junto con la tarjeta de adquisici√≥n y el software de control forman parte del aparato empleado en las mediciones efectuadas durante este proyecto fin de carrera.\par
+% En apartados posteriores se observa que este primer dise√±o carece de las propiedades requeridas en los experimentos programados, pero igualmente se ha decidido incorporar a la memoria las notas correspondientes a esta fase del proyecto por considerar que al tratar una disciplina distinta con respecto al resto del documento \mbox{---dise√±o} e implementaci√≥n de instrumentaci√≥n electr√≥nica--- enriquecen el contenido del mismo.
+% 
+% 
+% \subsection{Tipos de ensayo programados}
+% 
+% Es la naturaleza de los experimentos la que dictamina cuales deben ser las caracter√≠sticas del instrumento de medida. Sin olvidar el prop√≥sito primero de este proyecto ---determinar un m√©todo efectivo para la detecci√≥n de defectos en madera de palmera empleando para ello ensayos no destructivos con se√±ales de ultrasonidos--- se programan dos tipos de prueba:
+% 
+% \begin{itemize}
+% 	\item Por un lado, pruebas de laboratorio con madera de palmera talada y preparada.
+% 	\item Por otro, pruebas de campo con palmeras en un entorno natural, no siendo necesario que las palmeras sean silvestres, pudiendo encontrarse plantadas en un jard√≠n o espacio similar.
+% \end{itemize}
+% 
+% Se escoge la t√©cnica de transmisi√≥n, en defecto de la t√©cnica de pulso"=eco, para la realizaci√≥n de los ensayos. El equipo disponible al inicio del trabajo experimental var√≠a en funci√≥n de la prueba: para los experimentos de laboratorio se cuenta con un sistema de adquisici√≥n como el conformado por el conjunto de la tarjeta de adquisici√≥n, un ordenador, el software de control y la caja de conexiones; y para las pruebas de campo con un osciloscopio y una fuente de alimentaci√≥n, ambos alimentados con una bater√≠a. En ambos tipos de prueba deben emplearse tambi√©n dos transductores, uno en transmisi√≥n y otro en recepci√≥n, junto con sus respectivos circuitos acondicionadores.
+% 
+% 
+% \subsection{Requisitos del instrumento de medida}
+% 
+% Para justificar cuales son los requisitos aplicables a los transductores y a las etapas acondicionadoras que los preceden, se recuerda aqu√≠ de forma resumida al lector una serie de conclusiones a las que se ha llegado a lo largo de la secci√≥n anterior (la \cref{sec:theory} con inicio en la \vpageref{sec:theory}).\par
+% Los tres par√°metros cruciales en el desempe√±o de un \sig{endus} son: la resoluci√≥n, tanto axial como lateral; la profundidad de penetraci√≥n; y la relaci√≥n se√±al a ruido.
+% 
+% \begin{itemize}
+% 	\item La resoluci√≥n viene determinada principalmente por el tama√±o y el tipo de transductores empleados. Cuanto mayor sea el ancho de banda de los transductores y menores sus dimensiones, se alcanzar√°n mejores resoluciones. Asimismo, una buena resoluci√≥n depende de la forma y frecuencia de los pulsos ultras√≥nicos, siendo mejor cuanto m√°s estrecho sea el pulso y mayor su frecuencia.
+% 	\item La profundidad de penetraci√≥n, factor determinante en los experimentos realizados para este proyecto, depende fundamentalmente de la potencia transmitida en cada pulso y de su frecuencia de oscilaci√≥n, siendo mayor cuanto mayor sean estos dos par√°metros.% Aumenta la profundidad de penetraci√≥n a medida que aumenta la potencia transmitida y DISMINUYE la frecuencia de oscilaci√≥n del pulso.
+% 	\item Sin embargo, la consecuci√≥n de una buena relaci√≥n se√±al a ruido est√° re√±ida con una buena profundidad de penetraci√≥n. El ruido estructural, principal factor limitante de la relaci√≥n se√±al a ruido, se agrava a medida que aumenta la frecuencia o la potencia del pulso ultras√≥nico. Para poder realizar ensayos capaces de detectar defectos en el medio a profundidades razonables sin sufrir en exceso los efectos del ruido de grano es determinante aplicar un buen algoritmo para la reducci√≥n del ruido.
+% \end{itemize}
+% 
+% Por supuesto, la calidad de un ensayo exige buenas configuraciones de estos tres par√°metros. Sin embargo, y dado que los ensayos realizados para el proyecto no requieren la detecci√≥n precisa del defecto, si no s√≥lo su detecci√≥n, una buena resoluci√≥n no ser√≠a exigible aunque s√≠ deseable. Por el contrario, el material objeto de este estudio es la madera de palmera, puesto que desde la planificaci√≥n del proyecto se preven pruebas de campo en palmeras vivas, y adem√°s se opta por emplear la t√©cnica de transmisi√≥n (l√©ase el \cref{subsec:technics}), resulta imprescindible trabajar con una buena profundidad de penetraci√≥n, de forma que la se√±al de ultrasonidos sea capaz, al menos, de atravesar el tronco de las palmeras.\par
+% En base a los requisitos establecidos por las caracter√≠sticas de los ensayos se extraen las necesidades de potencia y frecuencia que deben cubrir los transductores y los circuitos acondicionadores, as√≠ como el resto de instrumentos utilizados.\par
+% 
+% 
+% \paragraph{Requisitos de frecuencia.}
+% 
+% La frecuencia de las se√±ales ultras√≥nicas empleadas en ensayos no destructivos oscila generalmente entre los 20 kHz y los 25 MHz. Sin embargo, existen l√≠mites pr√°cticos que impiden trabajar en un rango de frecuencias tan amplio. En primer lugar, el precio de los transductores aumenta significativamente a medida que aumenta su ancho de banda, la posibilidad de emitir pulsos de alta frecuencia tambi√©n encarece el precio de estos dispositivos\footnote{Es habitual encontrar sensores que trabajan a frecuencias entorno a los 40 kHz por un precio entorno a las \mbox{5 \pounds{}}, mientras que sensores que funcionan a 300 kHz pueden costar aproximadamente unas \mbox{300 \pounds{}} (referencia extra√≠da de la p√°gina web \href{http://uk.farnell.com}{uk.farnell.com})}. Por otro lado, la banda de paso de las etapas de acondicionamiento, la frecuencia m√°xima obtenible de la fuente de alimentaci√≥n, y la frecuencia de muestreo m√°xima del instrumento de adquisici√≥n, limitan la frecuencia de la se√±al de ultrasonidos. \par
+% Obviamente, es el l√≠mite m√°s restrictivo el que se aplica. En este caso, el l√≠mite m√°s restrictivo lo imponen los transductores y la tarjeta de adquisici√≥n. Los transductores a los que se ha tenido acceso en el desarrollo del proyecto son de bajo coste y su frecuencia de oscilaci√≥n natural se ubica en los 40 kHz, podr√≠a decirse que en el l√≠mite inferior de la banda de frecuencias empleada en los \sig{endus}. Por su parte, la tarjeta de adquisici√≥n ofrece en condiciones √≥ptimas una tasa de muestreo de 100 KS/s. Lo que implica que, para su correcta visualizaci√≥n en el dispositivo de adquisici√≥n empleado en el laboratorio, la frecuencia de la se√±al anal√≥gica que se muestrea debe encontrarse alrededor de los 20 kHz.\par
+% Quiz√° el lector haya advertido que esta relaci√≥n ---frecuencia de muestreo unas cinco veces superior a la frecuencia de la se√±al anal√≥gica--- supera con creces lo establecido por el teorema de Nyquist, $f_s = 2\Delta f$. Esto es debido a que el objetivo del muestreo es visualizar en el monitor del ordenador la forma de la se√±al a partir de la reconstrucci√≥n que \matlab{} hace de las muestras. Al contrario de lo que ocurre con el teorema de Nyquist"=Shannon, que determina la frecuencia de muestreo m√≠nima para que una se√±al anal√≥gica pueda ser recuperada a partir de sus muestras no cuantificadas sin p√©rdida de informaci√≥n, para percibir la forma de una se√±al en una reconstrucci√≥n arbitraria de la misma realizada partiendo de sus muestras cuantificadas la frecuencia de muestreo necesaria debe ser muy superior a la indicada por el teorema.
+% 
+% 
+% \paragraph{Requisitos de potencia.}
+% 
+% Puesto que la frecuencia de oscilaci√≥n de los pulsos ultras√≥nicos est√° limitada a los 40 kHz por los motivos pr√°cticos citados en el apartado anterior, y dada la necesidad de una profundidad de penetraci√≥n notable, los requisitos en cuanto a la potencia que debe manejarse en las etapas de transmisi√≥n y recepci√≥n se encuentran muy restringidos.\par
+% Para suplir las carencias que los transductores tienen en frecuencia es l√≥gico recurrir a se√±ales de mayor potencia, sin embargo el precio reducido de los dispositivos empleados tambi√©n limita su capacidad de emitir se√±ales de alta potencia.\par
+% Lo que en √∫ltima instancia significa que, con ninguna de las posibles soluciones al alcance del proyecto puede obtenerse la profundidad de penetraci√≥n adecuada para el tipo de experimentos que se desea realizar. L√©ase a continuaci√≥n, en la \vpageref{subsec:solution}, la soluci√≥n finalmente adoptada y la valoraci√≥n preliminar que el autor hace con antelaci√≥n a la fase de dise√±o.
+% 
+% 
+% \subsection{Recursos disponibles al inicio de la etapa de dise√±o}
+% 
+% Para la implementaci√≥n del instrumental electr√≥nico se dispone inicialmente de dos transductores ultras√≥nicos, uno destinado a funcionar como transistor y otro que realiza el papel de receptor. Ambos transductores manufacturados por el mismo fabricante y de una misma gama, con caracter√≠sticas similares. En el \vref{tab:transducers} se muestran las principales propiedades de ambos transductores.\par
+% Adem√°s, el fabricante proporciona en la ficha t√©cnica la respuesta caracter√≠stica del transmisor a un pulso rectangular. La curva, que puede observarse en la \cref{fig:response}, se asemeja a un pulso gaussiano que modula a una sinusoide de frecuencia igual a la frecuencia de resonancia del transductor. Esta respuesta a se√±ales pulsadas de pulsos rectangulares hace que este tipo de transductor sea muy apropiado para su uso en \sig{endus}.\par
+% En cuanto a su aspecto y dimensiones, los transductores se encuentran protegidos por un encapsulado pl√°stico de color negro, pudiendo distinguir el transmisor gracias a un punto blanco situado en la pared exterior del encapsulado. Las dimensiones de los dos transductores coinciden, y son las mostradas en la figura esquem√°tica \ref{fig:transducer}.
+% 
+% \begin{table}
+% 	\centering
+% 	\begin{threeparttable}
+% 		\begin{tabular}{l c c}
+% 			\toprule
+% 			& \multicolumn{2}{c}{Transductor} \\
+% 			\cmidrule(l){2-3}
+% 			Propiedad & Transmisor & Receptor \\
+% 			\midrule
+% 			Sensibilidad en transmisi√≥n\tnote{a} & 110 dB & -- \\
+% 			Sensibilidad en recepci√≥n\tnote{b} & -- & -70 dB \\
+% 			Frecuencia de resonancia (kHz) & $40 \pm 1$ & $40 \pm 1$ \\
+% 			Ancho del l√≥bulo principal & 60\,¬∫ & -- \\
+% 			Tensi√≥n de alimentaci√≥n m√°xima\tnote{c} & 10 Vef & -- \\
+% 			M√°xima potencia admitida\tnote{d} & 200 m\!Wef & \\
+% 			Impedancia\tnote{e} & $700\ \Omega$ & $30\ \text{k}\Omega$ \\
+% 			Capacidad (nF) & $2 \pm 20\%$ & $2 \pm 20\%$ \\
+% 			Tiempo de subida del pulso & $700\ \mu\text{s}$ & -- \\
+% 			Tensi√≥n m√°xima admitida en modo pulsado & 20 V & -- \\
+% 			Rango de temperatura de funcionamiento (¬∫C) & (-20, 60) & (-20, 60) \\
+% 			\bottomrule
+% 		\end{tabular}
+% 		\begin{TableNotes}
+% 			\tnotetext{a}{Decibelios medidos con respecto a una referencia de 200 nbar a 30 cm cuando el transmisor se alimenta con una tensi√≥n eficaz de 10 Vef.}
+% 			\tnotetext{b}{Decibelios medidos con respecto a una referencia de 1 V/$\mu\text{bar}$.}
+% 			\tnotetext{c}{Esta es la tensi√≥n m√°xima que el transductor admite cuando se alimenta de forma continuada con una se√±al de alterna.}
+% % 			\tnotetext{d}{Se emplea en este documento el s√≠mbolo Vef como sin√≥nimo de la unidad de potencial el√©ctrico en corriente alterna, \emph{voltios eficaces}. Del mismo modo se utiliza Wef, \emph{vatios eficaces}, como unidad de potencia eficaz.}
+% 			\tnotetext{d}{Se refiere a la potencia m√°xima que el transductor puede disipar en modo pulsado, es decir, cuando la alimentaci√≥n es interrumpida y peri√≥dica.}
+% 			\tnotetext{e}{En transmisi√≥n esta magnitud representa la impedancia de entrada equivalente del transductor. En recepci√≥n, por el contrario, representa la impedancia de salida del transductor.}
+% 		\end{TableNotes}
+% 	\end{threeparttable}
+% 	\caption[Caracter√≠sticas de los transductores empleados en el dispositivo de medida]{Caracter√≠sticas de los transductores empleados en el dispositivo de medida (se proporcionan los valores t√≠picos para cada propiedad).}
+% 	\label{tab:transducers}
+% \end{table}
+% 
+% \begin{figure}
+% 	\begin{center}
+% 		\includegraphics{gis-pfc-ch1-03.mps}
+% 	\end{center}
+% 	\caption[Respuesta del transmisor a un pulso rectangular]{Respuesta del transmisor a un pulso rectangular.}
+% 	\label{fig:response}
+% \end{figure}
+% 
+% \begin{figure}
+% 	\begin{center}
+% 		\includegraphics{gis-pfc-ch1-03.mps}
+% 	\end{center}
+% 	\caption[Dimensiones de los transductores de ultrasonidos]{Dimensiones de los transductores de ultrasonidos.}
+% 	\label{fig:transducer}
+% \end{figure}
+% 
+% El resto de componentes empleados en la implementaci√≥n de las etapas de acondicionamiento se encontraban disponibles en el laboratorio de teor√≠a de la se√±al en el que esta tarea se lleva a cabo. Entre ellos cabe destacar el \sig{TL}082, un amplificador operacional de prop√≥sito general cuyas prestaciones superan ampliamente a las ofrecidas por el cl√°sico \AOUA{} en t√©rminos de banda de frecuencias amplificada. Mientras que el \AOUA{} convencional mantiene su m√°xima ganancia para se√±ales de entrada de frecuencia alrededor de los 7 kHz, el amplificador empleado consigue amplificar con su m√°ximo factor de ganancia se√±ales que oscilan con frecuencias m√°ximas de 90 kHz. Es imprescindible disponer de un amplificador que conserve su ganancia por encima de los 40 kHz, ya que esta es la frecuencia de resonancia de los transductores, y la frecuencia de trabajo seleccionada para el dispositivo de medida.
+% 
+% 
+% \subsection{Soluci√≥n adoptada}\label{subsec:solution}
+% 
+% 
+% \subsubsection{Valoraci√≥n preliminar}
+% 
+% A la vista de los requisitos que exige una aplicaci√≥n como la propuesta en este proyecto, las necesidades que surgen durante su dise√±o y los medios y recursos disponibles, parece previsible un fracaso en el desarrollo de la parte experimental de este \sig{pfc}. Pese a todo, y puesto que el coste de implementar los circuitos y realizar las pruebas es en la pr√°ctica suficientemente reducido, se decide proseguir con los experimentos ya que el verdadero fin del proyecto es obtener una serie de resultados, sean estos los esperados o no, y de estos deducir una serie de conclusiones.\par
+% En el momento en el que se desarrolla esta fase del proyecto se contempla la posibilidad de inferir dos conclusiones distintas a partir de los resultados: si los resultados no son buenos, determinar cu√°les son en realidad los requisitos que deben cumplirse para poder aplicar los \sig{endus} de manera efectiva en la detecci√≥n de defectos en madera de palmera, y sabiendo esto justificar la ausencia de resultados v√°lidos; y, en el caso contrario, en caso de que los resultados fueran satisfactorios, verificar la validez de aplicar este m√©todo con un mismo prop√≥sito y en unas condiciones similares.\par
+% Posteriormente, tal como se relata en la {\color{red}secci√≥n ??} se tiene acceso a unos transductores distintos, que por su modo de funcionamiento permiten llevar a cabo de modo satisfactorio las pruebas programadas.
+% 
+% 
+% \subsubsection{Montaje seleccionado}
+% 
+% En vista de las conclusiones extra√≠das en apartados anteriores, y teniendo en cuenta las soluciones a las que se tiene acceso, con el prop√≥sito de obtener los mejores resultados posibles, se opta por un montaje que exprime al m√°ximo el transmisor y que en la secci√≥n de recepci√≥n utiliza un amplificador de instrumentaci√≥n cuyo factor de ganancia es muy elevado.\par % Para ello, de las soluciones a las que se tiene acceso
+% Esta soluci√≥n, que en una primera instancia parece adecuada, presenta no obstante importantes inconvenientes, de entre los cuales destaca la baja calidad de relaci√≥n se√±al a ruido que proporciona.\par
+% En principio, el uso de se√±ales de elevada potencia que oscilan a bajas frecuencias es propicio para evitar las complicaciones que en un ensayo introduce el ruido de grano. Si bien la se√±al que emite el transductor de la secci√≥n de transmisi√≥n no es de una potencia considerable, las bajas frecuencias a las que oscila garantizan que se consiga en parte este objetivo.\par
+% No obstante no es el ruido de grano el m√°s perjudicial en esta configuraci√≥n. Los transductores de ultrasonidos son transductores piezoel√©ctricos y, por tanto, el sensor empleado en recepci√≥n se engloba en la categor√≠a de los sensores generadores. Es decir, que en respuesta a una actividad ultras√≥nica genera una determinada se√±al el√©ctrica. La frecuencia y amplitud de la se√±al el√©ctrica que proporciona el sensor dependen de la se√±al ac√∫stica detectada. Y, si como ocurre en este caso, la se√±al ultras√≥nica que alcanza el sensor es muy tenue, la se√±al el√©ctrica correspondiente muestra un recorrido de tensi√≥n muy reducido. De tal forma que incluso puede ser comparable al ruido presente a la entrada del circuito de adquisici√≥n o a otras se√±ales indeseadas.\par
+% Por consiguiente, es, en la secci√≥n de recepci√≥n, el ruido electr√≥nico procedente de la etapa de acondicionamiento el m√°s significativo y el de m√°s dif√≠cil soluci√≥n. Por tres razones que se detallan a continuaci√≥n.
+% 
+% \begin{itemize}
+% 	\item En primer lugar, debido a que la procedencia del ruido nada tiene que ver con la interacci√≥n de la se√±al ac√∫stica con el medio, las t√©cnicas de postprocesado cuyo objetivo es eliminar el ruido procedente del entorno no son aplicables.
+% 	\item En principio, es posible aplicar las t√©cnicas destinadas a reducir la presencia de ruido gaussiano vistas en el \cref{subsec:noise}. Sin embargo, con dificultad pueden obtenerse mejoras aceptables de la \sig{snr} en circunstancias como las aqu√≠ expuestas.
+% 	\item Otra posible soluci√≥n podr√≠a encontrarse al abordar el problema desde el prisma de la teor√≠a de la instrumentaci√≥n electr√≥nica. Esta teor√≠a ha mostrado ser eficaz resolviendo problemas similares en el acondicionamiento de sensores de m√∫ltiples tipos. Pueden citarse como ejemplo: el uso del puente de Wheatstone en el acondicionamiento de sensores resistivos, circuito que elimina la componente de se√±al invariante que introduce el divisor de tensi√≥n; o la utilizaci√≥n de c√©lulas isotermas y fuentes de corriente dependientes de la temperatura para eliminar la componente de se√±al que generan las uniones de un termopar con los cables de medida.\par
+% 		No obstante dadas las caracter√≠sticas del sensor y de la se√±al que genera, la aplicaci√≥n de una soluci√≥n semejante es ciertamente dif√≠cil.
+% \end{itemize}
+% 
+% 
+% \subsection{Dise√±o de la etapa de transmisi√≥n} % {Requisitos concretos aplicables a la etapa de acondicionamiento en transmisi√≥n} % [Requisitos de la etapa de transmisi√≥n]
+% 
+% El prop√≥sito del circuito acondicionador de la etapa de transmisi√≥n es proporcionar una se√±al de alimentaci√≥n que se ajuste a las limitaciones del transductor y a los requisitos especificados en la etapa anterior de la fase de dise√±o.
+% 
+% 
+% \subsubsection{La se√±al de alimentaci√≥n}
+% 
+% Las especificaciones 
+% Los requisitos de la etapa de transmisi√≥n pueden obtenerse al juzgar por un lado los l√≠mites del transductor de ultrasonidos que se emplea como transmisor y por otro las especificaciones que debe cumplir la se√±al ac√∫stica transmitida.\par
+% En \sig{endus}, la t√©cnica de transmisi√≥n exige una se√±al pulsada como la que proporciona el transmisor cuando es alimentado por un pulso rectangular. Por otro lado, una de las condiciones de dise√±o consiste en emitir a la m√°xima potencia posible. La se√±al ac√∫stica es emitida por el transmisor de ultrasonidos, por consiguiente la potencia de esta se√±al depende de los l√≠mites del transductor y de como se encuentra alimentado.\par
+% % Estoy hablando de las caracter√≠sticas de la se√±al de alimentaci√≥n, porqu√© no hacer una subsubsecci√≥n hablando del tema. Es decir, a partir de los datos que tengo razono como debe ser la se√±al de alimentaci√≥n y luego digo como la implemento.
+% Consultando el \vref{tab:transducers} puede observarse que la m√°xima potencia que puede disipar el transductor es de 200 m\!Wef en modo pulsado. Puesto que la impedancia de entrada t√≠pica interna del transductor es de $700\ \Omega$ pueden calcularse de forma sencilla valores para la potencia instant√°nea y, a partir de este √∫ltimo dato, el nivel de tensi√≥n m√°ximo con el que debe alimentarse el transductor. Para realizar estos c√°lculos, primero debe fijarse otro par√°metro: la forma de la se√±al de alimentaci√≥n y sus caracter√≠sticas temporales.\par
+% % ¬øPor qu√© elijo una se√±al pulsada? Porque as√≠ se generan pulsos de forma autom√°tica sin necesidad de presionar ning√∫n bot√≥n, ni realizar ninguna otra acci√≥n. Esto es bueno porque me ahorro interruptores que quiz√° deban ser reemplazados en el futuro por perder parte de sus cualidades. El periodo con el que se generan los pulsos no deber√≠a ser demasiado corto, lo que impedir√≠a explotar al m√°ximo el transductor, y debe permitirme seguir los cambios de se√±al en el monitor del osciloscopio.
+% Resulta conveniente elegir una se√±al pulsada para la alimentaci√≥n, en concreto un tren de pulsos rectangulares, dado el comportamiento del transductor frente a este tipo de pulsos. En cuanto al ciclo de trabajo por conveniencia se elige, respectivamente: la duraci√≥n del estado alto, 375 $\mu$s, equivalente a 15 periodos de la portadora; y una frecuencia de aproximadamente 1 Hz. % Una frecuencia tan baja permite un seguimiento visual de la se√±al, de ese modo es posible congelar el osciloscopio manualmente y eso simplifica el proceso de medida.\par
+% % Consultando el \vref{tab:transducers} puede observarse que la m√°xima tensi√≥n admitida por el transductor en modo pulsado es de 20 V, y la m√°xima potencia que puede disipar es de 200 mW. Por lo tanto, la corriente de la se√±al de alimentaci√≥n debe limitarse a 10 mA, algo que puede lograrse mediante una carga adicional. En cuanto a la duraci√≥n de los pulsos y el periodo de la se√±al pulsada, por conveniencia se elige respectivamente un tiempo de 375 $\mu$s, equivalente a 15 periodos de la portadora, y una frecuencia de $1/4$ Hz. Una frecuencia tan baja permite un seguimiento visual de la se√±al, de ese modo es posible disparar el osciloscopio manualmente y eso simplifica el proceso de medida.\par
+% % Consultando el \vref{tab:transducers} y la \cref{fig:response} puede deducirse cuales son las caracter√≠sticas de la se√±al de alimentaci√≥n que debe proporcionar la etapa de acondicionamiento en transmisi√≥n. Al emplear la t√©cnica de transmisi√≥n es necesario que la se√±al que emite el transductor sea una se√±al pulsada
+% En las pruebas de laboratorio basta con emplear el generador de se√±ales y, si se requiere, un peque√±o amplificador de ganancia moderada. Por ejemplo, el generador dispuesto para el proyecto proporciona una se√±al con valor de pico a pico m√°ximo de 10 voltios pico"=pico (en adelante Vpp), puesto que va a emplearse el transmisor en modo pulsado, la ganancia del amplificador debe ser de 2 V/V. Ganancia que puede obtenerse f√°cilmente con un amplificador monoetapa basado en un amplificador operacional de prop√≥sito general.\par
+% Para las pruebas de campo se dise√±a un circuito capaz de emitir una se√±al pulsada, de pulsos rectangulares, que pueda ser alimentado con la misma fuente de alimentaci√≥n con la que es alimentado el acondicionador de la secci√≥n de recepci√≥n. De ese modo se evita el consumo extra que el generador de se√±ales hace de la bater√≠a al mismo tiempo que se transporta un equipo menos. El circuito mencionado se basa en el temporizador integrado 555, concretamente en el integrado 556 que contiene dos 555 en un mismo encapsulado, y el amplificador de uso com√∫n \AOUA{}.\par
+% El 555 en su configuraci√≥n como multivibrador astable es capaz de producir una se√±al peri√≥dica de pulsos rectangulares en los que la duraci√≥n del estado alto y del estado bajo ---y, por tanto, del periodo--- dependen de la configuraci√≥n de la red temporal a la que se conecta el circuito. Adem√°s tiene la capacidad de permanecer en reposo mientras se mantiene activada la puerta de reset (activa a nivel bajo). El ciclo de trabajo de la se√±al que genera el 555 es siempre superior al 50\% lo que implica que para lograr una se√±al como la que se necesita para alimentar al transmisor es necesario otro 555, en este caso en la configuraci√≥n de multivibrador monoestable.\par
+% En su configuraci√≥n monoestable, el 555 es capaz de generar pulsos rectangulares de duraci√≥n muy precisa. El inicio del pulso lo provoca una ca√≠da del nivel en la puerta de disparo por debajo del umbral de comparaci√≥n que establece la tensi√≥n de alimentaci√≥n, en concreto el umbral se establece en una tensi√≥n equivalente a un tercio de Vcc. Es decir que el circuito es activo a nivel bajo. Por otro lado, la duraci√≥n del pulso viene definida por la red RC que se conecta a los terminales del integrado.\par
+% % Aqu√≠ tengo que hablar del amplificador que hago con el uA741, (con el BJT es imposible, Vbe es muy superior a 10 mVpp), y de como cargo la salida de este con el transductor y una resistencia adicional para que la corriente en bornes del transmisor no supere los 10 mA.
+% % En el p√°rrafo a continuaci√≥n tengo que decir que en el cuadro aparecen tambi√©n los valores de consumo del circuito y, si acaso, debo decir porque no puedo alimentarlo con una pila.
+% La configuraci√≥n propuesta se muestra en la \vref{fig:traconditioner}, y los valores de tiempos y frecuencia correspondientes a √©sta pueden verse a continuaci√≥n en el \cref{tab:traconditioner}.\par
+% 
+% \begin{figure}
+% 	\begin{center}
+% 		\includegraphics{gis-pfc-ch1-03.mps}
+% 	\end{center}
+% 	\caption[Acondicionador en la secci√≥n de transmisi√≥n]{Configuraci√≥n seleccionada para el acondicionador en la secci√≥n de transmisi√≥n.}
+% 	\label{fig:traconditioner}
+% \end{figure}
+% 
+% \begin{table}
+% 	\centering
+% 		\includegraphics{gis-pfc-ch1-03.mps}
+% % 	\begin{tabular}{<+dimensions+>}
+% % 		<++>
+% % 	\end{tabular}
+% 		\caption{Valores temporales y de frecuencia para la configuraci√≥n mostrada en la \cref{fig:traconditioner}.}
+% 	\label{tab:traconditioner}
+% \end{table}
+% 
+% % DEBER√çA HABLAR SOBRE LOS REQUISITOS QUE SE APLICAN A LOS CIRCUITOS ACONDICIONADORES TAMBI√âN
+% % Podr√≠a llamar a unos nuevos subapartados, requisitos concretos de la etapa de acondicionamiento en transmisi√≥n/recepci√≥n.
+% % La etapa de transmisi√≥n debe proporcionar una se√±al que alimente al transductor, se√±al de 40 kHz de amplitud variable, controlada por el usuario (control por tensi√≥n).
+% % La etapa de recepci√≥n debe cargar adecuadamente el sensor, amplificar la se√±al procedente de √©ste (por tanto, la banda amplificada debe encontrarse centrada en la frecuencia de resonancia del sensor, en los 20 kHz), y en principio debe evitarse la distorsi√≥n en la fase lo que perjudicar√≠a los resultados de una hipot√©tica aplicaci√≥n de t√©cnicas de postprocesado como la \sig{ssp}
+% % El razonamiento para obtener las condiciones de dise√±o de la etapa de acondicionamiento en recepci√≥n es similar si no bien el inverso. La banda de paso de amplificaci√≥n debe ser la misma (desde los 10 hasta aproximadamente los 40 kHz) y la ganancia la m√°xima que pueda obtenerse sin distorsi√≥n ---especialmente de la fase---, debido fundamentalmente a que se trabaja con se√±ales muy atenuadas y a que se preve trabajar en la fase de post"=adquisici√≥n con t√©cnicas de \textsc{ssp}.
+% ====================================================================
 
 
-\subsection{SoluciÛn adoptada}\label{subsec:solution}
 
-
-\subsubsection{ValoraciÛn preliminar}
-
-A la vista de los requisitos que exige una aplicaciÛn como la propuesta en este proyecto, las necesidades que surgen durante su diseÒo y los medios y recursos disponibles, parece previsible un fracaso en el desarrollo de la parte experimental de este \sig{pfc}. Pese a todo, y puesto que el coste de implementar los circuitos y realizar las pruebas es en la pr·ctica suficientemente reducido, se decide proseguir con los experimentos ya que el verdadero fin del proyecto es obtener una serie de resultados, sean estos los esperados o no, y de estos deducir una serie de conclusiones.\par
-En el momento en el que se desarrolla esta fase del proyecto se contempla la posibilidad de inferir dos conclusiones distintas a partir de los resultados: si los resultados no son buenos, determinar cu·les son en realidad los requisitos que deben cumplirse para poder aplicar los \sig{endus} de manera efectiva en la detecciÛn de defectos en madera de palmera, y sabiendo esto justificar la ausencia de resultados v·lidos; y, en el caso contrario, en caso de que los resultados fueran satisfactorios, verificar la validez de aplicar este mÈtodo con un mismo propÛsito y en unas condiciones similares.\par
-Posteriormente, tal como se relata en la {\color{red}secciÛn ??} se tiene acceso a unos transductores distintos, que por su modo de funcionamiento permiten llevar a cabo de modo satisfactorio las pruebas programadas.
-
-
-\subsubsection{Montaje seleccionado}
-
-En vista de las conclusiones extraÌdas en apartados anteriores, y teniendo en cuenta las soluciones a las que se tiene acceso, con el propÛsito de obtener los mejores resultados posibles, se opta por un montaje que exprime al m·ximo el transmisor y que en la secciÛn de recepciÛn utiliza un amplificador de instrumentaciÛn cuyo factor de ganancia es muy elevado.\par % Para ello, de las soluciones a las que se tiene acceso
-Esta soluciÛn, que en una primera instancia parece adecuada, presenta no obstante importantes inconvenientes, de entre los cuales destaca la baja calidad de relaciÛn seÒal a ruido que proporciona.\par
-En principio, el uso de seÒales de elevada potencia que oscilan a bajas frecuencias es propicio para evitar las complicaciones que en un ensayo introduce el ruido de grano. Si bien la seÒal que emite el transductor de la secciÛn de transmisiÛn no es de una potencia considerable, las bajas frecuencias a las que oscila garantizan que se consiga en parte este objetivo.\par
-No obstante no es el ruido de grano el m·s perjudicial en esta configuraciÛn. Los transductores de ultrasonidos son transductores piezoelÈctricos y, por tanto, el sensor empleado en recepciÛn se engloba en la categorÌa de los sensores generadores. Es decir, que en respuesta a una actividad ultrasÛnica genera una determinada seÒal elÈctrica. La frecuencia y amplitud de la seÒal elÈctrica que proporciona el sensor dependen de la seÒal ac˙stica detectada. Y, si como ocurre en este caso, la seÒal ultrasÛnica que alcanza el sensor es muy tenue, la seÒal elÈctrica correspondiente muestra un recorrido de tensiÛn muy reducido. De tal forma que incluso puede ser comparable al ruido presente a la entrada del circuito de adquisiciÛn o a otras seÒales indeseadas.\par
-Por consiguiente, es, en la secciÛn de recepciÛn, el ruido electrÛnico procedente de la etapa de acondicionamiento el m·s significativo y el de m·s difÌcil soluciÛn. Por tres razones que se detallan a continuaciÛn.
-
-\begin{itemize}
-	\item En primer lugar, debido a que la procedencia del ruido nada tiene que ver con la interacciÛn de la seÒal ac˙stica con el medio, las tÈcnicas de postprocesado cuyo objetivo es eliminar el ruido procedente del entorno no son aplicables.
-	\item En principio, es posible aplicar las tÈcnicas destinadas a reducir la presencia de ruido gaussiano vistas en el \cref{subsec:noise}. Sin embargo, con dificultad pueden obtenerse mejoras aceptables de la \sig{snr} en circunstancias como las aquÌ expuestas.
-	\item Otra posible soluciÛn podrÌa encontrarse al abordar el problema desde el prisma de la teorÌa de la instrumentaciÛn electrÛnica. Esta teorÌa ha mostrado ser eficaz resolviendo problemas similares en el acondicionamiento de sensores de m˙ltiples tipos. Pueden citarse como ejemplo: el uso del puente de Wheatstone en el acondicionamiento de sensores resistivos, circuito que elimina la componente de seÒal invariante que introduce el divisor de tensiÛn; o la utilizaciÛn de cÈlulas isotermas y fuentes de corriente dependientes de la temperatura para eliminar la componente de seÒal que generan las uniones de un termopar con los cables de medida.\par
-		No obstante dadas las caracterÌsticas del sensor y de la seÒal que genera, la aplicaciÛn de una soluciÛn semejante es ciertamente difÌcil.
-\end{itemize}
-
-
-\subsection{DiseÒo de la etapa de transmisiÛn} % {Requisitos concretos aplicables a la etapa de acondicionamiento en transmisiÛn} % [Requisitos de la etapa de transmisiÛn]
-
-El propÛsito del circuito acondicionador de la etapa de transmisiÛn es proporcionar una seÒal de alimentaciÛn que se ajuste a las limitaciones del transductor y a los requisitos especificados en la etapa anterior de la fase de diseÒo.
-
-
-\subsubsection{La seÒal de alimentaciÛn}
-
-Las especificaciones 
-Los requisitos de la etapa de transmisiÛn pueden obtenerse al juzgar por un lado los lÌmites del transductor de ultrasonidos que se emplea como transmisor y por otro las especificaciones que debe cumplir la seÒal ac˙stica transmitida.\par
-En \sig{endus}, la tÈcnica de transmisiÛn exige una seÒal pulsada como la que proporciona el transmisor cuando es alimentado por un pulso rectangular. Por otro lado, una de las condiciones de diseÒo consiste en emitir a la m·xima potencia posible. La seÒal ac˙stica es emitida por el transmisor de ultrasonidos, por consiguiente la potencia de esta seÒal depende de los lÌmites del transductor y de como se encuentra alimentado.\par
-% Estoy hablando de las caracterÌsticas de la seÒal de alimentaciÛn, porquÈ no hacer una subsubsecciÛn hablando del tema. Es decir, a partir de los datos que tengo razono como debe ser la seÒal de alimentaciÛn y luego digo como la implemento.
-Consultando el \vref{tab:transducers} puede observarse que la m·xima potencia que puede disipar el transductor es de 200 m\!Wef en modo pulsado. Puesto que la impedancia de entrada tÌpica interna del transductor es de $700\ \Omega$ pueden calcularse de forma sencilla valores para la potencia instant·nea y, a partir de este ˙ltimo dato, el nivel de tensiÛn m·ximo con el que debe alimentarse el transductor. Para realizar estos c·lculos, primero debe fijarse otro par·metro: la forma de la seÒal de alimentaciÛn y sus caracterÌsticas temporales.\par
-% øPor quÈ elijo una seÒal pulsada? Porque asÌ se generan pulsos de forma autom·tica sin necesidad de presionar ning˙n botÛn, ni realizar ninguna otra acciÛn. Esto es bueno porque me ahorro interruptores que quiz· deban ser reemplazados en el futuro por perder parte de sus cualidades. El periodo con el que se generan los pulsos no deberÌa ser demasiado corto, lo que impedirÌa explotar al m·ximo el transductor, y debe permitirme seguir los cambios de seÒal en el monitor del osciloscopio.
-Resulta conveniente elegir una seÒal pulsada para la alimentaciÛn, en concreto un tren de pulsos rectangulares, dado el comportamiento del transductor frente a este tipo de pulsos. En cuanto al ciclo de trabajo por conveniencia se elige, respectivamente: la duraciÛn del estado alto, 375 $\mu$s, equivalente a 15 periodos de la portadora; y una frecuencia de aproximadamente 1 Hz. % Una frecuencia tan baja permite un seguimiento visual de la seÒal, de ese modo es posible congelar el osciloscopio manualmente y eso simplifica el proceso de medida.\par
-% Consultando el \vref{tab:transducers} puede observarse que la m·xima tensiÛn admitida por el transductor en modo pulsado es de 20 V, y la m·xima potencia que puede disipar es de 200 mW. Por lo tanto, la corriente de la seÒal de alimentaciÛn debe limitarse a 10 mA, algo que puede lograrse mediante una carga adicional. En cuanto a la duraciÛn de los pulsos y el periodo de la seÒal pulsada, por conveniencia se elige respectivamente un tiempo de 375 $\mu$s, equivalente a 15 periodos de la portadora, y una frecuencia de $1/4$ Hz. Una frecuencia tan baja permite un seguimiento visual de la seÒal, de ese modo es posible disparar el osciloscopio manualmente y eso simplifica el proceso de medida.\par
-% Consultando el \vref{tab:transducers} y la \cref{fig:response} puede deducirse cuales son las caracterÌsticas de la seÒal de alimentaciÛn que debe proporcionar la etapa de acondicionamiento en transmisiÛn. Al emplear la tÈcnica de transmisiÛn es necesario que la seÒal que emite el transductor sea una seÒal pulsada
-En las pruebas de laboratorio basta con emplear el generador de seÒales y, si se requiere, un pequeÒo amplificador de ganancia moderada. Por ejemplo, el generador dispuesto para el proyecto proporciona una seÒal con valor de pico a pico m·ximo de 10 voltios pico"=pico (en adelante Vpp), puesto que va a emplearse el transmisor en modo pulsado, la ganancia del amplificador debe ser de 2 V/V. Ganancia que puede obtenerse f·cilmente con un amplificador monoetapa basado en un amplificador operacional de propÛsito general.\par
-Para las pruebas de campo se diseÒa un circuito capaz de emitir una seÒal pulsada, de pulsos rectangulares, que pueda ser alimentado con la misma fuente de alimentaciÛn con la que es alimentado el acondicionador de la secciÛn de recepciÛn. De ese modo se evita el consumo extra que el generador de seÒales hace de la baterÌa al mismo tiempo que se transporta un equipo menos. El circuito mencionado se basa en el temporizador integrado 555, concretamente en el integrado 556 que contiene dos 555 en un mismo encapsulado, y el amplificador de uso com˙n \AOUA{}.\par
-El 555 en su configuraciÛn como multivibrador astable es capaz de producir una seÒal periÛdica de pulsos rectangulares en los que la duraciÛn del estado alto y del estado bajo ---y, por tanto, del periodo--- dependen de la configuraciÛn de la red temporal a la que se conecta el circuito. Adem·s tiene la capacidad de permanecer en reposo mientras se mantiene activada la puerta de reset (activa a nivel bajo). El ciclo de trabajo de la seÒal que genera el 555 es siempre superior al 50\% lo que implica que para lograr una seÒal como la que se necesita para alimentar al transmisor es necesario otro 555, en este caso en la configuraciÛn de multivibrador monoestable.\par
-En su configuraciÛn monoestable, el 555 es capaz de generar pulsos rectangulares de duraciÛn muy precisa. El inicio del pulso lo provoca una caÌda del nivel en la puerta de disparo por debajo del umbral de comparaciÛn que establece la tensiÛn de alimentaciÛn, en concreto el umbral se establece en una tensiÛn equivalente a un tercio de Vcc. Es decir que el circuito es activo a nivel bajo. Por otro lado, la duraciÛn del pulso viene definida por la red RC que se conecta a los terminales del integrado.\par
-% AquÌ tengo que hablar del amplificador que hago con el uA741, (con el BJT es imposible, Vbe es muy superior a 10 mVpp), y de como cargo la salida de este con el transductor y una resistencia adicional para que la corriente en bornes del transmisor no supere los 10 mA.
-% En el p·rrafo a continuaciÛn tengo que decir que en el cuadro aparecen tambiÈn los valores de consumo del circuito y, si acaso, debo decir porque no puedo alimentarlo con una pila.
-La configuraciÛn propuesta se muestra en la \vref{fig:traconditioner}, y los valores de tiempos y frecuencia correspondientes a Èsta pueden verse a continuaciÛn en el \cref{tab:traconditioner}.\par
-
-\begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch1-03.mps}
-	\end{center}
-	\caption[Acondicionador en la secciÛn de transmisiÛn]{ConfiguraciÛn seleccionada para el acondicionador en la secciÛn de transmisiÛn.}
-	\label{fig:traconditioner}
-\end{figure}
-
-\begin{table}
-	\centering
-		\includegraphics{gis-pfc-ch1-03.mps}
-% 	\begin{tabular}{<+dimensions+>}
-% 		<++>
-% 	\end{tabular}
-		\caption{Valores temporales y de frecuencia para la configuraciÛn mostrada en la \cref{fig:traconditioner}.}
-	\label{tab:traconditioner}
-\end{table}
-
-% DEBERÕA HABLAR SOBRE LOS REQUISITOS QUE SE APLICAN A LOS CIRCUITOS ACONDICIONADORES TAMBI…N
-% PodrÌa llamar a unos nuevos subapartados, requisitos concretos de la etapa de acondicionamiento en transmisiÛn/recepciÛn.
-% La etapa de transmisiÛn debe proporcionar una seÒal que alimente al transductor, seÒal de 40 kHz de amplitud variable, controlada por el usuario (control por tensiÛn).
-% La etapa de recepciÛn debe cargar adecuadamente el sensor, amplificar la seÒal procedente de Èste (por tanto, la banda amplificada debe encontrarse centrada en la frecuencia de resonancia del sensor, en los 20 kHz), y en principio debe evitarse la distorsiÛn en la fase lo que perjudicarÌa los resultados de una hipotÈtica aplicaciÛn de tÈcnicas de postprocesado como la \sig{ssp}
-% El razonamiento para obtener las condiciones de diseÒo de la etapa de acondicionamiento en recepciÛn es similar si no bien el inverso. La banda de paso de amplificaciÛn debe ser la misma (desde los 10 hasta aproximadamente los 40 kHz) y la ganancia la m·xima que pueda obtenerse sin distorsiÛn ---especialmente de la fase---, debido fundamentalmente a que se trabaja con seÒales muy atenuadas y a que se preve trabajar en la fase de post"=adquisiciÛn con tÈcnicas de \textsc{ssp}.
+% ====================================================================
+% ANOTACIONES PROCEDENTES DEL SEGUNDO CAP√çTULO, SECCI√ìN RENDIMIENTO
+% Para poder representar fielmente una se√±al s√≥lo a partir de sus muestras es necesario muestrearla a una frecuencia superior a la estipulada por el teorema de Nyquist. En la pr√°ctica es suficiente muestrear se√±ales peri√≥dicas y limitadas en banda a una frecuencia de muestreo superior a unas cinco veces la frecuencia de oscilaci√≥n m√°xima de la se√±al.
+% Si la se√±al se muestrea a una tasa inferior mucha informaci√≥n se pierde y el resultado de aplicar algoritmos de interpolaci√≥n es insuficiente. Eso lo que significa al final es que la se√±al que me llega de los transductores no se ver√° reflejada en la representaci√≥n final porque mucha informaci√≥n se habr√° perdido. ¬øDe qu√© me sirve entonces tener transductores de calidad? Pues en realidad si que sirve, porque a la hora de aplicar los algoritmos ssp algo sacar√© de tener mejores transductores. Aunque el resultado final seguir√° siendo malo. La clave no est√° en la representaci√≥n si no en la aplicaci√≥n de los algoritmos.
+% El teorema de Nyquist estipula una frecuencia de muestreo m√≠nima para la cual no se produce una p√©rdida de informaci√≥n al muestrear una se√±al peri√≥dica y limitada en banda. La frecuencia de Nyquist es igual al doble de la frecuencia de oscilaci√≥n m√°xima de la se√±al que se preve muestrear. Si una se√±al se muestrea a una tasa inferior se da una p√©rdida de informaci√≥n y no es posible recuperar la se√±al original. En los \sig{endus}, la frecuencia de la se√±al ultras√≥nica determina el alcance del ensayo, siendo mayor la profundidad a la que penetran las ondas ac√∫sticas cuanto mayor sea su frecuencia. Desde el punto de vista de la secci√≥n de recepci√≥n, es necesario un transductor de alta frecuencia y gran ancho de banda para poder recibir pulsos de alta frecuencia, sin embargo, este traductor genera una se√±al anal√≥gica de alta frecuencia.\par
+% En ensayos en los que se trabaja con pulsos de alta frecuencia se requieren transductores de alta frecuencia y gran ancho de banda. Un transductor.
+% Para poder emitir y recibir pulsos de alta frecuencia son necesarios transductores de alta frecuencia y gran ancho de banda, sin embargo, estos transductores necesita
+% En los \sig{endus}, la frecuencia de la se√±al ultras√≥nica empleada es uno de los factores que limitan el alcance del ensayo, siendo mayor la profundidad a la que penetran las ondas cuanto mayor sea su frecuencia. Los transductores de ultrasonidos utilizados en un ensayo imponen un l√≠mite f√≠sico en la frecuencia de las se√±ales ultras√≥nicas. Como emisor, un transductor es capaz de emitir se√±ales que oscilan hasta una cierta frecuencia. Como receptor, un transductor s√≥lo puede seguir oscilaciones de presi√≥n cuando ocurren con una frecuencia inferior a un cierto l√≠mite. En este sentido los transductores se comportan como filtros adem√°s de como transductores.
+% Obtener el mejor rendimiento de la \kpci{} es clave para ..
+% La estructura del sistema digital de medida {\color{red}(que puede verse en la figura)} revela que el subsistema para la interacci√≥n con el medio f√≠sico transmite una se√±al anal√≥gica al subsistema de adquisici√≥n, este a su vez proporciona al subsistema de control y presentaci√≥n una versi√≥n digitalizada de esa se√±al para que, por √∫ltimo, el bloque de presentaci√≥n muestre al usuario supervisor la forma de la se√±al. Para que la representaci√≥n que percibe el supervisor sea fiel a la se√±al anal√≥gica que entrega el subsistema para la interacci√≥n con el medio f√≠sico, la frecuencia de oscilaci√≥n m√°xima de la se√±al debe estar por debajo del l√≠mite configurado por el subsistema de adquisici√≥n. O lo que es lo mismo, desde la perspectiva del modelo de capas, la se√±al anal√≥gica que proporciona el subsistema para la interacci√≥n con el medio f√≠sico debe cumplir los requisitos que le impone el subsistema que se encuentra en la capa inmediatamente superior, el subsistema de adquisici√≥n. 
+% En los \sig{endus}, la frecuencia de la se√±al ultras√≥nica empleada es uno de los factores que limitan el alcance del ensayo, siendo mayor la profundidad a la que penetran las ondas cuanto mayor sea su frecuencia. Los transductores de ultrasonidos utilizados en un ensayo imponen un l√≠mite f√≠sico en la frecuencia de las se√±ales ultras√≥nicas. Como emisor, un transductor es capaz de emitir se√±ales que oscilan hasta una cierta frecuencia. Como receptor, un transductor s√≥lo puede seguir oscilaciones de presi√≥n cuando ocurren con una frecuencia inferior a un cierto l√≠mite. En este sentido los transductores se comportan como filtros adem√°s de como transductores. No obstante, en un sistema digital de medida como el propuesto existen otros l√≠mites que afectan a la frecuencia de las se√±ales de ultrasonidos con las que se trabaja.\par % Este p√°rrafo deber√≠a aparecer en el primer cap√≠tulo
+% Uno de los principios en los que se sostiene el modelo de capas en base al que se ha configurado el sistema digital de medida es que cada capa provee de servicio a la capa que se encuentra inmediatamente por encima. Consecuentemente, el servicio del que provee una capa debe adecuarse a las necesidades de la capa que recibe el servicio. Si se observan los subsistemas de adquisici√≥n y para la interacci√≥n con el medio f√≠sico (en el que se ubican los transductores), el subsistema para la interacci√≥n con el medio f√≠sico se encarga ---en la secci√≥n de recepci√≥n--- de convertir una se√±al ac√∫stica en una se√±al el√©ctrica y de acondicionar esta se√±al el√©ctrica para que se ajuste a los requisitos del subsistema de adquisici√≥n.
+% Es bien sabido, a trav√©s del teorema de Nyquist, que la frecuencia de muestreo con la que debe muestrearse una se√±al anal√≥gica para que esta pueda ser recuperada a partir de la versi√≥n digital obtenida en el proceso de muestreo, debe ser mayor o igual al doble de la mayor de las frecuencias con las que oscila la se√±al original, siempre que esta sea peri√≥dica y se encuentre limitada en banda. No obstante, para representar una se√±al directamente a partir de sus muestras con cierta fidelidad es necesario un volumen de muestras de la se√±al por unidad de tiempo mayor que el que se obtiene a la m√≠nima frecuencia de muestreo estipulada por el teorema de Nyquist. En la pr√°ctica, una frecuencia de muestreo unas cinco veces el l√≠mite superior de frecuencias correspondiente a la se√±al que se preve representar suele ser suficiente.\par
+% Ahora convendr√≠a decir que como el subsistema de adquisici√≥n limita la frecuencia de oscilaci√≥n de la se√±al que entrega el subsistema para la interacci√≥n con el medio f√≠sico tambi√©n limita de forma indirecta la frecuencia de la se√±al de ultrasonidos y por tanto la profundidad de los ensayos. Limita la frecuencia de la se√±al de ultrasonidos porque si funciono a una frecuencia superior que la frecuencia que me dice el subsistema de adquisici√≥n al muestrear pierdo mucha informaci√≥n y se desperdicia.
+% Por tanto, si como ocurre en este caso, el subsistema de adquisici√≥n impone un requisito a la frecuencia de oscilaci√≥n de la se√±al que entrega el subsistema 
+% Para este caso, puede considerarse que la se√±al el√©ctrica que genera el receptor es id√©ntica a la se√±al ac√∫stica que percibe salvo por dos hechos: la magnitud que var√≠a es el voltaje y no la presi√≥n; y, al operar el transductor como un filtro adem√°s de como un conversor, la se√±al el√©ctrica est√° filtrada.
+% Un sistema con la capacidad de representar la forma de una se√±al, un sistema como el propuesto por este proyecto, se ve limitado en su funcionamiento a tratar con se√±ales que no superen los l√≠mites impuestos por su subsistema de adquisici√≥n. En otras palabras, el sistema de medida requiere, para su correcto funcionamiento, que la frecuencia de oscilaci√≥n de las se√±ales con las que trabaja no supere un quinto de su frecuencia de muestreo m√°xima. Esta condici√≥n repercute en directamente 
+% ====================================================================
