@@ -51,64 +51,71 @@ d0 = transductor(a00, (a01, he02/2));
 % ··································································
 % frente de ondas
 draw d0;
-a02 = a00 * v/8;
+a02 = a00 * v/8;	a03 = 7v/2;
+a04 = 5a03/4;		a05 = x02 + a04;
 z00 = lrcorner d0 shifted (0, a02);
 z01 = urcorner d0 shifted (0, -a02);
 z02 = whatever[z00, z00 + (2v, -v)] = whatever[z01, z01 + (2v, v)];
-p1 = z02 + (he02, he02/2)--z02--z02 + (he02, -he02/2)--(wi, 0) %
-		--(wi, he02)--cycle;
-for i = 4.5v, 9v, 13.5v, 18v:
+z03 = (he02, he02/2);	z04 = z03 yscaled -1;
+z05 = (a05, y00);	z06 = (a05, y01);
+% rectas diagonales (curvas auxiliares)
+p01 = z05--z05 + z04 cutafter ((0, 0)--(wi, 0));
+p02 = z06--z06 + z03 cutafter ((0, he02)--(wi, he02));
+% marco en el que se encierra la figura formada por las
+% circunferencias concéntricas de radios equidistantes
+p03 = z00--p01--(wi, 0)--(wi, he02)--reverse p02--z01--cycle;
+for i = a03 step a03 until 5a03:
 	q0.[i] = fullcircle scaled i shifted z02;
 	addto d1 doublepath q0.[i];
 endfor
-clip d1 to p1;
-draw d1 withpen l1; % withpen l3 withcolor 0.7white;
+clip d1 to p03;
+draw d1 withpen l1;
 
 % ··································································
 % curvas auxiliares
-a03 = he02 - u;		a04 = 3/4*4.5v;
-a05 = he02/8;		a06 = he02 - a05;
-a07 = angle(2v, v);	a08 = 5/4*9v;
-z05 = z02 + (a03, a03/2);	z06 = z02 + (a03, -a03/2);
-z07 = (a03, a03/2) rotated -a07 shifted z00;
-z08 = (a03, -a03/2) rotated a07 shifted z01;
+a06 = he02 - u;		a07 = he02/8;
+a08 = he02 - a07;	a09 = angle(2v, v);
+a10 = 9a03/2;
+z07 = z02 + (a06, a06/2);	z08 = z02 + (a06, -a06/2);
+z09 = (a06, a06/2) rotated -a09 shifted z00;
+z10 = (a06, -a06/2) rotated a09 shifted z01;
 % rectas diagonales
-p2 = z02--z05;	p3 = z02--z06;
+% p04 = z02--z07;	p05 = z02--z08;
+p04 = p02;		p05 = p01;
 % recta que corta las diagonales
-p4 = z00--z01;
+p06 = z00--z01;
 % rectas horizontales
-% p5 = z00--z31;	p6 = z01--z32;
-p5 = z00--(wi - u, y00);	p6 = z01--(wi - u, y01);
+p07 = z00--(wi - u, y00);
+p08 = z01--(wi - u, y01);
 % auxiliar que marca el inicio del campo
-p7 = z01--z01 shifted (0, a06 - a05/2 - y01);
+p09 = z01--z01 shifted (0, a08 - a07/2 - y01);
 % frontera entre campo cercano y campo lejano
-p8 = (x02 + a04, a06 + a05/2)--(x02 + a04, a05/2);
-draw p2 cutbefore p4 dashed evenly scaled 2 shifted (u, 0);
-draw p3 cutbefore p4 dashed evenly scaled 2 shifted (u, 0);
-draw p5 dashed evenly scaled 2 shifted (u, 0);
-draw p6 dashed evenly scaled 2 shifted (u, 0);
-draw p7 dashed evenly scaled 2 shifted (u, 0);
-draw p8 dashed evenly scaled 2 shifted (u, 0);
+p10 = (a05, a08 + a07/2)--(a05, a07/2);
+draw p04 cutbefore p06 dashed evenly scaled 2 shifted (u, 0);
+draw p05 cutbefore p06 dashed evenly scaled 2 shifted (u, 0);
+draw p07 dashed evenly scaled 2 shifted (u, 0);
+draw p08 dashed evenly scaled 2 shifted (u, 0);
+draw p09 dashed evenly scaled 2 shifted (u, 0);
+draw p10 dashed evenly scaled 2 shifted (u, 0);
 
 % ··································································
 % etiquetas y marco
-p9 = (x01 + u, a06 - a05/2)--(x02 + a04 - u, a06 - a05/2);
-p10 = fullcircle scaled a08 shifted z02 %
-		cutbefore p6 shifted (0, u) %
-		cutafter p2 shifted (3u, 0);
-z09 = point 0.5 length p9 of p9;
-z10 = point 0.5 length p10 of p10;
-z11 = point 0 of p10;
-p11 = z11 shifted (u/10, -2u)--z11 shifted (u/10, y00 - y01);
-z12 = point 0.5 length p11 of p11;
-d3 = thelabel(btex $L_0$ etex, z09);
-d4 = thelabel(btex $\gamma_0$ etex, z10);
-d5 = thelabel.lft(btex Campo pr\'oximo etex, %
-	       (x02 + a04 - 2u, a05));
+p11 = (x01 + u, a08 - a07/2)--(a05 - u, a08 - a07/2);
+p12 = fullcircle scaled a10 shifted z02 %
+		cutbefore p08 shifted (0, u) %
+		cutafter p04 shifted (3u, 0);
+z11 = point 0.5 length p11 of p11;
+z12 = point 0.5 length p12 of p12;
+z13 = point 0 of p12;
+p13 = z13 shifted (u/10, -2u)--z13 shifted (u/10, y00 - y01);
+z14 = point 0.5 length p13 of p13;
+d3 = thelabel(btex $L_0$ etex, z11);
+d4 = thelabel(btex $\gamma_0$ etex, z12);
+d5 = thelabel.lft(btex Campo pr\'oximo etex, (a05 - 2u, a07));
 d6 = thelabel(btex Campo lejano etex, %
-	       1/2[(x02 + a04 + 2u, a05), (wi, a05)]);
-label.rt(btex $D$ etex, z12);
-drawdblgisarrow p9;	drawdblgisarrow p10;	drawdblgisarrow p11;
+	       1/2[(a05 + 2u, a07), (wi, a07)]);
+label.rt(btex $D$ etex, z14);
+drawdblgisarrow p11;	drawdblgisarrow p12;	drawdblgisarrow p13;
 fill bbox d3 withcolor white;	draw d3;
 fill bbox d4 withcolor white;	draw d4;
 fill bbox d5 withcolor white;	draw d5;

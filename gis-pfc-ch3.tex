@@ -12,7 +12,7 @@ El último de los subsistemas que conforma el sistema de medida digital es el su
 	\label{fig:subconpre}
 \end{figure}
 
-El subsistema de control y presentación, al actuar como interfaz entre el supervisor y el sistema de medida, debe ser capaz de poner en práctica las órdenes que administra el supervisor y gestionar el funcionamiento del resto de subsistemas. De entre los dos bloques que conforman el subsistema, es el bloque de control como su nombre indica el encargado de esta actividad. Como tal, es responsabilidad suya la ejecución de las siguientes tareas:
+El subsistema de control y presentación, al actuar como interfaz entre el supervisor y el sistema de medida, debe ser capaz de poner en práctica las órdenes que administra el supervisor y gestionar el funcionamiento del resto de subsistemas. De entre los dos bloques que conforman el subsistema, es el bloque de control ---como su nombre indica--- el encargado de esta actividad. Como tal, es responsabilidad suya la ejecución de las siguientes tareas:
 
 \begin{itemize}
 	\item Iniciar y detener la sesión de adquisición.
@@ -20,7 +20,7 @@ El subsistema de control y presentación, al actuar como interfaz entre el super
 	\item Realizar el mantenimiento de los buffers de memoria. Tarea que puede dividirse, o consta a su vez, de dos tareas de menor complejidad: dar formato a las muestras almacenadas en el o los buffers situados en la memoria interna de la tarjeta para su comprensión por parte del ordenador anfitrión; trasladar las muestras formateadas adecuadamente a la memoria del \pc{} para que de ese modo puedan ser manipuladas por el usuario administrador.
 \end{itemize}
 
-Por su parte, al bloque de presentación le corresponde la tarea de presentar al supervisor información de utilidad a partir de los datos obtenidos del subsistema de adquisición, en este caso de la señal digital. La información debe mostrarse al supervisor de forma que este sea capaz de interpretarla. En consecuencia, y por criterio propio, se decide por diseñar el software de control para que sea capaz de proporcionar al supervisor la siguiente información de la señal:
+Por su parte, al bloque de presentación le corresponde la tarea de presentar al supervisor información de utilidad a partir de los datos obtenidos del subsistema de adquisición, en este caso de la señal digital. La información debe mostrarse al supervisor de forma que este sea capaz de interpretarla. En consecuencia, y por criterio propio, se decide por diseñar el software de control para que sea capaz de proporcionar al supervisor la siguiente información de la señal: % Lo de criterio propio significa que era uno de los objetivos del proyecto que propuso el director.
 
 \begin{itemize}
 	\item El valor instantáneo cada 250 ms.
@@ -28,7 +28,7 @@ Por su parte, al bloque de presentación le corresponde la tarea de presentar al
 	\item La forma instantánea de la señal, de un fragmento de una duración determinada. Debe ser posible también seleccionar la duración del fragmento. Simultáneamente debe representarse el espectro en frecuencia del fragmento de señal que aparece en pantalla.
 \end{itemize}
 
-Se impone una condición de diseño adicional al software de control, debe ser poco exigente con respecto al \pc{} anfitrión en cuanto a capacidad de procesado y memoria principal utilizada. Para lograrlo se propone la siguiente solución: en lugar de mostrar al mismo tiempo el valor instantáneo de la señal, el valor medio y su forma, se concibe la aplicación para que el usuario pueda elegir uno de estos tres aspectos de la señal y sólo ese se muestra por pantalla.\par
+Se impone una condición de diseño adicional al software de control, debe ser poco exigente con respecto al \pc{} anfitrión en cuanto a capacidad de procesado y memoria principal utilizada. Para lograrlo se propone la siguiente solución: en lugar de mostrar al mismo tiempo el valor instantáneo de la señal, el valor medio, y su forma, se concibe la aplicación para que el usuario pueda elegir uno de estos tres aspectos de la señal y sólo ese se muestra por pantalla.\par
 Por conveniencia se adopta la siguiente nomenclatura en este documento: se dice que en el \emph{modo gráfico} la aplicación muestra gráficas que representan la forma de la señal y de su espectro en frecuencia; mientras que en los \emph{modos numéricos} o no gráficos lo que aparece en pantalla es un valor numérico relacionado con la magnitud variable de la señal ---el voltaje---. Aplicando de nuevo el criterio de austeridad por el cual la aplicación debe ser lo menos exigente posible, se consigue economizar recursos en el modo gráfico de funcionamiento si se permite al supervisor seleccionar si son ambos, forma y espectro de la señal, los representados, sólo uno y cual, o ninguno de ellos.
 
 
@@ -46,7 +46,7 @@ Para tratar de imitar el funcionamiento del osciloscopio digital en el software 
 \subsection{Osciloscopios analógicos, osciloscopios digitales y retardo}
 
 Los osciloscopios analógicos emplean un tubo de rayos catódicos y un monitor de fósforo para generar una imagen de la señal. El cursor que el tubo dibuja en el monitor lo va barriendo de izquierda a derecha con periodicidad, y su posición vertical refleja a cada momento el valor de tensión de la señal eléctrica que entra al osciloscopio. El monitor preserva durante breves instantes una traza del cursor y así se forma la imagen que representa a la señal.\par
-En la actualidad los osciloscopios analógicos están siendo desplazados en su uso por los osciloscopios digitales. El procedimiento que sigue un osciloscopio digital para representar señales es completamente diferente al que siguen los osciloscopios analógicos. Constantemente el osciloscopio digitaliza la señal en seguimiento, procesa la señal digital resultante y la almacena en memoria. Cada cierto \emph{periodo de refresco} el osciloscopio muestra por pantalla una representación de los datos que previamente ha almacenado durante ese mismo periodo. Mientras se recogen datos para una nueva imagen se mantienen en pantalla los datos correspondientes al periodo anterior. La velocidad con la que se suceden las imágenes en el monitor del osciloscopio hace que se produzca la sensación de movimiento, y de ese modo la representación responde a las variaciones que se producen en la señal. Esto permite observar los eventos que se producen en la señal en determinadas situaciones como por ejemplo, al accionar un potenciómetro que forma parte de un circuito que está siendo analizado, al cambiar la configuración de un generador de señales para que genere una señal diferente a la que suministraba unos instantes antes, o simplemente al conectar la alimentación.\par
+En la actualidad los osciloscopios analógicos están siendo desplazados en su uso por los osciloscopios digitales. El procedimiento que sigue un osciloscopio digital para representar señales es completamente diferente al que siguen los osciloscopios analógicos. Constantemente el osciloscopio digitaliza la señal en seguimiento, procesa la señal digital resultante y la almacena en memoria. Cada cierto \emph{periodo de refresco} el osciloscopio muestra por pantalla una representación de los datos que previamente ha almacenado durante ese mismo periodo. Mientras se recogen datos para una nueva imagen se mantienen en pantalla los datos correspondientes al periodo anterior. La velocidad con la que se suceden las imágenes en el monitor del osciloscopio hace que se produzca la sensación de movimiento, y de ese modo la representación responde a las variaciones que se producen en la señal. Esto permite observar los eventos que se producen en la señal en determinadas situaciones, como por ejemplo: al accionar un potenciómetro que forma parte de un circuito que está siendo analizado, al cambiar la configuración de un generador de señales para que genere una señal diferente a la que suministraba unos instantes antes, o simplemente al conectar la alimentación.\par
 El periodo de refresco no es fijo, de lo contrario los datos mostrados en el monitor del osciloscopio aparecerían en exceso comprimidos o expandidos en función de la frecuencia de la señal monitorizada. Puede configurarse el periodo de muestreo para que adopte un valor de entre un rango de valores predeterminados. Debe notarse que al ser posible modificar el valor del periodo de refresco existe la posibilidad de que, en efecto, éste adopte un valor alto. Ésto haría que el retardo que se produce en la sucesión de imágenes aumentase, limitando la capacidad de la representación de seguir los cambios que afectan a la señal. Para impedir que ésto ocurra los osciloscopios digitales implementan un mecanismo por el cual una señal se representa de uno u otro modo en función del valor que toma el periodo de refresco.
 
 % Un periodo de refresco demasiado alto puede ser la causa de un retardo excesivo en la sucesión de imágenes, haciendo que la representación de la señal reaccione con lentitud a las variaciones que en ésta última se produzcan.
@@ -86,30 +86,178 @@ El periodo de refresco no es fijo, de lo contrario los datos mostrados en el mon
 \subsection{Modos de representación en los osciloscopios digitales}\label{subsec:repmodes}
 
 % Los osciloscopios digitales tienen la capacidad de representar una señal de dos formas diferentes: una en la que la señal aparece anclada a la ventana del osciloscopio, que en este documento se ha asociado al nombre \emph{modo disparado}; y otra en la que la señal se desplaza de derecha a izquierda en la pantalla del osciloscopio, que aquí se conoce como \emph{modo continuo}.
-Los osciloscopios digitales tienen la capacidad de representar una señal de formas diferentes. Cada forma de representar la señal se conoce en este documento como \emph{modo de representación}. Habitualmente los osciloscopios digitales cuentan al menos con dos modos de representación. Estos dos modos son, tal y como han sido bautizados aquí, el \emph{modo disparado} y el \emph{modo continuo}. Los modos de representación continuo y disparado forman parte de la solución que los osciloscopios digitales adoptan para combatir la situación en la que un hipotético retardo entre cuadros pudiese complicar el seguimiento de los eventos producidos en la señal. Para remediar el retardo, un osciloscopio digital conmuta al modo de representación continuo cuando el periodo de refresco supera los 200 ms, el resto del tiempo permanece en el modo de representación disparado.
-para combatir el retardo que se produce en configuraciones/situaciones en las que el periodo de refresco es muy alto
+Los osciloscopios digitales tienen la capacidad de representar una señal de formas diferentes. Cada forma de representar la señal se conoce en este documento como \emph{modo de representación}. Habitualmente los osciloscopios digitales cuentan al menos con dos modos de representación. Estos dos modos son, tal y como han sido bautizados aquí, el \emph{modo disparado} y el \emph{modo continuo}. Los modos de representación continuo y disparado forman parte de la solución que los osciloscopios digitales adoptan para combatir la situación hipotética en la que un excesivo retardo entre cuadros pudiese complicar el seguimiento de la señal.\par
+Para evitar las consecuencias de un retardo alto, un osciloscopio digital conmuta al modo de representación continuo cuando el periodo de refresco supera los 200 ms, el resto del tiempo permanece en el modo de representación disparado. % Para remediar el retardo, un osciloscopio digital conmuta al modo de representación continuo cuando el periodo de refresco supera los 200 ms, el resto del tiempo permanece en el modo de representación disparado.
+Para evitar las limitaciones que el modo de representación disparado presenta en configuraciones en las que el periodo de refresco toma un valor elevado, un osciloscopio conmuta al modo de representación continuo en el caso en el que el periodo de refresco supere los 200 ms. Habitualmente el osciloscopio digital opera en el modo de representación disparado, que es el modo que responde a la descripción funcional que se ha hecho de los osciloscopios digitales en este apartado.
 
-La elección del límite/umbral en el que el osciloscopio conmuta entre uno u otro modo no es trivial. Este límite responde a un compromiso 
-por el cual se consigue representar señales de frecuencia tal sin que el retardo suba.
-Deben considerarse dos factores:
-En primer lugar/primeramente, está poder representar señales de frecuencias bajas
-Este límite responde a un compromiso entre el retardo y la apariencia de los datos. que busca evitar en la mayor medida posible las consecuencias de los altos retardos al mismo tiempo que 
-Este límite responde a un compromiso 
-que por un lado consigue que puedan seguirse 
-Dada la peculiaridad con la que se representa una señal en el modo continuo, la representación en este modo no se ve afectada por el periodo de refresco.
-complacer
-
-El compromiso es entre que se vean periodos de señales lentas y que el retraso no sea demasiado.
-El mayor retraso que se produce entre un cambio en la señal y la subsecuente aparición del mismo en la pantalla del osciloscopio será de 200 ms, lo cual no es mucho, y a pesar de que el ojo lo aprecia, tampoco es demasiado grave. Por otro lado si el periodo de refresco es de 200 ms puede apreciarse en la pantalla del osciloscopio un periodo completo de señales de hasta unos 5 Hz. Un compromiso por el cual el osciloscopio se compromete a dar servicio de una determinada calidad. Un compromiso entre el retardo y la apariencia de los datos.
-
-% Aquí me sale la complicación de explicar que en el modo continuo aunque el eje de tiempos cubre un determinado intervalo, este no se corresponde con el periodo de refresco. Pero esto podría reservarlo para el punto en el que trato el modo de representación continuo. El modo de representación disparado debería explicarse al principio, ya que en este modo la señal se representa como lo hacen los osciloscopios analógicos y, además, todo lo que se ha dicho sobre como representa la señal un osciloscopio digital hace referencia a este modo. El modo disparado es el que normalmente está activado, por eso yo lo había llamado modo convencional, aparte de lo que he dicho en este párrafo sobre él.
-% En el modo de representación disparado los datos se representan de modo que cubren la extensión horizontal de la ventana del osciloscopio. El eje de tiempos representa pues una medida similar al periodo de refresco. Después añado que el periodo de refresco es igual al tiempo que necesito para adquirir muestras suficientes para cubrir la ventana, para adquirir muestras adicionales para corregir la posición de la señal y que no aparezcan huecos, y para procesar, almacenar y representar las muestras. En el modo de representación continuo el eje de tiempos de la ventana del osciloscopio representa un periodo de tiempo que siempre es mayor que el periodo de refresco y en ocasiones mucho mayor. De ese modo cuando la imagen se refresca no desaparecen todos los datos si no que se van desplazando.
-
-% La necesidad de disponer de dos modos de representación surge como parte de una solución al problema
-% expuesto en el punto anterior/ocasionado por.
-% Para evitar los altos retardos que se producen en configuraciones en las que el periodo de refresco es muy bajo. Los altos retardos que se producen en configuraciones del periodo de refresco muy bajo. En configuraciones en las que el periodo de refresco es muy bajo.
-% Y surgen como parte de una solución al problema expuesto en el punto anterior ocasionado por.
-
+% >>|Miércoles 1 de Diciembre de 2010|
+%
+%	El modo de representación disparado es el modo de representación
+%	por defecto/que el osciloscopio emplea por defecto. Hasta ahora el
+%	concepto era que el osciloscopio digital empleaba un modo de
+%	representación para mostrar los datos por pantalla, el nuevo
+%	concepto es que los datos se representan de uno u otro modo.
+%
+%	Una razón para poner el límite en 200 ms es que de ese modo puede
+%	salir por pantalla un periodo entero de una señal de 5 Hz, en
+%	realidad algo menos de un periodo con esa frecuencia. Eso no quiere
+%	decir que el osciloscopio pueda disparar señales de menor
+%	frecuencia con esa configuración del periodo de refresco. De hecho,
+%	podría disparar señales con una frecuencia mínima de 1 Hz o 2.
+%
+%	Creo que podría resolver esta introducción a los modos de
+%	representación de los osciloscopios digitales del siguiente modo.
+%	En primer lugar menciono como hago que existen dos modos básicos de
+%	representación que están presentes en cualquier osciloscopio
+%	digital. Digo que esos dos modos forman parte de la solución que
+%	los osciloscopios adoptan para evitar los problemas que derivan de
+%	una configuración en la que el tiempo de refresco adopta un valor
+%	demasiado alto. Después paso a decir que el osciloscopio evita el
+%	problema al cambiar a un modo de representación que no se ve
+%	afectado por el periodo de refresco cuando éste toma un valor alto.
+%	Como valor alto se entiende cualquiera superior a los 200 ms, el
+%	límite se escoge en 200 ms porque la representación en modo
+%	disparado es más adecuada para seguir las variaciones que se
+%	producen en la señal pero sólo permite representar señales cuyo
+%	periodo sea similar al periodo de refresco, por tanto, señales cuyo
+%	periodo sea superior a los 200 ms sólo podrán observarse
+%	(correctamente) en el modo de representación continuo.
+%
+% >>|El modo disparado|
+%
+%	El modo disparado es el que responde a la descripción funcional que
+%	se ha dado hasta el momento de los osciloscopios digitales. En este
+%	modo un osciloscopio digital puede imitar a un osciloscopio
+%	analógico. En este modo la representación de la señal aparece
+%	anclada a la ventana del osciloscopio. De hecho disparar la señal
+%	viene a decir fijarla en una posición concreta de la ventana. Para
+%	conseguirlo el osciloscopio debe poder determinar donde se
+%	encuentran los cruces de la señal con respecto a un nivel de
+%	umbral. Una vez localizados la representación puede desplazarse
+%	según un criterio que habitualmente se deja en manos del
+%	supervisor.
+%
+% >>|Martes 23 de Noviembre de 2010|
+% 
+% 	A continuación las palabras que he consultado hoy para incluir en
+% 	la memoria.
+% 
+% 	He consultado la palabra \emph{evento}, por que en párrafos
+% 	anteriores he escrito algo como «esto permite observar los eventos
+% 	que se producen en la señal en determinadas situaciones», y no me
+% 	quedaba del todo claro lo que quería decir. Pensaba que tal vez los
+% 	eventos no se producían en la señal, que las consecuencias del
+% 	evento eran las que se reflejaban en la señal. Por poner un
+% 	ejemplo: si yo actúo sobre un potenciómetro, el evento es que el
+% 	valor de la resistencia que se observa en bornes del potenciómetro
+% 	ha cambiado, la consecuencia reflejada en la señal puede ser un
+% 	cambio en el voltaje de pico a pico, un cambio de forma, un cambio
+% 	en la frecuencia.., todo depende del circuito que influye en la
+% 	señal. Sin embargo, esto no es del todo cierto porque un evento es
+% 	cualquier cosa que sucede y producir es ocasionar, es decir, que si
+% 	cambia el voltaje de pico a pico de la señal es una cosa que sucede
+% 	en la señal. Evento es lo mismo que acaecimiento o cosa que sucede.
+% 	Producirse es lo mismo que originarse o ocasionar.
+% 
+% 	El verbo responder también me intriga en el siguiente contexto:
+% 	«este umbral responde a una solución de compromiso». El significado
+% 	más probable en este contexto según mi opinión puede ser el
+% 	siguiente: «RAE 13. intr. Dicho de una cosa: Tener proporción,
+% 	corresponder con otra». Podría traducirse la expresión original en
+% 	«este umbral es una solución de compromiso».
+% 
+% >>|Anteriores al 23 de Noviembre de 2010|
+%
+% 	Para combatir el retardo que se produce en
+% 	configuraciones/situaciones en las que el periodo de refresco es
+% 	muy alto Este límite responde a una solución de compromiso.  Para
+% 	determinar el umbral se hace caso a dos criterios/factores se
+% 	tienen en cuenta/la influencia
+% 
+% 	Dos factores influyen en la elección del umbral o límite o.  De
+% 	momento lo único que tengo dicho es que: para evitar las
+% 	consecuencias de un retardo alto el osciloscopio conmuta al modo
+% 	continuo cuando el periodo de refresco <<supera>> los 200 ms; y que
+% 	la elección del umbral no es trivial. Lo que me queda por decir es
+% 	mucho: tengo que dar un motivo por el cual se haya elegido 200 ms
+% 	como referencia en la que se conmuta los modos, las ideas están
+% 	abajo, poder ver periodos completos de señales de frecuencia muy
+% 	baja (5 Hz) con el modo continuo, y que el retardo no impida el
+% 	correcto seguimiento de la señal. El problema es que al no haber
+% 	explicado por qué el modo continuo no acusa los defectos del modo
+% 	disparado (como refresca la pantalla al completo no existe
+% 	correlación entre el periodo de refresco y la dimensión de la
+% 	ventana, entonces el retardo no es aplicable), y que no representa
+% 	periodos de la señal completos (no es eso, si no que no es tan
+% 	bueno para apreciar los cambios que se producen en la señal); no
+% 	puedo justificar bien por qué el límite en 200 ms. También puedo
+% 	decir algo como: <<todo cobrará sentido más adelante>>, <<podrá
+% 	comprenderse esta elección al terminar el apartado>>. Aunque claro
+% 	no me gusta escribir las cosas en futuro y utilizar otras partes de
+% 	la memoria para dar pie a lo que estoy diciendo.
+% 
+% 	La elección del límite/umbral en el que el osciloscopio conmuta
+% 	entre uno u otro modo no es trivial. Este límite responde a un
+% 	compromiso por el cual se consigue representar señales de
+% 	frecuencia tal sin que el retardo suba.  Deben considerarse dos
+% 	factores: En primer lugar/primeramente, está poder representar
+% 	señales de frecuencias bajas Este límite responde a un compromiso
+% 	entre el retardo y la apariencia de los datos. Que busca evitar en
+% 	la mayor medida posible las consecuencias de los altos retardos al
+% 	mismo tiempo que Este límite responde a un compromiso Que por un
+% 	lado consigue que puedan seguirse Dada la peculiaridad con la que
+% 	se representa una señal en el modo continuo, la representación en
+% 	este modo no se ve afectada por el periodo de refresco.  Complacer
+% 	El compromiso es entre que se vean periodos de señales lentas y que
+% 	el retraso no sea demasiado.
+% 
+% 	El mayor retraso que se produce entre un cambio en la señal y la
+% 	subsecuente aparición del mismo en la pantalla del osciloscopio
+% 	será de 200 ms, lo cual no es mucho, y a pesar de que el ojo lo
+% 	aprecia, tampoco es demasiado grave. Por otro lado si el periodo de
+% 	refresco es de 200 ms puede apreciarse en la pantalla del
+% 	osciloscopio un periodo completo de señales de hasta unos 5 Hz. Un
+% 	compromiso por el cual el osciloscopio se compromete a dar servicio
+% 	de una determinada calidad. Un compromiso entre el retardo y la
+% 	apariencia de los datos.
+% 
+% 	Aquí me sale la complicación de explicar que en el modo continuo
+% 	aunque el eje de tiempos cubre un determinado intervalo, este no se
+% 	corresponde con el periodo de refresco. Pero esto podría reservarlo
+% 	para el punto en el que trato el modo de representación continuo.
+% 	El modo de representación disparado debería explicarse al
+% 	principio, ya que en este modo la señal se representa como lo hacen
+% 	los osciloscopios analógicos y, además, todo lo que se ha dicho
+% 	sobre como representa la señal un osciloscopio digital hace
+% 	referencia a este modo. El modo disparado es el que normalmente
+% 	está activado, por eso yo lo había llamado modo convencional,
+% 	aparte de lo que he dicho en este párrafo sobre él.  En el modo de
+% 	representación disparado los datos se representan de modo que
+% 	cubren la extensión horizontal de la ventana del osciloscopio. El
+% 	eje de tiempos representa pues una medida similar al periodo de
+% 	refresco. Después añado que el periodo de refresco es igual al
+% 	tiempo que necesito para adquirir muestras suficientes para cubrir
+% 	la ventana, para adquirir muestras adicionales para corregir la
+% 	posición de la señal y que no aparezcan huecos, y para procesar,
+% 	almacenar y representar las muestras. En el modo de representación
+% 	continuo el eje de tiempos de la ventana del osciloscopio
+% 	representa un periodo de tiempo que siempre es mayor que el periodo
+% 	de refresco y en ocasiones mucho mayor. De ese modo cuando la
+% 	imagen se refresca no desaparecen todos los datos si no que se van
+% 	desplazando.
+% 
+% 	La necesidad de disponer de dos modos de representación surge como
+% 	parte de una solución al problema Expuesto en el punto
+% 	anterior/ocasionado por.
+% 
+% 	Para evitar los altos retardos que se producen en configuraciones
+% 	en las que el periodo de refresco es muy bajo. Los altos retardos
+% 	que se producen en configuraciones del periodo de refresco muy
+% 	bajo. En configuraciones en las que el periodo de refresco es muy
+% 	bajo.
+% 
+% 	Y surgen como parte de una solución al problema expuesto en el
+% 	punto anterior ocasionado por.
 
 
 \subsubsection{Criterios para la selección del modo}
@@ -154,7 +302,7 @@ Las figuras \cref{fig:freesignalcont,fig:modconti} muestran con detalle estos as
 		\includegraphics{gis-pfc-ch3-05.mps}
 	\end{center}
 	\caption[Dos líneas de prueba]{Dos líneas de texto de prueba para comprobar como cambia la estructura del documento si lo comprimo un poquito.}
-	\caption[<++>]<++>{}<++>
+% 	\caption[<++>]<++>{}<++>
 % 	\caption[Modo de funcionamiento continuo]{Puede observarse como la llegada de un nuevo fragmento de señal al sistema en el instante $t_2$ desplaza el fragmento previamente representado en la ventana del osciloscopio una periodo de refresco a la derecha.}
 	\label{fig:modconti}
 \end{figure}
