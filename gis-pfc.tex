@@ -5,31 +5,36 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[nofontinfo]{lucidabr}
-\usepackage[format=hang, font=small, labelfont=bf, labelsep=endash, width=.9\textwidth]{caption}
+\usepackage[format=hang, font=small, labelfont=bf, labelsep=endash, %
+	width=.9\textwidth]{caption}
 \usepackage[listofformat=subsimple, format=hang, labelfont=footnotesize, %
 	textfont={it, footnotesize}]{subfig}
 \usepackage[clearempty]{titlesec}
 \usepackage[nottoc]{tocbibind}
 \usepackage[spanish]{varioref}
 \usepackage{graphicx}
-\usepackage{amsfonts, amsmath, amssymb, calc, color, fancyhdr, hyperref, ifthen, layouts}
-\usepackage{listings, textcase, textcomp}
-\usepackage{array, booktabs, tabularx, tabulary, dcolumn, multirow, threeparttable}
+\usepackage{amsfonts, amsmath, amssymb, calc, color, fancyhdr, hyperref}
+\usepackage{ifthen, layouts, listings, textcase, textcomp}
+\usepackage{array, booktabs, tabularx, tabulary, dcolumn, multirow}
+\usepackage{threeparttable}
 \usepackage[fixlanguage, noisbn]{babelbib}
 \usepackage[spanish]{cleveref}
-\titleformat{\part}[display]{\centering\huge\bfseries}{\partname\ \thepart}%
-	{.5\baselineskip}{}
-\titleformat{name=\subsubsection,page=even}[leftmargin]{\small\scshape\filleft}{\thesubsubsection}{\margiparsep}{}
-\titleformat{name=\subsubsection,page=odd}[rightmargin]{\small\scshape\filright}{\thesubsubsection}{\margiparsep}{}
-\titleformat{\subparagraph}[runin]{\bfseries\itshape}{\thesubparagraph}{1em}{}
-\titlespacing*{\subsubsection}{\marginparwidth}{0pt}{\marginparsep}
-\titlespacing*{\subparagraph}{\parindent}{0pt}{1em}
+\titleformat{\part}[display]{\centering\huge\bfseries}%
+	{\partname\ \thepart}{.5\baselineskip}{}
+% \titleformat{name=\subsubsection,page=even}[leftmargin]%
+% 	{\small\scshape\filleft}{\thesubsubsection}{\margiparsep}{}
+% \titleformat{name=\subsubsection,page=odd}[rightmargin]%
+% 	{\small\scshape\filright}{\thesubsubsection}{\margiparsep}{}
+% \titleformat{\subparagraph}[runin]{\bfseries\itshape}{\thesubparagraph}%
+% 	{1em}{}
+% \titlespacing*{\subsubsection}{\marginparwidth}{0pt}{\marginparsep}
+% \titlespacing*{\subparagraph}{\parindent}{0pt}{1em}
 \hypersetup{%
 	pdftitle=Proceso de adquisición y tratamiento de señales de %
-	ultrasonidos, pdfauthor=José Ramón Gisbert Valls, pdfcreator=Vim 7.2,%
-	pdfstartview=FitH, colorlinks=true, pdfdisplaydoctitle=true,%
-	linkcolor=black, citecolor=black, bookmarksopen=true, bookmarksopenlevel=0, %
-	urlcolor=black
+	ultrasonidos, pdfauthor=José Ramón Gisbert Valls, %
+	pdfcreator=Vim 7.2, pdfstartview=FitH, colorlinks=true, %
+	pdfdisplaydoctitle=true, linkcolor=black, citecolor=black, %
+	bookmarksopen=true, bookmarksopenlevel=0, urlcolor=black
 }
 \fancypagestyle{plain}{%
 	\fancyhf{}
@@ -38,11 +43,12 @@
 \lstloadlanguages{Matlab}
 \lstset{language=Matlab, extendedchars=true, breaklines, captionpos=b, %
 	morekeywords={addchannel, analoginput, catch, datadqcallback, %
-	daqfind, daqhwinfo, errordlg, gcbo, getdata, guidata, localDaqCallback, %
-	peekdata, single_channel, start, stop, strcmpi, trigger, try, warning} %
+	daqfind, daqhwinfo, errordlg, gcbo, getdata, guidata, %
+	localDaqCallback, peekdata, single_channel, start, stop, strcmpi, %
+	trigger, try, warning} %
 	}
-\lstdefinestyle{displayed}{float=tpbh, frame=l, tabsize=5, framerule=1.2pt, %
-	abovecaptionskip=\medskipamount, gobble=4, %
+\lstdefinestyle{displayed}{float=tpbh, frame=l, tabsize=5, %
+	framerule=1.2pt, abovecaptionskip=\medskipamount, gobble=4, %
 	linewidth=.975\textwidth, xleftmargin=.05\textwidth}
 \crefname{lstlisting}{fragmento de código}{fragmentos de código}
 \crefname{listing}{fragmento de código}{fragmentos de código}
@@ -56,13 +62,15 @@
 \setlength\marginparsep{12pt}
 \setlength\marginparwidth{\pdfpagewidth - \textwidth - \oddsidemargin - %
 	2\marginparsep - 1in}
-% Se aplica el siguiente convenio tipográfico a la primera aparición de una sigla.
+% Se aplica el siguiente convenio tipográfico a la primera aparición de
+% una sigla.
 \newcommand\psig[1]{\emph{\MakeTextUppercase{#1}}}
 % Se aplica el siguiente convenio tipográfico a siglas.
 \newcommand\sig[1]{\textsc{\MakeTextLowercase{#1}}}
 % Se aplica el siguiente convenio tipográfico a funciones.
 \newcommand\func[1]{\texttt{#1}}
-% Se aplica el siguiente convenio a argumentos de función distintos de propiedades.
+% Se aplica el siguiente convenio a argumentos de función distintos de
+% propiedades.
 \newcommand\argu[1]{\texttt{#1}}
 % Se aplica el siguiente convenio tipográfico a propiedades.
 \newcommand\prop[1]{\textsf{#1}}
@@ -113,7 +121,8 @@
 
 \mainmatter
 
-\part[Implementación del sistema digital de medida]{Diseño e implementación del sistema digital de medida}
+\part[Implementación del sistema digital de medida] %
+{Diseño e implementación del sistema digital de medida}
 
 \include{gis-pfc-ch1}
 
@@ -123,7 +132,8 @@
 
 \include{gis-pfc-ch4}
 
-\part[\textsc{endus} en madera de palmera]{Ensayos no destructivos en madera de palmera}
+\part[\textsc{endus} en madera de palmera] %
+{Ensayos no destructivos en madera de palmera}
 
 \include{gis-pfc-ch5}
 

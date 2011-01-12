@@ -3,7 +3,7 @@ AUX = $(TEXMAIN:.tex=.cb) $(TEXMAIN:.tex=.cb2)
 BBL = $(TEXMAIN:.tex=.bbl)
 TEXMAIN = gis-pfc.tex
 TEX = gis-pfc-pro.tex gis-pfc-pro.tex gis-pfc-ch1.tex gis-pfc-ch2.tex gis-pfc-ch3.tex \
-	gis-pfc-ch5.tex gis-pfc-appa.tex gis-pfc-appb.tex
+	gis-pfc-ch4.tex gis-pfc-ch5.tex gis-pfc-appa.tex gis-pfc-appb.tex
 BIB = $(TEXMAIN:.tex=.bib)
 PICSCH1 = gis-pfc-ch1-01.mps gis-pfc-ch1-02.mps gis-pfc-ch1-03.mps gis-pfc-ch1-04.mps \
 	  gis-pfc-ch1-05.mps

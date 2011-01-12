@@ -1,11 +1,20 @@
 \chapter{Pruebas y contenidos adicionales}
 
-Este apéndice no debe adjuntarse en el documento final, en el se anotarán ideas para modificar el contenido del grueso del documento y bases para generar los contenidos adicionales.
+Este apéndice no debe adjuntarse en el documento final, en el se anotarán
+ideas para modificar el contenido del grueso del documento y bases para
+generar los contenidos adicionales.
 
 
 \section{Configuración de página}
 
-La configuración actual se ha hecho utilizando el paquete \textsf{typearea} que forma parte del conjunto del \textsc{koma}-\textsc{s}cript. Las opciones más importantes que deben pasarse a este paquete son el tipo de papel (A4, A3, A5, letter,\dots) y el espacio de corrección necesario para evitar fallos en la encuadernación (\textsc{bcor} = \texttt{magnitud} o directamente \textsc{bcor}\texttt{magnitud}). Utilizando el paquete \textsf{layouts} pueden crearse figuras que representen la configuración de página actual.
+La configuración actual se ha hecho utilizando el paquete \textsf{typearea}
+que forma parte del conjunto del \textsc{koma}-\textsc{s}cript. Las
+opciones más importantes que deben pasarse a este paquete son el tipo de
+papel (A4, A3, A5, letter,\dots) y el espacio de corrección necesario para
+evitar fallos en la encuadernación (\textsc{bcor} = \texttt{magnitud} o
+directamente \textsc{bcor}\texttt{magnitud}). Utilizando el paquete
+\textsf{layouts} pueden crearse figuras que representen la configuración de
+página actual.
 
 \newlength{\auxmm}
 \newlength{\auxin}
@@ -22,25 +31,43 @@ La configuración actual se ha hecho utilizando el paquete \textsf{typearea} que
 
 	\begin{tabular}{l l}
 		\toprule
-		1in = \printinunitsof{mm}\prntlen{\auxin} & 1pt = \printinunitsof{mm}\prntlen{\auxpt} \\
-		1mm = \printinunitsof{in}\prntlen{\auxmm} & 1mm = \printinunitsof{pt}\prntlen{\auxmm} \\
-		Alto de \texttt{gis-ch2-02.mps} & \printinunitsof{mm}\prntlen{\ht\caja} \\
-		Ancho de \texttt{gis-ch2-02.mps} & \printinunitsof{mm}\prntlen{\wd\caja} \\
-		marginparwidth = \printinunitsof{pt}\prntlen{\marginparwidth} & marginparsep = \printinunitsof{pt}\prntlen{\marginparsep} \\
+		1in = \printinunitsof{mm}\prntlen{\auxin} %
+		& 1pt = \printinunitsof{mm}\prntlen{\auxpt} \\
+		1mm = \printinunitsof{in}\prntlen{\auxmm} %
+		& 1mm = \printinunitsof{pt}\prntlen{\auxmm} \\
+		Alto de \texttt{gis-ch2-02.mps} %
+		& \printinunitsof{mm}\prntlen{\ht\caja} \\
+		Ancho de \texttt{gis-ch2-02.mps} %
+		& \printinunitsof{mm}\prntlen{\wd\caja} \\
+		marginparwidth %
+		= \printinunitsof{pt}\prntlen{\marginparwidth} %
+		& marginparsep %
+		= \printinunitsof{pt}\prntlen{\marginparsep} \\
 		\bottomrule
 	\end{tabular}
-	\caption[Valores actuales de la distribución de página]{Valores que completan el diagrama representado en la \vref{fig:layouts} sustituir la nomenclatura de referencia por los valores correspondientes}
+	\caption[Valores actuales de la distribución de página]{Valores que
+	completan el diagrama representado en la \vref{fig:layouts}
+	sustituir la nomenclatura de referencia por los valores
+	correspondientes}
 \end{table}
 
 \begin{figure}
 	\begin{center}
 		\includegraphics{gis-pfc-ch2-02.mps}
 	\end{center}
-	\caption[Segunda figura del segundo capítulo]{Segunda figura del segundo capítulo.}
+	\caption[Segunda figura del segundo capítulo]{Segunda figura del
+	segundo capítulo.}
 	\label{fig:ch102}
 \end{figure}
 
-El lector puede fijarse que se cumple la regla de construcción que aplica el paquete \textsf{typearea} en la que el margen inferior es dos veces el margen inferior, y que el margen interior de página ---una vez eliminado el centímetro (\textsc{bcor}\texttt{1cm}) que se deja para compensar el encuadernado--- es la mitad del margen exterior de página. De ese modo se crea una distribución de página en la que el margen interior de página de las páginas par e impar juntas es igual a cada uno de los márgenes exteriores de ambas páginas.
+El lector puede fijarse que se cumple la regla de construcción que aplica
+el paquete \textsf{typearea} en la que el margen inferior es dos veces el
+margen inferior, y que el margen interior de página ---una vez eliminado el
+centímetro (\textsc{bcor}\texttt{1cm}) que se deja para compensar el
+encuadernado--- es la mitad del margen exterior de página. De ese modo se
+crea una distribución de página en la que el margen interior de página de
+las páginas par e impar juntas es igual a cada uno de los márgenes
+exteriores de ambas páginas.
 
 \begin{figure}
 	\pagediagram
@@ -57,9 +84,13 @@ El lector puede fijarse que se cumple la regla de construcción que aplica el pa
 
 \section{Gráficos con MetaPost}
 
-Anotaciones destinadas a obtener gráficos escalables de calidad empleando el paquete MetaPost para la creación de gráficos en PostScript.
+Anotaciones destinadas a obtener gráficos escalables de calidad empleando
+el paquete MetaPost para la creación de gráficos en PostScript.
 
 
 \subsection{Tamaño}
 
-Tengo que modificar el tamaño de algunas figuras al haber cambiado la tipografía predeterminada de la \emph{Computer Roman} a \emph{Lucida}. Lo que quiero que aparezca en este apartado es un cuadro con los distintos tamaños de letra que aparecen en el documento.
+Tengo que modificar el tamaño de algunas figuras al haber cambiado la
+tipografía predeterminada de la \emph{Computer Roman} a \emph{Lucida}. Lo
+que quiero que aparezca en este apartado es un cuadro con los distintos
+tamaños de letra que aparecen en el documento.
