@@ -1,4 +1,4 @@
-Copyright (C)  2010, 2010  José Ramón Gisbert Valls.
+Copyright (C)  2010, 2011  José Ramón Gisbert Valls.
 
 Ensayos no destructivos con ultrasonidos en madera de palmera
 =============================================================
