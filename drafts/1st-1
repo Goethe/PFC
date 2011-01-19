@@ -1,0 +1,283 @@
+|Lunes, 17 de Enero de 2011|
+
+	En la actualidad los osciloscopios analógicos están siendo	|Lunes, 17 de Enero de 2011|
+	desplazados en su uso por los osciloscopios digitales. EL
+	procedimiento que sigue un osciloscopio digital para representar
+	señales es completamente diferente al que siguen los osciloscopios
+	analógicos. A diferencia de los osciloscopios analógicos, que
+	muestran la forma de la señal a medida que ésta aparece en la sonda
+	que se coloca en el punto de toma, los osciloscopios digitales
+	muestrean la señal, procesan las muestras resultantes y almacenan
+	el resultado en memoria, todo ello antes de mostrar ningún gráfico
+	por pantalla.
+
+	Una señal es una variación de una magnitud física que puede
+	transmitir o de la que puede interpretarse una información.
+	Transmitir en este caso significa que puede aportar a quien la
+	observa alguna información, y con observar me refiero a ver en un
+	osciloscopio o extraer mediante procesado digital o analógico u
+	otro método la información que la señal acarrea consigo.
+
+	Los osciloscopios analógicos muestran una representación de la
+	señal a medida que ésta llega al terminal o terminales de entrada
+	del osciloscopio, a medida que llega al osciloscopio. Sin embargo,
+	un osciloscopio digital antes de realizar la representación, antes
+	de mostrar cualquier imagen de la señal, debe muestrearla,
+	procesarla, y almacenar las muestras resultantes en memoria. Por
+	decirlo así, un osciloscopio digital por un lado funciona como un
+	aparato que extrae una serie de datos procedentes de la señal y por
+	otro como un instrumento capaz de representar unos datos
+	cualesquiera de modos distintos.
+
+	(¿Por qué siempre me pongo de acuerdo en lo fundamental y después
+	no soy capaz de avanzar por culpa de los detalles más
+	insignificantes?)
+
+	Podría decirse que un osciloscopio analógico representa las
+	variaciones de tensión que caracterizan una determinada señal
+	(propias de una determinada señal) a medida que éstas ocurren en
+	sus terminales de entrada. Por el contrario, un osciloscopio
+	digital recoge esas variaciones de tensión en forma de muestras
+	digitales, procesa esas muestras y almacena esa información en su
+	memoria, todo ello antes de realizar ninguna representación.
+
+	Los osciloscopios analógicos representan las variaciones de tensión
+	que se dan en una señal a medida que estas ocurren/se producen en
+	sus terminales de entrada/su terminal de entrada. Por el contrario,
+	los osciloscopios digitales deben muestrear la señal, procesar las
+	muestras y almacenar la información resultante en memoria antes de
+	que pueda realizarse ninguna representación.
+
+	Los osciloscopios analógicos utilizan un tubo de rayos catódicos y
+	monitor de fósforo para representar imágenes de las señales que
+	llegan a su terminal de entrada. La posición horizontal del haz que
+	se proyecta en el monitor del osciloscopio viene controlada por una
+	generador de señales interno al dispositivo y que proporciona una
+	función diente de sierra cuyo periodo puede ser regulado por el
+	usuario. De ese modo el haz barre periódicamente el monitor de
+	izquierda a derecha pudiendo modificarse el número de barridos por
+	unidad de tiempo. La posición vertical del haz es regulada en cada
+	instante por el valor de tensión que puede observarse en la sonda
+	que incorpora el osciloscopio. Cuando el rayo catódico impacta en
+	el monitor de fósforo deja una imprenta que permanece en la
+	pantalla un tiempo determinado por la intensidad del haz, que
+	también puede ajustarse. En resumen, en la pantalla del
+	osciloscopio se forma una imagen por la acción del haz que responde
+	a las variaciones de tensión que definen la señal, es decir, se
+	forma una imagen de la señal.
+
+	Los osciloscopios representan señales utilizando un tubo de rayos	|Martes, 18 de Enero de 2011|
+	catódicos y un monitor de fósforo. La posición a la que apunta el
+	haz de luz en el monitor tiene dos controles, uno vertical y otro
+	horizontal. El control horizontal responde a una señal periódica de
+	<<dientes de sierra>> cuyo periodo es regulable.
+
+	Creo que siempre doy una explicación demasiado elaborada. Tengo que
+	hacerlo más sencillo. Voy a intentar desmenuzarlo, a ver si de ese
+	modo no me atranco tanto.
+
+	Los osciloscopios analógicos emplean un tubo de rayos catódicos y
+	un monitor de fósforo para representar señales.
+
+	El tubo de rayos catódicos apunta al monitor, de hecho está
+	configurado para que el haz de luz que emite incida siempre en el
+	monitor y no fuera de él. La incidencia del haz en el monitor da
+	lugar a un cursor que puede ser desplazado cambiando la orientación
+	del haz que despide el tubo, la polaridad del cátodo y el ánodo del
+	tubo.
+
+	La fosforescencia del monitor permite que al desplazar el cursor
+	por el monitor quede una traza de éste que permanece un tiempo
+	mayor o menor según la intensidad del haz de electrones que también
+	puede ser regulada.
+
+	El osciloscopio analógico emplea un tubo de rayos catódicos y un
+	monitor de fósforo para representar señales. Dos grupos de placas
+	de desviación ---un grupo alineado con respecto al eje horizontal
+	perpendicular al eje que atraviesa al tubo, y el otro con respecto
+	al eje vertical--- en el interior del osciloscopio hacen converger
+	los haces de electrones que despide el tubo a un punto en la cara
+	anterior del monitor, superficie que esta recubierta de fósforo. La
+	fosforescencia del monitor da lugar a un cursor visible, y si el
+	cursor se mueve por acción de las placas queda en el monitor una
+	traza del movimiento, traza que permanece durante un periodo de
+	tiempo determinado por la intensidad del haz de electrones. El
+	grupo de placas horizontales está controlado por una señal diente
+	de sierra originada en un generador de señales interno al
+	osciloscopio, esto hace que el cursor barra periódicamente el
+	monitor de izquierda (valor nulo en la señal diente de sierra) a
+	derecha (valor máximo de la señal). El periodo de la señal puede
+	regularse y, por consiguiente, el periodo del barrido. La posición
+	vertical del cursor responde al valor de tensión en bornes del
+	grupo de placas verticales, que a su vez es la tensión resultante
+	de atenuar la tensión visible en la sonda del osciloscopio mediante
+	un atenuador de pérdidas variables interno.
+
+	La fosforescencia del monitor da lugar a un cursor visible, y si el
+	cursor se mueve por acción de las placas queda en el monitor una
+	traza del movimiento, traza que permanece durante un periodo de
+	tiempo determinado por la intensidad de los haces de electrones,
+	asimismo ajustable por medio de un control que incorpora el
+	osciloscopio. (Ese control acciona un potenciómetro que regula la
+	potencia que se pasa al tubo de rayos catódicos).
+
+	Al combinar la acción conjunta Al combinar la acción de ambos
+	grupos de placas, de ese modo, se forma la imagen, el osciloscopio
+	registra (en su monitor) una imagen de la señal 
+
+	El osciloscopio analógico emplea un tubo de rayos catódicos y un
+	monitor de fósforo para representar señales. Dos grupos de placas
+	de deflexión ---un grupo alineado con respecto al eje horizontal
+	perpendicular al eje que atraviesa al tubo, y el otro con respecto
+	al eje vertical--- en el interior del osciloscopio hacen converger
+	los haces de electrones que despide el tubo a un punto en la cara
+	anterior del monitor, superficie que esta recubierta de fósforo. El
+	grupo de placas horizontal está controlado por una señal diente de
+	sierra originada en un generador de señales interno al
+	osciloscopio, esto hace que el cursor barra periódicamente el
+	monitor de izquierda (valor nulo en la señal diente de sierra) a
+	derecha (valor máximo de la señal). El periodo de la señal puede
+	regularse y, por consiguiente, el periodo del barrido. La posición
+	vertical del cursor responde al valor de tensión en bornes del
+	grupo de placas vertical, que a su vez es la tensión resultante de
+	atenuar la tensión visible en la sonda del osciloscopio mediante un
+	atenuador de pérdidas variables interno. En otras palabras, la
+	posición vertical del foco del haz refleja en todo momento el valor
+	actual de la señal, es por eso que en este documento se considera
+	que el osciloscopio muestra una imagen de la señal en tiempo real.
+	La fosforescencia del monitor da lugar a un cursor visible, y si el
+	cursor se mueve por acción de las placas queda en el monitor una
+	traza del movimiento, traza que permanece un tiempo determinado por
+	la intensidad del haz de electrones.
+
+	Al combinar la acción conjunta Al combinar la acción de ambos
+	grupos de placas, de ese modo, se forma la imagen, el osciloscopio
+	registra (en su monitor) una imagen de la señal 
+
+	El osciloscopio analógico emplea un tubo de rayos catódicos y un	|Miércoles, 19 de Enero de 2011|
+	monitor de fósforo para representar señales. Dos grupos de placas
+	de desviación alineadas con respecto a ejes perpendiculares entre
+	sí ---uno horizontal y otro vertical--- y perpendiculares también
+	al eje que atraviesa el tubo de rayos catódicos emiten un campo
+	electromagnético controlado con el que se hace converger el haz de
+	electrones que despide el tubo a un punto en la cara anterior del
+	monitor, superficie que está recubierta de fósforo. La
+	fosforescencia del monitor da lugar a un cursor visible, y si el
+	cursor se mueve por acción de las placas queda tras de sí una traza
+	que permanece en el monitor durante un periodo de tiempo
+	determinado por la intensidad del haz.
+
+	La acción combinada (¿de qué?) de las placas y el vestigio en el
+	monitor. (¡Qué asco de frase!)
+
+	La intensidad/orientación/forma o simplemente <<El campo>>
+	electromagnético generado por el grupo de placas horizontal está
+	controlado por una señal diente de sierra originada en el generador
+	de señales interno del osciloscopio, cuando la señal de
+	alimentación toma su valor más bajo la acción del campo hace que el
+	cursor se posicione en el extremo más izquierdo de la pantalla del
+	osciloscopio, a medida que aumenta el valor de tensión en bornes
+	de las placas el cursor se desplaza paulatinamente/regularmente
+	hacia la derecha hasta alcanzar el extremo derecho del monitor en
+	el pico máximo de la señal de diente de sierra. En otras palabras,
+	el cursor barre el monitor del osciloscopio de izquierda a derecha
+	periódicamente con periodo el de la señal de diente de sierra que
+	oportunamente puede regularse para que el barrido sea más corto o
+	más largo, más rápido o más lento. Barridos más rápidos permiten
+	visualizar fragmentos de señal más cortos y al revés.
+
+	El campo que genera por su parte el grupo vertical está determinado
+	por el valor de tensión que se encuentra en la sonda del
+	osciloscopio. De ese modo la posición vertical del cursor refleja
+	el valor de la señal en cada momento. Previamente la señal se
+	atenúa en un atenuador interno de pérdidas variables, sería también
+	aceptable decir que la señal se amplifica en un amplificador de
+	ganancia variable por debajo de la unidad.
+
+	El grupo de placas horizontal está controlado por una señal diente
+	de sierra originada en un generador de señales interno al
+	osciloscopio, esto hace que el cursor barra periódicamente el
+	monitor de izquierda (valor nulo en la señal diente de sierra) a
+	derecha (valor máximo de la señal). El periodo de la señal puede
+	regularse y, por consiguiente, el periodo del barrido. La posición
+	vertical del cursor responde al valor de tensión en bornes del
+	grupo de placas vertical, que a su vez es la tensión resultante de
+	atenuar la tensión visible en la sonda del osciloscopio mediante un
+	atenuador de pérdidas variables interno. En otras palabras, la
+	posición vertical del foco del haz refleja en todo momento el valor
+	actual de la señal, es por eso que en este documento se considera
+	que el osciloscopio muestra una imagen de la señal en tiempo real.
+
+	El campo electromagnético que generan los dos grupos de placas
+	permite mover el cursor a lo largo del monitor del osciloscopio. La
+	tensión en bornes del grupo horizontal. 
+
+	El campo electromagnético generado por los grupos de placas está
+	controlado por la tensión en bornes de cada grupo, por ese motivo
+	puede decirse que la posición del cursor en el monitor del
+	osciloscopio responde a un vector relacionado con la tensión de
+	alimentación de las placas, donde la componente 
+
+	Considerando el monitor un plano cartesiano rectangular, la
+	componente de abscisas está determinada por la tensión en bornes
+	del grupo horizontal, mientras que la componente de ordenadas
+	responde a la alimentación del grupo vertical.
+
+	El campo electromagnético generado por los grupos de placas está
+	controlado por la tensión en bornes de cada grupo. Si se considera
+	la superficie del monitor un plano cartesiano rectangular, la
+	posición del cursor viene determinada por un vector en el que la
+	componente de abscisas está relacionada con la tensión en bornes
+	del grupo horizontal y la componente de ordenadas con la tensión en
+	bornes del grupo vertical. El grupo horizontal está alimentado por
+	una señal diente de sierra de periodo configurable que genera
+	internamente el osciloscopio, lo que significa que el cursor barre
+	el monitor de izquierda a derecha periódicamente.
+	
+	Por su parte el grupo vertical es alimentado con la señal que se
+	observa en la sonda del osciloscopio (la señal de interés) tras
+	acondicionarse en una etapa interna. El acondicionamiento de la
+	señal comprende al menos dos procesos, primero se adecua el rango
+	de la señal para que cumpla los requisitos del osciloscopio y
+	después se atenúa por un factor de ganancia que puede configurar el
+	usuario de tal forma que varíe la escala de la representación.
+
+	Mientras que la tensión en bornes del grupo horizontal procede de
+	un generador se señal interno, el grupo vertical está alimentado
+	por la señal procedente de la sonda del osciloscopio. 
+
+	|A continuación los pedazos de mayor interés|
+
+	El osciloscopio analógico emplea un tubo de rayos catódicos y un
+	monitor de fósforo para representar señales. Dos grupos de placas
+	de desviación alineadas con respecto a ejes perpendiculares entre
+	sí ---uno horizontal y otro vertical--- y perpendiculares también
+	al eje que atraviesa el tubo de rayos catódicos emiten un campo
+	electromagnético controlado con el que se hace converger el haz de
+	electrones que despide el tubo a un punto en la cara anterior del
+	monitor, superficie que está recubierta de fósforo. La
+	fosforescencia del monitor da lugar a un cursor visible, y si el
+	cursor se mueve por acción de las placas queda tras de sí una traza
+	que permanece en el monitor durante un periodo de tiempo
+	determinado por la intensidad del haz.
+
+	El campo electromagnético generado por los grupos de placas está
+	controlado por la tensión en bornes de cada grupo. Si se considera
+	la superficie del monitor un plano cartesiano rectangular, la
+	posición instantánea del cursor viene determinada por un vector en
+	el que la componente de abscisas está relacionada con la tensión en
+	bornes del grupo horizontal y la componente de ordenadas con la
+	tensión en bornes del grupo vertical. El grupo horizontal está
+	alimentado por una señal diente de sierra de periodo configurable
+	que genera internamente el osciloscopio, lo que significa que el
+	cursor barre el monitor de izquierda a derecha periódicamente, y
+	que la velocidad con que lo hace puede modificarse.
+
+	Por su parte el grupo vertical es alimentado con la señal que se
+	observa en la sonda del osciloscopio (la señal de interés) tras
+	acondicionarse en una etapa interna. El acondicionamiento de la
+	señal comprende al menos dos procesos, primero se adecua el rango
+	de la señal para que cumpla los requisitos del osciloscopio y
+	después se atenúa por un factor de ganancia que puede configurar el
+	usuario de tal forma que varíe la escala vertical de la
+	representación.
