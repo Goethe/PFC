@@ -1,0 +1,155 @@
+|Lunes, 31 de Enero de 2011|
+
+	El software de control debe ser capaz de representar señales. Para	|Jueves, 27 de Enero de 2011|
+	implementar esta funcionalidad en el software de control se ha
+	tomado como referencia el osciloscopio digital. Esta introducción
+	puede entenderse como un compendio de las conclusiones que se han
+	obtenido en el estudio de este dispositivo. (Debería dar un motivo
+	al lector para meterle esto aquí, el primero que se me ocurre es
+	que aquí se dan las claves que se han seguido cuando se programaba
+	el programa y por tanto es relevante para entender el proceso de
+	diseño y desarrollo del software a falta de una información más
+	detallada como sería que explicase el código del programa línea por
+	línea, así se tiene un concepto general de las decisiones que se
+	han tomado durante el desarrollo del software sin entrar en
+	demasiados detalles).
+
+	Un osciloscopio digital es una herramienta que se emplea para
+	visualizar señales. Es el sucesor de instrumentos de medida como el
+	osciloscopio analógico y el oscilógrafo. A diferencia de estos
+	aparatos (de carácter analógico, es correcto atendiendo a la nota
+	escrita abajo) un osciloscopio digital debe muestrear parte de la
+	señal, almacenar la señal digital resultante en memoria y procesar
+	esas muestras poder realizar representación alguna. Esto conlleva
+	una serie de desventajas, la primera y más inmediata es una
+	degradación de la calidad de la representación que aparece como
+	consecuencia de la digitalización de la señal. Otro efecto adverso
+	es la aparición de un retardo. 
+
+	Carácter: Conjunto de cualidades o circunstancias propias de una
+	cosa, de una persona o de una colectividad, que las distingue, por
+	su modo de ser o obrar, de las demás.
+
+	Esta disminución en la calidad de la representación se ve
+	compensada por la imagen nítida que consiguen los osciloscopios
+	digitales al carecer de partes móviles o mecánicas... No son partes
+	móviles, guiar un haz de electrones mediante el campo
+	electromagnético que generan dos grupos de placas metálicas es
+	mucho más impreciso que iluminar un array de LEDs utilizando una
+	tensión controlada. Por no decir que el haz de electrones tiene que
+	enfocarse correctamente así como la intensidad con la que emite el
+	tubo de rayos catódicos que debe ajustarse con un potenciómetro.
+
+	Una disminución en la calidad de la representación que se ve
+	compensada por la precisión característica de los instrumentos
+	digitales y que en la práctica es inapreciable.
+
+	Este retardo es un quebradero de cabeza. Los osciloscopios
+	analógicos/dispositivos analógicos actualizan la información por
+	pantalla de forma continua. A medida que la señal va tomando
+	valores estos aparecen en la pantalla o en el papel. Un
+	osciloscopio digital no representa cada muestra que le llega, si no
+	que almacena muestras y espera hasta que tiene una información
+	significativa que mostrar por pantalla, tras lo cual procesa esa
+	información y representa los datos.
+
+	De lo contrario el coste de procesado sería altísimo, pero eso no
+	es un motivo que pueda explicar sin más.
+
+	El software de control debe permitir al usuario visualizar la señal
+	con la que se trabaja. Una de las funciones del software de control
+	es representar señales/la señal de interés/la señal con la que se
+	trabaja. Para implementar este aspecto del software se ha tomado
+	como modelo/referencia/arquetipo
+
+	La función principal del software de control/No es que sea la
+	principal función, si no que es la principal función que debo
+	implementar yo como proyectista. Como se verá en adelante/más
+	adelante/en secciones posteriores/en apartados posteriores a esta
+	introducción. En apartados posteriores se explica o se da una
+	explicación. El SDK Software Development Kit, La parte concerniente
+	a la entidad de control y presentación, El software de control se
+	ha desarrollado en el entorno de desarrollo que ofrece MATLAB, se
+	dan más detalles más adelante. (Puedo cambiar la estructura del
+	documento para que lleve Introducción [Entidades en el subsistema
+	de control y presentación], Entorno de desarrollo, Herramientas
+	proporcionadas por el entorno de desarrollo, y Diseño conceptual el
+	osciloscopio digital como modelo.
+
+	El caso es que MATLAB, no sólo funciona como un perfecto entorno de
+	desarrollo, si no que también aporta una máquina virtual en la que
+	se puede correr código sencillo y potente al mismo tiempo. MATLAB
+	abstrae la mayoría del código complejo, interacción con los
+	drivers, llamadas al sistema, para que el desarrollador se centre
+	en la creatividad.
+
+	Bien, siendo este el caso debería decir algo así:
+
+	La principal del desarrollo en cuanto al software de control del
+	que soy yo responsable es la de implementar una aplicación que
+	interactúe con el usuario, que le dé la capacidad de controlar la
+	tarjeta, pero más importante aún que le muestre los datos que
+	quiere. Vale lo que he dicho en la frase anterior resume el
+	concepto que tenía yo de entidad de control y presentación.
+
+	La principal labor de desarrollo en cuanto al software de control
+	se ha centrado en implementar un componente capaz de mostrar por
+	pantalla una representación gráfica de la señal a partir de las
+	muestras procedentes de la tarjeta de adquisición. La gran mayoría
+	de tareas sencillas/básicas (como representar datos o interactuar
+	con el sistema operativo) son facilitadas por el entorno de de
+	desarrollo. El desarrollador/programador, en este caso yo, su
+	principal tarea ha consistido en escribir una rutina 
+
+	El software de control debe ser capaz de representar señales. Para	|Versión más valorada|
+	implementar esta funcionalidad en el software de control se ha
+	tomado como referencia el osciloscopio digital. Esta introducción
+	puede entenderse como un compendio de las conclusiones que se han
+	obtenido en el estudio de este dispositivo. (Debería dar un motivo
+	al lector para meterle esto aquí, el primero que se me ocurre es
+	que aquí se dan las claves que se han seguido cuando se programaba
+	el programa y por tanto es relevante para entender el proceso de
+	diseño y desarrollo del software a falta de una información más
+	detallada como sería que explicase el código del programa línea por
+	línea, así se tiene un concepto general de las decisiones que se
+	han tomado durante el desarrollo del software sin entrar en
+	demasiados detalles).
+
+	Un osciloscopio digital es una herramienta que se emplea para
+	visualizar señales. Es el sucesor de instrumentos de medida como el
+	osciloscopio analógico y el oscilógrafo. A diferencia de estos
+	aparatos (de carácter analógico, es correcto atendiendo a la nota
+	escrita abajo) un osciloscopio digital debe muestrear parte de la
+	señal, almacenar la señal digital resultante en memoria y procesar
+	esas muestras poder realizar representación alguna. Esto conlleva
+	una serie de desventajas, la primera y más inmediata es una
+	degradación de la calidad de la representación que aparece como
+	consecuencia de la digitalización de la señal. Otro efecto adverso
+	es la aparición de un retardo. 
+
+	 ,._
+	@"_.)6
+	 ''''
+
+	//Elección de un entorno de desarrollo//			|Lunes, 31 de Enero de 2011|
+
+	He sufrido otro bloqueo, voy a intentar quitarle hierro al asunto
+	escribiendo sin más.
+	En la introducción de la memoria, al menos, de la primera parte
+	(ahí está el truco por el cual no puedo incluir un capítulo suelto
+	antes del título que da paso a la primera parte para dar la
+	definición del sistema de medida digital), hago una definición
+	formal de lo que es un sistema digital de medida. Ahí explico que
+	un sistema de medida es un conjunto de varios elementos cuya
+	función es medir. Después expongo que los distintos elementos o
+	entidades que integran un sistema de medida pueden agruparse según
+	su función y así concebir un sistema como una pila de capas
+	funcionales que se sirven unas de otras para cumplir con la función
+	del sistema, por decirlo de algún modo. Entonces en el tercer
+	capítulo, concerniente a los elementos del sistema que le dan al
+	usuario control sobre el sistema y los elementos que muestran la
+	información que obtiene el sistema, explico cuales son las
+	funciones de cada uno de esos bloques en este caso particular.
+
+	A piece of software que podría traducir como un programa de
+	software o simplemente un software.

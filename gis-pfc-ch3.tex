@@ -8,8 +8,10 @@ de entre los que integran el sistema por interactuar directamente con el
 supervisor. El subsistema de control y presentación está constituido por
 los bloques de control y presentación propiamente dichos, tal y como
 muestra la \cref{fig:subconpre}. Sin embargo, en la práctica estos dos
-bloques se engloban en una misma entidad que en este documento se denomina
-\emph{software de control}.
+bloques se engloban en una misma entidad, un software que se ejecuta en el
+\pc{} anfitrión en el que se encuentra instalada la tarjeta de adquisición.
+Por ser el software que controla el funcionamiento de la tarjeta
+\kpci{} pasa a conocerse como \emph{software de control} en este documento.
 
 \begin{figure}
 	\begin{center}
@@ -20,13 +22,12 @@ bloques se engloban en una misma entidad que en este documento se denomina
 	\label{fig:subconpre}
 \end{figure}
 
-El subsistema de control y presentación, al actuar como interfaz entre el
-supervisor y el sistema de medida, debe ser capaz de poner en práctica las
-órdenes que administra el supervisor y gestionar el funcionamiento del
-resto de subsistemas. De entre los dos bloques que conforman el subsistema,
-es el bloque de control ---como su nombre indica--- el encargado de esta
-actividad. Como tal, es responsabilidad suya la ejecución de las siguientes
-tareas:
+El subsistema de control y presentación constituye la interfaz entre el
+supervisor y el sistema de medida, como tal, es una de sus funciones
+proporcionar control sobre el sistema al supervisor: ejecutar las órdenes
+administradas por el supervisor y gestionar el funcionamiento del resto de
+subsistemas. El bloque de control es el encargado de esta actividad y
+desempeña las siguientes tareas:
 
 \begin{itemize}
 	\item Iniciar y detener la sesión de adquisición.
@@ -46,14 +47,12 @@ tareas:
 \end{itemize}
 
 Por su parte, al bloque de presentación le corresponde la tarea de
-presentar al supervisor información de utilidad a partir de los datos
-obtenidos del subsistema de adquisición, en este caso de la señal digital.
-La información debe mostrarse al supervisor de forma que este sea capaz de
-interpretarla. En consecuencia, y por criterio propio, se decide por
-diseñar el software de control para que sea capaz de proporcionar al
-supervisor la siguiente información de la señal: % Lo de criterio propio
-% significa que era uno de los objetivos del proyecto que propuso el
-% director.
+presentar al supervisor información de utilidad a partir de la señal
+digital que procede del subsistema de adquisición. La información debe
+mostrarse al supervisor para que pueda interpretarla. En consecuencia, y
+sometiendo el diseño de la aplicación de software al criterio del director
+del PFC, se concluye en dotar al bloque de presentación con la capacidad de
+proporcionar la siguiente información acerca de la señal:
 
 \begin{itemize}
 	\item El valor instantáneo cada 250 ms.

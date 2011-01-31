@@ -246,6 +246,79 @@
 	un generador se señal interno, el grupo vertical está alimentado
 	por la señal procedente de la sonda del osciloscopio. 
 
+	Conceptos explicados de la forma más sencilla posible, expuestos	|Jueves, 20 de Enero de 2011|
+	separados en unidades indivisibles del menor tamaño posible. Si lo
+	hago así no acabaré nunca. Lo que tengo que hacer es poner una nota
+	a los párrafos que voy haciendo y si superan una determinada
+	calificación los dejo como están y no me preocupo más por ellos.
+
+	 ,._
+	@"_.)6
+	 ''''
+	
+	El osciloscopio analógico emplea un tubo de rayos catódicos y un
+	monitor de fósforo para representar señales. Dos grupos de placas
+	de desviación generan sendos campos electromagnéticos controlados
+	que al actuar sobre el haz de electrones que emite el tubo hacen
+	que converja a un punto en la cara anterior del monitor. Las placas
+	de desviación están dispuestas de modo que cada grupo se encuentra
+	alineado con respecto a un eje perpendicular al eje que atraviesa
+	el tubo de rayos catódicos, siendo ambos ejes perpendiculares entre
+	sí ---uno horizontal y otro vertical---. El campo que emite cada
+	grupo está controlado por la tensión en bornes de las placas, que
+	en caso del grupo horizontal se trata de una señal diente de sierra
+	generada internamente por el osciloscopio, y en el caso del grupo
+	vertical es la señal que puede observarse en la sonda del
+	osciloscopio. 
+
+	El osciloscopio analógico emplea un tubo de rayos catódicos y un
+	monitor de fósforo para representar señales. Cuando el haz incide
+	en la cara anterior del monitor éste se ilumina debido a la
+	fosforescencia creando un cursor. El cursor indica en cada momento
+	cual es la tensión instantánea de la señal que se observa en la sonda
+	del osciloscopio. Cuando el cursor se desplaza deja tras de sí una
+	traza de su movimiento. Antes de alcanzar el monitor el haz es
+	orientado por la acción de dos campos electromagnéticos creados
+	cada uno por un par de placas de desviación.
+
+	La posición del cursor depende de la orientación que se de al haz,
+	de ello se encargan dos pares de placas de desviación. Cada grupo
+	está alineado con respecto a un eje, ambos perpendiculares entre sí
+	---uno horizontal y otro vertical--- y con respecto al eje que
+	atraviesa el tubo de rayos catódicos. El campo que genera cada
+	grupo depende de la tensión en bornes de las placas que lo forman.
+	De ese modo, si se considera el monitor del osciloscopio un plano
+	cartesiano rectangular la posición del cursor está relacionada con
+	un vector en el que la componente de abscisas representa la tensión
+	en bornes del grupo horizontal y la componente de ordenadas la
+	tensión del grupo vertical. Si la tensión en bornes del grupo
+	vertical es el resultado de acondicionar la señal de interés, la
+	tensión que ataca al grupo horizontal procede de un generador de
+	señales interno que genera una señal diente de sierra de periodo
+	configurable.
+
+	(No es necesario que apunte que las placas hacen que el haz
+	disperso apunte a un único punto en el monitor, primero porque es
+	demasiada información y después porque puede no ser cierto del
+	todo, lo que me interesa decir es que las placas están en la
+	trayectoria del haz, no exactamente pero sí, y mediante los campos
+	electromagnéticos que generan puede controlarse la posición del
+	cursor en el monitor)
+
+	Dos grupos de placas
+	de desviación alineadas con respecto a ejes perpendiculares entre
+	sí ---uno horizontal y otro vertical--- y perpendiculares también
+	al eje que atraviesa el tubo, generan sendos campos
+	electromagnéticos cuya acción hace converger el haz de electrones
+	que éste emite a un punto en la cara anterior del monitor.
+
+	Los osciloscopios analógicos emplean un tubo de rayos catódicos y
+	un monitor de fósforo para representar señales. Cuando el haz de
+	electrones que emite el tubo de rayos catódicos incide en la cara
+	anterior del monitor, recubierta de fósforo, el punto en el que
+	incide se ilumina, formándose una especie de cursor. Si el haz se
+	desvía, se mueve el cursor, 
+
 	|A continuación los pedazos de mayor interés|
 
 	El osciloscopio analógico emplea un tubo de rayos catódicos y un
@@ -281,3 +354,152 @@
 	después se atenúa por un factor de ganancia que puede configurar el
 	usuario de tal forma que varíe la escala vertical de la
 	representación.
+
+	  _Oo
+	~(._".
+	 ''''
+
+	El precursor del osciloscopio digital como instrumento para la		|Miércoles, 26 de Enero de 2011|
+	representación de señales es el osciloscopio digital, anteriormente
+	se empleaba el oscilógrafo. El tipo de representación que realizan
+	estos aparatos se denomina oscilograma. Es una representación de la
+	señal sobre un plano cartesiano rectangular en el que el eje de
+	abscisas representa el tiempo y el eje de ordenadas la tensión
+	eléctrica.
+
+	El oscilograma está compuesto de un rollo de papel que avanza
+	continuamente mientras una o varias agujas dispuestas de forma
+
+	El oscilograma está compuesto por un rollo de papel y una o varias
+	agujas montadas sobre brazos móviles. Cuando el oscilógrafo está en
+	funcionamiento el papel avanza al tiempo que la aguja imprime sobre
+	él el valor que toma la señal en cada momento. De ese modo los
+	valores de la señal que se registran primero quedan en el extremo
+	de papel que sale primero del rollo y al contrario.
+
+	El software de control debe ser capaz de representar señales. Para	|Jueves, 27 de Enero de 2011|
+	implementar esta funcionalidad en el software de control se ha
+	tomado como referencia el osciloscopio digital. Esta introducción
+	puede entenderse como un compendio de las conclusiones que se han
+	obtenido en el estudio de este dispositivo. (Debería dar un motivo
+	al lector para meterle esto aquí, el primero que se me ocurre es
+	que aquí se dan las claves que se han seguido cuando se programaba
+	el programa y por tanto es relevante para entender el proceso de
+	diseño y desarrollo del software a falta de una información más
+	detallada como sería que explicase el código del programa línea por
+	línea, así se tiene un concepto general de las decisiones que se
+	han tomado durante el desarrollo del software sin entrar en
+	demasiados detalles).
+
+	Un osciloscopio digital es una herramienta que se emplea para
+	visualizar señales. Es el sucesor de instrumentos de medida como el
+	osciloscopio analógico y el oscilógrafo. A diferencia de estos
+	aparatos (de carácter analógico, es correcto atendiendo a la nota
+	escrita abajo) un osciloscopio digital debe muestrear parte de la
+	señal, almacenar la señal digital resultante en memoria y procesar
+	esas muestras poder realizar representación alguna. Esto conlleva
+	una serie de desventajas, la primera y más inmediata es una
+	degradación de la calidad de la representación que aparece como
+	consecuencia de la digitalización de la señal. Otro efecto adverso
+	es la aparición de un retardo. 
+
+	Carácter: Conjunto de cualidades o circunstancias propias de una
+	cosa, de una persona o de una colectividad, que las distingue, por
+	su modo de ser o obrar, de las demás.
+
+	Esta disminución en la calidad de la representación se ve
+	compensada por la imagen nítida que consiguen los osciloscopios
+	digitales al carecer de partes móviles o mecánicas... No son partes
+	móviles, guiar un haz de electrones mediante el campo
+	electromagnético que generan dos grupos de placas metálicas es
+	mucho más impreciso que iluminar un array de LEDs utilizando una
+	tensión controlada. Por no decir que el haz de electrones tiene que
+	enfocarse correctamente así como la intensidad con la que emite el
+	tubo de rayos catódicos que debe ajustarse con un potenciómetro.
+
+	Una disminución en la calidad de la representación que se ve
+	compensada por la precisión característica de los instrumentos
+	digitales y que en la práctica es inapreciable.
+
+	Este retardo es un quebradero de cabeza. Los osciloscopios
+	analógicos/dispositivos analógicos actualizan la información por
+	pantalla de forma continua. A medida que la señal va tomando
+	valores estos aparecen en la pantalla o en el papel. Un
+	osciloscopio digital no representa cada muestra que le llega, si no
+	que almacena muestras y espera hasta que tiene una información
+	significativa que mostrar por pantalla, tras lo cual procesa esa
+	información y representa los datos.
+
+	De lo contrario el coste de procesado sería altísimo, pero eso no
+	es un motivo que pueda explicar sin más.
+
+	El software de control debe permitir al usuario visualizar la señal
+	con la que se trabaja. Una de las funciones del software de control
+	es representar señales/la señal de interés/la señal con la que se
+	trabaja. Para implementar este aspecto del software se ha tomado
+	como modelo/referencia/arquetipo
+
+	La función principal del software de control/No es que sea la
+	principal función, si no que es la principal función que debo
+	implementar yo como proyectista. Como se verá en adelante/más
+	adelante/en secciones posteriores/en apartados posteriores a esta
+	introducción. En apartados posteriores se explica o se da una
+	explicación. El SDK Software Development Kit, La parte concerniente
+	a la entidad de control y presentación, El software de control se
+	ha desarrollado en el entorno de desarrollo que ofrece MATLAB, se
+	dan más detalles más adelante. (Puedo cambiar la estructura del
+	documento para que lleve Introducción [Entidades en el subsistema
+	de control y presentación], Entorno de desarrollo, Herramientas
+	proporcionadas por el entorno de desarrollo, y Diseño conceptual el
+	osciloscopio digital como modelo.
+
+	El caso es que MATLAB, no sólo funciona como un perfecto entorno de
+	desarrollo, si no que también aporta una máquina virtual en la que
+	se puede correr código sencillo y potente al mismo tiempo. MATLAB
+	abstrae la mayoría del código complejo, interacción con los
+	drivers, llamadas al sistema, para que el desarrollador se centre
+	en la creatividad.
+
+	Bien, siendo este el caso debería decir algo así:
+
+	La principal del desarrollo en cuanto al software de control del
+	que soy yo responsable es la de implementar una aplicación que
+	interactúe con el usuario, que le dé la capacidad de controlar la
+	tarjeta, pero más importante aún que le muestre los datos que
+	quiere. Vale lo que he dicho en la frase anterior resume el
+	concepto que tenía yo de entidad de control y presentación.
+
+	La principal labor de desarrollo en cuanto al software de control
+	se ha centrado en implementar un componente capaz de mostrar por
+	pantalla una representación gráfica de la señal a partir de las
+	muestras procedentes de la tarjeta de adquisición. La gran mayoría
+	de tareas sencillas/básicas (como representar datos o interactuar
+	con el sistema operativo) son facilitadas por el entorno de de
+	desarrollo. El desarrollador/programador, en este caso yo, su
+	principal tarea ha consistido en escribir una rutina 
+
+	El software de control debe ser capaz de representar señales. Para	|Versión más valorada|
+	implementar esta funcionalidad en el software de control se ha
+	tomado como referencia el osciloscopio digital. Esta introducción
+	puede entenderse como un compendio de las conclusiones que se han
+	obtenido en el estudio de este dispositivo. (Debería dar un motivo
+	al lector para meterle esto aquí, el primero que se me ocurre es
+	que aquí se dan las claves que se han seguido cuando se programaba
+	el programa y por tanto es relevante para entender el proceso de
+	diseño y desarrollo del software a falta de una información más
+	detallada como sería que explicase el código del programa línea por
+	línea, así se tiene un concepto general de las decisiones que se
+	han tomado durante el desarrollo del software sin entrar en
+	demasiados detalles).
+
+	Un osciloscopio digital es una herramienta que se emplea para
+	visualizar señales. Es el sucesor de instrumentos de medida como el
+	osciloscopio analógico y el oscilógrafo. A diferencia de estos
+	aparatos (de carácter analógico, es correcto atendiendo a la nota
+	escrita abajo) un osciloscopio digital debe muestrear parte de la
+	señal, almacenar la señal digital resultante en memoria y procesar
+	esas muestras poder realizar representación alguna. Esto conlleva
+	una serie de desventajas, la primera y más inmediata es una
+	degradación de la calidad de la representación que aparece como
+	consecuencia de la digitalización de la señal. Otro efecto adverso
+	es la aparición de un retardo. 
