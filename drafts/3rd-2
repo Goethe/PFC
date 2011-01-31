@@ -153,3 +153,44 @@
 
 	A piece of software que podría traducir como un programa de
 	software o simplemente un software.
+
+	La plataforma de desarrollo que se ha empleado para el desarrollo
+	del software de control es matlab. Se ha seleccionado esta
+	plataforma
+
+	Bueno, esto es un borrador y puedo escribir cuantas cosas quiera
+	sin preocuparme de que sean correctas. La razón por la que se ha
+	seleccionado Matlab para el desarrollo del software de control, en
+	realidad son varias razones o una muy larga que las abarca todas,
+	las razones son que es una plataforma especializada que potencia el
+	desarrollo de aplicaciones de uso matemático o técnico, es muy
+	completa gracias a que incorpora multitud de módulos o librerías
+	que ponen al alcance del desarrollador funciones, comandos y otro
+	tipo de herramientas que facilitan su labor (he aquí el caso
+	particular de la DAT), utiliza un lenguaje sencillo y fácilmente
+	inteligible/comprensible.
+
+	Matlab es la plataforma que se ha utilizado para desarrollar el
+	software de control. Es una plataforma de desarrollo bien conocida
+	en ambientes tecnológicos/entornos técnicos y matemáticos, que
+	emplea un lenguaje sencillo y fácilmente asimilable, asimismo
+	incorpora multitud de módulos que amplían su funcionalidad y la
+	convierten en una herramienta sencilla, potente y completa que
+	simplifica la labor del desarrollador. La principal razón por la
+	que se ha seleccionado Matlab para el desarrollo de la aplicación
+	de control es que uno de los módulos que incorpora lleva ya
+	implementada la mayoría de las funciones atribuidas al bloque de
+	control del subsistema. Este módulo se conoce como <<herramienta de
+	adquisición de datos>> o en inglés emph(data acquisition toolbox),
+	a partir de aquí DAT, y es compatible con la tarjeta de adquisición
+	que se ha empleado en el proyecto. Además Matlab ofrece facilidades
+	para el desarrollo de interfaces gráficas de usuario gracias a que
+	incorpora el módulo GUIDE o Graphical User Interface Development
+	Environment.
+
+	A continuación se describen los elementos que intervienen en el
+	funcionamiento de la DAT, 
+
+	 oo_		 oO_
+	<;__)----	.;_,)----
+	 " "		 " "
