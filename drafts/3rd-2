@@ -194,3 +194,60 @@
 	 oo_		 oO_
 	<;__)----	.;_,)----
 	 " "		 " "
+
+	Se ha seleccionado MATLAB para desarrollar el software de control.
+	MATLAB es una plataforma de desarrollo bien conocida en entornos
+	matemáticos y tecnológicos, de uso destacado en universidades y
+	otros centros educativos y de investigación. Emplea un lenguaje
+	propio enfocado a un uso matemático, simplificando el manejo de
+	matrices y vectores. Se emplea principalmente en la resolución de
+	cálculos matemáticos complejos y la representación de funciones y
+	datos. No obstante, su principal valor como herramienta destinada a
+	la investigación
+	
+	Puede definirse como un kit de desarrollo de software (SDK) que
+	emplea un lenguaje de programación propio enfocado a un uso
+	matemático, simplificando el manejo de matrices y vectores. Al
+	entorno integrado de desarrollo (IDE), elemento principal del SKD
+	se suman un conjunto de módulos y herramientas que abstraen al
+	desarrollador de implementar las tareas más cotidianas y que
+	convierten a MATLAB en una plataforma potente y completa.
+
+	¿En que no estoy de acuerdo o por qué no puedo continuar con lo que
+	tengo?
+
+	...se emplea en la resolución de cálculos... el qué se emplea, el
+	lenguaje no, puesto que no tiene la capacidad de representar
+	funciones; en ese caso, si ya estoy hablando de la API, debería
+	dejarlo claro antes.
+
+	¿MATLAB es una IDE, un SDK, un framework o una API?
+
+		IDE (Integrated Development Environment): básicamente se
+		trata de un editor, compilador, depurador y constructor de
+		interfaces gráficas para el desarrollo de software en un
+		lenguaje determinado
+
+		API (Application Programing Interface): Es una capa de
+		abstracción que simplifica la implementación de tareas
+		cotidianas. Por ejemplo POSIX, que emplea funciones de tipo
+		read en lenguaje C es un tipo de API.
+
+		SDK (Software Development KIT): Es una combinación de una
+		IDE y una API. Por un lado cuenta con una IDE (editor,
+		compilador, depurador) y por otro con utilidades añadidas
+		que simplifican el desarrollo de software más complejo.
+
+		Framework: Conjunto de software y librerías diseñado para
+		la ejecución de tareas relacionadas de tipo concreto.
+		Supongamos que trabajamos en C, puede existir un framework
+		para programar robots, otro para programar DSP.
+
+	Definitivamente pienso que MATLAB se ajusta más a la definición de
+	SDK. Por un lado tiene una IDE para trabajar con el lenguaje M, el
+	lenguaje propio de MATLAB. Y puede decirse que las capacidades del
+	lenguaje llegan a la manipulación de datos y a la definición de
+	funciones. Las funciones que pueden utilizarse forman parte de lo
+	que sería la API, la función plot que está implementada en lenguaje
+	de bajo nivel M me simplifica la representación de funciones, es
+	decir, se comporta como parte de una API.
