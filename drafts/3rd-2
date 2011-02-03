@@ -188,8 +188,44 @@
 	incorpora el módulo GUIDE o Graphical User Interface Development
 	Environment.
 
+	Eso de «lleva ya implementada», si es un módulo debería decir lleva
+	ya implementado
+
 	A continuación se describen los elementos que intervienen en el
 	funcionamiento de la DAT, 
+
+	Malab es la plataforma que se ha utilizado para desarrollar el
+	software de control. Es una plataforma de desarrollo bien conocida
+	en entornos matemáticos y tecnológico, que emplea un lenguaje
+	sencillo y fácilmente asimilable, y porque incorpora multitud de
+	módulos que amplían su funcionalidad 
+
+	La plataforma que se ha seleccionado para desarrollar el software
+	de control es Matlab. Es una plataforma de desarrollo bien conocida
+	en entornos matemáticos y tecnológicos por varias razones. Emplea
+	un lenguaje sencillo y claro, especialmente pensado para llevar a
+	cabo operaciones matemáticas complejas. Además incorpora multitud
+	de módulos que amplían su funcionalidad añadiendo nuevas
+	capacidades que pueden ser utilizadas fácilmente. Todo ello
+	convierte a Matlab en una plataforma cuyo manejo es sencillo pero
+	que, al mismo tiempo, se muestra completa y potente.
+
+	Para el desarrollo del software de control se ha empleado MATLAB.
+	Date cuenta que estoy afirmando siempre en pretérito perfecto
+	compuesto. Podría intentar evitarlo.
+
+	El software de control se desarrolla utilizando la plataforma
+	MATLAB. Esta sería una versión en gerundio.
+
+	Antes de hablar de MATLAB como plataforma de desarrollo y de GUIDE
+	y DAT, tendría que escoger que estructura quiero darle al capítulo.
+	La Introducción está clara, después entra una sección que trata
+	sobre la plataforma/entorno en el que se desarrolla el software de
+	control, y, por último, viene una sección que trata el diseño del
+	software primero exponiendo los requisitos que debe cumplir el
+	software y luego explicando el concepto que se toma como modelo
+	para el desarrollo del código.
+
 
 	 oo_		 oO_
 	<;__)----	.;_,)----
@@ -220,6 +256,35 @@
 	lenguaje no, puesto que no tiene la capacidad de representar
 	funciones; en ese caso, si ya estoy hablando de la API, debería
 	dejarlo claro antes.
+
+	//MATLAB compilation//
+
+	Se ha seleccionado MATLAB para desarrollar el software de control.
+	MATLAB es una plataforma de desarrollo bien conocida en entornos
+	matemáticos y tecnológicos, de uso destacado en universidades y en
+	otros centros educativos y de investigación. Encaja en la
+	definición de kit de desarrollo de software (SDK) al incorporar un
+	entorno integrado de desarrollo (IDE) que cuenta con editor,
+	compilador, depurador y constructor de interfaces gráficas de
+	usuario; al que se suman un conjunto de módulos y herramientas que
+	amplían su funcionalidad convirtiéndolo en un software potente y
+	completo. Emplea un lenguaje propio enfocado a un uso matemático,
+	simplificando el manejo de matrices y vectores.
+
+	Los módulos mencionados se comportan como librerías y en conjunto
+	como una interfaz de programación de aplicaciones (API) abstrayendo
+	al desarrollador de tener que implementar funciones cotidianas como
+	la representación de una función o el cálculo de la transformada
+	rápida de Fourier. La (verdadera) razón por la cual el software se
+	desarrolla en MATLAB es que incorpora un módulo que recibe el
+	nombre de herramienta de adquisición de datos (Data acquisition
+	toolbox, DAT) que implementa las funciones requeridas para el
+	control de un dispositivo de las características de la kpci y que
+	es compatible con ésta.
+
+	 ,._		 ,._		 ,._		 ,._
+	@;_,)6		@;_,)6		@;_,)6		@;_,)6
+	 " "		 " "		 " "		 " "
 
 	¿MATLAB es una IDE, un SDK, un framework o una API?
 
