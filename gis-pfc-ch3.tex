@@ -1,4 +1,4 @@
-\chapter{Subsistema de control y presentación}
+\chapter{Subsistema de control y presentación}\label{chap:control}
 
 \section{Introducción}
 
@@ -68,6 +68,15 @@ siguiente información acerca de la señal:
 		señal que aparece en pantalla.
 \end{itemize}
 
+Este capítulo se ha dispuesto de modo que en lugar de explicar línea a
+línea el significado del código correspondiente al software de control se
+hace en primer lugar, en el apartado siguiente, una completa descripción de
+la interfaz sobre la que se ha construido el código y que, en definitiva,
+marca todos los aspectos relacionados con el desarrollo del software; para
+pasa a exponer, a continuación, los objetivos impuestos en la etapa de
+diseño. De modo que el lector pueda figurarse cual debe ser el resultado
+final y como se debe haber alcanzado.
+
 % 				( V )
 % ______________________________m\"/m______________________________________
 %				  '
@@ -90,56 +99,67 @@ siguiente información acerca de la señal:
 %				@",_)6
 %				 " "
 
-\section{Elaboración del software de control}
+\section{Herramienta de Adquisición de Datos de \textsc{matlab}}
 
 
-\subsection{Elección del entorno de desarrollo}\label{subsec:environment}
+\subsection{Introducción}
 
-El lenguaje o, mejor dicho, plataforma que se ha empleado para el
-desarrollo del software de control es \matlab{}, la razón, su inmejorable
-compatibilidad con el hardware disponible. A partir de ahí, los componentes
-de \matlab{} que se han empleado para conseguir que el software de control
-gozase de las características previstas en la etapa de diseño son dos: el
-entorno de desarrollo de interfaces gráficas de usuario (\emph{Graphical
-user interface}, en lo sucesivo \psig{gui}) de \matlab{}, más conocido como
-\psig{guide} (\emph{Graphical user interface development environment}); y
-la herramienta de adquisición de datos de \matlab{} (\emph{Data acquisition
-toolbox}, en adelante \psig{DAT}) . El primero de ellos se ha empleado
-para, como su nombre indica, crear la interfaz que comunica el dispositivo
-con el usuario. Esta comunicación se hace a través del segundo de los
-componentes mencionados, éste permite, mediante comandos de \matlab{} que
-pueden incluirse en rutinas o llamarse por separado, manejar el dispositivo
----convocarlo a muestrear, configurar sus propiedades--- y administra
-automáticamente los resultados almacenándolos en búffers situados en la
-memoria volátil del ordenador, haciéndolos de este modo accesibles al
-administrador de la tarjeta.
+\psig{matlab} (\emph{LABoratorio MATemático}) es la plataforma seleccionada
+para el desarrollo del software de control. Es una plataforma de desarrollo
+bien conocida en entornos matemáticos y tecnológicos de uso extendido en
+universidades y otros centros educativos y de investigación. Encaja en la
+descripción de un kit de desarrollo de software (\sig{sdk}) al estar
+compuesto por un entorno de desarrollo integrado (\sig{ide}) con editor,
+compilador y depurador; y una colección de módulos y extensiones que en
+conjunto se comportan como una interfaz de programación de aplicaciones
+(\sig{api}).  \matlab{} se caracteriza por emplear un lenguaje propio, el
+lenguaje \psig{m}, enfocado a un uso matemático y que se ha diseñado para
+simplificar el manejo de datos agrupados en estructuras matemáticas
+complejas como son las matrices y los vectores. Los módulos y herramientas
+que se incluyen en el \sig{sdk} contribuyen a ampliar su funcionalidad,
+convirtiéndolo en un software potente y completo. Estas herramientas
+abstraen al desarrollador de implementar por sí mismo en lenguaje \sig{m}
+funciones destinadas a realizar operaciones cotidianas como representar
+unos datos por pantalla u obtener la \sig{fft} de un vector. Existen
+módulos ---o \emph{toolboxes} como se los conoce en inglés--- mantenidos
+por la compañía de software, a los que se suman los diseñados por los
+propios usuarios, que abundan en la red, disponibles desde la base de datos
+dispuesta para ello por la empresa, con lo que las posibilidades son en la
+práctica infinitas.  Además \matlab{} cuenta con dos herramientas
+fundamentales, muy ligadas al \sig{sdk}, una es \psig{guide}
+(\emph{Graphical User Interface Development Environment}), una herramienta
+para el desarrollo de interfaces gráficas de usuario (\psig{gui}); y otra
+\emph{Simulink}, herramienta que se emplea para realizar todo tipo de
+simulaciones.
+
+Las dos razones principales por las que se utiliza \matlab{} son, por un
+lado, las facilidades que aporta en la creación de \gui{} y manejo de
+señales digitalizadas; y por otro, y aún más importante si cabe, que
+incorpora una herramienta denominada \emph{Data Acquisition Toolbox},
+nombre que podría traducirse como Herramienta de Adquisición de Datos, en
+lo sucesivo \psig{dat}. La \datx{} es una herramienta compuesta por una
+biblioteca y un mecanismo para el intercambio de información, que en
+conjunto permiten mediante código de alto nivel interactuar directamente
+con dispositivos de características similares a las de la tarjeta de
+adquisición \kpci{}, y que es convenientemente compatible con ésta tarjeta.
+En otras palabras, puede entenderse la \datx{} como una \sig{api} o
+interfaz que proporciona al desarrollador las llamadas necesarias para
+interactuar directamente con dispositivos de adquisición al tiempo que
+abstrae los mecanismos de más bajo nivel que intervienen en el proceso,
+descargando al desarrollador de la responsabilidad de implementarlos por él
+mismo. Lo que, al fin y al cabo puede resumirse en que en la \datx{} se
+implementa la mayor parte de lo que se entiende como bloque de control.	Es
+por este motivo por el que la \datx{} supone una pieza fundamental del
+software de control y, por consiguiente, adquiere vital importancia en el
+subsistema de control y presentación y por ende en el sistema de medida
+digital. Consecuentemente, se proporciona en este apartado una breve
+descripción de los distintos elementos que conforman esta herramienta y un
+compendio de las funciones que pone a disposición del desarrollador
+ordenadas siguiendo el mismo orden en el que se utilizan durante una sesión
+de adquisición básica.
 
 
-\subsection{Data Acquisition Toolbox}
-
-La práctica de emplear \gui{} como fondo para aplicaciones desarrolladas
-con \matlab{} es bastante habitual, así como lo es programar esas
-interfaces mediante \guide{}. Por ello, y dado que la documentación que se
-ciñe a tratar la problemática que envuelve esta actividad es abundante, se
-ha preferido dejar a cargo de dichos documentos este asunto y centrar este
-escrito en presentar con concisión los principios necesarios para emplear
-con éxito la \datx{} de \matlab{} en el manejo de dispositivos para la
-adquisición de señales analógicas. La fórmula elegida con tal propósito
-consiste en describir cual es el procedimiento habitual en una sesión de
-adquisición de datos y en cada paso detallar las opciones más
-significativas y proporcionar ejemplos explicativos extraídos del mismo
-código que integra el software de control.
-
-En cuanto a la documentación adicional que el lector puede consultar a
-continuación se citan varios documentos clasificados en función del tema
-que tratan. Para la programación de \gui{} con \matlab{} puede consultarse
-el manual de usuario, cite, disponible en la web del fabricante. Esta
-sección se basa en la guía rápida sobre el uso de la \datx{}, también a
-cargo de \emph{The MathWorks, Inc.}, la compañía que mantiene la suite
-matemática en cuya web puede obtenerse un documento extendido.
-
-
-\subsubsection{Componentes de la herramienta}
+\subsection{Componentes de la herramienta}
 
 Los elementos de \matlab{} que juegan un papel suficientemente importante
 en el funcionamiento de la \datx{} son los listados en el
@@ -183,7 +203,7 @@ en dicho cuadro.
 	\label{fig:toolcomp}
 \end{figure}
 
-\subsubsection{Objetos dispositivo}
+\subsection{Objetos dispositivo}
 
 Los objetos dispositivo permiten el acceso a subsistemas específicos del
 hardware. Los objetos dispositivo soportados por la \datx{} son los objetos

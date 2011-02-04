@@ -24,7 +24,7 @@
 	una serie de desventajas, la primera y más inmediata es una
 	degradación de la calidad de la representación que aparece como
 	consecuencia de la digitalización de la señal. Otro efecto adverso
-	es la aparición de un retardo. 
+	es la aparición de un retardo.
 
 	Carácter: Conjunto de cualidades o circunstancias propias de una
 	cosa, de una persona o de una colectividad, que las distingue, por
@@ -99,7 +99,7 @@
 	de tareas sencillas/básicas (como representar datos o interactuar
 	con el sistema operativo) son facilitadas por el entorno de de
 	desarrollo. El desarrollador/programador, en este caso yo, su
-	principal tarea ha consistido en escribir una rutina 
+	principal tarea ha consistido en escribir una rutina
 
 	El software de control debe ser capaz de representar señales. Para	|Versión más valorada|
 	implementar esta funcionalidad en el software de control se ha
@@ -125,7 +125,7 @@
 	una serie de desventajas, la primera y más inmediata es una
 	degradación de la calidad de la representación que aparece como
 	consecuencia de la digitalización de la señal. Otro efecto adverso
-	es la aparición de un retardo. 
+	es la aparición de un retardo.
 
 	 ,._
 	@"_.)6
@@ -192,13 +192,13 @@
 	ya implementado
 
 	A continuación se describen los elementos que intervienen en el
-	funcionamiento de la DAT, 
+	funcionamiento de la DAT,
 
 	Malab es la plataforma que se ha utilizado para desarrollar el
 	software de control. Es una plataforma de desarrollo bien conocida
 	en entornos matemáticos y tecnológico, que emplea un lenguaje
 	sencillo y fácilmente asimilable, y porque incorpora multitud de
-	módulos que amplían su funcionalidad 
+	módulos que amplían su funcionalidad
 
 	La plataforma que se ha seleccionado para desarrollar el software
 	de control es Matlab. Es una plataforma de desarrollo bien conocida
@@ -240,7 +240,7 @@
 	cálculos matemáticos complejos y la representación de funciones y
 	datos. No obstante, su principal valor como herramienta destinada a
 	la investigación
-	
+
 	Puede definirse como un kit de desarrollo de software (SDK) que
 	emplea un lenguaje de programación propio enfocado a un uso
 	matemático, simplificando el manejo de matrices y vectores. Al
@@ -316,3 +316,86 @@
 	que sería la API, la función plot que está implementada en lenguaje
 	de bajo nivel M me simplifica la representación de funciones, es
 	decir, se comporta como parte de una API.
+
+	 ,._
+	@;_,)6
+	 " "
+
+	MATLAB (Laboratorio Matemático) es la plataforma seleccionada para
+	el desarrollo del software de control. Es una plataforma de
+	desarrollo bien conocida en entornos matemáticos y tecnológicos de
+	uso extendido en universidades y otros centros educativos y de
+	investigación. Encaja en la descripción de un kit de desarrollo de
+	software (SDK) al estar compuesto por un entorno de desarrollo
+	integrado (IDE) con editor, compilador y depurador; y una colección
+	de módulos y extensiones que en conjunto se comportan como una
+	interfaz de programación de aplicaciones (API). MATLAB se
+	caracteriza por emplear un lenguaje propio, el lenguaje M, enfocado
+	a un uso matemático y que se ha diseñado para simplificar el manejo
+	de datos agrupados en estructuras matemáticas complejas como son
+	las matrices y los vectores. Los módulos y herramientas que se
+	incluyen en el SDK contribuyen a ampliar su funcionalidad,
+	convirtiéndolo en un software potente y completo. Estas
+	herramientas abstraen al desarrollador de implementar por sí mismo
+	en lenguaje M funciones destinadas a realizar operaciones
+	cotidianas como representar unos datos por pantalla u obtener la
+	FFT de un vector. Existen módulos ---o toolboxes como se los conoce
+	en inglés--- mantenidos por la compañía de software, a los que se
+	suman los diseñados por los propios usuarios, que abundan en la
+	red, disponibles desde la base de datos dispuesta para ello por la
+	empresa, con lo que las posibilidades son en la práctica infinitas.
+	Además MATLAB cuenta con dos herramientas fundamentales, muy
+	ligadas al SDK, una es GUIDE (Graphical User Interface Development
+	Environment), una herramienta para el desarrollo de interfaces
+	gráficas de usuario (GUI); y otra Simulink, herramienta que se
+	emplea para realizar todo tipo de simulaciones.
+
+	Las dos razones principales por las que se utiliza MATLAB son, por
+	un lado, las facilidades que aporta en la creación de GUI y manejo
+	de señales digitalizadas; y por otro, y aún más importante si cabe,
+	que incorpora una herramienta denominada Data Acquisition Toolbox,
+	nombre que podría traducirse como Herramienta de Adquisición de
+	Datos, en lo sucesivo DAT. La DAT es una herramienta que implementa
+	la mayoría de funciones y componentes necesarios para interactuar
+	con un dispositivo de las características de la kpci, y que
+	convenientemente es compatible con ésta.
+
+
+	La DAT es una herramienta compuesta por una biblioteca y un
+	mecanismo para el intercambio de información, que en conjunto
+	permiten mediante código de alto nivel interactuar directamente con
+	dispositivos de características similares a las de la tarjeta de
+	adquisición kpci, y que es convenientemente compatible con ésta
+	tarjeta. En otras palabras, la DAT descarga al desarrollador de la
+	responsabilidad de escribir el código necesario para interactuar a
+	bajo nivel con el dispositivo de adquisición. En otras palabras,
+	puede entenderse la DAT como una API o interfaz que proporciona al
+	desarrollador las llamadas necesarias para interactuar directamente
+	con dispositivos de adquisición al tiempo que abstrae los
+	mecanismos de más bajo nivel que intervienen en el proceso,
+	descargando al desarrollador de la responsabilidad de
+	implementarlos por él mismo. Lo que, al fin y al cabo puede
+	resumirse en que la DAT implementa la mayor parte de lo que en la
+	introducción se daba a entender como bloque de control.
+
+	En otras palabras, la DAT implementa todo el bloque de control,
+	sólo que me toca a mi llamar al bloque de control cuando sea
+	necesario, o lo que es lo mismo me da a mí las herramientas para
+	llamar al bloque de control,
+
+	Se describe en detalle en la subsiguiente sección pero lo más
+	importante a decir es que las funciones que implementa puede
+	utilizarse para leer de la tarjeta para activar la adquisición,
+	para detenerla
+
+	Es por este motivo por el que la \datx{} adquiere vital importancia
+	en
+
+	Lo que tendría que insinuar ahora es que la dat es uno de los
+	motores que mueve el software de control entendiéndola como una api
+	sobre la api de matlab sobre la api del sistema operativo. En lugar
+	de escribir el código concerniente a la aplicación y explicarlo
+	línea por línea, lo que voy es a dar una completa descripción de la
+	herramienta, describiendo brevemente cuales son los mecanismos que
+	utiliza para comunicarse con el dispositivo y haciendo un compendio
+	de las funciones diciendo como pueden y deben usarse.

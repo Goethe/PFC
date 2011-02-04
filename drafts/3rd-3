@@ -1,0 +1,31 @@
+|Viernes, 4 de Febrero de 2011|
+
+	La DAT tiene herramientas que sirven para realizar una sesión de	|Viernes, 4 de Febrero de 2011|
+	adquisición con la kpci, lo cual significa que yo me descargo de
+	tener que escribir esas funciones y la API necesaria para
+	interactuar con el Sistema Operativo y con los drivers. De ahí que
+	el principal esfuerzo que tengo que realizar como programador es
+	diseñar e implementar la interfaz gráfica de usuario, y luego de
+	manejar los datos (la señal digital ya convertida en vector en
+	MATLAB) y representarlos convenientemente. Diseñar la GUI implica
+	principalmente dibujar los elementos en una cuadrícula y asignar a
+	cada marco el gráfico que irá en él y a cada botón o línea de texto
+	su comportamiento. Manejar los datos implica configurar la tarjeta
+	en cada caso según el tipo de dato que tenga que sacar por pantalla
+	y esto a elección del usuario, es decir, en función del valor que
+	indique un determinado control, utilizando para ello las
+	facilidades que me da MATLAB, crear un puente entre los datos que
+	me vienen del objeto que MATLAB utiliza para representar el
+	dispositivo y la interfaz gráfica, manipular esos datos y
+	representar lo que convenga y configurar una especie de demonio que
+	extraiga los datos de los búfferes de la tarjeta y limpie su
+	contenido. Pero esto es sencillo de hacer y un rollo explicarlo o
+	leerlo por lo que yo paso directamente a dar una descripción de la
+	herramienta para que así el lector pueda figurarse qué cosas se
+	pueden hacer con ella y de que modo y luego hago un estudio del
+	comportamiento del osciloscopio digital con lo que pretendo es
+	darle al lector una idea de por donde han ido los tiros en el
+	diseño de la parte interna de la GUI, además tengo que poner por
+	escrito cuales han sido las condiciones que el director me puso
+	para la interfaz gráfica y ésto tiene que venir justo antes de la
+	descripción conceptual.
