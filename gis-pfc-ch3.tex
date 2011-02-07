@@ -250,10 +250,9 @@ Para crear un objeto dispositivo, se debe llamar a la función de creación
 apropiada o constructor. Como se muestra en el \cref{tab:constructors}, los
 constructores reciben un nombre particular en función del tipo de objetos
 dispositivo que crean. Para iniciar una sesión de adquisición de datos
-analógicos es necesario un comando como el siguiente,
-\func{analoginput(`adaptador', ID)}. Un ejemplo extraído del código fuente
-de la aplicación de control muestra cómo hacerlo en el
-\cref{cod:constructor}.
+analógicos es necesario un comando como el siguiente, \func{analoginput}
+\func{(`adaptador', ID)}. Un ejemplo extraído del código fuente de la
+aplicación de control muestra cómo hacerlo en el \cref{cod:constructor}.
 
 \begin{table}
 	\centering
@@ -337,10 +336,9 @@ adaptador que debe introducirse como argumento de la llamada a
 		Keithley Instruments, Inc. & keithley \\
 		\bottomrule
 	\end{tabular}
-	\caption[Argumento que debe emplearse en la llamada a
-	\func{analoginput} en función del fabricante]{Argumento que debe
-	emplearse en la llamada a \func{analoginput} en función del
-	fabricante.}
+	\caption[Valores que puede adoptar el argumento
+	\func{adaptador}.]{Valores que puede adoptar el argumento
+	\func{adaptador} necesario en la llamada a \func{analoginput}.}
 	\label{tab:adaptors}
 \end{table}
 
@@ -372,16 +370,14 @@ la configuración de propiedades desde la \datx{}.
 	\item La función \func{set} aplicada a un objeto dispositivo
 		---\func{set(objeto)}--- devuelve todas las propiedades
 		configurables de ese objeto. Si se llama a \func{set}
-		utilizando como argumento un canal
-		---\func{set(objeto.Channel(índice)}---, la función
-		devolverá todas las propiedades configurables de dicho
-		canal.
+		utilizando como argumento un canal ---\func{set(objeto.}
+		\func{.Channel(índice)}---, la función devolverá todas las
+		propiedades configurables de dicho canal.
 	\item La función \func{get} devuelve todas las propiedades de un
 		canal u objeto y el valor que toman en el momento en el que
 		se llama a la función si se emplea como único argumento
-		dicho canal u objeto ---\func{get(objeto)}, \\
-		\func{get(objeto.Channel(índice)}---.
-\end{itemize}
+		dicho canal u objeto ---\func{get(objeto)},
+		\func{get(objeto.Channel(índice)}---.  \end{itemize}
 
 Se distinguen dos tipos de propiedades distintas asociadas a los canales
 contenidos en un objeto dispositivo.
@@ -593,13 +589,13 @@ sintaxis de la definición de la misma en el \cref{cod:callback}.
 \subsubsection{Suprimiendo y borrando las trazas de los objetos dispositivo}
 
 La función \func{delete} elimina el objeto dispositivo especificado de la
-máquina virtual de adquisición, pero no del espacio de trabajo de
-\matlab{}, ---\func{delete(objeto)}---. Tras una llamada semejante
-\func{objeto} sigue apareciendo en el espacio de trabajo de \matlab{}, pero
-se trata de un objeto inválido desde el momento en el que deja de
-encontrarse ligado al hardware. Deben suprimirse los objetos dispositivo
-faltos de validez con el comando \func{clear}, p.e., \func{clear
-objeto}.
+máquina virtual de adquisición, pero no del espacio de trabajo (espacio
+reservado a las variables de trabajo) de \matlab{},
+---\func{delete(objeto)}---. Tras una llamada semejante \func{objeto} sigue
+apareciendo en el espacio de trabajo de \matlab{}, pero se trata de un
+objeto inválido desde el momento en el que deja de encontrarse ligado al
+hardware. Deben suprimirse los objetos dispositivo faltos de validez con el
+comando \func{clear}, p.e., \func{clear objeto}.
 
 Si se suprime un objeto dispositivo del espacio de trabajo de \matlab{} no
 deja de existir en la máquina virtual. Para poder recuperar objetos
