@@ -68,14 +68,20 @@ siguiente información acerca de la señal:
 		señal que aparece en pantalla.
 \end{itemize}
 
-Este capítulo se ha dispuesto de modo que en lugar de explicar línea a
-línea el significado del código correspondiente al software de control se
-hace en primer lugar, en el apartado siguiente, una completa descripción de
-la interfaz sobre la que se ha construido el código y que, en definitiva,
-marca todos los aspectos relacionados con el desarrollo del software; para
-pasa a exponer, a continuación, los objetivos impuestos en la etapa de
-diseño. De modo que el lector pueda figurarse cual debe ser el resultado
-final y como se debe haber alcanzado.
+Este capítulo se ha distribuido en dos apartados principales a los que se
+suma esta introducción. En el primero de los apartados se describe de la
+forma más escueta posible la herramienta empleada en el desarrollo del
+software de control. En el segundo se exponen a nivel conceptual las
+conclusiones obtenidas al estudiar el osciloscopio digital como herramienta
+modelo en la representación gráfica de señales, además se enumeran los
+criterios a los que se ha sometido el diseño del bloque de presentación. De
+ese modo se evita explicar el significado del código correspondiente al
+software de control línea por línea, al tiempo que se propicia que el
+lector se forme una idea propia del aspecto que adopta el software en su
+estadio definitivo de desarrollo, y que de ese modo le sea posible
+comprender el proceso que debe darse para alcanzar el resultado esperado.
+% y de ese modo pueda comprender el proceso que debe darse para alcanzar el
+% resultado.
 
 % 				( V )
 % ______________________________m\"/m______________________________________
@@ -99,7 +105,7 @@ final y como se debe haber alcanzado.
 %				@",_)6
 %				 " "
 
-\section{Herramienta de Adquisición de Datos de \textsc{matlab}}
+\section{Herramienta de Adquisición de Datos}
 
 
 \subsection{Introducción}
@@ -148,15 +154,17 @@ interactuar directamente con dispositivos de adquisición al tiempo que
 abstrae los mecanismos de más bajo nivel que intervienen en el proceso,
 descargando al desarrollador de la responsabilidad de implementarlos por él
 mismo. Lo que, al fin y al cabo puede resumirse en que en la \datx{} se
-implementa la mayor parte de lo que se entiende como bloque de control.	Es
-por este motivo por el que la \datx{} supone una pieza fundamental del
-software de control y, por consiguiente, adquiere vital importancia en el
-subsistema de control y presentación y por ende en el sistema de medida
-digital. Consecuentemente, se proporciona en este apartado una breve
-descripción de los distintos elementos que conforman esta herramienta y un
-compendio de las funciones que pone a disposición del desarrollador
-ordenadas siguiendo el mismo orden en el que se utilizan durante una sesión
-de adquisición básica.
+implementa el núcleo de lo que se entiende como bloque de control.Al
+programarse el software de control empleando los recursos que proporciona
+la \datx{}, la herramienta en sí pasa a ser parte fundamental del
+subsistema de control y presentación al prestarse como núcleo del bloque de
+control. Cobra pues vital importancia en el sistema de medida. En
+consecuencia, resulta adecuado un apartado en el que se introduzca la
+herramienta al lector. En primer lugar se describen las distintas entidades
+que participan en el funcionamiento de la herramienta, justo después se
+recoge un subconjunto de las distintas funciones que la \datx{} pone a
+disposición del desarrollador ordenadas siguiendo el mismo orden en el que
+son requeridas durante la sesión de adquisición de carácter más básico.
 
 
 \subsection{Componentes de la herramienta}

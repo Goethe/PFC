@@ -29,3 +29,12 @@
 	escrito cuales han sido las condiciones que el director me puso
 	para la interfaz gráfica y ésto tiene que venir justo antes de la
 	descripción conceptual.
+
+	Básicamente reducíamos el tercer capítulo a dos conceptos
+	fundamentales.  Revelo los objetivos que debe cumplir el software
+	de control y doy un concepto de las herramientas de que dispongo
+	para lograrlo. De ese modo me evito tener que explicar el
+	significado del código línea a línea y el lector puede formarse una
+	idea del aspecto que adopta el software de control en su estadio
+	definitivo, al tiempo que puede imaginar como pudo ir
+	desarrollándose.
