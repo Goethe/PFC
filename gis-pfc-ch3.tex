@@ -68,20 +68,16 @@ siguiente información acerca de la señal:
 		señal que aparece en pantalla.
 \end{itemize}
 
-Este capítulo se ha distribuido en dos apartados principales a los que se
-suma esta introducción. En el primero de los apartados se describe de la
-forma más escueta posible la herramienta empleada en el desarrollo del
-software de control. En el segundo se exponen a nivel conceptual las
-conclusiones obtenidas al estudiar el osciloscopio digital como herramienta
-modelo en la representación gráfica de señales, además se enumeran los
-criterios a los que se ha sometido el diseño del bloque de presentación. De
-ese modo se evita explicar el significado del código correspondiente al
-software de control línea por línea, al tiempo que se propicia que el
-lector se forme una idea propia del aspecto que adopta el software en su
-estadio definitivo de desarrollo, y que de ese modo le sea posible
-comprender el proceso que debe darse para alcanzar el resultado esperado.
-% y de ese modo pueda comprender el proceso que debe darse para alcanzar el
-% resultado.
+Este capítulo se ha distribuido en dos apartados. En el primero de los
+apartados se describe la herramienta empleada en el desarrollo del software
+de control. En el segundo se exponen las conclusiones obtenidas al estudiar
+el osciloscopio digital como herramienta de referencia en la representación
+gráfica de señales. De ese modo se evita explicar el significado del código
+correspondiente al software de control línea por línea, puesto que el
+lector puede concebir su propia idea del aspecto que adopta el software en
+su estadio definitivo de desarrollo. El ejercicio de reflexión pertinente
+conduce a una positiva comprensión del proceso que partiendo del diseño
+original concluye en el resultado esperado.
 
 % 				( V )
 % ______________________________m\"/m______________________________________
@@ -154,7 +150,7 @@ interactuar directamente con dispositivos de adquisición al tiempo que
 abstrae los mecanismos de más bajo nivel que intervienen en el proceso,
 descargando al desarrollador de la responsabilidad de implementarlos por él
 mismo. Lo que, al fin y al cabo puede resumirse en que en la \datx{} se
-implementa el núcleo de lo que se entiende como bloque de control.Al
+implementa el núcleo de lo que se entiende como bloque de control. Al
 programarse el software de control empleando los recursos que proporciona
 la \datx{}, la herramienta en sí pasa a ser parte fundamental del
 subsistema de control y presentación al prestarse como núcleo del bloque de
@@ -211,7 +207,7 @@ en dicho cuadro.
 	\label{fig:toolcomp}
 \end{figure}
 
-\subsection{Objetos dispositivo}
+\subsubsection{Objetos dispositivo}
 
 Los objetos dispositivo permiten el acceso a subsistemas específicos del
 hardware. Los objetos dispositivo soportados por la \datx{} son los objetos
