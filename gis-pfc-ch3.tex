@@ -8,10 +8,11 @@ de entre los que integran el sistema por interactuar directamente con el
 supervisor. El subsistema de control y presentación está constituido por
 los bloques de control y presentación propiamente dichos, tal y como
 muestra la \cref{fig:subconpre}. Sin embargo, en la práctica estos dos
-bloques se engloban en una misma entidad, un software que se ejecuta en el
-\pc{} anfitrión en el que se encuentra instalada la tarjeta de adquisición.
-Por ser el software que controla el funcionamiento de la tarjeta
-\kpci{} pasa a conocerse como \emph{software de control} en este documento.
+bloques se mezclan en una misma entidad indivisible, un software que se
+ejecuta en el \pc{} anfitrión en el que se encuentra instalada la tarjeta
+de adquisición.  Por ser el software que controla el funcionamiento de la
+tarjeta \kpci{} pasa a conocerse como \emph{software de control} en este
+documento.
 
 \begin{figure}
 	\begin{center}
@@ -106,9 +107,9 @@ original concluye en el resultado esperado.
 
 \subsection{Introducción}
 
-\psig{matlab} (\emph{LABoratorio MATemático}) es la plataforma seleccionada
-para el desarrollo del software de control. Es una plataforma de desarrollo
-bien conocida en entornos matemáticos y tecnológicos de uso extendido en
+\psig{matlab} (\emph{MATrix LABoratory}) es la plataforma seleccionada para
+el desarrollo del software de control. Es una plataforma de desarrollo bien
+conocida en entornos matemáticos y tecnológicos de uso extendido en
 universidades y otros centros educativos y de investigación. Encaja en la
 descripción de un kit de desarrollo de software (\sig{sdk}) al estar
 compuesto por un entorno de desarrollo integrado (\sig{ide}) con editor,
@@ -608,14 +609,37 @@ borrados accidentalmente puede utilizarse la función \func{daqfind}.
 
 \section{Diseño conceptual del software}
 
-El objetivo primordial del software de control es implementar un modo
-gráfico con el que el supervisor pueda observar cual es el aspecto de la
-señal y como es su espectro en frecuencias. En el proceso previo de diseño
-se considera que modelo se puede tomar como referencia para implementar el
-modo gráfico. Por sus bondades, se elige el osciloscopio digital. En la
-representación de señales el instrumento empleado en la mayoría de
-aplicaciones es el osciloscopio digital. Los osciloscopios son instrumentos
-prácticos que permiten visualizar señales de forma efectiva.
+Habiendo estudiado la \datx{} en profundidad, y sabiendo que puede
+utilizarse como núcleo del bloque de control, tan sólo queda por realizar
+en lo correspondiente a este bloque del subsistema los controles de la
+\sig{gui}. Para ello deben programarse los \emph{callbacks} relacionados
+con dichos controles, rutinas que se activan al accionar el control
+pertinente y que sirven principalmente para modificar aspectos de la sesión
+de adquisición a partir de las variables relacionadas con los objetos
+dispositivo. Esta es una tarea rutinaria y, por lo tanto, sencilla, común a
+la programación de cualquier aplicación con interfaz gráfica en \matlab{},
+por lo que no requiere de mayor atención. A partir de ahí, el mayor
+esfuerzo que debe realizarse para finalizar el software consiste en
+programar el bloque de presentación.  El bloque de presentación engloba
+toda aquella rutina o función, todo aquel fragmento de código cuya utilidad
+está relacionada con la representación de datos por pantalla. Los datos
+numéricos son sencillos de representar, únicamente deben efectuarse los
+cálculos aritméticos necesarios a partir de las muestras de la señal y
+modificar el valor de una determinada variable cada cierto tiempo. Sí es
+importante programar estas rutinas utilizando un modelo basado en
+interrupciones y gestión de interrupciones para que la actualización de
+datos ocurra automáticamente según lo esperado. La representación gráfica
+de la señal es más compleja. Requiere un proceso de diseño previo en el que
+deben tomarse decisiones importantes a nivel conceptual, después la
+implementación en código es más sencilla. Sin embargo, existe una idea
+clara de las capacidades que debe tener el software de control en cuanto a
+la representación de señales con anticipación al inicio del proyecto, por
+lo que este proceso de diseño se ve simplificado significativamente.
+Atendiendo al criterio del director de \emph{PFC} y por decisión mutua
+entre el director y el proyectista, el software de control debe ser capaz
+de representar la señal del modo en que lo hacen los osciloscopios
+digitales, además en un marco distinto dentro de la \emph{gui} debe
+representarse el espectro de la señal que se ve en pantalla.
 
 Para tratar de imitar el funcionamiento del osciloscopio digital en el
 software de control, es preciso conocer como funciona este dispositivo y
