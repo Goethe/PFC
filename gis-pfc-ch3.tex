@@ -609,63 +609,23 @@ borrados accidentalmente puede utilizarse la función \func{daqfind}.
 
 \section{Diseño conceptual del software}
 
-Habiendo estudiado la \datx{} en profundidad, y sabiendo que puede
-utilizarse como núcleo del bloque de control, tan sólo queda por realizar
-en lo correspondiente a este bloque del subsistema los controles de la
-\sig{gui}. Para ello deben programarse los \emph{callbacks} relacionados
-con dichos controles, rutinas que se activan al accionar el control
-pertinente y que sirven principalmente para modificar aspectos de la sesión
-de adquisición a partir de las variables relacionadas con los objetos
-dispositivo. Esta es una tarea rutinaria y, por lo tanto, sencilla, común a
-la programación de cualquier aplicación con interfaz gráfica en \matlab{},
-por lo que no requiere de mayor atención. A partir de ahí, el mayor
-esfuerzo que debe realizarse para finalizar el software consiste en
-programar el bloque de presentación.  El bloque de presentación engloba
-toda aquella rutina o función, todo aquel fragmento de código cuya utilidad
-está relacionada con la representación de datos por pantalla. Los datos
-numéricos son sencillos de representar, únicamente deben efectuarse los
-cálculos aritméticos necesarios a partir de las muestras de la señal y
-modificar el valor de una determinada variable cada cierto tiempo. Sí es
-importante programar estas rutinas utilizando un modelo basado en
-interrupciones y gestión de interrupciones para que la actualización de
-datos ocurra automáticamente según lo esperado. La representación gráfica
-de la señal es más compleja. Requiere un proceso de diseño previo en el que
-deben tomarse decisiones importantes a nivel conceptual, después la
-implementación en código es más sencilla. Sin embargo, existe una idea
-clara de las capacidades que debe tener el software de control en cuanto a
-la representación de señales con anticipación al inicio del proyecto, por
-lo que este proceso de diseño se ve simplificado significativamente.
-Atendiendo al criterio del director de \emph{PFC} y por decisión mutua
-entre el director y el proyectista, el software de control debe ser capaz
-de representar la señal del modo en que lo hacen los osciloscopios
-digitales, además en un marco distinto dentro de la \emph{gui} debe
-representarse el espectro de la señal que se ve en pantalla.
-
-Para tratar de imitar el funcionamiento del osciloscopio digital en el
-software de control, es preciso conocer como funciona este dispositivo y
-cuales son sus características principales. Como parte de este capítulo se
-ha querido proveer una introducción al comportamiento de los osciloscopios
-digitales que se extrae del estudio realizado sobre estos dispositivos al
-acometer este episodio del proyecto fin de carrera. Se expone esencialmente
-de que forma consigue el osciloscopio representar la señal, como lo hace.
-Para ello se documentan los distintos modos de representación de que cuenta
-el osciloscopio digital en comparación con su equivalente analógico. De ese
-modo el lector que acuda a esta introducción al comportamiento de los
-osciloscopios digitales puede formarse una imagen del aspecto que debe
-tener el software de control, lo que sirve a dos propósitos diferentes:
-
-\begin{itemize}
-	\item El primero y más inmediato, permitirle ubicar de forma muy
-		precisa los objetivos del proceso de programación. De forma
-		que le sea posible identificar, en cierto modo, que rutinas
-		son necesarias para lograr el resultado final.
-	\item Y además puede servirle como nota introductoria al
-		\cref{chap:part1conclusions} en el que se comparan los
-		resultados obtenidos en un experimento realizado primero
-		mediante el sistema digital de medida y, posteriormente,
-		utilizando un osciloscopio digital en conjunción con el
-		subsistema para la interacción con el medio físico.
-\end{itemize}
+\matlab{} y la \datx{} simplifican en gran medida la tarea de implementar
+el bloque de control y la interfaz gráfica de usuario, por tanto, el último
+reto importante que debe afrontarse en el desarrollo del software de
+control es programar el mecanismo mediante el cual ha de representarse la
+señal en pantalla. Es sencillo mostrar por pantalla datos numéricos o
+representar la \sig{fft} de una señal, gracias a las utilidades de que
+dispone \matlab{}, representar una señal en <<tiempo real>> es algo más
+complejo. Al fijar los objetivos del \sig{pfc} se especifica que debe poder
+utilizarse el sistema de medida para visualizar señales como si se tratase
+de un osciloscopio digital. La principal complicación que existe al
+programar un osciloscopio digital en software radica en definir las metas
+de programación y no en escribir el código. Esto sólo puede lograrse tras
+estudiar en profundidad el modelo, después de comprender perfectamente su
+comportamiento y de ese modo poder traducir sus principales rasgos de
+conducta en metas sencillas. En este apartado se exponen brevemente las
+conclusiones extraídas tras estudiar el osciloscopio digital como modelo
+para el software de control.
 
 
 \subsection{Osciloscopios analógicos, osciloscopios digitales y retardo}
