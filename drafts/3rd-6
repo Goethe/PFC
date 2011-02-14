@@ -137,3 +137,78 @@
 	supervisor es como si no existiese, pues la finalidad del
 	osciloscopio es que el usuario vea la señal si el retardo no se ve
 	entonces no existe.
+
+	Hasta ahora he dicho que a diferencia de otros aparatos de carácter	|Lunes, 14 de Febrero de 2011|
+	analógico un osciloscopio digital tiene que digitalizar la señal,
+	almacenar las muestras resultantes y procesarlas antes de poder
+	representar dicha señal. Representar cada muestra según se obtiene
+	requeriría de una gran capacidad de procesado (¿Por qué? Es
+	importante mencionar los motivos. Sin duda interesa muestrear a la
+	máxima velocidad posible, de ese modo se evita la aparición de
+	aliasing en señales de gran ancho de banda o señales cuyo espectro
+	no es de banda base, pero, ¿es posible cuantificar, almacenar y
+	procesar muestras a la misma velocidad a la que se muestrea la
+	señal? Es ciertamente imposible, son muchas más operaciones y se
+	requiere más tiempo. Por tanto, para mantener una velocidad de
+	muestreo aceptable es necesario disponer de una capacidad de
+	procesado muy grande también, y aún así se desperdiciaría parte de
+	la capacidad de muestreo del dispositivo.), por eso el osciloscopio
+	tiene que almacenar en memoria un mínimo de muestras antes de poder
+	representar la señal digital correspondiente. La clave está en
+	determinar cuantas muestras se almacenan cada vez.
+
+	Entonces digo, tienen que muestrear, digitalizar, etc, porque no
+	puede hacerse todo eso al mismo ritmo que se muestrea, de lo
+	contrario habría que sacrificar parte de la velocidad de muestreo.
+	Hacerlo así conlleva una serie de desventajas donde destaca la
+	aparición del retardo. ¿Por qué el retardo es importante? Porque
+	condiciona el funcionamiento del osciloscopio. (Hasta aquí estamos
+	de acuerdo, y sólo existe este camino) Pero, ¿por qué condiciona el
+	funcionamiento del osciloscopio? En principio el número de muestras
+	que se almacenan antes de representar es variable, cuando ese
+	número aumenta el retardo que aparece entre lo que ocurre y lo que
+	se ve aumenta. Si ese retardo aumenta lo suficiente como para que
+	sea percibido por el ojo humano se convierte en un problema puesto
+	que puede hacer que se pierdan eventos o que estos se muestren
+	demasiado tarde, en cierto modo lo que ocurre es que entorpece el
+	trabajo con el osciloscopio (si yo doy un martillazo y no puedo
+	predecir cuando va a aparecer lo que tiene que aparecer entonces es
+	más difícil que lo capture, v.g.).
+
+	//Modificaciones al texto original//
+
+	Un osciloscopio digital es una herramienta que se emplea para
+	visualizar señales. Es el sucesor de instrumentos de medida como el
+	osciloscopio analógico y el oscilógrafo. A diferencia de estos
+	aparatos de carácter analógico, un osciloscopio digital debe
+	muestrear parte de la señal, procesar la señal digital resultante
+	y almacenar las muestras en memoria antes de poder representar en
+	la pantalla una última versión de la señal obtenida por
+	interpolación de las muestras. Tratar de representar cada muestra
+	según se origina en el conversor analógico digital trae consigo un
+	conjunto de complicaciones difíciles de salvar, sin mencionar que
+	ha de sacrificarse parte del rendimiento de muestreo, lo que
+	significa que se pierde la capacidad de trabajar con señales de
+	gran ancho de banda en ausencia de aliasing. El tratamiento de la
+	señal digital conlleva, sin embargo, una serie de desventajas, de
+	entre las cuales cabe destacar la aparición de un retardo entre la
+	señal que registra la sonda del osciloscopio y la señal mostrada
+	por pantalla. El retardo, de ser demasiado alto, puede entorpecer
+	el uso del osciloscopio, lo cual no debe ocurrir en ningún caso,
+	por tanto, debe mantenerse por debajo de un nivel de umbral. El
+	nivel de umbral se elige de forma que por debajo del mismo el
+	retardo no puede ser percibido por el ojo humano, lo que a efectos
+	prácticos es lo mismo que un retardo inexistente. El control del
+	retardo condiciona el funcionamiento del osciloscopio, limitando la
+	cantidad de muestras que pueden almacenarse en memoria antes de
+	cada nuevo ciclo.
+
+	De hecho el retardo es la condición por la cual pasa a
+	representarse en el modo continuo. Es la condición que determina
+	cuando debe pasar a representarse en modo continuo. Es un factor
+	importante que condiciona el funcionamiento del osciloscopio
+	digital afectando a su diseño/al modo en que representa señales.
+
+				 ,.	  oo
+				@;_)6	·<;_)~
+				 ""	  ""

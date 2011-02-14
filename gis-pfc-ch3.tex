@@ -634,11 +634,24 @@ Un osciloscopio digital es una herramienta que se emplea para visualizar
 señales. Es el sucesor de instrumentos de medida como el osciloscopio
 analógico y el oscilógrafo. A diferencia de estos aparatos de carácter
 analógico, un osciloscopio digital debe muestrear parte de la señal,
-almacenar la señal digital resultante en memoria y procesar esas muestras
-antes de poder representar la señal mencionada por pantalla. Esto conlleva
-una serie de desventajas, de entre las cuales cabe destacar la aparición de
-un retardo entre la señal que registra la sonda del osciloscopio y la señal
-mostrada por pantalla.
+procesar la señal digital resultante y almacenar las muestras en memoria
+antes de poder representar en la pantalla una última versión de la señal
+obtenida por interpolación de las muestras. Tratar de representar cada
+muestra según se origina en el conversor analógico digital trae consigo un
+conjunto de complicaciones difíciles de salvar, sin mencionar que ha de
+sacrificarse parte del rendimiento de muestreo, lo que significa que se
+pierde la capacidad de trabajar con señales de gran ancho de banda en
+ausencia de aliasing. El tratamiento de la señal digital conlleva, sin
+embargo, una serie de desventajas, de entre las cuales cabe destacar la
+aparición de un retardo entre la señal que registra la sonda del
+osciloscopio y la señal mostrada por pantalla. El retardo, de ser demasiado
+alto, puede entorpecer el uso del osciloscopio, lo cual no debe ocurrir en
+ningún caso, por tanto, debe mantenerse por debajo de un nivel de umbral.
+El nivel de umbral se elige de forma que por debajo del mismo el retardo no
+puede ser percibido por el ojo humano, lo que a efectos prácticos es lo
+mismo que un retardo inexistente. El control del retardo condiciona el
+funcionamiento del osciloscopio, limitando la cantidad de muestras que
+pueden almacenarse en memoria antes de cada nuevo ciclo.
 
 Los osciloscopios analógicos emplean un tubo de rayos catódicos y un
 monitor de fósforo para generar una imagen de la señal. El cursor que el
