@@ -1,0 +1,139 @@
+|Jueves, 10 de Febrero de 2011|
+
+	Este retardo puede llegar a ser tan influyente en la representación
+	de una señal que los osciloscopios digitales disponen de un
+	mecanismo para combatirlo.
+
+	Cuando empieza a ser importante el retardo, cando trabajo con
+	señales lentas y necesito que la ventana del osciloscopio, el eje
+	de tiempos, represente una cantidad de tiempo elevada para poder
+	reflejar periodos completos de esa señal. Entonces, como en el modo
+	de representación disparado tengo que esperar a recibir una ventana
+	completa antes de poder representar el retardo se hace muy grande y
+	dificulta la visualización de la señal en tiempo real. El retardo
+	empieza a molestar cuando excede la capacidad de reacción del ojo
+	humano, si supera los 40 ms el ojo humano empieza a percibir la
+	diferencia entre los eventos que se producen en la señal y el
+	momento en que estos aparecen reflejados en el monitor del
+	osciloscopio.
+
+	Para combatir esto el osciloscopio digital hace uso de su capacidad
+	de representar datos de distintos modos. El modo continuo se
+	actualiza cada x tiempo sin importar la longitud del eje de
+	tiempos, evidentemente los cambios no cubren todo el ancho de la
+	pantalla. Justo al contrario, se hacen lo suficientemente pequeños
+	en comparación con el periodo representado por el eje de tiempos
+	como para que el ojo perciba que la señal se desplaza de modo
+	continuo a lo largo del monitor del osciloscopio.
+
+	// Los párrafos anteriores resumen muy bien lo que tengo que
+	// exponer en el tercer apartado de la memoria. No son muy
+	// complicados y espero que traducirlos a un estilo más formal no
+	// resulte del todo complicado.
+
+	Un osciloscopio digital es una herramienta que se emplea para
+	visualizar señales. Es el sucesor de instrumentos de medida como el
+	osciloscopio analógico y el oscilógrafo. A diferencia de estos
+	aparatos de carácter analógico, un osciloscopio digital debe
+	muestrear parte de la señal, almacenar la señal digital resultante
+	en memoria y procesar esas muestras antes de poder representar la
+	señal mencionada por pantalla. Esto conlleva una serie de
+	desventajas, de entre las cuales cabe destacar la aparición de un
+	retardo entre la señal que registra la sonda del osciloscopio y la
+	señal mostrada por pantalla.
+
+	Sin embargo, la digitalización de la señal/el modo en que el
+	osciloscopio digital opera en la señal implica que en última
+	instancia lo que se representa es una serie de muestras o datos y
+	ésto se puede hacer de muy diversas formas.
+
+	Sin embargo, el modo en que el osciloscopio digital opera en la
+	señal implica una mayor versatilidad en el modo en que la señal es
+	manipulada y representada. (Sí, creo que este es un buen principio)
+
+	Un osciloscopio digital puede extraer mucha información a partir de
+	la señal digitalizada antes incluso de representarla por pantalla,
+	como su periodo, su frecuencia, su tensión de pico a pico. (Esto no
+	es importante, lo importante es exponer porque el retardo influye
+	en el comportamiento del osciloscopio digital y como lo hace)
+
+	Este retardo puede llegar a ser muy influyente dependiendo de la
+	configuración del osciloscopio, por eso, es importante que el
+	osciloscopio lo mitigue.
+
+	¿Pero cuántas muestras es aconsejable almacenar en memoria antes de
+	representar? Depende. Depende de muchos factores, como la porción
+	de señal que quiere monitorizarse... Es más complicado que eso.
+
+	Este retardo aunque a menudo inapreciable podría, dependiendo del
+	tiempo que el osciloscopio espera para
+
+	Este retardo aunque a menudo inapreciable podría hacerse mayor,
+	alcanzar grandes dimensiones, desarrollarse, alcanzar la docena de
+	segundos, puede llegar a influir en la eficacia con la que el
+	osciloscopio representa señales.
+
+	Este retardo es a menudo inapreciable, pero si el osciloscopio
+	espera para almacenar un fragmento de la señal de gran duración
+	podría influir en la eficacia del propósito del osciloscopio, que
+	no es otro que el usuario pueda valorar cualidades cualitativas de
+	la señal en tiempo real. ¡Cualidades cualitativas!
+
+	Este retardo es a menudo inapreciable, pero puede convertirse en un
+	problema si empieza a percibirlo el ojo humano.
+
+	Procesar y representar cada una de las muestras en el momento en el
+	que se obtienen requeriría de una gran capacidad de procesado sin
+	mencionar que complicaría la representación puesto que sería
+	imposible extraer de muestras aisladas ciertas estadísticas de la
+	señal que contribuyen a que la señal se encuadre de forma
+	automática en el monitor del osciloscopio, esta tarea correría
+	siempre a cargo del usuario tal y como ocurre en los osciloscopios
+	analógicos. De ahí que sea aconsejable retrasar la representación
+	de la señal hasta disponer de un determinado número de muestras en
+	memoria. Para lograr una representación disparada el osciloscopio
+	debe esperar hasta almacenar en memoria una cantidad de muestras de
+	la señal suficiente como para cubrir toda la extensión del monitor.
+	En realidad, siempre son necesarias más muestras, puesto que antes
+	de representarse la señal tiene que ser desplazada, tal y como
+	indica la figura, para hacer coincidir el nulo más centrado con el
+	eje de ordenadas.
+
+	Este retardo es a menudo inapreciable pero podría hacerse elevado |
+	tanto que incluso podría llegar a ser percibido por el ojo humano,
+	si esto ocurriese el osciloscopio dejaría de ser un instrumento
+	eficaz con el que visualizar señales. Pues lo interesante de ver
+	una señal es poder deducir las cualidades cualitativas de la señal
+	y apreciar los eventos que en ella se producen en tiempo real.
+	Nunca me interesa accionar un potenciómetro y tener que esperar un
+	tiempo para poder observar que cambios se han producido en la
+	señal, además puedo perderme eventos de corta duración.
+
+	¿Cómo quiero distribuir el apartado? Ya he terminado la
+	introducción, esta es como una segunda introducción que no acaba de
+	cuajar. Bien, ya he dicho que hay un retardo que se manifiesta en
+	la representación de la señal que hace un osciloscopio digital que
+	no aparece en la representación que hace un dispositivo analógico
+	de características similares. Ahora tendría que remarcar que
+	trabajar con señales digitales ofrece muchas posibilidades. Para
+	empezar que puedo sacar datos de la señal digital, pero más
+	importante que puedo representar las muestras de muchas formas
+	diferentes, porque no estoy sujeto a las limitaciones que tienen
+	los aparatos analógicos que he mencionado antes. Eso me puede
+	ayudar a limitar los efectos del retardo si consigo limitarlo a
+	valores inferiores a los necesarios para que el ojo humano pueda
+	detectarlo, en cuyo caso pierde toda importancia, si estoy mirando
+	una señal y no puedo ver el retardo que ocurre entre la señal y lo
+	que veo pues es como si el retardo no existiese que al fin y al
+	cabo es lo importante. En otras palabras, tengo que limitar el
+	retardo, y para eso lo único que tengo que hacer es actualizar la
+	pantalla del osciloscopio antes de que transcurran 1/26 segundos.
+	Y ahí es donde entran en juego las formas de las que puedo
+	representar la señal digital.
+
+	Este retardo es a menudo inapreciable, y no puede en ningún caso
+	alcanzar valores lo suficientemente altos como para ser percibido
+	por el ojo humano. Mientras el retardo no sea percibido por el
+	supervisor es como si no existiese, pues la finalidad del
+	osciloscopio es que el usuario vea la señal si el retardo no se ve
+	entonces no existe.

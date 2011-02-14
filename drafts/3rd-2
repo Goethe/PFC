@@ -20,7 +20,7 @@
 	aparatos (de carácter analógico, es correcto atendiendo a la nota
 	escrita abajo) un osciloscopio digital debe muestrear parte de la
 	señal, almacenar la señal digital resultante en memoria y procesar
-	esas muestras poder realizar representación alguna. Esto conlleva
+	esas muestras poder realizar representación alguna. Esto conlleva	antes de poder representar la señal (en pantalla)
 	una serie de desventajas, la primera y más inmediata es una
 	degradación de la calidad de la representación que aparece como
 	consecuencia de la digitalización de la señal. Otro efecto adverso
