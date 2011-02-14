@@ -607,18 +607,18 @@ borrados accidentalmente puede utilizarse la función \func{daqfind}.
 \end{lstlisting}
 
 
-\section{Diseño conceptual del software}
+\section{Diseño conceptual del software}\label{sec:softdesign}
 
-\matlab{} y la \datx{} simplifican en gran medida la tarea de implementar
-el bloque de control y la interfaz gráfica de usuario, por tanto, el último
-reto importante que debe afrontarse en el desarrollo del software de
-control es programar el mecanismo mediante el cual ha de representarse la
-señal en pantalla. Es sencillo mostrar por pantalla datos numéricos o
-representar la \sig{fft} de una señal, gracias a las utilidades de que
-dispone \matlab{}, representar una señal en <<tiempo real>> es algo más
-complejo. Al fijar los objetivos del \sig{pfc} se especifica que debe poder
-utilizarse el sistema de medida para visualizar señales como si se tratase
-de un osciloscopio digital. La principal complicación que existe al
+\textsc{Matlab} y la \datx{} simplifican en gran medida la tarea de
+implementar el bloque de control y la interfaz gráfica de usuario, por
+tanto, el último reto importante que debe afrontarse en el desarrollo del
+software de control es programar el mecanismo mediante el cual ha de
+representarse la señal en pantalla. Es sencillo mostrar por pantalla datos
+numéricos o representar la \sig{fft} de una señal gracias a las utilidades
+de que dispone \matlab{}, representar una señal en <<tiempo real>> es algo
+más complejo. Al fijar los objetivos del \sig{pfc} se especifica que debe
+poder utilizarse el sistema de medida para visualizar señales como si se
+tratase de un osciloscopio digital. La principal complicación que existe al
 programar un osciloscopio digital en software radica en definir las metas
 de programación y no en escribir el código. Esto sólo puede lograrse tras
 estudiar en profundidad el modelo, después de comprender perfectamente su
@@ -628,7 +628,7 @@ conclusiones extraídas tras estudiar el osciloscopio digital como modelo
 para el software de control.
 
 
-\subsection{Osciloscopios digitales}
+\subsection{Osciloscopios digitales y retardo}
 
 Un osciloscopio digital es una herramienta que se emplea para visualizar
 señales. Es el sucesor de instrumentos de medida como el osciloscopio
@@ -636,7 +636,7 @@ analógico y el oscilógrafo. A diferencia de estos aparatos de carácter
 analógico, un osciloscopio digital debe muestrear parte de la señal,
 procesar la señal digital resultante y almacenar las muestras en memoria
 antes de poder representar en la pantalla una última versión de la señal
-obtenida por interpolación de las muestras. Tratar de representar cada
+obtenida por interpolación de dichas muestras. Tratar de representar cada
 muestra según se origina en el conversor analógico digital trae consigo un
 conjunto de complicaciones difíciles de salvar, sin mencionar que ha de
 sacrificarse parte del rendimiento de muestreo, lo que significa que se
@@ -651,47 +651,52 @@ El nivel de umbral se elige de forma que por debajo del mismo el retardo no
 puede ser percibido por el ojo humano, lo que a efectos prácticos es lo
 mismo que un retardo inexistente. El control del retardo condiciona el
 funcionamiento del osciloscopio, limitando la cantidad de muestras que
-pueden almacenarse en memoria antes de cada nuevo ciclo.
+pueden almacenarse en memoria durante cada ciclo.
 
-Los osciloscopios analógicos emplean un tubo de rayos catódicos y un
-monitor de fósforo para generar una imagen de la señal. El cursor que el
-tubo dibuja en el monitor lo va barriendo de izquierda a derecha con
-periodicidad, y su posición vertical refleja a cada momento el valor de
-tensión de la señal eléctrica que entra al osciloscopio. El monitor
-preserva durante breves instantes una traza del cursor y así se forma la
-imagen que representa a la señal.
+% Los osciloscopios analógicos emplean un tubo de rayos catódicos y un
+% monitor de fósforo para generar una imagen de la señal. El cursor que el
+% tubo dibuja en el monitor lo va barriendo de izquierda a derecha con
+% periodicidad, y su posición vertical refleja a cada momento el valor de
+% tensión de la señal eléctrica que entra al osciloscopio. El monitor
+% preserva durante breves instantes una traza del cursor y así se forma la
+% imagen que representa a la señal.
 
-En la actualidad los osciloscopios analógicos están siendo desplazados en
-su uso por los osciloscopios digitales. El procedimiento que sigue un
-osciloscopio digital para representar señales es completamente diferente al
-que siguen los osciloscopios analógicos. Constantemente el osciloscopio
-digitaliza la señal en seguimiento, procesa la señal digital resultante y
-la almacena en memoria. Cada cierto \emph{periodo de refresco} el
-osciloscopio muestra por pantalla una representación de los datos que
-previamente ha almacenado durante ese mismo periodo. Mientras se recogen
-datos para una nueva imagen se mantienen en pantalla los datos
-correspondientes al periodo anterior. La velocidad con la que se suceden
-las imágenes en el monitor del osciloscopio hace que se produzca la
-sensación de movimiento, y de ese modo la representación responde a las
-variaciones que se producen en la señal. Esto permite observar los eventos
-que se producen en la señal en determinadas situaciones, como por ejemplo:
-al accionar un potenciómetro que forma parte de un circuito que está siendo
-analizado, al cambiar la configuración de un generador de señales para que
-genere una señal diferente a la que suministraba unos instantes antes, o
-simplemente al conectar la alimentación.
+% En la actualidad los osciloscopios analógicos están siendo desplazados en
+% su uso por los osciloscopios digitales. El procedimiento que sigue un
+% osciloscopio digital para representar señales es completamente diferente
+% al que siguen los osciloscopios analógicos. Constantemente el
+% osciloscopio digitaliza la señal en seguimiento, procesa la señal digital
+% resultante y la almacena en memoria. Cada cierto \emph{periodo de
+% refresco} el osciloscopio muestra por pantalla una representación de los
+% datos que previamente ha almacenado durante ese mismo periodo. Mientras
+% se recogen datos para una nueva imagen se mantienen en pantalla los datos
+% correspondientes al periodo anterior. La velocidad con la que se suceden
+% las imágenes en el monitor del osciloscopio hace que se produzca la
+% sensación de movimiento, y de ese modo la representación responde a las
+% variaciones que se producen en la señal. Esto permite observar los
+% eventos que se producen en la señal en determinadas situaciones, como por
+% ejemplo: al accionar un potenciómetro que forma parte de un circuito que
+% está siendo analizado, al cambiar la configuración de un generador de
+% señales para que genere una señal diferente a la que suministraba unos
+% instantes antes, o simplemente al conectar la alimentación.
 
-El periodo de refresco no es fijo, de lo contrario los datos mostrados en
-el monitor del osciloscopio aparecerían en exceso comprimidos o expandidos
-en función de la frecuencia de la señal monitorizada. Puede configurarse el
-periodo de muestreo para que adopte un valor de entre un rango de valores
-predeterminados. Debe notarse que al ser posible modificar el valor del
-periodo de refresco existe la posibilidad de que, en efecto, éste adopte un
-valor alto. Ésto haría que el retardo que se produce en la sucesión de
-imágenes aumentase, limitando la capacidad de la representación de seguir
-los cambios que afectan a la señal. Para impedir que ésto ocurra los
-osciloscopios digitales implementan un mecanismo por el cual una señal se
-representa de uno u otro modo en función del valor que toma el periodo de
-refresco.
+% El periodo de refresco no es fijo, de lo contrario los datos mostrados en
+% el monitor del osciloscopio aparecerían en exceso comprimidos o
+% expandidos en función de la frecuencia de la señal monitorizada. Puede
+% configurarse el periodo de muestreo para que adopte un valor de entre un
+% rango de valores predeterminados. Debe notarse que al ser posible
+% modificar el valor del periodo de refresco existe la posibilidad de que,
+% en efecto, éste adopte un valor alto. Ésto haría que el retardo que se
+% produce en la sucesión de imágenes aumentase, limitando la capacidad de
+% la representación de seguir los cambios que afectan a la señal. Para
+% impedir que ésto ocurra los osciloscopios digitales implementan un
+% mecanismo por el cual una señal se representa de uno u otro modo en
+% función del valor que toma el periodo de refresco.
+
+
+\subsection{Representación de la señal}
+
+
 
 
 \subsection{Modos de representación en los osciloscopios digitales}\label{subsec:repmodes}

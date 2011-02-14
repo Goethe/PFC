@@ -212,3 +212,98 @@
 				 ,.	  oo
 				@;_)6	·<;_)~
 				 ""	  ""
+
+	Ahora tengo que pensar como digo que al ser digital o un
+	instrumento digital el osciloscopio tiene la ventaja de la
+	versatilidad, que en este caso tiene que ver con que pueden
+	representarse las muestras como si se tratase de cualquier otro
+	dato binario (binario en el sentido de que cada elemento del
+	conjunto posee dos valores diferentes, uno para el tiempo
+	componente de abscisas y otro para la tensión magnitud representada
+	en ordenadas). Eso me da muchas opciones y me permite esquivar el
+	problema del retardo de un modo bastante logrado.
+
+	Primero explico que habitualmente el osciloscopio representa la
+	señal disparada. Y explico en que consiste disparar la señal.
+	Disparar la señal es hacer que la representación quede centrada en
+	el marco que proporciona el monitor del osciloscopio/en el plano
+	cartesiano rectangular representado en el monitor del osciloscopio.
+	Para ello primero deben procesarse las muestras, se elimina la
+	componente en continua, después se localizan los nulos de la
+	señal, se desplazan las muestras para que el nulo intermedio (aquel
+	nulo que, de entre el resto, está más próximo a la muestra central
+	del intervalo de señal almacenado en memoria) quede alineado con el
+	centro de la representación/el centro del plano.
+
+	He omitido un montón de cosas importantes en la explicación que he
+	hecho más arriba. Primero, que el eje de abscisas de un
+	osciloscopio representa una cantidad de tiempo relativa, la
+	dimensión del eje es fija pero la cantidad de tiempo que representa
+	varía. También tengo que decir que no se puede disparar una señal y
+	dejar parte de la representación en blanco, ¿y otra forma más
+	correcta de decir esto? Como el eje de tiempos representa un
+	periodo de tiempo determinado la duración del fragmento de señal
+	debe ser igual o superior a ese tiempo de lo contrario cuando se
+	represente la señal digital aparecerá parte de la señal cortada
+	como si se hubiese interrumpido y esto no puede hacerse así. Entre
+	otras cosas porque si se desplaza la señal nunca sabe uno donde
+	quedará cortada la señal y si se suceden muy rápidas las imágenes
+	entonces la representación parece confusa. También tenía que
+	mencionar que la representación se hace por sucesión de imágenes de
+	la señal en pantalla, no es una representación estática si no que
+	se actualiza dinámicamente para mostrar los eventos que se producen
+	en la señal. Al sucederse muchas imágenes en pantalla restringidas
+	a cortos periodos de tiempo las transiciones observadas en la señal
+	representada en la pantalla del osciloscopio son suaves (a no ser
+	que sean bruscas también en la señal).
+
+	Podría separar ahora mismo tres conceptos diferentes. Por un lado
+	tengo que decir que el osciloscopio digital puede representar la
+	señal de una forma más versátil que cualquiera de sus alternativas
+	analógicas, y de ese modo compensa el retardo que existe al
+	procesar la señal digital. Después puedo pasar a explicar como se
+	consigue la sensación de movimiento sin entrar mucho en el disparo,
+	pero siguiendo al hilo de la representación disparada, y exponer
+	que consecuencias hay de pasar del movimiento natural logrado en el
+	osciloscopio analógico al movimiento artificial propio de los
+	osciloscopios digitales. Y por último podría hablar de la
+	representación disparada y de por qué es necesario que pueda
+	representar la señal de otra forma. La representación continua se
+	basa en que el refresco entre una imagen y la siguiente se hace en
+	un periodo de tiempo lo suficientemente corto como para que se vea
+	el movimiento también y no haya retardo, entonces se simula que la
+	señal se va desplazando continuamente de derecha a izquierda a
+	medida que pasa el tiempo, de ese modo me ahorro procesar y
+	almacenar muestras para cubrir una ventana completa cuando el eje
+	de tiempos representa un tiempo muy elevado y evito el retardo.
+
+	Al trabajar con señales digitales un osciloscopio digital, al
+	trabajar con señales digitalizadas un osciloscopio digital goza de
+	la gran versatilidad asociada a/relacionada con las tecnologías
+	digitales. Procesando muestras cuantificadas de una señal un
+	osciloscopio digital es capaz de extraer información relativa a la
+	señal como su frecuencia de oscilación o su tensión de pico a pico.
+	Además una señal digital no es más que un conjunto de datos
+	binarios en el que cada muestra alberga información acerca del
+	momento en el que se obtuvo y de la tensión marcada por la señal en
+	ese momento. Lo cual implica que una señal digital puede
+	representarse de muy diversos modos.
+
+	Comportar en la frase anterior queda muy bien, ¿cuáles serán su
+	significado y sus sinónimos?
+
+	Si bien trabajar con señales digitales comporta una serie de
+	desventajas, el osciloscopio digital goza de la gran versatilidad
+	asociada a las tecnologías digitales, lo cual lo convierte en un
+	instrumento muy útil. Procesando muestras cuantificadas de una
+	señal un osciloscopio digital es capaz de extraer información
+	relativa a la señal como, por ejemplo, su frecuencia de oscilación
+	o el recorrido de pico a pico que hace la tensión. Además una señal
+	digital no es más que un conjunto de datos binarios ordenados en el
+	que cada muestra alberga información relativa al instante en el que
+	se toma y la tensión marcada por la señal en ese instante. Sacada
+	de contexto una señal digital puede ser considerada como un
+	conjunto de datos cualesquiera, y puede representarse de muy
+	diversas formas. Esto es clave para evitar que el retardo
+	ocasionado por el tratamiento de la señal digital aumente demasiado
+	y se convierta en un problema.
