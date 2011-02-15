@@ -628,30 +628,33 @@ conclusiones extraídas tras estudiar el osciloscopio digital como modelo
 para el software de control.
 
 
-\subsection{Osciloscopios digitales y retardo}
+\subsection{Osciloscopios digitales}
 
 Un osciloscopio digital es una herramienta que se emplea para visualizar
 señales. Es el sucesor de instrumentos de medida como el osciloscopio
 analógico y el oscilógrafo. A diferencia de estos aparatos de carácter
-analógico, un osciloscopio digital debe muestrear parte de la señal,
-procesar la señal digital resultante y almacenar las muestras en memoria
-antes de poder representar en la pantalla una última versión de la señal
-obtenida por interpolación de dichas muestras. Tratar de representar cada
-muestra según se origina en el conversor analógico digital trae consigo un
-conjunto de complicaciones difíciles de salvar, sin mencionar que ha de
-sacrificarse parte del rendimiento de muestreo, lo que significa que se
-pierde la capacidad de trabajar con señales de gran ancho de banda en
-ausencia de aliasing. El tratamiento de la señal digital conlleva, sin
-embargo, una serie de desventajas, de entre las cuales cabe destacar la
-aparición de un retardo entre la señal que registra la sonda del
-osciloscopio y la señal mostrada por pantalla. El retardo, de ser demasiado
-alto, puede entorpecer el uso del osciloscopio, lo cual no debe ocurrir en
-ningún caso, por tanto, debe mantenerse por debajo de un nivel de umbral.
-El nivel de umbral se elige de forma que por debajo del mismo el retardo no
-puede ser percibido por el ojo humano, lo que a efectos prácticos es lo
-mismo que un retardo inexistente. El control del retardo condiciona el
-funcionamiento del osciloscopio, limitando la cantidad de muestras que
-pueden almacenarse en memoria durante cada ciclo.
+analógico, un osciloscopio digital debe muestrear la señal, procesar la
+señal digital resultante y almacenar las muestras en memoria antes de poder
+representar en la pantalla una última versión de la señal obtenida por
+interpolación de dichas muestras. Tratar de representar cada muestra según
+se origina en el conversor analógico digital trae consigo un conjunto de
+complicaciones difíciles de salvar, sin mencionar que ha de sacrificarse
+parte del rendimiento de muestreo, lo que significa que se pierde la
+capacidad de trabajar con señales de gran ancho de banda en ausencia de
+aliasing. El tratamiento de la señal conlleva, sin embargo, una serie de
+desventajas, de entre las cuales cabe destacar la aparición de un retardo
+entre la señal que registra la sonda del osciloscopio y la señal mostrada
+por pantalla. El retardo, de ser demasiado alto, puede entorpecer el uso
+del osciloscopio, lo cual no debe ocurrir en ningún caso, por tanto, debe
+mantenerse por debajo de un nivel de umbral. El nivel de umbral se elige de
+forma que por debajo del mismo el retardo no puede ser percibido por el ojo
+humano, lo que a efectos prácticos es lo mismo que un retardo inexistente.
+El control del retardo condiciona el funcionamiento del osciloscopio
+digital de modo significativo, de hecho es la razón por la cual un
+osciloscopio digital debe ser capaz de representar señales de dos modos
+diferentes, por este motivo se ha elegido como punto de partida para
+explicar el resto de aspectos relacionados con el comportamiento de este
+dispositivo.
 
 % Los osciloscopios analógicos emplean un tubo de rayos catódicos y un
 % monitor de fósforo para generar una imagen de la señal. El cursor que el
@@ -696,7 +699,17 @@ pueden almacenarse en memoria durante cada ciclo.
 
 \subsection{Representación de la señal}
 
-
+Obviamente un osciloscopio, como cualquier otro aparato, no dispone de
+memoria infinita, además su monitor tiene unas dimensiones limitadas, y por
+si esto fuera poco no es lógico pensar que un usuario puede permanecer
+eternamente contemplando una señal. Por todos estos motivos el
+procedimiento consistente en muestrear la señal, procesar y almacenar en
+memoria la señal digital, y representar, no puede alargarse
+indefinidamente, no puede representarse una señal de duración indeterminada
+toda entera y de una sola vez, si no que periódicamente debe vaciarse el
+buffer de memoria del osciloscopio, despejarse el monitor y empezar de
+nuevo. A cada una de estas operaciones se la puede denominar ciclo de
+refresco.
 
 
 \subsection{Modos de representación en los osciloscopios digitales}\label{subsec:repmodes}
