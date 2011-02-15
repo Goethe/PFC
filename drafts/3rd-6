@@ -541,7 +541,6 @@
 	trabajar directamente a partir de la señal analógica procedente del
 	medio, antes es necesario digitalizar la señal.
 
-
 	El problema es relacionar que tengo que digitalizar la señal con
 	que (tengo que trabajar duro y acabar esta mierda, da igual como
 	esté) al digitalizar la señal pierdo el tiempo real, pierdo el aquí
@@ -557,84 +556,3 @@
 	para que lo note el ojo humano, si es así entonces el retardo es
 	como si no existiera y no hay ningún problema en trabajar así, sólo
 	la ventaja de poder trabajar con señales de alto ancho de banda.
-
-	// EMPIEZA A PARTIR DE AQUÍ //
-
-	Un osciloscopio digital es una herramienta que se emplea para
-	visualizar señales. Es el sucesor de instrumentos de medida como el
-	osciloscopio analógico y el oscilógrafo. A diferencia de estos
-	aparatos de carácter analógico, un osciloscopio digital no puede
-	trabajar directamente a partir de la señal analógica procedente del
-	medio, antes es necesario digitalizar la señal. El proceso de
-	digitalización no es inmediato por lo que un osciloscopio digital
-	no puede representar la señal en tiempo real. El osciloscopio
-	digital no puede representar la señal digital muestra a muestra, el
-	conversor analógico digital trabaja a un ritmo lo suficientemente
-	alto como para que no existan dispositivos capaces de procesar
-	muestras lo suficientemente rápido ni monitores cuya frecuencia de
-	refresco sea lo bastante elevada. Para poder representar una señal
-	digital muestra a muestra ha de sacrificarse gran parte del
-	rendimiento del conversor y esto posibilita la aparición de
-	aliasing incluso cuando se está trabajando con señales de ancho de
-	banda moderado. Por el contrario un osciloscopio digital no dispone
-	de una memoria infinita por lo que no puede almacenarse en memoria
-	una señal de duración indeterminada. En realidad un osciloscopio
-	digital funciona de forma cíclica. Digitaliza fragmentos de señal
-	que almacena en memoria, y cuando dispone de las muestras
-	suficientes las procesa y las representa todas de una vez, forma
-	una figura a partir de una interpolación basada en las muestras
-	almacenadas hasta el momento en memoria, después borra el buffer y
-	empieza de nuevo. Obviamente esta forma de funcionar acarrea un
-	retardo que se da entre lo que ocurre realmente y lo que puede
-	observarse en el monitor del osciloscopio, retardo que corresponde
-	al periodo de tiempo necesario para recopilar las muestras
-	necesarias para la representación.
-
-	// TERMINA AQUÍ Y LEE LAS INDICACIONES A CONTINUACIÓN //
-
-	Cosas que me quedan por explicar:
-
-		- Que yo veo una sucesión de imágenes que al cambiar muy
-		  rápido me da la sensación de movimiento, no es un
-		  movimiento real como en los osciloscopios analógicos
-		  (mejor oscilógrafos), si no un movimiento figurado.
-
-		- Que el retardo debe mantenerse por debajo del umbral de
-		  detección del ojo humano, de lo contrario se entorpece el
-		  uso del osciloscopio y eso no puede ocurrir. Después
-		  tengo que hacer referencia a este retardo para justificar
-		  que un osciloscopio representa de dos formas. La
-		  disparada donde el retardo depende de la configuración
-		  del eje de tiempos y la continua donde el retardo es
-		  fijo.
-
-	Este retardo está sujeto a dos tipos de límites, los teóricos y los
-	prácticos. El límite mínimo teórico es el correspondiente a
-	representar una muestra por ciclo, el máximo teórico el
-	correspondiente a un ciclo de duración infinita. El límite mínimo
-	práctico es el límite que el osciloscopio es capaz de asumir dada
-	su limitada capacidad de procesado, mientras que el límite máximo
-	se fija de modo que el retardo no pueda ser percibido por el ojo
-	humano lo que a efectos prácticos es lo mismo que un retardo
-	inexistente. De hecho, atendiendo al criterio que se sigue para
-	fijar el límite máximo que no debe superar el retardo, representar
-	una señal digital muestra a muestra no tiene sentido pues el ojo no
-	puede percibir la diferencia entre representar muestra a muestra o
-	representar un bloque de muestras, mientras el retardo no exceda el
-	segundo límite propuesto.
-
-	Existen dos límites, el primero es un límite funcional por debajo
-	del cual es imposible funcionar por falta de capacidad de procesado
-	y por falta de monitores que se refresquen lo suficientemente
-	rápido y por falta de sentido común, el ojo no puede percibirlo.
-
-	Durante cada ciclo se muestrea un fragmento de señal de
-	una duración determinada, se almacena la señal digital resultante
-	en memoria, se procesan las muestras, se despeja el monitor del
-	osciloscopio, se representa la señal digital ya procesada y se
-	vacía el buffer de memoria del osciloscopio. Cada ciclo el proceso
-	empieza de nuevo y la imagen generada en un ciclo permanece en
-	pantalla durante el ciclo siguiente hasta que se cambia por una
-	nueva figura. Este modo de funcionamiento conlleva la aparición de
-	un retardo que se mide desde que obtiene la primera muestra que va
-	a formar parte de
