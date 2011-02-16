@@ -1,5 +1,80 @@
 |Miércoles, 16 de Febrero de 2011|
 
+	El osciloscopio digital es un dispositivo que se emplea para
+	visualizar señales, es el sucesor de otros instrumentos como el
+	oscilógrafo y el osciloscopio analógico. Algo importante a tener en
+	cuenta cuando se estudia el osciloscopio digital es que se ha
+	diseñado para conseguir un resultado similar al que se espera de un
+	osciloscopio analógico. La diferencia entre uno y otro reside en la
+	forma en la que se genera un barrido, el osciloscopio analógico
+	dibuja la señal sobre la marcha mientras que el osciloscopio
+	digital digitaliza y almacena la señal digital en memoria antes de
+	representar.
+
+	Un barrido es básicamente una imagen de la señal que abarca toda la
+	pantalla del osciloscopio. Se llama así porque el haz de electrones
+	que emite el tubo de rayos catódicos de un osciloscopio analógico
+	barre literalmente el monitor para formar la imagen (que no es más
+	que la imprenta dejada en el monitor por la acción del fósforo),
+	pero en los osciloscopios digitales no hay barridos como tal, en
+	realidad los osciloscopios digitales utilizan monitores LED en los
+	que los distintos puntos de luz se apagan, o se encienden, o
+	cambian de color, accionados por una señal de control. Cuando
+	muchos barridos se suceden rápidamente se crea la sensación de que
+	la representación de la señal se mueve, aunque no es así, y en los
+	osciloscopios digitales no ocurre así estrictamente/ocurre
+	estrictamente de forma distinta.
+
+	Pero el resultado final es muy similar, a efectos prácticos es el
+	mismo, pues el ojo humano no es capaz de percibir la diferencia y
+	eso en la práctica significa que esa diferencia no existe. Pero si
+	existe diferencia, y esa diferencia se nota en algunos aspectos
+	relacionados con el funcionamiento del osciloscopio digital.
+	Usualmente tanto los osciloscopios digitales como los analógicos
+	hacen barridos disparados de la señal, esto es, empiezan a
+	representar la señal al detectar un evento ---un flanco de subida o
+	de bajada o similar--- en una señal de referencia que puede y
+	acostumbra a ser la propia señal con la que se trabaja. De esa
+	forma se consigue alinear todas las capturas o ciclos de la señal
+	en fase unos con otros y con la señal. Si no se dispara resulta muy
+	difícil observar la señal con el osciloscopio, especialmente si se
+	trata de una señal aperiódica, porque los distintos ciclos
+	representados se superponen y es difícil distinguir la señal
+	correctamente. La diferencia entre los osciloscopios analógicos y
+	digitales se manifiesta especialmente en que el osciloscopio
+	digital empieza a representar la señal cuando detecta el evento y
+	el usuario puede ver como evoluciona, sin embargo, el osciloscopio
+	digital empieza a emph(muestrear) cuando observa el evento y no
+	representa hasta que tiene muestras suficientes como para abarcar
+	toda la dimensión temporal representada en el monitor, es ahí donde
+	se hace evidente el retardo. Imagínese la siguiente situación de
+	ejemplo, se trabaja con una señal que oscila lentamente y se
+	configura la escala temporal para poder observar un periodo
+	completo de la señal en pantalla, como la señal es lenta su periodo
+	es largo, entonces llega el evento y en el osciloscopio analógico
+	empieza a verse la señal apareciendo lentamente desde el margen
+	izquierdo de la pantalla, sin embargo, en el osciloscopio digital
+	no se ve nada y el retardo se hace visible y molesto. El retardo
+	que se produce en situaciones como la expuesta / en las que trata
+	de observarse evoluciones lentas de una señal dificulta el uso de
+	los osciloscopios, pero especialmente el uso de los osciloscopios
+	digitales. Para paliar los efectos del retardo, el osciloscopio
+	digital aprovecha que puede representar los datos que tiene en
+	memoria de otras formas diferentes y, cuando la escala temporal de
+	la representación se configura por encima de un nivel de umbral,
+	simula el comportamiento de los osciloscopios analógicos. En lugar
+	de hacer barridos de la señal, actualiza la pantalla en ciclos
+	cortos añadiendo a la representación fragmentos muy pequeños de
+	señal, cortos en comparación con la dimensión temporal representada
+	en el eje de abscisas. Los fragmentos tienen una duración igual al
+	periodo con el que se refresca el monitor, que es un periodo de
+	refresco fácilmente asumible por el osciloscopio dada la
+	configuración de la escala temporal, pero que es muy difícil de
+	seguir por parte del ojo humano. Cuando opera de este modo, el
+	osciloscopio digital simula que la señal va desplazándose de
+	derecha a izquierda, y el resultado es idéntico al que muestran los
+	osciloscopios digitales.
+
 	Hasta ahora he dicho muchas cosas pero algo importante es que el
 	osciloscopio digital intenta conseguir un resultado similar al
 	esperado de un osciloscopio digital. La diferencia entre uno y otro
@@ -56,4 +131,16 @@
 	esa forma todas las capturas de la señal aparecen alineadas. El
 	coste que se deriva de este algoritmo es una información que se
 	descarta en cada ciclo.
-	los efectos del retardo, el 
+
+	Los efectos del retardo, el
+
+	Me he saltado una cosa muy importante y es explicar que es un
+	barrido, un barrido es básicamente una imagen de la señal que
+	abarca toda la pantalla del osciloscopio. Se llama así porque el
+	haz de electrones que emite el tubo de rayos catódicos de un
+	osciloscopio analógico barre literalmente el monitor para formar
+	la imagen (que no es más que la imprenta dejada en el monitor por
+	la acción del fósforo), pero en los osciloscopios digitales no hay
+	barridos como tal, en realidad los osciloscopios digitales utilizan
+	monitores LED en los que los distintos puntos de luz se apagan o se
+	encienden accionados por una señal de control.
