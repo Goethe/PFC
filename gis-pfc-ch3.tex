@@ -628,366 +628,100 @@ conclusiones extraídas tras estudiar el osciloscopio digital como modelo
 para el software de control.
 
 
-\subsection{Osciloscopios digitales}
+\subsection{El osciloscopio digital}
 
-Un osciloscopio digital es una herramienta que se emplea para visualizar
-señales. Es el sucesor de instrumentos de medida como el osciloscopio
-analógico y el oscilógrafo. A diferencia de estos aparatos de carácter
-analógico, un osciloscopio digital debe muestrear la señal, procesar la
-señal digital resultante y almacenar las muestras en memoria antes de poder
-representar en la pantalla una última versión de la señal obtenida por
-interpolación de dichas muestras. Tratar de representar cada muestra según
-se origina en el conversor analógico digital trae consigo un conjunto de
-complicaciones difíciles de salvar, sin mencionar que ha de sacrificarse
-parte del rendimiento de muestreo, lo que significa que se pierde la
-capacidad de trabajar con señales de gran ancho de banda en ausencia de
-aliasing. El tratamiento de la señal conlleva, sin embargo, una serie de
-desventajas, de entre las cuales cabe destacar la aparición de un retardo
-entre la señal que registra la sonda del osciloscopio y la señal mostrada
-por pantalla. El retardo, de ser demasiado alto, puede entorpecer el uso
-del osciloscopio, lo cual no debe ocurrir en ningún caso, por tanto, debe
-mantenerse por debajo de un nivel de umbral. El nivel de umbral se elige de
-forma que por debajo del mismo el retardo no puede ser percibido por el ojo
-humano, lo que a efectos prácticos es lo mismo que un retardo inexistente.
-El control del retardo condiciona el funcionamiento del osciloscopio
-digital de modo significativo, de hecho es la razón por la cual un
-osciloscopio digital debe ser capaz de representar señales de dos modos
-diferentes, por este motivo se ha elegido como punto de partida para
-explicar el resto de aspectos relacionados con el comportamiento de este
-dispositivo.
-
-% Los osciloscopios analógicos emplean un tubo de rayos catódicos y un
-% monitor de fósforo para generar una imagen de la señal. El cursor que el
-% tubo dibuja en el monitor lo va barriendo de izquierda a derecha con
-% periodicidad, y su posición vertical refleja a cada momento el valor de
-% tensión de la señal eléctrica que entra al osciloscopio. El monitor
-% preserva durante breves instantes una traza del cursor y así se forma la
-% imagen que representa a la señal.
-
-% En la actualidad los osciloscopios analógicos están siendo desplazados en
-% su uso por los osciloscopios digitales. El procedimiento que sigue un
-% osciloscopio digital para representar señales es completamente diferente
-% al que siguen los osciloscopios analógicos. Constantemente el
-% osciloscopio digitaliza la señal en seguimiento, procesa la señal digital
-% resultante y la almacena en memoria. Cada cierto \emph{periodo de
-% refresco} el osciloscopio muestra por pantalla una representación de los
-% datos que previamente ha almacenado durante ese mismo periodo. Mientras
-% se recogen datos para una nueva imagen se mantienen en pantalla los datos
-% correspondientes al periodo anterior. La velocidad con la que se suceden
-% las imágenes en el monitor del osciloscopio hace que se produzca la
-% sensación de movimiento, y de ese modo la representación responde a las
-% variaciones que se producen en la señal. Esto permite observar los
-% eventos que se producen en la señal en determinadas situaciones, como por
-% ejemplo: al accionar un potenciómetro que forma parte de un circuito que
-% está siendo analizado, al cambiar la configuración de un generador de
-% señales para que genere una señal diferente a la que suministraba unos
-% instantes antes, o simplemente al conectar la alimentación.
-
-% El periodo de refresco no es fijo, de lo contrario los datos mostrados en
-% el monitor del osciloscopio aparecerían en exceso comprimidos o
-% expandidos en función de la frecuencia de la señal monitorizada. Puede
-% configurarse el periodo de muestreo para que adopte un valor de entre un
-% rango de valores predeterminados. Debe notarse que al ser posible
-% modificar el valor del periodo de refresco existe la posibilidad de que,
-% en efecto, éste adopte un valor alto. Ésto haría que el retardo que se
-% produce en la sucesión de imágenes aumentase, limitando la capacidad de
-% la representación de seguir los cambios que afectan a la señal. Para
-% impedir que ésto ocurra los osciloscopios digitales implementan un
-% mecanismo por el cual una señal se representa de uno u otro modo en
-% función del valor que toma el periodo de refresco.
-
-
-\subsection{Representación de la señal}
-
-Obviamente un osciloscopio, como cualquier otro aparato, no dispone de
-memoria infinita, además su monitor tiene unas dimensiones limitadas, y por
-si esto fuera poco no es lógico pensar que un usuario puede permanecer
-eternamente contemplando una señal. Por todos estos motivos el
-procedimiento consistente en muestrear la señal, procesar y almacenar en
-memoria la señal digital, y representar, no puede alargarse
-indefinidamente, no puede representarse una señal de duración indeterminada
-toda entera y de una sola vez, si no que periódicamente debe vaciarse el
-buffer de memoria del osciloscopio, despejarse el monitor y empezar de
-nuevo. A cada una de estas operaciones se la puede denominar ciclo de
-refresco.
-
-
-\subsection{Modos de representación en los osciloscopios digitales}\label{subsec:repmodes}
-
-Los osciloscopios digitales tienen la capacidad de representar una señal de
-formas diferentes. Cada forma de representar la señal se conoce en este
-documento como \emph{modo de representación}. Habitualmente los
-osciloscopios digitales cuentan al menos con dos modos de representación.
-Estos dos modos son, tal y como han sido bautizados aquí, el \emph{modo
-disparado} y el \emph{modo continuo}. Los modos de representación continuo
-y disparado forman parte de la solución que los osciloscopios digitales
-adoptan para combatir la situación hipotética en la que un excesivo retardo
-entre cuadros pudiese complicar el seguimiento de la señal.
-
-Para evitar las consecuencias de un retardo alto, un osciloscopio digital
-conmuta al modo de representación continuo cuando el periodo de refresco
-supera los 200 ms, el resto del tiempo permanece en el modo de
-representación disparado. % Para remediar el retardo, un osciloscopio
-% digital conmuta al modo de representación continuo cuando el periodo de
-% refresco supera los 200 ms, el resto del tiempo permanece en el modo de
-% representación disparado.
-
-Para evitar las limitaciones que el modo de representación disparado
-presenta en configuraciones en las que el periodo de refresco toma un valor
-elevado, un osciloscopio conmuta al modo de representación continuo en el
-caso en el que el periodo de refresco supere los 200 ms. Habitualmente el
-osciloscopio digital opera en el modo de representación disparado, que es
-el modo que responde a la descripción funcional que se ha hecho de los
-osciloscopios digitales en este apartado.
-
-
-\subsubsection{Criterios para la selección del modo}
-
-Para evitar que en determinadas configuraciones del eje temporal del
-osciloscopio el retardo sea excesivo, la mayoría de estos dispositivos
-implementan dos modos de funcionamiento: el modo convencional que se aplica
-en situaciones en las que el retardo no se considera importante; y una
-especie de modo continuo. Existen dos criterios que se siguen de manera
-habitual para diferenciar en que momento es más apropiado el uso de uno u
-otro modo.
-
-
-\subparagraph{Criterio de animación}
-
-El primer criterio evalúa el correcto funcionamiento del modo convencional.
-El modo convencional de representación en un osciloscopio requiere que la
-cantidad de imágenes que salen por pantalla cada segundo sea lo suficiente
-grande como para que se simule el movimiento. Por tanto para satisfacer el
-primer criterio, la tasa de refresco del monitor del osciloscopio debe
-superar las veintiséis imágenes por segundo o encontrarse alrededor de esta
-cifra.
-
-
-\subparagraph{Criterio de disparo}
-
-El segundo criterio está relacionado con la función de disparo que se da en
-el modo convencional de representación. Para poder efectuar correctamente
-el disparo sobre señales de baja frecuencia, al generar cada imagen el
-osciloscopio debe haber registrado al menos un ciclo de la señal
-pertinente\footnote{En la práctica se necesita algo más de un ciclo de una
-señal para poder garantizar el correcto disparo de ésta. Sin embargo, es
-común conseguir disparar una señal aunque la configuración del eje de
-tiempos del osciloscopio permita sólo obtener una fracción del ciclo
-completo de esa señal durante la realización de cada imagen.}. Lo cual
-reduce la tasa mínima de refresco a la frecuencia de la señal más lenta que
-se desee representar de forma correcta en el modo convencional de
-representación del osciloscopio.
-
-Como puede verse el segundo criterio es más restrictivo pues depende de la
-frecuencia de la señal y ésta puede ser en efecto inferior a un hercio, es
-por ello que se emplea habitualmente. Siendo así, la tasa de refresco
-mínima que se permite en el modo convencional en la gran mayoría de
-dispositivos y que se ha adoptado para el software de control, es de cinco
-imágenes por segundo (5 Hz). Cuando se configura un osciloscopio en el modo
-convencional para que trabaje a esta tasa de refresco es habitual poder
-visualizar señales de frecuencia cercana a 1 Hz, sin embargo la
-representación se optimiza para configuraciones en las que el osciloscopio
-muestra, al menos, veinticinco imágenes por segundo, lo cual es apropiado
-para señales con una frecuencia mínima de 50 Hz. Si la configuración del
-eje de tiempos del osciloscopio obligara al dispositivo a trabajar con una
-frecuencia de refresco inferior a la especificada, automáticamente conmuta
-para funcionar en el modo continuo.
-
-
-\subsubsection{Modos de representación}
-
-Una vez visto cual es la frecuencia umbral a la que el dispositivo conmuta
-entre los dos modos, debe explicarse que diferencia un modo de
-funcionamiento de otro. Para ello se expone a continuación cuales son los
-fundamentos de uno y otro modo.
-
-
-\subparagraph{Modo continuo}
-
-La representación en \emph{modo continuo} es, por decirlo así,
-ininterrumpida. La imagen de la señal de interés se desplaza de derecha
-izquierda a medida que transcurre el tiempo. Para lograr este efecto se
-aumenta la frecuencia de refresco a expensas de que, como es sabido, el
-fragmento de señal obtenido para cada imagen no puede cubrir la pantalla al
-completo. Ocurre así por que la frecuencia de refresco es muy alta para el
-eje temporal, que en este caso representa un periodo tiempo relativamente
-alto. Por consiguiente, en el intervalo en el que una imagen de la señal da
-paso a la siguiente en la ventana del osciloscopio, no transcurre el tiempo
-suficiente como para captar un fragmento de señal de duración igual a la
-abarcada por el eje de tiempos.
-
-Las figuras \cref{fig:freesignalcont,fig:modconti} muestran con detalle
-estos aspectos del modo de representación continuo. En la
-\cref{fig:freesignalcont} aparece la señal que entra en el osciloscopio, se
-muestran además unas marcas de tiempo que indican los instantes en los que
-la imagen que muestra el osciloscopio cambia\footnote{Se ha considerado el
-\emph{periodo de refresco} de la ventana del osciloscopio igual a la suma
-de la \emph{ventana de adquisición} y un \emph{periodo de inactividad} en
-la adquisición ocupado por el procesado de las muestras. La ventana de
-adquisición es equivalente a la cantidad de tiempo que el sistema necesita
-para adquirir un fragmento de señal suficiente para cubrir una porción del
-eje de tiempos (en el caso del modo de funcionamiento continuo) o para
-cubrir el eje de tiempos por completo más las muestras de descarte (en el
-modo disparado). El periodo de inactividad es igual al tiempo requerido
-para procesar el fragmento de señal adquirido en el espacio de una ventana
-de adquisición.}. La \cref{fig:modconti} muestra cual es el aspecto del
-osciloscopio en dos instantes posteriores al instante inicial en el que
-empieza a monitorizarse la señal.
+El osciloscopio digital es un dispositivo que se emplea para visualizar
+señales, es el sucesor de otros instrumentos como el oscilógrafo y el
+osciloscopio analógico. Algo importante a tener en cuenta cuando se estudia
+el osciloscopio digital es que se ha diseñado para conseguir un resultado
+similar al que se espera de un osciloscopio analógico. La diferencia entre
+uno y otro reside en la forma en la que se genera un barrido, el
+osciloscopio analógico dibuja la señal sobre la marcha mientras que el
+osciloscopio digital digitaliza y almacena la señal digital en memoria
+antes de representar. Un barrido es básicamente una imagen de la señal que
+abarca toda la pantalla del osciloscopio. Se llama así porque el haz de
+electrones que emite el tubo de rayos catódicos de un osciloscopio
+analógico barre literalmente el monitor para formar la imagen (que no es
+más que la imprenta dejada en el monitor por la acción del fósforo); pero
+en los osciloscopios digitales no hay barridos como tal, en realidad los
+osciloscopios digitales utilizan monitores \sig{led} en los que los
+distintos puntos de luz se apagan, o se encienden, o cambian de color,
+accionados por una señal de control. Cuando muchos barridos se suceden
+rápidamente se crea la sensación de que la representación de la señal se
+mueve, aunque no es así, y en los osciloscopios digitales la representación
+es estrictamente estática. Pero el resultado final es muy similar, a
+efectos prácticos es el mismo, pues el ojo humano no es capaz de percibir
+la diferencia y eso en la práctica significa que esa diferencia no existe.
+Pero si existe diferencia, y esa diferencia se nota en algunos aspectos
+relacionados con el funcionamiento del osciloscopio digital. Usualmente
+tanto los osciloscopios digitales como los analógicos hacen barridos
+disparados de la señal, esto es, empiezan a representar la señal al
+detectar un evento ---un flanco de subida o de bajada o similar--- en una
+señal de referencia que puede y acostumbra a ser la propia señal con la que
+se trabaja. De esa forma se consigue alinear todas las capturas o ciclos de
+la señal en fase unos con otros y con la señal. Si no se dispara resulta
+muy difícil observar la señal con el osciloscopio, especialmente si se
+trata de una señal aperiódica, porque los distintos ciclos representados se
+superponen y es difícil distinguir la señal correctamente. La diferencia
+entre los osciloscopios analógicos y digitales se manifiesta especialmente
+en que el osciloscopio digital empieza a representar la señal cuando
+detecta el evento y el usuario puede ver como evoluciona, sin embargo, el
+osciloscopio digital empieza a \emph{muestrear} cuando observa el evento y
+no representa hasta que tiene muestras suficientes como para abarcar toda
+la dimensión temporal representada en el monitor, es ahí donde se hace
+evidente un retardo. Imagínese la siguiente situación, por ejemplo: se
+trabaja con una señal que oscila lentamente y se configura la escala
+temporal del osciloscopio para poder observar un periodo completo de la
+señal en pantalla, como la señal es lenta su periodo es largo, entonces
+llega el evento y en el osciloscopio analógico empieza a verse la señal
+apareciendo lentamente desde el margen izquierdo de la pantalla, sin
+embargo, en el osciloscopio digital no se ve nada y el retardo se hace
+visible y molesto. El retardo que se produce en situaciones como la
+expuesta, en las que trata de observarse evoluciones lentas de una señal,
+dificulta el uso de los osciloscopios, pero especialmente el uso de los
+osciloscopios digitales.  Para paliar los efectos del retardo, el
+osciloscopio digital aprovecha que puede representar los datos que tiene en
+memoria de otras formas diferentes y, cuando la escala temporal de la
+representación se configura por encima de un nivel de umbral, simula el
+comportamiento de los osciloscopios analógicos. En lugar de hacer barridos
+de la señal, actualiza la pantalla en ciclos cortos añadiendo a la
+representación fragmentos muy pequeños de señal, cortos en comparación con
+la dimensión temporal representada en el eje de abscisas. Los fragmentos
+tienen una duración igual al periodo con el que se refresca el monitor, que
+es un periodo de refresco fácilmente asumible por el osciloscopio dada la
+configuración de la escala temporal, pero que es muy difícil de seguir por
+parte del ojo humano. Cuando opera de este modo, el osciloscopio digital
+simula que la señal va desplazándose de derecha a izquierda, y el resultado
+es idéntico al que muestran los osciloscopios digitales. Las
+\vref{fig:sigmodcont,fig:firmodcont,fig:desmodcont} ilustran este
+comportamiento.
 
 \begin{figure}
 	\begin{center}
 		\includegraphics{gis-pfc-ch3-04.mps}
 	\end{center}
-	\caption[Fragmentos de señal ordenados según el orden en el que
-	llegan al sistema]{Fragmentos de señal ordenados según el orden en
-	el que llegan al sistema. Cada instante marcado se encuentra
-	separado de los adyacentes por un periodo de refresco. Debe
-	recordarse que el modo de funcionamiento continuo se emplea en la
-	monitorización de señales lentas, por lo que el periodo de
-	inactividad es en este caso despreciable frente a la duración de la
-	ventana de adquisición.}
-	\label{fig:freesignalcont}
+	\caption[Señal analógica, representación continua]{Señal analógica
+	vista desde la sonda del osciloscopio, se han marcado los instantes
+	en los que se refresca el monitor del osciloscopio.}
+	\label{fig:sigmodcont}
 \end{figure}
 
 \begin{figure}
 	\begin{center}
 		\includegraphics{gis-pfc-ch3-05.mps}
 	\end{center}
-	\caption[Dos líneas de prueba]{Dos líneas de texto de prueba para
-	comprobar como cambia la estructura del documento si lo comprimo un
-	poquito.}
-% 	\caption[<++>]<++>{}<++>
-% 	\caption[Modo de funcionamiento continuo]{Puede observarse como la
-% 	llegada de un nuevo fragmento de señal al sistema en el instante
-% 	$t_2$ desplaza el fragmento previamente representado en la ventana
-% 	del osciloscopio una periodo de refresco a la derecha.}
-	\label{fig:modconti}
+	\caption[Evolución de la representación]{Evolución de la
+	representación durante los dos primeros <<barridos>>. Los
+	fragmentos de señal representados son más cortos.}
+	\label{fig:firmodcont}
 \end{figure}
-
-En el instante $t_1$ el fragmento de señal que se ha digitalizado aparece
-en el extremo derecho de la representación, el resto se deja en blanco. En
-cada nuevo fotograma se desplazan los fragmentos de señal representados
-hasta el momento el suficiente espacio hacia la izquierda como para
-incorporar un nuevo fragmento de señal. Así la porción de señal
-representada aumenta cada vez más hasta que el extremo izquierdo de la
-figura alcanza el margen izquierdo de la ventana del osciloscopio. Cuando
-esto ocurre, empieza un desplazamiento cíclico, al incorporar un nuevo
-fragmento de señal a la derecha se retira un fragmento de la misma
-proporción temporal al otro extremo. Este fenómeno bien puede observarse en
-la \cref{fig:modcontii}, en el ejemplo el eje temporal es equivalente a
-cinco ventanas de adquisición, la llegada de un sexto fragmento de señal al
-sistema conduce al inicio de la representación cíclica.
 
 \begin{figure}
 	\begin{center}
 		\includegraphics{gis-pfc-ch3-06.mps}
 	\end{center}
-	\caption[Dos líneas de prueba]{Dos líneas de texto de prueba para
-	comprobar como cambia la estructura del documento si lo comprimo un
-	poquito.}
-% 	\caption[Modo de funcionamiento continuo]{La ventana temporal %
-% 	tiene, en este ejemplo, una duración de cinco ventanas de %
-% 	adquisición. Al llegar al sistema el sexto fragmento de señal, la %
-% 	representación avanza a la derecha retirándose el primer fragmento %
-% 	representado para dar cabida al fragmento obtenido recientemente.}
-	\label{fig:modcontii}
-\end{figure}
-
-La alta tasa con la que aparecen las imágenes por pantalla garantizan que
-la representación siga casi en tiempo real ---por lo menos así lo percibe
-el ojo humano--- a la señal verdadera. Debe notarse, no obstante, que este
-método de representación no es adecuado para señales de alta frecuencia
-pues aunque el eje temporal abarque un tiempo mayor, la dimensión del
-monitor obviamente no varía y las señales de alta frecuencia aparecerán en
-exceso comprimidas.
-
-
-\subparagraph{Modo convencional}
-
-El \emph{modo convencional} de representación es algo más complicado. La
-representación convencional basa su funcionamiento en imágenes que muestran
-fragmentos de señal que cubren la dimensión temporal de la ventana del
-osciloscopio y que se suceden unas a otras con presteza. La idea que
-persigue este método es la de conseguir algo semejante a una película de la
-señal. Para ello, no es sólo suficiente con que aparezcan muchas imágenes
-por segundo en el monitor del osciloscopio, esas imágenes deben estar de
-algún modo relacionadas entre sí. Si las imágenes que aparecen en el
-monitor son de forma consecutiva muy diferentes es probable que no pueda
-discernirse nada claro, y en ese caso de nada vale la representación.
-
-Ahí es donde entra en juego el procesado y la función de disparo de un
-osciloscopio digital. Cuando un fragmento suficientemente largo como para
-cubrir la ventana de representación se digitaliza y se almacena en memoria,
-empieza el procesado digital del mismo. El propósito del procesado es, ente
-otras cosas, eliminar las posible componente en continua, averiguar
-información adicional de la señal en la medida de lo posible, como p. ej.
-su valor de pico a pico, o implementar la función de disparo. La función de
-disparo del osciloscopio persigue alinear los ejes verticales de la ventana
-donde se representa con los cruces de la señal con respecto a un
-determinado valor de umbral que puede ser configurado por el usuario. La
-idea es alinear al menos el cruce más centrado de cada fragmento de señal
-con el eje de abscisas que corta en dos mitades la ventana. Para
-conseguirlo, durante el procesado se detectan todos los cortes de la señal
-con el umbral y después se desplaza el fragmento de señal para que el corte
-más centrado case con el eje de abscisas. Si la señal es periódica las
-variaciones entre un fotograma y el siguiente serán mínimas, puesto que
-ambos estarán alineados, y se simulará con éxito el movimiento.
-
-No obstante, la necesidad de desplazar el fragmento de señal que va a
-representarse presenta un inconveniente importante. Para poder desplazar el
-fragmento de señal y que se cubra completamente la ventana del osciloscopio
-su duración debe ser superior al tiempo reflejado en el eje de tiempos de
-la ventana. De lo contrario la señal aparecerá truncada, se mostrará un
-espacio en blanco y con una tasa de refresco alta la visualización será
-confusa. Desplazar fragmentos de señal implica dos cosas: por un lado el
-osciloscopio debe esperar más tiempo para refrescar la pantalla, es decir,
-se reduce la tasa de refresco para una misma configuración del eje de
-tiempos; y por otro, al tener para representar un fragmento de señal de
-mayor duración que la reflejada por el eje temporal de la ventana parte del
-fragmento queda ahora fuera de la representación.
-
-Este inconveniente se ve paliado por el hecho de que el modo convencional
-contempla en principio trabajar con señales de alta frecuencia. Estas
-señales cambian de forma tan rápida que de no ser por el disparo sería
-imposible observar los cambios. Por otro lado puede seleccionarse que
-información que se muestra por pantalla accionando un control de
-desplazamiento temporal o modificando el valor de umbral de disparo y,
-generalmente, la pérdida de información a causa del disparo no es
-significativa.
-
-Para terminar este apartado se han adjuntado las
-\cref{fig:freesignaltrig,fig:modtrig} que muestran los distintos aspectos
-del modo disparado de funcionamiento del osciloscopio que se han expuesto
-aquí. La \cref{fig:freesignaltrig} muestra la señal que entra al sistema,
-se han marcado los instantes en los que se suceden los eventos más
-relevantes en la representación de un fragmento de señal. También se
-muestran el nivel de umbral y la porción de fragmento de señal que coincide
-con las muestras descartadas. Otra figura, la \cref{fig:modtrig} muestra
-cual es el resultado de representar el fragmento de señal en la ventana del
-osciloscopio.
-
-\begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch3-02.mps}
-	\end{center}
-	\caption[Fragmento de señal adquirido por el osciloscopio en el
-	espacio de una ventana de adquisición]{Fragmento de señal adquirido
-	por el osciloscopio en el espacio de una ventana de adquisición. En
-	esta figura se ha representado también la duración de la ventana
-	temporal del osciloscopio, pudiendo observarse que información se
-	descarta. También se indica el instante en el que se inicia una
-	nueva instancia del proceso de adquisición, de lo que puede
-	deducirse que información se pierde entre instancias. Los cortes de
-	la señal con el nivel de disparo también están representados.}
-	\label{fig:freesignaltrig}
-\end{figure}
-
-\begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch3-03.mps}
-	\end{center}
-	\caption[Modo de funcionamiento disparado]{Modo de funcionamiento
-	disparado. La representación se centra en el corte central (veáse
-	la \vref{fig:freesignaltrig}).}
-	\label{fig:modtrig}
+	\caption[Desplazamiento de la representación]{En esta figura puede
+	verse como la representación se desplaza hacia la izquierda cuando
+	ya ocupa toda la dimensión horizontal del monitor.}
+	\label{fig:desmodcont}
 \end{figure}
