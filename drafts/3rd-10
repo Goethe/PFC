@@ -1,0 +1,59 @@
+|Miércoles, 16 de Febrero de 2011|
+
+	Hasta ahora he dicho muchas cosas pero algo importante es que el
+	osciloscopio digital intenta conseguir un resultado similar al
+	esperado de un osciloscopio digital. La diferencia entre uno y otro
+	reside en la forma en la que se crea la imagen, el osciloscopio
+	analógico dibuja la señal sobre la marcha, mientras que el
+	osciloscopio digital digitaliza y almacena la señal en memoria
+	antes de representar. Pero el resultado final es muy similar,
+	podría decirse que el mismo, pues el ojo humano no es capaz de
+	percibir la diferencia y eso a efectos prácticos es lo mismo que si
+	esa diferencia no existiera. Pero si existe diferencia, y eso se
+	nota en algunos aspectos del funcionamiento del osciloscopio
+	digital. Habitualmente tanto los osciloscopios digitales como los
+	analógicos hacen barridos disparados de la señal, esto es, empiezan
+	a representar la señal cuando detectan un evento en una señal de
+	referencia, señal que acostumbra a ser la señal con la que se
+	trabaja. De esa forma se consigue que todas las capturas de la
+	señal aparecen alineadas, en fase unas con otras y con la señal. Si
+	no se hiciese esto resultaría muy difícil observar una señal,
+	especialmente si ésta fuese aperiódica, con el osciloscopio. La
+	diferencia está en que el osciloscopio analógico empieza a
+	representar la señal cuando detecta el evento y hasta que llega al
+	final de la pantalla, de izquierda a derecha, el osciloscopio
+	digital empieza a MUESTREAR cuando recibe el evento y no representa
+	hasta que tiene muestras suficientes como para abarcar toda la
+	dimensión temporal del monitor, ahí se hace evidente el retardo. Si
+	la señal es muy lenta, si la escala del eje de tiempos muestra que
+	la dimensión temporal del eje representa un periodo de tiempo
+	elevado, entonces en el osciloscopio analógico empieza a verse la
+	señal apareciendo lentamente desde el margen izquierdo de la
+	pantalla, sin embargo, en el osciloscopio digital no se ve nada y
+	el retardo se hace molesto. Es molesto en ambos casos pero en el
+	osciloscopio digital más aún, para paliar los efectos del retardo
+	el osciloscopio aprovecha que puede representar los datos que tiene
+	en memoria de otras formas diferentes y simula como si estuviese
+	representando del mismo modo que hace el osciloscopio analógico. El
+	eje de tiempos representa un periodo de tiempo muy elevado, si el
+	osciloscopio actualiza la pantalla en ciclos cortos añadiendo a la
+	representación fragmentos muy pequeños de señal, parece que la
+	señal se está desplazando por el monitor como ocurre en el
+	osciloscopio analógico.
+
+	Esta forma de actuar debe llevarse a cabo también en el software de
+	control pero implementar un disparo como tal es complicado. Por
+	eso, se ha implementado una solución aproximada al barrido
+	disparado. En lugar de empezar a muestrear a partir de un evento,
+	de un pulso o similar en una señal auxiliar o en la propia señal,
+	se muestrea la señal, y cuando ha transcurrido el suficiente tiempo
+	como para disponer de bastantes muestras como para cubrir una
+	ventana temporal y media (se llama ventana temporal al tiempo que
+	representa el eje de tiempos en cada momento), entonces se procesan
+	las muestras y además de eliminar la componente en continua se
+	detectan los nulos de la señal y se alinea el más próximo a la
+	muestra central del intervalo con el cero del plano cartesiano. De
+	esa forma todas las capturas de la señal aparecen alineadas. El
+	coste que se deriva de este algoritmo es una información que se
+	descarta en cada ciclo.
+	los efectos del retardo, el 
