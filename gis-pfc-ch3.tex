@@ -628,7 +628,7 @@ conclusiones extraídas tras estudiar el osciloscopio digital como modelo
 para el software de control.
 
 
-\subsection{El osciloscopio digital}
+\subsection{El osciloscopio digital}\label{subsec:digosc}
 
 El osciloscopio digital es un dispositivo que se emplea para visualizar
 señales, es el sucesor de otros instrumentos como el oscilógrafo y el
@@ -639,10 +639,10 @@ uno y otro reside en la forma en la que se genera un barrido, el
 osciloscopio analógico dibuja la señal sobre la marcha mientras que el
 osciloscopio digital digitaliza y almacena la señal digital en memoria
 antes de representar. Un barrido es básicamente una imagen de la señal que
-abarca toda la pantalla del osciloscopio. Se llama así porque el haz de
+abarca toda la pantalla del osciloscopio, se llama así porque el haz de
 electrones que emite el tubo de rayos catódicos de un osciloscopio
 analógico barre literalmente el monitor para formar la imagen (que no es
-más que la imprenta dejada en el monitor por la acción del fósforo); pero
+más que la imprenta dejada en el monitor por la acción del fósforo). Pero
 en los osciloscopios digitales no hay barridos como tal, en realidad los
 osciloscopios digitales utilizan monitores \sig{led} en los que los
 distintos puntos de luz se apagan, o se encienden, o cambian de color,
@@ -664,12 +664,12 @@ muy difícil observar la señal con el osciloscopio, especialmente si se
 trata de una señal aperiódica, porque los distintos ciclos representados se
 superponen y es difícil distinguir la señal correctamente. La diferencia
 entre los osciloscopios analógicos y digitales se manifiesta especialmente
-en que el osciloscopio digital empieza a representar la señal cuando
+en que el osciloscopio analógico empieza a representar la señal cuando
 detecta el evento y el usuario puede ver como evoluciona, sin embargo, el
 osciloscopio digital empieza a \emph{muestrear} cuando observa el evento y
 no representa hasta que tiene muestras suficientes como para abarcar toda
 la dimensión temporal representada en el monitor, es ahí donde se hace
-evidente un retardo. Imagínese la siguiente situación, por ejemplo: se
+evidente un retardo. Imagínese la siguiente situación por ejemplo: se
 trabaja con una señal que oscila lentamente y se configura la escala
 temporal del osciloscopio para poder observar un periodo completo de la
 señal en pantalla, como la señal es lenta su periodo es largo, entonces
@@ -679,7 +679,7 @@ embargo, en el osciloscopio digital no se ve nada y el retardo se hace
 visible y molesto. El retardo que se produce en situaciones como la
 expuesta, en las que trata de observarse evoluciones lentas de una señal,
 dificulta el uso de los osciloscopios, pero especialmente el uso de los
-osciloscopios digitales.  Para paliar los efectos del retardo, el
+osciloscopios digitales. Para paliar los efectos del retardo, el
 osciloscopio digital aprovecha que puede representar los datos que tiene en
 memoria de otras formas diferentes y, cuando la escala temporal de la
 representación se configura por encima de un nivel de umbral, simula el
@@ -710,9 +710,9 @@ comportamiento.
 	\begin{center}
 		\includegraphics{gis-pfc-ch3-05.mps}
 	\end{center}
-	\caption[Evolución de la representación]{Evolución de la
-	representación durante los dos primeros <<barridos>>. Los
-	fragmentos de señal representados son más cortos.}
+	\caption[Evolución que sufre la representación]{Evolución de la
+	representación cuando aún no abarca la dimensión horizontal del
+	monitor.}
 	\label{fig:firmodcont}
 \end{figure}
 
@@ -720,8 +720,88 @@ comportamiento.
 	\begin{center}
 		\includegraphics{gis-pfc-ch3-06.mps}
 	\end{center}
-	\caption[Desplazamiento de la representación]{En esta figura puede
-	verse como la representación se desplaza hacia la izquierda cuando
-	ya ocupa toda la dimensión horizontal del monitor.}
+	\caption[Desplazamiento que experimenta la
+	representación]{Desplazamiento que experimenta la representación
+	una vez ocupa toda la pantalla del osciloscopio.}
 	\label{fig:desmodcont}
 \end{figure}
+
+\subsubsection{Barrido disparado}
+
+Implementar un barrido disparado mediante software directamente en la
+aplicación de control es complicado teniendo en cuenta la configuración del
+sistema de medida. Podría hacerse por hardware, sería necesario generar una
+señal de reloj mediante un circuito externo. El circuito requiere de tres
+componentes, uno que genera un tren de pulsos rectangulares de frecuencia
+100 kHz que se activa y se detiene por flanco de bajada o subida y que
+marca el muestreo, otro que genera el flanco que activa el tren de pulsos
+cuando la señal de trabajo efectúa una transición de tensión negativa a
+tensión positiva y, por último, otro que genera el flanco que detiene el
+tren de pulsos. Como señal que detiene el tren de pulsos es necesario un
+tren de flancos, pulsos estrechos, cuyo periodo depende de la escala
+temporal de la ventana donde se representa la señal. Dependiendo de la
+configuración de este parámetro puede cambiarse el valor de tensión que
+sale por uno de los puertos de salida analógica de la \kpci{}, y en función
+de esta tensión generar una señal en la que el \emph{duty cycle} varía y la
+duración del estado alto se mantiene. El flanco que detiene el muestreo
+puede monitorizarse para averiguar cuando debe la aplicación extraer las
+muestras del buffer de memoria asociado a la tarjeta y debe empezar a
+procesarlas. La señal de reloj debe pasarse a la tarjeta por el puerto
+\textsc{j1}, puerto que puede utilizarse como fuente de reloj hardware
+externo, y debe configurarse la tarjeta apropiadamente mediante las
+propiedades del objeto dispositivo correspondiente en \matlab{}.
+
+Diseñar el circuito y realizar la configuración correspondiente requiere de
+un gran esfuerzo por lo que el problema de implementar barridos por disparo
+en el software de control se ha atajado empleando una solución aproximada.
+En lugar de empezar a muestrear a partir de un evento, de un pulso o de un
+flanco en una señal auxiliar o en la propia señal, se muestrea la señal, y
+cuando ha transcurrido el suficiente tiempo como para disponer de bastantes
+muestras como para cubrir dos ventanas temporales (en este documento se
+llama ventana temporal al tiempo que representa el eje de tiempos en cada
+momento), entonces se procesan las muestras y además de eliminar la
+componente en continua se detectan los nulos de la señal. Después se alinea
+el más próximo de los nulos a la muestra central del intervalo con el cero
+del plano cartesiano. De esa forma todas las capturas de la señal aparecen
+alineadas. Las \cref{fig:sigmodtri,fig:repmodtri} muestran cual es el
+resultado de utilizar este algoritmo.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-02.mps}
+	\end{center}
+	\caption[Representación de barridos por disparo]{En esta figura se
+	muestran las distintas ventanas que intervienen en la solución
+	aproximada utilizada para implementar la representación de barridos
+	activados por disparo en el software de control. Puede apreciarse
+	la información que se descarta en cada ciclo.}
+	\label{fig:sigmodtri}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-03.mps}
+	\end{center}
+	\caption[Representación del fragmento de señal]{Fragmento de señal
+	representado centrado en el cero del plano cartesiano.}
+	\label{fig:repmodtri}
+\end{figure}
+
+El coste que se deriva de utilizar un algoritmo como este para obtener
+barridos disparados de la señal es la información que se descarta en cada
+ciclo, al desplazar la señal todo lo que queda fuera de la ventana no se
+representa, con lo que parte de la información capturada es descartada. En
+la \cref{fig:sigmodtri} puede observarse el instante $t_0$, instante en el
+que empieza el proceso de adquisición, el instante $t_0 + T$ que representa
+el momento en el que este proceso termina. Por tanto, el fragmento de señal
+contenido entre estos dos instantes se encuentra digitalizado y almacenado
+en memoria en el momento en que empiezan a procesarse las muestras,
+inmediatamente después de $t_0 + T$. Sin embargo, después de desplazar la
+señal todo aquello que queda fuera de la ventana temporal se descarta y
+nunca llega a representarse. Además durante el tiempo en el que el software
+procesa y representa la señal digital, desde $t_0 + T$ hasta $t_1$, no se
+muestrea, por lo que el fragmento de señal que transcurre en esos instantes
+también pasa inadvertido al usuario. Todo ello puede contribuir a que
+ciertos eventos ocurridos en la señal se pierdan ocasionalmente, sin
+embargo, esta solución ha dado hasta el momento muy buenos resultados, tal
+y como se demuestra en el \cref{chap:part1conclusions}.
