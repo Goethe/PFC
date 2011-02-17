@@ -63,7 +63,8 @@ velocidad de propagación de las ondas ultrasónicas en dicho medio $c$.
 \end{equation}
 
 
-\section{Campo acústico generado por un transductor}\label{sec:field}
+\section{Campo acústico generado por un transductor de
+ultrasonidos}\label{sec:field}
 
 La excitación eléctrica de un transductor produce una onda de presión que
 se propaga en el medio siguiendo las leyes físicas de la propagación de
@@ -136,8 +137,8 @@ transductor y su profundidad depende de la duración de los pulsos
 acústicos.
 
 
-\section{Técnicas empleadas en las inspecciones ultrasónicas}%
-	\label{sec:technics}
+\section{Técnicas empleadas en las inspecciones ultrasónicas, en
+\protect{\textbf{\textsc{endus}}}}\label{sec:technics}
 
 Atendiendo a la situación del receptor en los ensayos no destructivos
 mediante ultrasonidos se distinguen dos técnicas: la técnica de pulso"=eco
@@ -467,9 +468,12 @@ convolución.
 \end{figure}
 
 \begin{equation}
-	Y(\omega) = j\omega\rho_0\cdot U(\omega)\cdot H_{te}(\omega)\cdot
-	H^2_d(z, \omega)\cdot A^2(z, \omega)\cdot H_r(\omega)\cdot
-	H_{tr}(\omega)
+	\begin{split}
+		Y(\omega) = j\omega\rho_0& \cdot U(\omega)\cdot
+		H_{te}(\omega)\cdot H^2_d(z, \omega)\cdot
+		A^2(z, \omega)\cdot \\
+		&\cdot H_r(\omega)\cdot H_{tr}(\omega)
+	\end{split}
 	\label{eq:transference}
 \end{equation}
 
@@ -623,10 +627,10 @@ depende del material.
 	\label{eq:dispersionloss}
 \end{equation}
 
-Mediante esta expresión y la \cref{eq:independentloss}, aplicando la
-\cref{eq:losscoefficient}, es posible calcular el coeficiente de atenuación
-debido a la dispersión, $\alpha_s$, en la región de Rayleigh, en la que
-$D\ll\lambda$. Empleando deducciones semejantes puede obtenerse el
+Mediante esta expresión y la \cref{eq:independentloss}, aplicando después
+la \cref{eq:losscoefficient}, es posible calcular el coeficiente de
+atenuación debido a la dispersión, $\alpha_s$, en la región de Rayleigh, en
+la que $D\ll\lambda$. Empleando deducciones semejantes puede obtenerse el
 coeficiente de atenuación en distintas situaciones de tamaño de grano y
 longitud de onda.
 
@@ -870,7 +874,7 @@ Por un lado está la configuración del banco de filtros, a destacar dos
 aspectos:
 
 \begin{itemize}
-	\item El tipo de filtro empleado. Según afirma M.\,A.  Izquierdo
+	\item El tipo de filtro empleado. Según afirma M.\,A. Izquierdo
 		(en \cite{garcia2000mrsr}), trabajos realizados a
 		principios de los noventa como los de P.\,Karpur apuntan a
 		la existencia de una relación entre el factor de forma de
