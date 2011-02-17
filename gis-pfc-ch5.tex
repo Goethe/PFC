@@ -736,32 +736,29 @@ estuviesen situados en la misma posición.
 La dificultad que conlleva implementar las técnicas anteriormente descritas
 ha contribuido a la proliferación de técnicas que a partir de una única
 traza sacan partido de las diferencias estadísticas que existen entre la
-señal que procede de un defecto y el ruido estructural.
-
-Dentro de esta categoría el algoritmo que ha alcanzado un éxito mayor y en
-consecuencia se ha convertido en el paradigma de las técnicas de reducción
-de ruido estructural se conoce como técnica de partición espectral o del
-inglés \emph{Split Spectrum Processing} (\psig{ssp}) y fue en inicio
-propuesto por Vernon Newhouse en 1982. El algoritmo está basado en la
-explotación de la seudo"=diversidad frecuencial que existe entre las
-diferentes trazas de banda estrecha que se obtienen al descomponer con un
-banco de filtros paso banda la señal resultante tras un ensayo. No obstante
-los excelentes resultados encontrados utilizando esta técnica, la gran
-sensibilidad que muestra el algoritmo a la sintonía de los principales
-parámetros que definen su comportamiento lo convierten en escasamente
-robusto. A consecuencia de esto han aparecido numerosas publicaciones que
-se circunscriben a proporcionar configuraciones del algoritmo que
-proporcionen resultados óptimos, alternativamente aparecen también
-variaciones del \sig{ssp} que persiguen mejorarlo.
-
-A pesar de su éxito, el \sig{ssp} no es el único método empleado con el
-objetivo de sustraer el ruido de grano de la señal de interés de un
-\sig{endus}. Otros trabajos incluyen, la estimación de máxima
-verosimilitud, técnicas de filtrado paso"=banda que eliminan la mitad
-superior del espectro de la señal, técnicas tiempo"=frecuencia como son la
-transformada de Wigner"=Ville o las Wavelet, técnicas que sacan partido de
-la información que aporta el retardo de grupo, técnicas no lineales y,
-finalmente, técnicas de ruido residual.
+señal que procede de un defecto y el ruido estructural. Dentro de esta
+categoría el algoritmo que ha alcanzado un éxito mayor y en consecuencia se
+ha convertido en el paradigma de las técnicas de reducción de ruido
+estructural se conoce como técnica de partición espectral o del inglés
+\emph{Split Spectrum Processing} (\psig{ssp}) y fue en inicio propuesto por
+Vernon Newhouse en 1982. El algoritmo está basado en la explotación de la
+seudo"=diversidad frecuencial que existe entre las diferentes trazas de
+banda estrecha que se obtienen al descomponer con un banco de filtros paso
+banda la señal resultante tras un ensayo. No obstante los excelentes
+resultados encontrados utilizando esta técnica, la gran sensibilidad que
+muestra el algoritmo a la sintonía de los principales parámetros que
+definen su comportamiento lo convierten en escasamente robusto. A
+consecuencia de esto han aparecido numerosas publicaciones que se
+circunscriben a proporcionar configuraciones del algoritmo que proporcionen
+resultados óptimos, alternativamente aparecen también variaciones del
+\sig{ssp} que persiguen mejorarlo. A pesar de su éxito, el \sig{ssp} no es
+el único método empleado con el objetivo de sustraer el ruido de grano de
+la señal de interés de un \sig{endus}. Otros trabajos incluyen, la
+estimación de máxima verosimilitud, técnicas de filtrado paso"=banda que
+eliminan la mitad superior del espectro de la señal, técnicas
+tiempo"=frecuencia como son la transformada de Wigner"=Ville o las Wavelet,
+técnicas que sacan partido de la información que aporta el retardo de
+grupo, técnicas no lineales y, finalmente, técnicas de ruido residual.
 
 A pesar del gran número de técnicas dedicadas a eliminar el ruido
 estructural, son pocos los trabajos orientados a establecer una relación
@@ -776,27 +773,23 @@ Bajo el término <<técnicas de procesado por partición del espectro>>, en
 inglés \emph{Split Spectrum Processing Techniques}, o simplemente
 \psig{ssp}, se reúnen una serie de algoritmos cuya aplicación es la
 reducción del efecto del ruido estructural o de grano en los resultados de
-un \sig{endus}.
-
-El principio en el que se fundamentan estas técnicas es similar al que rige
-las técnicas de diversidad convencionales. A partir de varias señales
-incorreladas entre sí se construye una señal cuya \sig{snr} es
-considerablemente mejor que la \sig{snr} de cualquiera de las señales
+un \sig{endus}. El principio en el que se fundamentan estas técnicas es
+similar al que rige las técnicas de diversidad convencionales. A partir de
+varias señales incorreladas entre sí se construye una señal cuya \sig{snr}
+es considerablemente mejor que la \sig{snr} de cualquiera de las señales
 primitivas por separado. Las técnicas de \sig{ssp}, a diferencia de las
 técnicas basadas en la diversidad, consiguen sólo una seudo"=diversidad en
 frecuencia a partir de una única traza de la señal que se obtiene tras un
-\sig{endus}.
-
-Con frecuencia se obtienen buenos resultados empleando estas técnicas lo
-que, sumado a la sencillez con la que puede implementarse un experimento
-fundamentado en las mismas, recordando que no es requerida una redundancia
-real basada en la utilización de varias señales, las ha convertido en las
-técnicas más populares en el ámbito de los \sig{endus}. A consecuencia de
-la reputación con la que se han visto revestidas recientemente numerosas
-investigaciones se han llevado a cabo en las décadas de los ochenta y los
-noventa, así como a principios de siglo, con el fin de mejorar en la medida
-de lo posible los buenos resultados que ya de por sí proporcionan las
-técnicas de \sig{ssp}.
+\sig{endus}. Con frecuencia se obtienen buenos resultados empleando estas
+técnicas lo que, sumado a la sencillez con la que puede implementarse un
+experimento fundamentado en las mismas, recordando que no es requerida una
+redundancia real basada en la utilización de varias señales, las ha
+convertido en las técnicas más populares en el ámbito de los \sig{endus}. A
+consecuencia de la reputación con la que se han visto revestidas
+recientemente numerosas investigaciones se han llevado a cabo en las
+décadas de los ochenta y los noventa, así como a principios de siglo, con
+el fin de mejorar en la medida de lo posible los buenos resultados que ya
+de por sí proporcionan las técnicas de \sig{ssp}.
 
 El procedimiento (más detallado en el \cref{tab:sspfeatures}) que por lo
 general sigue todo el conjunto de técnicas de \sig{ssp} consiste en aplicar
@@ -871,31 +864,23 @@ bibliografía como métodos que explotan la fase del defecto.
 La eficacia de las técnicas de \sig{ssp} no está garantizada, depende en
 gran parte de dos de los parámetros listados en el \cref{tab:sspfeatures}.
 Por un lado está la configuración del banco de filtros, a destacar dos
-aspectos:
-
-\begin{itemize}
-	\item El tipo de filtro empleado. Según afirma M.\,A. Izquierdo
-		(en \cite{garcia2000mrsr}), trabajos realizados a
-		principios de los noventa como los de P.\,Karpur apuntan a
-		la existencia de una relación entre el factor de forma de
-		los filtros que se utilizan para realizar la partición de
-		espectro y la bondad de los resultados aportados por la
-		técnica de \sig{ssp}. Señala M.\,A. Izquierdo que, a pesar
-		de que la influencia que ejerce este parámetro en la
-		calidad del ensayo haya mostrado ser notable, estudios
-		posteriores no han tenido en cuenta las conclusiones
-		alcanzadas por Karpur.
-	\item La zona del espectro en la que se aplica el método. La región
-		del espectro que queda bajo el banco de filtros puede
-		configurarse ajustando las frecuencias de corte superior e
-		inferior del banco ---quedando indirectamente condicionados
-		el ancho de banda de los filtros y la separación entre los
-		mismos---. Es importante evitar que la banda de paso del
-		banco coincida con alguna porción de la señal en la que la
-		información espectral que indica la presencia del defecto
-		quede enmascarada por el ruido de grano. Cuando así ocurre
-		la efectividad del método se reduce en gran medida.
-\end{itemize}
+aspectos: el tipo de filtro empleado y la zona del aspecto en la que se
+aplica el método. Según afirma M.\,A. Izquierdo (en \cite{garcia2000mrsr}),
+trabajos realizados a principios de los noventa como los de P.\,Karpur
+apuntan a la existencia de una relación entre el factor de forma de los
+filtros que se utilizan para realizar la partición de espectro y la bondad
+de los resultados aportados por la técnica de \sig{ssp}. Señala M.\,A.
+Izquierdo que, a pesar de que la influencia que ejerce este parámetro en la
+calidad del ensayo haya mostrado ser notable, estudios posteriores no han
+tenido en cuenta las conclusiones alcanzadas por Karpur. La región del
+espectro que queda bajo el banco de filtros puede configurarse ajustando
+las frecuencias de corte superior e inferior del banco ---quedando
+indirectamente condicionados el ancho de banda de los filtros y la
+separación entre los mismos---. Es importante evitar que la banda de paso
+del banco coincida con alguna porción de la señal en la que la información
+espectral que indica la presencia del defecto quede enmascarada por el
+ruido de grano. Cuando así ocurre la efectividad del método se reduce en
+gran medida.
 
 El parámetro que resta por considerar no es otro que el algoritmo de
 reconstrucción que permite recuperar la traza definitiva. Las técnicas de
@@ -913,12 +898,11 @@ método de reconstrucción optimizan los resultados de aplicar las técnicas
 de \sig{ssp} en un \sig{endus}. Se ha dicho que el término \sig{ssp} agrupa
 a un conjunto de técnicas, lo que las diferencia precisamente es, o bien el
 algoritmo de reconstrucción que emplean, o bien la forma en la que se
-configura el banco de filtros, en ocasiones ambos.
-
-En cuanto a la configuración del banco de filtros, algunos trabajos, es
-especial algunos de Karpur, aportan avances significativos. El autor
-encuentra para el algoritmo de mínimos, de forma analítica y apoyándose en
-un modelo estacionario del ruido de grano, los parámetros que optimizan el
+configura el banco de filtros, en ocasiones ambos. En cuanto a la
+configuración del banco de filtros, algunos trabajos, es especial algunos
+de Karpur, aportan avances significativos. El autor encuentra para el
+algoritmo de mínimos, de forma analítica y apoyándose en un modelo
+estacionario del ruido de grano, los parámetros que optimizan el
 rendimiento de la técnica de \sig{ssp}. Los valores hallados son los
 siguientes:
 
@@ -932,19 +916,16 @@ siguientes:
 Donde $N$ representa el número óptimo de filtros, $B$ el ancho de banda del
 transductor en el segmento de recepción, $T_y$ la duración de la señal
 recibida, $b$ el ancho de banda de cada filtro, y $\Delta f$ la separación
-entre filtros.
-
-Por otro lado Karpur afirma en otro de sus estudios, esta vez apoyándose en
-la expresión para la atenuación en la región de Rayleigh, que el banco de
-filtros debe aplicarse en las frecuencias más bajas del espectro de la
-señal, ya que es en esa zona en la que se concentra la mayor parte de la
-energía correspondiente a la radiación que tiene origen en el defecto.
-
-Otros estudios utilizan la información relativa a la distribución espectral
-de la \sig{snr}, obtenida mediante algoritmos como el del histograma
-espectral o a partir de estadísticos del retardo de grupo como p.e. la
-entropía móvil, para determinar cuál es la región del espectro de la señal
-en la que es óptimo aplicar el filtrado.
+entre filtros. Por otro lado Karpur afirma en otro de sus estudios, esta
+vez apoyándose en la expresión para la atenuación en la región de Rayleigh,
+que el banco de filtros debe aplicarse en las frecuencias más bajas del
+espectro de la señal, ya que es en esa zona en la que se concentra la mayor
+parte de la energía correspondiente a la radiación que tiene origen en el
+defecto. Otros estudios utilizan la información relativa a la distribución
+espectral de la \sig{snr}, obtenida mediante algoritmos como el del
+histograma espectral o a partir de estadísticos del retardo de grupo como
+p.e. la entropía móvil, para determinar cuál es la región del espectro de
+la señal en la que es óptimo aplicar el filtrado.
 
 En cuanto a los algoritmos de reconstrucción J.\,Saniie llega a la
 conclusión, en su trabajo de 1991 en el que estudia los filtros de orden
