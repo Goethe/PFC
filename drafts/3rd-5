@@ -1,0 +1,45 @@
+|Jueves, 10 de Febrero de 2011|
+
+	MATLAB y la datx simplifican en gran medida la programación/la
+	implementación/implementar del bloque de control y de la interfaz
+	gráfica de usuario, por tanto, el último reto importante que debe
+	afrontarse en el desarrollo del software de control es programar el
+	mecanismo mediante el cual se representa/puede representarse la
+	señal en pantalla. Los datos numéricos son fáciles de reflejar en
+	pantalla al igual que la FFT de la señal, MATLAB simplifica mucho
+	esta tarea. (Los datos numéricos y la FFT son fáciles de sacar por
+	pantalla / Es sencillo mostrar por pantalla datos numéricos o
+	representar la FFT de una señal ---gracias a las utilidades que
+	MATLAB pone a disposición de los desarrolladores / gracias a las
+	utilidades de que dispone MATLAB---) Al fijar los objetivos del PFC
+	se especifica que debe poder utilizarse el sistema de medida para
+	visualizar señales como si se tratase de un osciloscopio digital.
+	La principal complicación que existe al programar un osciloscopio
+	digital en software radica en definir las metas de programación y
+	no en escribir el código. Esto sólo puede lograrse tras estudiar en
+	profundidad el modelo, después de comprender perfectamente su
+	comportamiento y de ese modo poder traducir sus principales rasgos
+	de conducta en metas sencillas.
+
+	¿Cómo dirías esto con otras palabras? El director del PFC
+	especifica claramente que el software de control debe representar
+	la señal como si se tratase de un osciloscopio digital. Durante el
+	desarrollo de los objetivos... Durante la especificación de los
+	objetivos del PFC, se. Al fijar los objetivos del PFC se especifica
+	claramente que el software de control debe representar la señal
+	como si se tratase de un osciloscopio digital.
+
+	Debe poder utilizarse/podrá utilizarse/puede utilizarse
+
+	La principal complicación que existe al programar un
+	marco en el que representar una señal radica en comprender el
+	comportamiento modelo
+
+	Lo difícil es comprender como funciona el modelo para poder luego
+	implementarlo en código. El director de PFC me instó a que el
+	software representase una señal como si se tratase de un
+	osciloscopio digital. La dificultad no es escribir el código si no
+	definir los objetivos de programación y esto sólo puede hacerse
+	tras estudiar en profundidad el modelo, después de comprender
+	perfectamente como funciona y trasladando lo aprendido a
+	criterios/objetivos secillos de programar.

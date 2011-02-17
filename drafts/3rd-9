@@ -1,0 +1,117 @@
+|Miércoles, 16 de Febrero de 2011|
+
+	Los osciloscopios digitales son instrumentos utilizados para
+	visualizar señales, son los sucesores de los osciloscopios
+	analógicos y los oscilógrafos. A diferencia de estos aparatos de
+	carácter analógico, los osciloscopios digitales no pueden trabajar
+	directamente a partir de la señal procedente del medio, antes es
+	preciso digitalizar la señal. El proceso de digitalización no es
+	inmediato y, por tanto, los osciloscopios digitales no tienen la
+	capacidad de representar señales en tiempo real.
+
+	En lugar de representar la señal de forma continua un osciloscopio
+	digital consigue un resultado similar al obtenido en un
+	osciloscopio analógico representando distintas capturas de la
+	señal. Teniendo en cuenta que el ojo humano tiene sus limitaciones
+	para percibir pequeñas diferencias en imágenes que se suceden
+	rápidamente, el efecto es prácticamente el mismo. La señal
+	representada no se <<mueve>> realmente, como ocurre en los
+	osciloscopios analógicos, si no que se crea una sensación de
+	movimiento similar a la que se tiene al observar una película de
+	cine.
+
+	Para mantener este efecto la distancia temporal entre dos imágenes
+	consecutivas de la señal no puede superar el umbral de detección
+	del ojo humano. Pero existen situaciones en las que es complicado
+	conseguir que las imágenes avancen así de rápido en el monitor,
+	debido a un cúmulo de circunstancias que se explican a
+	continuación.
+
+% 	En primer lugar es clave entender que un osciloscopio digital
+% 	necesita la señal digital que se dispone a representar. O lo que es
+% 	lo mismo, la imagen que representa el osciloscopio representa
+% 	estados anteriores de la señal, la señal representada está
+% 	desfasada con respecto a la señal verdadera. La señal se muestrea,
+% 	se almacena en memoria y después se representa, la representación
+% 	no muestra la realidad actual si no lo sucedido en los instantes
+% 	inmediatamente anteriores.
+
+	En primer lugar es clave entender que un osciloscopio digital no
+	representa la realidad actual de la señal si no lo sucedido en los
+	instantes inmediatamente anteriores. El osciloscopio no representa
+	directamente la señal, primero la digitaliza y la almacena en
+	memoria, cuando ha reunido una cantidad de muestras determinada
+	representa toda la información de una vez, en una sola imagen. El
+	osciloscopio debe esperar a que transcurra la señal antes de poder
+	generar la toma que ha de representarse.
+
+	Si por ejemplo espera unos milisegundos, durante los cuales se
+	digitaliza un fragmento de señal de la misma duración, este
+	fragmento es el que puede representar el osciloscopio y no más. En
+	otras palabras, para poder representar un fragmento de la señal de
+	una determinada duración el osciloscopio digital debe esperar la
+	misma cantidad de tiempo mientras la señal transcurre y se
+	digitaliza.
+
+	La duración de los fragmentos de señal representados depende de
+	varios factores. En primer lugar, un osciloscopio digital pretende
+	obtener un resultado similar al esperado de un osciloscopio
+	analógico. Para ello realiza una representa
+
+	Barrido disparado es un término acuñado para osciloscopios
+	analógicos, ¿valdrá también para osciloscopios digitales? Se pasa
+	al osciloscopio a un detector de impulsos una señal auxiliar o la
+	propia señal y cuando se detecta el impulso empieza el barrido. En
+	osciloscopios digitales podría decirse que empieza el proceso de
+	adquisición. De ese modo las distintas imágenes que se suceden en
+	el monitor del osciloscopio están alineadas en fase unas con otras
+	y con la señal. (Esta explicación no me da mucho pie a decir que
+	necesito un barrido completo para formar cada imagen, pero sí que
+	el osciloscopio digital pretenda obtener un resultado idéntico al
+	que se espera de un osciloscopio analógico).
+
+	Esto es complicado de hacer en Matlab, que el dispositivo empiece a
+	muestrear con respecto a una señal de disparo, la tarjeta tiene
+	entradas de disparo con lo que bastaría pasar la señal por el
+	puerto de entrada y por el puerto de disparo, pero como programo la
+	aplicación para que saque las muestras de la tarjeta cuando se haya
+	terminado el muestreo, como le paso el evento (quizá si se pueda y
+	no lo haya hecho porque desconocía que podía hacerse así, otra
+	forma sería tener un demonio que observase el estado de la tarjeta
+	y sacase las muestras cuando fuera necesario). En su defecto
+	programo la aplicación para que procese las muestras y las desplace
+	que es mucho más sencillo, además elimino la componente en
+	continua. Pero eso provoca que necesite almacenar en memoria un
+	fragmento de señal de una duración mayor a la necesaria, lo cual en
+	realidad no es correcto porque hay bastante información que se
+	pierde (la información que se pierde mientras estoy procesando la
+	señal ---si es que la hay, recordemos que la kpci es un dispositivo
+	independiente y que la aplicación funciona por interrupciones--- y
+	la información que pierdo al desplazar la señal). Aún así se trata
+	de una idea original que resuelve el problema al menos en el caso
+	planteado.
+
+% 	Pero la cuestión es, ¿en qué medida está retardada la
+% 	representación? El monitor del osciloscopio contiene un plano
+% 	cartesiano rectangular en el que el eje de abscisas indica el
+% 	tiempo y el eje de ordenadas la tensión, y sobre el cual se muestra
+% 	la representación de la señal. Sin embargo, la escala de estos dos
+% 	ejes cartesianos no es fija y responde a la configuración hecha por
+% 	el usuario. De ese modo el eje de abscisas puede representar una
+% 	cantidad de tiempo u otra en función de la configuración, dentro de
+% 	un rango de valores posibles. Esto es así porque de lo contrario
+% 	sería muy difícil observar señales cuyo periodo distase mucho del
+% 	tiempo representado por el eje.
+	
+	¿Qué ocurre? Para intentar parecerse al osciloscopio analógico, el
+	osciloscopio digital realiza un disparo de la señal que va a
+	representar. Disparar una señal consiste en conseguir que las
+	distintas imágenes de la señal que pasan por el monitor estén
+	alineadas en fase con el resto.
+
+	Debería explicar que los osciloscopios analógicos hacen barridos
+	completos que abarcan todo el eje de tiempos y que el osciloscopio
+	digital pretende lo propio, sólo que el osciloscopio analógico
+	empieza a mostrar la señal en el momento del disparo y el
+	osciloscopio digital no, se espera a tener la señal digital en
+	memoria, por lo tanto el retardo es más significativo.

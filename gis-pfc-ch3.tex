@@ -1,4 +1,4 @@
-\chapter{Subsistema de control y presentación}
+\chapter{Subsistema de control y presentación}\label{chap:control}
 
 \section{Introducción}
 
@@ -8,8 +8,11 @@ de entre los que integran el sistema por interactuar directamente con el
 supervisor. El subsistema de control y presentación está constituido por
 los bloques de control y presentación propiamente dichos, tal y como
 muestra la \cref{fig:subconpre}. Sin embargo, en la práctica estos dos
-bloques se engloban en una misma entidad que en este documento se denomina
-\emph{software de control}.
+bloques se mezclan en una misma entidad indivisible, un software que se
+ejecuta en el \pc{} anfitrión en el que se encuentra instalada la tarjeta
+de adquisición.  Por ser el software que controla el funcionamiento de la
+tarjeta \kpci{} pasa a conocerse como \emph{software de control} en este
+documento.
 
 \begin{figure}
 	\begin{center}
@@ -20,13 +23,12 @@ bloques se engloban en una misma entidad que en este documento se denomina
 	\label{fig:subconpre}
 \end{figure}
 
-El subsistema de control y presentación, al actuar como interfaz entre el
-supervisor y el sistema de medida, debe ser capaz de poner en práctica las
-órdenes que administra el supervisor y gestionar el funcionamiento del
-resto de subsistemas. De entre los dos bloques que conforman el subsistema,
-es el bloque de control ---como su nombre indica--- el encargado de esta
-actividad. Como tal, es responsabilidad suya la ejecución de las siguientes
-tareas:
+El subsistema de control y presentación constituye la interfaz entre el
+supervisor y el sistema de medida, como tal, es una de sus funciones
+proporcionar control sobre el sistema al supervisor: ejecutar las órdenes
+administradas por el supervisor y gestionar el funcionamiento del resto de
+subsistemas. El bloque de control es el encargado de esta actividad y
+desempeña las siguientes tareas:
 
 \begin{itemize}
 	\item Iniciar y detener la sesión de adquisición.
@@ -45,15 +47,13 @@ tareas:
 		manipuladas por el usuario administrador.
 \end{itemize}
 
-Por su parte, al bloque de presentación le corresponde la tarea de
-presentar al supervisor información de utilidad a partir de los datos
-obtenidos del subsistema de adquisición, en este caso de la señal digital.
-La información debe mostrarse al supervisor de forma que este sea capaz de
-interpretarla. En consecuencia, y por criterio propio, se decide por
-diseñar el software de control para que sea capaz de proporcionar al
-supervisor la siguiente información de la señal: % Lo de criterio propio
-% significa que era uno de los objetivos del proyecto que propuso el
-% director.
+Por su parte, corresponde al bloque de presentación presentar al supervisor
+información de utilidad a partir de la señal digital que procede del
+subsistema de adquisición. La información debe mostrarse al supervisor para
+que pueda interpretarla. En consecuencia, y sometiendo el diseño de la
+aplicación de software al criterio del director del PFC, se concluye en
+dotar al bloque de presentación con la capacidad de proporcionar la
+siguiente información acerca de la señal:
 
 \begin{itemize}
 	\item El valor instantáneo cada 250 ms.
@@ -69,438 +69,102 @@ supervisor la siguiente información de la señal: % Lo de criterio propio
 		señal que aparece en pantalla.
 \end{itemize}
 
-Se impone una condición de diseño adicional al software de control, debe
-ser poco exigente con respecto al \pc{} anfitrión en cuanto a capacidad de
-procesado y memoria principal utilizada. Para lograrlo se propone la
-siguiente solución: en lugar de mostrar al mismo tiempo el valor
-instantáneo de la señal, el valor medio, y su forma, se concibe la
-aplicación para que el usuario pueda elegir uno de estos tres aspectos de
-la señal y sólo ese se muestra por pantalla.
+Este capítulo se ha distribuido en dos apartados. En el primero de los
+apartados se describe la herramienta empleada en el desarrollo del software
+de control. En el segundo se exponen las conclusiones obtenidas al estudiar
+el osciloscopio digital como herramienta de referencia en la representación
+gráfica de señales. De ese modo se evita explicar el significado del código
+correspondiente al software de control línea por línea, puesto que el
+lector puede concebir su propia idea del aspecto que adopta el software en
+su estadio definitivo de desarrollo. El ejercicio de reflexión pertinente
+conduce a una positiva comprensión del proceso que partiendo del diseño
+original concluye en el resultado esperado.
 
-Por conveniencia se adopta la siguiente nomenclatura en este documento: se
-dice que en el \emph{modo gráfico} la aplicación muestra gráficas que
-representan la forma de la señal y de su espectro en frecuencia; mientras
-que en los \emph{modos numéricos} o no gráficos lo que aparece en pantalla
-es un valor numérico relacionado con la magnitud variable de la señal ---el
-voltaje---. Aplicando de nuevo el criterio de austeridad por el cual la
-aplicación debe ser lo menos exigente posible, se consigue economizar
-recursos en el modo gráfico de funcionamiento si se permite al supervisor
-seleccionar si son ambos, forma y espectro de la señal, los representados,
-sólo uno y cual, o ninguno de ellos.
+% 				( V )
+% ______________________________m\"/m______________________________________
+%				  '
+% El texto comentado aquí abajo debe trasladarse a otra sección del
+% capítulo
+% _________________________________________________________________________
+%
+% Se impone una condición de diseño adicional, el software de control debe
+% ser poco exigente a fin de que pueda ser ejecutado en un \pc{} que
+% disponga de escasos recursos. Para cumplir con dicha condición se propone
+% la siguiente solución: limitar la cantidad de datos diferentes
+% presentados por pantalla simultáneamente a uno. De ese modo el usuario
+% del software debe elegir en cada momento entre el valor instantáneo, el
+% valor medio y la forma de la señal y su espectro en frecuencia, y sólo el
+% tipo de dato seleccionado se genera reduciendo el coste de procesado.
+% Esta solución puede ampliarse incorporando la posibilidad de deshabilitar
+% la representación del espectro o de la forma de la señal.
+%
+% 				 ,._
+%				@",_)6
+%				 " "
 
-
-\subsection{Funcionamiento de un osciloscopio}
-
-El objetivo primordial del software de control es implementar un modo
-gráfico con el que el supervisor pueda observar cual es el aspecto de la
-señal y como es su espectro en frecuencias. En el proceso previo de diseño
-se considera que modelo se puede tomar como referencia para implementar el
-modo gráfico. Por sus bondades, se elige el osciloscopio digital. En la
-representación de señales el instrumento empleado en la mayoría de
-aplicaciones es el osciloscopio digital. Los osciloscopios son instrumentos
-prácticos que permiten visualizar señales de forma efectiva.
-
-Para tratar de imitar el funcionamiento del osciloscopio digital en el
-software de control, es preciso conocer como funciona este dispositivo y
-cuales son sus características principales. Como parte de este capítulo se
-ha querido proveer una introducción al comportamiento de los osciloscopios
-digitales que se extrae del estudio realizado sobre estos dispositivos al
-acometer este episodio del proyecto fin de carrera. Se expone esencialmente
-de que forma consigue el osciloscopio representar la señal, como lo hace.
-Para ello se documentan los distintos modos de representación de que cuenta
-el osciloscopio digital en comparación con su equivalente analógico. De ese
-modo el lector que acuda a esta introducción al comportamiento de los
-osciloscopios digitales puede formarse una imagen del aspecto que debe
-tener el software de control, lo que sirve a dos propósitos diferentes:
-
-\begin{itemize}
-	\item El primero y más inmediato, permitirle ubicar de forma muy
-		precisa los objetivos del proceso de programación. De forma
-		que le sea posible identificar, en cierto modo, que rutinas
-		son necesarias para lograr el resultado final.
-	\item Y además puede servirle como nota introductoria al
-		\cref{chap:part1conclusions} en el que se comparan los
-		resultados obtenidos en un experimento realizado primero
-		mediante el sistema digital de medida y, posteriormente,
-		utilizando un osciloscopio digital en conjunción con el
-		subsistema para la interacción con el medio físico.
-\end{itemize}
+\section{Herramienta de Adquisición de Datos}
 
 
-\subsection{Osciloscopios analógicos, osciloscopios digitales y retardo}
+\subsection{Introducción}
 
-Los osciloscopios analógicos emplean un tubo de rayos catódicos y un
-monitor de fósforo para generar una imagen de la señal. El cursor que el
-tubo dibuja en el monitor lo va barriendo de izquierda a derecha con
-periodicidad, y su posición vertical refleja a cada momento el valor de
-tensión de la señal eléctrica que entra al osciloscopio. El monitor
-preserva durante breves instantes una traza del cursor y así se forma la
-imagen que representa a la señal.
+\psig{matlab} (\emph{MATrix LABoratory}) es la plataforma seleccionada para
+el desarrollo del software de control. Es una plataforma de desarrollo bien
+conocida en entornos matemáticos y tecnológicos de uso extendido en
+universidades y otros centros educativos y de investigación. Encaja en la
+descripción de un kit de desarrollo de software (\sig{sdk}) al estar
+compuesto por un entorno de desarrollo integrado (\sig{ide}) con editor,
+compilador y depurador; y una colección de módulos y extensiones que en
+conjunto se comportan como una interfaz de programación de aplicaciones
+(\sig{api}).  \matlab{} se caracteriza por emplear un lenguaje propio, el
+lenguaje \psig{m}, enfocado a un uso matemático y que se ha diseñado para
+simplificar el manejo de datos agrupados en estructuras matemáticas
+complejas como son las matrices y los vectores. Los módulos y herramientas
+que se incluyen en el \sig{sdk} contribuyen a ampliar su funcionalidad,
+convirtiéndolo en un software potente y completo. Estas herramientas
+abstraen al desarrollador de implementar por sí mismo en lenguaje \sig{m}
+funciones destinadas a realizar operaciones cotidianas como representar
+unos datos por pantalla u obtener la \sig{fft} de un vector. Existen
+módulos ---o \emph{toolboxes} como se los conoce en inglés--- mantenidos
+por la compañía de software, a los que se suman los diseñados por los
+propios usuarios, que abundan en la red, disponibles desde la base de datos
+dispuesta para ello por la empresa, con lo que las posibilidades son en la
+práctica infinitas.  Además \matlab{} cuenta con dos herramientas
+fundamentales, muy ligadas al \sig{sdk}, una es \psig{guide}
+(\emph{Graphical User Interface Development Environment}), una herramienta
+para el desarrollo de interfaces gráficas de usuario (\psig{gui}); y otra
+\emph{Simulink}, herramienta que se emplea para realizar todo tipo de
+simulaciones.
 
-En la actualidad los osciloscopios analógicos están siendo desplazados en
-su uso por los osciloscopios digitales. El procedimiento que sigue un
-osciloscopio digital para representar señales es completamente diferente al
-que siguen los osciloscopios analógicos. Constantemente el osciloscopio
-digitaliza la señal en seguimiento, procesa la señal digital resultante y
-la almacena en memoria. Cada cierto \emph{periodo de refresco} el
-osciloscopio muestra por pantalla una representación de los datos que
-previamente ha almacenado durante ese mismo periodo. Mientras se recogen
-datos para una nueva imagen se mantienen en pantalla los datos
-correspondientes al periodo anterior. La velocidad con la que se suceden
-las imágenes en el monitor del osciloscopio hace que se produzca la
-sensación de movimiento, y de ese modo la representación responde a las
-variaciones que se producen en la señal. Esto permite observar los eventos
-que se producen en la señal en determinadas situaciones, como por ejemplo:
-al accionar un potenciómetro que forma parte de un circuito que está siendo
-analizado, al cambiar la configuración de un generador de señales para que
-genere una señal diferente a la que suministraba unos instantes antes, o
-simplemente al conectar la alimentación.
-
-El periodo de refresco no es fijo, de lo contrario los datos mostrados en
-el monitor del osciloscopio aparecerían en exceso comprimidos o expandidos
-en función de la frecuencia de la señal monitorizada. Puede configurarse el
-periodo de muestreo para que adopte un valor de entre un rango de valores
-predeterminados. Debe notarse que al ser posible modificar el valor del
-periodo de refresco existe la posibilidad de que, en efecto, éste adopte un
-valor alto. Ésto haría que el retardo que se produce en la sucesión de
-imágenes aumentase, limitando la capacidad de la representación de seguir
-los cambios que afectan a la señal. Para impedir que ésto ocurra los
-osciloscopios digitales implementan un mecanismo por el cual una señal se
-representa de uno u otro modo en función del valor que toma el periodo de
-refresco.
-
-
-\subsection{Modos de representación en los osciloscopios digitales}\label{subsec:repmodes}
-
-Los osciloscopios digitales tienen la capacidad de representar una señal de
-formas diferentes. Cada forma de representar la señal se conoce en este
-documento como \emph{modo de representación}. Habitualmente los
-osciloscopios digitales cuentan al menos con dos modos de representación.
-Estos dos modos son, tal y como han sido bautizados aquí, el \emph{modo
-disparado} y el \emph{modo continuo}. Los modos de representación continuo
-y disparado forman parte de la solución que los osciloscopios digitales
-adoptan para combatir la situación hipotética en la que un excesivo retardo
-entre cuadros pudiese complicar el seguimiento de la señal.
-
-Para evitar las consecuencias de un retardo alto, un osciloscopio digital
-conmuta al modo de representación continuo cuando el periodo de refresco
-supera los 200 ms, el resto del tiempo permanece en el modo de
-representación disparado. % Para remediar el retardo, un osciloscopio
-% digital conmuta al modo de representación continuo cuando el periodo de
-% refresco supera los 200 ms, el resto del tiempo permanece en el modo de
-% representación disparado.
-
-Para evitar las limitaciones que el modo de representación disparado
-presenta en configuraciones en las que el periodo de refresco toma un valor
-elevado, un osciloscopio conmuta al modo de representación continuo en el
-caso en el que el periodo de refresco supere los 200 ms. Habitualmente el
-osciloscopio digital opera en el modo de representación disparado, que es
-el modo que responde a la descripción funcional que se ha hecho de los
-osciloscopios digitales en este apartado.
+Las dos razones principales por las que se utiliza \matlab{} son, por un
+lado, las facilidades que aporta en la creación de \gui{} y manejo de
+señales digitalizadas; y por otro, y aún más importante si cabe, que
+incorpora una herramienta denominada \emph{Data Acquisition Toolbox},
+nombre que podría traducirse como Herramienta de Adquisición de Datos, en
+lo sucesivo \psig{dat}. La \datx{} es una herramienta compuesta por una
+biblioteca y un mecanismo para el intercambio de información, que en
+conjunto permiten mediante código de alto nivel interactuar directamente
+con dispositivos de características similares a las de la tarjeta de
+adquisición \kpci{}, y que es convenientemente compatible con ésta tarjeta.
+En otras palabras, puede entenderse la \datx{} como una \sig{api} o
+interfaz que proporciona al desarrollador las llamadas necesarias para
+interactuar directamente con dispositivos de adquisición al tiempo que
+abstrae los mecanismos de más bajo nivel que intervienen en el proceso,
+descargando al desarrollador de la responsabilidad de implementarlos por él
+mismo. Lo que, al fin y al cabo puede resumirse en que en la \datx{} se
+implementa el núcleo de lo que se entiende como bloque de control. Al
+programarse el software de control empleando los recursos que proporciona
+la \datx{}, la herramienta en sí pasa a ser parte fundamental del
+subsistema de control y presentación al prestarse como núcleo del bloque de
+control. Cobra pues vital importancia en el sistema de medida. En
+consecuencia, resulta adecuado un apartado en el que se introduzca la
+herramienta al lector. En primer lugar se describen las distintas entidades
+que participan en el funcionamiento de la herramienta, justo después se
+recoge un subconjunto de las distintas funciones que la \datx{} pone a
+disposición del desarrollador ordenadas siguiendo el mismo orden en el que
+son requeridas durante la sesión de adquisición de carácter más básico.
 
 
-\subsubsection{Criterios para la selección del modo}
-
-Para evitar que en determinadas configuraciones del eje temporal del
-osciloscopio el retardo sea excesivo, la mayoría de estos dispositivos
-implementan dos modos de funcionamiento: el modo convencional que se aplica
-en situaciones en las que el retardo no se considera importante; y una
-especie de modo continuo. Existen dos criterios que se siguen de manera
-habitual para diferenciar en que momento es más apropiado el uso de uno u
-otro modo.
-
-
-\subparagraph{Criterio de animación}
-
-El primer criterio evalúa el correcto funcionamiento del modo convencional.
-El modo convencional de representación en un osciloscopio requiere que la
-cantidad de imágenes que salen por pantalla cada segundo sea lo suficiente
-grande como para que se simule el movimiento. Por tanto para satisfacer el
-primer criterio, la tasa de refresco del monitor del osciloscopio debe
-superar las veintiséis imágenes por segundo o encontrarse alrededor de esta
-cifra.
-
-
-\subparagraph{Criterio de disparo}
-
-El segundo criterio está relacionado con la función de disparo que se da en
-el modo convencional de representación. Para poder efectuar correctamente
-el disparo sobre señales de baja frecuencia, al generar cada imagen el
-osciloscopio debe haber registrado al menos un ciclo de la señal
-pertinente\footnote{En la práctica se necesita algo más de un ciclo de una
-señal para poder garantizar el correcto disparo de ésta. Sin embargo, es
-común conseguir disparar una señal aunque la configuración del eje de
-tiempos del osciloscopio permita sólo obtener una fracción del ciclo
-completo de esa señal durante la realización de cada imagen.}. Lo cual
-reduce la tasa mínima de refresco a la frecuencia de la señal más lenta que
-se desee representar de forma correcta en el modo convencional de
-representación del osciloscopio.
-
-Como puede verse el segundo criterio es más restrictivo pues depende de la
-frecuencia de la señal y ésta puede ser en efecto inferior a un hercio, es
-por ello que se emplea habitualmente. Siendo así, la tasa de refresco
-mínima que se permite en el modo convencional en la gran mayoría de
-dispositivos y que se ha adoptado para el software de control, es de cinco
-imágenes por segundo (5 Hz). Cuando se configura un osciloscopio en el modo
-convencional para que trabaje a esta tasa de refresco es habitual poder
-visualizar señales de frecuencia cercana a 1 Hz, sin embargo la
-representación se optimiza para configuraciones en las que el osciloscopio
-muestra, al menos, veinticinco imágenes por segundo, lo cual es apropiado
-para señales con una frecuencia mínima de 50 Hz. Si la configuración del
-eje de tiempos del osciloscopio obligara al dispositivo a trabajar con una
-frecuencia de refresco inferior a la especificada, automáticamente conmuta
-para funcionar en el modo continuo.
-
-
-\subsubsection{Modos de representación}
-
-Una vez visto cual es la frecuencia umbral a la que el dispositivo conmuta
-entre los dos modos, debe explicarse que diferencia un modo de
-funcionamiento de otro. Para ello se expone a continuación cuales son los
-fundamentos de uno y otro modo.
-
-
-\subparagraph{Modo continuo}
-
-La representación en \emph{modo continuo} es, por decirlo así,
-ininterrumpida. La imagen de la señal de interés se desplaza de derecha
-izquierda a medida que transcurre el tiempo. Para lograr este efecto se
-aumenta la frecuencia de refresco a expensas de que, como es sabido, el
-fragmento de señal obtenido para cada imagen no puede cubrir la pantalla al
-completo. Ocurre así por que la frecuencia de refresco es muy alta para el
-eje temporal, que en este caso representa un periodo tiempo relativamente
-alto. Por consiguiente, en el intervalo en el que una imagen de la señal da
-paso a la siguiente en la ventana del osciloscopio, no transcurre el tiempo
-suficiente como para captar un fragmento de señal de duración igual a la
-abarcada por el eje de tiempos.
-
-Las figuras \cref{fig:freesignalcont,fig:modconti} muestran con detalle
-estos aspectos del modo de representación continuo. En la
-\cref{fig:freesignalcont} aparece la señal que entra en el osciloscopio, se
-muestran además unas marcas de tiempo que indican los instantes en los que
-la imagen que muestra el osciloscopio cambia\footnote{Se ha considerado el
-\emph{periodo de refresco} de la ventana del osciloscopio igual a la suma
-de la \emph{ventana de adquisición} y un \emph{periodo de inactividad} en
-la adquisición ocupado por el procesado de las muestras. La ventana de
-adquisición es equivalente a la cantidad de tiempo que el sistema necesita
-para adquirir un fragmento de señal suficiente para cubrir una porción del
-eje de tiempos (en el caso del modo de funcionamiento continuo) o para
-cubrir el eje de tiempos por completo más las muestras de descarte (en el
-modo disparado). El periodo de inactividad es igual al tiempo requerido
-para procesar el fragmento de señal adquirido en el espacio de una ventana
-de adquisición.}. La \cref{fig:modconti} muestra cual es el aspecto del
-osciloscopio en dos instantes posteriores al instante inicial en el que
-empieza a monitorizarse la señal.
-
-\begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch3-04.mps}
-	\end{center}
-	\caption[Fragmentos de señal ordenados según el orden en el que
-	llegan al sistema]{Fragmentos de señal ordenados según el orden en
-	el que llegan al sistema. Cada instante marcado se encuentra
-	separado de los adyacentes por un periodo de refresco. Debe
-	recordarse que el modo de funcionamiento continuo se emplea en la
-	monitorización de señales lentas, por lo que el periodo de
-	inactividad es en este caso despreciable frente a la duración de la
-	ventana de adquisición.}
-	\label{fig:freesignalcont}
-\end{figure}
-
-\begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch3-05.mps}
-	\end{center}
-	\caption[Dos líneas de prueba]{Dos líneas de texto de prueba para
-	comprobar como cambia la estructura del documento si lo comprimo un
-	poquito.}
-% 	\caption[<++>]<++>{}<++>
-% 	\caption[Modo de funcionamiento continuo]{Puede observarse como la
-% 	llegada de un nuevo fragmento de señal al sistema en el instante
-% 	$t_2$ desplaza el fragmento previamente representado en la ventana
-% 	del osciloscopio una periodo de refresco a la derecha.}
-	\label{fig:modconti}
-\end{figure}
-
-En el instante $t_1$ el fragmento de señal que se ha digitalizado aparece
-en el extremo derecho de la representación, el resto se deja en blanco. En
-cada nuevo fotograma se desplazan los fragmentos de señal representados
-hasta el momento el suficiente espacio hacia la izquierda como para
-incorporar un nuevo fragmento de señal. Así la porción de señal
-representada aumenta cada vez más hasta que el extremo izquierdo de la
-figura alcanza el margen izquierdo de la ventana del osciloscopio. Cuando
-esto ocurre, empieza un desplazamiento cíclico, al incorporar un nuevo
-fragmento de señal a la derecha se retira un fragmento de la misma
-proporción temporal al otro extremo. Este fenómeno bien puede observarse en
-la \cref{fig:modcontii}, en el ejemplo el eje temporal es equivalente a
-cinco ventanas de adquisición, la llegada de un sexto fragmento de señal al
-sistema conduce al inicio de la representación cíclica.
-
-\begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch3-06.mps}
-	\end{center}
-	\caption[Dos líneas de prueba]{Dos líneas de texto de prueba para
-	comprobar como cambia la estructura del documento si lo comprimo un
-	poquito.}
-% 	\caption[Modo de funcionamiento continuo]{La ventana temporal %
-% 	tiene, en este ejemplo, una duración de cinco ventanas de %
-% 	adquisición. Al llegar al sistema el sexto fragmento de señal, la %
-% 	representación avanza a la derecha retirándose el primer fragmento %
-% 	representado para dar cabida al fragmento obtenido recientemente.}
-	\label{fig:modcontii}
-\end{figure}
-
-La alta tasa con la que aparecen las imágenes por pantalla garantizan que
-la representación siga casi en tiempo real ---por lo menos así lo percibe
-el ojo humano--- a la señal verdadera. Debe notarse, no obstante, que este
-método de representación no es adecuado para señales de alta frecuencia
-pues aunque el eje temporal abarque un tiempo mayor, la dimensión del
-monitor obviamente no varía y las señales de alta frecuencia aparecerán en
-exceso comprimidas.
-
-
-\subparagraph{Modo convencional}
-
-El \emph{modo convencional} de representación es algo más complicado. La
-representación convencional basa su funcionamiento en imágenes que muestran
-fragmentos de señal que cubren la dimensión temporal de la ventana del
-osciloscopio y que se suceden unas a otras con presteza. La idea que
-persigue este método es la de conseguir algo semejante a una película de la
-señal. Para ello, no es sólo suficiente con que aparezcan muchas imágenes
-por segundo en el monitor del osciloscopio, esas imágenes deben estar de
-algún modo relacionadas entre sí. Si las imágenes que aparecen en el
-monitor son de forma consecutiva muy diferentes es probable que no pueda
-discernirse nada claro, y en ese caso de nada vale la representación.
-
-Ahí es donde entra en juego el procesado y la función de disparo de un
-osciloscopio digital. Cuando un fragmento suficientemente largo como para
-cubrir la ventana de representación se digitaliza y se almacena en memoria,
-empieza el procesado digital del mismo. El propósito del procesado es, ente
-otras cosas, eliminar las posible componente en continua, averiguar
-información adicional de la señal en la medida de lo posible, como p. ej.
-su valor de pico a pico, o implementar la función de disparo. La función de
-disparo del osciloscopio persigue alinear los ejes verticales de la ventana
-donde se representa con los cruces de la señal con respecto a un
-determinado valor de umbral que puede ser configurado por el usuario. La
-idea es alinear al menos el cruce más centrado de cada fragmento de señal
-con el eje de abscisas que corta en dos mitades la ventana. Para
-conseguirlo, durante el procesado se detectan todos los cortes de la señal
-con el umbral y después se desplaza el fragmento de señal para que el corte
-más centrado case con el eje de abscisas. Si la señal es periódica las
-variaciones entre un fotograma y el siguiente serán mínimas, puesto que
-ambos estarán alineados, y se simulará con éxito el movimiento.
-
-No obstante, la necesidad de desplazar el fragmento de señal que va a
-representarse presenta un inconveniente importante. Para poder desplazar el
-fragmento de señal y que se cubra completamente la ventana del osciloscopio
-su duración debe ser superior al tiempo reflejado en el eje de tiempos de
-la ventana. De lo contrario la señal aparecerá truncada, se mostrará un
-espacio en blanco y con una tasa de refresco alta la visualización será
-confusa. Desplazar fragmentos de señal implica dos cosas: por un lado el
-osciloscopio debe esperar más tiempo para refrescar la pantalla, es decir,
-se reduce la tasa de refresco para una misma configuración del eje de
-tiempos; y por otro, al tener para representar un fragmento de señal de
-mayor duración que la reflejada por el eje temporal de la ventana parte del
-fragmento queda ahora fuera de la representación.
-
-Este inconveniente se ve paliado por el hecho de que el modo convencional
-contempla en principio trabajar con señales de alta frecuencia. Estas
-señales cambian de forma tan rápida que de no ser por el disparo sería
-imposible observar los cambios. Por otro lado puede seleccionarse que
-información que se muestra por pantalla accionando un control de
-desplazamiento temporal o modificando el valor de umbral de disparo y,
-generalmente, la pérdida de información a causa del disparo no es
-significativa.
-
-Para terminar este apartado se han adjuntado las
-\cref{fig:freesignaltrig,fig:modtrig} que muestran los distintos aspectos
-del modo disparado de funcionamiento del osciloscopio que se han expuesto
-aquí. La \cref{fig:freesignaltrig} muestra la señal que entra al sistema,
-se han marcado los instantes en los que se suceden los eventos más
-relevantes en la representación de un fragmento de señal. También se
-muestran el nivel de umbral y la porción de fragmento de señal que coincide
-con las muestras descartadas. Otra figura, la \cref{fig:modtrig} muestra
-cual es el resultado de representar el fragmento de señal en la ventana del
-osciloscopio.
-
-\begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch3-02.mps}
-	\end{center}
-	\caption[Fragmento de señal adquirido por el osciloscopio en el
-	espacio de una ventana de adquisición]{Fragmento de señal adquirido
-	por el osciloscopio en el espacio de una ventana de adquisición. En
-	esta figura se ha representado también la duración de la ventana
-	temporal del osciloscopio, pudiendo observarse que información se
-	descarta. También se indica el instante en el que se inicia una
-	nueva instancia del proceso de adquisición, de lo que puede
-	deducirse que información se pierde entre instancias. Los cortes de
-	la señal con el nivel de disparo también están representados.}
-	\label{fig:freesignaltrig}
-\end{figure}
-
-\begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch3-03.mps}
-	\end{center}
-	\caption[Modo de funcionamiento disparado]{Modo de funcionamiento
-	disparado. La representación se centra en el corte central (veáse
-	la \vref{fig:freesignaltrig}).}
-	\label{fig:modtrig}
-\end{figure}
-
-
-\section{Elaboración del software de control}
-
-
-\subsection{Elección del entorno de desarrollo}\label{subsec:environment}
-
-El lenguaje o, mejor dicho, plataforma que se ha empleado para el
-desarrollo del software de control es \matlab{}, la razón, su inmejorable
-compatibilidad con el hardware disponible. A partir de ahí, los componentes
-de \matlab{} que se han empleado para conseguir que el software de control
-gozase de las características previstas en la etapa de diseño son dos: el
-entorno de desarrollo de interfaces gráficas de usuario (\emph{Graphical
-user interface}, en lo sucesivo \psig{gui}) de \matlab{}, más conocido como
-\psig{guide} (\emph{Graphical user interface development environment}); y
-la herramienta de adquisición de datos de \matlab{} (\emph{Data acquisition
-toolbox}, en adelante \psig{DAT}) . El primero de ellos se ha empleado
-para, como su nombre indica, crear la interfaz que comunica el dispositivo
-con el usuario. Esta comunicación se hace a través del segundo de los
-componentes mencionados, éste permite, mediante comandos de \matlab{} que
-pueden incluirse en rutinas o llamarse por separado, manejar el dispositivo
----convocarlo a muestrear, configurar sus propiedades--- y administra
-automáticamente los resultados almacenándolos en búffers situados en la
-memoria volátil del ordenador, haciéndolos de este modo accesibles al
-administrador de la tarjeta.
-
-
-\subsection{Data Acquisition Toolbox}
-
-La práctica de emplear \gui{} como fondo para aplicaciones desarrolladas
-con \matlab{} es bastante habitual, así como lo es programar esas
-interfaces mediante \guide{}. Por ello, y dado que la documentación que se
-ciñe a tratar la problemática que envuelve esta actividad es abundante, se
-ha preferido dejar a cargo de dichos documentos este asunto y centrar este
-escrito en presentar con concisión los principios necesarios para emplear
-con éxito la \datx{} de \matlab{} en el manejo de dispositivos para la
-adquisición de señales analógicas. La fórmula elegida con tal propósito
-consiste en describir cual es el procedimiento habitual en una sesión de
-adquisición de datos y en cada paso detallar las opciones más
-significativas y proporcionar ejemplos explicativos extraídos del mismo
-código que integra el software de control.
-
-En cuanto a la documentación adicional que el lector puede consultar a
-continuación se citan varios documentos clasificados en función del tema
-que tratan. Para la programación de \gui{} con \matlab{} puede consultarse
-el manual de usuario, cite, disponible en la web del fabricante. Esta
-sección se basa en la guía rápida sobre el uso de la \datx{}, también a
-cargo de \emph{The MathWorks, Inc.}, la compañía que mantiene la suite
-matemática en cuya web puede obtenerse un documento extendido.
-
-
-\subsubsection{Componentes de la herramienta}
+\subsection{Componentes de la herramienta}
 
 Los elementos de \matlab{} que juegan un papel suficientemente importante
 en el funcionamiento de la \datx{} son los listados en el
@@ -587,10 +251,9 @@ Para crear un objeto dispositivo, se debe llamar a la función de creación
 apropiada o constructor. Como se muestra en el \cref{tab:constructors}, los
 constructores reciben un nombre particular en función del tipo de objetos
 dispositivo que crean. Para iniciar una sesión de adquisición de datos
-analógicos es necesario un comando como el siguiente,
-\func{analoginput(`adaptador', ID)}. Un ejemplo extraído del código fuente
-de la aplicación de control muestra cómo hacerlo en el
-\cref{cod:constructor}.
+analógicos es necesario un comando como el siguiente, \func{analoginput}
+\func{(`adaptador', ID)}. Un ejemplo extraído del código fuente de la
+aplicación de control muestra cómo hacerlo en el \cref{cod:constructor}.
 
 \begin{table}
 	\centering
@@ -674,10 +337,9 @@ adaptador que debe introducirse como argumento de la llamada a
 		Keithley Instruments, Inc. & keithley \\
 		\bottomrule
 	\end{tabular}
-	\caption[Argumento que debe emplearse en la llamada a
-	\func{analoginput} en función del fabricante]{Argumento que debe
-	emplearse en la llamada a \func{analoginput} en función del
-	fabricante.}
+	\caption[Valores que puede adoptar el argumento
+	\func{adaptador}.]{Valores que puede adoptar el argumento
+	\func{adaptador} necesario en la llamada a \func{analoginput}.}
 	\label{tab:adaptors}
 \end{table}
 
@@ -709,16 +371,14 @@ la configuración de propiedades desde la \datx{}.
 	\item La función \func{set} aplicada a un objeto dispositivo
 		---\func{set(objeto)}--- devuelve todas las propiedades
 		configurables de ese objeto. Si se llama a \func{set}
-		utilizando como argumento un canal
-		---\func{set(objeto.Channel(índice)}---, la función
-		devolverá todas las propiedades configurables de dicho
-		canal.
+		utilizando como argumento un canal ---\func{set(objeto.}
+		\func{.Channel(índice)}---, la función devolverá todas las
+		propiedades configurables de dicho canal.
 	\item La función \func{get} devuelve todas las propiedades de un
 		canal u objeto y el valor que toman en el momento en el que
 		se llama a la función si se emplea como único argumento
-		dicho canal u objeto ---\func{get(objeto)}, \\
-		\func{get(objeto.Channel(índice)}---.
-\end{itemize}
+		dicho canal u objeto ---\func{get(objeto)},
+		\func{get(objeto.Channel(índice)}---.  \end{itemize}
 
 Se distinguen dos tipos de propiedades distintas asociadas a los canales
 contenidos en un objeto dispositivo.
@@ -930,13 +590,13 @@ sintaxis de la definición de la misma en el \cref{cod:callback}.
 \subsubsection{Suprimiendo y borrando las trazas de los objetos dispositivo}
 
 La función \func{delete} elimina el objeto dispositivo especificado de la
-máquina virtual de adquisición, pero no del espacio de trabajo de
-\matlab{}, ---\func{delete(objeto)}---. Tras una llamada semejante
-\func{objeto} sigue apareciendo en el espacio de trabajo de \matlab{}, pero
-se trata de un objeto inválido desde el momento en el que deja de
-encontrarse ligado al hardware. Deben suprimirse los objetos dispositivo
-faltos de validez con el comando \func{clear}, p.e., \func{clear
-objeto}.
+máquina virtual de adquisición, pero no del espacio de trabajo (espacio
+reservado a las variables de trabajo) de \matlab{},
+---\func{delete(objeto)}---. Tras una llamada semejante \func{objeto} sigue
+apareciendo en el espacio de trabajo de \matlab{}, pero se trata de un
+objeto inválido desde el momento en el que deja de encontrarse ligado al
+hardware. Deben suprimirse los objetos dispositivo faltos de validez con el
+comando \func{clear}, p.e., \func{clear objeto}.
 
 Si se suprime un objeto dispositivo del espacio de trabajo de \matlab{} no
 deja de existir en la máquina virtual. Para poder recuperar objetos
@@ -945,3 +605,203 @@ borrados accidentalmente puede utilizarse la función \func{daqfind}.
 \begin{lstlisting}
 	out = daqfind;	ai = out(1);
 \end{lstlisting}
+
+
+\section{Diseño conceptual del software}\label{sec:softdesign}
+
+\textsc{Matlab} y la \datx{} simplifican en gran medida la tarea de
+implementar el bloque de control y la interfaz gráfica de usuario, por
+tanto, el último reto importante que debe afrontarse en el desarrollo del
+software de control es programar el mecanismo mediante el cual ha de
+representarse la señal en pantalla. Es sencillo mostrar por pantalla datos
+numéricos o representar la \sig{fft} de una señal gracias a las utilidades
+de que dispone \matlab{}, representar una señal en <<tiempo real>> es algo
+más complejo. Al fijar los objetivos del \sig{pfc} se especifica que debe
+poder utilizarse el sistema de medida para visualizar señales como si se
+tratase de un osciloscopio digital. La principal complicación que existe al
+programar un osciloscopio digital en software radica en definir las metas
+de programación y no en escribir el código. Esto sólo puede lograrse tras
+estudiar en profundidad el modelo, después de comprender perfectamente su
+comportamiento y de ese modo poder traducir sus principales rasgos de
+conducta en metas sencillas. En este apartado se exponen brevemente las
+conclusiones extraídas tras estudiar el osciloscopio digital como modelo
+para el software de control.
+
+
+\subsection{El osciloscopio digital}\label{subsec:digosc}
+
+El osciloscopio digital es un dispositivo que se emplea para visualizar
+señales, es el sucesor de otros instrumentos como el oscilógrafo y el
+osciloscopio analógico. Algo importante a tener en cuenta cuando se estudia
+el osciloscopio digital es que se ha diseñado para conseguir un resultado
+similar al que se espera de un osciloscopio analógico. La diferencia entre
+uno y otro reside en la forma en la que se genera un barrido, el
+osciloscopio analógico dibuja la señal sobre la marcha mientras que el
+osciloscopio digital digitaliza y almacena la señal digital en memoria
+antes de representar. Un barrido es básicamente una imagen de la señal que
+abarca toda la pantalla del osciloscopio, se llama así porque el haz de
+electrones que emite el tubo de rayos catódicos de un osciloscopio
+analógico barre literalmente el monitor para formar la imagen (que no es
+más que la imprenta dejada en el monitor por la acción del fósforo). Pero
+en los osciloscopios digitales no hay barridos como tal, en realidad los
+osciloscopios digitales utilizan monitores \sig{led} en los que los
+distintos puntos de luz se apagan, o se encienden, o cambian de color,
+accionados por una señal de control. Cuando muchos barridos se suceden
+rápidamente se crea la sensación de que la representación de la señal se
+mueve, aunque no es así, y en los osciloscopios digitales la representación
+es estrictamente estática. Pero el resultado final es muy similar, a
+efectos prácticos es el mismo, pues el ojo humano no es capaz de percibir
+la diferencia y eso en la práctica significa que esa diferencia no existe.
+Pero si existe diferencia, y esa diferencia se nota en algunos aspectos
+relacionados con el funcionamiento del osciloscopio digital. Usualmente
+tanto los osciloscopios digitales como los analógicos hacen barridos
+disparados de la señal, esto es, empiezan a representar la señal al
+detectar un evento ---un flanco de subida o de bajada o similar--- en una
+señal de referencia que puede y acostumbra a ser la propia señal con la que
+se trabaja. De esa forma se consigue alinear todas las capturas o ciclos de
+la señal en fase unos con otros y con la señal. Si no se dispara resulta
+muy difícil observar la señal con el osciloscopio, especialmente si se
+trata de una señal aperiódica, porque los distintos ciclos representados se
+superponen y es difícil distinguir la señal correctamente. La diferencia
+entre los osciloscopios analógicos y digitales se manifiesta especialmente
+en que el osciloscopio analógico empieza a representar la señal cuando
+detecta el evento y el usuario puede ver como evoluciona, sin embargo, el
+osciloscopio digital empieza a \emph{muestrear} cuando observa el evento y
+no representa hasta que tiene muestras suficientes como para abarcar toda
+la dimensión temporal representada en el monitor, es ahí donde se hace
+evidente un retardo. Imagínese la siguiente situación por ejemplo: se
+trabaja con una señal que oscila lentamente y se configura la escala
+temporal del osciloscopio para poder observar un periodo completo de la
+señal en pantalla, como la señal es lenta su periodo es largo, entonces
+llega el evento y en el osciloscopio analógico empieza a verse la señal
+apareciendo lentamente desde el margen izquierdo de la pantalla, sin
+embargo, en el osciloscopio digital no se ve nada y el retardo se hace
+visible y molesto. El retardo que se produce en situaciones como la
+expuesta, en las que trata de observarse evoluciones lentas de una señal,
+dificulta el uso de los osciloscopios, pero especialmente el uso de los
+osciloscopios digitales. Para paliar los efectos del retardo, el
+osciloscopio digital aprovecha que puede representar los datos que tiene en
+memoria de otras formas diferentes y, cuando la escala temporal de la
+representación se configura por encima de un nivel de umbral, simula el
+comportamiento de los osciloscopios analógicos. En lugar de hacer barridos
+de la señal, actualiza la pantalla en ciclos cortos añadiendo a la
+representación fragmentos muy pequeños de señal, cortos en comparación con
+la dimensión temporal representada en el eje de abscisas. Los fragmentos
+tienen una duración igual al periodo con el que se refresca el monitor, que
+es un periodo de refresco fácilmente asumible por el osciloscopio dada la
+configuración de la escala temporal, pero que es muy difícil de seguir por
+parte del ojo humano. Cuando opera de este modo, el osciloscopio digital
+simula que la señal va desplazándose de derecha a izquierda, y el resultado
+es idéntico al que muestran los osciloscopios digitales. Las
+\vref{fig:sigmodcont,fig:firmodcont,fig:desmodcont} ilustran este
+comportamiento.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-04.mps}
+	\end{center}
+	\caption[Señal analógica, representación continua]{Señal analógica
+	vista desde la sonda del osciloscopio, se han marcado los instantes
+	en los que se refresca el monitor del osciloscopio.}
+	\label{fig:sigmodcont}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-05.mps}
+	\end{center}
+	\caption[Evolución que sufre la representación]{Evolución de la
+	representación cuando aún no abarca la dimensión horizontal del
+	monitor.}
+	\label{fig:firmodcont}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-06.mps}
+	\end{center}
+	\caption[Desplazamiento que experimenta la
+	representación]{Desplazamiento que experimenta la representación
+	una vez ocupa toda la pantalla del osciloscopio.}
+	\label{fig:desmodcont}
+\end{figure}
+
+\subsubsection{Barrido disparado}
+
+Implementar un barrido disparado mediante software directamente en la
+aplicación de control es complicado teniendo en cuenta la configuración del
+sistema de medida. Podría hacerse por hardware, sería necesario generar una
+señal de reloj mediante un circuito externo. El circuito requiere de tres
+componentes, uno que genera un tren de pulsos rectangulares de frecuencia
+100 kHz que se activa y se detiene por flanco de bajada o subida y que
+marca el muestreo, otro que genera el flanco que activa el tren de pulsos
+cuando la señal de trabajo efectúa una transición de tensión negativa a
+tensión positiva y, por último, otro que genera el flanco que detiene el
+tren de pulsos. Como señal que detiene el tren de pulsos es necesario un
+tren de flancos, pulsos estrechos, cuyo periodo depende de la escala
+temporal de la ventana donde se representa la señal. Dependiendo de la
+configuración de este parámetro puede cambiarse el valor de tensión que
+sale por uno de los puertos de salida analógica de la \kpci{}, y en función
+de esta tensión generar una señal en la que el \emph{duty cycle} varía y la
+duración del estado alto se mantiene. El flanco que detiene el muestreo
+puede monitorizarse para averiguar cuando debe la aplicación extraer las
+muestras del buffer de memoria asociado a la tarjeta y debe empezar a
+procesarlas. La señal de reloj debe pasarse a la tarjeta por el puerto
+\textsc{j1}, puerto que puede utilizarse como fuente de reloj hardware
+externo, y debe configurarse la tarjeta apropiadamente mediante las
+propiedades del objeto dispositivo correspondiente en \matlab{}.
+
+Diseñar el circuito y realizar la configuración correspondiente requiere de
+un gran esfuerzo por lo que el problema de implementar barridos por disparo
+en el software de control se ha atajado empleando una solución aproximada.
+En lugar de empezar a muestrear a partir de un evento, de un pulso o de un
+flanco en una señal auxiliar o en la propia señal, se muestrea la señal, y
+cuando ha transcurrido el suficiente tiempo como para disponer de bastantes
+muestras como para cubrir dos ventanas temporales (en este documento se
+llama ventana temporal al tiempo que representa el eje de tiempos en cada
+momento), entonces se procesan las muestras y además de eliminar la
+componente en continua se detectan los nulos de la señal. Después se alinea
+el más próximo de los nulos a la muestra central del intervalo con el cero
+del plano cartesiano. De esa forma todas las capturas de la señal aparecen
+alineadas. Las \cref{fig:sigmodtri,fig:repmodtri} muestran cual es el
+resultado de utilizar este algoritmo.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-02.mps}
+	\end{center}
+	\caption[Representación de barridos por disparo]{En esta figura se
+	muestran las distintas ventanas que intervienen en la solución
+	aproximada utilizada para implementar la representación de barridos
+	activados por disparo en el software de control. Puede apreciarse
+	la información que se descarta en cada ciclo.}
+	\label{fig:sigmodtri}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch3-03.mps}
+	\end{center}
+	\caption[Representación del fragmento de señal]{Fragmento de señal
+	representado centrado en el cero del plano cartesiano.}
+	\label{fig:repmodtri}
+\end{figure}
+
+El coste que se deriva de utilizar un algoritmo como este para obtener
+barridos disparados de la señal es la información que se descarta en cada
+ciclo, al desplazar la señal todo lo que queda fuera de la ventana no se
+representa, con lo que parte de la información capturada es descartada. En
+la \cref{fig:sigmodtri} puede observarse el instante $t_0$, instante en el
+que empieza el proceso de adquisición, el instante $t_0 + T$ que representa
+el momento en el que este proceso termina. Por tanto, el fragmento de señal
+contenido entre estos dos instantes se encuentra digitalizado y almacenado
+en memoria en el momento en que empiezan a procesarse las muestras,
+inmediatamente después de $t_0 + T$. Sin embargo, después de desplazar la
+señal todo aquello que queda fuera de la ventana temporal se descarta y
+nunca llega a representarse. Además durante el tiempo en el que el software
+procesa y representa la señal digital, desde $t_0 + T$ hasta $t_1$, no se
+muestrea, por lo que el fragmento de señal que transcurre en esos instantes
+también pasa inadvertido al usuario. Todo ello puede contribuir a que
+ciertos eventos ocurridos en la señal se pierdan ocasionalmente, sin
+embargo, esta solución ha dado hasta el momento muy buenos resultados, tal
+y como se demuestra en el \cref{chap:part1conclusions}.
