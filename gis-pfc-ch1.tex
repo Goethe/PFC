@@ -53,22 +53,50 @@ coincide con el orden que guardan los distintos subsistemas en esta
 jerarquía.
 
 
-\section{Introducción}
 
-El primero de los subsistemas estudiado en este documento es el subsistema
-para la interacción con el medio físico. Es el subsistema que ocupa la capa
-de menor nivel y agrupa los elementos que pueden observarse en la
-\cref{fig:submedium}.
+Para que un sistema pueda considerarse un sistema de medida debe haber una
+interacción con el objeto o evento de estudio. El propósito de este sistema
+es medir las propiedades de un determinado medio físico, en este caso
+madera de palmera. La interacción con el medio ocurre en el primer
+subsistema que se encuentra dentro de la jerarquía de capas que define el
+sistema de medida. Atendiendo a su función dentro del sistema este
+subsistema recibe en esta memoria el nombre de subsistema para la
+interacción con el medio físico. Es el único de los tres subsistemas que
+conforman el sistema de medida que está directamente relacionado con los
+ensayos no destructivos, mientras que el resto de subsistemas, el
+subsistema de adquisición y el subsistema de control y presentación se
+encuentran más ligados al tratamiento digital de señales. En una inspección
+ultrasónica, el subsistema para la interacción con el medio físico, este
+subsistema, es imprescindible y sin él no puede realizarse el ensayo; sin
+embargo, los otros dos subsistemas pueden sustituirse por otros elementos
+que realicen la misma función, por un osciloscopio digital, por ejemplo. El
+subsistema para la interacción con el medio físico está compuesto por los
+elementos presentes en la figura \cref{fig:submedium}. Los transductores
+son los dispositivos que interactúan con el medio propiamente, a través de
+la emisión de una señal acústica que se recibe en el otro extremo. Por su
+parte los acondicionadores adecuan las señales de tal modo que, pueda haber
+una comunicación (real) entre los elementos presentes en este subsistema y
+los pertenecientes a subsistemas por encima de éste.
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch1-02.mps}
+		\includegraphics{gis-pfc-ch1-01.mps}
 	\end{center}
-	\caption[Subsistema para la interacción con el medio físico]
-	{Elementos del sistema digital de medida que también se incluyen en
-	el subsistema para la interacción con el medio físico.}
+	\caption[Subsistema para la interacción del medio físico]{Esquema
+	que representa los distintos elementos o bloques presentes en el
+	subsistema para la interacción con el medio físico.}
 	\label{fig:submedium}
 \end{figure}
 
-
-
+Este capítulo se divide pues en tres apartados, en el primero se hace una
+descripción técnica de los transductores utilizados en el proyecto, y se
+hace una pequeña observación de su utilidad en relación con el tipo de
+ensayo programado para el proyecto. En los dos apartados posteriores se
+explica el proceso de diseño de los circuitos acondicionadores de la
+sección de transmisión y de la sección de recepción respectivamente, se
+exponen los requisitos que deben satisfacer y se explica brevemente el
+funcionamiento de los circuitos propuestos para que el lector pueda
+comprobar que satisfacen dichos requisitos. En el \cref{chap:endus} se hace
+un desarrollo de la teoría de los ensayos no destructivos que puede ayudar
+a comprender mejor algunos de los conceptos propuestos a lo largo de este
+mismo capítulo.
