@@ -72,11 +72,11 @@ embargo, los otros dos subsistemas pueden sustituirse por otros elementos
 que realicen la misma función, por un osciloscopio digital, por ejemplo. El
 subsistema para la interacción con el medio físico está compuesto por los
 elementos presentes en la figura \cref{fig:submedium}. Los transductores
-son los dispositivos que interactúan con el medio propiamente, a través de
-la emisión de una señal acústica que se recibe en el otro extremo. Por su
-parte los acondicionadores adecuan las señales de tal modo que, pueda haber
-una comunicación entre los elementos presentes en este subsistema y los
-pertenecientes a subsistemas por encima de éste.
+son los dispositivos que interactúan con el medio propiamente dicho, a
+través de la emisión de una señal acústica que se recibe en el otro
+extremo. Por su parte los acondicionadores adecuan las señales de tal modo
+que, pueda haber una comunicación entre los elementos presentes en este
+subsistema y los pertenecientes a subsistemas por encima de éste.
 
 \begin{figure}
 	\begin{center}
@@ -99,7 +99,67 @@ funcionamiento de los circuitos propuestos para que el lector pueda
 comprobar que satisfacen dichos requisitos. En el \cref{chap:endus} se hace
 un desarrollo de la teoría de los ensayos no destructivos que puede ayudar
 a comprender mejor algunos de los conceptos propuestos a lo largo de este
-mismo capítulo.
+capítulo.
 
 
-\section{Transductores}
+\section{Transductores de ultrasonidos}
+
+Los transductores de ultrasonidos son transductores piezoeléctricos y, por
+tanto, entran en la categoría de transductores generadores. La principal
+característica de un sensor generador es que al ser expuesto a la magnitud
+no eléctrica de interés se crea en bornes del sensor una diferencia de
+potencial eléctrico proporcional al valor que adopta dicha magnitud sin
+necesidad de que el sensor sea alimentado de forma externa. Este efecto es
+reversible y puede utilizarse para provocar una respuesta no eléctrica a
+una variación en una corriente eléctrica por medio de un actuador. Los
+actuadores y los sensores generadores suelen presentar características
+similares, sobretodo debido a este motivo. El efecto piezoeléctrico es un
+efecto por el cual en un material que presenta una estructura cristalina se
+crea una diferencia de potencial eléctrico al aplicarse sobre él una
+deformación mecánica. El efecto contrario también recibe el mismo nombre,
+al aplicar una diferencia de potencial sobre un material este se deforma
+por acción del potencial comprimiéndose o expandiéndose. Las contracciones
+provocadas en un actuador de ultrasonidos al excitarlo con una señal
+eléctrica se transforman en ondas de presión, concretamente en ondas
+acústicas, que se propagan por el medio. De igual manera la onda acústica
+actúa sobre el sensor, ejerciendo una presión sobre su superficie que el
+sensor traduce en una señal eléctrica. Las principales características de
+los transductores utilizados en el proyecto vienen recogidas en el
+\cref{tab:transducers}.
+
+\begin{table}
+	\centering
+	\begin{threeparttable}
+	\begin{tabular}{l c c}
+		\toprule
+		& \multicolumn{2}{c}{Transductor} \\
+		\cmidrule(l){2-3}
+		Propiedad & Transmisor & Receptor \\
+		\midrule
+		Nivel de presión acústica transmitida & 110 dB & --- \\
+		Sensibilidad del receptor & --- & -70 dB \\
+		Frecuencia fundamental de resonancia
+		& $40 \text{kHz} \pm 1 \text{kHz}$
+		& $40 \text{kHz} \pm 1 \text{kHz}$ \\
+		Ancho de banda a -6 dB & 2.5 kHz & 3.0 kHz \\
+		Ancho del lóbulo principal & 60º & \\
+		Máxima potencia disipable & 200 mWef & \\
+		Impedancia & $700\ \Omega$ & $30\ \text{k}\Omega$ \\
+		Capacidad & $2 \text{nF} \pm 20\%$
+		& $2 \text{nF} \pm 20\%$ \\
+		Tiempo de subida & $700\ \mu\text{s}$ & \\
+		Rango de temperatura de funcionamiento %
+		& (-20, 60) [ºC] & (-20, 60) [ºC] \\
+		\bottomrule
+	\end{tabular}
+	\begin{TableNotes}
+		\tnotetext{*}{Todas las magnitudes de la tabla se dan con
+		respecto a la frecuencia natural de resonancia de los
+		transductores.}
+	\end{TableNotes}
+	\end{threeparttable}
+	\caption[Características de los transductores empleados en el
+	sistema de medida]{Características de los transductores empleados
+	en el sistema de medida.}
+	\label{tab:transducers}
+\end{table}

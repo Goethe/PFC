@@ -57,6 +57,30 @@
 	cuya amplitud y fase dependen de la posición del actuador y de la
 	acción del medio.
 
+	En cierto modo sí que actúan como filtros, depende del modo de
+	funcionamiento del transductor. El transductor puede funcionar
+	alimentado por una sinusoide o por un pulso rectangular, generando
+	un pulso acústico de unas determinadas características. Si se
+	alimenta con una sinusoide entonces vibra a su frecuencia natural
+	de resonancia, pero también a otras frecuencias que atenúa, la
+	característica de presión acústica de emisión expone la atenuación
+	que sufren las distintas frecuencias. También pueden alimentarse
+	armónicos distintos del armónico principal, lo que me lleva a
+	pensar que en teoría frecuencias distintas de los armónicos no se
+	emiten al medio. Sólo se emiten los armónicos, pero si alimento el
+	actuador con una frecuencia distinta de la frecuencia de un
+	determinado armónico la energía se reparte entre ese armónico y
+	el resto de armónicos (imagino que lo mismo ocurre con una
+	alimentación que oscile a la frecuencia natural de resonancia del
+	actuador). Con señales pulsadas la atenuación supongo que será
+	mayor. El sensor funciona de modo similar, tiene una curva de
+	sensibilidad pero yo creo que sólo saca una frecuencia o distintos
+	armónicos. Luego, sí, se pueden entender como filtros pues atenúan
+	distintas frecuencias, incluso su frecuencia natural de resonancia,
+	pero también actúan como <<moduladores>> o dispositivos similares,
+	porque trasladan toda la energía de la frecuencia de la que viene a
+	la frecuencia de sus armónicos principales.
+
 	Características de un actuador de ultrasonidos.
 
 				 ,.	 oo
