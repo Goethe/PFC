@@ -114,7 +114,7 @@
 	El parámetro más importante asociado al actuador es el nivel de
 	presión acústica transmitida, que da una medida de la presión que
 	la onda acústica generada por un transductor alimentado con una
-	determinada señal ejerce a una distancia determinada.  Relaciona
+	determinada señal ejerce a una distancia determinada. Relaciona
 	tres magnitudes: la tensión pico a pico o tensión eficaz de la
 	señal de alimentación; la presión ejercida por la onda acústica a
 	una determinada distancia; y la frecuencia de oscilación de la onda

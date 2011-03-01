@@ -163,3 +163,93 @@ los transductores utilizados en el proyecto vienen recogidas en el
 	en el sistema de medida.}
 	\label{tab:transducers}
 \end{table}
+
+El actuador de ultrasonidos puede funcionar de dos formas diferentes: si es
+alimentado con una sinusoide emite una onda acústica continua al medio; por
+el contrario, si se alimenta con un pulso rectangular (o de continua),
+emite un tono modulado por un pulso gaussiano de la misma duración. En
+cualquier caso la potencia disipada por el actuador no puede exceder el
+límite de 20 mW eficaces especificado por el fabricante. Dependiendo del
+tipo de alimentación es posible adoptar una u otra estrategia para acotar
+la potencia suministrada al sensor. Si se alimenta el sensor con una onda
+sinusoidal puede, o bien limitarse la tensión de alimentación, o bien
+utilizarse una sinusoide pulsada, empleando una configuración de ciclo de
+trabajo que garantice que no se supera el límite de potencia soportado. En
+caso de utilizar un pulso rectangular, o un tren de pulsos rectangulares,
+las opciones son similares, reducir el nivel de tensión o configurar el
+ciclo de trabajo de la señal. El actuador de ultrasonidos carga el circuito
+de alimentación con una impedancia que presenta un carácter variable con
+respecto a la frecuencia de la onda eléctrica y que debe tenerse en cuenta
+para calcular la transferencia de potencia. La impedancia equivalente
+presenta un comportamiento capacitivo a frecuencias por debajo de la
+frecuencia fundamental de oscilación del actuador, carácter resistivo a
+frecuencias en torno a la frecuencia de resonancia y carácter inductivo a
+frecuencias por encima de esta frecuencia. Por tanto, la máxima
+transferencia de potencia ocurre en frecuencias cercanas a la frecuencia
+natural de oscilación del actuador, donde éste se comporta como una
+impedancia resistiva de un valor típico que ronda los 700 $\Omega$. La
+potencia suministrada al actuador se reparte entre la frecuencia
+fundamental de resonancia y los distintos armónicos a frecuencias
+superiores. El actuador siempre vibra a su frecuencia fundamental de
+resonancia o a frecuencias múltiplo de ésta independientemente de la
+frecuencia de la onda eléctrica utilizada para el suministro de potencia.
+Si bien esto es cierto, para evitar excitar armónicos distintos de la
+frecuencia fundamental de resonancia es aconsejable que la frecuencia de la
+onda eléctrica sea lo más próxima a la frecuencia de resonancia del
+actuador, además esto garantiza la máxima transferencia de potencia.
+
+En ensayos no destructivos mediante ultrasonidos es imprescindible utilizar
+pulsos acústicos como el representado en la \cref{fig:pulse}, para poder
+evaluar las propiedades del medio de propagación empleando una de las dos
+técnicas expuestas en el \cref{chap:endus} en la \cref{sec:technics}. Como
+se explica en dicho capítulo, el actuador continua vibrando a su frecuencia
+fundamental de resonancia incluso después de que la onda de alimentación
+pase a un estado bajo durante un tiempo determinado durante el proceso de
+fabricación del dispositivo ---esto es algo que no se aprecia en la
+figura---, dando lugar a lo que en teoría de \sig{endus} se conoce como
+<<zona ciega>> o <<zona muerta>>, este fenómeno se explica con mayor
+detalle en la \cref{sec:field}.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch1-04.mps}
+	\end{center}
+	\caption[Pulso acústico generado por el actuador de
+	ultrasonidos]{Pulso acústico que se obtiene del actuador de
+	ultrasonidos cuando se alimenta con un pulso rectangular.}
+	\label{fig:pulse}
+\end{figure}
+
+El parámetro más importante asociado al actuador de ultrasonidos es el
+nivel de presión acústica transmitida (\emph{Transmitting Sound Pressure
+Level}, o \psig{spl}), representa la presión que la onda acústica ejerce
+sobre la presión estática del aire a una distancia determinada del actuador
+cuando éste se alimenta con una determinada tensión eficaz. Proporciona una
+medida de la eficiencia del sensor y puede utilizarse conjuntamente con la
+sensibilidad del sensor para calcular de forma teórica cual es el alcance
+máximo de un experimento de ultrasonidos que emplea estos transductores. El
+\sig{spl} es una magnitud que varía con la frecuencia de la onda eléctrica,
+y alcanza su máximo en la frecuencia natural de resonancia del actuador. El
+fabricante suele proporcionar, o bien el valor típico del \sig{spl} a la
+frecuencia de resonancia del actuador, o bien un perfil de la magnitud
+frente a la frecuencia de la onda eléctrica. Con independencia del tipo de
+valor proporcionado, éste suele darse en escala logarítmica utilizando una
+para ello una referencia de presión que también se especifica. Para
+calcular el \sig{spl} que se da en condiciones distintas de aquellas en que
+se miden las especificaciones, debe calcularse la variación en escala
+lineal y después trasladar este resultado a escala logarítmica, antes de
+poder operar con el \sig{spl}. El sensor de ultrasonidos presenta unas
+propiedades muy similares a las propiedades del actuador, si bien se
+caracteriza por una impedancia bastante mayor. En el sensor la conversión
+se da en sentido contrario, las ondas acústicas de presión que inciden en
+la cara externa del sensor se traducen en variaciones de la tensión
+eléctrica que existe en bornes del dispositivo. Si la propiedad más
+característica del actuador de ultrasonidos es el \sig{spl}, la propiedad
+más característica del sensor es la sensibilidad. La sensibilidad suele
+proporcionarse también en escala logarítmica, igual que el \sig{spl} suele
+darse un valor típico o una característica de la propiedad frente a la
+frecuencia que, en ocasiones se superpone con la gráfica del \sig{spl} si
+los transductores pertenecen a una misma serie. La magnitud lineal es la
+relación entre la presión detectada y la diferencia de potencial eléctrico
+que se crea en bornes del sensor y, en este caso, representa una medida de
+la eficiencia del sensor.
