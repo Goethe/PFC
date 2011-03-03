@@ -42,8 +42,20 @@
 	anterior en la página X,
 
 	El primer paso en el diseño de un circuito acondicionador es
-	determinar los requisitos que dicho circuito debe satisfacer. Como
-	se veía en el apartado anterior en la página
+	determinar los requisitos que dicho circuito debe satisfacer.
+
+	En este caso, el (principal) propósito del circuito acondicionador
+	es proporcionar un suministro eléctrico
+
+	que reúna unas condiciones tales que al ser alimentado por dicha
+	onda eléctrica el actuador de ultrasonidos emita un pulso acústico
+	compatible con el tipo de ensayo que se preve realizar.
+
+	que reúna ciertas condiciones/unas condiciones determinadas. El
+	actuador de ultrasonidos puede emitir pulsos acústicos al medio,
+	para ello debe excitarse mediante un tren de pulsos rectangulares.
+
+	Como se veía en el apartado anterior en la página
 	\vpageref{sec:transducers}, el actuador de ultrasonidos utilizado
 	en el PFC puede emitir pulsos acústicos compatibles con el tipo de
 	endus que debe realizarse como parte de la segunda "parte" del
@@ -130,3 +142,125 @@
 	temporal está constituida por un condensador y dos resistores, en
 	el modo astable de funcionamiento; o por un condensador y un único
 	resistor, en el modo monoestable.
+
+	------------------------------------------------------------------
+
+	|Jueves, 3 de Marzo de 2011|
+
+	El primer paso en el diseño de un circuito acondicionador es
+	determinar los requisitos que dicho circuito debe satisfacer. En
+	este caso, el principal propósito del circuito acondicionador es
+	proporcionar un suministro eléctrico que reúna unas condiciones
+	determinadas. Para la realización de un endus es necesario que el
+	actuador de ultrasonidos emita un pulso acústico, no una onda
+	acústica continua. De lo contrario no se pueden percibir parámetros
+	en la señal eléctrica necesarios para determinar algunas de las
+	propiedades del medio de propagación. El actuador de ultrasonidos
+	utilizado en el proyecto puede emitir este tipo de pulsos
+	acústicos, para emitir un pulso acústico debe excitarse con un
+	pulso eléctrico rectangular. Por tanto, uno de los requisitos que
+	el circuito acondicionador debe satisfacer es que a su salida debe
+	generar un tren de pulsos eléctricos rectangulares. Con cada pulso
+	rectangular el actuador emite un pulso acústico, como requisito
+	opcional puede considerarse la incorporación de un interruptor de
+	inicio con el que controlar el proceso.	El otro requisito
+	fundamental que debe cumplir el circuito es un requisito de
+	potencia. El pulso acústico que emite el actuador debe ser capaz de
+	atravesar el tronco de una palmera, para conseguirlo una buena
+	estrategia consiste en emitir la máxima energía ultrasónica
+	posible. Esto, a su vez, puede conseguirse si se suministra al
+	actuador la máxima potencia que puede soportar. El límite de
+	potencia que el actuador puede disipar es de 200 mW eficaces,
+	considerando máxima transferencia de potencia, la tensión eficaz de
+	la onda eléctrica con la que se alimenta el actuador debe
+	encontrarse en torno a los 10 V eficaces. Sin embargo, la hipótesis
+	de que existe máxima transferencia de potencia cuando se alimenta
+	el sensor con un tren de pulsos rectangulares no es correcta. De
+	hecho, es difícil determinar cual es el factor de transferencia de
+	potencia en estas circunstancias. Para favorecer el máximo tránsito
+	de corriente a través de la carga una solución sencilla consiste en
+	diseñar el circuito acondicionador para que su impedancia de salida
+	sea mínima.
+
+	El diseño propuesto se muestra en la figura ---, está basado en dos
+	temporizadores 555 ---el se556 de Texas Instruments es un circuito
+	integrado que contiene dos 555 dentro de un mismo encapsulado--- y
+	lo completa un amplificador operacional. El 555 es un temporizador
+	integrado de gran precisión capaz de proporcionar pulsos
+	rectangulares de 12 V de amplitud con tiempos de subida y de bajada
+	contenidos entre los 300 y los 100 ns. Es un integrado muy
+	conocido, es muy versátil, y es empleado en gran variedad de
+	aplicaciones. Habitualmente se utiliza en sus configuraciones
+	astable y monoestable. En su configuración astable el 555 genera un
+	tren de pulsos rectangulares periódico en el que el ciclo de
+	trabajo puede ajustarse a voluntad para adoptar un valor entre el
+	50% y el 100%. Por el contrario, en su configuración monoestable el
+	circuito genera un pulso de duración muy precisa bajo un estímulo
+	externo. La configuración monoestable responde a un estímulo por
+	estado bajo, por tanto, es fácil observar la relación que existe
+	entre las dos configuraciones. Utilizando dos 555 en cascada
+	(alimentando uno con la salida del anterior), el primero en su
+	configuración astable y el segundo configurado como monoestable
+	puede obtenerse un tren de pulsos rectangulares en el que el ciclo
+	de trabajo no se encuentra limitado a ningún rango de valores. En
+	una configuración en cascada como la propuesta, el ciclo de trabajo
+	está determinado por la relación entre el periodo del tren de
+	pulsos, que únicamente depende de la configuración del astable, y
+	la duración de los pulsos, que a su vez depende de la configuración
+	del monoestable; de ahí que pueda evitarse la restricción que se
+	aplica al ciclo de trabajo cuando sólo se utiliza un astable.
+
+	Ambas configuraciones, astable y monoestable, se caracterizan por
+	la presencia de una red temporal en el circuito. Otra propiedad
+	característica de estos circuitos es que el terminal de control
+	debe encontrarse acoplado a tierra por medio de un condensador. La
+	red temporal es un circuito compuesto por resistencias y
+	condensadores que se encuentra conectado a los terminales de
+	disparo, umbral y descarga del 555 y que dependiendo de la
+	distribución, número y valor de sus componentes provoca un
+	determinado comportamiento en el 555. En un astable la red temporal
+	está compuesta por un condensador conectado por un lado a los
+	terminales de umbral y disparo y por otro a masa, y dos
+	resistencias: una situada entre la tensión de alimentación y el
+	terminal de descarga del 555; y otra que está conectada al primer
+	terminal del condensador y en su otro extremo al terminal de
+	descarga. El periodo y el ciclo de trabajo del tren de pulsos que
+	puede observarse a la salida de un astable están determinados por
+	las siguientes ecuaciones.
+
+	ecuaciones
+
+	Por su parte, la red temporal de un circuito monoestable está
+	compuesta por una resistencia ubicada entre la alimentación y los
+	terminales de descarga y umbral, y un condensador conectado al
+	segundo terminal de la resistencia y a masa. En este caso la red
+	temporal determina la duración del pulso que el monoestable genera
+	cuando recibe un estímulo, la ecuación es la siguiente.
+
+	ecuación
+
+	El terminal de disparo de un monoestable ha de ser conectado a la
+	señal de estímulo. La señal de estímulo, que en la configuración en
+	cascada de dos 555 es la señal a la salida del astable, debe
+	caracterizarse por permanecer siempre en un estado estable en el
+	que la tensión debe ser próxima a la alimentación, y en el momento
+	en el que deba generarse el pulso cambiar a un estado bajo que no
+	debe durar más de lo que dura el pulso de salida. Por tanto,
+	resulta comprensible que el ciclo de trabajo de un tren de pulsos
+	generado por un astable con el propósito de servir de señal de
+	estímulo de un 555 monoestable debe rondar valores elevados y, por
+	tanto, R1 << R2.
+
+	Como se mencionaba anteriormente el circuito acondicionador lo
+	completa un amplificador operacional configurado con realimentación
+	negativa. El propósito de este circuito es amplificar la señal de
+	salida del 556 al tiempo que limita el valor de la impedancia de
+	salida del conjunto. La señal de salida resultante puede observarse
+	en la figura ---. De acuerdo con lo observado en la figura ---
+	en el anterior apartado, cuando uno de los pulsos rectangulares de
+	los que se compone el tren llega al actuador se genera un pulso
+	acústico. Por razones de comodidad puede instalarse un interruptor
+	en el terminal de reset del 555 monoestable para poder detener o
+	iniciar el proceso, aunque desde el punto de vista del experimento
+	basta con seleccionar una de los pulsos eléctricos generados por el
+	sensor para realizar el estudio y descartar el resto.
