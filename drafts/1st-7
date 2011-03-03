@@ -1,0 +1,132 @@
+|Martes, 1 de Marzo de 2011|
+
+	Esto sólo son unas notas para saber por donde tengo que tirar
+	mañana.
+
+	Transductores, tengo que hablar de las dimensiones de los
+	transductores, tengo que explicar que no son apropiados para el
+	experimento que tengo que hacer para el proyecto y que no los elegí
+	si no que me los dieron. La frecuencia es apropiada, es buena una
+	baja frecuencia para traspasar un medio como una palmera pero es
+	malo porque aparecen ondas superficiales, pero es bueno porque la
+	frecuencia de muestreo de la tarjeta de adquisición es de cien mil
+	muestras por segundo y no podría manejar una señal de frecuencia
+	mayor a 50 kHz.
+
+	Circuito acondicionador de la sección de transmisión. El propósito
+	del acondicionador es proporcionar una señal de alimentación
+	adecuada para atacar el actuador de ultrasonidos y adaptar la
+	impedancia con la que el dispositivo carga el circuito. Se propone
+	un circuito basado en un temporizador, con el circuito puedo crear
+	una señal pulsada en la que la duración del ciclo de trabajo puede
+	modificarse ajustando un simple potenciómetro. La impedancia de
+	salida es prácticamente nula por lo que la totalidad de la
+	corriente va a la carga. Además el circuito puede funcionar con una
+	pila (media hora) o con la misma fuente de alimentación que utiliza
+	el circuito acondicionador de la sección de recepción. Combino el
+	funcionamiento como astable del temporizador 555 con el
+	comportamiento como monoestable para sacar pulsos con ciclo de
+	trabajo por debajo del cincuenta por ciento. (Esto salió en un
+	examen de laboratorio de electrónica).
+
+	Circuito acondicionador de la sección de recepción.
+
+	------------------------------------------------------------------
+
+	|Miércoles, 2 de Marzo de 2011|
+
+	El primer paso de un proceso de diseño es determinar los requisitos
+	que debe satisfacer aquello que se va a diseñar. Hablo del circuito
+	acondicionador que transferirá una corriente eléctrica al actuador
+	para que este emita un pulso acústico. Como se veía en el apartado
+	anterior en la página X,
+
+	El primer paso en el diseño de un circuito acondicionador es
+	determinar los requisitos que dicho circuito debe satisfacer. Como
+	se veía en el apartado anterior en la página
+	\vpageref{sec:transducers}, el actuador de ultrasonidos utilizado
+	en el PFC puede emitir pulsos acústicos compatibles con el tipo de
+	endus que debe realizarse como parte de la segunda "parte" del
+	proyecto. Para conseguir que el actuador emita esta clase de pulsos
+	debe suministrársele un pulso eléctrico rectangular, o un tren de
+	pulsos rectangulares que conceptualmente representa el mismo tipo
+	de onda eléctrica. Es necesaria una gran potencia acústica para
+	poder atravesar un tronco de palmera de un espécimen de tamaño
+	medio, si bien se emite a bajas frecuencias. Por ello, la potencia
+	transmitida al actuador debe ser la máxima que éste puede soportar,
+	200 mWeff. Para conseguirlo, la amplitud eficaz de la onda
+	eléctrica utilizada como suministro eléctrico debe ser próxima a
+	los 10 Veff. Esto puede lograrse amplificando la señal eléctrica o
+	con la configuración adecuada del ciclo de trabajo de la señal.
+	Además, para conseguir la mayor transferencia de potencia es
+	necesario que se produzca acoplamiento de impedancias entre el
+	circuito acondicionador y el actuador. El comportamiento del
+	actuador de cara al circuito cuando se alimenta con un pulso
+	rectangular no está definido, lo más sencillo es conseguir que la
+	impedancia de salida del circuito acondicionador sea prácticamente
+	nula, aunque se trata de una solución aproximada que busca que la
+	corriente circule principalmente por la carga.
+
+	El circuito propuesto se basa en dos temporizadores 555 y un
+	amplificador operacional. El 555 es un temporizador integrado de
+	gran precisión capaz de proporcionar pulsos rectangulares de 12 V
+	de amplitud con tiempos de subida y de bajada situados entre los
+	300 y los 100 ns. Es un temporizador muy conocido y empleado en
+	gran variedad de aplicaciones. Los dos modos de funcionamiento más
+	utilizados y conocidos son el modo astable y el modo monoestable.
+
+	Ambas configuraciones se caracterizan porque el terminal de control
+	se acopla a tierra mediante un condensador y porque el
+	funcionamiento del circuito depende...
+
+	Ambas configuraciones se caracterizan porque el terminal de control
+	se acopla a tierra a través de un condensador y porque incorporan
+	una red temporal gobierna no sólo la duración de los pulsos
+	eléctricos si no también el comportamiento del circuito. La única
+	diferencia entre el modo astable y el monoestable es la disposición
+	y tipo de red temporal utilizada. Una red temporal es un circuito
+	compuesto por resistencias, dos si se configura como astable o una
+	si se configura como monoestable, y un condensador que se conecta a
+	los terminales de descarga, disparo y umbral del temporizador.
+	Cuando el 555 se configura en el modo astable se caracteriza por
+	proporcionar un tren de pulsos rectangulares periódico a la salida.
+	El ciclo de trabajo mínimo del tren de pulsos es del 50% pudiendo
+	llegar a valores cercanos al 100% dependiendo de la configuración
+	de la red temporal. En el modo monoestable, por el contrario, la
+	salida permanece en un estado estable a nivel bajo hasta que se
+	aplica un estímulo externo en el terminal de disparo del
+	temporizador, en ese momento se genera un pulso cuya duración viene
+	determinada por la red temporal. El estímulo al que se hace
+	referencia consiste en provocar la caída de una señal que
+	habitualmente se mantenga en la tensión de alimentación a un estado
+	nulo que dure unos instantes, después la señal debe volver a su
+	estado habitual. El tipo de estímulo que requiere el 555 en su
+	configuración monoestable es propicio para emplear una
+	configuración en cascada de dos 555, el primero en configuración
+	astable y el segundo en configuración monoestable. Un circuito
+	semejante proporciona a su salida un tren de pulsos rectangulares
+	periódicos en el que el periodo está controlado por la red temporal
+	del temporizador configurado como astable y el ciclo de trabajo
+	depende de la red temporal del segundo temporizador. El ciclo de
+	trabajo de un circuito semejante no se encuentra limitado al rango
+	que se ha mencionado para un único 555 en configuración
+	monoestable, si no que puede elegirse libremente.
+
+	El amplificador operacional se utiliza principalmente para
+	amplificar la señal que proporciona el 556 por lo que se empleará
+	una configuración de realimentación negativa. Es necesario que el
+	amplificador seleccionado pueda funcionar a las frecuencias que
+	saca el temporizador, es incluso más importante que la ganancia. El
+	amplificador también me sirve para acoplar la impedancia de la
+	carga, puesto que virtualmente un operacional tiene una impedancia
+	de salida nula. El circuito completo puede observarse en la figura
+	tal y los valores de los componentes seleccionados para efectuar
+	las redes temporales de los temporizadores y la red de
+	realimentación del operacional están recogidos en el cuadro X.
+
+	Si la entrada de control se acopla a tierra el ancho de los pulsos
+	está controlado por la red temporal conectada al circuito.
+	Dependiendo del modo de funcionamiento del temporizador, esta red
+	temporal está constituida por un condensador y dos resistores, en
+	el modo astable de funcionamiento; o por un condensador y un único
+	resistor, en el modo monoestable.
