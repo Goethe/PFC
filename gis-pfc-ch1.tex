@@ -140,6 +140,15 @@ fabricación para que el conjunto vibre a la frecuencia de resonancia
 elegida, estos transductores son menos eficientes pero más resistentes y
 más precisos. Las principales características de los transductores
 utilizados en el proyecto vienen recogidas en el \cref{tab:transducers}.
+
+% Los transductores empleados en este \sig{pfc} son de tipo
+% cerrado. En la figura (??) se representan varias planos acotados de los
+% transductores de forma que puedan apreciarse sus dimensiones. En el
+% encapsulado del actuador existe una marca en forma de punto blanco que lo
+% identifica y que sirve para distinguirlo del sensor, es la única diferencia
+% entre ambos. El resto de características relevantes vienen recogidas en el
+% \cref{tab:transducers}.
+
 % Y su aspecto viene reflejado en la representación que realiza la figura
 % 1.3
 % Más que: Y su aspecto..., cuando termino de explicar que diferencias
@@ -311,7 +320,7 @@ efectuar los ensayos previstos, este tema vuelve a tratarse más adelante
 durante la segunda parte de la memoria.
 
 
-\section{Circuito acondicionador de la sección de emisión}
+\section{Acondicionador de la sección de emisión}
 
 El primer paso en el diseño de un circuito acondicionador es determinar los
 requisitos que dicho circuito debe satisfacer. En este caso, el principal
@@ -397,9 +406,9 @@ observarse a la salida de un astable están determinados por las siguientes
 ecuaciones.
 
 \begin{align}
-	T_H &= C_1\cdot ln(2)(R_1 + R_2) \simeq 0,693C\cdot(R_1 + R_2) \\
-	T_L &= C_1\cdot ln(2)(R_2) \simeq 0,693CR_2 \\
-	T &= T_H + T_L = C_1\cdot ln(2)(R_1 + 2R_2) = \frac{1}{f} \\
+	T_H &= ln(2)(R_1 + R_2)C_1 \simeq 0,693(R_1 + R_2)C_1 \\
+	T_L &= ln(2)(R_2)C_1 \simeq 0,693\cdot C_1R_2 \\
+	T &= T_H + T_L = ln(2)(R_1 + 2R_2)C_1 = \frac{1}{f} \\
 	D &= \frac{T_H}{T} = \frac{R_1 + R_2}{R_1 + 2R_2}
 	\label{eq:astable}
 \end{align}
@@ -412,7 +421,7 @@ el monoestable genera cuando recibe un estímulo, la ecuación es la
 siguiente.
 
 \begin{equation}
-	T_H = C_2R_3ln(3) \simeq 1,1C_2R_3
+	T_H = ln(3)C_2R_3 \simeq 1,1\cdot C_2R_3
 	\label{eq:monostable}
 \end{equation}
 
@@ -424,8 +433,8 @@ alimentación, y en el momento en el que deba generarse el pulso cambiar a
 un estado bajo que no debe durar más de lo que dura el pulso de salida. Por
 tanto, resulta comprensible que el ciclo de trabajo de un tren de pulsos
 generado por un astable con el propósito de servir de señal de estímulo de
-un 555 monoestable debe rondar valores elevados y, por tanto, $R_1 \lll
-R_2$.
+un 555 monoestable debe rondar valores elevados y, por tanto, $R_2 \lll
+R_1$.
 
 Como se mencionaba anteriormente el circuito acondicionador lo completa un
 amplificador operacional configurado con realimentación negativa. El
