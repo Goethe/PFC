@@ -6,7 +6,7 @@ TEX = gis-pfc-pro.tex gis-pfc-pro.tex gis-pfc-ch1.tex gis-pfc-ch2.tex gis-pfc-ch
 	gis-pfc-ch4.tex gis-pfc-ch5.tex gis-pfc-appa.tex gis-pfc-appb.tex
 BIB = $(TEXMAIN:.tex=.bib)
 PICSCH1 = gis-pfc-ch1-01.mps gis-pfc-ch1-02.mps gis-pfc-ch1-03.mps gis-pfc-ch1-04.mps \
-	  gis-pfc-ch1-05.mps
+	  gis-pfc-ch1-05.mps gis-pfc-ch1-06.mps
 PICSCH2 = gis-pfc-ch2-01.mps gis-pfc-ch2-02.mps gis-pfc-ch2-03.mps gis-pfc-ch2-04.mps
 PICSCH3 = gis-pfc-ch3-01.mps gis-pfc-ch3-02.mps gis-pfc-ch3-03.mps gis-pfc-ch3-04.mps \
       gis-pfc-ch3-05.mps gis-pfc-ch3-06.mps gis-pfc-ch3-07.mps gis-pfc-ch3-08.mps
