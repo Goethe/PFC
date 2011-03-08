@@ -12,6 +12,7 @@
 *.toc
 *.txt
 *latexmk
+~*
 bibliografia
 gis-pfc.pdf
 application
