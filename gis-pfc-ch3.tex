@@ -1,18 +1,17 @@
 \chapter{Subsistema de control y presentación}\label{chap:control}
 
-\section{Introducción}
-
 El último de los subsistemas que conforma el sistema de medida digital es
 el subsistema de control y presentación. Es el subsistema de más alto nivel
 de entre los que integran el sistema por interactuar directamente con el
-supervisor. El subsistema de control y presentación está constituido por
-los bloques de control y presentación propiamente dichos, tal y como
-muestra la \cref{fig:subconpre}. Sin embargo, en la práctica estos dos
+supervisor. El bloque de control y el bloque de presentación son los que
+forman este subsistema y de los que recibe su nombre, la posición relativa
+que ocupan éstos con respecto al resto de elementos del sistema de medida
+digital puede observarse en la representación parcial que del sistema se
+hace en la \vref{fig:subconpre}. Sin embargo, en la práctica estos dos
 bloques se mezclan en una misma entidad indivisible, un software que se
 ejecuta en el \pc{} anfitrión en el que se encuentra instalada la tarjeta
-de adquisición.  Por ser el software que controla el funcionamiento de la
-tarjeta \kpci{} pasa a conocerse como \emph{software de control} en este
-documento.
+de adquisición. Por ser el software que gobierna la tarjeta de adquisición
+pasa a conocerse en este documento como \emph{software de control}.
 
 \begin{figure}
 	\begin{center}
@@ -652,6 +651,7 @@ mueve, aunque no es así, y en los osciloscopios digitales la representación
 es estrictamente estática. Pero el resultado final es muy similar, a
 efectos prácticos es el mismo, pues el ojo humano no es capaz de percibir
 la diferencia y eso en la práctica significa que esa diferencia no existe.
+
 Pero si existe diferencia, y esa diferencia se nota en algunos aspectos
 relacionados con el funcionamiento del osciloscopio digital. Usualmente
 tanto los osciloscopios digitales como los analógicos hacen barridos
@@ -679,20 +679,22 @@ embargo, en el osciloscopio digital no se ve nada y el retardo se hace
 visible y molesto. El retardo que se produce en situaciones como la
 expuesta, en las que trata de observarse evoluciones lentas de una señal,
 dificulta el uso de los osciloscopios, pero especialmente el uso de los
-osciloscopios digitales. Para paliar los efectos del retardo, el
-osciloscopio digital aprovecha que puede representar los datos que tiene en
-memoria de otras formas diferentes y, cuando la escala temporal de la
-representación se configura por encima de un nivel de umbral, simula el
-comportamiento de los osciloscopios analógicos. En lugar de hacer barridos
-de la señal, actualiza la pantalla en ciclos cortos añadiendo a la
-representación fragmentos muy pequeños de señal, cortos en comparación con
-la dimensión temporal representada en el eje de abscisas. Los fragmentos
-tienen una duración igual al periodo con el que se refresca el monitor, que
-es un periodo de refresco fácilmente asumible por el osciloscopio dada la
-configuración de la escala temporal, pero que es muy difícil de seguir por
-parte del ojo humano. Cuando opera de este modo, el osciloscopio digital
-simula que la señal va desplazándose de derecha a izquierda, y el resultado
-es idéntico al que muestran los osciloscopios digitales. Las
+osciloscopios digitales.
+
+Para paliar los efectos del retardo, el osciloscopio digital aprovecha que
+puede representar los datos que tiene en memoria de otras formas diferentes
+y, cuando la escala temporal de la representación se configura por encima
+de un nivel de umbral, simula el comportamiento de los osciloscopios
+analógicos. En lugar de hacer barridos de la señal, actualiza la pantalla
+en ciclos cortos añadiendo a la representación fragmentos muy pequeños de
+señal, cortos en comparación con la dimensión temporal representada en el
+eje de abscisas. Los fragmentos tienen una duración igual al periodo con el
+que se refresca el monitor, que es un periodo de refresco fácilmente
+asumible por el osciloscopio dada la configuración de la escala temporal,
+pero que es muy difícil de seguir por parte del ojo humano. Cuando opera de
+este modo, el osciloscopio digital simula que la señal va desplazándose de
+derecha a izquierda, y el resultado es idéntico al que muestran los
+osciloscopios digitales. Las
 \vref{fig:sigmodcont,fig:firmodcont,fig:desmodcont} ilustran este
 comportamiento.
 
