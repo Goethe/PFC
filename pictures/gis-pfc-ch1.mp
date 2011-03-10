@@ -639,11 +639,13 @@ p2 = (-a01/2, -a00/2)--(a01/2, -a00/2)--(a01/2, a00/2)-- %
 p3 = (-a03/2, a00/2)--(-a03/2, -a00/2)--(a03/2, -a00/2)-- %
 	(a03/2, a00/2);
 p4 = fullcircle scaled a03;
-addto d0 doublepath (-3a01/5, 0)--(-a01/4, 0);
-addto d0 doublepath (-3a01/20, 0)--(3a01/20, 0);
-addto d0 doublepath (a01/4, 0)--(3a01/5, 0);
-addto d0 doublepath (makepath l0) shifted (-a01/5, 0);
-addto d0 doublepath (makepath l0) shifted (a01/5, 0);
+addto d0 doublepath (-3a01/5, 0)--(-a01/4, 0) withpen l0;
+addto d0 doublepath (-3a01/20, 0)--(3a01/20, 0) withpen l0;
+addto d0 doublepath (a01/4, 0)--(3a01/5, 0) withpen l0;
+addto d0 contour (makepath pencircle scaled 0.075u) %
+	shifted (-a01/5, 0) withpen l0;
+addto d0 contour (makepath pencircle scaled 0.075u) %
+	shifted (a01/5, 0) withpen l0;
 
 % ··································································
 % planos de los transductores
