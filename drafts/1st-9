@@ -1,0 +1,71 @@
+|Lunes, 14 de Marzo de 2011|
+
+	Un acondicionador es un circuito cuyo propósito es adaptar la señal
+	que se obtiene de un sensor para poder procesarla, almacenarla o
+	representarla mediante un instrumento estándar. Habitualmente, los
+	aparatos utilizados para, por ejemplo, representar una señal, como
+	los osciloscopios digitales, son complejos y caros; por tanto,
+	resulta absurdo pensar en disponer de un aparato de éste tipo
+	adaptado para cada sensor y para cada situación concreta. En lugar
+	de eso, se utilizan circuitos que, a partir de la variación
+	producida en un sensor, extraen una señal apta para poder trabajar
+	con aparatos complejos como el osciloscopio. El osciloscopio y
+	otros instrumentos como éste, pueden trabajar con señales que
+	reúnan una serie de especificaciones, por tanto, basta con que la
+	señal que genera el circuito acondicionador se adecue a estas
+	especificaciones. Como son aparatos estándar, son bien conocidas
+	las condiciones que demandan de una señal, todos los instrumentos
+	de este tipo tienen más o menos las mismas especificaciones que,
+	además, como son aparatos que se sabe que van a utilizarse
+	funcionan en muchos tipos de circunstancias y es fácil conseguir
+	una señal apropiada para trabajar con estos aparatos, los sensores
+	están diseñados para que sea fácil obtener esa señal y existen
+	muchos estudios en ese tema, por lo que ya hay circuitos
+	acondicionadores bien conocidos.
+
+	El caso de los sensores de ultrasonidos utilizados en endus es
+	particular, dado que es una aplicación industrial muy concreta, es
+	difícil encontrar información relacionada con circuitos
+	acondicionadores utilizados con este propósito, sobre todo si hay
+	que rebuscar entre la cantidad de información que hay, por ejemplo,
+	sobre aplicaciones como sensores de proximidad utilizados en
+	robótica. Es una aplicación de carácter privado y que instalan
+	habitualmente empresas de i+d que se dedican exclusivamente a eso,
+	por lo que no hay muchos estudios publicados en el dominio público,
+	o al menos no tantos como puede haber relacionados con otro tipo de
+	aplicaciones.
+
+	Algo que no es totalmente correcto y que he afirmado en el párrafo
+	anterior, es que un sensor genera una señal. No, eso es falso, lo
+	que realmente ocurre es que frente a una variación en una magnitud
+	externa (la magnitud que desea medirse), se produce una variación,
+	proporcional o no, en una propiedad del sensor que indica la
+	magnitud de la variación.
+
+	El cometido de un circuito acondicionador (ésta introducción puedo
+	utilizarla después).
+
+	Los sensores no generan señales, al menos de forma habitual. Están
+	compuestos por un elemento activo y una interfaz. El elemento
+	activo presenta unas propiedades que varían en función de su
+	entorno. El elemento activo se diseña para que su respuesta frente
+	a determinada magnitud del medio en el que se encuentra sea
+	conocida. En electrónica, la propiedad del sensor cuya respuesta es
+	conocida es una propiedad electrónica, ejemplos de estas
+	propiedades son la resistencia, la capacidad o la inductancia. La
+	interfaz del sensor permite conectarlo a un circuito eléctrico. El
+	cometido de un circuito acondicionador es generar una señal
+	eléctrica tal que de ella pueda extraerse el valor de la magnitud
+	que se desea medir. Al estar relacionada alguna de las propiedades
+	de la señal con la propiedad de interés del agente activo del
+	sensor, y esa propiedad a su vez, con la magnitud del medio que
+	quiere medirse; por medio de esa relación puede asignarse un valor
+	a la magnitud en base a una referencia que nos permite conocer cual
+	es su valor relativo. Por ejemplo, un sensor resistivo de
+	temperatura, a una determinada temperatura el sensor presenta una
+	determinada resistencia, un puente de Wheatstone (circuito
+	acondicionador) proporciona una señal de corriente continua cuya
+	amplitud está relacionada con la resistencia del sensor conectado a
+	la red. El elemento activo del sensor es un semiconductor cuya
+	resistencia varía de forma conocida con respecto a la temperatura
+	del entorno del resistor.
