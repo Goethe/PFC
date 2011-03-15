@@ -70,6 +70,13 @@
 	resistencia varía de forma conocida con respecto a la temperatura
 	del entorno del resistor.
 
+	En primer lugar debo tener clara la definición de medir. Medir es
+	comparar una cantidad con su respectiva unidad, con el fin de
+	averiguar cuántas veces la segunda está contenida en la primera.
+	Ésto según la RAE, según Areny es la asignación objetiva y empírica
+	de un número a una propiedad o cualidad de un objeto o evento, de
+	tal forma que la describa.
+
 |Martes, 15 de marzo de 2011|
 
 	Los circuitos acondicionadores a menudo se relacionan únicamente
@@ -157,7 +164,6 @@
 	discernir cambios en la velocidad de grupo que revelen la presencia
 	de discontinuidades en el medio; el pulso debe atravesar el medio,
 	por lo que teniendo en cuenta...
-
 
 	El modelo de impedancia con el que el actuador carga el circuito
 	acondicionador responde a una resistencia en serie con un
