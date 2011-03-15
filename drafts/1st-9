@@ -69,3 +69,99 @@
 	la red. El elemento activo del sensor es un semiconductor cuya
 	resistencia varía de forma conocida con respecto a la temperatura
 	del entorno del resistor.
+
+|Martes, 15 de marzo de 2011|
+
+	Los circuitos acondicionadores a menudo se relacionan únicamente
+	con sensores y no con actuadores. No obstante, en el marco que
+	define el sistema de medida digital no puede entenderse el circuito
+	que precede al actuador de un modo distinto a como se entiende
+	conceptualmente un circuito acondicionador, aunque el flujo de
+	información circule en sentido contrario. Conceptualmente, un
+	circuito que acondiciona un sensor traslada las variaciones que se
+	producen en cierta propiedad del sensor a un instrumento estándar
+	por medio de una señal eléctrica. El circuito que se inserta entre
+	la fuente de alimentación y el actuador genera, a partir de la
+	alimentación que suministra la fuente, una señal adecuada para
+	excitar el actuador. El tipo de alimentación que precisa el
+	actuador para emitir pulsos acústicos como los que requiere el
+	experimento de ultrasonidos es muy concreta, y en cierto sentido
+	transporta (una) información (determinada), por lo que no puede
+	obtenerse directamente a partir de un instrumento estándar como es
+	en este caso la fuente de alimentación. Este circuito proporciona,
+	además, adaptación de impedancias entre la fuente de alimentación y
+	el actuador. Estas dos son, sin duda, competencias atribuidas a los
+	circuitos acondicionadores, teniendo esto en consideración y
+	atendiendo a la definición de circuito acondicionador que se hace
+	en el apartado .., puede decirse que, efectivamente, el circuito
+	que acompaña al actuador en el sistema de medida responde a la
+	definición formal de circuito acondicionador y puede considerarse
+	como tal.
+
+	Estas son sin duda competencias que habitualmente se atribuyen a un
+	circuito acondicionador, motivo por el cual el circuito que
+	acompaña al actuador responde a la descripción de circuito
+	acondicionador/puede considerarse circuito acondicionador/encaja en
+	la descripción de circuito acondicionador.
+
+	Estoy obsesionado con no utilizar la muletilla en este caso dos
+	veces en el mismo párrafo. Eso me lleva a pensar que la segunda
+	oración del párrafo podría construirse de otro modo, más correcto.
+	Un circuito puede interpretarse de muchas formas, como cualquier
+	otra cosa. O, tal vez, pueda interpretarse solamente de una forma.
+	Por ejemplo, un circuito acondicionador puede ser un amplificador,
+	pero en conjunto, entendido como un todo, sólo puede considerarse
+	como circuito acondicionador.
+
+	Introducir/insertar
+
+	Es un circuito que más allá de alimentar el actuador proporciona
+	adaptación de impedancias.
+
+	Estos motivos son suficientes... Preferiría decir que éstas son dos
+	de las competencias que habitualmente se atribuyen a los circuitos
+	acondicionadores. En realidad, un circuito acondicionador funciona
+	en sentido contrario, traslada/evalúa las variaciones que ocurren
+	en cierta propiedad de un sensor a un instrumento estándar/(de
+	propósito general) por medio de una señal eléctrica. Si hablo de un
+	circuito que acondiciona a un actuador, la información circula en
+	sentido contrario. El acondicionador genera, a partir de la
+	alimentación que suministra un instrumento estándar, una señal
+	adecuada para excitar el actuador.
+
+	En realidad, un circuito que acondiciona un sensor funciona en
+	sentido contrario, traslada las variaciones que se producen en
+	cierta propiedad del sensor a un instrumento de propósito general
+	por medio de una señal eléctrica. El flujo de información circula
+	en distinto sentido cuando se trata del circuito acondicionador que
+	acompaña al actuador. El acondicionador genera, a partir de la
+	alimentación que suministra un instrumento estándar, una señal
+	adecuada para excitar el actuador.
+
+	Pese a todo, un circuito destinado...
+
+	Ahora empiezo el segundo párrafo diciendo: «Aclarado ésto...» Lo
+	que debo explicar en este apartado es que necesito que el
+	transductor haga dos cosas, proporcione un suministro eléctrico
+	acorde con las necesidades del experimento (teniendo en cuenta/y
+	las características del actuador de ultrasonidos), y procure
+	adaptación de impedancias entre la fuente de alimentación y el
+	actuador (en realidad debe haber adaptación de impedancias entre la
+	fuente de alimentación y el acondicionador, puesto que trabajo con
+	integrados entiendo que esta adaptación de impedancias se da por
+	descontado; y adaptación de impedancias entre el acondicionador y
+	el actuador). Siguiendo la técnica de transmisión para ENDUS, el
+	actuador debe emitir un pulso acústico que atraviese el medio de
+	propagación. A destacar de la afirmación anterior: debe emitirse un
+	pulso y no una señal continua, de lo contrario es imposible
+	discernir cambios en la velocidad de grupo que revelen la presencia
+	de discontinuidades en el medio; el pulso debe atravesar el medio,
+	por lo que teniendo en cuenta...
+
+
+	El modelo de impedancia con el que el actuador carga el circuito
+	acondicionador responde a una resistencia en serie con un
+	condensador y una bobina. La influencia de los componentes no
+	lineales (la reactancia de la impedancia de carga varía con la
+	frecuencia del suministro eléctrico) se hace mínima a la frecuencia
+	de resonancia del sensor...

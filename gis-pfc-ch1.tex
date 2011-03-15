@@ -331,15 +331,38 @@ durante la segunda parte de la memoria.
 
 \section{Acondicionador de la sección de emisión}
 
-El primer paso en el diseño de un circuito acondicionador es determinar los
-requisitos que dicho circuito debe satisfacer. En este caso, el principal
-propósito del circuito acondicionador es proporcionar un suministro
-eléctrico que reúna unas condiciones determinadas. Para la realización de
-un \sig{endus} es necesario que el actuador de ultrasonidos emita un pulso
-acústico, no una onda acústica continua. De lo contrario no se pueden
-percibir parámetros en la señal eléctrica necesarios para determinar
-algunas de las propiedades del medio de propagación. El actuador de
-ultrasonidos utilizado en el proyecto puede emitir este tipo de pulsos
+Los circuitos acondicionadores a menudo se relacionan únicamente con
+sensores y no con actuadores. No obstante, en el marco que define el
+sistema de medida digital no puede entenderse el circuito que precede al
+actuador de un modo distinto a como se entiende conceptualmente un circuito
+acondicionador, aunque el flujo de información circule en sentido
+contrario. Conceptualmente, un circuito que acondiciona un sensor traslada
+las variaciones que se producen en cierta propiedad del sensor a un
+instrumento estándar por medio de una señal eléctrica. El circuito que se
+inserta entre la fuente de alimentación y el actuador genera, a partir de
+la alimentación que suministra la fuente, una señal adecuada para excitar
+el actuador. El tipo de alimentación que precisa el actuador para emitir
+pulsos acústicos como los que requiere el experimento de ultrasonidos es
+muy concreta, y en cierto sentido transporta una determinada información,
+por lo que no puede obtenerse directamente a partir de un instrumento
+estándar como es en este caso la fuente de alimentación. Este circuito
+proporciona, además, adaptación de impedancias entre la fuente de
+alimentación y el actuador. Estas dos son, sin duda, competencias
+atribuidas a los circuitos acondicionadores, teniendo esto en consideración
+y atendiendo a la definición de circuito acondicionador que se hace en el
+\cref{sec:rxco}, puede decirse que, efectivamente, el circuito que acompaña
+al actuador en el sistema de medida responde a la definición formal de
+circuito acondicionador y puede considerarse como tal.
+
+Aclarado ésto, el primer paso en el diseño de un circuito acondicionador es
+determinar los requisitos que dicho circuito debe satisfacer. En este caso,
+el principal propósito del circuito acondicionador es proporcionar un
+suministro eléctrico que reúna unas condiciones determinadas. Para la
+realización de un \sig{endus} es necesario que el actuador de ultrasonidos
+emita un pulso acústico, no una onda acústica continua. De lo contrario no
+se pueden percibir parámetros en la señal eléctrica necesarios para
+determinar algunas de las propiedades del medio de propagación. El actuador
+de ultrasonidos utilizado en el proyecto puede emitir este tipo de pulsos
 acústicos, para emitir un pulso acústico debe excitarse con un pulso
 eléctrico rectangular. Por tanto, uno de los requisitos que el circuito
 acondicionador debe satisfacer es que a su salida debe generar un tren de
@@ -467,3 +490,6 @@ experimento basta con seleccionar una de los pulsos eléctricos generados.
 	a la salida del amplificador \textsc{ne5534}, $u(t)$.}
 	\label{fig:txacvo}
 \end{figure}
+
+
+\section{Acondicionador de la sección de recepción}\label{sec:rxco}

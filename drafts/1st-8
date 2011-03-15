@@ -159,3 +159,21 @@
 	División en apartados (acondicionadores y después sección que
 	trata, transductores, características, modo de empleo, pulso
 	acústico...)
+
+	Así es como lo veo ahora. Un transductor de ultrasonidos actúa como
+	un circuito resonante, es decir, cuando es atacado por una señal
+	(eléctrica en el caso del actuador y acústica en el caso del
+	sensor) empieza a oscilar. Oscilar puede entenderse como que el
+	dieléctrico empieza a comprimirse y expandirse (siempre en una
+	única dirección paralela/perpendicular a la dirección de la
+	polarización) y se polariza eléctricamente en un sentido u otro
+	de forma alterna. Aunque en principio puede hacerlo a cualquier
+	frecuencia, oscila a su frecuencia de resonancia atenuando en gran
+	medida otras frecuencias. Sin embargo, esas otras frecuencias
+	pueden estar presentes en la señal de salida del transductor,
+	aunque muy atenuadas. Confío en que en transductores de baja
+	frecuencia y ancho de banda estrecho las componentes indeseadas que
+	se generan, se encuentran incluso más atenuadas. Esto en principio
+	no es relevante, si se trata de escribir el primer capítulo de la
+	memoria, aunque ayuda a comprender mejor que ocurre durante el
+	experimento de ultrasonidos.
