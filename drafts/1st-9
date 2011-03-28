@@ -33,7 +33,19 @@
 	habitualmente empresas de i+d que se dedican exclusivamente a eso,
 	por lo que no hay muchos estudios publicados en el dominio público,
 	o al menos no tantos como puede haber relacionados con otro tipo de
-	aplicaciones.
+	aplicaciones. Bueno, en cuanto a esto, he estado viendo que se han
+	hecho muchos progresos, y ahora hay cada vez más documentación al
+	respecto. He observado por ejemplo que transductores que trabajan a
+	una frecuencia menor también sufren más el esparcimiento del haz,
+	que en principio no conlleva más problema que la pérdida de
+	resolución, aunque claro, si se esparce tanto que cubre todo el
+	material de una sola tacada no es muy útil. Transductores de 8 a 10
+	dólares (si compras un mínimo de 20000) disipan una potencia máxima
+	de 50 W (¿eficaces?) unas 250 veces más que un transductor de gama
+	baja como los que yo he usado. Las técnicas de espectro ensanchado
+	siempre utilizan un esquema de transmisión en lugar de un esquema
+	por pulso-eco, al menos en las aplicaciones que he podido observar
+	en la red.
 
 	Algo que no es totalmente correcto y que he afirmado en el párrafo
 	anterior, es que un sensor genera una señal. No, eso es falso, lo
@@ -171,3 +183,20 @@
 	lineales (la reactancia de la impedancia de carga varía con la
 	frecuencia del suministro eléctrico) se hace mínima a la frecuencia
 	de resonancia del sensor...
+
+|Miércoles, 16 de Marzo de 2011|
+
+	He encontrado buenos artículos que tomar como punto de partida para
+	redactar un poco de teoría de endus relacionada con madera. El
+	libro «Acoustics of Wood» de la profesora australiana Voichita
+	Bucur parece hecho a medida de la aplicación que se hace de los
+	ultrasonidos en mi proyecto fin de carrera. Además tengo un par de
+	papers relacionados, concretamente uno que dice como determinar las
+	características de un tipo de madera utilizando para ello
+	ultrasonidos. Tengo papers sobre técnicas de partición de espectro
+	y algunas cosas más.
+
+|Martes, 22 de Marzo de 2011|
+
+	He estado enfermo estos últimos días así que las contribuciones al
+	proyecto se han visto pospuestas hasta el lunes 28. Sigh!
