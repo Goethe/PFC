@@ -201,8 +201,8 @@ en dicho cuadro.
 	\begin{center}
 		\includegraphics{gis-pfc-ch3-07.mps}
 	\end{center}
-	\caption[Elementos que intervienen en el funcionamiento de la
-	\datx{}]{Elementos que intervienen en el funcionamiento de la
+	\caption[Elementos que intervienen en el proceso de
+	adquisición]{Elementos que intervienen en el funcionamiento de la
 	\datx{}.}
 	\label{fig:toolcomp}
 \end{figure}
@@ -220,8 +220,8 @@ objetos de entrada/salida digital o \emph{digital I/O objects}
 	\begin{center}
 		\includegraphics{gis-pfc-ch3-08.mps}
 	\end{center}
-	\caption[Comunicación entre los subsistemas del hardware y los
-	objetos dispositivo]{Grafo que representa la comunicación entre los
+	\caption[Flujo de información entre el hardware y la
+	\sig{dat}]{Grafo que representa la comunicación entre los
 	subsistemas del hardware y los objetos dispositivo.}
 	\label{fig:subsystemsOO}
 \end{figure}
@@ -268,9 +268,9 @@ aplicación de control muestra cómo hacerlo en el \cref{cod:constructor}.
 		Entrada / Salida digital & digitalio(`adaptador', ID); \\
 		\bottomrule
 	\end{tabular}
-	\caption[Tipos de constructor en función del objeto dispositivo
-	creado]{Tipos de función de creación de acuerdo con el tipo
-	subsistema al que se orienta el objeto dispositivo creado.}
+	\caption[Tipos de constructor y objetos dispositivo]{Tipos de
+	función de creación de acuerdo con el tipo subsistema al que se
+	orienta el objeto dispositivo creado.}
 	\label{tab:constructors}
 \end{table}
 
@@ -279,7 +279,6 @@ aplicación de control muestra cómo hacerlo en el \cref{cod:constructor}.
 	dispositivo previo a la llamada de la aplicación, en caso positivo
 	lo hereda para su uso posterior, de lo contrario crea uno
 	nuevo.}}, label={cod:constructor}]
-	set(handles.ai, 'TriggerType', 'Immediate', 'TimerFcn', '', ...
 	handles.ai = [];
 
 	if ~isempty(daqfind)
@@ -287,12 +286,14 @@ aplicación de control muestra cómo hacerlo en el \cref{cod:constructor}.
 
 		for i = 1:length(oldObj);
 			auxStr = daqhwinfo(oldObj(i));
-			auxNum = findstr(' ', auxStr.DeviceName) - 1;
+			auxNum = findstr(' ', ...
+				auxStr.DeviceName) - 1;
 			if strcmp('KPCI-3108', ...
 				auxStr.DeviceName(1:auxNum)) && ...
-				strcmpi('analoginput', auxStr.SubsystemType);
+				strcmpi('analoginput', ...
+					auxStr.SubsystemType);
 				handles.ai = oldObj(i);
-				warning('El dispositivo esta en uso.');
+				warning('Device is busy.');
 				break
 			end
 		end
@@ -303,7 +304,7 @@ aplicación de control muestra cómo hacerlo en el \cref{cod:constructor}.
 		try
 			handles.ai = analoginput('keithley');
 		catch
-			errordlg('No pudo crearse el manejador de dispositivo.');
+			errordlg('Device object couldn't be created');
 		end
 	end
 \end{lstlisting}
@@ -425,7 +426,8 @@ punto; o recurriendo a los nombres indexados.
 		continuación.
 
 		\begin{lstlisting}[gobble=16]
-			set(objeto.Channel(1), `ChannelName', `Can1');
+			set(objeto.Channel(1), `ChannelName', ...
+				`Can1');
 			out = objeto.Can1.UnitsRange;
 			objeto.Can1.UnitsRange = [0, 10];
 		\end{lstlisting}
@@ -475,9 +477,9 @@ asociado conmuta al estado \textsf{On}.
 		interna. \\
 		\bottomrule
 	\end{tabulary}
-	\caption[Tipos de disparo soportados por el hardware compatible con
-	\matlab{}]{Tipos de disparo soportados por el hardware compatible
-	con \matlab{} y una breve descripción de los mismos.}
+	\caption[Tipos de disparo soportados]{Tipos de disparo soportados
+	por el hardware compatible con \matlab{} y una breve descripción de
+	los mismos.}
 	\label{tab:triggers}
 \end{table}
 
@@ -602,7 +604,7 @@ deja de existir en la máquina virtual. Para poder recuperar objetos
 borrados accidentalmente puede utilizarse la función \func{daqfind}.
 
 \begin{lstlisting}
-	out = daqfind;	ai = out(1);
+	out = daqfind;		ai = out(1);
 \end{lstlisting}
 
 
@@ -744,7 +746,7 @@ tren de flancos, pulsos estrechos, cuyo periodo depende de la escala
 temporal de la ventana donde se representa la señal. Dependiendo de la
 configuración de este parámetro puede cambiarse el valor de tensión que
 sale por uno de los puertos de salida analógica de la \kpci{}, y en función
-de esta tensión generar una señal en la que el \emph{duty cycle} varía y la
+de esta tensión generar una señal en la que el ciclo de trabajo varía y la
 duración del estado alto se mantiene. El flanco que detiene el muestreo
 puede monitorizarse para averiguar cuando debe la aplicación extraer las
 muestras del buffer de memoria asociado a la tarjeta y debe empezar a

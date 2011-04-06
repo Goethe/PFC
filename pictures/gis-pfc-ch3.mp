@@ -693,9 +693,9 @@ drawboxed(aa);
 p9 = bpath aa;			draw p9 shifted 1.5z07;
 p19 = bbox p9;
 label(btex Sensores etex, z08);
-drawgisarrow aa.c--aa.c shifted (-he01/4, 0)-- %
+drawgisarrow reverse (aa.c--aa.c shifted (-he01/4, 0)-- %
 	aa.c shifted (-he01/4, a15)--aa.c shifted (-he01/2, a15) %
-	cutbefore p19 cutafter p13 transformed t4;
+	cutbefore p19 cutafter p13 transformed t4);
 drawgisarrow z08--z08 shifted (-he01/2, 0) cutbefore p19 %
 	shifted 1.5z07 cutafter p13 transformed t4;
 
