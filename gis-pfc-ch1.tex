@@ -112,16 +112,16 @@ proporcional sin necesidad de una alimentación eléctrica. Este efecto es
 reversible y puede utilizarse para provocar una respuesta no eléctrica a
 una variación en una corriente eléctrica por medio de un actuador. Los
 actuadores y los sensores generadores suelen presentar características
-similares, sobretodo debido a este motivo.  En determinados materiales
+similares, sobretodo debido a este motivo. En determinados materiales
 aparece una polarización eléctrica si se somete el material a un esfuerzo
 que provoca deformación, este fenómeno se conoce como efecto piezoeléctrico
 y es un efecto reversible. Si se aplica una diferencia de potencial
 eléctrico a dos de las caras de un material piezoeléctrico, en éste aparece
-una deformación.  Un actuador de ultrasonidos vibra cuando se excita con
-una onda eléctrica y esta vibración se transmite al medio en forma de onda
-de presión. La señal ultrasónica se propaga por el medio y finalmente
-incide en el sensor, ejerciendo una presión sobre su superficie que el
-transductor traduce en una señal eléctrica.
+una deformación. Un actuador de ultrasonidos vibra cuando se excita con una
+onda eléctrica y esta vibración se transmite al medio en forma de onda de
+presión. La señal ultrasónica se propaga por el medio y finalmente incide
+en el sensor, ejerciendo una presión sobre su superficie que el transductor
+traduce en una señal eléctrica.
 
 La principal diferencia entre los transductores de ultrasonidos y los
 transductores acústicos convencionales es que los transductores de
@@ -139,25 +139,13 @@ con la carcasa protectora, y ésta se ajusta durante el proceso de
 fabricación para que el conjunto vibre a la frecuencia de resonancia
 elegida, estos transductores son menos eficientes pero más resistentes y
 más precisos. Los transductores empleados en este \sig{pfc} son de tipo
-cerrado. En la \vref{fig:transducers} se representan varias planos acotados
-de los transductores de forma que puedan apreciarse sus dimensiones. En el
-encapsulado del actuador existe una marca en forma de punto blanco que lo
-identifica y que sirve para distinguirlo del sensor, es la única diferencia
-entre ambos. El resto de características relevantes vienen recogidas en el
+cerrado. La \vref{fig:transducers} muestra una representación del
+encapsulado que reviste los transductores utilizados en el proyecto, en la
+que pueden apreciarse las dimensiones del dispositivo. En el encapsulado
+del actuador existe una marca en forma de punto blanco que lo identifica y
+que sirve para distinguirlo del sensor, es la única diferencia entre ambos.
+Las características técnicas de los transductores vienen recogidas en el
 \cref{tab:transducers}.
-
-% Las principales características de los transductores
-% utilizados en el proyecto vienen recogidas en el \cref{tab:transducers}.
-
-% Y su aspecto viene reflejado en la representación que realiza la figura
-% 1.3
-% Más que: Y su aspecto..., cuando termino de explicar que diferencias
-% existen entre un transductor de tipo abierto y uno de tipo cerrado puedo
-% decir algo como: los transductores utilizados en este PFC son de tipo
-% cerrado, en la figura tal puede observarse su aspecto, se proporcionan
-% varias vistas y se han anotado cotas para las principales dimensiones. El
-% resto de características (de mayor relevancia, que presentan los
-% transductores) vienen recogidas en el cuadro.
 
 \begin{figure}
 	\begin{center}
@@ -205,6 +193,9 @@ entre ambos. El resto de características relevantes vienen recogidas en el
 	\label{tab:transducers}
 \end{sidewaystable}
 
+
+\subsection{El actuador de ultrasonidos}
+
 El actuador de ultrasonidos puede funcionar de dos formas diferentes: si es
 alimentado con una sinusoide emite una onda acústica continua al medio; por
 el contrario, si se alimenta con un pulso rectangular (o de continua),
@@ -218,26 +209,31 @@ utilizarse una sinusoide pulsada, empleando una configuración de ciclo de
 trabajo que garantice que no se supera el límite de potencia soportado. En
 caso de utilizar un pulso rectangular, o un tren de pulsos rectangulares,
 las opciones son similares, reducir el nivel de tensión o configurar el
-ciclo de trabajo de la señal. El actuador de ultrasonidos carga el circuito
-de alimentación con una impedancia que presenta un carácter variable con
-respecto a la frecuencia de la onda eléctrica y que debe tenerse en cuenta
-para calcular la transferencia de potencia. La impedancia equivalente
-presenta un comportamiento capacitivo a frecuencias por debajo de la
-frecuencia fundamental de oscilación del actuador, carácter resistivo a
-frecuencias en torno a la frecuencia de resonancia y carácter inductivo a
-frecuencias por encima de esta frecuencia. Por tanto, la máxima
-transferencia de potencia ocurre en frecuencias cercanas a la frecuencia
-natural de oscilación del actuador, donde éste se comporta como una
-impedancia resistiva de un valor típico que ronda los 700 $\Omega$. La
-potencia suministrada al actuador se reparte entre la frecuencia
-fundamental de resonancia y los distintos armónicos a frecuencias
-superiores. El actuador siempre vibra a su frecuencia fundamental de
-resonancia o a frecuencias múltiplo de ésta, independientemente de la
-frecuencia de la onda eléctrica utilizada para el suministro de potencia.
-Si bien esto es cierto, para evitar excitar armónicos secundarios distintos
-de la frecuencia fundamental de resonancia es aconsejable que la frecuencia
-de la onda eléctrica sea lo más próxima a la frecuencia de resonancia del
-actuador, además esto garantiza la máxima transferencia de potencia.
+ciclo de trabajo de la señal.
+
+El actuador de ultrasonidos carga el circuito de alimentación con una
+impedancia que presenta un carácter variable con respecto a la frecuencia
+de la onda eléctrica y que debe tenerse en cuenta para calcular la
+transferencia de potencia. La impedancia equivalente presenta un
+comportamiento capacitivo a frecuencias por debajo de la frecuencia
+fundamental de oscilación del actuador, carácter resistivo a frecuencias en
+torno a la frecuencia de resonancia y carácter inductivo a frecuencias por
+encima de esta frecuencia. Por tanto, la máxima transferencia de potencia
+ocurre en frecuencias cercanas a la frecuencia natural de oscilación del
+actuador, donde éste se comporta como una impedancia resistiva de un valor
+típico que ronda los 700 $\Omega$. Si el actuador es excitado con un tren
+de pulsos rectangulares el comportamiento de la onda en bornes del
+dispositivo ---y la transferencia de potencia--- puede estudiarse
+observando el régimen transitorio del circuito. La potencia suministrada al
+actuador se reparte entre la frecuencia fundamental de resonancia y los
+distintos armónicos a frecuencias superiores. El actuador siempre vibra a
+su frecuencia fundamental de resonancia o a frecuencias múltiplo de ésta,
+independientemente de la frecuencia de la onda eléctrica utilizada para el
+suministro de potencia. Si bien esto es cierto, para evitar excitar
+armónicos secundarios distintos de la frecuencia fundamental de resonancia
+es aconsejable que la frecuencia de la onda eléctrica sea lo más próxima a
+la frecuencia de resonancia del actuador, además esto garantiza la máxima
+transferencia de potencia.
 
 En ensayos no destructivos mediante ultrasonidos es imprescindible utilizar
 pulsos acústicos como el representado en la \cref{fig:pulse}, para poder
@@ -268,32 +264,42 @@ sobre la presión estática del aire a una distancia determinada del actuador
 cuando éste se alimenta con una determinada tensión eficaz. Proporciona una
 medida de la eficiencia del sensor y puede utilizarse conjuntamente con la
 sensibilidad del sensor para calcular de forma teórica cual es el alcance
-máximo de un experimento de ultrasonidos que emplea estos transductores. El
-\sig{spl} es una magnitud que varía con la frecuencia de la onda eléctrica,
-y alcanza su máximo en la frecuencia natural de resonancia del actuador. El
-fabricante suele proporcionar, o bien el valor típico del \sig{spl} a la
-frecuencia de resonancia del actuador, o bien un perfil de la magnitud
-frente a la frecuencia de la onda eléctrica. Con independencia del tipo de
-valor proporcionado, éste suele darse en escala logarítmica utilizando una
-para ello una referencia de presión que también se especifica. Para
-calcular el \sig{spl} que se da en condiciones distintas de aquellas en que
-se miden las especificaciones, debe calcularse la variación en escala
-lineal y después trasladar este resultado a escala logarítmica, antes de
-poder operar con el \sig{spl}. El sensor de ultrasonidos presenta unas
-propiedades muy similares a las propiedades del actuador, si bien se
-caracteriza por presentar una impedancia característica bastante mayor. En
-el sensor la conversión se da en sentido contrario, las ondas acústicas de
-presión que inciden en la cara externa del sensor se traducen en
-variaciones de la tensión eléctrica que existe en bornes del dispositivo.
-Si la propiedad más característica del actuador de ultrasonidos es el
-\sig{spl}, la propiedad más característica del sensor es la sensibilidad.
-La sensibilidad suele proporcionarse también en escala logarítmica, igual
-que ocurre con el \sig{spl}, suele darse un valor típico o una
-característica de la propiedad frente a la frecuencia que, en ocasiones se
-superpone con la gráfica del \sig{spl} si los transductores pertenecen a
-una misma serie. La magnitud lineal es la relación entre la presión
-detectada y la diferencia de potencial eléctrico que se crea en bornes del
-sensor y, en este caso, representa una medida de la eficiencia del sensor.
+máximo de un experimento de ultrasonidos que emplea dichos transductores.
+El \sig{spl} es una magnitud que varía con la frecuencia de la onda
+eléctrica utilizada para alimentar el sensor, y alcanza su máximo a la
+frecuencia natural de resonancia del actuador. El fabricante suele
+proporcionar, o bien el valor típico del \sig{spl} a la frecuencia de
+resonancia, o bien un perfil de la magnitud frente a la frecuencia de la
+onda eléctrica. Con independencia de que el \sig{spl} se presente mediante
+un valor numérico o mediante un gráfico, suele proporcionarse en unidades
+en base a una escala logarítmica que toma como referencia un valor de
+presión que generalmente se especifica también. Para calcular el \sig{spl}
+que se da en condiciones distintas de aquellas en que se miden las
+especificaciones, debe calcularse la variación en escala lineal y después
+trasladar este resultado a escala logarítmica, antes de poder operar con el
+\sig{spl}.
+
+
+\subsection{Sensor de ultrasonidos}
+
+El sensor de ultrasonidos presenta unas propiedades muy similares a las
+propiedades del actuador, si bien se caracteriza por presentar una
+impedancia característica bastante mayor. En el sensor la conversión se da
+en sentido contrario, las ondas acústicas de presión que inciden en la cara
+externa del sensor se traducen en variaciones de la tensión eléctrica que
+existe en bornes del dispositivo. Si la propiedad más característica del
+actuador de ultrasonidos es el \sig{spl}, la propiedad más característica
+del sensor es la sensibilidad. La sensibilidad suele proporcionarse también
+en escala logarítmica, igual que ocurre con el \sig{spl}, suele darse un
+valor típico o una característica de la propiedad frente a la frecuencia
+que, en ocasiones se superpone con la gráfica del \sig{spl} si los
+transductores pertenecen a una misma serie. La magnitud lineal es la
+relación entre la presión detectada y la diferencia de potencial eléctrico
+que se crea en bornes del sensor y, en este caso, representa una medida de
+la eficiencia del sensor.
+
+
+\subsection{Observaciones sobre los transductores}
 
 La madera de palmera es un medio peculiar y la atenuación que introduce en
 la señal acústica es mucho mayor que la que introduce un medio como el
