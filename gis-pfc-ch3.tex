@@ -291,9 +291,9 @@ aplicación de control muestra cómo hacerlo en el \cref{cod:constructor}.
 			if strcmp('KPCI-3108', ...
 				auxStr.DeviceName(1:auxNum)) && ...
 				strcmpi('analoginput', ...
-					auxStr.SubsystemType);
-				handles.ai = oldObj(i);
-				warning('Device is busy.');
+				auxStr.SubsystemType);
+					handles.ai = oldObj(i);
+					warning('Device is busy.');
 				break
 			end
 		end
@@ -304,7 +304,7 @@ aplicación de control muestra cómo hacerlo en el \cref{cod:constructor}.
 		try
 			handles.ai = analoginput('keithley');
 		catch
-			errordlg('Device object couldn't be created');
+			errordlg('analoginput function error');
 		end
 	end
 \end{lstlisting}
@@ -416,7 +416,7 @@ punto; o recurriendo a los nombres indexados.
 
 		\begin{lstlisting}[gobble=16]
 			out = objeto.SampleRate;
-% 			objeto.SampleRate = 11025;
+			objeto.SampleRate = 11025;
 		\end{lstlisting}
 
 	\item Por último, los nombres indexados permiten asociar un nombre
@@ -555,8 +555,10 @@ función el valor de la propiedad \textsf{Running} de \func{objeto} en el
 momento del callback.
 
 \begin{lstlisting}
-	set(objeto, `TriggerFcn', @datadqcallback, objeto.Running)
-	set(objeto, `StopFcn', @datadqcallback, objeto.Running)
+	set(objeto, `TriggerFcn', ...
+		@datadqcallback, objeto.Running)
+	set(objeto, `StopFcn', ...
+		@datadqcallback, objeto.Running)
 \end{lstlisting}
 
 Un segundo ejemplo, este extraído del código fuente de la aplicación de
@@ -567,8 +569,10 @@ sintaxis de la definición de la misma en el \cref{cod:callback}.
 	\emph{callback}]{Configuración de \emph{callback} para responder a
 	eventos en la sesión de muestreo, la función de \emph{callback}
 	recibe un argumento.}}, label={cod:callback}]
-	set(handles.ai, 'TriggerType', 'Immediate', 'TimerFcn', '', ...
-		'SamplesAcquiredFcn', {@localDaqCallback, gcbo});
+	set(handles.ai, 'TriggerType', ...
+		'Immediate', 'TimerFcn', '', ...
+		'SamplesAcquiredFcn', ...
+		{@localDaqCallback, gcbo});
 
 				[...]
 
