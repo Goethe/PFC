@@ -85,16 +85,20 @@
 \newcommand\guide{\sig{GUIDE}}
 \newcommand\pc{\sig{pc}}
 \newcommand\ram{\sig{ram}}
-\newcommand\AOUA{$\mu$\sig{a}741}
+\newcommand\AOUA{\ensuremath{\mu}\sig{a}741}
+\newcommand\kms{kmus/s}
 \newcommand\miniit[1]{\begin{itemize} #1 \end{itemize}}
 \newcommand\tnotetext[2]{\item\hspace*{-5pt}\raisebox{.7ex}%
 	{\fontsize{7pt}{8.4pt}\selectfont\normalfont #1}{\footnotesize #2}}
 \newcommand\prosec{\smallskip\begin{center}%
-	\usefont{T1}{hlh}{m}{n}*\quad*\quad*%
+	\usefont{T1}{hlh}{m}{n}\UseTextSymbol{OMS}{\textasteriskcentered}%
+	\quad\UseTextSymbol{OMS}{\textasteriskcentered}\quad%
+	\UseTextSymbol{OMS}{\textasteriskcentered}%
 	\end{center}\smallskip}
 \renewcommand\labelitemi{\textbullet}
-\renewcommand\labelitemii{-}
-\newenvironment{TableNotes}{\begin{tablenotes}\vspace{\footnotesep}%
+\renewcommand\labelitemii{\leavevmode\hbox to 1.1ex
+	{\hss\vrule height .8ex width .6ex depth -.2ex\hss}}
+\newenvironment{TableNotes}{\begin{tablenotes}\vspace{\footnotesep}
 	\footnoterule\vspace{.2ex}}{\end{tablenotes}}
 \newcolumntype{d}[1]{D{,}{,}{#1}}
 \newcolumntype{+}{D{/}{\mbox{\ --\ }}{5}}
