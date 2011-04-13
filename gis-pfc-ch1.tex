@@ -223,7 +223,7 @@ ocurre en frecuencias cercanas a la frecuencia natural de oscilación del
 actuador, donde éste se comporta como una impedancia resistiva de un valor
 típico que ronda los 700 $\Omega$. Si el actuador es excitado con un tren
 de pulsos rectangulares el comportamiento de la onda en bornes del
-dispositivo ---y la transferencia de potencia--- puede estudiarse
+dispositivo ---y de ahí, la transferencia de potencia--- puede estudiarse
 observando el régimen transitorio del circuito. La potencia suministrada al
 actuador se reparte entre la frecuencia fundamental de resonancia y los
 distintos armónicos a frecuencias superiores. El actuador siempre vibra a
@@ -361,9 +361,12 @@ al actuador en el sistema de medida responde a la definición formal de
 circuito acondicionador y puede considerarse como tal.
 
 Aclarado ésto, el primer paso en el diseño de un circuito acondicionador es
-determinar los requisitos que dicho circuito debe satisfacer. En este caso,
-el principal propósito del circuito acondicionador es proporcionar un
-suministro eléctrico que reúna unas condiciones determinadas. Para la
+determinar los requisitos que dicho circuito debe satisfacer. Como se
+observa del párrafo anterior, el acondicionador debe proporcionar un
+suministro eléctrico que reúna unas condiciones determinadas. En
+definitiva, para determinar que tipo de señal debe generar el
+acondicionador es preciso estudiar el tipo de experimento realizado y las
+características del actuador empleado en dicho experimento. Para la
 realización de un \sig{endus} es necesario que el actuador de ultrasonidos
 emita un pulso acústico, no una onda acústica continua. De lo contrario no
 se pueden percibir parámetros en la señal eléctrica necesarios para
@@ -375,6 +378,8 @@ acondicionador debe satisfacer es que a su salida debe generar un tren de
 pulsos eléctricos rectangulares. Con cada pulso rectangular el actuador
 emite un pulso acústico, como requisito opcional puede considerarse la
 incorporación de un interruptor de inicio con el que controlar el proceso.
+
+
 El otro requisito fundamental que debe cumplir el circuito es un requisito
 de potencia. El pulso acústico que emite el actuador debe ser capaz de
 atravesar el tronco de una palmera, para conseguirlo una buena estrategia
@@ -383,13 +388,41 @@ puede conseguirse si se suministra al actuador la máxima potencia que puede
 soportar. El límite de potencia que el actuador puede disipar es de 200 mW
 eficaces, considerando máxima transferencia de potencia, la tensión eficaz
 de la onda eléctrica con la que se alimenta el actuador debe encontrarse en
-torno a los 10 V eficaces. Sin embargo, la hipótesis de que existe máxima
-transferencia de potencia cuando se alimenta el sensor con un tren de
-pulsos rectangulares no es correcta. De hecho, es difícil determinar cual
-es el factor de transferencia de potencia en estas circunstancias. Para
-favorecer el máximo tránsito de corriente a través de la carga una solución
-sencilla consiste en diseñar el circuito acondicionador para que su
-impedancia de salida sea mínima.
+torno a los 10 V eficaces. La impedancia con la que el actuador carga el
+circuito debe, sin embargo, tenerse en cuenta a la hora de calcular la
+transferencia de potencia que existe entre el acondicionador y el actuador.
+Cuando es alimentado por un tren de pulsos rectangulares, el conjunto
+formado por el acondicionador y el actuador se comporta como un circuito
+\sig{RC} que se encuentra en régimen transitorio. De forma que para
+averiguar cuales son los niveles de tensión y corriente que se observan en
+bornes del actuador es menester calcular la constante de tiempos del
+circuito ($\tau = C\cdot R_\text{eq}$) y observar el comportamiento del
+circuito en el tiempo. Tomando como hipótesis que la impedancia de salida
+del acondicionador es reducida ---hipótesis que se cumple en el circuito
+propuesto (\cref{fig:txconditioner}), dado que la etapa de salida de dicho
+circuito la constituye un amplificador operacional cuya impedancia de
+salida se aproxima a cero---, y teniendo en cuenta que la parte resistiva
+de la impedancia atribuida al actuador es también pequeña
+(\cref{tab:transducers}), puede deducirse que la constante de tiempos
+resultante es también moderada. Es posible obtener un valor aproximado a
+partir de cálculos sencillos.
+
+\begin{equation}
+	\begin{split}
+		\tau &= C_\text{L}\cdot R_\text{eq}
+		\mid_{R_\text{in}\simeq\infty} =
+		C_\text{L}\left(R_\text{L} + R_0|\!|(R_\text{a} +
+		R_\text{b})\right)\mid_{R_0 \simeq 0} =
+		C_\text{L}\cdot R_\text{L} \\
+		&= 700\cdot2.2\cdot 10^{-9} = 1.54\mu s
+	\end{split}
+\end{equation}
+
+Finalmente se observa que, con los valores de periodo, tensión en el estado
+alto y ciclo de trabajo de la señal que proporciona el acondicionador
+(cuadro), y considerando una constante de tiempos pequeña, la respuesta del
+actuador es muy rápida y la señal en sus bornes sigue con bastante
+fidelidad la señal que puede medirse con el circuito en abierto.
 
 El diseño propuesto se muestra en la \cref{fig:txconditioner}, está basado
 en dos temporizadores 555 ---el \sig{ne556} de Texas Instruments es un
