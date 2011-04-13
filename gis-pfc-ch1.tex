@@ -360,6 +360,10 @@ y atendiendo a la definición de circuito acondicionador que se hace en el
 al actuador en el sistema de medida responde a la definición formal de
 circuito acondicionador y puede considerarse como tal.
 
+
+\subsection[Requisitos de diseño del acondicionador]{Requisitos de diseño
+que debe satisfacer el circuito acondicionador}
+
 Aclarado ésto, el primer paso en el diseño de un circuito acondicionador es
 determinar los requisitos que dicho circuito debe satisfacer. Como se
 observa del párrafo anterior, el acondicionador debe proporcionar un
@@ -378,7 +382,6 @@ acondicionador debe satisfacer es que a su salida debe generar un tren de
 pulsos eléctricos rectangulares. Con cada pulso rectangular el actuador
 emite un pulso acústico, como requisito opcional puede considerarse la
 incorporación de un interruptor de inicio con el que controlar el proceso.
-
 
 El otro requisito fundamental que debe cumplir el circuito es un requisito
 de potencia. El pulso acústico que emite el actuador debe ser capaz de
@@ -407,40 +410,47 @@ de la impedancia atribuida al actuador es también pequeña
 resultante es también moderada. Es posible obtener un valor aproximado a
 partir de cálculos sencillos.
 
-\begin{equation}
+\begin{equation}\label{eq:timec}
 	\begin{split}
 		\tau &= C_\text{L}\cdot R_\text{eq}
-		\mid_{R_\text{in}\simeq\infty} =
-		C_\text{L}\left(R_\text{L} + R_0|\!|(R_\text{a} +
-		R_\text{b})\right)\mid_{R_0 \simeq 0} =
+		\Big|_{R_\text{in}\simeq\infty} =
+		C_\text{L}\left(R_\text{L} + R_0\|(R_\text{a} +
+		R_\text{b})\right)\Big|_{R_0 \simeq 0} =
 		C_\text{L}\cdot R_\text{L} \\
 		&= 700\cdot2.2\cdot 10^{-9} = 1.54\mu s
 	\end{split}
 \end{equation}
 
-Finalmente se observa que, con los valores de periodo, tensión en el estado
-alto y ciclo de trabajo de la señal que proporciona el acondicionador
-(cuadro), y considerando una constante de tiempos pequeña, la respuesta del
-actuador es muy rápida y la señal en sus bornes sigue con bastante
-fidelidad la señal que puede medirse con el circuito en abierto.
+Donde $R_\text{in}$ y $R_\text{0}$ representan respectivamente la
+impedancia de entrada y la impedancia de salida del amplificador
+operacional. Finalmente se observa que, con los valores de periodo, tensión
+en el estado alto y ciclo de trabajo de la señal que proporciona el
+acondicionador (cuadro), y considerando una constante de tiempos como la
+obtenida en la \cref{eq:timec}, la respuesta del actuador es muy rápida y
+la señal en sus bornes sigue con bastante fidelidad la señal que puede
+medirse con el circuito en abierto.
+
+
+\subsection[Circuito acondicionador propuesto]{Circuito acondicionador
+propuesto, el 555}
 
 El diseño propuesto se muestra en la \cref{fig:txconditioner}, está basado
-en dos temporizadores 555 ---el \sig{ne556} de Texas Instruments es un
-circuito integrado que contiene dos 555 dentro de un mismo encapsulado--- y
-lo completa un amplificador operacional. El 555 es un temporizador
-integrado de gran precisión capaz de proporcionar pulsos rectangulares de
-12 V de amplitud con tiempos de subida y de bajada contenidos entre los 300
-y los 100 ns. Es un integrado muy conocido, es muy versátil, y es empleado
-en gran variedad de aplicaciones. Habitualmente se utiliza en sus
-configuraciones de multivibrador astable y multivibrador monoestable. En su
-configuración astable el 555 genera un tren de pulsos rectangulares
-periódico en el que el ciclo de trabajo puede ajustarse a voluntad para
-adoptar un valor entre el 50\% y el 100\%. Por el contrario, en su
-configuración monoestable el circuito genera un pulso de duración muy
-precisa bajo un estímulo externo. La configuración monoestable responde a
-un estímulo por estado bajo, por tanto, es fácil observar la relación que
-existe entre las dos configuraciones. Utilizando dos 555 en cascada
-(alimentando uno con la salida del anterior), el primero en su
+en dos temporizadores 555 ---a nivel comercial se encuentran disponibles
+encapsulados que en su interior contienen dos 555, generalmente se conocen
+bajo el número de referencia 556--- y lo completa un amplificador
+operacional. El 555 es un temporizador integrado de gran precisión capaz de
+proporcionar pulsos rectangulares de 12 V de amplitud con tiempos de subida
+y de bajada contenidos entre los 300 y los 100 ns. Es un integrado muy
+conocido, es muy versátil, y es empleado en gran variedad de aplicaciones.
+Habitualmente se utiliza en sus configuraciones de multivibrador astable y
+multivibrador monoestable. En su configuración astable el 555 genera un
+tren de pulsos rectangulares periódico en el que el ciclo de trabajo puede
+ajustarse a voluntad para adoptar un valor entre el 50\% y el 100\%. Por el
+contrario, en su configuración monoestable el circuito genera un pulso de
+duración muy precisa bajo un estímulo externo. La configuración monoestable
+responde a un estímulo por estado bajo, por tanto, es fácil observar la
+relación que existe entre las dos configuraciones. Utilizando dos 555 en
+cascada (alimentando uno con la salida del anterior), el primero en su
 configuración astable y el segundo configurado como monoestable puede
 obtenerse un tren de pulsos rectangulares en el que el ciclo de trabajo no
 se encuentra limitado a ningún rango de valores. En una configuración en
@@ -456,7 +466,9 @@ astable.
 		\includegraphics{gis-pfc-ch1-02.mps}
 	\end{center}
 	\caption[Circuito acondicionador de la sección de emisión]{Circuito
-	propuesto para acondicionar el actuador de ultrasonidos.}
+	propuesto para acondicionar el actuador de ultrasonidos. Para
+	elaborar la figura se ha utilizado el \sig{ne556} y el \sig{ne5534}
+	de Texas Instruments.}
 	\label{fig:txconditioner}
 \end{sidewaysfigure}
 
@@ -500,25 +512,28 @@ El terminal de disparo de un monoestable ha de ser conectado a la señal de
 estímulo. La señal de estímulo, que en la configuración en cascada de dos
 555 es la señal a la salida del astable, debe caracterizarse por permanecer
 siempre en un estado estable en el que la tensión debe ser próxima a la
-alimentación, y en el momento en el que deba generarse el pulso cambiar a
-un estado bajo que no debe durar más de lo que dura el pulso de salida. Por
-tanto, resulta comprensible que el ciclo de trabajo de un tren de pulsos
-generado por un astable con el propósito de servir de señal de estímulo de
-un 555 monoestable debe rondar valores elevados y, por tanto, $R_2 \lll
-R_1$.
+tensión de alimentación, y en el momento en el que deba generarse el pulso
+cambiar a un estado bajo que no debe durar más de lo que dura el pulso de
+salida. Por tanto, resulta comprensible que el ciclo de trabajo de un tren
+de pulsos generado por un astable con el propósito de servir de señal de
+estímulo de un 555 monoestable debe rondar valores elevados y, por tanto,
+$R_2 \lll R_1$.
 
-Como se mencionaba anteriormente el circuito acondicionador lo completa un
-amplificador operacional configurado con realimentación negativa. El
-propósito de este circuito es amplificar la señal de salida del 556 al
-tiempo que limita el valor de la impedancia de salida del conjunto. La
-señal de salida resultante, al emplear los componentes listados en el
-cuadro (??) puede observarse en la \cref{fig:txacvo}. De acuerdo con lo
-observado en la \cref{fig:pulse} en el anterior apartado, cuando uno de los
-pulsos rectangulares de los que se compone el tren llega al actuador se
-genera un pulso acústico. Por razones de comodidad puede instalarse un
-interruptor en el terminal de \func{reset} del 555 monoestable para poder
-detener o iniciar el proceso, aunque desde el punto de vista del
-experimento basta con seleccionar una de los pulsos eléctricos generados.
+Como se mencionaba al inicio del apartado el circuito acondicionador lo
+completa un amplificador operacional configurado con realimentación
+negativa. El propósito de este circuito es amplificar la señal de salida
+del 556 al tiempo que limita el valor de la impedancia de salida del
+conjunto. La señal de salida resultante, al emplear los componentes
+listados en el cuadro (??) puede observarse en la \cref{fig:txacvo}. De
+acuerdo con lo observado en la \cref{fig:pulse} en la sección anterior,
+cuando uno de los pulsos rectangulares de los que se compone el tren llega
+al actuador se genera un pulso acústico. Por razones de comodidad puede
+instalarse un interruptor en el terminal de \func{reset} del 555
+monoestable para poder detener o iniciar el proceso, aunque desde el punto
+de vista del experimento basta con pausar la representación de los datos en
+el momento deseado. Puesto que con la configuración propuesta la imagen ha
+de refrescarse cada segundo es fácil para un ser humano determinar en que
+momento resulta adecuado congelar la prueba.
 
 \begin{figure}
 	\begin{center}
