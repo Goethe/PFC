@@ -1,0 +1,107 @@
+\chapter*{Introducción}
+
+\section*{Organización de la primera parte}
+
+Como se ha dicho, el presente documento consta de dos partes. El contenido
+se ha distribuido en dos partes ordenadas como sigue: en primer lugar se
+aborda la configuración del sistema digital de medida; para más tarde
+tratar la teoría en la que se sustentan los \sig{endus} y presentar los
+resultados obtenidos. Esta división del texto no es, sin embargo, del todo
+natural, puesto que para llevar a cabo el proceso de diseño previo a la
+implementación del sistema de medida es necesario haber reunido previamente
+un determinado conocimiento en materia de \sig{endus}. Pese a todo, es
+razonable considerar que la implementación del sistema de medida debe tener
+lugar antes de la realización de las pruebas ---como ha ocurrido
+efectivamente--- y de ahí la elección de este orden.
+
+La primera parte se divide a su vez en cuatro capítulos: subsistema de
+interacción con el medio físico; subsistema de adquisición; subsistema de
+control y presentación; y resultados, conclusiones y líneas futuras de
+trabajo. Los tres primeros capítulos responden a una división funcional del
+sistema de medida que se explica con detalle en la introducción del primer
+capítulo.
+
+
+\begin{description}
+	\item[Primer capítulo] El primer subsistema interactúa directamente
+		con el medio físico, comprende el transmisor de
+		ultrasonidos, el receptor y las etapas de acondicionamiento
+		que los acompañan. El primer capítulo resume las
+		principales características de estos tres elementos y
+		realiza un recorrido por el proceso de diseño de este
+		subsistema.
+	\item[Segundo capítulo] El subsistema intermedio transforma la
+		señal analógica que le es entregada por la sección de
+		recepción en una señal digital.  El núcleo y el todo de
+		este subsistema es la tarjeta de adquisición. El segundo
+		capítulo repasa las características técnicas clave de este
+		dispositivo, realiza una descripción funcional del mismo y
+		reproduce los consejos que el fabricante proporciona en el
+		manual de usuario para su uso correcto.
+	\item[Tercer capítulo] El último de los subsistemas actúa como
+		interfaz entre el supervisor y el sistema de medida. Es el
+		subsistema de control y presentación. En el tercer capítulo
+		se hace hincapié en el diseño conceptual de este subsistema
+		y se proporcionan una serie de detalles técnicos en
+		relación con el entorno de programación en el que se ha
+		desarrollado.
+	\item[Cuarto capítulo] En el último de los capítulos de la primera
+		parte se exponen las conclusiones extraídas tras poner a
+		prueba el sistema de medida ya terminado. Se comentan
+		posteriormente líneas futuras de trabajo que persiguen
+		mejorar la funcionalidad del sistema de medida.
+\end{description}
+
+
+\section*{El sistema digital de medida}
+
+Un sistema de medida es cualquier instrumento formado por más de un
+elemento que permite a quien lo usa evaluar una determinada propiedad de un
+objeto, medio o evento. Para una definición más rigurosa de un sistema
+electrónico de medida puede optarse por la encontrada en
+\cite{pallas2004sas}, y dice lo siguiente:
+
+{\small\begin{quotation}
+	Se denomina sistema a la combinación de dos o más elementos,
+	subconjuntos y partes necesarias para realizar una o varias
+	funciones. En los sistemas de medida, esta función es la asignación
+	objetiva y empírica de un número a una propiedad o cualidad de un
+	objeto o evento, de tal forma que la describa.
+\end{quotation}}
+
+Un sistema de medida digital está constituido habitualmente por los
+elementos mostrados en el esquema de la \cref{fig:digmeasstm}. Pueden
+agruparse estos elementos según la función que desempeñan en el sistema, si
+se hace de ese modo se encuentran tres subsistemas: un subsistema para la
+interacción con el medio físico, un subsistema de adquisición, y un
+subsistema de control y presentación. Puede observarse entonces el sistema
+como una pila de capas superpuestas, en el que cada capa provee de servicio
+a la capa inmediatamente superior y abstrae las capas inferiores, en cada
+una de las capas se situaría cada uno de los subsistemas propuestos. De ese
+modo cada subsistema puede estudiarse por separado con independencia de los
+demás, así se ha hecho en esta memoria. Consecuentemente cada subsistema da
+lugar a cada uno de los tres capítulos que empezando por este describen el
+sistema digital de medida implementado durante el curso del desarrollo de
+este proyecto.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-part1-01.mps}
+	\end{center}
+	\captionsetup{listformat=romanos, labelformat=romanos}
+	\caption[Sistema de medida digital]{Distintos elementos funcionales
+	que conforman el sistema digital de medida.}
+	\label{fig:digmeasstm}
+\end{figure}
+
+Si se define una jerarquía en la que el nivel más bajo es aquel ocupado por
+los elementos en contacto directo con el medio, y se tiene como nivel más
+alto aquel en el que se encuentran los elementos que interactúan con el
+supervisor, entonces los niveles ordenados de inferior a superior en la
+jerarquía establecida se encuentran ocupados por los subsistemas precisados
+anteriormente del siguiente modo: subsistema para la interacción con el
+medio, subsistema de adquisición, y subsistema de control y presentación.
+El orden en el que se han dispuesto los capítulos que tratan acerca de la
+configuración del sistema digital de medida, los tres primeros capítulos,
+coincide con el orden que guardan los distintos subsistemas en esta
+jerarquía.
