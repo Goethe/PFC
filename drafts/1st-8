@@ -1,0 +1,179 @@
+|Miércoles, 9 de Marzo de 2011|
+
+	Creo que ya voy intuyendo como debe ser la estructura del capítulo.
+	Después de leer mis notas, hacer algunos cálculos y leer las
+	definiciones de circuito acondicionador que dan la wikipedia y el
+	libro de Pallás-Areny ya estoy preparado para anotar algunas de las
+	ideas que se me han ido ocurriendo aquí.
+
+	Abordo el apartado del acondicionador de emisión explicando que en
+	primer lugar en un porceso de diseño lo que tengo que determinar
+	son los requisitos que debe cumplir el circuito resultante, que es
+	lo que quiero conseguir con el proceso de diseño en sí mismo. Sin
+	embargo, no he explicado cual es la función de un circuito
+	acondicionador como procedería. Me gustaría dejar la definición o
+	la descripción de un circuito acondicionador para la sección de
+	recepción, porque es evidente que los circuitos acondicionadores se
+	encuentran más ligados a los sensores que a los actuadores. No
+	obstante, no puede considerarse el circuito que precede al actuador
+	como un circuito de alimentación cualquiera, pues además de generar
+	una señal con unas características muy concretas también
+	proporciona adaptación de impedancias (entre el propio circuito y
+	el actuador). Este concepto debe trasladarse tal cual a la
+	introducción del segundo apartado del primer capítulo.
+
+	En cuanto al acondicionador de la sección de recepción, lo primero
+	que me gustaría comentar/explicar es que un circuito acondicionador
+	es un circuito fuertemente ligado a los sensores o a un sensor o al
+	sensor. La señal que se saca de un sensor normalmente no es apta
+	para ser procesada o almacenada o representada por un instrumento
+	estándar. El concepto de instrumento estándar es muy importante
+	aquí, porque indica que los circuitos acondicionadores se prestan
+	sólo a una situación muy concreta, a operar con un determinado tipo
+	de sensor en unas condiciones de trabajo muy marcadas, y resultan
+	inútiles en circunstancias que se alejen un poco de aquellas para
+	las que ha sido diseñado. El hecho de que los acondicionadores
+	tengan una aplicación tan concreta los excluye de un uso general.
+	En contraposición a los acondicionadores existen instrumentos de
+	medida más complejos, como un osciloscopio, que son estándares, es
+	decir, que son bien conocidos. Estos instrumentos de medida, no
+	pueden fabricarse/diseñarse/construirse para cada aplicación
+	concreta porque son muy complejos y es muy difícil y muy caro
+	construirlos (no como los acondicionadores) lo cual podría
+	considerarse como un contratiempo, pero es que su propósito no es
+	ese. En realidad estos instrumentos estándar, como son muy
+	complejos y uno no los puede montar en un laboratorio cuando se le
+	antoje y para lo que quiera, trabajan con señales de forma general,
+	es decir, no se concentran en el tipo de aplicación de donde viene
+	la señal ni nada, se limitan a hacer su función. Para que uno pueda
+	trabajar con instrumento estándar y un sensor concreto en unas
+	situaciones de medida concretas lo que necesita es un puente que
+	adapte la señal concreta que proporciona el sensor a las
+	especificaciones generales que presenta el instrumento de propósito
+	general. Ese puente es el circuito acondicionador y como he dicho
+	su propósito es adaptar la señal del sensor para que pueda ser
+	procesada, almacenada o representada por un instrumento de
+	propósito general. Esta tarea implica, dadas las posibles
+	propiedades de la señal que genera el sensor, que el acondicionador
+	de señal debe ser capaz de amplificar la señal, adaptar
+	impedancias, filtrar la señal, eliminar componente de continua,
+	linealizar la señal, modular o demodular la señal, y transportar la
+	señal o hacerla apta para su transporte. Es un circuito que está
+	diseñado para compensar una serie de situaciones y que la señal
+	resultante reúna una serie de condiciones para que después pueda
+	ser procesada, almacenada, tratada. De lo contrario sería imposible
+	hacer esto con un instrumento estándar.
+
+	Idealmente lo que necesito es, en transmisión: máxima transferencia
+	de potencia, transferencia de potencia de 200 mili vatios eficaces,
+	señal cuadrada con ciclo de trabajo variable o fijo (sin que dure
+	tampoco demasiado) conocido, preciso y controlado. En recepción lo
+	que preciso es, filtrar la señal??? (mirar la nota abajo),
+	linealizar la señal (no creo que sea necesario, la salida ya se
+	supone lineal con respecto a las variaciones de la presión
+	acústica).
+
+	///NOTA ACLARATORIA///
+
+	En principio no sería necesario filtrar la señal, pero no lo sé,
+	tendría que averiguar más sobre los sensores piezoeléctricos y
+	sobre los sensores de ultrasonidos. El sensor se supone que genera
+	una señal de 40 kHz con posible excitación de armónicos secundarios
+	pero con una frecuencia bastante limpia a pesar de que pueda
+	detectar mucho ruido en el medio. Aunque esa es la descripción del
+	actuador, tampoco estoy seguro de que pueda aplicarse tal cual al
+	sensor. A ver, por un lado el actuador si se alimenta con lo que
+	sea saca una onda acústica que oscila en torno a los 40 kHz, prueba
+	de esto es que aunque lo alimentes con un pulso de continua oscila
+	a esa frecuencia. El manual, las especificaciones, dan a entender
+	que cuando alimento el actuador con una sinusoide primero parte de
+	la energía puede que no vaya a parar al sensor, que se refleje. De
+	esa energía que llega al sensor parte se disipa en forma de calor y
+	parte se radia al medio en forma de onda de presión. De la energía
+	que se radia al medio, una parte se radia en la frecuencia natural
+	de resonancia del sensor y otra parte excita armónicos secundarios
+	de esta frecuencia. El SPL indica qué parte de la potencia que
+	llega al sensor se radia en la frecuencia de resonancia del sensor
+	(me imagino que el dato tiene en cuenta cualquier fenómeno que
+	pueda hacer que la energía no se radie a esta frecuencia, absorción
+	y emisión en forma de calor -efecto Joule- y otros efectos
+	indeseados y excitación de armónicos secundarios). En resumidas
+	cuentas que el actuador siempre radia en su frecuencia de resonancia
+	natural y en sus distintos armónicos. Por otro lado está la
+	definición de efecto piezoeléctrico, según esta definición, si un
+	material piezoeléctrico es sometido a un esfuerzo (mecánico o de
+	otro tipo) que provoque en el una deformación aparece en este
+	material una polarización eléctrica. Es un efecto que tiene que ver
+	con la estructura cristalina iónica. (¿Una polarización eléctrica?
+	Es la densidad de momento eléctrico dipolar en un material, se
+	entiende dieléctrico pero en circunstancias especiales también
+	puede darse en conductores. Un material dieléctrico está compuesto
+	por dipolos eléctricos distribuidos habitualmente de forma
+	aleatoria y orientados de forma aleatoria o, en otras palabras,
+	moléculas cuya carga global es neutra pero está distribuida de forma
+	no equitativa en la molécula, por lo tanto tienen una orientación
+	eléctrica, y todas las moléculas en el material no está orientadas
+	igual si no de forma distinta. Un dipolo eléctrico está asociado a
+	una magnitud vectorial llamada momento eléctrico dipolar que indica
+	el par que se crea al someter al dipolo a un campo eléctrico
+	externo. Cuando se tienen muchos dipolos en un material dieléctrico
+	entonces se habla de densidad de momento eléctrico dipolar. Si se
+	somete el material a un campo eléctrico los dipolos de los que se
+	componen se orientan de forma que la acción del campo se minimiza,
+	a la orientación de los dipolos se la llama polarización eléctrica.
+	Si en un material aparece una polarización eléctrica, aunque la
+	carga neta del dieléctrico siga siendo neutra, la carga positiva y
+	negativa se agrupa en el dieléctrico en regiones concretas como si
+	se sometiese a un potencial eléctrico, que es lo que yo veo en
+	bornes del material.). En resumidas cuentas, lo que quiero decir es
+	que si someto un material piezoeléctrico a una onda de presión
+	(variaciones en la presión estática del aire) es inevitable que
+	observe una diferencia de potencial eléctrico entre sus caras
+	cargadas, da igual la frecuencia de oscilación de la onda acústica,
+	el material la trasladará fielmente a la señal eléctrica. Sin
+	embargo, no conozco los sensores de ultrasonidos, tal vez el
+	encapsulado inhiba las ondas de presión que interfieren o yo que
+	sé. Lo intuitivo sería pensar que el sensor traslada todo lo que ve
+	en el medio a la señal eléctrica, las ondas acústicas a cualquier
+	frecuencia, el ruido, todo eso. Pero no es lógico pensar así,
+	porque entonces no habría ningún motivo para construir distintos
+	tipos de sensores (con distintas frecuencias de resonancia,
+	sensibilidad, etcétera), habría que pensar que el sensor atenúa
+	mucho frecuencias distintas de su frecuencia de resonancia y
+	armónicos y que reparte la energía entre esas frecuencias, pero que
+	aún así es posible que se cuelen frecuencias distintas de estas en
+	la señal que generan. Por tanto, sí sería recomendable filtrar la
+	señal que procede del sensor, (en realidad si hablo de un filtro
+	ideal siempre viene bien filtrar, pero habría que comparar si las
+	pérdidas y distorsiones que introduce el filtro son compensadas por
+	la reducción del ruido que genera). A primera vista, no es
+	imprescindible filtrar la señal, y si no es imprescindible no hay
+	por qué hacerlo, pero quizá lo mejor sea filtrar la señal aunque
+	sea para evitar la acción de los armónicos secundarios.
+
+	Acondicionadores (no quiero justificar lo que tengo, si no primero
+	explicar primero idealmente cual es el circuito óptimo y después
+	decir que he hecho yo y si se puede justificar un circuito como el
+	mío, al menos decir si proporciona algún resultado válido).
+
+	División en apartados (acondicionadores y después sección que
+	trata, transductores, características, modo de empleo, pulso
+	acústico...)
+
+	Así es como lo veo ahora. Un transductor de ultrasonidos actúa como
+	un circuito resonante, es decir, cuando es atacado por una señal
+	(eléctrica en el caso del actuador y acústica en el caso del
+	sensor) empieza a oscilar. Oscilar puede entenderse como que el
+	dieléctrico empieza a comprimirse y expandirse (siempre en una
+	única dirección paralela/perpendicular a la dirección de la
+	polarización) y se polariza eléctricamente en un sentido u otro
+	de forma alterna. Aunque en principio puede hacerlo a cualquier
+	frecuencia, oscila a su frecuencia de resonancia atenuando en gran
+	medida otras frecuencias. Sin embargo, esas otras frecuencias
+	pueden estar presentes en la señal de salida del transductor,
+	aunque muy atenuadas. Confío en que en transductores de baja
+	frecuencia y ancho de banda estrecho las componentes indeseadas que
+	se generan, se encuentran incluso más atenuadas. Esto en principio
+	no es relevante, si se trata de escribir el primer capítulo de la
+	memoria, aunque ayuda a comprender mejor que ocurre durante el
+	experimento de ultrasonidos.

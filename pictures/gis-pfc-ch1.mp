@@ -1,8 +1,10 @@
 verbatimtex
 %&latex
 \documentclass{minimal}
+\usepackage[spanish]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{lucidabr}
+\usepackage{textcomp, amssymb}
 \begin{document}
 \fontsize{11pt}{13.2pt}\selectfont
 etex
@@ -493,6 +495,134 @@ label.top(btex $u(t)$ etex, 1/2[center p6, center p7]);
 label.top(btex $v(t)$ etex, 9/16[center p7, center p8]);
 label.bot(btex Transductor etex, 1/2[llcorner p7, lrcorner p7] %
 	shifted (0, -u));
+
+endfig;
+% ==================================================================
+
+
+
+% ==================================================================
+% representación de planos acotados de los transductores de
+% ultrasonidos
+beginfig(5);
+ahlength := 1.25u;
+ahangle := 30;
+numeric a[], i, j, k, x[], y[];
+picture d[];
+pen l[];
+path p[], q[][];
+transform t[][];
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+d0 = nullpicture;
+pickup l1;
+
+% ··································································
+% constantes
+a00 = wi/12;		a01 = 2a00;		a02 = a01/6;
+a03 = a02/3;		a04 = 2a02;		a05 = 7u/20;
+a06 = 8u;		a07 = 2u;
+% a00, a01, a02 y a03 son medidas para generar la figura
+% a04 es la mitad de la separación entre los bornes
+% a05 me sirve para que las puntas de flecha no atraviesen las
+% aristas o líneas de cota
+% a06 es lo que sobresale la línea auxiliar de cota de la arista de
+% la figura
+% a07 es lo que sobresale la linea auxiliar de cota de la línea de
+% cota
+
+z00 = (a00 + a01/2, he02/2);
+z01 = z00 + (7a00/2, 0);
+z02 = z01 + (7a00/2, a00/2);
+
+p0 = fullcircle scaled a01;
+p1 = fullcircle scaled (a01 - a02);
+p2 = (-a01/2, -a00/2)--(a01/2, -a00/2)--(a01/2, a00/2)-- %
+	(-a01/2, a00/2)--cycle;
+p3 = (-a03/2, a00/2)--(-a03/2, -a00/2)--(a03/2, -a00/2)-- %
+	(a03/2, a00/2);
+p4 = fullcircle scaled a03;
+addto d0 doublepath (-3a01/5, 0)--(-a01/4, 0) withpen l0;
+addto d0 doublepath (-3a01/20, 0)--(3a01/20, 0) withpen l0;
+addto d0 doublepath (a01/4, 0)--(3a01/5, 0) withpen l0;
+addto d0 contour (makepath pencircle scaled 0.075u) %
+	shifted (-a01/5, 0) withpen l0;
+addto d0 contour (makepath pencircle scaled 0.075u) %
+	shifted (a01/5, 0) withpen l0;
+
+% ··································································
+% planos de los transductores
+draw p0 shifted z00;	draw p1 shifted z00;
+draw p0 shifted z01;	draw p1 shifted z01;
+draw p3 shifted z02 shifted (-a04, -a00);
+draw p3 shifted z02 shifted (a04, -a00);
+draw p2 shifted z02;
+draw p4 shifted z01 shifted (-a04, 0);
+draw p4 shifted z01 shifted (a04, 0);
+
+% ··································································
+% líneas auxiliares
+pickup l0;
+draw d0 shifted z00;	draw d0 rotated 90 shifted z00;
+draw d0 shifted z01;	draw d0 rotated 90 shifted z01;
+z03 = ((0, 0)--(a01, a01)) intersectionpoint
+	(fullcircle scaled a01);
+p5 = (0, 0)--(x03 + a06, y03 + a06)
+	cutbefore fullcircle scaled (a01 - a02);
+p6 = fullcircle scaled (a01 - a02 - 2a05);
+p7 = (-a01/2, -a01/2)--(a01/2, a01/2) %
+	cutbefore subpath (4, 6) of p6 %
+	cutafter p6;
+draw p5 shifted z00;
+drawdblgisarrow p7 shifted z00;
+p8 = (0, 0)--(0, -3a01/5 - a06);
+draw p8 shifted z01 shifted (-a04, 0);
+draw p8 shifted z01 shifted (a04, 0);
+drawdblgisarrow ((-a04 + a05, 0)--(a04 - a05, 0)) shifted z01 %
+	shifted (0, -3a01/5 - a06 + a07);
+draw ((0, 0)--(a06, 0)) shifted z02 shifted (a01/2, a00/2);
+draw ((0, 0)--(a06, 0)) shifted z02 shifted (a01/2, -a00/2);
+draw ((0, 0)--(0, a06)) shifted z02 shifted (-a01/2, a00/2);
+draw ((0, 0)--(0, a06)) shifted z02 shifted (a01/2, a00/2);
+draw ((a03/2 + a04, -3a00/2)--(a01/2 + a06, -3a00/2)) shifted z02;
+draw ((0, 0)--(0, -a06)) shifted z02 %
+	shifted (-a04 + a03/2, -3a00/2);
+draw ((0, 0)--(0, -a06)) shifted z02 %
+	shifted (-a04 - a03/2, -3a00/2);
+drawdblgisarrow ((0, a00/2 - a05)--(0, -a00/2 + a05)) shifted z02 %
+	shifted (a01/2 + a06 - a07, 0);
+drawdblgisarrow ((0, -a00/2 - a05)--(0, -3a00/2 + a05)) %
+	shifted z02 shifted (a01/2 + a06 - a07, 0);
+drawdblgisarrow ((-a01/2 + a05, 0)--(a01/2 - a05, 0)) shifted z02 %
+	shifted (0, a00/2 + a06 - a07);
+drawgisarrow ((-3a06/2, 0)--(-a05, 0)) shifted z02 %
+	shifted (-a04 - a03/2, -3a00/2 - a06 + a07);
+drawgisarrow (reverse ((a05, 0)--(a06/3, 0))) shifted z02 %
+	shifted (-a04 + a03/2, -3a00/2 - a06 + a07);
+draw ((-a03/2, 0)--(a03/2, 0)) shifted z02 %
+	shifted (-a04, -3a00/2 - a06 + a07);
+
+% ··································································
+% etiquetas
+d1 = thelabel.ulft(btex $\varnothing\,\mathtt{7.7}$ etex, (0, 0));
+draw d1 rotated 45 shifted z00 shifted (x03 + a06, x03 + a06);
+label.top(btex $\mathtt{5.0}$ etex, z01 %
+	shifted (0, -3a01/5 - a06 + a07));
+d2 = thelabel.top(btex $\mathtt{6.7}$ etex, (0, 0));
+d3 = thelabel.top(btex $\mathtt{9.4}$ etex, (0, 0));
+draw d2 rotated 90 shifted z02 shifted (a01/2 + a06 - a07, 0);
+draw d3 rotated 90 shifted z02 shifted (a01/2 + a06 - a07, -a00);
+label.top(btex $\varnothing\,\mathtt{9.7}$ etex, z02 %
+	shifted (0, a00/2 + a06 - a07));
+label.urt(btex $\varnothing\,\mathtt{0.5}$ etex, z02 %
+	shifted (-a04 - a03/2 - 3a06/2, -3a00/2 - a06 + a07));
+
+% ··································································
+% marco
+pickup l2;
+draw (0, 0)--(wi, 0)--(wi, he02)--(0, he02)--cycle;
 
 endfig;
 % ==================================================================

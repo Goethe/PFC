@@ -1,0 +1,37 @@
+|Martes, 1 de Marzo de 2011|
+
+	El actuador de ultrasonidos puede funcionar de dos formas
+	diferentes: si es alimentado con una sinusoide emite una onda
+	acústica continua al medio; por el contrario, si se alimenta con un
+	pulso rectangular (o de continua), emite un tono modulado por un
+	pulso gaussiano de la misma duración. En cualquier caso la potencia
+	disipada por el actuador no puede exceder el límite de 20 mW
+	eficaces especificado por el fabricante. Dependiendo del tipo de
+	alimentación es posible adoptar una u otra estrategia para acotar
+	la potencia suministrada al sensor. Si se alimenta el sensor con
+	una onda sinusoidal puede, o bien limitarse la tensión de
+	alimentación, o bien utilizarse una sinusoide pulsada, empleando
+	una configuración de ciclo de trabajo que garantice que no se
+	supera el límite de potencia soportado. En caso de utilizar un
+	pulso rectangular, o un tren de pulsos rectangulares, las opciones
+	son similares, reducir el nivel de tensión o configurar el ciclo de
+	trabajo de la señal. Debe tenerse en cuenta para calcular la
+	transferencia de potencia la impedancia equivalente atribuible al
+	actuador. La impedancia equivalente presenta un comportamiento
+	capacitivo a frecuencias por debajo de la frecuencia fundamental de
+	oscilación del actuador, carácter resistivo a frecuencias en torno
+	a la frecuencia de resonancia y carácter inductivo a frecuencias
+	por encima de esta frecuencia. Por tanto, la máxima transferencia
+	de potencia ocurre en frecuencias cercanas a la frecuencia natural
+	de oscilación del actuador, donde éste se comporta como una
+	impedancia resistiva de un valor típico que ronda los 700 ø. La
+	potencia suministrada al actuador se reparte entre la frecuencia
+	fundamental de resonancia y los distintos armónicos a frecuencias
+	superiores. El actuador siempre vibra a su frecuencia fundamental
+	de resonancia o a frecuencias múltiplo de ésta independientemente
+	de la frecuencia de la onda eléctrica utilizada para el suministro
+	de potencia. Si bien esto es cierto, para evitar excitar armónicos
+	distintos de la frecuencia fundamental de resonancia es aconsejable
+	que la frecuencia de la onda eléctrica sea lo más próxima a la
+	frecuencia de resonancia del actuador, además esto garantiza la
+	máxima transferencia de potencia.

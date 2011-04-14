@@ -1,0 +1,60 @@
+|Lunes, 28 de Marzo de 2011|
+
+	Recepción, acondicionador de señal
+
+	Un acondicionador de señal es un circuito que proporciona una señal
+	eléctrica en la que la magnitud variable está relacionada de algún
+	modo determinado con la propiedad del sensor que refleja las
+	variaciones que se producen en la magnitud del medio que se mide.
+
+	Son varios conceptos expuestos en un mismo párrafo. Para empezar,
+	un sensor eléctrico es un instrumento.
+	
+	Son demasiados elementos y las relaciones entre ellos son demasiado
+	complejas. Tiendo perderme explicando hasta el más mínimo detalle
+	de estas relaciones y nunca acabaré a este paso.
+
+	Un sensor es un elemento de un circuito electrónico cuyas
+	propiedades varían de forma conocida cuando se somete a una
+	determinada acción externa. Habitualmente, es una de las
+	propiedades de un sensor la que responde de forma sensible a los
+	cambios que se producen en el medio externo, pues es lo que
+	interesa y el sensor se diseña con este propósito, de lo contrario
+	su comportamiento sería difícilmente predecible. Suele tratarse de
+	una propiedad del sensor útil...
+
+	Igualmente es difícil determinar qué causa el comportamiento de un
+	sensor cuando varias magnitudes del medio cambian al mismo tiempo.
+	Para realizar un experimento válido con un sensor deben fijarse
+	unas determinadas condiciones (fijar el valor del resto de
+	magnitudes cuya variación pueda afectar al comportamiento del
+	sensor, para conocer que el comportamiento que se da en el sensor
+	responde únicamente a las variaciones que se producen en la
+	magnitud que se desea medir).
+
+	Y aunque el comportamiento del sensor cambia cuando cambian
+	distintas magnitudes del medio (habrá que saber lo que significa
+	magnitud de un medio), habitualmente también, la magnitud de
+	interés y la temperatura. Lo importante es saber como se comporta
+	el sensor y fijar todas las magnitudes excepto la que se desea
+	medir.
+
+	Objetos que se observan en esta relación sin sentido: el medio,
+	objeto o evento que se pretende medir; en realidad es una magnitud
+	del medio la que se mide, puede considerarse a grandes rasgos un
+	objeto como un medio y pasar a considerar ambos como uno mismo
+	conceptualmente hablando; los eventos deben producirse en una
+	magnitud para que puedan ser medidos lo cual también ayuda a pensar
+	que quizá objeto, evento, medio son una misma cosa, una magnitud de
+	un medio; magnitud -- propiedad física que se puede medir, como
+	temperatura o longitud; la magnitud del medio que se mide adopta un
+	valor concreto, valor que refleja el número que se obtiene del
+	proceso de medida; un sensor puede considerarse desde un punto de
+	vista simplista como un medio que está en contacto con otro u otros
+	medios (un objeto o varios rodeados todos por otro medio), pero es
+	más que eso, es un instrumento de medida (que no sistema de medida)
+	en sí mismo; las propiedades del material del que está hecho el
+	componente activo de un sensor presentan un comportamiento
+	determinado frente a las variaciones que se pueden producir en una
+	o varias de las magnitudes del medio que rodea sensor (todos los
+	objetos y medios).

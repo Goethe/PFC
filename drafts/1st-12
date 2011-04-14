@@ -1,0 +1,63 @@
+|Miércoles, 13 de Abril de 2011|
+
+	Aclarado ésto, el primer paso en el diseño de un circuito
+	acondicionador es determinar los requisitos que dicho circuito debe
+	satisfacer. En este caso, el principal propósito del circuito
+	acondicionador es proporcionar un suministro eléctrico que reúna
+	unas condiciones determinadas.
+
+	Los requisitos vienen impuestos por las características del
+	actuador y del experimento que se pretende realizar.
+
+	Como se observa del párrafo anterior, el acondicionador debe
+	proporcionar un suministro eléctrico que reúna unas condiciones
+	determinadas. En definitiva, para determinar que tipo de señal debe
+	generar el acondicionador es preciso estudiar el tipo de
+	experimento realizado y las características del actuador empleado
+	en dicho experimento.
+
+	-------------------------------------------------------------------
+
+	Sin embargo, la hipótesis de que existe máxima transferencia de
+	potencia cuando se alimenta el sensor con un tren de pulsos
+	rectangulares no es correcta. De hecho, es difícil determinar cual
+	es el factor de transferencia de potencia en estas circunstancias.
+	Para favorecer el máximo tránsito de corriente a través de la carga
+	una solución sencilla consiste en diseñar el circuito
+	acondicionador para que su impedancia de salida sea mínima.
+
+	El cálculo de transferencia de potencia es diferente cuando la
+	alimentación que procede del acondicionador no es una sinusoide si
+	no un tren de pulsos rectangulares.
+
+	La impedancia con la que el actuador carga el circuito debe, sin
+	embargo, tenerse en cuenta a la hora de calcular la transferencia
+	de potencia que existe entre el acondicionador y el actuador.
+	Cuando es alimentado por un tren de pulsos rectangulares, el
+	conjunto formado por el acondicionador y el actuador se comporta
+	como un circuito \sig{RC} que se encuentra en régimen transitorio.
+	De forma que para averiguar cuales son los niveles de tensión y
+	corriente que se observan en bornes del actuador es menester
+	calcular la constante de tiempos del circuito
+	($\Tau = R_\text{eq}\cdot C$) y observar el comportamiento del
+	circuito en el tiempo. Tomando como hipótesis que la impedancia de
+	salida del acondicionador es reducida ---hipótesis que se
+	cumple en el circuito propuesto (figura), dado que la etapa de
+	salida de dicho circuito la constituye un amplificador operacional
+	cuya impedancia de salida se aproxima a cero---, y teniendo en
+	cuenta que la parte resistiva de la impedancia atribuida al
+	actuador es también pequeña (cuadro), puede deducirse que la
+	constante de tiempos resultante es también moderada. Es posible
+	obtener un valor aproximado a partir de cálculos sencillos.
+
+	tau = Cl·Req = Cl·(Rl + R_0||R_eq2) |R0~0 = Cl·Rl =
+	700 * 2.2e-9 = 1.54 µs
+
+	Finalmente se observa que, con los valores de periodo, tensión en
+	el estado alto y ciclo de trabajo de la señal que proporciona el
+	acondicionador (cuadro), y considerando una constante de tiempo
+	pequeña, la respuesta del actuador es muy rápida y la señal en sus
+	bornes sigue con bastante fidelidad la señal que puede medirse con
+	el circuito en abierto.
+
+	...y dada la constante de tiempo del circuito...

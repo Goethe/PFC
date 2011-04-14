@@ -1,21 +1,495 @@
 \chapter{Subsistema de interacción con el medio físico}
 
-\section{Introducción}
-
-El primero de los subsistemas estudiado en este documento es el subsistema
-para la interacción con el medio físico. Es el subsistema que ocupa la capa
-de menor nivel y agrupa los elementos que pueden observarse en la
-\cref{fig:submedium}.
+Para que un sistema pueda considerarse un sistema de medida debe haber una
+interacción con el objeto o evento de estudio. El propósito de este sistema
+es medir las propiedades de un determinado medio físico, en este caso
+madera de palmera. La interacción con el medio ocurre en el primer
+subsistema que se encuentra dentro de la jerarquía de capas que define el
+sistema de medida. Atendiendo a su función dentro del sistema, este
+subsistema recibe en esta memoria el nombre de subsistema para la
+interacción con el medio físico. Es el único de los tres subsistemas que
+conforman el sistema de medida que está directamente relacionado con los
+ensayos no destructivos, mientras que el resto de subsistemas, el
+subsistema de adquisición y el subsistema de control y presentación se
+encuentran más ligados al tratamiento digital de señales. En una inspección
+ultrasónica, el subsistema para la interacción con el medio físico, este
+subsistema, es imprescindible y sin él no puede realizarse el ensayo; sin
+embargo, los otros dos subsistemas pueden sustituirse por otros elementos
+que realicen la misma función, por un osciloscopio digital, por ejemplo. El
+subsistema para la interacción con el medio físico está compuesto por los
+elementos presentes en la figura \cref{fig:submedium}. Los transductores
+son los dispositivos que realmente interactúan con el medio, a través de la
+emisión de una señal acústica que se recibe en el otro extremo. Por su
+parte los acondicionadores adecuan las señales de tal modo que, pueda haber
+una comunicación entre los elementos presentes en este subsistema y los
+pertenecientes a subsistemas por encima de éste.
 
 \begin{figure}
 	\begin{center}
 		\includegraphics{gis-pfc-ch1-01.mps}
 	\end{center}
-	\caption[Subsistema para la interacción con el medio físico]
-	{Elementos del sistema digital de medida que también se incluyen en
-	el subsistema para la interacción con el medio físico.}
+	\caption[Subsistema para la interacción del medio físico]{Esquema
+	que representa los distintos elementos o bloques presentes en el
+	subsistema para la interacción con el medio físico.}
 	\label{fig:submedium}
 \end{figure}
 
+Este capítulo se divide pues en tres apartados, en el primero se hace una
+descripción técnica de los transductores utilizados en el proyecto, y se
+hace una pequeña observación de su utilidad en relación con el tipo de
+ensayo programado para el proyecto. En los dos apartados posteriores se
+explica el proceso de diseño de los circuitos acondicionadores de la
+sección de transmisión y de la sección de recepción respectivamente, se
+exponen los requisitos que deben satisfacer y se explica brevemente el
+funcionamiento de los circuitos propuestos para que el lector pueda
+comprobar que satisfacen dichos requisitos. En el \cref{chap:endus} se hace
+un desarrollo de la teoría de los ensayos no destructivos que puede ayudar
+a comprender mejor algunos de los conceptos propuestos a lo largo de este
+capítulo.
 
 
+\section{Transductores de ultrasonidos}\label{sec:transducers}
+
+Los transductores de ultrasonidos son transductores piezoeléctricos y, por
+tanto, entran en la categoría de transductores generadores. La principal
+característica de un sensor generador es que al ser expuesto a la magnitud
+no eléctrica de interés genera una diferencia de potencial eléctrico
+proporcional sin necesidad de una alimentación eléctrica. Este efecto es
+reversible y puede utilizarse para provocar una respuesta no eléctrica a
+una variación en una corriente eléctrica por medio de un actuador. Los
+actuadores y los sensores generadores suelen presentar características
+similares, sobretodo debido a este motivo. En determinados materiales
+aparece una polarización eléctrica si se somete el material a un esfuerzo
+que provoca deformación, este fenómeno se conoce como efecto piezoeléctrico
+y es un efecto reversible. Si se aplica una diferencia de potencial
+eléctrico a dos de las caras de un material piezoeléctrico, en éste aparece
+una deformación. Un actuador de ultrasonidos vibra cuando se excita con una
+onda eléctrica y esta vibración se transmite al medio en forma de onda de
+presión. La señal ultrasónica se propaga por el medio y finalmente incide
+en el sensor, ejerciendo una presión sobre su superficie que el transductor
+traduce en una señal eléctrica.
+
+La principal diferencia entre los transductores de ultrasonidos y los
+transductores acústicos convencionales es que los transductores de
+ultrasonidos trabajan a frecuencias superiores a los 20 kHz donde la onda
+acústica se hace inaudible para el oído humano, de esta manera es posible
+transmitir la energía acústica en pulsos estrechos. Los transductores de
+ultrasonidos pueden ser de dos tipos dependiendo de como se construyan,
+abiertos o cerrados. Los transductores de tipo abierto están formados por
+una pantalla protectora y la pieza de material piezoeléctrico montada sobre
+un cono metálico, suelen ser más eficientes y presentan un mayor ancho de
+banda, no obstante, están menos preparados para trabajar en condiciones
+duras y su frecuencia de resonancia se determina con menor precisión. En
+transductores de diseño cerrado la pieza resonante está en contacto directo
+con la carcasa protectora, y ésta se ajusta durante el proceso de
+fabricación para que el conjunto vibre a la frecuencia de resonancia
+elegida, estos transductores son menos eficientes pero más resistentes y
+más precisos. Los transductores empleados en este \sig{pfc} son de tipo
+cerrado. La \vref{fig:transducers} muestra una representación del
+encapsulado que reviste los transductores utilizados en el proyecto, en la
+que pueden apreciarse las dimensiones del dispositivo. En el encapsulado
+del actuador existe una marca en forma de punto blanco que lo identifica y
+que sirve para distinguirlo del sensor, es la única diferencia entre ambos.
+Las características técnicas de los transductores vienen recogidas en el
+\cref{tab:transducers}.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch1-05.mps}
+	\end{center}
+	\caption[Dimensiones de los transductores de
+	ultrasonidos]{Dimensiones y forma de los transductores de
+	ultrasonidos.}
+	\label{fig:transducers}
+\end{figure}
+
+\begin{sidewaystable}
+	\centering
+	\begin{threeparttable}
+	\begin{tabular}{l c c}
+		\toprule
+		& \multicolumn{2}{c}{Transductor} \\
+		\cmidrule(l){2-3}
+		Propiedad & Transmisor & Receptor \\
+		\midrule
+		Nivel de presión acústica transmitida & 110 dB & --- \\
+		Sensibilidad del receptor & --- & -70 dB \\
+		Frecuencia fundamental de resonancia
+		& $40 \text{kHz} \pm 1 \text{kHz}$
+		& $40 \text{kHz} \pm 1 \text{kHz}$ \\
+		Ancho de banda a -6 dB & $2.5$ kHz & $3.0$ kHz \\
+		Ancho del lóbulo principal & 60º & --- \\
+		Máxima potencia disipable & 200 mWef & --- \\
+		Impedancia & $700\ \Omega$ & $30\ \text{k}\Omega$ \\
+		Capacidad & $2 \text{nF} \pm 20\%$
+		& $2 \text{nF} \pm 20\%$ \\
+		Tiempo de subida & $700\ \mu\text{s}$ & --- \\
+		Rango de temperatura de funcionamiento %
+		& (-20, 60) [ºC] & (-20, 60) [ºC] \\
+		\bottomrule
+	\end{tabular}
+	\begin{TableNotes}
+		\tnotetext{*}{Todas las magnitudes de la tabla se dan con
+		respecto a la frecuencia natural de resonancia de los
+		transductores.}
+	\end{TableNotes}
+	\end{threeparttable}
+	\caption[Características de los transductores]{Características de
+	los transductores empleados en el sistema de medida.}
+	\label{tab:transducers}
+\end{sidewaystable}
+
+
+\subsection{El actuador de ultrasonidos}
+
+El actuador de ultrasonidos puede funcionar de dos formas diferentes: si es
+alimentado con una sinusoide emite una onda acústica continua al medio; por
+el contrario, si se alimenta con un pulso rectangular (o de continua),
+emite un tono modulado por un pulso gaussiano de la misma duración. En
+cualquier caso la potencia disipada por el actuador no puede exceder el
+límite de 20 mW eficaces especificado por el fabricante. Dependiendo del
+tipo de alimentación es posible adoptar una u otra estrategia para acotar
+la potencia suministrada al sensor. Si se alimenta el sensor con una onda
+sinusoidal puede, o bien limitarse la tensión de alimentación, o bien
+utilizarse una sinusoide pulsada, empleando una configuración de ciclo de
+trabajo que garantice que no se supera el límite de potencia soportado. En
+caso de utilizar un pulso rectangular, o un tren de pulsos rectangulares,
+las opciones son similares, reducir el nivel de tensión o configurar el
+ciclo de trabajo de la señal.
+
+El actuador de ultrasonidos carga el circuito de alimentación con una
+impedancia que presenta un carácter variable con respecto a la frecuencia
+de la onda eléctrica y que debe tenerse en cuenta para calcular la
+transferencia de potencia. La impedancia equivalente presenta un
+comportamiento capacitivo a frecuencias por debajo de la frecuencia
+fundamental de oscilación del actuador, carácter resistivo a frecuencias en
+torno a la frecuencia de resonancia y carácter inductivo a frecuencias por
+encima de esta frecuencia. Por tanto, la máxima transferencia de potencia
+ocurre en frecuencias cercanas a la frecuencia natural de oscilación del
+actuador, donde éste se comporta como una impedancia resistiva de un valor
+típico que ronda los 700 $\Omega$. Si el actuador es excitado con un tren
+de pulsos rectangulares el comportamiento de la onda en bornes del
+dispositivo ---y de ahí, la transferencia de potencia--- puede estudiarse
+observando el régimen transitorio del circuito. La potencia suministrada al
+actuador se reparte entre la frecuencia fundamental de resonancia y los
+distintos armónicos a frecuencias superiores. El actuador siempre vibra a
+su frecuencia fundamental de resonancia o a frecuencias múltiplo de ésta,
+independientemente de la frecuencia de la onda eléctrica utilizada para el
+suministro de potencia. Si bien esto es cierto, para evitar excitar
+armónicos secundarios distintos de la frecuencia fundamental de resonancia
+es aconsejable que la frecuencia de la onda eléctrica sea lo más próxima a
+la frecuencia de resonancia del actuador, además esto garantiza la máxima
+transferencia de potencia.
+
+En ensayos no destructivos mediante ultrasonidos es imprescindible utilizar
+pulsos acústicos como el representado en la \cref{fig:pulse}, para poder
+evaluar las propiedades del medio de propagación empleando una de las dos
+técnicas expuestas en el \cref{chap:endus} en la \cref{sec:technics}. Como
+se explica en dicho capítulo, el actuador continua vibrando a su frecuencia
+fundamental de resonancia incluso después de que la onda de alimentación
+pase a un estado bajo, durante un tiempo determinado durante el proceso de
+fabricación del dispositivo ---esto es algo que no se aprecia en la
+figura---, dando lugar a lo que en teoría de \sig{endus} se conoce como
+<<zona ciega>> o <<zona muerta>>, este fenómeno se explica con mayor
+detalle en la \cref{sec:field}.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch1-04.mps}
+	\end{center}
+	\caption[Pulso acústico generado por el actuador de
+	ultrasonidos]{Pulso acústico que se obtiene del actuador de
+	ultrasonidos cuando se alimenta con un pulso rectangular.}
+	\label{fig:pulse}
+\end{figure}
+
+El parámetro más importante asociado al actuador de ultrasonidos es el
+nivel de presión acústica transmitida (\emph{Transmitting Sound Pressure
+Level}, o \psig{spl}), representa la presión que la onda acústica ejerce
+sobre la presión estática del aire a una distancia determinada del actuador
+cuando éste se alimenta con una determinada tensión eficaz. Proporciona una
+medida de la eficiencia del sensor y puede utilizarse conjuntamente con la
+sensibilidad del sensor para calcular de forma teórica cual es el alcance
+máximo de un experimento de ultrasonidos que emplea dichos transductores.
+El \sig{spl} es una magnitud que varía con la frecuencia de la onda
+eléctrica utilizada para alimentar el sensor, y alcanza su máximo a la
+frecuencia natural de resonancia del actuador. El fabricante suele
+proporcionar, o bien el valor típico del \sig{spl} a la frecuencia de
+resonancia, o bien un perfil de la magnitud frente a la frecuencia de la
+onda eléctrica. Con independencia de que el \sig{spl} se presente mediante
+un valor numérico o mediante un gráfico, suele proporcionarse en unidades
+en base a una escala logarítmica que toma como referencia un valor de
+presión que generalmente se especifica también. Para calcular el \sig{spl}
+que se da en condiciones distintas de aquellas en que se miden las
+especificaciones, debe calcularse la variación en escala lineal y después
+trasladar este resultado a escala logarítmica, antes de poder operar con el
+\sig{spl}.
+
+
+\subsection{Sensor de ultrasonidos}
+
+El sensor de ultrasonidos presenta unas propiedades muy similares a las
+propiedades del actuador, si bien se caracteriza por presentar una
+impedancia característica bastante mayor. En el sensor la conversión se da
+en sentido contrario, las ondas acústicas de presión que inciden en la cara
+externa del sensor se traducen en variaciones de la tensión eléctrica que
+existe en bornes del dispositivo. Si la propiedad más característica del
+actuador de ultrasonidos es el \sig{spl}, la propiedad más característica
+del sensor es la sensibilidad. La sensibilidad suele proporcionarse también
+en escala logarítmica, igual que ocurre con el \sig{spl}, suele darse un
+valor típico o una característica de la propiedad frente a la frecuencia
+que, en ocasiones se superpone con la gráfica del \sig{spl} si los
+transductores pertenecen a una misma serie. La magnitud lineal es la
+relación entre la presión detectada y la diferencia de potencial eléctrico
+que se crea en bornes del sensor y, en este caso, representa una medida de
+la eficiencia del sensor.
+
+
+\subsection{Observaciones sobre los transductores}
+
+La madera de palmera es un medio peculiar y la atenuación que introduce en
+la señal acústica es mucho mayor que la que introduce un medio como el
+aire. Trabajar con transductores cuya frecuencia de resonancia se encuentra
+localizada en las frecuencias bajas de la región ultrasónica presenta una
+serie de ventajas y desventajas. Desde el punto de vista del sistema de
+medida digital, la frecuencia de la señal eléctrica que ataca al subsistema
+de adquisición no puede superar los 50 kHz, de lo contrario, con una
+frecuencia de muestreo de 10 \kms{}, la señal digitalizada se vería
+afectada por el aliasing. Por otro lado, atendiendo a las propiedades de
+propagación de las ondas acústicas, la dispersión afecta en menor medida a
+las bajas frecuencias (vid. \cref{chap:endus}), por consiguiente resulta
+beneficioso trabajar en el límite inferior de las frecuencias ultrasónicas.
+No obstante, las ondas acústicas de baja frecuencia tienen una tendencia
+mayor a propagarse por la superficie de un medio, lo cual puede provocar
+ecos indeseados que se suman a la onda acústica recibida y que dificultan
+la realización de los ensayos. El verdadero problema de emplear
+transductores de gama baja en un \sig{endus} radica en que emiten una
+energía ultrasónica muy débil, insuficiente si lo que se pretende es
+atravesar el tronco de una palmera. Para poder utilizar la técnica de
+transmisión es imprescindible que la onda acústica atraviese el medio, de
+lo contrario únicamente puede recurrirse a la técnica de pulso"=eco. Sin
+embargo, es difícil conseguir buenos resultados utilizando la técnica de
+pulso"=eco con transductores de gama baja. La técnica de pulso"=eco está
+pensada para ser aplicada con un único transductor que debe funcionar
+secuencialmente como emisor y como receptor, y utilizar dos transductores
+dificulta la obtención de buenos resultados. La teoría sostiene pues que es
+imposible obtener resultados útiles en un ensayo no destructivo con
+ultrasonidos en el que se emplean transductores de gama baja.
+Posteriormente, en el \cref{chap:part1conclusions} esta hipótesis se
+confirma, por lo que ha resultado necesario recurrir a otro tipo de
+transductores para poder efectuar los ensayos previstos, este tema vuelve a
+tratarse más adelante durante la segunda parte de la memoria.
+
+
+\section{Acondicionador de la sección de emisión}
+
+Los circuitos acondicionadores a menudo se relacionan únicamente con
+sensores y no con actuadores. No obstante, en el marco que define el
+sistema de medida digital no puede entenderse el circuito que precede al
+actuador de un modo distinto a como se entiende conceptualmente un circuito
+acondicionador, aunque el flujo de información circule en sentido
+contrario. Conceptualmente, un circuito que acondiciona un sensor traslada
+las variaciones que se producen en cierta propiedad del sensor a un
+instrumento estándar por medio de una señal eléctrica. El circuito que se
+inserta entre la fuente de alimentación y el actuador genera, a partir de
+la alimentación que suministra la fuente, una señal adecuada para excitar
+el actuador. El tipo de alimentación que precisa el actuador para emitir
+pulsos acústicos como los que requiere el experimento de ultrasonidos es
+muy concreta, y en cierto sentido transporta una determinada información,
+por lo que no puede obtenerse directamente a partir de un instrumento
+estándar como es en este caso la fuente de alimentación. Este circuito
+proporciona, además, adaptación de impedancias entre la fuente de
+alimentación y el actuador. Estas dos son, sin duda, competencias
+atribuidas a los circuitos acondicionadores, teniendo esto en consideración
+y atendiendo a la definición de circuito acondicionador que se hace en el
+\cref{sec:rxco}, puede decirse que, efectivamente, el circuito que acompaña
+al actuador en el sistema de medida responde a la definición formal de
+circuito acondicionador y puede considerarse como tal.
+
+
+\subsection[Requisitos de diseño del acondicionador]{Requisitos de diseño
+que debe satisfacer el circuito acondicionador}
+
+Aclarado ésto, el primer paso en el diseño de un circuito acondicionador es
+determinar los requisitos que dicho circuito debe satisfacer. Como se
+observa del párrafo anterior, el acondicionador debe proporcionar un
+suministro eléctrico que reúna unas condiciones determinadas. En
+definitiva, para determinar que tipo de señal debe generar el
+acondicionador es preciso estudiar el tipo de experimento realizado y las
+características del actuador empleado en dicho experimento. Para la
+realización de un \sig{endus} es necesario que el actuador de ultrasonidos
+emita un pulso acústico, no una onda acústica continua. De lo contrario no
+se pueden percibir parámetros en la señal eléctrica necesarios para
+determinar algunas de las propiedades del medio de propagación. El actuador
+de ultrasonidos utilizado en el proyecto puede emitir este tipo de pulsos
+acústicos, para emitir un pulso acústico debe excitarse con un pulso
+eléctrico rectangular. Por tanto, uno de los requisitos que el circuito
+acondicionador debe satisfacer es que a su salida debe generar un tren de
+pulsos eléctricos rectangulares. Con cada pulso rectangular el actuador
+emite un pulso acústico, como requisito opcional puede considerarse la
+incorporación de un interruptor de inicio con el que controlar el proceso.
+
+El otro requisito fundamental que debe cumplir el circuito es un requisito
+de potencia. El pulso acústico que emite el actuador debe ser capaz de
+atravesar el tronco de una palmera, para conseguirlo una buena estrategia
+consiste en emitir la máxima energía ultrasónica posible. Esto, a su vez,
+puede conseguirse si se suministra al actuador la máxima potencia que puede
+soportar. El límite de potencia que el actuador puede disipar es de 200 mW
+eficaces, considerando máxima transferencia de potencia, la tensión eficaz
+de la onda eléctrica con la que se alimenta el actuador debe encontrarse en
+torno a los 10 V eficaces. La impedancia con la que el actuador carga el
+circuito debe, sin embargo, tenerse en cuenta a la hora de calcular la
+transferencia de potencia que existe entre el acondicionador y el actuador.
+Cuando es alimentado por un tren de pulsos rectangulares, el conjunto
+formado por el acondicionador y el actuador se comporta como un circuito
+\sig{RC} que se encuentra en régimen transitorio. De forma que para
+averiguar cuales son los niveles de tensión y corriente que se observan en
+bornes del actuador es menester calcular la constante de tiempos del
+circuito ($\tau = C\cdot R_\text{eq}$) y observar el comportamiento del
+circuito en el tiempo. Tomando como hipótesis que la impedancia de salida
+del acondicionador es reducida ---hipótesis que se cumple en el circuito
+propuesto (\cref{fig:txconditioner}), dado que la etapa de salida de dicho
+circuito la constituye un amplificador operacional cuya impedancia de
+salida se aproxima a cero---, y teniendo en cuenta que la parte resistiva
+de la impedancia atribuida al actuador es también pequeña
+(\cref{tab:transducers}), puede deducirse que la constante de tiempos
+resultante es también moderada. Es posible obtener un valor aproximado a
+partir de cálculos sencillos.
+
+\begin{equation}\label{eq:timec}
+	\begin{split}
+		\tau &= C_\text{L}\cdot R_\text{eq}
+		\Big|_{R_\text{in}\simeq\infty} =
+		C_\text{L}\left(R_\text{L} + R_0\|(R_\text{a} +
+		R_\text{b})\right)\Big|_{R_0 \simeq 0} =
+		C_\text{L}\cdot R_\text{L} \\
+		&= 700\cdot2.2\cdot 10^{-9} = 1.54\mu s
+	\end{split}
+\end{equation}
+
+Donde $R_\text{in}$ y $R_\text{0}$ representan respectivamente la
+impedancia de entrada y la impedancia de salida del amplificador
+operacional. Finalmente se observa que, con los valores de periodo, tensión
+en el estado alto y ciclo de trabajo de la señal que proporciona el
+acondicionador (cuadro), y considerando una constante de tiempos como la
+obtenida en la \cref{eq:timec}, la respuesta del actuador es muy rápida y
+la señal en sus bornes sigue con bastante fidelidad la señal que puede
+medirse con el circuito en abierto.
+
+
+\subsection[Circuito acondicionador propuesto]{Circuito acondicionador
+propuesto, el 555}
+
+El diseño propuesto se muestra en la \cref{fig:txconditioner}, está basado
+en dos temporizadores 555 ---a nivel comercial se encuentran disponibles
+encapsulados que en su interior contienen dos 555, generalmente se conocen
+bajo el número de referencia 556--- y lo completa un amplificador
+operacional. El 555 es un temporizador integrado de gran precisión capaz de
+proporcionar pulsos rectangulares de 12 V de amplitud con tiempos de subida
+y de bajada contenidos entre los 300 y los 100 ns. Es un integrado muy
+conocido, es muy versátil, y es empleado en gran variedad de aplicaciones.
+Habitualmente se utiliza en sus configuraciones de multivibrador astable y
+multivibrador monoestable. En su configuración astable el 555 genera un
+tren de pulsos rectangulares periódico en el que el ciclo de trabajo puede
+ajustarse a voluntad para adoptar un valor entre el 50\% y el 100\%. Por el
+contrario, en su configuración monoestable el circuito genera un pulso de
+duración muy precisa bajo un estímulo externo. La configuración monoestable
+responde a un estímulo por estado bajo, por tanto, es fácil observar la
+relación que existe entre las dos configuraciones. Utilizando dos 555 en
+cascada (alimentando uno con la salida del anterior), el primero en su
+configuración astable y el segundo configurado como monoestable puede
+obtenerse un tren de pulsos rectangulares en el que el ciclo de trabajo no
+se encuentra limitado a ningún rango de valores. En una configuración en
+cascada como la propuesta, el ciclo de trabajo está determinado por la
+relación entre el periodo del tren de pulsos, que únicamente depende de la
+configuración del astable, y la duración de los pulsos, que a su vez
+depende de la configuración del monoestable; de ahí que pueda evitarse la
+restricción que se aplica al ciclo de trabajo cuando sólo se utiliza un
+astable.
+
+\begin{sidewaysfigure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch1-02.mps}
+	\end{center}
+	\caption[Circuito acondicionador de la sección de emisión]{Circuito
+	propuesto para acondicionar el actuador de ultrasonidos. Para
+	elaborar la figura se ha utilizado el \sig{ne556} y el \sig{ne5534}
+	de Texas Instruments.}
+	\label{fig:txconditioner}
+\end{sidewaysfigure}
+
+Ambas configuraciones, astable y monoestable, se caracterizan por la
+presencia de una red temporal en el circuito. Otra propiedad característica
+de estos circuitos es que el terminal de control debe encontrarse acoplado
+a tierra por medio de un condensador. La red temporal es un circuito
+compuesto por resistencias y condensadores que se encuentra conectado a los
+terminales de disparo, umbral y descarga del 555 y que dependiendo de la
+distribución, número y valor de sus componentes provoca un determinado
+comportamiento en el 555. En un astable la red temporal está compuesta por
+un condensador conectado por un lado a los terminales de umbral y disparo y
+por otro a masa, y dos resistencias: una situada entre la tensión de
+alimentación y el terminal de descarga del 555; y otra que está conectada
+al primer terminal del condensador y en su otro extremo al terminal de
+descarga. El periodo y el ciclo de trabajo del tren de pulsos que puede
+observarse a la salida de un astable están determinados por las siguientes
+ecuaciones.
+
+\begin{align}
+	T_H &= ln(2)(R_1 + R_2)C_1 \simeq 0,693(R_1 + R_2)C_1 \\
+	T_L &= ln(2)(R_2)C_1 \simeq 0,693\cdot C_1R_2 \\
+	T &= T_H + T_L = ln(2)(R_1 + 2R_2)C_1 = \frac{1}{f} \\
+	D &= \frac{T_H}{T} = \frac{R_1 + R_2}{R_1 + 2R_2}
+	\label{eq:astable}
+\end{align}
+
+Por su parte, la red temporal de un circuito monoestable está compuesta por
+una resistencia ubicada entre la alimentación y los terminales de descarga
+y umbral, y un condensador conectado al segundo terminal de la resistencia
+y a masa. En este caso la red temporal determina la duración del pulso que
+el monoestable genera cuando recibe un estímulo, la ecuación es la
+siguiente.
+
+\begin{equation}
+	T_H = ln(3)C_2R_3 \simeq 1,1\cdot C_2R_3
+	\label{eq:monostable}
+\end{equation}
+
+El terminal de disparo de un monoestable ha de ser conectado a la señal de
+estímulo. La señal de estímulo, que en la configuración en cascada de dos
+555 es la señal a la salida del astable, debe caracterizarse por permanecer
+siempre en un estado estable en el que la tensión debe ser próxima a la
+tensión de alimentación, y en el momento en el que deba generarse el pulso
+cambiar a un estado bajo que no debe durar más de lo que dura el pulso de
+salida. Por tanto, resulta comprensible que el ciclo de trabajo de un tren
+de pulsos generado por un astable con el propósito de servir de señal de
+estímulo de un 555 monoestable debe rondar valores elevados y, por tanto,
+$R_2 \lll R_1$.
+
+Como se mencionaba al inicio del apartado el circuito acondicionador lo
+completa un amplificador operacional configurado con realimentación
+negativa. El propósito de este circuito es amplificar la señal de salida
+del 556 al tiempo que limita el valor de la impedancia de salida del
+conjunto. La señal de salida resultante, al emplear los componentes
+listados en el cuadro (??) puede observarse en la \cref{fig:txacvo}. De
+acuerdo con lo observado en la \cref{fig:pulse} en la sección anterior,
+cuando uno de los pulsos rectangulares de los que se compone el tren llega
+al actuador se genera un pulso acústico. Por razones de comodidad puede
+instalarse un interruptor en el terminal de \func{reset} del 555
+monoestable para poder detener o iniciar el proceso, aunque desde el punto
+de vista del experimento basta con pausar la representación de los datos en
+el momento deseado. Puesto que con la configuración propuesta la imagen ha
+de refrescarse cada segundo es fácil para un ser humano determinar en que
+momento resulta adecuado congelar la prueba.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch1-03.mps}
+	\end{center}
+	\caption[Señal a la salida del amplificador \textsc{ne5534},
+	$u(t)$]{Señal generada por el acondicionador de transmisión medida
+	a la salida del amplificador \textsc{ne5534}, $u(t)$.}
+	\label{fig:txacvo}
+\end{figure}
+
+
+\section{Acondicionador de la sección de recepción}\label{sec:rxco}
