@@ -8,11 +8,13 @@
 \usepackage[altbullet, nofontinfo]{lucidabr}
 \usepackage[format=hang, font=small, labelfont=bf, labelsep=endash, %
 	width=.9\textwidth]{caption}
-\usepackage[listofformat=subsimple, format=hang, labelfont=footnotesize, %
-	textfont={it, footnotesize}]{subfig}
+\usepackage[listofformat=subsimple, format=hang, captionskip=10pt, %
+	labelfont=footnotesize, textfont={it, footnotesize}]{subfig}
+\setcounter{lofdepth}{2}
 \usepackage[clearempty]{titlesec}
 \usepackage[nottoc]{tocbibind}
 \usepackage[spanish]{varioref}
+\usepackage[noauto]{chappg}
 \usepackage{graphicx}
 \usepackage{amsfonts, amsmath, amssymb, calc, color, fancyhdr, hyperref}
 \usepackage{ifthen, layouts, listings, rotating, textcase, textcomp}
@@ -22,14 +24,6 @@
 \usepackage[spanish]{cleveref}
 \titleformat{\part}[display]{\centering\huge\bfseries}
 	{\partname\ \thepart}{.5\baselineskip}{}
-% \titleformat{name=\subsubsection,page=even}[leftmargin]
-% 	{\small\scshape\filleft}{\thesubsubsection}{\margiparsep}{}
-% \titleformat{name=\subsubsection,page=odd}[rightmargin]
-% 	{\small\scshape\filright}{\thesubsubsection}{\margiparsep}{}
-% \titleformat{\subparagraph}[runin]{\bfseries\itshape}{\thesubparagraph}
-% 	{1em}{}
-% \titlespacing*{\subsubsection}{\marginparwidth}{0pt}{\marginparsep}
-% \titlespacing*{\subparagraph}{\parindent}{0pt}{1em}
 \hypersetup{
 	pdftitle=Proceso de adquisición y tratamiento de señales de
 	ultrasonidos, pdfauthor=José Ramón Gisbert Valls,
@@ -39,6 +33,11 @@
 }
 \fancypagestyle{plain}{
 	\fancyhf{}
+	\renewcommand\headrulewidth{0pt}
+}
+\fancypagestyle{Number}{
+	\fancyhf{}
+	\fancyfoot[C]{\bfseries\scshape\thepage}
 	\renewcommand\headrulewidth{0pt}
 }
 \fancypagestyle{number}{
@@ -78,31 +77,26 @@
 \setlength\marginparsep{12pt}
 \setlength\marginparwidth{\pdfpagewidth - \textwidth - \oddsidemargin -
 	2\marginparsep - 1in}
-% Se aplica el siguiente convenio tipográfico a la primera aparición de
-% una sigla.
+% Convenios tipográficos: siglas (primera vez), siglas, funciones,
+% argumentos, propiedades, atributos de propiedades, nombres de canal o
+% puerto
 \newcommand\psig[1]{\emph{\MakeTextUppercase{#1}}}
-% Se aplica el siguiente convenio tipográfico a siglas.
-\newcommand\sig[1]{\textsc{\MakeTextLowercase{#1}}}
-% Se aplica el siguiente convenio tipográfico a funciones.
+\newcommand\sig [1]{\textsc{\MakeTextLowercase{#1}}}
 \newcommand\func[1]{\texttt{#1}}
-% Se aplica el siguiente convenio a argumentos de función distintos de
-% propiedades.
 \newcommand\argu[1]{\texttt{#1}}
-% Se aplica el siguiente convenio tipográfico a propiedades.
 \newcommand\prop[1]{\textsf{#1}}
-% Se aplica el siguiente convenio a atributos de propiedades.
-\newcommand\atr[1]{\textsf{#1}}
-% Se aplica el siguiente convenio tipográfico a nombres de canal o puerto.
-\newcommand\can[1]{\sig{#1}}
+\newcommand\atr [1]{\textsf{#1}}
+\newcommand\can [1]{\sig{#1}}
+% Palabras predefinidas
 \newcommand\matlab{\sig{MATLAB}}
-\newcommand\kpci{\sig{KPCI}-3108}
-\newcommand\datx{\sig{DAT}}
-\newcommand\gui{\sig{GUI}}
-\newcommand\guide{\sig{GUIDE}}
-\newcommand\pc{\sig{pc}}
-\newcommand\ram{\sig{ram}}
-\newcommand\AOUA{\ensuremath{\mu}\sig{a}741}
-\newcommand\kms{kmus/s}
+\newcommand\kpci  {\sig{KPCI}-3108}
+\newcommand\datx  {\sig{DAT}}
+\newcommand\gui   {\sig{GUI}}
+\newcommand\guide {\sig{GUIDE}}
+\newcommand\pc    {\sig{pc}}
+\newcommand\ram   {\sig{ram}}
+\newcommand\AOUA  {\ensuremath{\mu}\sig{a}741}
+\newcommand\kms   {kmus/s}
 \newcommand\miniit[1]{\begin{itemize} #1 \end{itemize}}
 \newcommand\tnotetext[2]{\item\hspace*{-5pt}\raisebox{.7ex}%
 	{\fontsize{7pt}{8.4pt}\selectfont\normalfont #1}{\footnotesize #2}}
@@ -114,80 +108,58 @@
 \renewcommand\labelitemi{\textbullet}
 \renewcommand\labelitemii{\leavevmode\hbox to 1.1ex
 	{\hss\vrule height .8ex width .6ex depth -.2ex\hss}}
+\newcommand\longpage[1][1]{\enlargethispage{#1\baselineskip}}
+\newcommand\llongpage[1][0]{\enlargethispage*{#1\baselineskip}}
+\newcommand\shortpage[1][1]{\enlargethispage{-#1\baselineskip}}
+\renewcommand\chappgsep{--}
+\makeatletter\renewcommand\@pnumwidth{21.5pt}\makeatother
 \newenvironment{TableNotes}{\begin{tablenotes}\vspace{\footnotesep}
 	\footnoterule\vspace{.2ex}}{\end{tablenotes}}
 \newcolumntype{d}[1]{D{,}{,}{#1}}
 \newcolumntype{+}{D{/}{\mbox{\ --\ }}{5}}
+\newcounter{totalpages}
 \begin{document}
 
 \setuplayouts
-\fancyhf{}
-\cfoot{\bfseries\scshape\thepage}
-\renewcommand\headrulewidth{0pt}
-\pagestyle{fancy}
-
+\pagestyle{Number}
 \frontmatter
-
 \tableofcontents
-
 \listoftables
-
 \listoffigures
-
 \include{gis-pfc-pro}
 
 \mainmatter
 
 \part[Implementación del sistema digital de medida] %
 {Diseño e implementación del sistema digital de medida}
-
 \pagestyle{number}
-
 \include{gis-pfc-part1}
-
 \pagestyle{body}
-
 \include{gis-pfc-ch1}
-
 \include{gis-pfc-ch2}
-
 \include{gis-pfc-ch3}
-
 \include{gis-pfc-ch4}
-
 \part[\textsc{endus} en madera de palmera] %
 {Ensayos no destructivos en madera de palmera}
-
 \pagestyle{number}
-
 \include{gis-pfc-part2}
-
 \pagestyle{body}
-
 \include{gis-pfc-ch5}
 
 \part*{Apéndices}
 
-\newcounter{totalpages}
-\setcounter{totalpages}{\value{page}}
-\setcounter{page}{1}
-\renewcommand\thepage{\thechapter.\arabic{page}}
 \appendix
-
+\addtocounter{totalpages}{\value{page} + 1}
+\pagenumbering{bychapter}
 \include{gis-pfc-appa}
-
-\addtocounter{totalpages}{\value{page}}
-\addtocounter{totalpages}{-1}
-\setcounter{page}{1}
-
+\addtocounter{totalpages}{\value{page} - 1}
 \include{gis-pfc-appb}
 
 \backmatter
 
-\addtocounter{totalpages}{\value{page}}
-\addtocounter{totalpages}{-1}
+\addtocounter{totalpages}{\value{page} - 1}
+\pagenumbering{arabic}
 \setcounter{page}{\value{totalpages}}
-\renewcommand\thepage{\arabic{page}}
 \nocite{mittelbach2004lc, stutzman1997atd, garcia2000mrsr, pallas2004sas}
 \bibliographystyle{bababbrv-lf}
 \bibliography{gis-pfc}
