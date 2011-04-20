@@ -108,7 +108,8 @@ Las características técnicas de los transductores vienen recogidas en el
 	\begin{threeparttable}
 	\begin{tabular}{l c c}
 		\toprule
-		& \multicolumn{2}{c}{Transductor} \\
+		& \multicolumn{2}{c}{Valor adoptado
+		en\tnote{*}\hspace*{.4em}:} \\
 		\cmidrule(l){2-3}
 		Propiedad & Transmisor & Receptor \\
 		\midrule
@@ -372,10 +373,10 @@ Donde $R_\text{in}$ y $R_\text{0}$ representan respectivamente la
 impedancia de entrada y la impedancia de salida del amplificador
 operacional. Finalmente se observa que, con los valores de periodo, tensión
 en el estado alto y ciclo de trabajo de la señal que proporciona el
-acondicionador (cuadro), y considerando una constante de tiempos como la
-obtenida en la \cref{eq:timec}, la respuesta del actuador es muy rápida y
-la señal en sus bornes sigue con bastante fidelidad la señal que puede
-medirse con el circuito en abierto.
+acondicionador (\cref{fig:txacvo}), y considerando una constante de tiempos
+como la obtenida en la \cref{eq:timec}, la respuesta del actuador es muy
+rápida y la señal en sus bornes sigue con bastante fidelidad la señal que
+puede medirse con el circuito en abierto.
 
 
 \subsection[Circuito acondicionador propuesto]{Circuito acondicionador
@@ -471,16 +472,53 @@ completa un amplificador operacional configurado con realimentación
 negativa. El propósito de este circuito es amplificar la señal de salida
 del 556 al tiempo que limita el valor de la impedancia de salida del
 conjunto. La señal de salida resultante, al emplear los componentes
-listados en el cuadro (??) puede observarse en la \cref{fig:txacvo}. De
-acuerdo con lo observado en la \cref{fig:pulse} en la sección anterior,
-cuando uno de los pulsos rectangulares de los que se compone el tren llega
-al actuador se genera un pulso acústico. Por razones de comodidad puede
-instalarse un interruptor en el terminal de \func{reset} del 555
-monoestable para poder detener o iniciar el proceso, aunque desde el punto
-de vista del experimento basta con pausar la representación de los datos en
-el momento deseado. Puesto que con la configuración propuesta la imagen ha
-de refrescarse cada segundo es fácil para un ser humano determinar en que
-momento resulta adecuado congelar la prueba.
+listados en el \cref{tab:txcondcomp} puede observarse en la
+\cref{fig:txacvo}. De acuerdo con lo observado en la \cref{fig:pulse} en la
+sección anterior, cuando uno de los pulsos rectangulares de los que se
+compone el tren llega al actuador se genera un pulso acústico. Por razones
+de comodidad puede instalarse un interruptor en el terminal de \func{reset}
+del 555 monoestable para poder detener o iniciar el proceso, aunque desde
+el punto de vista del experimento basta con pausar la representación de los
+datos en el momento deseado. Puesto que con la configuración propuesta la
+imagen ha de refrescarse cada segundo es fácil para un ser humano
+determinar en que momento resulta adecuado congelar la prueba.
+
+\begin{table}
+	\centering
+	\begin{threeparttable}
+	% Columnas en modo matemático
+	\begin{tabular}{>{\centering\(}p{.3\textwidth}<{\)} D{.}{\ }{3.4}
+		>{\(}c<{\)}}
+		\toprule
+		\multicolumn{1}{c}{Componente} &
+			\multicolumn{1}{c}{Valor nominal} &
+			\multicolumn{1}{c}{Coste
+			aproximado\tnote{a}\hspace{.8em}(\texteuro)} \\
+		\midrule
+		R_1 & 1.{\text{k}\Omega} & 0.20 \\
+		R_2 & 10.{\text{M}\Omega} & 0.20 \\
+		R_3 & 510.{\Omega} & 0.20 \\
+		C\hspace*{.4em} & 100.\text{nF} & 0.20 \\
+		C_1 & 150.\text{nF} & 0.20 \\
+		C_2 & 680.\text{nF} & 0.20 \\
+		\multicolumn{1}{c}{\textsc{ne/se} \(556\)} &
+		\multicolumn{1}{c}{\parbox{1.5em}{---}} & 0.40 \\
+		\multicolumn{1}{c}{\textsc{ne} \(5534\)} &
+		\multicolumn{1}{c}{\parbox{1.5em}{---}} & 0.70 \\
+		\bottomrule
+	\end{tabular}
+	\begin{TableNotes}
+		\tnotetext{a}{Los datos correspondientes a esta columna del
+		cuadro se han elaborado a partir de los precios que pueden
+		consultarse en el catálogo de
+		\href{http://es.farnell.com}{Farnell}.}
+	\end{TableNotes}
+	\end{threeparttable}
+	\caption[Componentes del acondicionador en emisión]{Componentes
+	seleccionados para implementar el circuito acondicionador que
+	aparece en la \cref{fig:txconditioner}.}
+	\label{tab:txcondcomp}
+\end{table}
 
 \begin{figure}
 	\begin{center}
