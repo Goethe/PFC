@@ -776,45 +776,75 @@ por los mismos.
 \end{table}
 
 
-\subsection{Desarrollo de una nueva interfaz}\label{subsec:conbox}
+\subsection{Caja de conexiones, accesorio para la tarjeta de
+adquisición}\label{subsec:conbox}
 
-Por razones prácticas, la interfaz original de la \kpci{} basada en dos
-conectores mini-\sig{d} no se acomoda a las necesidades que se prevé
-surgirán durante el desarrollo de las pruebas requeridas para la
-finalización de este proyecto de fin de carrera. En consecuencia, con el
-propósito de agilizar en la medida de lo posible la realización de estos
-ensayos, se decide ampliar la interfaz existente.
+La tarjeta \kpci{} incorpora dos conectores de tipo mini-\sig{d} para dotar
+de acceso a sus puertos de entrada salida. Este tipo de conectores está
+concebido con el propósito de favorecer la interconexión de dispositivos de
+características similares a la tarjeta de adquisición; sin embargo, no
+resultan prácticos como plataforma para la conexión de sondas de
+exploración estándar como las que frecuentemente pueden encontrarse en los
+laboratorios de electrónica. Dado que el uso que pretende darse al sistema
+de medida es precisamente el de instrumento de medida estándar, se ha
+optado por el desarrollo de un accesorio que simplifique la tarea de
+conectar sondas al sistema.
 
-Para ello se parte de dos extremos de cable terminados en un conector tipo
-macho y desprovistos de cubierta, de cada uno de los cuales surgen 36 hilos
-de cobre recubiertos de plástico flexible coloreado. El patrón de coloreado
-de las cubiertas individuales es único y no se repite en ninguno de los 36
-hilos de que se compone cada extremo de cable. A partir de ahí, se
-identifica cada terminal de cada conector con el hilo de cobre
-correspondiente, relacionando las etiquetas que el fabricante pone a los
-terminales con el código de colores de la cubiertas individuales.
+El accesorio, de factura propia, construido en el laboratorio, cuenta por
+un lado con una interfaz compatible con los conectores que la tarjeta lleva
+de serie, por otro con un panel de conexiones etiquetado. El panel de
+conexiones muestra dos grupos de 36 conectores de tipo banana que dan
+acceso a los 36 puertos de entrada salida integrados en cada puerto
+mini-\sig{d} de la tarjeta. Además, en un lateral de la caja, en un panel
+más pequeño se han montado 4 conectores coaxiales de rosca para facilitar
+la conexión de sondas de mayor calidad con acceso a los puertos cuyo uso
+sea presumiblemente el más frecuente (\sig{ch00, ch01, dac0, dac1}, tómese
+el \cref{tab:analog} como referencia).
 
-Una vez recopilada esta información, se planea la construcción de una caja
-de conexiones. El diseño de la caja contempla que se equipe ésta con 72
-conectores banana hembra soldados a los 72 hilos de cobre y que comunican
-con los terminales de los conectores mini-\sig{d} en los que termina el
-otro extremo de los cables. Además se planifica la inclusión de cuatro
-conectores coaxiales con rosca con conexiones redundantes a las que se
-presupone son las cuatro puertas cuyo uso será más frecuente, las
-correspondientes al primer canal analógico diferencial y las tierras
-analógicas; para así facilitar el uso continuado de las mismas. Por último
-se decide etiquetar la caja de conexiones con marbetes que reproduzcan la
-nomenclatura visible en las \vref{fig:portanalog,fig:portdigital}.
+Para la construcción del utensilio se ha partido de dos cables de
+interconexión ---de mini-\sig{d} macho, a mini-\sig{d} macho--- de los que
+se disponía previamente. Cada uno de los cuales con 36 pines, uno para el
+conector analógico y el otro para el conector digital de la tarjeta. A
+continuación se enumeran brevemente los pasos que se han seguido para la
+construcción del accesorio, así como algunas ideas clave para entender el
+proceso:
 
-Puede observarse una representación de la caja de conexiones ya terminada
-en la \vref{fig:conbox}.
+\begin{itemize}
+	\item Antes de retirar la cubierta externa de los cables, se corta
+		uno de los extremos de cada cable, separando el conector
+		mini-\sig{d}.
+	\item La cubierta externa recubre cada uno de los 36 hilos de cobre
+		soldados a los pines del conector mini-\sig{d}. Cada hilo
+		está recubierto, a su vez, por una cubierta individual
+		coloreada siguiendo un esquema de dos colores (el patrón se
+		extiende a lo largo del cable y surge de la división
+		longitudinal de la cubierta en dos mitades iguales cada una
+		de un color). Este patrón no se repite en ninguno de los 36
+		cables que forman cada grupo, lo cual ayuda a identificar
+		unívocamente cada cable y a relacionarlo con el pin al que
+		se encuentra unido.
+	\item Para elaborar un mapa de colores del cableado que relacione
+		los puertos de entrada salida de la tarjeta con el color de
+		la cubierta de cada hilo de cobre, se exploran los cables.
+		Al extremo de cada cable, pelado previamente, se conecta
+		una señal distinta de nulo (en la elaboración del mapa se
+		ha empleado una señal de continua de 5 V, estado alto
+		\sig{ttl}), y después se comprueba que pin transporta esa
+		señal y se anota.
+\end{itemize}
+
+Con el mapa de colores se entregan los cables al técnico de laboratorio y
+éste construye la caja e imprime los ribetes que indican a que puerto
+corresponde cada conector, utilizando la nomenclatura que recogen las
+\vref{fig:portanalog,fig:portdigital}. Por su parte, la \cref{fig:conbox}
+muestra la caja de conexiones ya terminada.
 
 \begin{figure}
 	\begin{center}
 		\includegraphics[scale=1, keepaspectratio=true]
 		{gis-pfc-ch2-05.jpg}
 	\end{center}
-	\caption[Plano de la caja de conexiones ya terminada] {Plano de la
-	caja de conexiones ya terminada.}
+	\caption[Caja de conexiones, accesorio terminado]{Plano de la caja
+	de conexiones.}
 	\label{fig:conbox}
 \end{figure}
