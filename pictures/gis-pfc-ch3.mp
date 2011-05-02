@@ -47,7 +47,7 @@ pickup l1;
 % constantes
 a00 = 2u;		a01 = a00;		a02 = 4a00;
 a03 = 3/2;		a04 = (3/2)**2;		a05 = 12/10;
-a06 = 1 - a05;		a08 = a04*4/3;
+a06 = 1 - a05;		a08 = a04*4/3;		a09 = he02 + y00/4;
 d0 = thelabel(btex \begin{tabular}{c}Acondicionador\\ %
 	Acondicionador \end{tabular} etex, (0, 0));
 begingroup
@@ -84,13 +84,14 @@ draw p0 shifted z04;
 
 % ··································································
 % flechas
-for i = 1 upto 2 :
+for i = 1,2 :
 	drawgisarrow z[i + 7]--z[i + 8] cutbefore p0 %
 		transformed t[0][i] cutafter p1 %
-		transformed t[0][i + 1] shifted z05;
+		transformed t[0][i + 1] shifted z05 dashed evenly %
+		shifted (u, 0);
 endfor
-drawgisarrow z[14]--z[12] cutbefore p0 transformed t[1][3] %
-	cutafter p1 transformed t[1][1] shifted -z05 dashed evenly;
+draw z14--z12 cutbefore p0 transformed t[1][3] cutafter p1 %
+	transformed t[1][1] shifted -z05 dashed evenly;
 drawgisarrow z10--z16--z04 shifted -z15 cutbefore p0 %
 	transformed t[0][3] cutafter p1 shifted z04 shifted z05;
 drawgisarrow z04 shifted z15--z17--z14 cutbefore p0 %
@@ -108,9 +109,9 @@ label(btex Control etex, z14);
 d2 = nullpicture;
 addto d2 also currentpicture;
 currentpicture := nullpicture;
-p2 = (0, 0)--(wi, 0)--(wi, he02)--(0, he02)--cycle;
-clip d2 to p2 shifted (0, y10 - he02/2);
-draw d2 shifted (0, he02/2 - y10);
+p2 = (0, 0)--(wi, 0)--(wi, a09)--(0, a09)--cycle;
+clip d2 to p2 shifted (0, y10 - a09/2 + 3y00/8);
+draw d2 shifted (0, a09/2 - 3y00/8 - y10);
 pickup l2;
 draw p2;
 
@@ -223,7 +224,7 @@ label.llft(btex $p_1$ etex, (a23, a11));
 label.ulft(btex $p_2$ etex, (a14, a11));
 label.llft(btex $p_3$ etex, (a24, a11));
 label.lrt(btex $p_4$ etex, (a25, a11));
-pickup pencircle scaled u;
+pickup pencircle scaled (3u/2);
 drawdot (a22, a11);	drawdot (a23, a11);	drawdot (a14, a11);
 drawdot (a24, a11);	drawdot (a25, a11);
 
@@ -361,10 +362,11 @@ e[0][4] = thelabel.lrt(btex $t_4$ etex, (b[0][4] + u, a11 - u));
 e[0][5] = thelabel.lrt(btex $t_5$ etex, (b[0][5] + u, a11 - u));
 e[0][6] = thelabel.lrt(btex $t_6$ etex, (b[0][6] + u, a11 - u));
 e[0][7] = thelabel.lrt(btex $t_7$ etex, (b[0][7] + u, a11 - u));
-for i = 0 upto 7 :
+for i = 0,1,3,4,5,6 :
 	fill bbox e[0][i] withcolor white;
 	draw e[0][i];
 endfor
+for i = 2,7: draw e[0][i]; endfor;
 
 endfig;
 % ==================================================================
@@ -412,16 +414,10 @@ label(btex $t_2$ etex, (a06, a08 - a07));
 % ejes coordenados y puntos suspensivos
 drawgisarrow (-a07, a08)--(wi + a07, a08);
 drawgisarrow (0, a08 - a07)--(0, he02/2 + y02/2 + 2a07);
-a10 = 2u;
 pickup l3;
-linejoin := rounded;
-linecap := rounded;
-draw (a05 - x02/2 - 7a10/2, he02/2)--(a05 - x02/2 - a10/2, he02/2) %
-	dashed withdots;
-draw (x02/2 + a06 + a10/2, he02/2)--(x02/2 + a06 + 7a10/2, he02/2) %
-	dashed withdots;
-linejoin := mitered;
-linecap := butt;
+d1 = dashpattern(on 0.35u off 1.65u);
+draw (a05 - x2/2 - 2u, he02/2)--(a05 - x2/2 - 8u, he02/2) dashed d1;
+draw (a06 + x2/2 + 2u, he02/2)--(a06 + x2/2 + 8u, he02/2) dashed d1;
 
 % ··································································
 % razón de compresión y razón de escalado
@@ -502,16 +498,10 @@ label(btex $t_6$ etex, (a06, a08 - a07));
 % ejes coordenados y puntos suspensivos
 drawgisarrow (-a07, a08)--(wi + a07, a08);
 drawgisarrow (0, a08 - a07)--(0, he02/2 + y02/2 + 2a07);
-a10 = 2u;
 pickup l3;
-linejoin := rounded;
-linecap := rounded;
-draw (a05 - x02/2 - 7a10/2, he02/2)--(a05 - x02/2 - a10/2, he02/2) %
-	dashed withdots;
-draw (x02/2 + a06 + a10/2, he02/2)--(x02/2 + a06 + 7a10/2, he02/2) %
-	dashed withdots;
-linejoin := mitered;
-linecap := butt;
+d1 = dashpattern(on 0.35u off 1.65u);
+draw (a05 - x2/2 - 2u, he02/2)--(a05 - x2/2 - 8u, he02/2) dashed d1;
+draw (a06 + x2/2 + 2u, he02/2)--(a06 + x2/2 + 8u, he02/2) dashed d1;
 
 % ··································································
 % razón de compresión y razón de escalado

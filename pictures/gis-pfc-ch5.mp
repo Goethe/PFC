@@ -614,15 +614,11 @@ draw z09--z11;			draw z10--z12;
 drawdblgisarrow z11 shifted (a10, -a10)--z12 shifted -(a10, a10);
 d3 = thelabel(btex $b$ etex, z13 shifted (0, -a10));
 fill bbox d3 withcolor white;	draw d3;
-a12 = a08/5;
 z14 = 1/2[(x02 + a08, a07/2), (x03, a07/2)];
 pickup l3;
-linejoin := rounded;
-linecap := rounded;
-draw z14 shifted (-a12, 0)--z14 shifted (a12, 0) dashed %
-	withdots scaled 1.5;
-linejoin := mitered;
-linecap := butt;
+d4 = dashpattern(on 0.35u off 2.65u);
+draw z14 shifted (-4.5u, 0)--z14 shifted (4.5u, 0) dashed d4 %
+	shifted (1.15u, 0);
 pickup l1;
 
 % ··································································

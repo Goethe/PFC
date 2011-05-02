@@ -85,7 +85,9 @@ z17 = z14 shifted -z01 shifted z15;
 
 % ··································································
 % flechas
-for i = 0 upto 2 :
+drawgisarrow z07--z08 cutbefore p0 transformed t[0][0] cutafter p1 %
+	transformed t[0][1] shifted z5 dashed evenly shifted (u, 0);
+for i = 1,2 :
 	drawgisarrow z[i + 7]--z[i + 8] cutbefore p0 %
 		transformed t[0][i] cutafter p1 %
 		transformed t[0][i + 1] shifted z05;
@@ -189,6 +191,7 @@ p3 = fullcircle scaled (a13);
 p4 = (0, 0)--(a09 + a05, 0)--(a09 + a05, a03)--(0, a03)--cycle;
 p5 = (a09/2 + a05/2, 3a00)--(a09/2 + a05/2, a01 - 3a00/2);
 d6 = thelabel.bot(btex Multiplexador etex, (a09/2 + a05/2, 0));
+d7 = dashpattern(on 0.35u off 3.65u);
 draw (a20, a04)--(0, a04)--(0, a00)--(a08, a00)-- %
 	(a12 - a08, a00)--(a12, a00)--(a12, a02)--(a20, a02);
 for i = a00, a01, a02:
@@ -224,11 +227,7 @@ for i = a00, a01, a02:
 endfor
 for i = (3a09/2 - a14), (a19 + a14 - a09):
 	draw p4 shifted (i, 0);
-	linejoin := rounded;
-	linecap := rounded;
-	draw p5 shifted (i, 0) dashed withdots scaled 2;
-	linejoin := mitered;
-	linecap := butt;
+	draw p5 shifted (i, 0) dashed d7;
 	draw d6 shifted (i, 0);
 endfor
 
@@ -267,9 +266,9 @@ p7 = p6 scaled a28 shifted z06;
 z07 = center p7 shifted (-a09, 0);
 p8 = z07--z07 shifted (0, -3v);
 z08 = p8 intersectionpoint p7;
-d7 = thelabel(btex \textsc{ai} etex, z07);
+d8 = thelabel(btex \textsc{ai} etex, z07);
 begingroup
-	interim bboxmargin := 3u; p9 = bbox d7;
+	interim bboxmargin := 3u; p9 = bbox d8;
 endgroup;
 p10 = z07 shifted (a08, a28/2)--z07 shifted (a29 - a08, a28/2);
 z09 = point (length p10)/2 of p10;
@@ -284,7 +283,7 @@ pickup l2;
 draw p7; 			
 pickup l1;
 draw fullcircle scaled (3u/2) shifted z07 shifted (a29, 0);
-draw d7;
+draw d8;
 begingroup
 	interim ahlength := 2u; drawgisarrow p10;
 endgroup;

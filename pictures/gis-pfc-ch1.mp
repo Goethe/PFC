@@ -93,7 +93,8 @@ drawgisarrow z00--z00 shifted -z01--z07 cutbefore p0 shifted z00 %
 drawgisarrow z09--z00 shifted z01--z00 cutbefore p0 %
 	transformed t[1][0] cutafter p1 shifted z00 shifted -z06;
 drawgisarrow z10 shifted (0, 3v)--z10 cutafter p1 %
-	transformed t[1][1] shifted -z05 dashed evenly;
+	transformed t[1][1] shifted -z05 dashed evenly %
+	shifted (u/2, 0);
 draw z08--z08 shifted (0, 3v) cutbefore p0 transformed t[0][1] %
 	dashed evenly;
   
@@ -321,14 +322,15 @@ l4 = pensquare scaled 0.15u;
 l5 = pensquare scaled 0.25u;
 l6 = pensquare scaled 0.35u;
 l7 = pensquare scaled 0.5u;
-d0 = nullpicture;
-d1 = nullpicture;
 pickup l1;
+verbatimtex
+\newlength\taltura
+\settoheight{\taltura}{$T_H$}
+etex
 
 % ··································································
 % ejes coordenados
 a00 = 3he02/4;			a01 = u/10;
-pickup l5;
 drawgisarrow (0, -a01)--(wi, -a01);
 drawgisarrow (wi/2, 0)--(wi/2, a00);
 label.lrt(btex $u(t)$ etex, (wi/2 + u, a00));
@@ -336,16 +338,17 @@ label.lrt(btex $u(t)$ etex, (wi/2 + u, a00));
 % ··································································
 % marcas de grafo
 a02 = 2.5u;		a03 = 3u;
-for i = 1 upto 5:
-	if not(i = 3): draw (i*wi/6, 0)--(i*wi/6, a02); fi
-endfor
-label(btex $-T$ etex, (wi/6, -a03));
-label(btex $0$ etex, (wi/2, -a03));
-label(btex $T$ etex, (5wi/6, -a03));
+draw (wi/3, 0)--(wi/3, a02);
+draw (2wi/3, 0)--(2wi/3, a02);
+label.lft(btex \vbox to \taltura {\hbox{$t$}\vss} etex, %
+	(wi - 2u, -a03));
+label(btex \vbox to \taltura {\hbox{$-T$}\vss} etex, (wi/6, -a03));
+label(btex \vbox to \taltura {\hbox{$0$}\vss} etex, (wi/2, -a03));
+label(btex \vbox to \taltura {\hbox{$T$}\vss} etex, (5wi/6, -a03));
 
 % ··································································
 % tren de pulsos
-a04 = wi/13;		a05 = he02/2;
+a04 = wi/20;		a05 = he02/2;
 p0 = (0, 0)--(0, a05)--(a04, a05)--(a04, 0);
 p2 = for i = 0 upto 2:
 	p0 shifted (wi/6 + i*wi/3, 0)--
@@ -353,17 +356,16 @@ p2 = for i = 0 upto 2:
 pickup l2;
 draw (wi/12, 0)--(wi/6, 0)--p2;
 label.ulft(btex $P$ etex, (wi/2 - u, a05));
-label.rt(btex $T_H$ etex, (15wi/26, -a03));
+label.rt(btex \vbox to \taltura {\hbox{$T_H$}\vss} etex, %
+	(wi/2 + a04, -a03));
 
 % ··································································
 % puntos suspensivos
-linejoin := rounded;
-linecap := rounded;
-draw (wi/24, a05/2)--(wi/8, a05/2) dashed withdots scaled 1.5;
-draw (a04 + 41wi/48, a05/2)--(95wi/96, a05/2) dashed withdots %
-	scaled 1.5;
-linejoin := mitered;
-linecap := butt;
+d0 = dashpattern(on 0.35u off 2.65u);
+% el ancho del patrón se corresponde con el ancho de línea l2 (.35u)
+pickup l2;
+draw (wi/8, a05/2)--(wi/8 - 3wi/40, a05/2) dashed d0;
+draw (a04 + 21wi/24, a05/2)--(wi, a05/2) dashed d0;
 
 endfig;
 % ==================================================================
@@ -627,7 +629,7 @@ label.top(btex $\varnothing\,\mathtt{9.7}$ etex, z02 %
 	shifted (0, a05/2 + a08 - a09));
 label.urt(btex $\varnothing\,\mathtt{0.5}$ etex, z02 %
 	shifted (-a04 - a03/2 - 3a08/2, -a05/2 - a06 - a08 + a09));
-d4 = thelabel.urt(btex escala\quad 2:1 etex, (2u, 2u));
+d4 = thelabel.urt(btex \texttt{escala\quad 2:1} etex, (2u, 2u));
 fill bbox d4 withcolor white;
 draw bbox d4;				draw d4;
 
