@@ -364,7 +364,8 @@ label.rt(btex \vbox to \taltura {\hbox{$T_H$}\vss} etex, %
 d0 = dashpattern(on 0.35u off 2.65u);
 % el ancho del patrón se corresponde con el ancho de línea l2 (.35u)
 pickup l2;
-draw (wi/8, a05/2)--(wi/8 - 3wi/40, a05/2) dashed d0;
+draw (wi/8, a05/2)--(wi/8 - 3wi/40, a05/2) dashed d0 %
+	shifted (u/50, 0);
 draw (a04 + 21wi/24, a05/2)--(wi, a05/2) dashed d0;
 
 endfig;

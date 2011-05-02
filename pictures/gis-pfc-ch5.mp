@@ -615,7 +615,7 @@ drawdblgisarrow z11 shifted (a10, -a10)--z12 shifted -(a10, a10);
 d3 = thelabel(btex $b$ etex, z13 shifted (0, -a10));
 fill bbox d3 withcolor white;	draw d3;
 z14 = 1/2[(x02 + a08, a07/2), (x03, a07/2)];
-pickup l3;
+pickup l2;
 d4 = dashpattern(on 0.35u off 2.65u);
 draw z14 shifted (-4.5u, 0)--z14 shifted (4.5u, 0) dashed d4 %
 	shifted (1.15u, 0);

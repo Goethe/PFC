@@ -414,10 +414,12 @@ label(btex $t_2$ etex, (a06, a08 - a07));
 % ejes coordenados y puntos suspensivos
 drawgisarrow (-a07, a08)--(wi + a07, a08);
 drawgisarrow (0, a08 - a07)--(0, he02/2 + y02/2 + 2a07);
-pickup l3;
+pickup l2;
 d1 = dashpattern(on 0.35u off 1.65u);
-draw (a05 - x2/2 - 2u, he02/2)--(a05 - x2/2 - 8u, he02/2) dashed d1;
-draw (a06 + x2/2 + 2u, he02/2)--(a06 + x2/2 + 8u, he02/2) dashed d1;
+draw (a05 - x02/2 - 2u, he02/2)--(a05 - x02/2 - 8u, he02/2) %
+	dashed d1 shifted (u/50, 0);
+draw (a06 + x02/2 + 2u, he02/2)--(a06 + x02/2 + 8u, he02/2) %
+	dashed d1 shifted (u/50, 0);
 
 % ··································································
 % razón de compresión y razón de escalado
@@ -448,7 +450,6 @@ p5 = p3 cutbefore p4 shifted (-3a19, 0) cutafter p4 %
 	shifted (-3a19, 0);
 p6 = p3 cutbefore p4 scaled 2 shifted (-5a19/2, 0) cutafter p4 %
 	scaled 2 shifted (-5a19/2, 0);
-pickup l2;
 draw p5 shifted (5a19, 0) shifted(a05, he02/2);
 draw p6 shifted (4a19, 0) shifted(a06, he02/2);
 
@@ -498,10 +499,12 @@ label(btex $t_6$ etex, (a06, a08 - a07));
 % ejes coordenados y puntos suspensivos
 drawgisarrow (-a07, a08)--(wi + a07, a08);
 drawgisarrow (0, a08 - a07)--(0, he02/2 + y02/2 + 2a07);
-pickup l3;
+pickup l2;
 d1 = dashpattern(on 0.35u off 1.65u);
-draw (a05 - x2/2 - 2u, he02/2)--(a05 - x2/2 - 8u, he02/2) dashed d1;
-draw (a06 + x2/2 + 2u, he02/2)--(a06 + x2/2 + 8u, he02/2) dashed d1;
+draw (a05 - x02/2 - 2u, he02/2)--(a05 - x02/2 - 8u, he02/2) %
+	dashed d1 shifted (u/50, 0);
+draw (a06 + x02/2 + 2u, he02/2)--(a06 + x02/2 + 8u, he02/2) %
+	dashed d1 shifted (u/50, 0);
 
 % ··································································
 % razón de compresión y razón de escalado
@@ -531,7 +534,6 @@ p4 = (-a19/2, -y01/2)--(a19/2, -y01/2)--(a19/2, y01/2)-- %
 p5 = p3 cutbefore p4 scaled 5 shifted (-a19, 0) %
 	cutafter p4 scaled 5 shifted (-a19, 0);
 p6 = p3 cutbefore p4 scaled 5 cutafter p4 scaled 5;
-pickup l2;
 draw p5 shifted (a19, 0) shifted(a05, he02/2);
 draw p6 shifted(a06, he02/2);
 
