@@ -1,0 +1,108 @@
+Esta guía de usuario está destinada a todo aquel lector que esté interesado
+especialmente en aprender a utilizar la aplicación de usuario desarrollada
+como parte del subsistema de control y presentación del sistema de medida
+digital del que trata la primera parte de este documento. La aplicación se
+ha diseñado principalmente con el propósito
+
+El propósito de la aplicación es el de mostrar la forma de una señal y una
+representación del espectro del fragmento de señal que aparece en la
+ventana de la interfaz.
+
+El propósito principal con el que se ha diseñado la aplicación es el de
+servir como herramienta para la representación de señales, como tal es
+capaz de mostrar la forma de una señal y representar el espectro de la
+porción de señal representada en cada instante.
+
+La aplicación se ha diseñado en conjunto con el resto del sistema de medida
+(bien, sólo el subsistema de adquisición y el subsistema de control y
+presentación están relacionados, esto no es cierto porque los
+acondicionadores se diseñan pensando en la tarjeta de adquisición y el
+sistema de medida).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Esta guía de usuario está dirigida al lector interesado en aprender a
+utilizar la aplicación que controla el sistema de medida digital
+desarrollado como parte de este proyecto fin de carrera (footnote Para
+obtener información acerca del proceso de diseño y desarrollo del software,
+así como de las herramientas utilizadas en dicho proceso, refiérase al
+cref(tercer capítulo)). Este apéndice recoge, con miras/con el fin, una
+descripción de las principales características funcionales de la aplicación
+---organización de la interfaz de usuario, distintos controles que
+integran dicha interfaz, y tipos de resultados que devuelve el programa---
+
+(Este apéndice recoge por un lado...) La descripción de las (principales)
+características funcionales de la aplicación como son: la distribución de
+la interfaz de usuario, la función de los controles que integran dicha
+interfaz, y los distintos tipos de resultados que es capaz de
+devolver(/producir) la aplicación/pueden obtenerse al emplear la
+aplicación.
+
+De modo que inicialmente el usuario pueda orientarse durante el aprendizaje
+del manejo del software y, posteriormente sirva de manual/documento de
+consulta | en caso que desee recordarse la función de algún elemento de la
+interfaz.
+
+el proceso de aprendizaje que ha de conducirle a usar con soltura la
+aplicación/el software
+
+Por otro lado se abordan unas sencillas directrices orientadas a lograr
+(que el lector) precisamente que el usuario adquiera un manejo básico de
+las distintas funciones
+
+Para que me sirve en un manual que describan las características
+funcionales de una aplicación de software, al principio para orientarme
+mientras aprendo a utilizarla, y después para consultar si olvido la
+función de algún elemento.
+
+Este apartado del documento está dirigido al lector interesado en aprender
+a utilizar la aplicación que controla el sistema de medida digital
+desarrollado como parte de este proyecto fin de carrera.
+
+El propósito de este apéndice es el de que el lector adquiera/obtenga / el
+de otorgar los conocimientos necesarios para sacar partido del software de
+control y del sistema de medida, no es preciso/necesario consultar/que el
+lector consulte el tercer capítulo de la memoria con este fin puesto
+que/porque este apéndice ya incluye lo necesario y es completamente
+independiente (y también porque el tercer capítulo no va de nada de eso). Y
+es independiente de los conocimientos impartidos en el tercer capítulo de
+esta memoria.
+
+dicho capítulo trata conceptos completamente diferentes en relación con el
+software
+
+el apéndice incluye lo necesario y es completamente independiente
+
+La información relacionada | el proceso de diseño y desarrollo cuyo
+resultado es el software |
+
+El propósito de este apéndice es bien distinto al del tercer capítulo de la
+memoria, donde se recoge parte del proceso de diseño y desarrollo cuyo
+resultado es el software de control y donde el lector puede documentarse
+con mayor detalle acerca de las herramientas empleadas en dicho proceso,
+por su parte este manual, si se me permite, pretende guiar al lector a
+través de un proceso de aprendizaje cuyo fin es el de adquirir los
+conocimientos necesarios para poder emplear correctamente la aplicación de
+usuario que da acceso al sistema de medida digital (del que trata la
+primera parte de la memoria).
+
+Con tal fin el apéndice recoge por un lado una breve descripción de las
+principales características funcionales del software, como son: la
+distribución de los controles y sensores en la interfaz de usuario, la
+función de cada uno de dichos controles, y también los tipos de resultados
+que la aplicación es capaz de devolver/producir; por otro una serie de
+instrucciones que deben seguirse para utilizar correctamente el software.
+
+Siguiendo dichas instrucciones es como el lector puede adquirir los
+conocimientos precisados, la descripción de los distintos elementos
+presentes en la aplicación pueden orientarle durante el proceso de
+aprendizaje y, posteriormente servir durante una consulta. Pueden
+consultarse en caso de olvido.
+
+Para aprender a utilizar la aplicación no es necesario conocer ningún
+detalle acerca del proceso de diseño y desarrollo cuyo resultado es la
+misma aplicación
+
+El apéndice recoge:
+
+

@@ -1,5 +1,21 @@
 \chapter{Guía de usuario de la aplicación de control}\label{chap:appendixA}
 
+El propósito habitual de una memoria de proyecto fin de carrera es el de
+exponer los procedimientos mediante los cuales se aborda un determinado
+tema de investigación, dar a conocer los frutos obtenidos en la ejecución
+de los mismos y apuntar las conclusiones que se han alcanzado a partir de
+dicho estudio. Sin embargo, es habitual que un proyecto fin de carrera
+produzca resultados que van más allá del contexto marcado por el tema
+original del proyecto. Este es el caso del sistema de medida digital y de
+la aplicación de control en el contexto de este proyecto fin de carrera.
+
+Ahora un par de ideas: el concepto que quiero incluir a continuación en el
+párrafo de introducción es el de que el manual/guía de usuario de la
+aplicación tiene un interés intrínseco, no relacionado con el resto del
+documento (fuera del propósito de la memoria), pero suficiente como para
+ser incluido en el mismo. Pero, puesto que no va en la línea del resto de
+la memoria se ha adjuntado en forma de apéndice.
+
 Es sabido que el propósito de una memoria de proyecto fin de carrera es
 exponer los procedimientos mediante los cuales se aborda un determinado
 tema de investigación, dar a conocer los frutos obtenidos en la ejecución
@@ -76,11 +92,6 @@ emplear la aplicación de control.
 		cuyas características sean similares a la \kpci{} y cuya
 		interacción con la \datx{} de \matlab{} sea similar a la
 		interacción que se da entre este software y la \kpci{}.
-		Para que una tarjeta de adquisición de datos se encuentre
-		correctamente instalada en un \textsc{pc}, en primer lugar
-		debe encontrarse correctamente conectada a la placa base
-		del \textsc{pc} y, en segundo lugar, deben haberse
-		instalado con éxito los drivers de la misma.
 	\item Para poder emplear el software resulta imprescindible que en
 		el \textsc{pc} correspondiente se halle instalada una copia
 		de la suite matemática \matlab{} cuya versión sea
@@ -97,32 +108,33 @@ emplear la aplicación de control.
 		sea compatible con la caja de conexiones.
 \end{itemize}
 
-Como indica su título, este apartado se ha pensado además para indicar las
-limitaciones que muestra la aplicación de control. Desde el punto de vista
-de su origen estas limitaciones pueden dividirse en limitaciones derivadas
-del uso de la \kpci{} y en limitaciones introducidas por la propio
-software. Para una mayor información sobre las primeras pueden consultarse
-las \vrefrange{sec:technical}{sec:throughput} en el segundo capítulo. A
-destacar el comportamiento del rendimiento de la tarjeta que se verá
-reducido según se vayan añadiendo canales al objeto dispositivo.
 
-En cuanto a las limitaciones que introduce el software son las siguientes.
-Para empezar es destacable el hecho de que únicamente es posible controlar
-un canal de muestreo desde la aplicación de control. El canal controlado
-puede estar asociado a cualquier puerto físico de la tarjeta pero sólo se
-da acceso a un único canal por sesión. A esta limitación se debe añadir que
+\subsection{Limitaciones del software de control}
+
+Desde el punto de vista de su origen las limitaciones del software de
+control pueden dividirse en limitaciones derivadas del uso de la \kpci{} y
+en limitaciones introducidas por la propio software. Para una mayor
+información sobre las primeras pueden consultarse las
+\vrefrange{sec:technical}{sec:throughput} en el segundo capítulo. A
+destacar el comportamiento del rendimiento de la tarjeta, el rendimiento se
+verá reducido según se vayan añadiendo canales al objeto dispositivo.
+
+En cuanto a las limitaciones que introduce el software son varias. Para
+empezar es destacable el hecho de que únicamente es posible controlar un
+canal de muestreo desde la aplicación de control. El canal controlado puede
+estar asociado a cualquier puerto físico de la tarjeta pero sólo se da
+acceso a un único canal por sesión. A esta limitación se debe añadir que
 desde el software es imposible crear o eliminar canales u objetos
-dispositivo de forma manual.
-
-Por otro lado se da la incapacidad de modificar desde la utilidad
-propiedades de la configuración de la tarjeta que no vengan representadas
-por controles en la interfaz de usuario. Algunos de estos controles se
-deshabilitan durante la actividad de muestreo, se ha hecho así para impedir
-que se altere el valor de parámetros tales como la frecuencia de muestreo
-en tiempo real. En ocasiones es \matlab{} desde un nivel superior en la
-jerarquía del software el que impide que una de estas propiedades cambie al
-vuelo, en el resto de casos se ha hecho para evitar problemas de
-rendimiento experimentados durante pruebas de software.
+dispositivo de forma manual. Por otro lado se da la incapacidad de
+modificar desde la utilidad propiedades de la configuración de la tarjeta
+que no vengan representadas por controles en la interfaz de usuario.
+Algunos de estos controles se deshabilitan durante la actividad de
+muestreo, se ha hecho así para impedir que se altere el valor de parámetros
+tales como la frecuencia de muestreo en tiempo real. En ocasiones es
+\matlab{} desde un nivel superior en la jerarquía del software el que
+impide que una de estas propiedades cambie al vuelo, en el resto de casos
+se ha hecho para evitar problemas de rendimiento experimentados durante
+pruebas de software.
 
 
 \section{Instrucciones de uso}
