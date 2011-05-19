@@ -36,7 +36,6 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 
 \usepackage						{threeparttable}
 \usepackage						{textcomp}
-\usepackage[fixlanguage, noisbn]			{babelbib}
 \usepackage[spanish]					{cleveref}
 
 \setcounter{lofdepth}{2}				% subfig
@@ -80,7 +79,8 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 	\fancyhead[RO, LE]{\footnotesize\sffamily\bfseries\thepage}
 	\fancyhead[LO]{\footnotesize\sffamily\nouppercase{\rightmark}}
 	\fancyhead[RE]{\footnotesize\sffamily\nouppercase{\leftmark}}
-	\renewcommand\headrulewidth{0.4pt}
+	\fancyhfoffset[RO, LE]{(\marginparwidth + \marginparsep)/2}
+	\renewcommand\headrulewidth{0pt}
 	\renewcommand\chaptermark[1]{\markboth{##1}{}}
 }
 \setlength\marginparsep{12pt}
@@ -123,9 +123,6 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 \captionsetup[ContinuedFloat]{labelformat=cont}
 \DeclareCaptionLabelFormat{romanos}{\textbf{(\,\Roman{figure}\,)}}
 \DeclareCaptionListFormat{romanos}{\thepart\,.\,\Roman{figure}\,}
-
-\selectbiblanguage{spanish}					% babelbib
-\setbtxfallbacklanguage{english}
 
 \newcommand\tnotetext[2]				   % threeparttable
 	{\item\hspace*{-5pt}\raisebox{.7ex}
@@ -242,8 +239,7 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 \pagenumbering{arabic}
 \setcounter{page}{\value{totalpages}}			       % totalpages
 \nocite{mittelbach2004lc, stutzman1997atd, garcia2000mrsr, pallas2004sas}
-\bibliographystyle{bababbrv-lf}					% babelbib
-% \bibliographystyle{wmaainf}					% wmaainf
+\bibliographystyle{gis-pfc}
 \bibliography{gis-pfc}
 
 \end{document}
