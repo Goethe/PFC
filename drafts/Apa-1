@@ -43,7 +43,7 @@ del manejo del software y, posteriormente sirva de manual/documento de
 consulta | en caso que desee recordarse la función de algún elemento de la
 interfaz.
 
-el proceso de aprendizaje que ha de conducirle a usar con soltura la
+El proceso de aprendizaje que ha de conducirle a usar con soltura la
 aplicación/el software
 
 Por otro lado se abordan unas sencillas directrices orientadas a lograr
@@ -105,4 +105,54 @@ misma aplicación
 
 El apéndice recoge:
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+En este apéndice se proporciona una guía de usuario a la que el lector
+interesado puede recurrir para aprender el manejo de la aplicación de
+software con la que controlar el sistema de adquisición digital que forma
+parte sustancial del sistema de medida desarrollado como parte de este
+proyecto fin de carrera. Para acudir a este manual es necesario tener unos
+conceptos básicos sobre el manejo de MATLAB y sobre el manejo del
+osciloscopio. Por el contrario no es preciso conocer ningún detalle
+relacionado con el proceso de desarrollo de la aplicación y del sistema de
+medida, puesto que este manual es independiente. Para obtener una mayor
+información a ese respecto, el lector puede dirigirse a la primera parte
+de la memoria, al capítulo tres.
+
+El contenido de este apéndice se divide en dos partes. Por un lado recoge
+la descripción de las principales características funcionales de la
+aplicación como son la organización de la interfaz de usuario o la
+función de los distintos controles que pueden observarse en ésta. A medida
+que se describen los distintos elementos que forman parte de la aplicación
+se abordan unas sencillas directrices que, de seguirse, proporcionan al
+usuario los conocimientos prácticos para el correcto uso de la aplicación.
+% Este párrafo no termina aquí, separo lo siguiente por no ser definitivo.
+La descripción de las distintas entidades que intervienen en el
+funcionamiento del software sirve al propósito inicial de orientar al
+usuario durante el proceso de aprendizaje que ha de conducirle a la
+consecución de las habilidades necesarias para el control del sistema de
+medida. Posteriormente, el usuario (puesto que se describen estos
+elementos) puede recurrir al apéndice como documento de consulta.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Este manual pretende instruir al lector que esté interesado en el manejo
+del sistema de medida digital desarrollado como parte del proyecto
+documentado en esta memoria por medio del software que le sirve de interfaz
+para con el usuario. La otra intención que persigue este documento es la
+(valer/servir) como manual de referencia para futuras consultas. En vista a
+los objetivos expuestos/En vista a conseguir mencionados/dichos objetivos,
+el manual se ha estructurado del siguiente modo. Por una parte se describen
+de forma concisa las principales características funcionales de las que
+hace gala/que determinan el comportamiento de la aplicación como son:
+organización de la interfaz de usuario, función de los distintos controles
+presentes en dicha interfaz, tipos de dato que devuelve la aplicación en
+sus distintas configuraciones, etcétera. Todo ello acompañado de una serie
+de directrices que indican cual es el procedimiento a seguir para poner en
+funcionamiento o detener el sistema de medida y activar correctamente
+cualquiera de sus funciones. De modo que un usuario que está aprendiendo a
+manejar la aplicación puede prepararse leyendo la primera descripción, que
+puede ir consultando a medida que aprende los distintos procedimientos
+detallados en el manual; al tiempo que se da al usuario experimentado la
+posibilidad de consultar cualquier detalle de la aplicación que no recuerde
+con claridad.
