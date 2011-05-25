@@ -23,13 +23,14 @@ sistema de medida).
 
 Esta guía de usuario está dirigida al lector interesado en aprender a
 utilizar la aplicación que controla el sistema de medida digital
-desarrollado como parte de este proyecto fin de carrera (footnote Para
+desarrollado como parte de este proyecto fin de carrera (nota al pie: Para
 obtener información acerca del proceso de diseño y desarrollo del software,
 así como de las herramientas utilizadas en dicho proceso, refiérase al
-cref(tercer capítulo)). Este apéndice recoge, con miras/con el fin, una
-descripción de las principales características funcionales de la aplicación
----organización de la interfaz de usuario, distintos controles que
-integran dicha interfaz, y tipos de resultados que devuelve el programa---
+referencia(tercer capítulo)). Este apéndice recoge, con miras/con el fin,
+una descripción de las principales características funcionales de la
+aplicación ---organización de la interfaz de usuario, distintos controles
+que integran dicha interfaz, y tipos de resultados que devuelve el
+programa---.
 
 (Este apéndice recoge por un lado...) La descripción de las (principales)
 características funcionales de la aplicación como son: la distribución de
@@ -44,11 +45,11 @@ consulta | en caso que desee recordarse la función de algún elemento de la
 interfaz.
 
 El proceso de aprendizaje que ha de conducirle a usar con soltura la
-aplicación/el software
+aplicación/el software.
 
 Por otro lado se abordan unas sencillas directrices orientadas a lograr
 (que el lector) precisamente que el usuario adquiera un manejo básico de
-las distintas funciones
+las distintas funciones.
 
 Para que me sirve en un manual que describan las características
 funcionales de una aplicación de software, al principio para orientarme
@@ -68,13 +69,13 @@ independiente (y también porque el tercer capítulo no va de nada de eso). Y
 es independiente de los conocimientos impartidos en el tercer capítulo de
 esta memoria.
 
-dicho capítulo trata conceptos completamente diferentes en relación con el
-software
+Dicho capítulo trata conceptos completamente diferentes en relación con el
+software.
 
-el apéndice incluye lo necesario y es completamente independiente
+El apéndice incluye lo necesario y es completamente independiente.
 
 La información relacionada | el proceso de diseño y desarrollo cuyo
-resultado es el software |
+resultado es el software.
 
 El propósito de este apéndice es bien distinto al del tercer capítulo de la
 memoria, donde se recoge parte del proceso de diseño y desarrollo cuyo
@@ -101,7 +102,7 @@ consultarse en caso de olvido.
 
 Para aprender a utilizar la aplicación no es necesario conocer ningún
 detalle acerca del proceso de diseño y desarrollo cuyo resultado es la
-misma aplicación
+misma aplicación.
 
 El apéndice recoge:
 
@@ -116,15 +117,15 @@ conceptos básicos sobre el manejo de MATLAB y sobre el manejo del
 osciloscopio. Por el contrario no es preciso conocer ningún detalle
 relacionado con el proceso de desarrollo de la aplicación y del sistema de
 medida, puesto que este manual es independiente. Para obtener una mayor
-información a ese respecto, el lector puede dirigirse a la primera parte
-de la memoria, al capítulo tres.
+información a ese respecto, el lector puede dirigirse a la primera parte de
+la memoria, al capítulo tres.
 
 El contenido de este apéndice se divide en dos partes. Por un lado recoge
 la descripción de las principales características funcionales de la
-aplicación como son la organización de la interfaz de usuario o la
-función de los distintos controles que pueden observarse en ésta. A medida
-que se describen los distintos elementos que forman parte de la aplicación
-se abordan unas sencillas directrices que, de seguirse, proporcionan al
+aplicación como son la organización de la interfaz de usuario o la función
+de los distintos controles que pueden observarse en ésta. A medida que se
+describen los distintos elementos que forman parte de la aplicación se
+abordan unas sencillas directrices que, de seguirse, proporcionan al
 usuario los conocimientos prácticos para el correcto uso de la aplicación.
 % Este párrafo no termina aquí, separo lo siguiente por no ser definitivo.
 La descripción de las distintas entidades que intervienen en el
@@ -156,3 +157,87 @@ puede ir consultando a medida que aprende los distintos procedimientos
 detallados en el manual; al tiempo que se da al usuario experimentado la
 posibilidad de consultar cualquier detalle de la aplicación que no recuerde
 con claridad.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Las limitaciones presentes en el software de control pueden clasificarse
+según su origen: se encuentran las limitaciones derivadas del uso de la
+tarjeta kpci como dispositivo de adquisición; y las limitaciones inherentes
+a la propia aplicación, que tienen su origen en el planteamiento de su
+código fuente y que surgen como parte del proceso de diseño y el posterior
+proceso de programación. Las limitaciones que introduce en el sistema de
+medida la tarjeta de adquisición se encuentran debidamente documentadas en
+la (sección ??), donde el lector puede consultarlas. Cabe mencionar aquí
+que el rendimiento de la tarjeta es limitado y depende no sólo de como se
+encuentre configurada la kpci, si no también del nivel de la señal de
+entrada así como de otros parámetros. Por lo demás, este apartado trata
+únicamente de las limitaciones que...
+
+** Párrafo preseleccionado**
+Entiéndase como limitaciones presentes en el software de control el
+siguiente concepto: allí donde existe la opción de configurar cierto
+parámetro del sistema de medida, una limitación en el software de control
+consiste en privar al usuario de dicha opción por el hecho de utilizar el
+software. Por otra parte, el sistema de medida tiene sus limitaciones que
+hereda de los distintos subsistemas que lo componen ---uno de estos
+subsistemas es el propio subsistema de control y presentación que, como se
+explica en el tercer capítulo de la memoria es equivalente del software de
+control---, limitaciones que inevitablemente se ven reflejadas en la
+aplicación de software. Principalmente de este segundo grupo son notables
+las que derivan del uso de la tarjeta kpci como instrumento para la
+adquisición de señales, éstas se encuentran debidamente documentadas en la
+(sección ??), donde el lector puede consultarlas. Cabe mencionar aquí
+que el rendimiento de la tarjeta es limitado y depende no sólo de como se
+encuentre configurada, si no también del nivel de la señal de entrada así
+como de otros parámetros. Por lo demás, este apartado trata únicamente de
+las limitaciones que son inherentes a la propia aplicación, que tienen su
+origen en el planteamiento de su código fuente y que surgen como parte del
+proceso de diseño y el posterior proceso de programación.
+
+Las limitaciones presentes en el software de control pueden clasificarse
+según su origen: se encuentran las limitaciones derivadas del uso de la
+tarjeta kpci como dispositivo de adquisición; y las limitaciones inherentes
+a la propia aplicación, que tienen su origen en el planteamiento de su
+código fuente y que surgen como parte del proceso de diseño y el posterior
+proceso de programación. Las limitaciones que introduce en el sistema de
+medida la tarjeta de adquisición se encuentran debidamente documentadas en
+la (sección ??), donde el lector puede consultarlas, cabe destacar el
+comportamiento del rendimiento de la tarjeta en las distintas
+circunstancias / situaciones / panoramas posibles. En este apartado se
+exponen, sin profundizar en detalles, las limitaciones pertenecientes al /
+incluidas en el segundo de los grupos que surgen de la división según el
+criterio planteado en este mismo párrafo. Las limitaciones que introduce
+el software son las siguientes:
+
+- El software no permite manipular la cola de muestreo interna de la
+  tarjeta de adquisición. Únicamente da acceso a un canal de forma
+  simultánea, aunque a este se le puede asignar cualquier puerto físico.
+
+- La aplicación únicamente da acceso a las propiedades de la sesión de
+  adquisición representadas por controles en la interfaz de usuario.
+
+- Algunos de los controles se deshabilitan durante la sesión de adquisición
+  como son el que configura la frecuencia de muestreo o el que sirve para
+  conmutar entre los distintos modos de adquisición posibles.
+
+El resto de propiedades no están contempladas en la interfaz pero sus
+atributos pueden manipularse manualmente desde la línea de comandos. (Para
+poder hacer esto se tiene que llamar a la aplicación también desde la línea
+de comandos como se explica en ...).
+
+- A nivel operativo, trabajar con varios canales simultáneamente entraña
+  una complejidad mucho mayor que trabajar con uno solo, complejidad que se
+  traslada directamente al código. Además, teniendo en cuenta que en la
+  mayoría de circunstancias, para la realización de cualquier prueba basta
+  con monitorizar una única señal, se ha optado por limitar a uno el número
+  de canales a los que el usuario tiene acceso simultáneamente.
+
+- Una segunda limitación relacionada con los canales a los que se da
+  acceso desde la aplicación.
+
+  Ahora tengo que decir que desde la aplicación no pueden crearse canales
+  de forma manual lo que está muy relacionado con el número de canales a
+  los que el usuario tiene acceso, puesto que si pudiese crearlos él
+  manualmente, podría crear todos los que quisiese y no sólo uno.
+
+- En relación con la primera, existe otra limitación en relación...
