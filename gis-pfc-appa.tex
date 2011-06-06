@@ -43,14 +43,14 @@ medida. Dichos requisitos se enumeran a continuación:
 		fabricante.
 \end{itemize}
 
-Por otro lado, para poder utilizar la aplicación de control en el ordenador
+Por otro lado, para poder utilizar la software de control en el ordenador
 en el que se haya instalado la tarjeta de adquisición es necesario,
 obviamente, disponer de una copia de \sig{matlab} instalada en el sistema y
-de una copia de la aplicación, de los ficheros fuente, también instalados
-en el disco duro del ordenador. Como explica el \cref{subsec:conbox}, la
-interfaz estándar con la que cuenta la tarjeta de adquisición está diseñada
-para servir como una vía de comunicación entre dispositivos de
-características similares a las de la tarjeta de adquisición y, en
+de una copia de la propia aplicación, de los ficheros fuente, también
+instalados en el disco duro del ordenador. Como explica el
+\cref{subsec:conbox}, la interfaz estándar con la que cuenta la tarjeta de
+adquisición está diseñada para servir como una vía de comunicación entre
+dispositivos de características similares a las de la tarjeta y, en
 consecuencia, no está preparada para conectar la tarjeta a sondas con el
 fin de explorar circuitos electrónicos; para poder utilizar la tarjeta como
 parte del sistema de medida es pues necesario un accesorio que simplifique
@@ -59,31 +59,61 @@ esta tarea.
 
 \section{Limitaciones del software}
 
-Desde el punto de vista de su origen las limitaciones del software de
-control pueden dividirse en limitaciones derivadas del uso de la \kpci{} y
-en limitaciones introducidas por la propio software. Para una mayor
-información sobre las primeras pueden consultarse las
-\vrefrange{sec:technical}{sec:throughput} en el segundo capítulo. A
-destacar el comportamiento del rendimiento de la tarjeta, el rendimiento se
-verá reducido según se vayan añadiendo canales al objeto dispositivo.
+Este apartado trata de las limitaciones que presenta el software de control
+atendiendo al siguiente concepto: allí donde existe la posibilidad de
+configurar un parámetro de funcionamiento del sistema de medida se entiende
+que el software de control presenta una limitación si priva al usuario de
+dicha opción por el mero hecho de emplear la aplicación para interactuar
+con el sistema de medida en lugar de haber recurrido a cualquier otro medio
+disponible. Este tipo de <<limitaciones>> surgen fundamentalmente debido a
+que frente a la multitud de opciones de configuración que presenta el
+sistema resulta adecuado representar en la interfaz de usuario únicamente
+las más relevantes de cara a realizar una prueba experimental. Se descarta,
+por tanto, analizar cualquier limitación de carácter técnico asociada a la
+aplicación, principalmente debido a que este tipo de limitaciones las
+hereda el software del sistema en el que se ejecuta.
 
-En cuanto a las limitaciones que introduce el software son varias. Para
-empezar es destacable el hecho de que únicamente es posible controlar un
-canal de muestreo desde la aplicación de control. El canal controlado puede
-estar asociado a cualquier puerto físico de la tarjeta pero sólo se da
-acceso a un único canal por sesión. A esta limitación se debe añadir que
-desde el software es imposible crear o eliminar canales u objetos
-dispositivo de forma manual. Por otro lado se da la incapacidad de
-modificar desde la utilidad propiedades de la configuración de la tarjeta
-que no vengan representadas por controles en la interfaz de usuario.
-Algunos de estos controles se deshabilitan durante la actividad de
-muestreo, se ha hecho así para impedir que se altere el valor de parámetros
-tales como la frecuencia de muestreo en tiempo real. En ocasiones es
-\matlab{} desde un nivel superior en la jerarquía del software el que
-impide que una de estas propiedades cambie al vuelo, en el resto de casos
-se ha hecho para evitar problemas de rendimiento experimentados durante
-pruebas de software.
+Mencionar que el sistema de medida presenta asimismo sus propias
+limitaciones, heredadas por su parte de los distintos subsistemas que lo
+integran, limitaciones que inevitablemente se ven reflejadas en la
+aplicación de software. Por ejemplo, uno no puede configurar el sistema
+desde la aplicación para que muestree señales cuyo nivel de pico a pico sea
+superior a 10 Vpp, pues el sistema de por sí no lo permite, ahí la
+aplicación no tiene nada que ver. Dentro de este segundo grupo son notables
+las limitaciones que derivan del uso de la tarjeta \kpci{} como instrumento
+para la adquisición de señales, éstas se encuentran debidamente
+documentadas en las \vrefrange{sec:technical}{sec:throughput}, donde el
+lector puede consultarlas. Cabe mencionar aquí también que el rendimiento
+de la tarjeta es limitado y depende no sólo de como se encuentre
+configurada, si no también del nivel de la señal de entrada así como de
+otros parámetros.
 
+Por lo demás, este apartado trata únicamente de las limitaciones que son
+inherentes a la propia aplicación, que tienen su origen en el planteamiento
+de su código fuente y que surgen como parte del proceso de diseño y el
+posterior proceso de programación. En el proceso de diseño se ha priorizado
+la sencillez a la completitud. De ese modo se explican las decisiones que
+han dado lugar a que el software presente las siguientes limitaciones.
+
+\begin{itemize}
+	\item El software de control no permite la manipulación directa de
+		la cola de muestreo. Únicamente se da acceso a un canal
+		que, eso sí, puede vincularse a voluntad (es preciso pausar
+		previamente la sesión de adquisición) a cualquier puerto
+		físico de la tarjeta, esté configurado en modo diferencial
+		o sencillo.
+	\item No todas las opciones de configuración de objeto dispositivo
+		y de canal se encuentran representadas mediante controles
+		en la interfaz de usuario de la aplicación. Eso significa
+		que no es posible configurar desde el software esas
+		propiedades.
+	\item Algunos de los controles de la interfaz se deshabilitan al
+		reanudar la sesión de adquisición. Esto impide que se
+		produzcan errores si se trata de configurar al vuelo alguna
+		propiedad de configuración cuando no está permitido (sólo
+		ocurre con un subconjunto de las propiedades) y simplifica
+		el diseño de la aplicación.
+\end{itemize}
 
 \section{Procedimientos de llamada}
 
