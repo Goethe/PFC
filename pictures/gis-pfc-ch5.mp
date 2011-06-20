@@ -632,7 +632,7 @@ draw (x02, 0)--(x02, a13);	draw (x03, 0)--(x03, a13);
 draw (x02 + a08, 0)--(x02 + a08, a13);
 label(btex $f_1$ etex, (x02, -a14));
 label(btex $f_2 = f_1 + \Delta f$ etex, (x02 + a08, -a14));
-label(btex $f_n = f_1 + k\Delta f$ etex, (x03, -a14));
+label(btex $f_n = f_1 + (n - 1)\Delta f$ etex, (x03, -a14));
 
 % ··································································
 % marco
