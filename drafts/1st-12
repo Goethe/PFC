@@ -89,3 +89,44 @@
 	Finalmente, ... para implementar el circuito acondicionador se
 	emplean los componentes listados en el cuadro 1.2. Existen dos
 	razones por las que se escogen...
+
+|Martes, 12 de Julio de 2011|
+
+	Básicamente en la introducción al apartado que trata sobre el
+	acondicionador que acompaña al actuador afirmo que la labor
+	intrínseca, el propósito ulterior, de un acondicionador, desde el
+	punto de vista más elemental, es la de posibilitar que la
+	información que transmite el sensor llegue al resto de etapas
+	presentes en el sistema de medida. Para ello adapta la señal
+	eléctrica que transporta dicha información, transforma esa señal,
+	de modo que se realcen en la medida de las posibilidades del
+	circuito las componentes que caracterizan, que identifican de forma
+	unívoca la información, y, simultáneamente, todo aquello que
+	entorpece la lectura de este valioso recurso sea minimizado.
+
+	Una frase o entradilla muy apropiada en estas circunstancias
+	vendría a decir algo así: «En un sentido amplio..., un circuito
+	acondicionador es ésto, y por eso...» O algo similar.
+
+	Mi idea actual es la de trasladar el apartado dedicado al
+	acondicionador que acondiciona la señal generada por el sensor
+	antes del apartado que trata sobre el otro circuito. Eliminar gran
+	parte del texto que describe el comportamiento del temporizador
+	integrado 555 y explicar brevemente cómo es el circuito (555 me da
+	una salida apta para alimentar directamente un transductor de
+	ultrasonidos, la potencia que entrega es también adecuada, el
+	pulsador es de este tipo para impedir que afecte a la duración del
+	pulso, duración del pulso elegida en base a los siguientes
+	criterios ---módulo de la densidad espectral máximo a la frecuencia
+	de resonancia del actuador, múltiplo entero del periodo de la
+	portadora acústica, nivel de potencia efectiva transmitida al
+	actuador aceptable, dentro de los márgenes establecidos por el
+	fabricante---, y cualquier otra cosa que se me ocurra y tenga
+	relación con los cálculos que he estado realizando recientemente).
+	Cambiar la figura para que se corresponda con el circuito
+	propuesto. Cambiar la figura del tren de pulsos por otra que
+	muestre la evolución de la señal en la puerta de disparo del 555
+	cuando el pulsador cortocircuita la pata del condensador del
+	circuito adaptador a tierra. Sobre todo deshacer cualquier
+	referencia a suposiciones que han demostrado ser eminentemente
+	falsas.
