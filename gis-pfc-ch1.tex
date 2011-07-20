@@ -315,96 +315,109 @@ de medida.
 \end{itemize}
 
 
-\subsection{Requisitos de diseño} % # Puedo llamar al primer subapartado
-% «proceso de diseño» o simplemente «diseño», y al siguiente
-% «características del acondicionador/circuito».
+\subsection{Diseño del circuito acondicionador}
 
-El acondicionador es un circuito complejo, con unas pautas de operación muy
-concretas, que requiere de un elaborado diseño.
+El acondicionador es un circuito complejo que requiere de un diseño
+elaborado. En definitiva la función que ejerce el circuito acondicionador
+en el sistema de medida es muy concreta: a partir de la señal generada por
+el sensor ofrece una señal que puede ser procesada adecuadamente por un
+dispositivo estándar. El diseño del circuito depende, entonces,
+exclusivamente de tres aspectos: el sensor utilizado, el dispositivo
+estándar que sirve de interfaz para con el resto del sistema, y las
+condiciones de funcionamiento.
 
-% Pese al rollo, en esencia de lo que trata este apartado es de explicar el
-% tipo de señal que le llega al acondicionador desde el sensor, el tipo de
-% señal que debe generar, y deducir de esa información las operaciones que
-% debe realizar el circuito. En este caso debo hablar de temas como la
-% frecuencia de la señal (puesto que el amplificador debe presentar una
-% ganancia efectiva a tales frecuencias), y de impedancias de entrada y
-% salida. También debería introducir, creo, el tema del ruido de grano,
-% decir que no es posible 'filtrarlo'.
+Del sensor es preciso determinar el tipo de señal que genera, su amplitud y
+frecuencia, en ocasiones energía o densidad espectral de potencia; y su
+impedancia equivalente.
 
-% Antes estaba pensando que he suprimido, en la nueva versión del texto, mi
-% alusión a los dispositivos estándar. Pienso ahora que, en realidad, no
-% adapto mi señal para que un dispositivo estándar pueda extraer toda la
-% información que contiene, si no que es la tarjeta de adquisición (el
-% subsistema de adquisición) la encargada de lidiar con esta tarea. «Y ESTO
-% LO DIGO como si la tarjeta de adquisición no fuese un dispositivo
-% estándar o algo.»
+Los dispositivos estándar son aparatos comunes a la mayoría de sistemas
+capaces de desempeñar una función de procesamiento, almacenamiento y/o
+presentación en multitud de situaciones diferentes. Están preparados para
+trabajar con señales de características dispares, y están pensados para
+comunicarse con una gran diversidad de instrumentos adicionales. Sus
+características están bien definidas y son ampliamente conocidas, además de
+ser muy versátiles hacen gala de una elevada precisión. Por todo ello,
+resulta práctico utilizarlos pues simplifican el diseño de un sistema de
+medida y, por extensión, de un circuito acondicionador. Suelen, asimismo,
+ser dispositivos caros, y difíciles de reemplazar ---representan el
+estándar, no es fácil encontrar alternativas ni práctico buscarlas---. Por
+lo general, cuando el sistema de medida deja de satisfacer su propósito por
+cualquier motivo y es necesario introducir en él alguna modificación es
+preferible sustituir el sensor y/o el circuito acondicionador y diseñar la
+nueva etapa para que se adapte a las características del dispositivo
+estándar.
 
-% Ahora es, cuando hablando de el diseño de un circuito acondicionador,
-% puedo utilizar la expresión «a menudo» para referirme a la situación
-% habitual de la presencia de instrumentos estándar a continuación del
-% circuito acondicionador en un sistema de medida. De los instrumentos
-% estándar puedo decir dos cosas. En primer lugar me da pie a decir que
-% suelen ser caros y, por tanto, irreemplazables en pruebas de similares
-% características. Este hecho junto con la idea de que tienen
-% características apropiadas para trabajar con un amplio rango de señales
-% podría justificar la idea de que para pruebas parecidas con sensores
-% parecidos es, parece, razonable sustituir el circuito acondicionador (en
-% muchos caso de elaboración artesanal y más barato) que el dispositivo
-% estándar. En contraposición a esta idea está la de que existen
-% aplicaciones y transductores tan concretos que, en ocasiones, es
-% imposible sustituir el circuito acondicionador y es entonces preferible
-% realizar la prueba con diferentes dispositivos estándar o acondicionar el
-% acondicionador. Salvo en situaciones tan concretas se aplica el primer
-% criterio. Por otro lado está el hecho de que al tratarse de dispositivos
-% estándar sus características suelen ser bien conocidas y, por tanto, se
-% simplifica la labor de diseño de circuitos acondicionadores. Además los
-% dispositivos estándar están preparados ya de por sí para trabajar en
-% multitud de circunstancias incluidas las más exigentes.
+Las funciones de procesamiento, almacenamiento y presentación de la señal
+se reparten en el esquema propuesto en este proyecto en dos entidades
+físicas distintas: la tarjeta de adquisición digital y el ordenador, que
+asimismo gobierna el funcionamiento del sistema. Ambas entidades pueden ser
+consideradas dispositivos estándar de acuerdo a la definición dada en el
+párrafo anterior. De cara al diseño del circuito acondicionador ha de
+recalcarse que éste únicamente interactúa de forma directa con la tarjeta,
+por lo que es dicha tarjeta la que ha de tenerse en cuenta durante el
+proceso de diseño. La tarjeta \kpci{} se encarga concretamente de la
+conversión de analógico a digital de la señal, de la reordenación y
+manipulación de los datos y del almacenamiento intermedio de los mismos. De
+momento no es necesario conocer con mucho detalle cual es el funcionamiento
+de la tarjeta, tema sobre el cual se profundiza en el
+\cref{chap:acquisition}.
 
-% A menudo, en los sistemas de medida, es un dispositivo estándar el que
-% sucede al circuito acondicionador y da entrada a la componente de
-% procesado, almacenamiento o representación de señal del sistema. Se trata
-% de dispositivos que, por ser común a la gran mayoría de sistemas,
+En cuanto a las condiciones de trabajo: temperatura ambiente, presencia de
+radiación, presencia de impulsos eléctricos\dots; pueden ser muy variadas
+pero se asume que se trabaja en condiciones estándar y no se profundizará
+más en el tema.
 
-% ¿Cuál es el motivo de que se llamen dispositivos estándar? En primer
-% lugar que efectivamente son comunes a la gran mayoría de sistemas de
-% medida. En segundo lugar que como pieza común de un sistema de medida
-% están pensados para trabajar con multitud de circuitos diferentes, en
-% multitud de situaciones diferentes, con multitud de objetivos
-% diferentes\dots y, en consecuencia, se diseñan para ser fáciles de
-% utilizar en la mayoría de los casos. Lo que quiero decir es que, un
-% dispositivo que tiene una alta impedancia de entrada, que funciona en un
-% gran rango de frecuencias y amplitudes y que, en definitiva, es capaz de
-% comunicarse fácilmente (sin mucha complicación para el usuario) con gran
-% cantidad de dispositivos, pone las cosas en bandeja para trabajar con él,
-% simplifica mucho el diseño de circuitos acondicionadores y, por
-% extensión, de experimentos, son herramientas muy cómodas de utilizar y
-% que te hacen la vida más llevadera.
+Recapitulando, en los \cref{tab:sensprop,tab:cardprop} se encuentran
+recogidos los parámetros relevantes en el diseño de este circuito
+acondicionador y los valores que adquieren en el caso particular de este
+sistema de medida (recuérdese que la configuración del subsistema, en una
+división que responde a la función de los distintos elementos que lo
+integran, puede verse en la \cref{fig:submedium}).
 
-% Existen a juicio del proyectista dos situaciones opuestas: la
-% circunstancia de realizar una prueba muy concreta que requiere de equipo
-% (transductores, acondicionadores) muy concreto para la obtención de
-% resultados válidos, exactos y precisos; y aquella situación en la que el
-% experimento puede realizarse utilizando para ello utensilios de carácter
-% genérico, o menos específico, sin que por ello la validez de los
-% resultados obtenidos se vea afectada. En el primer caso el circuito
-% acondicionador suele tratarse de un circuito complejo y de
-% características asimismo concretas. En ocasiones como ésta el
-% acondicionador resulta tan importante y valioso o más que el transductor
-% empleado y, a su vez, que el resto de instrumentos de que se compone el
-% sistema de medida. Es en tales coyunturas preferible elegir el
-% dispositivo estándar de entrada al sistema de forma que sea acorde al
-% circuito acondicionador empleado, siendo el primero el que se adapte al
-% segundo y no al revés; o, en caso de falta de disponibilidad, utilizar un
-% circuito acondicionador intermedio para interconectar ambos dispositivos.
-% En el segundo caso, el más extenso, sin embargo, acostumbra a diseñarse
-% un circuito acondicionador a la medida del experimento. Este tipo de
-% circuito acondicionador de elaboración artesanal suele ser barato y si,
-% por cualquier circunstancia, se diese la condición de que deja de
-% satisfacer su propósito es fácil sustituirlo por uno nuevo. Justo al
-% contrario ocurre con el dispositivo estándar, que suele ser en este tipo
-% de situaciones el dispositivo más costoso del sistema y es, por tanto,
-% prácticamente irreemplazable.
+\begin{table}
+	\centering
+	\begin{tabular}{l r@{\ }l}
+		\toprule
+		Propiedad & \multicolumn{2}{c}{Valor} \\
+		\midrule
+		\\
+		Tipo de señal generada & \multicolumn{2}{c}{$x(t) =
+		A\sin(\omega t)\cdot\text{e}^{-\alpha t^2}$} \\\\
+		Densidad espectral de potencia & \multicolumn{2}{c}{$X(F) =
+		(A/2)\sqrt{\pi/\alpha}\cdot\text{e}^{-(\pi F)^2/\alpha}$}\\
+		\\
+		Frecuencia de resonancia & $20$ & $[\text{kHz}]$ \\
+		Ancho de banda (aprox.) & $20$ & $[\text{kHz}]$ \\
+		Resistencia & \hspace*{4.8em}$2$ & $[\text{k}\Omega]$ \\
+		Capacitancia & \hspace*{4.8em}$1.9$ & $[\text{nF}]$ \\
+		\bottomrule
+	\end{tabular}
+	\caption[Propiedades relevantes del sensor]{Propiedades del sensor
+	relevantes para el diseño del circuito acondicionador.}
+	\label{tab:sensprop}
+\end{table}
+
+\begin{table}
+	\centering
+	\begin{tabular}{l@{\hspace*{3em}}r@{\ }l}
+		\toprule
+		Propiedad & \multicolumn{2}{c}{Valor} \\
+		\midrule
+		Rango de tensiones aceptado & $(-10, 10)$ & $[\text{V}]$ \\
+		Resistencia & $1$ & $[\text{G}\Omega]$ \\
+		Capacitancia & $C < 200$ & $[\text{pF}]$ \\
+		\bottomrule
+	\end{tabular}
+	\caption[Propiedades relevantes de la tarjeta]{Propiedades de la
+	tarjeta de adquisición \kpci{} (vid. cáp. \ref{chap:acquisition})
+	relevantes para el diseño del circuito acondicionador.}
+	\label{tab:cardprop}
+\end{table}
+
+% Todo ello nos dice (de acuerdo con las necesidades del experimento de
+% endus que se desea realizar)\dots
+
+%\subsection{Circuito propuesto}
 
 
 \section{Acondicionador de la sección de emisión}

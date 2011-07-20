@@ -1,0 +1,42 @@
+|Martes, 19 de Julio de 2011|
+
+	En definitiva la función del circuito acondicionador en el sistema
+	de medida es muy concreta: a partir de la señal generada por el
+	sensor ofrece una señal que puede ser procesada adecuadamente por
+	un dispositivo estándar. El diseño del circuito depende, entonces,
+	exclusivamente de tres aspectos: el sensor utilizado, el
+	dispositivo estándar que sirve de interfaz para con el resto del
+	sistema, y las condiciones de funcionamiento.
+
+	Del sensor es preciso determinar el tipo de señal que genera, su
+	amplitud y frecuencia, en ocasiones energía o densidad espectral de
+	potencia; y su impedancia equivalente.
+
+	Los dispositivos estándar son aparatos comunes a la mayoría de
+	sistemas capaces de desempeñar una función de procesamiento,
+	almacenamiento y/o presentación en multitud de situaciones
+	diferentes. Están preparados para trabajar con señales de
+	características dispares, y están pensados para comunicarse con una
+	gran diversidad de instrumentos adicionales. Sus características
+	están bien definidas y son ampliamente conocidas, además de ser muy
+	versátiles hacen gala de una elevada precisión. Por todo ello,
+	resulta práctico utilizarlos pues simplifican el diseño de un
+	sistema de medida y, por extensión, de un circuito acondicionador.
+	Suelen, asimismo, ser dispositivos caros, y difíciles de reemplazar
+	---representan el estándar, no es fácil encontrar alternativas ni
+	práctico buscarlas---. Por lo general, cuando el sistema de medida
+	deja de satisfacer su propósito por cualquier motivo y es necesario
+	introducir en él alguna modificación es preferible sustituir el
+	sensor y/o el circuito acondicionador y diseñar la nueva etapa para
+	que se adapte a las características del dispositivo estándar.
+
+	En cuanto a las condiciones de trabajo: temperatura ambiente,
+	presencia de radiación, presencia de impulsos eléctricos...; pueden
+	ser muy variadas pero se asume que se trabaja en condiciones
+	estándar y no se profundizará más en el tema.
+
+	Recapitulando, en los   se encuentran recogidos los parámetros
+	relevantes en el diseño de un circuito acondicionador y los valores
+	que adquieren en el caso particular correspondiente a la sección de
+	recepción en el sistema de medida propuesto para este proyecto fin
+	de carrera.
