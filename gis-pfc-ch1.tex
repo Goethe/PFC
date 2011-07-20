@@ -274,6 +274,139 @@ efectuar los ensayos previstos, este tema vuelve a tratarse más adelante
 durante la segunda parte de la memoria.
 
 
+\section{Acondicionador de la sección de recepción}\label{sec:rxco}
+
+Una transición directa de la señal del sensor, donde es generada, al
+sistema de medida conlleva en la mayoría de los casos una notable pérdida
+de información causada por diversos fenómenos. En un sentido amplio, un
+acondicionador es un circuito que se conecta a un transductor y cuya
+finalidad no es otra que la de impedir, en la medida de lo posible, que la
+información que transporta la señal que procede del sensor se pierda en el
+mencionado proceso de transición. En otras palabras, el propósito en
+esencia de un circuito acondicionador es el de realzar las componentes de
+la señal que acarrean la información, al tiempo que atenúa las señales
+espurias que se mezclan con la señal de interés y dificultan la lectura de
+dicha información y crea las condiciones adecuadas para que la señal sea
+transferida adecuadamente al sistema. Para aproximarse al máximo a este
+objetivo el circuito acondicionador transforma la señal para que se acomode
+a las características de la subsiguiente etapa en el sistema. No obstante,
+la labor del acondicionador no se limita exclusivamente a aplicar una
+transformación sobre la señal, a continuación se enumeran las principales
+acciones que desempeña un circuito de estas características en un sistema
+de medida.
+
+\begin{itemize}
+	\item Acota el recorrido de la señal y lo confinar en unos márgenes
+		de tensión apropiados, evitando una posible saturación de
+		etapas posteriores.
+	\item Adapta la impedancia de salida del sensor a la impedancia de
+		entrada de la etapa posterior al circuito, de ese modo la
+		transmisión es máxima.
+	\item A menudo los sensores proveen una señal de amplitud
+		comparable al ruido, el circuito acondicionador es
+		responsable de amplificar la señal manteniendo ---o
+		mejorando si es posible--- el nivel de \sig{snr}. Los
+		circuitos acondicionadores están integrados ---en caso de
+		que sea necesario--- por amplificadores de instrumentación,
+		útiles por sus altos índices de \sig{cmrr}.
+	\item El acondicionador de un sistema de medida filtra componentes
+		de señal indeseadas susceptibles de causar algún tipo de
+		distorsión en los resultados de una prueba.
+\end{itemize}
+
+
+\subsection{Requisitos de diseño} % # Puedo llamar al primer subapartado
+% «proceso de diseño» o simplemente «diseño», y al siguiente
+% «características del acondicionador/circuito».
+
+El acondicionador es un circuito complejo, con unas pautas de operación muy
+concretas, que requiere de un elaborado diseño.
+
+% Pese al rollo, en esencia de lo que trata este apartado es de explicar el
+% tipo de señal que le llega al acondicionador desde el sensor, el tipo de
+% señal que debe generar, y deducir de esa información las operaciones que
+% debe realizar el circuito. En este caso debo hablar de temas como la
+% frecuencia de la señal (puesto que el amplificador debe presentar una
+% ganancia efectiva a tales frecuencias), y de impedancias de entrada y
+% salida. También debería introducir, creo, el tema del ruido de grano,
+% decir que no es posible 'filtrarlo'.
+
+% Antes estaba pensando que he suprimido, en la nueva versión del texto, mi
+% alusión a los dispositivos estándar. Pienso ahora que, en realidad, no
+% adapto mi señal para que un dispositivo estándar pueda extraer toda la
+% información que contiene, si no que es la tarjeta de adquisición (el
+% subsistema de adquisición) la encargada de lidiar con esta tarea. «Y ESTO
+% LO DIGO como si la tarjeta de adquisición no fuese un dispositivo
+% estándar o algo.»
+
+% Ahora es, cuando hablando de el diseño de un circuito acondicionador,
+% puedo utilizar la expresión «a menudo» para referirme a la situación
+% habitual de la presencia de instrumentos estándar a continuación del
+% circuito acondicionador en un sistema de medida. De los instrumentos
+% estándar puedo decir dos cosas. En primer lugar me da pie a decir que
+% suelen ser caros y, por tanto, irreemplazables en pruebas de similares
+% características. Este hecho junto con la idea de que tienen
+% características apropiadas para trabajar con un amplio rango de señales
+% podría justificar la idea de que para pruebas parecidas con sensores
+% parecidos es, parece, razonable sustituir el circuito acondicionador (en
+% muchos caso de elaboración artesanal y más barato) que el dispositivo
+% estándar. En contraposición a esta idea está la de que existen
+% aplicaciones y transductores tan concretos que, en ocasiones, es
+% imposible sustituir el circuito acondicionador y es entonces preferible
+% realizar la prueba con diferentes dispositivos estándar o acondicionar el
+% acondicionador. Salvo en situaciones tan concretas se aplica el primer
+% criterio. Por otro lado está el hecho de que al tratarse de dispositivos
+% estándar sus características suelen ser bien conocidas y, por tanto, se
+% simplifica la labor de diseño de circuitos acondicionadores. Además los
+% dispositivos estándar están preparados ya de por sí para trabajar en
+% multitud de circunstancias incluidas las más exigentes.
+
+% A menudo, en los sistemas de medida, es un dispositivo estándar el que
+% sucede al circuito acondicionador y da entrada a la componente de
+% procesado, almacenamiento o representación de señal del sistema. Se trata
+% de dispositivos que, por ser común a la gran mayoría de sistemas,
+
+% ¿Cuál es el motivo de que se llamen dispositivos estándar? En primer
+% lugar que efectivamente son comunes a la gran mayoría de sistemas de
+% medida. En segundo lugar que como pieza común de un sistema de medida
+% están pensados para trabajar con multitud de circuitos diferentes, en
+% multitud de situaciones diferentes, con multitud de objetivos
+% diferentes\dots y, en consecuencia, se diseñan para ser fáciles de
+% utilizar en la mayoría de los casos. Lo que quiero decir es que, un
+% dispositivo que tiene una alta impedancia de entrada, que funciona en un
+% gran rango de frecuencias y amplitudes y que, en definitiva, es capaz de
+% comunicarse fácilmente (sin mucha complicación para el usuario) con gran
+% cantidad de dispositivos, pone las cosas en bandeja para trabajar con él,
+% simplifica mucho el diseño de circuitos acondicionadores y, por
+% extensión, de experimentos, son herramientas muy cómodas de utilizar y
+% que te hacen la vida más llevadera.
+
+% Existen a juicio del proyectista dos situaciones opuestas: la
+% circunstancia de realizar una prueba muy concreta que requiere de equipo
+% (transductores, acondicionadores) muy concreto para la obtención de
+% resultados válidos, exactos y precisos; y aquella situación en la que el
+% experimento puede realizarse utilizando para ello utensilios de carácter
+% genérico, o menos específico, sin que por ello la validez de los
+% resultados obtenidos se vea afectada. En el primer caso el circuito
+% acondicionador suele tratarse de un circuito complejo y de
+% características asimismo concretas. En ocasiones como ésta el
+% acondicionador resulta tan importante y valioso o más que el transductor
+% empleado y, a su vez, que el resto de instrumentos de que se compone el
+% sistema de medida. Es en tales coyunturas preferible elegir el
+% dispositivo estándar de entrada al sistema de forma que sea acorde al
+% circuito acondicionador empleado, siendo el primero el que se adapte al
+% segundo y no al revés; o, en caso de falta de disponibilidad, utilizar un
+% circuito acondicionador intermedio para interconectar ambos dispositivos.
+% En el segundo caso, el más extenso, sin embargo, acostumbra a diseñarse
+% un circuito acondicionador a la medida del experimento. Este tipo de
+% circuito acondicionador de elaboración artesanal suele ser barato y si,
+% por cualquier circunstancia, se diese la condición de que deja de
+% satisfacer su propósito es fácil sustituirlo por uno nuevo. Justo al
+% contrario ocurre con el dispositivo estándar, que suele ser en este tipo
+% de situaciones el dispositivo más costoso del sistema y es, por tanto,
+% prácticamente irreemplazable.
+
+
 \section{Acondicionador de la sección de emisión}
 
 Los circuitos acondicionadores a menudo se relacionan únicamente con
@@ -520,34 +653,3 @@ determinar en que momento resulta adecuado congelar la prueba.
 	a la salida del amplificador \textsc{ne5534}, $u(t)$.}
 	\label{fig:txacvo}
 \end{figure}
-
-
-\section{Acondicionador de la sección de recepción}\label{sec:rxco}
-
-En aplicaciones prácticas, el denominado circuito acondicionador se emplea
-para acomodar la señal que entrega el sensor de modo que tras sufrir una
-transformación pueda ser procesada, representada o simplemente almacenada
-utilizando para ello instrumentos de carácter estándar. Por lo general un
-circuito acondicionador realiza una o varias de las siguientes tareas:
-
-\begin{itemize}
-	\item Acotar el recorrido de la señal y confinarlo en unos márgenes
-		convenientes, evitando la saturación de etapas posteriores.
-	\item Adaptar la impedancia de salida del sensor a la impedancia de
-		entrada de la etapa posterior al circuito.
-	\item Magnificar la señal de entrada que proporciona el sensor para
-		evitar eventuales pérdidas de información en etapas
-		subsiguientes.
-	\item Aplicar un filtrado para eliminar las componentes de señal
-		que el sistema no puede asimilar y que pudieran/son
-		susceptibles de causar algún tipo de distorsión.
-\end{itemize}
-
-O cualquier otra acción que requiera efectuarse sobre la señal para la
-correcta transmisión de ésta y la información que transporta en todo el
-sistema.
-
-
-\subsection{Requisitos de diseño}
-
-% Según las especificaciones del sensor de ultrasonidos este entrega
