@@ -282,18 +282,65 @@ de información causada por diversos fenómenos. En un sentido amplio, un
 acondicionador es un circuito que se conecta a un transductor y cuya
 finalidad no es otra que la de impedir, en la medida de lo posible, que la
 información que transporta la señal que procede del sensor se pierda en el
-mencionado proceso de transición. En otras palabras, el propósito en
-esencia de un circuito acondicionador es el de realzar las componentes de
-la señal que acarrean la información, al tiempo que atenúa las señales
-espurias que se mezclan con la señal de interés y dificultan la lectura de
-dicha información y crea las condiciones adecuadas para que la señal sea
-transferida adecuadamente al sistema. Para aproximarse al máximo a este
-objetivo el circuito acondicionador transforma la señal para que se acomode
-a las características de la subsiguiente etapa en el sistema. No obstante,
-la labor del acondicionador no se limita exclusivamente a aplicar una
-transformación sobre la señal, a continuación se enumeran las principales
-acciones que desempeña un circuito de estas características en un sistema
-de medida.
+mencionado proceso de transición.
+
+La función de acondicionamiento puede separarse en esencia en tres
+funciones subordinadas, un circuito acondicionador es responsable de:
+realzar las componentes útiles de la señal; atenuar las señales espurias
+que, al mezclarse con la señal de interés, dificultan la lectura de la
+información contenida en ésta; y, en último lugar pero no por ello menos
+importante, el acondicionador ha de crear un entorno propicio para la
+adecuada transferencia de la señal al sistema.
+
+% Ahora tengo que decir algo así como que estas cosas en la vida real se
+% consiguen haciendo lo de abajo, pero es un poco difícil decirlo con
+% palabras que suenen correctas.
+
+Para satisfacer su cometido en el sistema de medida un circuito
+acondicionador aplica todas o un subconjunto de las técnicas listadas a
+continuación. Para satisfacer su cometido en el sistema de medida un
+circuito acondicionador aplica un conjunto de técnicas de procesado
+(amplificar, filtrar, y truncar una señal son técnicas de procesado;
+adaptar la impedancia de un circuito, más bien no). A continuación se
+listan las principales funciones que un acondicionador desempeña en un
+sistema de medida (redunda con lo anterior de que la función de
+acondicionamiento se separa en tres). En la práctica (en la realidad) estas
+funciones se asocian/están asociadas (relacionadas con)/existe una
+correspondencia entre a un conjunto de tareas/acciones/técnicas.
+
+
+
+En la práctica existe una correspondencia entre las funciones asociadas al
+cometido de un circuito acondicionador y una serie de técnicas de
+procesado de señal y otras prácticas relacionadas con el diseño de
+circuitos electrónicos. Según sea necesario, algunas de estas técnicas
+deben ponerse en práctica.
+
+El concepto que estoy trabajando en este párrafo es éste, en términos más
+sencillos pero más ambiguos y menos precisos. El acondicionador tiene una
+función, la función de acondicionamiento, que no es otra que la de
+conseguir que la máxima información se transmita del sensor al sistema (al
+resto del sistema, sin tener en cuenta sensor y acondicionador —al
+acondicionador realmente únicamente le compete que haya máxima
+transferencia de información al dispositivo estándar que sirve de interfaz
+al sistema—). Para culminar su función/deber/propósito/cometido el
+acondicionador debe perseguir tres objetivos: maximizar las componentes
+útiles de la señal, minimizar las componentes de la señal que entorpecen
+en el proceso de medida, generar unas condiciones propicias para la máxima
+transferencia de información. Para alcanzar estos objetivos un circuito
+acondicionador puede aplicar un conjunto de técnicas de procesado de señal
+y de prácticas relacionadas con la electrónica. Según sea necesario deberá
+hacer uso de unas u otras, las más importantes se listan a continuación.
+(Además resulta que el listado está hecho en tercera persona del singular
+del presente de indicativo por lo que habría que terminar el párrafo
+consecuentemente).
+
+Para aproximarse al máximo a este objetivo el circuito acondicionador
+transforma la señal para que se acomode a las características de la
+subsiguiente etapa en el sistema. No obstante, la labor del acondicionador
+no se limita exclusivamente a aplicar una transformación sobre la señal, a
+continuación se enumeran las principales acciones que desempeña un circuito
+de estas características en un sistema de medida.
 
 \begin{itemize}
 	\item Acota el recorrido de la señal y lo confinar en unos márgenes
