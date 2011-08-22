@@ -276,17 +276,18 @@ durante la segunda parte de la memoria.
 
 \section{Acondicionador de la sección de recepción}\label{sec:rxco}
 
-Generalmente, el núcleo de un sistema de medida —su unidad de
-procesamiento, almacenamiento y/o presentación— está formado por uno o
+Generalmente, el núcleo de un sistema de medida ---su unidad de
+procesamiento, almacenamiento y/o presentación--- está formado por uno o
 varios dispositivos estándar, como son un osciloscopio o un analizador de
 espectros. Los dispositivos de este tipo son eficaces en el ejercicio de
 sus funciones y, dada su versatilidad y precisión, cumplen las expectativas
 de los usuarios en la gran mayoría de situaciones, por lo que son
 ampliamente utilizados. Sus características son bien conocidas, de modo que
 hacer uso de dispositivos estándar simplifica el diseño de un sistema de
-medida. Por lo común, la búsqueda de una alternativa específica a un
-instrumento de ésta índole no está motivada por una necesidad imperiosa si
-no que está promovida por un interés particular en aplicaciones concretas o
+medida. En el caso de optar por el uso de una alternativa a los
+dispositivos estándar en la configuración de un sistema de medida, ello no
+suele estar motivado por una razón de necesidad si no, en la mayoría de los
+casos, por un interés particular en aplicaciones concretas y
 funcionalidades añadidas.
 
 No obstante, la señal que genera un sensor no es adecuada para ser
@@ -297,9 +298,9 @@ designa el circuito electrónico que se interpone entre el sensor y el
 dispositivo estándar y cuya finalidad es adecuar la señal generada por el
 sensor a las características de la unidad de procesado del sistema. Con el
 propósito de que la información se transmita de forma íntegra al
-dispositivo estándar un circuito acondicionador puede ser diseñado, según
-la situación lo requiera, para desempeñar una o varias de las funciones
-listadas a continuación.
+dispositivo estándar que sigue, un circuito acondicionador puede ser
+diseñado y fabricado, según la situación lo requiera, para desempeñar una o
+varias de las funciones listadas a continuación.
 
 \begin{itemize}
 	\item Acotar el recorrido de la señal y confinarlo en unos márgenes
@@ -330,9 +331,9 @@ listadas a continuación.
 \subsection{Diseño del circuito acondicionador}
 
 El acondicionador es un circuito complejo que requiere de un diseño
-elaborado. En definitiva la función que ejerce el circuito acondicionador
-en el sistema de medida es muy concreta: a partir de la señal generada por
-el sensor ofrece una señal que puede ser procesada adecuadamente por un
+elaborado. La función que ejerce el circuito acondicionador en el sistema
+de medida es, en definitiva, muy concreta: a partir de la señal generada
+por el sensor ofrece una señal que puede ser procesada adecuadamente por un
 dispositivo estándar. El diseño del circuito depende, entonces,
 exclusivamente de tres aspectos: el sensor utilizado, el dispositivo
 estándar que sirve de interfaz para con el resto del sistema, y las
@@ -350,16 +351,16 @@ se reparten en el esquema propuesto en este proyecto
 adquisición digital\footnote{Concretamente la tarjeta de adquisición
 realiza las funciones de: conversión de analógico a digital de la señal;
 reordenación y manipulación de los datos digitales; y almacenamiento
-intermedio de las muestras antes de servirlas al ordenador anfitrión
+intermedio de las muestras antes de servirlas al ordenador anfitrión,
 evitando fallos en la transmisión y garantizando que los datos se reciben
-en el mismo orden en el que se envían. El \cref{chap:acquisition}
-profundiza más en los detalles sobre el funcionamiento de la tarjeta
-\kpci{}.} y el ordenador, que asimismo gobierna el funcionamiento del
-sistema. Ambas entidades pueden ser consideradas dispositivos estándar de
-acuerdo a la definición dada en la introducción a esta sección. De ambos
-dispositivos, configurados en cascada, el acondicionador interactúa de
-manera directa sólo con la tarjeta de adquisición. Este hecho es relevante
-de cara al diseño del circuito pues significa que únicamente depende de las
+en el mismo orden en el que se envían. En el \cref{chap:acquisition} se
+profundiza en la descripción del funcionamiento de la tarjeta \kpci{}.} y
+el ordenador, que asimismo gobierna el funcionamiento del sistema. Ambas
+entidades pueden ser consideradas dispositivos estándar de acuerdo a la
+definición dada en la introducción a esta sección. De ambos dispositivos,
+configurados en cascada, el acondicionador interactúa de manera directa
+sólo con la tarjeta de adquisición. Este hecho es relevante de cara al
+diseño del circuito pues significa que únicamente depende de las
 características de la tarjeta y no de las del ordenador. Al interponerse la
 tarjeta de adquisición entre el acondicionador y el ordenador, realizando
 gran parte del procesado de la señal, la posible repercusión que el diseño
@@ -426,6 +427,96 @@ integran, puede verse en la \cref{fig:submedium}).
 % endus que se desea realizar)\dots
 
 %\subsection{Circuito propuesto}
+
+\subsection{Diseño propuesto}
+
+La figura (??) a continuación muestra una representación esquemática del
+circuito propuesto para el acondicionamiento del sensor de ultrasonidos.
+Está compuesto por una única etapa basada en un amplificador de
+instrumentación, el \sig{ina155} de Texas Instruments. El \sig{ina155} es
+un amplificador de tecnología \sig{cmos}, bajo coste y bajo consumo, capaz
+de funcionar polarizado con una única fuente de alimentación o batería (a
+partir de aquí se utilizarán indistintamente los términos fuente de
+alimentación o batería para referirse a la referencia de tensión utilizada
+para polarizar los circuitos acondicionadores), presenta una ganancia
+máxima de 50 V/V que se mantiene hasta los 40 kHz (ganancias inferiores se
+mantienen por encima de este margen de frecuencias).
+
+Las ventajas de utilizar un amplificador de instrumentación son varias, de
+las que destacan dos, que al estar íntimamente relacionadas pueden
+considerarse como una sola: la configuración del amplificador de
+instrumentación permite conectar el sensor de ultrasonidos a ambas entradas
+como si se tratase de una fuente o referencia de tensión flotante, es
+decir, sin necesidad de una tercera referencia de tensión; al conectar el
+transductor de esta forma al amplificador el alto rechazo del modo común de
+éste garantiza que cualquier componente en modo común generada por el
+sensor piezoeléctrico sea en su mayor parte atenuada. Destaca también la
+alta impedancia de entrada vista en ambos puertos de entrada del
+amplificador, además, la configuración del \sig{ina155} ---al igual que
+ocurre con otros amplificadores de instrumentación--- impide que el sensor
+se vea involucrado en la red o redes de realimentación presentes en el
+circuito, lo cual simplifica en gran medida la predicción de la señal
+observada a la salida del integrado.
+
+Por otra parte, el hecho de utilizar un amplificador de bajo
+consumo\footnote{Un amplificador es considerado de bajo consumo si la
+corriente que consume de la batería en estado de reposo (esto es, cuando la
+entrada se cortocircuita a tierra) es muy pequeña. El valor típico de
+consumo de corriente en reposo del \sig{ina155} es de 1,7 mA.} y capaz de
+funcionar polarizado con una única batería (el \sig{ina155} está
+especialmente diseñado para trabajar en estas condiciones) presenta la
+ventaja de un consumo reducido que posibilita el uso de la aplicación en
+pruebas de campo, bastaría con alimentar el circuito mediante una batería
+(en este caso concreto, el circuito propuesto puede funcionar
+ininterrumpidamente durante un espacio de tiempo de aproximadamente unas
+cinco horas y media con una pila de petaca alcalina de 9 V).
+
+La elección del \sig{ina155} se ha hecho teniendo en cuenta que la
+respuesta en frecuencia del amplificador es plana en torno a la frecuencia
+de resonancia del sensor.
+% únicamente introduce un desfase de unos 45º con respecto a la señal de
+% entrada (a esa frecuencia). Además, el hecho de que la ganancia decaiga a
+% partir de los 40 kHz resulta asimismo conveniente, pues ayuda a la
+% atenuación de los armónicos indeseados de la señal.
+
+% ATENCIÓN TODO AQUÍ
+%
+% ATENCIÓN, LA GANANCIA DEBE SER PLANA MÁS ALLÁ DE LOS 40 kHz
+%
+% De lo contrario se introduce una distorsión en la señal que será difícil
+% compensar después en MATLAB. Si sólo me interesase saber si el pulso
+% llega o no y cuando, como ocurre con un sensor de distancia, no me
+% interesaría más que la frecuencia de resonancia del sensor donde se
+% concentra la mayor parte de la energía de la señal. Pero no es así, en un
+% ENDUS por transmisión he de evaluar la distorsión que introduce el medio
+% en la señal acústica, por eso no debo despreciar la señal, al menos no
+% antes del segundo armónico (recuerda que el espectro de la señal se
+% corresponde con una señal gaussiana aproximadamente, cuyo ancho de banda
+% me es desconocido pero que calculo estará en torno a los 20 kHz).
+%
+% La respuesta plana de la ganancia garantiza que no se introduce
+% distorsión en la señal. La ganancia se mantiene plana si se mantiene por
+% debajo de un umbral de unos 30 V/V aproximadamente. Lo que puede resultar
+% insuficiente, para determinar si es así tengo que realizar el estudio
+% pertinente, pero en cualquier caso puedo resolver el problema si utilizo
+% un segundo amplificador (me refiero a un amplificador operacional) en
+% cascada. Sería conveniente que la ganancia de este amplificador fuese
+% variable ---puede conseguirse una ganancia variable si conecto un
+% potenciómetro en la red de realimentación negativa del operacional, una
+% configuración arriesgada pero sencilla consiste en conectar un terminal
+% del potenciómetro a la salida del operacional, otro a tierra
+% (configuración no inversora) y el terminal común a la entrada negativa
+% del operacional--- así me libraría de posibles problemas ocasionados por
+% trabajar en distintas condiciones (gruesos de muestra muy variados,
+% muestras menos dispersivas,\dots).
+
+% El desfase de 45º se debe al condensador que el sensor introduce en serie
+% con el generador de señal (supuestamente, utilizando el modelo que he
+% inventado), y no al amplificador de instrumentación. Atribuirlo al
+% amplificador de instrumentación resulta incorrecto.
+
+
+\subsubsection{Funcionamiento del circuito}
 
 
 \section{Acondicionador de la sección de emisión}
