@@ -228,6 +228,87 @@ enddef;
 
 
 % ==================================================================
+def switchPI (expr escala)=
+begingroup
+save n,f,r;
+pen n[]; picture f; path r[];
+interim bboxmargin := 0;
+n0 = pencircle scaled 0.15u;
+n1 = pencircle scaled 0.25u;
+n2 = pencircle scaled 0.35u;
+n3 = pencircle scaled 0.5u;
+f = nullpicture;
+
+r0 = fullcircle scaled 1/4;
+r1 = (-1/2, -1/8)--(1/2, -1/8);
+r2 = (0, -1/8)--(0, 3/8);
+addto f doublepath r1 scaled escala withpen n2;
+addto f doublepath r2 scaled escala withpen n2;
+addto f contour r0 shifted (-1/2, 1/40) scaled escala
+    withpen n0 withcolor white;
+addto f contour r0 shifted (1/2, 1/40) scaled escala
+    withpen n0 withcolor white;
+addto f doublepath r0 shifted (-1/2, 1/40) scaled escala withpen n2;
+addto f doublepath r0 shifted (1/2, 1/40) scaled escala withpen n2;
+
+(f)
+endgroup
+
+enddef;
+% ==================================================================
+
+
+
+% ==================================================================
+def tlc (expr escala)=
+begingroup
+save i,n,f,r;
+numeric i; pen n[]; picture f; path r[];
+interim bboxmargin := 0;
+n0 = pencircle scaled 0.15u;
+n1 = pencircle scaled 0.25u;
+n2 = pencircle scaled 0.35u;
+n3 = pencircle scaled 0.5u;
+f = nullpicture;
+
+r0 = (-3 - 1/3, -3.5)--(3 + 1/3, -3.5)--(3 + 1/3, 3.5)--
+    (-3 - 1/3, 3.5)--cycle;
+addto f contour r0 scaled escala withpen n0 withcolor white;
+r1 = (0, 1/2)--(1/3, 1/2)--(1/3, -1/2)--(0, -1/2)--cycle;
+for i = -2, -2/3, 2/3, 2 :
+    addto f contour r1 shifted (3 + 1/3, i) scaled escala
+	withpen n0 withcolor white;
+    addto f contour r1 xscaled -1 shifted (-3 - 1/3, i)
+	scaled escala withpen n0 withcolor white;
+    addto f doublepath r1 shifted (3 + 1/3, i) scaled escala
+	withpen n1;
+    addto f doublepath r1 xscaled -1 shifted (-3 - 1/3, i)
+	scaled escala withpen n1;
+endfor
+r2 = halfcircle scaled (1 + 2/3) yscaled -1;
+r3 = (1/2 + 1/3, 1)--r2--(-1/2 - 1/3, 1);
+addto f doublepath r3 shifted (0, 2.5) scaled escala withpen n1;
+addto f doublepath r0 scaled escala withpen n2;
+addto f also thelabel(btex 1 etex, escala * (-2.5, 2));
+addto f also thelabel(btex 2 etex, escala * (-2.5, 2/3));
+addto f also thelabel(btex 3 etex, escala * (-2.5, -2/3));
+addto f also thelabel(btex 4 etex, escala * (-2.5, -2));
+addto f also thelabel(btex 5 etex, escala * (2.5, -2));
+addto f also thelabel(btex 6 etex, escala * (2.5, -2/3));
+addto f also thelabel(btex 7 etex, escala * (2.5, 2/3));
+addto f also thelabel(btex 8 etex, escala * (2.5, 2));
+addto f also thelabel(btex \textsc{tlc555} etex, (0, 0)) rotated 90
+    shifted (0, -escala);
+
+(f)
+endgroup
+
+enddef;
+% ==================================================================
+
+
+
+% ==================================================================
 def pin (expr escala)=
 begingroup
 save c,n,f,r;

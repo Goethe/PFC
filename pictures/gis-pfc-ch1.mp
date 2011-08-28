@@ -649,7 +649,7 @@ beginfig(6);
 ahlength := 1.25u;
 ahangle := 30;
 numeric a[], i, j, k, w, x[], y[];
-picture d[], amp, arh, cap, gnd, pzt, r;
+picture d[], amp, arh, cap, gnd, pzt, r, switch;
 pen l[];
 path p[], q[][], dot;
 transform t[][];
@@ -680,6 +680,7 @@ dot = fullcircle scaled (u);
 gnd := image( draw ground scaled 2w withpen l2; );
 pzt := image( draw loudspeaker scaled 2w withpen l2; );
 r := image( draw resistor scaled 2w rotated 90 withpen l2; );
+switch = switchPI(2w);
 
 endfig;
 % ==================================================================
