@@ -148,9 +148,9 @@ a04 = 6v + 5u/2;
 % switch, diferencias de altura entre terminales en T
 z00 = (8u, 0) rotated 20;
 % switches
-d0 = conmutadorA(u, (0, 0));
-d1 = conmutadorC(u, (0, 0));
-d2 = conmutadorT(u, (0, 0));
+d0 = conmutadorA (u);	% El parámetro de la macro determina el
+d1 = conmutadorC (u);	% factor de escala.
+d2 = conmutadorT (u);
 p0 = bbox d2;
 begingroup
 	interim bboxmargin := 0; p1 = bbox d0 scaled 19/20;
@@ -329,7 +329,8 @@ z04 = (a06, 0) rotated 330;
 
 % ··································································
 % conector
-draw conectorh(a00, z00);
+d1 = conectorh(a00);
+draw d1 shifted z00;
 
 % ··································································
 % posiciones
@@ -423,7 +424,8 @@ z04 = (a06, 0) rotated 330;
 
 % ··································································
 % conector
-draw conectorh(a00, z00);
+d1 = conectorh(a00);
+draw d1 shifted z00;
 
 % ··································································
 % posiciones

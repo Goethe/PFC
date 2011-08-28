@@ -31,7 +31,7 @@ enddef;
 
 
 % ==================================================================
-def conmutadorC (expr escala, desplazamiento)=
+def conmutadorC (expr escala)=
 begingroup
 save c,n,f,r,x,y;
 numeric c[],x[],y[]; pen n[]; picture f[]; path r[];
@@ -52,16 +52,12 @@ z00 = (0, 0);		z01 = (c02, 0);
 z02 = halfcircle scaled 2c02 intersectionpoint r0 shifted z01;
 c04 = angle z02;
 r1 = z00--(c03, 0);
-addto f0 doublepath r1 rotated c04 scaled escala %
-	shifted desplazamiento withpen n2;
-addto f0 contour r0 scaled escala shifted desplazamiento %
-	withcolor white withpen n0;
-addto f0 doublepath r0 scaled escala shifted desplazamiento %
-	withpen n1;
-addto f0 contour r0 shifted z01 scaled escala %
-	shifted desplazamiento withcolor white withpen n0;
-addto f0 doublepath r0 shifted z01 scaled escala %
-	shifted desplazamiento withpen n1;
+addto f0 doublepath r1 rotated c04 scaled escala withpen n2;
+addto f0 contour r0 scaled escala withcolor white withpen n0;
+addto f0 doublepath r0 scaled escala withpen n1;
+addto f0 contour r0 shifted z01 scaled escala withcolor white
+	withpen n0;
+addto f0 doublepath r0 shifted z01 scaled escala withpen n1;
 
 % ··································································
 % cierro la definición
@@ -74,7 +70,7 @@ enddef;
 
 
 % ==================================================================
-def conmutadorA (expr escala, desplazamiento)=
+def conmutadorA (expr escala)=
 begingroup
 save c,n,f,r,x,y;
 numeric c[],x[],y[]; pen n[]; picture f[]; path r[];
@@ -94,16 +90,12 @@ r0 = fullcircle scaled c00;
 z00 = (0, 0);		z01 = (c02, 0);
 c04 = 30;
 r1 = z00--(c03, 0);
-addto f0 doublepath r1 rotated c04 scaled escala %
-	shifted desplazamiento withpen n2;
-addto f0 contour r0 scaled escala shifted desplazamiento %
-	withcolor white withpen n0;
-addto f0 doublepath r0 scaled escala shifted desplazamiento %
-	withpen n1;
-addto f0 contour r0 shifted z01 scaled escala %
-	shifted desplazamiento withcolor white withpen n0;
-addto f0 doublepath r0 shifted z01 scaled escala %
-	shifted desplazamiento withpen n1;
+addto f0 doublepath r1 rotated c04 scaled escala withpen n2;
+addto f0 contour r0 scaled escala withcolor white withpen n0;
+addto f0 doublepath r0 scaled escala withpen n1;
+addto f0 contour r0 shifted z01 scaled escala withcolor white
+	withpen n0;
+addto f0 doublepath r0 shifted z01 scaled escala withpen n1;
 
 % ··································································
 % cierro la definición
@@ -116,7 +108,7 @@ enddef;
 
 
 % ==================================================================
-def conmutadorT (expr escala, desplazamiento)=
+def conmutadorT (expr escala)=
 begingroup
 save c,n,f,r,x,y;
 numeric c[],x[],y[]; pen n[]; picture f[]; path r[];
@@ -135,24 +127,20 @@ c02 = c01 + 2c00;		c03 = c02 + c00/2;
 r0 = fullcircle scaled c00;
 z00 = (0, 0);			c04 = 20;
 z01 = (c02, 0) rotated c04;	z02 = (0, 2c02*sind c04);
-z03 = fullcircle scaled 2c02 intersectionpoint %
-	halfcircle scaled -c00 shifted z01;
+z03 = fullcircle scaled 2c02 intersectionpoint halfcircle
+	scaled -c00 shifted z01;
 c05 = angle z03;
 r1 = z00--(c03, 0);
-addto f0 doublepath r1 rotated c05 scaled -1 shifted z01 %
-	scaled escala shifted desplazamiento withpen n2;
-addto f0 contour r0 scaled escala shifted desplazamiento %
-	withcolor white withpen n0;
-addto f0 doublepath r0 scaled escala shifted desplazamiento %
-	withpen n1;
-addto f0 contour r0 shifted z01 scaled escala %
-	shifted desplazamiento withcolor white withpen n0;
-addto f0 doublepath r0 shifted z01 scaled escala %
-	shifted desplazamiento withpen n1;
-addto f0 contour r0 shifted z02 scaled escala %
-	shifted desplazamiento withcolor white withpen n0;
-addto f0 doublepath r0 shifted z02 scaled escala %
-	shifted desplazamiento withpen n1;
+addto f0 doublepath r1 rotated c05 scaled -1 shifted z01
+	scaled escala withpen n2;
+addto f0 contour r0 scaled escala withcolor white withpen n0;
+addto f0 doublepath r0 scaled escala withpen n1;
+addto f0 contour r0 shifted z01 scaled escala withcolor white
+	withpen n0;
+addto f0 doublepath r0 shifted z01 scaled escala withpen n1;
+addto f0 contour r0 shifted z02 scaled escala withcolor white
+	withpen n0;
+addto f0 doublepath r0 shifted z02 scaled escala withpen n1;
 
 % ··································································
 % cierro la definición
@@ -165,7 +153,7 @@ enddef;
 
 
 % ==================================================================
-def pin (expr escala, desplazamiento)=
+def pin (expr escala)=
 begingroup
 save c,n,f,r;
 numeric c[]; pen n[]; picture f[]; path r[];
@@ -191,16 +179,11 @@ r7 = (-c1/2, -c2/2)--(c1/2, -c2/2){right}..{up}(c2/2, -c1/2)-- %
 	(c2/2, c1/2){up}..{left}(c1/2, c2/2)-- %
 	(-c1/2, c2/2){left}..{down}(-c2/2, c1/2)-- %
 	(-c2/2, -c1/2){down}..{right}cycle;
-addto f0 contour r7 scaled escala shifted desplazamiento %
-	withpen n0;
-addto f0 contour r3 scaled escala shifted desplazamiento %
-	withpen n0 withcolor white;
-addto f0 contour r4 scaled escala shifted desplazamiento %
-	withpen n0;
-addto f0 doublepath r5 scaled escala shifted desplazamiento %
-	withpen n2 withcolor white;
-addto f0 doublepath r6 scaled escala shifted desplazamiento %
-	withpen n2 withcolor white;
+addto f0 contour r7 scaled escala withpen n0;
+addto f0 contour r3 scaled escala withpen n0 withcolor white;
+addto f0 contour r4 scaled escala withpen n0;
+addto f0 doublepath r5 scaled escala withpen n2 withcolor white;
+addto f0 doublepath r6 scaled escala withpen n2 withcolor white;
 
 % ··································································
 % cierro la definición
@@ -213,7 +196,7 @@ enddef;
 
 
 % ==================================================================
-def conectorh (expr escala, desplazamiento)=
+def conectorh (expr escala)=
 begingroup
 save c,d,n,f,r;
 numeric c[], d[][]; pen n[]; picture f[]; path r[];
@@ -242,93 +225,55 @@ r0 = (-c03/2, -c05/2){down}.. %
 	{dir 150}z03 shifted (c03/2, c05/2)-- %
 	z04 shifted (-c03/2, c05/2 + c06){dir 150}.. %
 	(-c03/2, c05/2)--cycle;
-addto f0 doublepath r0 rotated 90 shifted desplazamiento withpen n2;
+addto f0 doublepath r0 rotated 90 withpen n2;
 
 % ··································································
 % pines y posiciones
-f1 = pin(c00, z00);
+f1 = pin(c00);
 for i = 0 upto 17 :
 	d[0][i] =  c01/2 + i*c01 - c05/2;
-	addto f0 also f1 shifted (d[0][i], -c02/2) %
-		shifted desplazamiento;
-	addto f0 also f1 shifted (d[0][i], c02/2) %
-		shifted desplazamiento;
+	addto f0 also f1 shifted (d[0][i], -c02/2);
+	addto f0 also f1 shifted (d[0][i], c02/2);
 endfor
 
 % ··································································
 % etiquetas internas
-label.bot(btex 1 etex, (d[0][0], -c00 - c02/2) %
-	shifted desplazamiento);
-label.bot(btex 2 etex, (d[0][1], -c00 - c02/2) %
-	shifted desplazamiento);
-label.bot(btex 3 etex, (d[0][2], -c00 - c02/2) %
-	shifted desplazamiento);
-label.bot(btex 4 etex, (d[0][3], -c00 - c02/2) %
-	shifted desplazamiento);
-label.bot(btex 5 etex, (d[0][4], -c00 - c02/2) %
-	shifted desplazamiento);
-label.bot(btex 6 etex, (d[0][5], -c00 - c02/2) %
-	shifted desplazamiento);
-label.bot(btex 7 etex, (d[0][6], -c00 - c02/2) %
-	shifted desplazamiento);
-label.bot(btex 8 etex, (d[0][7], -c00 - c02/2) %
-	shifted desplazamiento);
-label.bot(btex 9 etex, (d[0][8], -c00 - c02/2) %
-	shifted desplazamiento);
-label.bot(btex 10 etex, (d[0][9], -c00 - c02/2) %
-	shifted desplazamiento);
-label.bot(btex 11 etex, (d[0][10], -c00 - c02/2) %
-	shifted desplazamiento);
-label.bot(btex 12 etex, (d[0][11], -c00 - c02/2) %
-	shifted desplazamiento);
-label.bot(btex 13 etex, (d[0][12], -c00 - c02/2) %
-	shifted desplazamiento);
-label.bot(btex 14 etex, (d[0][13], -c00 - c02/2) %
-	shifted desplazamiento);
-label.bot(btex 15 etex, (d[0][14], -c00 - c02/2) %
-	shifted desplazamiento);
-label.bot(btex 16 etex, (d[0][15], -c00 - c02/2) %
-	shifted desplazamiento);
-label.bot(btex 17 etex, (d[0][16], -c00 - c02/2) %
-	shifted desplazamiento);
-label.bot(btex 18 etex, (d[0][17], -c00 - c02/2) %
-	shifted desplazamiento);
-label.top(btex 19 etex, (d[0][0], c00 + c02/2) %
-	shifted desplazamiento);
-label.top(btex 20 etex, (d[0][1], c00 + c02/2) %
-	shifted desplazamiento);
-label.top(btex 21 etex, (d[0][2], c00 + c02/2) %
-	shifted desplazamiento);
-label.top(btex 22 etex, (d[0][3], c00 + c02/2) %
-	shifted desplazamiento);
-label.top(btex 23 etex, (d[0][4], c00 + c02/2) %
-	shifted desplazamiento);
-label.top(btex 24 etex, (d[0][5], c00 + c02/2) %
-	shifted desplazamiento);
-label.top(btex 25 etex, (d[0][6], c00 + c02/2) %
-	shifted desplazamiento);
-label.top(btex 26 etex, (d[0][7], c00 + c02/2) %
-	shifted desplazamiento);
-label.top(btex 27 etex, (d[0][8], c00 + c02/2) %
-	shifted desplazamiento);
-label.top(btex 28 etex, (d[0][9], c00 + c02/2) %
-	shifted desplazamiento);
-label.top(btex 29 etex, (d[0][10], c00 + c02/2) %
-	shifted desplazamiento);
-label.top(btex 30 etex, (d[0][11], c00 + c02/2) %
-	shifted desplazamiento);
-label.top(btex 31 etex, (d[0][12], c00 + c02/2) %
-	shifted desplazamiento);
-label.top(btex 32 etex, (d[0][13], c00 + c02/2) %
-	shifted desplazamiento);
-label.top(btex 33 etex, (d[0][14], c00 + c02/2) %
-	shifted desplazamiento);
-label.top(btex 34 etex, (d[0][15], c00 + c02/2) %
-	shifted desplazamiento);
-label.top(btex 35 etex, (d[0][16], c00 + c02/2) %
-	shifted desplazamiento);
-label.top(btex 36 etex, (d[0][17], c00 + c02/2) %
-	shifted desplazamiento);
+label.bot(btex 1 etex, (d[0][0], -c00 - c02/2));
+label.bot(btex 2 etex, (d[0][1], -c00 - c02/2));
+label.bot(btex 3 etex, (d[0][2], -c00 - c02/2));
+label.bot(btex 4 etex, (d[0][3], -c00 - c02/2));
+label.bot(btex 5 etex, (d[0][4], -c00 - c02/2));
+label.bot(btex 6 etex, (d[0][5], -c00 - c02/2));
+label.bot(btex 7 etex, (d[0][6], -c00 - c02/2));
+label.bot(btex 8 etex, (d[0][7], -c00 - c02/2));
+label.bot(btex 9 etex, (d[0][8], -c00 - c02/2));
+label.bot(btex 10 etex, (d[0][9], -c00 - c02/2));
+label.bot(btex 11 etex, (d[0][10], -c00 - c02/2));
+label.bot(btex 12 etex, (d[0][11], -c00 - c02/2));
+label.bot(btex 13 etex, (d[0][12], -c00 - c02/2));
+label.bot(btex 14 etex, (d[0][13], -c00 - c02/2));
+label.bot(btex 15 etex, (d[0][14], -c00 - c02/2));
+label.bot(btex 16 etex, (d[0][15], -c00 - c02/2));
+label.bot(btex 17 etex, (d[0][16], -c00 - c02/2));
+label.bot(btex 18 etex, (d[0][17], -c00 - c02/2));
+label.top(btex 19 etex, (d[0][0], c00 + c02/2));
+label.top(btex 20 etex, (d[0][1], c00 + c02/2));
+label.top(btex 21 etex, (d[0][2], c00 + c02/2));
+label.top(btex 22 etex, (d[0][3], c00 + c02/2));
+label.top(btex 23 etex, (d[0][4], c00 + c02/2));
+label.top(btex 24 etex, (d[0][5], c00 + c02/2));
+label.top(btex 25 etex, (d[0][6], c00 + c02/2));
+label.top(btex 26 etex, (d[0][7], c00 + c02/2));
+label.top(btex 27 etex, (d[0][8], c00 + c02/2));
+label.top(btex 28 etex, (d[0][9], c00 + c02/2));
+label.top(btex 29 etex, (d[0][10], c00 + c02/2));
+label.top(btex 30 etex, (d[0][11], c00 + c02/2));
+label.top(btex 31 etex, (d[0][12], c00 + c02/2));
+label.top(btex 32 etex, (d[0][13], c00 + c02/2));
+label.top(btex 33 etex, (d[0][14], c00 + c02/2));
+label.top(btex 34 etex, (d[0][15], c00 + c02/2));
+label.top(btex 35 etex, (d[0][16], c00 + c02/2));
+label.top(btex 36 etex, (d[0][17], c00 + c02/2));
 
 % ··································································
 % cierro la definición
@@ -341,7 +286,7 @@ enddef;
 
 
 % ==================================================================
-def conectorv (expr escala, desplazamiento)=
+def conectorv (expr escala)=
 begingroup
 save c,d,n,f,r;
 numeric c[], d[][]; pen n[]; picture f[]; path r[];
@@ -370,93 +315,55 @@ r0 = (-c03/2, -c05/2){down}.. %
 	{dir 150}z03 shifted (c03/2, c05/2)-- %
 	z04 shifted (-c03/2, c05/2 + c06){dir 150}.. %
 	(-c03/2, c05/2)--cycle;
-addto f0 doublepath r0 shifted desplazamiento withpen n2;
+addto f0 doublepath r0 withpen n2;
 
 % ··································································
 % pines y posiciones
 f1 = pin(c00, z00);
 for i = 0 upto 17 :
 	d[0][i] = c05/2 - c01/2 - i*c01;
-	addto f0 also f1 shifted (-c02/2, d[0][i]) %
-		shifted desplazamiento;
-	addto f0 also f1 shifted (c02/2, d[0][i]) %
-		shifted desplazamiento;
+	addto f0 also f1 shifted (-c02/2, d[0][i]);
+	addto f0 also f1 shifted (c02/2, d[0][i]);
 endfor
 
 % ··································································
 % etiquetas internas
-label.lft(btex 1 etex, (-c00 - c02/2, d[0][0]) %
-	shifted desplazamiento);
-label.lft(btex 2 etex, (-c00 - c02/2, d[0][1]) %
-	shifted desplazamiento);
-label.lft(btex 3 etex, (-c00 - c02/2, d[0][2]) %
-	shifted desplazamiento);
-label.lft(btex 4 etex, (-c00 - c02/2, d[0][3]) %
-	shifted desplazamiento);
-label.lft(btex 5 etex, (-c00 - c02/2, d[0][4]) %
-	shifted desplazamiento);
-label.lft(btex 6 etex, (-c00 - c02/2, d[0][5]) %
-	shifted desplazamiento);
-label.lft(btex 7 etex, (-c00 - c02/2, d[0][6]) %
-	shifted desplazamiento);
-label.lft(btex 8 etex, (-c00 - c02/2, d[0][7]) %
-	shifted desplazamiento);
-label.lft(btex 9 etex, (-c00 - c02/2, d[0][8]) %
-	shifted desplazamiento);
-label.lft(btex 10 etex, (-c00 - c02/2, d[0][9]) %
-	shifted desplazamiento);
-label.lft(btex 11 etex, (-c00 - c02/2, d[0][10]) %
-	shifted desplazamiento);
-label.lft(btex 12 etex, (-c00 - c02/2, d[0][11]) %
-	shifted desplazamiento);
-label.lft(btex 13 etex, (-c00 - c02/2, d[0][12]) %
-	shifted desplazamiento);
-label.lft(btex 14 etex, (-c00 - c02/2, d[0][13]) %
-	shifted desplazamiento);
-label.lft(btex 15 etex, (-c00 - c02/2, d[0][14]) %
-	shifted desplazamiento);
-label.lft(btex 16 etex, (-c00 - c02/2, d[0][15]) %
-	shifted desplazamiento);
-label.lft(btex 17 etex, (-c00 - c02/2, d[0][16]) %
-	shifted desplazamiento);
-label.lft(btex 18 etex, (-c00 - c02/2, d[0][17]) %
-	shifted desplazamiento);
-label.rt(btex 19 etex, (c00 + c02/2, d[0][0]) %
-	shifted desplazamiento);
-label.rt(btex 20 etex, (c00 + c02/2, d[0][1]) %
-	shifted desplazamiento);
-label.rt(btex 21 etex, (c00 + c02/2, d[0][2]) %
-	shifted desplazamiento);
-label.rt(btex 22 etex, (c00 + c02/2, d[0][3]) %
-	shifted desplazamiento);
-label.rt(btex 23 etex, (c00 + c02/2, d[0][4]) %
-	shifted desplazamiento);
-label.rt(btex 24 etex, (c00 + c02/2, d[0][5]) %
-	shifted desplazamiento);
-label.rt(btex 25 etex, (c00 + c02/2, d[0][6]) %
-	shifted desplazamiento);
-label.rt(btex 26 etex, (c00 + c02/2, d[0][7]) %
-	shifted desplazamiento);
-label.rt(btex 27 etex, (c00 + c02/2, d[0][8]) %
-	shifted desplazamiento);
-label.rt(btex 28 etex, (c00 + c02/2, d[0][9]) %
-	shifted desplazamiento);
-label.rt(btex 29 etex, (c00 + c02/2, d[0][10]) %
-	shifted desplazamiento);
-label.rt(btex 30 etex, (c00 + c02/2, d[0][11]) %
-	shifted desplazamiento);
-label.rt(btex 31 etex, (c00 + c02/2, d[0][12]) %
-	shifted desplazamiento);
-label.rt(btex 32 etex, (c00 + c02/2, d[0][13]) %
-	shifted desplazamiento);
-label.rt(btex 33 etex, (c00 + c02/2, d[0][14]) %
-	shifted desplazamiento);
-label.rt(btex 34 etex, (c00 + c02/2, d[0][15]) %
-	shifted desplazamiento);
-label.rt(btex 35 etex, (c00 + c02/2, d[0][16]) %
-	shifted desplazamiento);
-label.rt(btex 36 etex, (c00 + c02/2, d[0][17]) %
-	shifted desplazamiento);
+label.lft(btex 1 etex, (-c00 - c02/2, d[0][0]));
+label.lft(btex 2 etex, (-c00 - c02/2, d[0][1]));
+label.lft(btex 3 etex, (-c00 - c02/2, d[0][2]));
+label.lft(btex 4 etex, (-c00 - c02/2, d[0][3]));
+label.lft(btex 5 etex, (-c00 - c02/2, d[0][4]));
+label.lft(btex 6 etex, (-c00 - c02/2, d[0][5]));
+label.lft(btex 7 etex, (-c00 - c02/2, d[0][6]));
+label.lft(btex 8 etex, (-c00 - c02/2, d[0][7]));
+label.lft(btex 9 etex, (-c00 - c02/2, d[0][8]));
+label.lft(btex 10 etex, (-c00 - c02/2, d[0][9]));
+label.lft(btex 11 etex, (-c00 - c02/2, d[0][10]));
+label.lft(btex 12 etex, (-c00 - c02/2, d[0][11]));
+label.lft(btex 13 etex, (-c00 - c02/2, d[0][12]));
+label.lft(btex 14 etex, (-c00 - c02/2, d[0][13]));
+label.lft(btex 15 etex, (-c00 - c02/2, d[0][14]));
+label.lft(btex 16 etex, (-c00 - c02/2, d[0][15]));
+label.lft(btex 17 etex, (-c00 - c02/2, d[0][16]));
+label.lft(btex 18 etex, (-c00 - c02/2, d[0][17]));
+label.rt(btex 19 etex, (c00 + c02/2, d[0][0]));
+label.rt(btex 20 etex, (c00 + c02/2, d[0][1]));
+label.rt(btex 21 etex, (c00 + c02/2, d[0][2]));
+label.rt(btex 22 etex, (c00 + c02/2, d[0][3]));
+label.rt(btex 23 etex, (c00 + c02/2, d[0][4]));
+label.rt(btex 24 etex, (c00 + c02/2, d[0][5]));
+label.rt(btex 25 etex, (c00 + c02/2, d[0][6]));
+label.rt(btex 26 etex, (c00 + c02/2, d[0][7]));
+label.rt(btex 27 etex, (c00 + c02/2, d[0][8]));
+label.rt(btex 28 etex, (c00 + c02/2, d[0][9]));
+label.rt(btex 29 etex, (c00 + c02/2, d[0][10]));
+label.rt(btex 30 etex, (c00 + c02/2, d[0][11]));
+label.rt(btex 31 etex, (c00 + c02/2, d[0][12]));
+label.rt(btex 32 etex, (c00 + c02/2, d[0][13]));
+label.rt(btex 33 etex, (c00 + c02/2, d[0][14]));
+label.rt(btex 34 etex, (c00 + c02/2, d[0][15]));
+label.rt(btex 35 etex, (c00 + c02/2, d[0][16]));
+label.rt(btex 36 etex, (c00 + c02/2, d[0][17]));
 
 % ··································································
 % cierro la definición
@@ -622,7 +529,7 @@ enddef;
 
 
 % ==================================================================
-def transductor(expr escala, desplazamiento) =
+def transductor(expr escala) =
 begingroup
 save c,n,f,r,x,y;
 numeric c[],x[],y[]; pen n[]; picture f[]; path r[];
@@ -669,14 +576,14 @@ z11 = (x10 + c02, -c06/2);		z17 = (x11, -y11);
 z12 = (x11 + c07/12, -9c06/20);		z18 = (x12, -y12);
 % pista No 1: c07/6 = 2c07/12, -3c06/8 = -15c06/40
 z13 = (x11 + c07/6, -3c06/8);	z19 = (x13, -y13);
-r4 = z08{down}..z09..{dir 340}z10--z11--z12{up}.. %
-		{up}z18--z17--z16{dir 200}..z15..z14{down}--cycle;
+r4 = z08{down}..z09..{dir 340}z10--z11--z12{up}..{up}z18--z17--%
+    z16{dir 200}..z15..z14{down}--cycle;
 r5 = z12..z13--z19..z18--cycle;
 
 % ··································································
 % tornillo
 % dimensiones e inclinación de las barras
-c08 = 8u;	c09 = 75;
+c08 = 8u;			c09 = 75;
 r6 = (-c08/2, 0)--(c08/2, 0);	r6 := r6 rotated c09;
 % dimensiones del tornillo (alto, ancho, separación entre barras y
 % offset)
@@ -709,11 +616,11 @@ addto f2 doublepath r7;
 addto f3 contour r5; % withcolor 0.6white;
 addto f3 contour r4 withcolor white;
 addto f4 doublepath r4;
-addto f6 also f5 scaled escala shifted desplazamiento withpen n0;
-addto f6 also f2 scaled escala shifted desplazamiento withpen n1;
-addto f6 also f3 scaled escala shifted desplazamiento withpen n0;
-addto f6 also f0 scaled escala shifted desplazamiento withpen n0;
-addto f6 also f4 scaled escala shifted desplazamiento withpen n1;
+addto f6 also f5 scaled escala withpen n0;
+addto f6 also f2 scaled escala withpen n1;
+addto f6 also f3 scaled escala withpen n0;
+addto f6 also f0 scaled escala withpen n0;
+addto f6 also f4 scaled escala withpen n1;
 (f6)
 endgroup
 

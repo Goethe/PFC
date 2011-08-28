@@ -138,7 +138,7 @@ pickup l1;
 % ··································································
 % temporizador
 % ancho y alto
-% a00 = wi/5 = 24u; a02 = 45u; a02/a03 = 15/2; a02/a04 = 15/16;
+% a00 = wi/5 = 24u; a02 = 51u; a02/a03 = 102/11; a02/a04 = 3;
 a00 = wi/5;		a01 = 3u/2;		a02 = 2a00 + 2a01;
 % a03 es el patrón de la cuadrícula
 a03 = 11u/2;		a04 = 8a03;		a05 = a01 - a02/2;
@@ -478,7 +478,7 @@ z05 = 1/2[urcorner d0, lrcorner d0];
 z06 = 1/2[ulcorner d2, llcorner d2];
 (a23, whatever) = 1/2[z05, z06];
 a24 = 1.2;
-d1 = transductor(a24, (a23, a19));
+d1 = transductor(a24) shifted (a23, a19);
 begingroup
 	interim bboxmargin := a20;
 	p6 = bbox d0;
@@ -490,8 +490,7 @@ begingroup
 endgroup;
 z07 = 1/2[ulcorner p7, llcorner p7];
 draw z07 shifted (3a20/4, 0)--z07 shifted (a22, 0);
-draw d0;	draw d1;	draw d2;
-draw p7;
+draw d0;    draw d1;	draw d2;    draw p7;
 drawgisarrow center p6--center p7 cutbefore p6 cutafter p9;
 drawgisarrow center p7--center p8 cutbefore p9 cutafter p8;
 label.top(btex $u(t)$ etex, 1/2[center p6, center p7]);

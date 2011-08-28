@@ -46,11 +46,11 @@ pickup l1;
 % transductor
 a00 = 1.5;	a01 = 17u;
 draw (0, he02/2)--(a01, he02/2);
-d0 = transductor(a00, (a01, he02/2));
+d0 = transductor(a00) shifted (a01, he02/2);
+draw d0;
 
 % ··································································
 % frente de ondas
-draw d0;
 a02 = a00 * v/8;	a03 = 7v/2;
 a04 = 5a03/4;		a05 = x02 + a04;
 z00 = lrcorner d0 shifted (0, a02);
@@ -147,7 +147,7 @@ pickup l1;
 % transductor izquierdo
 a00 = 1.5;	a01 = 17u;	a02 = he02/2;
 draw (0, a02)--(a01, a02);
-d0 = transductor(a00, (a01, a02));
+d0 = transductor(a00) shifted (a01, a02);
 draw d0;
 
 % ··································································
@@ -241,7 +241,7 @@ pickup l1;
 % transductor
 a00 = 1.5;	a01 = 17u;	a02 = he02/2;
 draw (0, a02)--(a01, a02);
-d0 = transductor(a00, (a01, a02));
+d0 = transductor(a00) shifted (a01, a02);
 draw d0;
 
 % ··································································
@@ -471,7 +471,7 @@ pickup l1;
 % transductor
 a00 = 1.5;	a01 = 17u;
 draw (0, he02/2)--(7.5u, he02/2);
-d0 = transductor(a00, (a01, he02/2));
+d0 = transductor(a00) shifted (a01, he02/2);
 draw d0;
 
 % ··································································
