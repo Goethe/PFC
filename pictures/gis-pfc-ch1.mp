@@ -184,8 +184,8 @@ draw d1 shifted z00;
 
 % ··································································
 % red temporal del multivibrador astable
-p2 = resistencia scaled 2a03 rotated 90;
-d2 = condensador scaled (3a03/2) rotated 90;
+p2 = resistor scaled 2a03 rotated 90;
+d2 = capacitor scaled (15a03/8);
 a06 = 3a03/16;		a07 = 3u/2;
 p3 = fullcircle scaled a07;
 draw (0, 3a03 - a06)--(0, 0)--(a02 + 22a03, 0)-- %
@@ -238,8 +238,8 @@ pickup l1;
 
 % ··································································
 % red amplificadora
-p4 = amplificador scaled 5a03;
-d3 = trtrsimplificado scaled 2a03;
+p4 = amplifier scaled 5a03;
+d3 = loudspeaker scaled a03;
 z01 = center p4 shifted (a09 + 2a03, 49a03/8);
 a09 = a08 + 8a03;
 (whatever, a10) = 1/2[(0, 4a03), (0, 33a03/4)];
@@ -263,13 +263,13 @@ draw d3 shifted (a09 + 19a03/2, 3a03) withpen l2;
 pickup l1;
 d4 = thelabel(btex \textsc{ne5534} etex, z01 shifted (-a03/2, 0));
 z02 = ulcorner d4;		z03 = llcorner d4;
-label.top(btex $-$ etex, z02 shifted (-a03/4, a03));
-label.bot(btex $+$ etex, z03 shifted (-a03/4, -a03));
+label.urt(btex $-$ etex, (a09 + 2a03, 4a03));
+label.lrt(btex $+$ etex, (a09 + 2a03, 33a03/4));
 draw d4;
 
 % ··································································
 % referencias de tensión
-d5 = tierra scaled a03;
+d5 = ground scaled a03;
 draw (a02/2 + 6a03, 13a03)--(a02/2 + 6a03, 14a03);
 draw (a02/2 + 6a03, 0)--(a02/2 + 6a03, -a03);
 fill p3 shifted (a02/2 + 6a03, 13a03);
@@ -637,6 +637,49 @@ draw bbox d4;				draw d4;
 % marco
 pickup l2;
 draw (0, 0)--(wi, 0)--(wi, he02)--(0, he02)--cycle;
+
+endfig;
+% ==================================================================
+
+
+
+% ==================================================================
+% Circuito de acondicionamiento del sensor de ultrasonidos
+beginfig(6);
+ahlength := 1.25u;
+ahangle := 30;
+numeric a[], i, j, k, w, x[], y[];
+picture d[], amp, arh, cap, gnd, pzt, r;
+pen l[];
+path p[], q[][], dot;
+transform t[][];
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+pickup l1;
+
+% ··································································
+% constantes
+w = 3u;		% factor de escala
+p0 = amplifier scaled 8w;
+amp := image(
+    fill p0 withpen l0 withcolor white;
+    draw p0 withpen l2;
+    label.top(btex $-$ etex, (w, -3w));
+    label.bot(btex $+$ etex, (w, 3w));
+    label(btex \textsc{ina155} etex, (3w, 0));
+);
+p1 = (-w/2, 0)--(w/2, 0)--(0, w)--cycle;	% arrowhead path
+arh := image(
+    fill p1 withpen l0 withcolor white;
+    draw p1 withpen l1;
+);
+cap := image( draw capacitor scaled 2w withpen l2; );
+dot = fullcircle scaled (u);
+gnd := image( draw ground scaled 2w withpen l2; );
+pzt := image( draw loudspeaker scaled 2w withpen l2; );
+r := image( draw resistor scaled 2w rotated 90 withpen l2; );
 
 endfig;
 % ==================================================================

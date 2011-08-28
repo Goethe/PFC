@@ -148,9 +148,9 @@ a04 = 6v + 5u/2;
 % switch, diferencias de altura entre terminales en T
 z00 = (8u, 0) rotated 20;
 % switches
-d0 = conmutadorA (u);	% El parámetro de la macro determina el
-d1 = conmutadorC (u);	% factor de escala.
-d2 = conmutadorT (u);
+d0 = switchO (u);	% El parámetro de la macro determina el
+d1 = switchC (u);	% factor de escala.
+d2 = switchT (u);
 p0 = bbox d2;
 begingroup
 	interim bboxmargin := 0; p1 = bbox d0 scaled 19/20;
@@ -259,39 +259,38 @@ pickup l1;
 % amplificador de instrumentación
 % defininciones
 z06 = 1/2[(a27, a23), (a27, a24)];
-p6 = amplificador;
 a28 = a23 - a24 + 3y00/2;
 a29 = a28/2 + 3a09;
-p7 = p6 scaled a28 shifted z06;
-z07 = center p7 shifted (-a09, 0);
-p8 = z07--z07 shifted (0, -3v);
-z08 = p8 intersectionpoint p7;
+p6 = amplifier scaled a28 shifted z06;
+z07 = center p6 shifted (-a09, 0);
+p7 = z07--z07 shifted (0, -3v);
+z08 = p7 intersectionpoint p6;
 d8 = thelabel(btex \textsc{ai} etex, z07);
 begingroup
-	interim bboxmargin := 3u; p9 = bbox d8;
+	interim bboxmargin := 3u; p8 = bbox d8;
 endgroup;
-p10 = z07 shifted (a08, a28/2)--z07 shifted (a29 - a08, a28/2);
-z09 = point (length p10)/2 of p10;
+p9 = z07 shifted (a08, a28/2)--z07 shifted (a29 - a08, a28/2);
+z09 = point (length p9)/2 of p9;
 % dibujo todos los elementos definidos previamente
 drawgisarrow z07--z08 shifted (0, -v);
 draw z07--z07 shifted (a29, 0);
 pickup l0;
-fill p7 withcolor white;
+fill p6 withcolor white;
 fill fullcircle scaled (3u/2) shifted z07 shifted (a29, 0) %
 	withcolor white;
 pickup l2; 
-draw p7; 			
+draw p6;
 pickup l1;
 draw fullcircle scaled (3u/2) shifted z07 shifted (a29, 0);
 draw d8;
 begingroup
-	interim ahlength := 2u; drawgisarrow p10;
+	interim ahlength := 2u; drawgisarrow p9;
 endgroup;
 
 % ··································································
 % etiquetas
-label(btex $+$ etex, ulcorner p9);
-label(btex $-$ etex, llcorner p9);
+label.lrt(btex $+$ etex, (a27, a23));
+label.urt(btex $-$ etex, (a27, a24));
 label.top(btex \textsc{a/d} etex, z09);
 label.bot(btex \textsc{agnd} etex, z08 shifted (0, -25u/2));
 

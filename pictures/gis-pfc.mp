@@ -15,14 +15,14 @@ etex
 
 
 % ==================================================================
-def amplificador =
+def amplifier =
 begingroup
 save r;
-path r[];
+path r;
 
-r0 = (0, -1/2)--(1, 0)--(0, 1/2)--cycle;
+r = (0, -1/2)--(sqrt(3)/2, 0)--(0, 1/2)--cycle;
 
-(r0)
+(r)
 endgroup
 
 enddef;
@@ -31,7 +31,82 @@ enddef;
 
 
 % ==================================================================
-def conmutadorC (expr escala)=
+def resistor =
+begingroup
+save r;
+path r;
+
+r = (-0.525, 0)--(-0.5, 0)--(-0.4, 0.1)--(-0.2, -0.1)--
+    (0, 0.1)--(0.2, -0.1)--(0.4, 0.1)--(0.5, 0)--(0.525, 0);
+
+(r)
+endgroup
+
+enddef;
+% ==================================================================
+
+
+
+% ==================================================================
+def capacitor =
+begingroup
+save f, r;
+picture f; path r;
+
+f = nullpicture;
+r = (-0.4, 0)--(0.4, 0);
+addto f doublepath r shifted (0, 0.1);
+addto f doublepath r shifted (0, -0.1);
+
+(f)
+endgroup
+
+enddef;
+% ==================================================================
+
+
+
+% ==================================================================
+def ground =
+begingroup
+save c,f;
+numeric c; picture f;
+
+c = sqrt(3)/4;
+f = nullpicture;
+addto f doublepath (-1/2, 0)--(1/2, 0);
+addto f doublepath (-1/2 + c/2, -1/2)--(1/2 - c/2, -1/2);
+addto f doublepath (-1/2 + c/4, -1/4)--(1/2 - c/4, -1/4);
+
+(f)
+endgroup
+
+enddef;
+% ==================================================================
+
+
+
+% ==================================================================
+def loudspeaker =
+begingroup
+save f;
+picture f;
+
+f = nullpicture;
+addto f doublepath (-1, -2/3)--(0, -2/3)--(0, 2/3)--(-1, 2/3)--
+    cycle;
+addto f doublepath (0, -2/3)--(1, -4/3)--(1, 4/3)--(0, 2/3)--cycle;
+
+(f)
+endgroup
+
+enddef;
+% ==================================================================
+
+
+
+% ==================================================================
+def switchC (expr escala)=
 begingroup
 save c,n,f,r,x,y;
 numeric c[],x[],y[]; pen n[]; picture f[]; path r[];
@@ -70,7 +145,7 @@ enddef;
 
 
 % ==================================================================
-def conmutadorA (expr escala)=
+def switchO (expr escala)=
 begingroup
 save c,n,f,r,x,y;
 numeric c[],x[],y[]; pen n[]; picture f[]; path r[];
@@ -108,7 +183,7 @@ enddef;
 
 
 % ==================================================================
-def conmutadorT (expr escala)=
+def switchT (expr escala)=
 begingroup
 save c,n,f,r,x,y;
 numeric c[],x[],y[]; pen n[]; picture f[]; path r[];
@@ -622,84 +697,6 @@ addto f6 also f3 scaled escala withpen n0;
 addto f6 also f0 scaled escala withpen n0;
 addto f6 also f4 scaled escala withpen n1;
 (f6)
-endgroup
-
-enddef;
-% ==================================================================
-
-
-
-% ==================================================================
-def resistencia =
-begingroup
-save c,r;
-numeric c[]; path r[];
-
-c0 = sqrt(3)/8;
-c1 = 1/50;
-r0 = (-1/2 - c1, 0)--(-1/2, 0)--(-3/8, c0)--(-1/8, -c0)-- %
-	(1/8, c0)--(3/8, -c0)--(1/2, 0)--(1/2 + c1, 0);
-
-(r0)
-endgroup
-
-enddef;
-% ==================================================================
-
-
-
-% ==================================================================
-def condensador =
-begingroup
-save f;
-picture f[];
-
-f0 = nullpicture;
-addto f0 doublepath (-1/8, -1/2)--(-1/8, 1/2);
-addto f0 doublepath (1/8, -1/2)--(1/8, 1/2);
-
-(f0)
-endgroup
-
-enddef;
-% ==================================================================
-
-
-
-% ==================================================================
-def tierra =
-begingroup
-save c,f;
-numeric c[]; picture f[];
-
-c0 = sqrt(3)/4;
-f0 = nullpicture;
-addto f0 doublepath (-1/2, 0)--(1/2, 0);
-addto f0 doublepath (-1/2 + c0/4, -1/4)--(1/2 - c0/4, -1/4);
-addto f0 doublepath (-1/2 + c0/2, -1/2)--(1/2 - c0/2, -1/2);
-
-(f0)
-endgroup
-
-enddef;
-% ==================================================================
-
-
-
-% ==================================================================
-def trtrsimplificado =
-begingroup
-save c,f;
-numeric c[]; picture f[];
-
-c0 = cosd(30)*sind(30)/2;
-f0 = nullpicture;
-addto f0 doublepath (-1/2, -1/2)--(0, -1/2)--(0, 1/2)-- %
-	(-1/2, 1/2)--cycle;
-addto f0 doublepath (0, -1/2)--(1/2, -1/2 - c0)-- %
-	(1/2, 1/2 + c0)--(0, 1/2);
-
-(f0)
 endgroup
 
 enddef;
