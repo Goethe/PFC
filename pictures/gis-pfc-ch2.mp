@@ -127,13 +127,11 @@ endfig;
 % ejemplo de modos de terminación de la kpci-3108
 beginfig(2);
 numeric a[];
-picture d[], amp, arh, cswitch, oswitch, tswitch, piswitch,
-    blackdot, whitedot;
+picture d[], amp, arh, cswitch, oswitch, tswitch,
+    blackdot, whitedot, signalbox, revsignalbox;
 pen l[];
 path p[], q[][];
 transform t[];
-ahlength := 4u;	ahangle := 20;
-ahinset := 5/100;
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
@@ -143,35 +141,125 @@ pickup l1;
 % ··································································
 % constantes
 w = 3u;
+p0 = amplifier scaled 6w;
+amp := image(
+    fill p0 withpen l0 withcolor white;
+    draw p0 withpen l2;
+    label.top(btex $-$ etex, (0.75w, -2.25w));
+    label.bot(btex $+$ etex, (0.75w, 2.25w));
+    label(btex \textsc{ai} etex, (2w, 0));
+);
+p1 = (-w/3, 0)--(w/3, 0)--(0, 2w/3)--cycle;	% arrowhead path
+arh := image( fill p1 yscaled -1; );
+p2 = fullcircle scaled (3u/4);
+blackdot := image( fill p2 withpen l1; );
+p3 = fullcircle scaled (3u/2);
+whitedot := image(
+    fill p3 withpen l0 withcolor white;
+    draw p3 withpen l1;
+);
+cswitch = switchC(2w);
+oswitch = switchO(2w);
+tswitch = switchT(2w);
+d0 = thelabel.top(btex Se\~nal etex, (0, 0));
+d1 := d0;
+z0 = llcorner d0;
+z1 = lrcorner d0;
+addto d0 also thelabel.bot(btex $+$ etex, z0);
+addto d0 also thelabel.bot(btex $-$ etex, z1);
+signalbox := image(
+    fill bbox d0 withpen l0 withcolor white;
+    draw d0;
+    draw bbox d0 withpen l2;
+);
+addto d1 also thelabel.bot(btex $-$ etex, z0);
+addto d1 also thelabel.bot(btex $+$ etex, z1);
+revsignalbox := image(
+    fill bbox d1 withpen l0 withcolor white;
+    draw d1;
+    draw bbox d1 withpen l2;
+);
+d2 = dashpattern(on 0.35u off 6w);
 
 % ··································································
-% referencia
-% d3 = thelabel.top(btex Se\~nal etex, (0, 0));
-% z01 = llcorner d3;	z02 = lrcorner d3;
-% addto d3 also thelabel.bot(btex $+$ etex, z01);
-% addto d3 also thelabel.bot(btex $-$ etex, z02);
-% p2 = bbox d3;
-% a06 = xpart(urcorner d3 - ulcorner d3);
-% z03 = 1/2[ulcorner d3, urcorner d3] + %
-% 	5/8(ulcorner d3 - llcorner d3);
-% d4 = thelabel(btex 00 Lo/08 Hi etex, (0, 0));
-% d5 = thelabel(btex 00 Hi etex, (0, 0));
-% a07 = 11/20;			x04 = 0;
-% (whatever, y04) = a07*(llcorner d5 - llcorner d4);
-% % a(0|1)[0-9] representan los puntos en el circuito, línea y columna
-% label(btex 00 Lo/08 Hi etex, z03 shifted (a18, a02));
-% label(btex 01 Lo/09 Hi etex, z03 shifted (a18, a01));
-% label(btex 07 Lo/15 Hi etex, z03 shifted (a18, a00));
-% label(btex 00 Hi etex, z03 + z04 shifted (a17, a02));
-% label(btex 01 Hi etex, z03 + z04 shifted (a17, a01));
-% label(btex 07 Hi etex, z03 + z04 shifted (a17, a00));
-% begingroup
-% 	interim bboxmargin := 0; p1 = bbox d0 scaled 19/20;
-% endgroup;
-% fill p1 shifted (a08, i) withcolor white;
-% fill p1 shifted (a19 + a09/2 - a15, i) withcolor white;
-% d7 = dashpattern(on 0.35u off 3.65u);
-% draw p5 shifted (i, 0) dashed d7;
+% cables (empiezo desde el cableado externo)
+draw (31w, 20w + 7w/9)--(29w, 20w + 7w/9)--(29w, 22w)--(0, 22w)--
+    (0, w)--(2w, w);
+draw (4w, w)--(23w, w);
+draw (25w, w)--(27w, w)--(27w, 18w);
+draw (0, 18w)--(2w, 18w);
+draw (4w, 18w)--(23w, 18w);
+draw (25w, 18w)--(29w, 18w);
+draw (0, 11w)--(2w, 11w);
+draw (4w, 11w)--(23w, 11w);
+draw (25w, 11w)--(27w, 11w);
+draw (31w, 20w - 7w/9)--(29w, 20w - 7w/9)--(29w, 16w + 7w/9)--
+    (31w, 16w + 7w/9);
+draw (33w, 20w)--(35w, 20w);
+draw (33w, 16w)--(35w, 16w);
+draw (39w, 18w)--(42w, 18w);
+
+% ··································································
+% referencias de tensión (empiezo desde la izquierda)
+draw (13.5w, 11w)--(13.5w, 9w);
+draw arh shifted (13.5w, 9w);
+draw (31w, 16w - 7w/9)--(29w, 16w - 7w/9)--(29w, 14w - 7w/9);
+draw arh shifted (29w, 14w - 7w/9);
+draw (38w, 17w)--(38w, 15w);
+draw arh shifted (38w, 15w);
+draw whitedot shifted (42w, 18w);
+
+% ··································································
+% nodos (empiezo desde la izquierda)
+draw blackdot shifted (0, 11w);
+draw blackdot shifted (0, 18w);
+draw blackdot shifted (27w, 11w);
+draw blackdot shifted (27w, 18w);
+draw blackdot shifted (13.5w, 11w);
+draw blackdot shifted (29w, 18w);
+
+% ··································································
+% conmutadores (empiezo desde la izquierda)
+draw oswitch xscaled -1 shifted (3w, w);
+draw oswitch xscaled -1 shifted (3w, 11w);
+draw oswitch xscaled -1 shifted (3w, 18w);
+draw oswitch shifted (24w, w);
+draw oswitch shifted (24w, 18w);
+draw cswitch shifted (24w, 11w);
+draw tswitch scaled -1 shifted (32w, 20w);
+draw tswitch scaled -1 shifted (32w, 16w);
+p4 = (-2w, -3w/2)--(2w, -3w/2)--(2w, 3w/2)--(-2w, 3w/2)--cycle;
+draw p4 shifted (32w, 20w) withpen l2;
+draw p4 shifted (32w, 16w) withpen l2;
+p5 = (0, 0)--(4w, 0)--(4w, 20w)--(0, 20w)--cycle;
+draw p5 shifted (w, 0) withpen l2;
+draw p5 shifted (22w, 0) withpen l2;
+draw (3w, 5w)--(3w, 8w) withpen l2 dashed d2;
+draw (24w, 5w)--(24w, 8w) withpen l2 dashed d2;
+
+% ··································································
+% fuentes de señal, puertos (empiezo desde la izquierda)
+for i = w, 11w, 18w :  draw signalbox shifted (9.25w, i);  endfor
+draw revsignalbox shifted (17.75w, 11w);
+
+% ··································································
+% amplificador y final (empiezo desde la izquierda)
+draw amp shifted (35w, 18w);
+label.bot(btex \textsc{agnd} etex, (38w, 14w));
+drawgisarrow (38w, 20.5w)--(41.5w, 20.5w);
+label.top(btex \textsc{a/d} etex, (39.75w, 21w));
+
+% ··································································
+% etiquetas
+d3 = thelabel(btex 00 Lo/08 Hi etex, (0, 0));
+d4 = thelabel(btex 00 Hi etex, (0, 0));
+z2 = 11/20 * (llcorner d4 - llcorner d3);
+label(btex \textsc{00 lo/08 hi} etex, (17.75w, 19w));
+label(btex \textsc{01 lo/09 hi} etex, (17.75w, 13.5w));
+label(btex \textsc{07 lo/15 hi} etex, (17.75w, 2w));
+label(btex \textsc{00 hi} etex, (9.25w, 20.5w));
+label(btex \textsc{01 hi} etex, (9.25w, 13.5w + y2));
+label(btex \textsc{07 hi} etex, (9.25w, 3.5w));
 
 endfig;
 % ==================================================================

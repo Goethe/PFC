@@ -109,34 +109,29 @@ enddef;
 def switchC (expr escala)=
 begingroup
 save c,n,f,r,x,y;
-numeric c[],x[],y[]; pen n[]; picture f[]; path r[];
+numeric c,x[],y[]; pen n[]; picture f; path r[];
 interim bboxmargin := 0;
 n0 = pencircle scaled 0.15u;
 n1 = pencircle scaled 0.25u;
 n2 = pencircle scaled 0.35u;
 n3 = pencircle scaled 0.5u;
-f0 = nullpicture;
+f = nullpicture;
 
-% ··································································
-% constantes: radio conectores, distancia entre estos y longitud de
-% la patilla
-c00 = 3/2;		c01 = 5;		c02 = c01 + 2c00;
-c03 = c02 + c00/2;
-r0 = fullcircle scaled c00;
-z00 = (0, 0);		z01 = (c02, 0);
-z02 = halfcircle scaled 2c02 intersectionpoint r0 shifted z01;
-c04 = angle z02;
-r1 = z00--(c03, 0);
-addto f0 doublepath r1 rotated c04 scaled escala withpen n2;
-addto f0 contour r0 scaled escala withcolor white withpen n0;
-addto f0 doublepath r0 scaled escala withpen n1;
-addto f0 contour r0 shifted z01 scaled escala withcolor white
-	withpen n0;
-addto f0 doublepath r0 shifted z01 scaled escala withpen n1;
+r0 = fullcircle scaled (1/4);
+r1 = (0, 0)--(1 + 1/8, 0);
+z0 = fullcircle scaled 2 shifted (-1/2, 0) intersectionpoint
+    halfcircle scaled (1/4) shifted (1/2, 0);
+c = angle (z0 shifted (1/2, 0));
+addto f doublepath r1 rotated c shifted (-1/2, 0) scaled escala
+    withpen n2;
+addto f contour r0 shifted (-1/2, 0) scaled escala withpen n0
+    withcolor white;
+addto f contour r0 shifted (1/2, 0) scaled escala withpen n0
+    withcolor white;
+addto f doublepath r0 shifted (-1/2, 0) scaled escala withpen n1;
+addto f doublepath r0 shifted (1/2, 0) scaled escala withpen n1;
 
-% ··································································
-% cierro la definición
-(f0)
+(f)
 endgroup
 
 enddef;
@@ -147,34 +142,27 @@ enddef;
 % ==================================================================
 def switchO (expr escala)=
 begingroup
-save c,n,f,r,x,y;
-numeric c[],x[],y[]; pen n[]; picture f[]; path r[];
+save n,f,r;
+pen n[]; picture f; path r[];
 interim bboxmargin := 0;
 n0 = pencircle scaled 0.15u;
 n1 = pencircle scaled 0.25u;
 n2 = pencircle scaled 0.35u;
 n3 = pencircle scaled 0.5u;
-f0 = nullpicture;
+f = nullpicture;
 
-% ··································································
-% constantes: radio conectores, distancia entre estos y longitud de
-% la patilla
-c00 = 3/2;		c01 = 5;		c02 = c01 + 2c00;
-c03 = c02 + c00/2;
-r0 = fullcircle scaled c00;
-z00 = (0, 0);		z01 = (c02, 0);
-c04 = 30;
-r1 = z00--(c03, 0);
-addto f0 doublepath r1 rotated c04 scaled escala withpen n2;
-addto f0 contour r0 scaled escala withcolor white withpen n0;
-addto f0 doublepath r0 scaled escala withpen n1;
-addto f0 contour r0 shifted z01 scaled escala withcolor white
-	withpen n0;
-addto f0 doublepath r0 shifted z01 scaled escala withpen n1;
+r0 = fullcircle scaled (1/4);
+r1 = (0, 0)--(1 + 1/8, 0);
+addto f doublepath r1 rotated 30 shifted (-1/2, 0) scaled escala
+    withpen n2;
+addto f contour r0 shifted (-1/2, 0) scaled escala withpen n0
+    withcolor white;
+addto f contour r0 shifted (1/2, 0) scaled escala withpen n0
+    withcolor white;
+addto f doublepath r0 shifted (-1/2, 0) scaled escala withpen n1;
+addto f doublepath r0 shifted (1/2, 0) scaled escala withpen n1;
 
-% ··································································
-% cierro la definición
-(f0)
+(f)
 endgroup
 
 enddef;
@@ -202,11 +190,11 @@ f = nullpicture;
 % patilla móvil dada esta relación y una primera distancia de 1
 % (segunda distancia de 1/(9/7) = 7/9) es de aproximadamente
 % sqrt(1 + (7/9)^2) = sqrt(130/81).
-r0 = fullcircle scaled 1/4;
-z0 = fullcircle scaled (2 * sqrt(130/81)) intersectionpoint
-    halfcircle scaled (-1/4) shifted (-1/2, 7/18);
-c = angle z0;
-r1 = (0, 0)--(1 + (1/4) * (1/2 + 1/2 + 1/4), 0);
+r0 = fullcircle scaled (1/4);
+z0 = fullcircle scaled (2 * sqrt(1 + 49/324)) shifted (-1/2, 0)
+    intersectionpoint halfcircle scaled (-1/4) shifted (1/2, 7/18);
+c = angle (z0 shifted (1/2, 0));
+r1 = (0, 0)--(1 + 1/8, 0);
 addto f doublepath r1 rotated c shifted (-1/2, 0) scaled escala
     withpen n2;	    % roto primero y desplazo luego así no pierdo el
 		    % origen
@@ -216,9 +204,9 @@ addto f contour r0 shifted (1/2, 7/18) scaled escala withpen n0
     withcolor white;
 addto f contour r0 shifted (1/2, -7/18) scaled escala withpen n0
     withcolor white;
-addto f doublepath r0 shifted (-1/2, 0) scaled escala withpen n2;
-addto f doublepath r0 shifted (1/2, 7/18) scaled escala withpen n2;
-addto f doublepath r0 shifted (1/2, -7/18) scaled escala withpen n2;
+addto f doublepath r0 shifted (-1/2, 0) scaled escala withpen n1;
+addto f doublepath r0 shifted (1/2, 7/18) scaled escala withpen n1;
+addto f doublepath r0 shifted (1/2, -7/18) scaled escala withpen n1;
 
 (f)
 endgroup
@@ -241,20 +229,16 @@ n3 = pencircle scaled 0.5u;
 f = nullpicture;
 
 r0 = fullcircle scaled 1/4;
-z0 = r0 shifted (1/2, 0) intersectionpoint
-    whatever[(1/2, 0)--(1/2, -1)];
-z1 = z0 xscaled -1;
-z10 = 1/2[z1, z0];
-r1 = z1--z0;
-r2 = z10--(0, 3/8);
+r1 = (-1/2, -1/8)--(1/2, -1/8);
+r2 = (0, -1/8)--(0, 3/8);
 addto f doublepath r1 scaled escala withpen n2;
 addto f doublepath r2 scaled escala withpen n2;
-addto f contour r0 shifted (-1/2, 1/40) scaled escala
+addto f contour r0 shifted (-1/2, 0) scaled escala
     withpen n0 withcolor white;
-addto f contour r0 shifted (1/2, 1/40) scaled escala
+addto f contour r0 shifted (1/2, 0) scaled escala
     withpen n0 withcolor white;
-addto f doublepath r0 shifted (-1/2, 1/40) scaled escala withpen n1;
-addto f doublepath r0 shifted (1/2, 1/40) scaled escala withpen n1;
+addto f doublepath r0 shifted (-1/2, 0) scaled escala withpen n1;
+addto f doublepath r0 shifted (1/2, 0) scaled escala withpen n1;
 
 (f)
 endgroup

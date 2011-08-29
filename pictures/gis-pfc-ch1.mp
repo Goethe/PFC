@@ -649,7 +649,7 @@ beginfig(6);
 ahlength := 1.25u;
 ahangle := 30;
 numeric a[], i, j, k, w, x[], y[];
-picture d[], amp, arh, cap, gnd, pzt, r, blackdot, whitedot;
+picture d[], amp, arh, cap, pzt, r, blackdot, whitedot;
 pen l[];
 path p[], q[][];
 transform t[][];
@@ -680,7 +680,6 @@ whitedot := image(
     fill p3 withpen l0 withcolor white;
     draw p3 withpen l1;
 );
-gnd := image( draw ground scaled 2w withpen l2; );
 pzt := image( draw loudspeaker scaled 2w withpen l2; );
 r := image( draw resistor scaled 2w rotated 90 withpen l2; );
 % ··································································
@@ -749,7 +748,7 @@ label.lft (btex $R_G$ etex, (14.75w, 14w));
 label.lrt (btex $R$ etex, (18w, 5.5w));
 label.lrt (btex $C = 100$ pF etex, (17.25w + 0.2w, 2.5w));
 label.rt (btex $V^-_{CC} \simeq 0$ V etex, (5w, 2.5w));
-label.lft (btex $V^-_{CC}$ etex, (18w, 8.75w));
+label.lft (btex $V^-_{CC}$ etex, (17.75w, 8.5w));
 label.rt (btex $V^+_{CC} \simeq 9$ V etex, (19w, 19.5w));
 label.lrt (btex $V_{REF}$ etex, (21.25w, 12.75w));
 % label.llft (btex $1$ M$\Omega$ etex, (24.75w, 7.75w));
