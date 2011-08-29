@@ -649,7 +649,7 @@ beginfig(6);
 ahlength := 1.25u;
 ahangle := 30;
 numeric a[], i, j, k, w, x[], y[];
-picture d[], amp, arh, cap, gnd, pzt, r, switch, blackdot, whitedot;
+picture d[], amp, arh, cap, gnd, pzt, r, blackdot, whitedot;
 pen l[];
 path p[], q[][];
 transform t[][];
@@ -671,21 +671,18 @@ amp := image(
     label(btex \textsc{ina155} etex, (3w, 0));
 );
 p1 = (-w/3, 0)--(w/3, 0)--(0, 2w/3)--cycle;	% arrowhead path
-arh := image(
-    fill p1;
-);
+arh := image( fill p1; );
 cap := image( draw capacitor scaled 2w withpen l2; );
 p2 = fullcircle scaled (3u/4);
 blackdot := image( fill p2 withpen l1; );
 p3 = fullcircle scaled (3u/2);
 whitedot := image(
     fill p3 withpen l0 withcolor white;
-    draw p3 withpen l2;
+    draw p3 withpen l1;
 );
 gnd := image( draw ground scaled 2w withpen l2; );
 pzt := image( draw loudspeaker scaled 2w withpen l2; );
 r := image( draw resistor scaled 2w rotated 90 withpen l2; );
-switch = switchPI(2w);
 % ··································································
 % divisor de tensión (empiezo por abajo)
 draw (4.5w, 2w)--(4.5w, 4w);
