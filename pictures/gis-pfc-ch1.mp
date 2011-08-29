@@ -649,9 +649,9 @@ beginfig(6);
 ahlength := 1.25u;
 ahangle := 30;
 numeric a[], i, j, k, w, x[], y[];
-picture d[], amp, arh, cap, gnd, pzt, r, switch;
+picture d[], amp, arh, cap, gnd, pzt, r, switch, blackdot, whitedot;
 pen l[];
-path p[], q[][], dot;
+path p[], q[][];
 transform t[][];
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
@@ -670,17 +670,96 @@ amp := image(
     label.bot(btex $+$ etex, (w, 3w));
     label(btex \textsc{ina155} etex, (3w, 0));
 );
-p1 = (-w/2, 0)--(w/2, 0)--(0, w)--cycle;	% arrowhead path
+p1 = (-w/3, 0)--(w/3, 0)--(0, 2w/3)--cycle;	% arrowhead path
 arh := image(
-    fill p1 withpen l0 withcolor white;
-    draw p1 withpen l1;
+    fill p1;
 );
 cap := image( draw capacitor scaled 2w withpen l2; );
-dot = fullcircle scaled (u);
+p2 = fullcircle scaled (3u/4);
+blackdot := image( fill p2 withpen l1; );
+p3 = fullcircle scaled (3u/2);
+whitedot := image(
+    fill p3 withpen l0 withcolor white;
+    draw p3 withpen l2;
+);
 gnd := image( draw ground scaled 2w withpen l2; );
 pzt := image( draw loudspeaker scaled 2w withpen l2; );
 r := image( draw resistor scaled 2w rotated 90 withpen l2; );
 switch = switchPI(2w);
+% ··································································
+% divisor de tensión (empiezo por abajo)
+draw (4.5w, 2w)--(4.5w, 4w);
+draw (3w, 6w)--(3w, 4w)--(6w, 4w)--(6w, 7w - 0.2w);
+draw (3w, 8w)--(3w, 12w);
+draw (3w, 14w)--(3w, 16w);
+draw (6w, 7w + 0.2w)--(6w, 10w);
+draw (3w, 10w)--(13w, 10w);
+draw arh yscaled -1 shifted (4.5w, 2w);
+draw blackdot shifted (4.5w, 4w);
+draw r shifted (3w, 7w);
+draw cap shifted (6w, 7w);
+draw blackdot shifted (3w, 10w);
+draw blackdot shifted (6w, 10w);
+draw r shifted (3w, 13w);
+draw arh shifted (3w, 16w);
+% ··································································
+% etapa amplificadora (empiezo a la izquierda, arriba, termino con
+% la red de realimentación y el amplificador)
+draw (16w, 17w)--(12w, 17w)--(12w, 14w + 2w/3)--(11.5w, 14w + 2w/3);
+draw (16w, 11w)--(12w, 11w)--(12w, 14w - 2w/3)--(11.5w, 14w - 2w/3);
+draw pzt xscaled -1 shifted (9.5w, 14w);
+draw (16w, 16w)--(15w, 16w)--(15w, 15w);
+draw (16w, 12w)--(15w, 12w)--(15w, 13w);
+draw r shifted (15w, 14w);
+draw (18w, 19w)--(18w, 9w);
+draw arh shifted (18w, 19w);
+draw arh yscaled -1 shifted (18w, 9w);
+draw (20w, 14w)--(32w, 14w);
+draw whitedot shifted (32w, 14w);
+draw (13w, 11w)--(13w, 4.5w)--(14w, 4.5w);
+draw (16w, 6w)--(14w, 6w)--(14w, 3w)--(17w - 0.2w, 3w);
+draw (18w, 6w)--(20w, 6w)--(20w, 3w)--(17w + 0.2w, 3w);
+draw (20w, 4.5w)--(21w, 4.5w)--(21w, 14w);
+draw r rotated 90 shifted (17w, 6w);
+draw cap rotated 90 shifted (17w, 3w);
+draw blackdot shifted (13w, 11w);
+draw blackdot shifted (13w, 10w);
+draw blackdot shifted (14w, 4.5w);
+draw blackdot shifted (20w, 4.5w);
+draw amp shifted (16w, 14w);
+% ··································································
+% impedancia de entrada de la tarjeta de adquisición y final
+draw (26.5w, 14w)--(26.5w, 12w);
+draw (25w, 10w)--(25w, 12w)--(28w, 12w)--(28w, 9w + 0.2w);
+draw (25w, 8w)--(25w, 6w)--(28w, 6w)--(28w, 9w - 0.2w);
+draw (26.5w, 6w)--(26.5w, 4w);
+draw r shifted (25w, 9w);
+draw cap shifted (28w, 9w);
+draw blackdot shifted (26.5w, 12w);
+draw blackdot shifted (26.5w, 6w);
+draw (32w, 10w)--(32w, 8w);
+drawgisarrow (33w, 10w)--(33w, 14w);
+draw whitedot shifted (32w, 10w);
+draw arh yscaled -1 shifted (26.5w, 4w);
+draw arh yscaled -1 shifted (32w, 8w);
+% ··································································
+% etiquetas
+label.lft (btex $R = 100$ k$\Omega$ etex, (2.5w, 13w));
+label.lft (btex $R$ etex, (2.5w, 7w));
+label.rt (btex $C$ etex, (6.75w, 7w));
+label.top (btex $V^+_{CC}$ etex, (3w, 17.5w));
+label.lft (btex $R_G$ etex, (14.75w, 14w));
+label.lrt (btex $R$ etex, (18w, 5.5w));
+label.lrt (btex $C = 100$ pF etex, (17.25w + 0.2w, 2.5w));
+label.rt (btex $V^-_{CC} \simeq 0$ V etex, (5w, 2.5w));
+label.lft (btex $V^-_{CC}$ etex, (18w, 8.75w));
+label.rt (btex $V^+_{CC} \simeq 9$ V etex, (19w, 19.5w));
+label.lrt (btex $V_{REF}$ etex, (21.25w, 12.75w));
+% label.llft (btex $1$ M$\Omega$ etex, (24.75w, 7.75w));
+% label.urt (btex $150$ pF etex, (28.25w, 9.25w + 0.2w));
+label.rt (btex $V_{OUT}$ etex, (33.25w, 12w));
+z0 = (26.5w, 4w);   z1 = (33w, 10w);	z10 = 2/3[z1, z0];
+label.lrt (btex $V^-_{CC}$ etex, z10);
 
 endfig;
 % ==================================================================
