@@ -1,6 +1,6 @@
-#!perl
+#!/usr/bin/env perl
 use diagnostics;
-use 5.012;
+use strict;
 use File::Copy;
 
 my $ec = 1;	# $ec stands for "end figure count", $li stands for "line
@@ -13,18 +13,18 @@ for my $filename ( @ARGV ) {
     chomp( my @lines = <FILE> );
     close FILE;
 
-    while( my( $li, $lv ) = each @lines ) {
-	push @cp, $li
-	    if $lv =~ /clearpage/;
+    for( 0..$#lines ) {
+	push @cp, $_
+	    if $lines[$_] =~ /clearpage/;
     }
     $cp[$_] -= 2*$_ for 0..$#cp;
     splice @lines, $_, 2 for @cp;
 
-    while( my( $li, $lv ) = each @lines ) {
-	if( $lv =~ /^.end.figure/ and $ec == 4 ) {
-	    push @fep, $li;
+    for( 0..$#lines ) {
+	if( $lines[$_] =~ /^.end.figure/ and $ec == 4 ) {
+	    push @fep, $_;
 	    $ec = 1;
-	} elsif ( $lv =~ /^.end.figure/ ) {
+	} elsif ( $lines[$_] =~ /^.end.figure/ ) {
 	    ++$ec;
 	}
     }
