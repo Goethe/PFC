@@ -57,16 +57,28 @@ tiempo pueda visualizarse la señal correspondiente a dicho espectro.}
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[angle=90]{gis-pfc-ch1-02.mps}
+		\includegraphics{gis-pfc-ch1-02.mps}
 	\end{center}
-	\caption[Circuito acondicionador de la sección de
-	transmisión]{Circuito acondicionador de la sección de transmisión.}
-	\label{fig:txconditioner}
+	\caption[Transductores de ultrasonidos]{Planos acotados que
+	representan el diseño de los transductores de ultrasonidos.}
+	\label{fig:transducers}
 \end{figure}
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch1-06.mps}
+		\includegraphics{gis-pfc-ch1-03.mps}
+	\end{center}
+	\caption[Pulso acústico generado por el transductor]{Pulso acústico
+	generado por el transductor cuando se alimenta con un pulso
+	rectangular.}
+	\label{fig:pulse}
+\end{figure}
+
+\clearpage
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch1-04.mps}
 	\end{center}
 	\caption[Circuito de acondicionamiento del sensor
 	piezoeléctrico]{Circuito de acondicionamiento del sensor de
@@ -74,11 +86,9 @@ tiempo pueda visualizarse la señal correspondiente a dicho espectro.}
 	\label{fig:rxconditioner}
 \end{figure}
 
-\clearpage
-
 \begin{figure}
 	\begin{center}
-		\includegraphics[angle=90]{gis-pfc-ch1-07.mps}
+		\includegraphics[angle=90]{gis-pfc-ch1-05.mps}
 	\end{center}
 	\caption[Circuito de acondicionamiento del actuador
 	piezoeléctrico]{Circuito de acondicionamiento del actuador de
@@ -88,7 +98,7 @@ tiempo pueda visualizarse la señal correspondiente a dicho espectro.}
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch1-03.mps}
+		\includegraphics{gis-pfc-ch1-06.mps}
 	\end{center}
 	\caption[Señal a la salida del amplificador \textsc{ne5534},
 	$u(t)$]{Señal generada por el acondicionador de transmisión medida
@@ -98,32 +108,13 @@ tiempo pueda visualizarse la señal correspondiente a dicho espectro.}
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch1-04.mps}
-	\end{center}
-	\caption[Pulso acústico generado por el transductor]{Pulso acústico
-	generado por el transductor cuando se alimenta con un pulso
-	rectangular.}
-	\label{fig:pulse}
-\end{figure}
-
-\begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch1-05.mps}
-	\end{center}
-	\caption[Transductores de ultrasonidos]{Planos acotados que
-	representan el diseño de los transductores de ultrasonidos.}
-	\label{fig:transducers}
-\end{figure}
-
-\clearpage
-
-\begin{figure}
-	\begin{center}
 		\includegraphics{gis-pfc-ch2-01.mps}
 	\end{center}
 	\caption[Subsistema de adquisición]{Subsistema de adquisición.}
 	\label{fig:subacqui}
 \end{figure}
+
+\clearpage
 
 \begin{figure}
 	\begin{center}
@@ -154,6 +145,16 @@ tiempo pueda visualizarse la señal correspondiente a dicho espectro.}
 	\label{fig:digital}
 \end{figure}
 
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=1, keepaspectratio=true]
+		{gis-pfc-ch2-05.jpg}
+	\end{center}
+	\caption[Plano de la caja de conexiones ya terminada]{Plano de la
+	caja de conexiones ya terminada.}
+	\label{fig:conbox}
+\end{figure}
+
 \clearpage
 
 \begin{figure}
@@ -169,26 +170,17 @@ tiempo pueda visualizarse la señal correspondiente a dicho espectro.}
 	\begin{center}
 		\includegraphics{gis-pfc-ch3-02.mps}
 	\end{center}
-	\caption[Fragmento de señal adquirido por el osciloscopio en el
-	espacio de una ventana de adquisición]{Fragmento de señal adquirido
-	por el osciloscopio en el espacio de una ventana de adquisición. En
-	esta figura se ha representado también la duración de la ventana
-	temporal del osciloscopio, pudiendo observarse que información se
-	descarta. También se indica el instante en el que se inicia una
-	nueva instancia del proceso de adquisición, de lo que puede
-	deducirse que información se pierde entre instancias. Los cortes de
-	la señal con el nivel de disparo también están representados.}
-	\label{fig:freesignal}
+	\caption[Componentes de la \textsc{dat}]{Componentes de la
+	\textsc{dat}.}
+	\label{fig:dat}
 \end{figure}
 
 \begin{figure}
 	\begin{center}
 		\includegraphics{gis-pfc-ch3-03.mps}
 	\end{center}
-	\caption[Modo de funcionamiento disparado]{Modo de funcionamiento
-	disparado. La representación se centra en el corte central (veáse
-	la figura anterior).}
-	\label{fig:digtrigosc}
+	\caption[Tipos de objeto dispositivo]{Tipos de objeto dispositivo.}
+	\label{fig:devobject}
 \end{figure}
 
 \begin{figure}
@@ -237,17 +229,26 @@ tiempo pueda visualizarse la señal correspondiente a dicho espectro.}
 	\begin{center}
 		\includegraphics{gis-pfc-ch3-07.mps}
 	\end{center}
-	\caption[Componentes de la \textsc{dat}]{Componentes de la
-	\textsc{dat}.}
-	\label{fig:dat}
+	\caption[Fragmento de señal adquirido por el osciloscopio en el
+	espacio de una ventana de adquisición]{Fragmento de señal adquirido
+	por el osciloscopio en el espacio de una ventana de adquisición. En
+	esta figura se ha representado también la duración de la ventana
+	temporal del osciloscopio, pudiendo observarse que información se
+	descarta. También se indica el instante en el que se inicia una
+	nueva instancia del proceso de adquisición, de lo que puede
+	deducirse que información se pierde entre instancias. Los cortes de
+	la señal con el nivel de disparo también están representados.}
+	\label{fig:freesignal}
 \end{figure}
 
 \begin{figure}
 	\begin{center}
 		\includegraphics{gis-pfc-ch3-08.mps}
 	\end{center}
-	\caption[Tipos de objeto dispositivo]{Tipos de objeto dispositivo.}
-	\label{fig:devobject}
+	\caption[Modo de funcionamiento disparado]{Modo de funcionamiento
+	disparado. La representación se centra en el corte central (veáse
+	la figura anterior).}
+	\label{fig:digtrigosc}
 \end{figure}
 
 \clearpage
@@ -302,6 +303,16 @@ tiempo pueda visualizarse la señal correspondiente a dicho espectro.}
 
 \begin{figure}
 	\begin{center}
+		\includegraphics{gis-pfc-ch5-06.jpg}
+	\end{center}
+	\caption[Comportamiento del coeficiente de
+	atenuación]{Representación del coeficiente de atenuación que
+	muestra su comportamiento en las distintas regiones del material.}
+	\label{fig:losscoefficient}
+\end{figure}
+
+\begin{figure}
+	\begin{center}
 		\includegraphics{gis-pfc-ch5-07.mps}
 	\end{center}
 	\caption[Parámetros del banco de filtros]{Representación
@@ -325,5 +336,14 @@ tiempo pueda visualizarse la señal correspondiente a dicho espectro.}
 % 	120 mm de largo por 90 mm de alto.}
 % 	\label{fig:palmone}
 % \end{figure}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-appa-01.png}
+	\end{center}
+	\caption[Aspecto de la interfaz de usuario]{Aspecto de la interfaz
+	con controles y gráficos separados por paneles.}
+	\label{fig:interface}
+\end{figure}
 
 \end{document}

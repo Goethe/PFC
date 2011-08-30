@@ -91,7 +91,7 @@ recogidas en el \cref{tab:transducers}.
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch1-05.mps}
+		\includegraphics{gis-pfc-ch1-02.mps}
 	\end{center}
 	\caption[Dimensiones de los transductores de
 	ultrasonidos]{Dimensiones y forma de los transductores de
@@ -140,18 +140,22 @@ recogidas en el \cref{tab:transducers}.
 
 El actuador de ultrasonidos puede funcionar de dos formas diferentes: si es
 alimentado con una sinusoide emite una onda acústica continua al medio; por
-el contrario, si se alimenta con un pulso rectangular (o de continua),
-emite un tono modulado por un pulso gaussiano de la misma duración. En
-cualquier caso la potencia disipada por el actuador no puede exceder el
-límite de 20 mW eficaces especificado por el fabricante. Dependiendo del
-tipo de alimentación es posible adoptar una u otra estrategia para acotar
-la potencia suministrada al sensor. Si se alimenta el sensor con una onda
-sinusoidal puede, o bien limitarse la amplitud de la onda, o bien
-utilizarse una sinusoide pulsada, empleando una configuración de ciclo de
-trabajo que garantice que no se supera el límite de potencia soportado. En
-caso de utilizar un pulso rectangular, o un tren de pulsos rectangulares,
-las opciones son similares, reducir el nivel de tensión de salida en el
-estado alto o configurar el ciclo de trabajo de la señal apropiadamente.
+el contrario, si se alimenta con un pulso rectangular (o de continua) o
+tren de pulsos rectangulares, emite un tono modulado por un pulso gaussiano
+de la misma duración. En cualquier caso la potencia disipada por el
+actuador no puede exceder el límite de 20 mW eficaces especificado por el
+fabricante. Dependiendo del tipo de alimentación es posible adoptar una u
+otra estrategia para acotar la potencia suministrada al sensor. Si se
+alimenta el transductor con una onda sinusoidal puede, o bien limitarse la
+amplitud de la onda, o bien utilizarse una sinusoide
+pulsada\footnote{Nótese que al utilizar una sinusoide pulsada para
+alimentar el actuador en lugar de una sinusoide continua, la señal acústica
+generada por el dispositivo no difiere más que en su intensidad y no en su
+forma.}, empleando una configuración de ciclo de trabajo que garantice que
+no se supera el límite de potencia soportado. En caso de utilizar un pulso
+rectangular, o un tren de pulsos rectangulares, las opciones son similares,
+reducir el nivel de tensión de salida en el estado alto o configurar el
+ciclo de trabajo de la señal apropiadamente.
 
 El actuador de ultrasonidos carga el circuito de alimentación con una
 impedancia que presenta carácter variable, la componente reactiva de la
@@ -180,15 +184,15 @@ poder evaluar las propiedades del medio de propagación empleando una de las
 dos técnicas expuestas en el \cref{chap:endus} en la \cref{sec:technics}.
 Como se explica en dicho capítulo, el actuador continua vibrando a su
 frecuencia fundamental de resonancia incluso después de que la onda de
-alimentación pase a un estado bajo, durante un tiempo determinado durante
-el proceso de fabricación del dispositivo ---esto es algo que no se aprecia
-en la figura---, dando lugar a lo que en teoría de \sig{endus} se conoce
-como <<zona ciega>> o <<zona muerta>>, este fenómeno se explica con mayor
-detalle en la \cref{sec:field}.
+alimentación pase a un estado bajo continuo, durante un tiempo determinado
+durante el proceso de fabricación del dispositivo ---esto es algo que no se
+aprecia en la figura---, dando lugar a lo que en teoría de \sig{endus} se
+conoce como <<zona ciega>> o <<zona muerta>>, este fenómeno se explica con
+mayor detalle en la \cref{sec:field}.
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch1-04.mps}
+		\includegraphics{gis-pfc-ch1-03.mps}
 	\end{center}
 	\caption[Pulso acústico generado por el actuador de
 	ultrasonidos]{Pulso acústico que se obtiene del actuador de
@@ -430,7 +434,7 @@ integran, puede verse en la \cref{fig:submedium}).
 
 \subsection{Diseño propuesto}
 
-La figura (??) a continuación muestra una representación esquemática del
+La \cref{fig:sensor-conditioner} muestra una representación esquemática del
 circuito propuesto para el acondicionamiento del sensor de ultrasonidos.
 Está compuesto por una única etapa basada en un amplificador de
 instrumentación, el \sig{ina155} de Texas Instruments. El \sig{ina155} es
@@ -441,6 +445,16 @@ alimentación o batería para referirse a la referencia de tensión utilizada
 para polarizar los circuitos acondicionadores), presenta una ganancia
 máxima de 50 V/V que se mantiene hasta los 40 kHz (ganancias inferiores se
 mantienen por encima de este margen de frecuencias).
+
+\begin{figure}
+    \begin{center}
+	\includegraphics{gis-pfc-ch1-04.mps}
+    \end{center}
+    \caption[Circuito de acondicionamiento del sensor
+    piezoeléctrico]{Circuito de acondicionamiento del sensor de
+    ultrasonidos.}
+    \label{fig:sensor-conditioner}
+\end{figure}
 
 Las ventajas de utilizar un amplificador de instrumentación son varias, de
 las que destacan dos, que al estar íntimamente relacionadas pueden
@@ -586,8 +600,8 @@ bornes del actuador es menester calcular la constante de tiempos del
 circuito ($\tau = C\cdot R_\text{eq}$) y observar el comportamiento del
 circuito en el tiempo. Tomando como hipótesis que la impedancia de salida
 del acondicionador es reducida ---hipótesis que se cumple en el circuito
-propuesto (\cref{fig:txconditioner}), dado que la etapa de salida de dicho
-circuito la constituye un amplificador operacional cuya impedancia de
+propuesto (\cref{fig:actuator-conditioner}), dado que la etapa de salida de
+dicho circuito la constituye un amplificador operacional cuya impedancia de
 salida se aproxima a cero---, y teniendo en cuenta que la parte resistiva
 de la impedancia atribuida al actuador es también pequeña
 (\cref{tab:transducers}), puede deducirse que la constante de tiempos
@@ -618,42 +632,42 @@ puede medirse con el circuito en abierto.
 \subsection[Circuito acondicionador propuesto]{Circuito acondicionador
 propuesto, el 555}
 
-El diseño propuesto se muestra en la \cref{fig:txconditioner}, está basado
-en dos temporizadores 555 ---a nivel comercial se encuentran disponibles
-encapsulados que en su interior contienen dos 555, generalmente se conocen
-bajo el número de referencia 556--- y lo completa un amplificador
-operacional. El 555 es un temporizador integrado de gran precisión capaz de
-proporcionar pulsos rectangulares de 12 V de amplitud con tiempos de subida
-y de bajada contenidos entre los 300 y los 100 ns. Es un integrado muy
-conocido, es muy versátil, y es empleado en gran variedad de aplicaciones.
-Habitualmente se utiliza en sus configuraciones de multivibrador astable y
-multivibrador monoestable. En su configuración astable el 555 genera un
-tren de pulsos rectangulares periódico en el que el ciclo de trabajo puede
-ajustarse a voluntad para adoptar un valor entre el 50\% y el 100\%. Por el
-contrario, en su configuración monoestable el circuito genera un pulso de
-duración muy precisa bajo un estímulo externo. La configuración monoestable
-responde a un estímulo por estado bajo, por tanto, es fácil observar la
-relación que existe entre las dos configuraciones. Utilizando dos 555 en
-cascada (alimentando uno con la salida del anterior), el primero en su
-configuración astable y el segundo configurado como monoestable puede
-obtenerse un tren de pulsos rectangulares en el que el ciclo de trabajo no
-se encuentra limitado a ningún rango de valores. En una configuración en
-cascada como la propuesta, el ciclo de trabajo está determinado por la
-relación entre el periodo del tren de pulsos, que únicamente depende de la
-configuración del astable, y la duración de los pulsos, que a su vez
-depende de la configuración del monoestable; de ahí que pueda evitarse la
-restricción que se aplica al ciclo de trabajo cuando sólo se utiliza un
-astable.
+El diseño propuesto se muestra en la \cref{fig:actuator-conditioner}, está
+basado en dos temporizadores 555 ---a nivel comercial se encuentran
+disponibles encapsulados que en su interior contienen dos 555, generalmente
+se conocen bajo el número de referencia 556--- y lo completa un
+amplificador operacional. El 555 es un temporizador integrado de gran
+precisión capaz de proporcionar pulsos rectangulares de 12 V de amplitud
+con tiempos de subida y de bajada contenidos entre los 300 y los 100 ns. Es
+un integrado muy conocido, es muy versátil, y es empleado en gran variedad
+de aplicaciones. Habitualmente se utiliza en sus configuraciones de
+multivibrador astable y multivibrador monoestable. En su configuración
+astable el 555 genera un tren de pulsos rectangulares periódico en el que
+el ciclo de trabajo puede ajustarse a voluntad para adoptar un valor entre
+el 50\% y el 100\%. Por el contrario, en su configuración monoestable el
+circuito genera un pulso de duración muy precisa bajo un estímulo externo.
+La configuración monoestable responde a un estímulo por estado bajo, por
+tanto, es fácil observar la relación que existe entre las dos
+configuraciones. Utilizando dos 555 en cascada (alimentando uno con la
+salida del anterior), el primero en su configuración astable y el segundo
+configurado como monoestable puede obtenerse un tren de pulsos
+rectangulares en el que el ciclo de trabajo no se encuentra limitado a
+ningún rango de valores. En una configuración en cascada como la propuesta,
+el ciclo de trabajo está determinado por la relación entre el periodo del
+tren de pulsos, que únicamente depende de la configuración del astable, y
+la duración de los pulsos, que a su vez depende de la configuración del
+monoestable; de ahí que pueda evitarse la restricción que se aplica al
+ciclo de trabajo cuando sólo se utiliza un astable.
 
 \begin{sidewaysfigure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch1-07.mps}
+		\includegraphics{gis-pfc-ch1-05.mps}
 	\end{center}
 	\caption[Circuito acondicionador de la sección de emisión]{Circuito
 	propuesto para acondicionar el actuador de ultrasonidos. Para
 	elaborar la figura se ha utilizado el \sig{ne556} y el \sig{ne5534}
 	de Texas Instruments.}
-	\label{fig:txconditioner}
+	\label{fig:actuator-conditioner}
 \end{sidewaysfigure}
 
 Ambas configuraciones, astable y monoestable, se caracterizan por la
@@ -752,13 +766,13 @@ determinar en que momento resulta adecuado congelar la prueba.
 	\end{threeparttable}
 	\caption[Componentes del acondicionador en emisión]{Componentes
 	seleccionados para implementar el circuito acondicionador que
-	aparece en la \cref{fig:txconditioner}.}
+	aparece en la \cref{fig:actuator-conditioner}.}
 	\label{tab:txcondcomp}
 \end{table}
 
 \begin{figure}
 	\begin{center}
-		\includegraphics{gis-pfc-ch1-03.mps}
+		\includegraphics{gis-pfc-ch1-06.mps}
 	\end{center}
 	\caption[Señal a la salida del amplificador \textsc{ne5534},
 	$u(t)$]{Señal generada por el acondicionador de transmisión medida
