@@ -1,6 +1,6 @@
 PT1 = gis-pfc-part1-01.mps
 CH1 = gis-pfc-ch1-01.mps gis-pfc-ch1-02.mps gis-pfc-ch1-03.mps gis-pfc-ch1-04.mps \
-      gis-pfc-ch1-05.mps
+      gis-pfc-ch1-05.mps gis-pfc-ch1-06.mps
 CH2 = gis-pfc-ch2-01.mps gis-pfc-ch2-02.mps gis-pfc-ch2-03.mps gis-pfc-ch2-04.mps
 CH3 = gis-pfc-ch3-01.mps gis-pfc-ch3-02.mps gis-pfc-ch3-03.mps gis-pfc-ch3-04.mps \
       gis-pfc-ch3-05.mps gis-pfc-ch3-06.mps gis-pfc-ch3-07.mps gis-pfc-ch3-08.mps

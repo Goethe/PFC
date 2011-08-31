@@ -46,11 +46,11 @@ pickup l1;
 % transductor
 a00 = 1.5;	a01 = 17u;
 draw (0, he02/2)--(a01, he02/2);
-d0 = transductor(a00, (a01, he02/2));
+d0 = transductor(a00) shifted (a01, he02/2);
+draw d0;
 
 % ··································································
 % frente de ondas
-draw d0;
 a02 = a00 * v/8;	a03 = 7v/2;
 a04 = 5a03/4;		a05 = x02 + a04;
 z00 = lrcorner d0 shifted (0, a02);
@@ -147,7 +147,7 @@ pickup l1;
 % transductor izquierdo
 a00 = 1.5;	a01 = 17u;	a02 = he02/2;
 draw (0, a02)--(a01, a02);
-d0 = transductor(a00, (a01, a02));
+d0 = transductor(a00) shifted (a01, a02);
 draw d0;
 
 % ··································································
@@ -241,7 +241,7 @@ pickup l1;
 % transductor
 a00 = 1.5;	a01 = 17u;	a02 = he02/2;
 draw (0, a02)--(a01, a02);
-d0 = transductor(a00, (a01, a02));
+d0 = transductor(a00) shifted (a01, a02);
 draw d0;
 
 % ··································································
@@ -471,7 +471,7 @@ pickup l1;
 % transductor
 a00 = 1.5;	a01 = 17u;
 draw (0, he02/2)--(7.5u, he02/2);
-d0 = transductor(a00, (a01, he02/2));
+d0 = transductor(a00) shifted (a01, he02/2);
 draw d0;
 
 % ··································································
@@ -614,15 +614,11 @@ draw z09--z11;			draw z10--z12;
 drawdblgisarrow z11 shifted (a10, -a10)--z12 shifted -(a10, a10);
 d3 = thelabel(btex $b$ etex, z13 shifted (0, -a10));
 fill bbox d3 withcolor white;	draw d3;
-a12 = a08/5;
 z14 = 1/2[(x02 + a08, a07/2), (x03, a07/2)];
-pickup l3;
-linejoin := rounded;
-linecap := rounded;
-draw z14 shifted (-a12, 0)--z14 shifted (a12, 0) dashed %
-	withdots scaled 1.5;
-linejoin := mitered;
-linecap := butt;
+pickup l2;
+d4 = dashpattern(on 0.35u off 2.65u);
+draw z14 shifted (-4.5u, 0)--z14 shifted (4.5u, 0) dashed d4 %
+	shifted (1.15u, 0);
 pickup l1;
 
 % ··································································

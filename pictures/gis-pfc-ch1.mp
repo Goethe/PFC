@@ -93,7 +93,8 @@ drawgisarrow z00--z00 shifted -z01--z07 cutbefore p0 shifted z00 %
 drawgisarrow z09--z00 shifted z01--z00 cutbefore p0 %
 	transformed t[1][0] cutafter p1 shifted z00 shifted -z06;
 drawgisarrow z10 shifted (0, 3v)--z10 cutafter p1 %
-	transformed t[1][1] shifted -z05 dashed evenly;
+	transformed t[1][1] shifted -z05 dashed evenly %
+	shifted (u/2, 0);
 draw z08--z08 shifted (0, 3v) cutbefore p0 transformed t[0][1] %
 	dashed evenly;
   
@@ -121,249 +122,139 @@ endfig;
 
 
 % ==================================================================
-% esquema del circuito acondicionador en la sección de emisión
+% representación de planos acotados de los transductores de
+% ultrasonidos
 beginfig(2);
+ahlength := 1.25u;
+ahangle := 30;
 numeric a[], i, j, k, x[], y[];
 picture d[];
 pen l[];
 path p[], q[][];
+transform t[][];
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
-d1 = nullpicture;
+d0 = nullpicture;
 pickup l1;
 
 % ··································································
-% temporizador
-% ancho y alto
-% a00 = wi/5 = 24u; a02 = 45u; a02/a03 = 15/2; a02/a04 = 15/16;
-a00 = wi/5;		a01 = 3u/2;		a02 = 2a00 + 2a01;
-% a03 es el patrón de la cuadrícula
-a03 = 11u/2;		a04 = 8a03;		a05 = a01 - a02/2;
-p0 = -(a02, a04)/2--(a02, -a04)/2--(a02, a04)/2--(-a02, a04)/2-- %
-	cycle;
-p1 = (a03/2, 0)--(a03/2, a03)--halfcircle scaled a03 %
-	shifted (0, a03)--(-a03/2, a03)--(-a03/2, 0);
-addto d1 also thelabel.rt(btex 1 \textsc{dis}(1) etex, %
-	(a05, a04/2 - a03));
-addto d1 also thelabel.rt(btex 2 \textsc{thr}(1) etex, %
-	(a05, a04/2 - 2a03));
-addto d1 also thelabel.rt(btex 3 \textsc{con}(1) etex, %
-	(a05, a04/2 - 3a03));
-addto d1 also thelabel.rt(btex 4 \textsc{res}(1) etex, %
-	(a05, a04/2 - 4a03));
-addto d1 also thelabel.rt(btex 5 \textsc{out}(1) etex, %
-	(a05, a04/2 - 5a03));
-addto d1 also thelabel.rt(btex 6 \textsc{tri}(1) etex, %
-	(a05, a04/2 - 6a03));
-addto d1 also thelabel.rt(btex 7 \textsc{gnd} etex, %
-	(a05, a04/2 - 7a03));
-addto d1 also thelabel.lft(btex \textsc{Vcc} 14 etex, %
-	(-a05, a04/2 - a03));
-addto d1 also thelabel.lft(btex \textsc{dis}(2) 13 etex, %
-	(-a05, a04/2 - 2a03));
-addto d1 also thelabel.lft(btex \textsc{thr}(2) 12 etex, %
-	(-a05, a04/2 - 3a03));
-addto d1 also thelabel.lft(btex \textsc{con}(2) 11 etex, %
-	(-a05, a04/2 - 4a03));
-addto d1 also thelabel.lft(btex \textsc{res}(2) 10 etex, %
-	(-a05, a04/2 - 5a03));
-addto d1 also thelabel.lft(btex \textsc{out}(2) 9 etex, %
-	(-a05, a04/2 - 6a03));
-addto d1 also thelabel.lft(btex \textsc{tri}(2) 8 etex, %
-	(-a05, a04/2 - 7a03));
-d0 = thelabel(btex \textsc{ne556} etex, center p0);
-addto d1 also d0 rotated 90;
-addto d1 doublepath p0 withpen l2;
-addto d1 doublepath p1 yscaled -1 shifted (0, a04/2) withpen l1;
-% centro del temporizador
-z00 = (a02/2 + 6a03, 6a03);
-draw d1 shifted z00;
+% constantes
+a00 = 2u;		a01 = 9.7 * a00;	a02 = 2 * a00;
+a03 = a00/2;		a04 = 5a00/2;		a05 = 6.7 * a00;
+a06 = 9.4 * a00;	a07 = 7u/20;		a08 = 8u;
+a09 = 2u;
+% a00 representa la escala de la representación.
+% a01...a06 representan las dimensiones de los transductores.
+% a07 sirve para que las puntas de flecha no atraviesen las aristas.
+% a06 es lo que sobresale la línea auxiliar de cota de la arista de
+% la figura.
+% a07 es lo que sobresale la linea auxiliar de cota de la línea de
+% cota.
+
+z00 = (2v, he02/2);
+z01 = z00 + (7v/2, 0);
+z02 = z01 + (7v/2, a05/2);
+
+p0 = fullcircle scaled a01;
+p1 = fullcircle scaled (a01 - a02);
+p2 = (-a01/2, -a05/2)--(a01/2, -a05/2)--(a01/2, a05/2)-- %
+	(-a01/2, a05/2)--cycle;
+p3 = (-a03/2, a06/2)--(-a03/2, -a06/2)--(a03/2, -a06/2)-- %
+	(a03/2, a06/2);
+p4 = fullcircle scaled a03;
+addto d0 doublepath (-3a01/5, 0)--(-a01/4, 0) withpen l0;
+addto d0 doublepath (-3a01/20, 0)--(3a01/20, 0) withpen l0;
+addto d0 doublepath (a01/4, 0)--(3a01/5, 0) withpen l0;
+addto d0 contour (makepath pencircle scaled 0.075u) %
+	shifted (-a01/5, 0) withpen l0;
+addto d0 contour (makepath pencircle scaled 0.075u) %
+	shifted (a01/5, 0) withpen l0;
 
 % ··································································
-% red temporal del multivibrador astable
-p2 = resistencia scaled 2a03 rotated 90;
-d2 = condensador scaled (3a03/2) rotated 90;
-a06 = 3a03/16;		a07 = 3u/2;
-p3 = fullcircle scaled a07;
-draw (0, 3a03 - a06)--(0, 0)--(a02 + 22a03, 0)-- %
-	(a02 + 22a03, 5a03/2)--(a02 + 45a03/2, 5a03/2);
-draw (0, 3a03 + a06)--(0, 6a03);
-draw (5a03/2, 0)--(5a03/2, 3a03 - a06);
-draw (5a03/2, 3a03 + a06)--(5a03/2, 7a03)--(6a03, 7a03);
-draw (0, 8a03)--(0, 9a03)--(6a03, 9a03);
-draw (0, 9a03)--(0, 10a03);
-draw (0, 12a03)--(0, 13a03)--(a02 + 11a03, 13a03)-- %
-	(a02 + 11a03, 12a03);
-draw (6a03, 6a03)--(5a03, 6a03)--(5a03, 13a03);
-draw (6a03, 4a03)--(4a03, 4a03)--(4a03, 8a03)--(6a03, 8a03);
-draw (0, 5a03)--(4a03, 5a03);
-draw (6a03, 5a03)--(5a03, 5a03)--(5a03, a03)--(a02 + 7a03, a03)-- %
-	(a02 + 7a03, 3a03)--(a02 + 6a03, 3a03);
-draw (6a03, 3a03)--(4a03, 3a03)--(4a03, 0);
-fill p3 shifted (0, 5a03);	fill p3 shifted (0, 9a03);
-fill p3 shifted (5a03/2, 0);	fill p3 shifted (4a03, 0);
-fill p3 shifted (4a03, 5a03);	fill p3 shifted (5a03, 13a03);
-pickup l2;
-draw p2 shifted (0, 7a03);	draw p2 shifted (0, 11a03);
-draw d2 shifted (0, 3a03) withpen l2;
-draw d2 shifted (5a03/2, 3a03) withpen l2;
-pickup l1;
+% planos de los transductores
+draw p0 shifted z00;	draw p1 shifted z00;
+draw p0 shifted z01;	draw p1 shifted z01;
+draw p3 shifted z02 shifted (-a04, -a05/2 - a06/2);
+draw p3 shifted z02 shifted (a04, -a05/2 - a06/2);
+draw p2 shifted z02;
+draw p4 shifted z01 shifted (-a04, 0);
+draw p4 shifted z01 shifted (a04, 0);
 
 % ··································································
-% red temporal del multivibrador monoestable
-a08 = a02 + 6a03;
-draw (a08, 5a03)--(a08 + a03, 5a03)--(a08 + a03, 13a03);
-draw (a08, 9a03)--(a08 + a03, 9a03);
-draw (a08, 6a03)--(a08 + 5a03/2, 6a03)--(a08 + 5a03/2, 3a03 + a06);
-draw (a08 + 5a03/2, 0)--(a08 + 5a03/2, 3a03 - a06);
-draw (a08, 8a03)--(a08 + 5a03, 8a03);
-draw (a08, 7a03)--(a08 + 4a03, 7a03)--(a08 + 4a03, 8a03);
-draw (a08 + 5a03, 0)--(a08 + 5a03, 3a03 - a06);
-draw (a08 + 5a03, 3a03 + a06)--(a08 + 5a03, 10a03);
-draw (a08, 4a03)--(a08 + 10a03, 4a03);
-fill p3 shifted (a08 + a03, 13a03);
-fill p3 shifted (a08 + a03, 9a03);
-fill p3 shifted (a08 + 5a03/2, 0);
-fill p3 shifted (a08 + 4a03, 8a03);
-fill p3 shifted (a08 + 5a03, 8a03);
-fill p3 shifted (a08 + 5a03, 0);
-pickup l2;
-draw p2 shifted (a08 + 5a03, 11a03);
-draw d2 shifted (a08 + 5a03/2, 3a03) withpen l2;
-draw d2 shifted (a08 + 5a03, 3a03) withpen l2;
-pickup l1;
-
-% ··································································
-% red amplificadora
-p4 = amplificador scaled 5a03;
-d3 = trtrsimplificado scaled 2a03;
-z01 = center p4 shifted (a09 + 2a03, 49a03/8);
-a09 = a08 + 8a03;
-(whatever, a10) = 1/2[(0, 4a03), (0, 33a03/4)];
-draw (a09, 0)--(a09, a10 - a03);
-draw (a09, a03 + a10)--(a09, 33a03/4)--(a09 + 2a03, 33a03/4);
-draw (a09 + a03, 33a03/4)--(a09 + a03, 10a03)-- %
-	(a09 + 4a03, 10a03);
-draw (a09 + 6a03, 10a03)--(a09 + 8a03, 10a03)-- %
-	(a09 + 8a03, 7a03/2)--(a09 + 17a03/2, 7a03/2);;
-draw z01--(a09 + 8a03, y01);
-fill p3 shifted (a09, 0);	fill p3 shifted (a09 + 8a03, y01);
-fill p3 shifted (a09 + a03, 33a03/4);
-draw z01 shifted (0, -2a03)--z01 shifted (0, 2a03);
+% líneas auxiliares
 pickup l0;
-fill p4 shifted (a09 + 2a03, 49a03/8) withcolor white;
-pickup l2;
-draw p2 shifted (a09, a10);
-draw p2 rotated -90 shifted (a09 + 5a03, 10a03);
-draw p4 shifted (a09 + 2a03, 49a03/8);
-draw d3 shifted (a09 + 19a03/2, 3a03) withpen l2;
-pickup l1;
-d4 = thelabel(btex \textsc{ne5534} etex, z01 shifted (-a03/2, 0));
-z02 = ulcorner d4;		z03 = llcorner d4;
-label.top(btex $-$ etex, z02 shifted (-a03/4, a03));
-label.bot(btex $+$ etex, z03 shifted (-a03/4, -a03));
-draw d4;
-
-% ··································································
-% referencias de tensión
-d5 = tierra scaled a03;
-draw (a02/2 + 6a03, 13a03)--(a02/2 + 6a03, 14a03);
-draw (a02/2 + 6a03, 0)--(a02/2 + 6a03, -a03);
-fill p3 shifted (a02/2 + 6a03, 13a03);
-fill p3 shifted (a02/2 + 6a03, 0);
-pickup l0;
-fill p3 shifted (a02/2 + 6a03, 14a03) withcolor white;
-fill p3 shifted (x01, y01 - 2a03) withcolor white;
-fill p3 shifted (x01, y01 + 2a03) withcolor white;
-pickup l1;
-draw p3 shifted (a02/2 + 6a03, 14a03);
-draw p3 shifted (x01, y01 - 2a03);
-draw p3 shifted (x01, y01 + 2a03);
-draw d5 shifted (a02/2 + 6a03, -a03) withpen l2;
+% línea punteada auxiliar circunferencias primera y segunda figura
+draw d0 shifted z00;	draw d0 rotated 90 shifted z00;
+draw d0 shifted z01;	draw d0 rotated 90 shifted z01;
+% cota circunferencia primera figura
+z03 = ((0, 0)--(a01, a01)) intersectionpoint
+	(fullcircle scaled a01);
+p5 = (0, 0)--(x03 + a08, y03 + a08)
+	cutbefore fullcircle scaled (a01 - a02);
+p6 = fullcircle scaled (a01 - a02 - 2a07);
+p7 = (-a01/2, -a01/2)--(a01/2, a01/2) %
+	cutbefore subpath (4, 6) of p6 %
+	cutafter p6;
+draw p5 shifted z00;
+drawdblgisarrow p7 shifted z00;
+% cota separación conectores/bornes segunda figura
+p8 = (0, 0)--(0, -3a01/5 - a08);
+draw p8 shifted z01 shifted (-a04, 0);
+draw p8 shifted z01 shifted (a04, 0);
+drawdblgisarrow ((-a04 + a07, 0)--(a04 - a07, 0)) shifted z01 %
+	shifted (0, -3a01/5 - a08 + a09);
+% cota altura transductor
+draw ((0, 0)--(a08, 0)) shifted z02 shifted (a01/2, a05/2);
+draw ((0, 0)--(a08, 0)) shifted z02 shifted (a01/2, -a05/2);
+drawdblgisarrow ((0, a05/2 - a07)--(0, -a05/2 + a07)) shifted z02 %
+	shifted (a01/2 + a08 - a09, 0);
+% cota diámetro transductor
+draw ((0, 0)--(0, a08)) shifted z02 shifted (-a01/2, a05/2);
+draw ((0, 0)--(0, a08)) shifted z02 shifted (a01/2, a05/2);
+drawdblgisarrow ((-a01/2 + a07, 0)--(a01/2 - a07, 0)) shifted z02 %
+	shifted (0, a05/2 + a08 - a09);
+% cota longitud conectores del transductor
+draw ((a03/2 + a04, -a05/2 - a06)-- %
+	(a01/2 + a08, -a05/2 - a06)) shifted z02;
+drawdblgisarrow ((0, -a05/2 - a07)--(0, -a05/2 - a06 + a07)) %
+	shifted z02 shifted (a01/2 + a08 - a09, 0);
+% cota diámetro conectores del transductor
+draw ((0, 0)--(0, -a08)) shifted z02 %
+	shifted (-a04 + a03/2, -a05/2 - a06);
+drawgisarrow ((-3a08/2, 0)--(-a07, 0)) shifted z02 %
+	shifted (-a04 - a03/2, -a05/2 - a06 - a08 + a09);
+draw ((0, 0)--(0, -a08)) shifted z02 %
+	shifted (-a04 - a03/2, -a05/2 - a06);
+drawgisarrow (reverse ((a07, 0)--(a08/3, 0))) shifted z02 %
+	shifted (-a04 + a03/2, -a05/2 - a06 - a08 + a09);
+draw ((-a03/2, 0)--(a03/2, 0)) shifted z02 %
+	shifted (-a04, -a05/2 -a06 - a08 + a09);
 
 % ··································································
 % etiquetas
-label.lft(btex $R_1$ etex, (-a03/2, 11a03));
-label.lft(btex $R_2$ etex, (-a03/2, 7a03));
-label.rt(btex $R_3$ etex, (a08 + 11a03/2, 11a03));
-label.ulft(btex $C_1$ etex, (-a03/2, 3a03 + 2a06));
-label.ulft(btex $C$ etex, (2a03, 3a03 + 2a06));
-label.lrt(btex $C$ etex, (a08 + 3a03, 3a03 - 2a06));
-label.lrt(btex $C_2$ etex, (a08 + 11a03/2, 3a03 - 2a06));
-label.lft(btex $R_b$ etex, (a09 - a03/2, a10));
-label.top(btex $R_a$ etex, (a09 + 5a03, 21a3/2));
-label.rt(btex $V\!cc_-$ etex, z01 shifted (a03/2, -2a03));
-label.rt(btex $V\!cc_+$ etex, z01 shifted (a03/2, 2a03));
-label.rt(btex $u(t)$ etex, (a09 + 33a03/4, y01));
-label.urt(btex $R_l$ etex, (a09 + 8a03, a03));
-label.rt(btex $V\!cc$ etex, (a02/2 + 13a03/2, 14a03));
-
-endfig;
-% ==================================================================
-
-
-
-% ==================================================================
-% señal generada por el circuito acondicionador de la sección de
-% emisión
-beginfig(3);
-numeric a[], b[], i, j, k;
-picture d[];
-pen l[];
-path p[], q[][];
-l0 = pencircle scaled 0.15u;
-l1 = pencircle scaled 0.25u;
-l2 = pencircle scaled 0.35u;
-l3 = pencircle scaled 0.5u;
-l4 = pensquare scaled 0.15u;
-l5 = pensquare scaled 0.25u;
-l6 = pensquare scaled 0.35u;
-l7 = pensquare scaled 0.5u;
-d0 = nullpicture;
-d1 = nullpicture;
-pickup l1;
+d1 = thelabel.ulft(btex $\varnothing\,\mathtt{7.7}$ etex, (0, 0));
+draw d1 rotated 45 shifted z00 shifted (x03 + a08, x03 + a08);
+label.top(btex $\mathtt{5.0}$ etex, z01 %
+	shifted (0, -3a01/5 - a08 + a09));
+d2 = thelabel.top(btex $\mathtt{6.7}$ etex, (0, 0));
+d3 = thelabel.top(btex $\mathtt{9.4}$ etex, (0, 0));
+draw d2 rotated 90 shifted z02 shifted (a01/2 + a08 - a09, 0);
+draw d3 rotated 90 shifted z02 %
+	shifted (a01/2 + a08 - a09, -a05/2 - a06/2);
+label.top(btex $\varnothing\,\mathtt{9.7}$ etex, z02 %
+	shifted (0, a05/2 + a08 - a09));
+label.urt(btex $\varnothing\,\mathtt{0.5}$ etex, z02 %
+	shifted (-a04 - a03/2 - 3a08/2, -a05/2 - a06 - a08 + a09));
+d4 = thelabel.urt(btex \texttt{escala\quad 2:1} etex, (2u, 2u));
+fill bbox d4 withcolor white;
+draw bbox d4;				draw d4;
 
 % ··································································
-% ejes coordenados
-a00 = 3he02/4;			a01 = u/10;
-pickup l5;
-drawgisarrow (0, -a01)--(wi, -a01);
-drawgisarrow (wi/2, 0)--(wi/2, a00);
-label.lrt(btex $u(t)$ etex, (wi/2 + u, a00));
-
-% ··································································
-% marcas de grafo
-a02 = 2.5u;		a03 = 3u;
-for i = 1 upto 5:
-	if not(i = 3): draw (i*wi/6, 0)--(i*wi/6, a02); fi
-endfor
-label(btex $-T$ etex, (wi/6, -a03));
-label(btex $0$ etex, (wi/2, -a03));
-label(btex $T$ etex, (5wi/6, -a03));
-
-% ··································································
-% tren de pulsos
-a04 = wi/13;		a05 = he02/2;
-p0 = (0, 0)--(0, a05)--(a04, a05)--(a04, 0);
-p2 = for i = 0 upto 2:
-	p0 shifted (wi/6 + i*wi/3, 0)--
-	endfor (11wi/12, 0);
+% marco
 pickup l2;
-draw (wi/12, 0)--(wi/6, 0)--p2;
-label.ulft(btex $P$ etex, (wi/2 - u, a05));
-label.rt(btex $T_H$ etex, (15wi/26, -a03));
-
-% ··································································
-% puntos suspensivos
-linejoin := rounded;
-linecap := rounded;
-draw (wi/24, a05/2)--(wi/8, a05/2) dashed withdots scaled 1.5;
-draw (a04 + 41wi/48, a05/2)--(95wi/96, a05/2) dashed withdots %
-	scaled 1.5;
-linejoin := mitered;
-linecap := butt;
+draw (0, 0)--(wi, 0)--(wi, he02)--(0, he02)--cycle;
 
 endfig;
 % ==================================================================
@@ -372,7 +263,7 @@ endfig;
 
 % ==================================================================
 % pulso acústico generado por el transductor
-beginfig(4);
+beginfig(3);
 numeric a[], b[][], i, j, k;
 picture d[];
 pen l[];
@@ -475,7 +366,7 @@ z05 = 1/2[urcorner d0, lrcorner d0];
 z06 = 1/2[ulcorner d2, llcorner d2];
 (a23, whatever) = 1/2[z05, z06];
 a24 = 1.2;
-d1 = transductor(a24, (a23, a19));
+d1 = transductor(a24) shifted (a23, a19);
 begingroup
 	interim bboxmargin := a20;
 	p6 = bbox d0;
@@ -487,8 +378,7 @@ begingroup
 endgroup;
 z07 = 1/2[ulcorner p7, llcorner p7];
 draw z07 shifted (3a20/4, 0)--z07 shifted (a22, 0);
-draw d0;	draw d1;	draw d2;
-draw p7;
+draw d0;    draw d1;	draw d2;    draw p7;
 drawgisarrow center p6--center p7 cutbefore p6 cutafter p9;
 drawgisarrow center p7--center p8 cutbefore p9 cutafter p8;
 label.top(btex $u(t)$ etex, 1/2[center p6, center p7]);
@@ -502,13 +392,10 @@ endfig;
 
 
 % ==================================================================
-% representación de planos acotados de los transductores de
-% ultrasonidos
-beginfig(5);
-ahlength := 1.25u;
-ahangle := 30;
-numeric a[], i, j, k, x[], y[];
-picture d[];
+% Circuito de acondicionamiento del sensor de ultrasonidos
+beginfig(4);
+numeric a[], i, j, k, w, x[], y[];
+picture d[], amp, arh, cap, pzt, r, blackdot, whitedot;
 pen l[];
 path p[], q[][];
 transform t[][];
@@ -516,113 +403,346 @@ l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
 l3 = pencircle scaled 0.5u;
-d0 = nullpicture;
 pickup l1;
 
 % ··································································
 % constantes
-a00 = wi/12;		a01 = 2a00;		a02 = a01/6;
-a03 = a02/3;		a04 = 2a02;		a05 = 7u/20;
-a06 = 8u;		a07 = 2u;
-% a00, a01, a02 y a03 son medidas para generar la figura
-% a04 es la mitad de la separación entre los bornes
-% a05 me sirve para que las puntas de flecha no atraviesen las
-% aristas o líneas de cota
-% a06 es lo que sobresale la línea auxiliar de cota de la arista de
-% la figura
-% a07 es lo que sobresale la linea auxiliar de cota de la línea de
-% cota
-
-z00 = (a00 + a01/2, he02/2);
-z01 = z00 + (7a00/2, 0);
-z02 = z01 + (7a00/2, a00/2);
-
-p0 = fullcircle scaled a01;
-p1 = fullcircle scaled (a01 - a02);
-p2 = (-a01/2, -a00/2)--(a01/2, -a00/2)--(a01/2, a00/2)-- %
-	(-a01/2, a00/2)--cycle;
-p3 = (-a03/2, a00/2)--(-a03/2, -a00/2)--(a03/2, -a00/2)-- %
-	(a03/2, a00/2);
-p4 = fullcircle scaled a03;
-addto d0 doublepath (-3a01/5, 0)--(-a01/4, 0) withpen l0;
-addto d0 doublepath (-3a01/20, 0)--(3a01/20, 0) withpen l0;
-addto d0 doublepath (a01/4, 0)--(3a01/5, 0) withpen l0;
-addto d0 contour (makepath pencircle scaled 0.075u) %
-	shifted (-a01/5, 0) withpen l0;
-addto d0 contour (makepath pencircle scaled 0.075u) %
-	shifted (a01/5, 0) withpen l0;
-
+w = 3u;		% factor de escala
+p0 = amplifier scaled 8w;
+amp := image(
+    fill p0 withpen l0 withcolor white;
+    draw p0 withpen l2;
+    label.top(btex $-$ etex, (w, -3w));
+    label.bot(btex $+$ etex, (w, 3w));
+    label(btex \textsc{ina155} etex, (3w, 0));
+);
+p1 = (-w/3, 0)--(w/3, 0)--(0, 2w/3)--cycle;	% arrowhead path
+arh := image( fill p1; );
+cap := image( draw capacitor scaled 2w withpen l2; );
+p2 = fullcircle scaled (3u/4);
+blackdot := image( fill p2 withpen l1; );
+p3 = fullcircle scaled (3u/2);
+whitedot := image(
+    fill p3 withpen l0 withcolor white;
+    draw p3 withpen l1;
+);
+pzt := image( draw loudspeaker scaled 2w withpen l2; );
+r := image( draw resistor scaled 2w rotated 90 withpen l2; );
 % ··································································
-% planos de los transductores
-draw p0 shifted z00;	draw p1 shifted z00;
-draw p0 shifted z01;	draw p1 shifted z01;
-draw p3 shifted z02 shifted (-a04, -a00);
-draw p3 shifted z02 shifted (a04, -a00);
-draw p2 shifted z02;
-draw p4 shifted z01 shifted (-a04, 0);
-draw p4 shifted z01 shifted (a04, 0);
-
+% divisor de tensión (empiezo por abajo)
+draw (4.5w, 2w)--(4.5w, 4w);
+draw (3w, 6w)--(3w, 4w)--(6w, 4w)--(6w, 7w - 0.2w);
+draw (3w, 8w)--(3w, 12w);
+draw (3w, 14w)--(3w, 16w);
+draw (6w, 7w + 0.2w)--(6w, 10w);
+draw (3w, 10w)--(13w, 10w);
+draw arh yscaled -1 shifted (4.5w, 2w);
+draw blackdot shifted (4.5w, 4w);
+draw r shifted (3w, 7w);
+draw cap shifted (6w, 7w);
+draw blackdot shifted (3w, 10w);
+draw blackdot shifted (6w, 10w);
+draw r shifted (3w, 13w);
+draw arh shifted (3w, 16w);
 % ··································································
-% líneas auxiliares
-pickup l0;
-draw d0 shifted z00;	draw d0 rotated 90 shifted z00;
-draw d0 shifted z01;	draw d0 rotated 90 shifted z01;
-z03 = ((0, 0)--(a01, a01)) intersectionpoint
-	(fullcircle scaled a01);
-p5 = (0, 0)--(x03 + a06, y03 + a06)
-	cutbefore fullcircle scaled (a01 - a02);
-p6 = fullcircle scaled (a01 - a02 - 2a05);
-p7 = (-a01/2, -a01/2)--(a01/2, a01/2) %
-	cutbefore subpath (4, 6) of p6 %
-	cutafter p6;
-draw p5 shifted z00;
-drawdblgisarrow p7 shifted z00;
-p8 = (0, 0)--(0, -3a01/5 - a06);
-draw p8 shifted z01 shifted (-a04, 0);
-draw p8 shifted z01 shifted (a04, 0);
-drawdblgisarrow ((-a04 + a05, 0)--(a04 - a05, 0)) shifted z01 %
-	shifted (0, -3a01/5 - a06 + a07);
-draw ((0, 0)--(a06, 0)) shifted z02 shifted (a01/2, a00/2);
-draw ((0, 0)--(a06, 0)) shifted z02 shifted (a01/2, -a00/2);
-draw ((0, 0)--(0, a06)) shifted z02 shifted (-a01/2, a00/2);
-draw ((0, 0)--(0, a06)) shifted z02 shifted (a01/2, a00/2);
-draw ((a03/2 + a04, -3a00/2)--(a01/2 + a06, -3a00/2)) shifted z02;
-draw ((0, 0)--(0, -a06)) shifted z02 %
-	shifted (-a04 + a03/2, -3a00/2);
-draw ((0, 0)--(0, -a06)) shifted z02 %
-	shifted (-a04 - a03/2, -3a00/2);
-drawdblgisarrow ((0, a00/2 - a05)--(0, -a00/2 + a05)) shifted z02 %
-	shifted (a01/2 + a06 - a07, 0);
-drawdblgisarrow ((0, -a00/2 - a05)--(0, -3a00/2 + a05)) %
-	shifted z02 shifted (a01/2 + a06 - a07, 0);
-drawdblgisarrow ((-a01/2 + a05, 0)--(a01/2 - a05, 0)) shifted z02 %
-	shifted (0, a00/2 + a06 - a07);
-drawgisarrow ((-3a06/2, 0)--(-a05, 0)) shifted z02 %
-	shifted (-a04 - a03/2, -3a00/2 - a06 + a07);
-drawgisarrow (reverse ((a05, 0)--(a06/3, 0))) shifted z02 %
-	shifted (-a04 + a03/2, -3a00/2 - a06 + a07);
-draw ((-a03/2, 0)--(a03/2, 0)) shifted z02 %
-	shifted (-a04, -3a00/2 - a06 + a07);
-
+% etapa amplificadora (empiezo a la izquierda, arriba, termino con
+% la red de realimentación y el amplificador)
+draw (16w, 17w)--(12w, 17w)--(12w, 14w + 2w/3)--(11.5w, 14w + 2w/3);
+draw (16w, 11w)--(12w, 11w)--(12w, 14w - 2w/3)--(11.5w, 14w - 2w/3);
+draw pzt xscaled -1 shifted (9.5w, 14w);
+draw (16w, 16w)--(15w, 16w)--(15w, 15w);
+draw (16w, 12w)--(15w, 12w)--(15w, 13w);
+draw r shifted (15w, 14w);
+draw (18w, 19w)--(18w, 9w);
+draw arh shifted (18w, 19w);
+draw arh yscaled -1 shifted (18w, 9w);
+draw (20w, 14w)--(32w, 14w);
+draw whitedot shifted (32w, 14w);
+draw (13w, 11w)--(13w, 4.5w)--(14w, 4.5w);
+draw (16w, 6w)--(14w, 6w)--(14w, 3w)--(17w - 0.2w, 3w);
+draw (18w, 6w)--(20w, 6w)--(20w, 3w)--(17w + 0.2w, 3w);
+draw (20w, 4.5w)--(21w, 4.5w)--(21w, 14w);
+draw r rotated 90 shifted (17w, 6w);
+draw cap rotated 90 shifted (17w, 3w);
+draw blackdot shifted (13w, 11w);
+draw blackdot shifted (13w, 10w);
+draw blackdot shifted (14w, 4.5w);
+draw blackdot shifted (20w, 4.5w);
+draw amp shifted (16w, 14w);
+% ··································································
+% impedancia de entrada de la tarjeta de adquisición y final
+draw (26.5w, 14w)--(26.5w, 12w);
+draw (25w, 10w)--(25w, 12w)--(28w, 12w)--(28w, 9w + 0.2w);
+draw (25w, 8w)--(25w, 6w)--(28w, 6w)--(28w, 9w - 0.2w);
+draw (26.5w, 6w)--(26.5w, 4w);
+draw r shifted (25w, 9w);
+draw cap shifted (28w, 9w);
+draw blackdot shifted (26.5w, 12w);
+draw blackdot shifted (26.5w, 6w);
+draw (32w, 10w)--(32w, 8w);
+drawgisarrow (33w, 10w)--(33w, 14w);
+draw whitedot shifted (32w, 10w);
+draw arh yscaled -1 shifted (26.5w, 4w);
+draw arh yscaled -1 shifted (32w, 8w);
 % ··································································
 % etiquetas
-d1 = thelabel.ulft(btex $\varnothing\,\mathtt{7.7}$ etex, (0, 0));
-draw d1 rotated 45 shifted z00 shifted (x03 + a06, x03 + a06);
-label.top(btex $\mathtt{5.0}$ etex, z01 %
-	shifted (0, -3a01/5 - a06 + a07));
-d2 = thelabel.top(btex $\mathtt{6.7}$ etex, (0, 0));
-d3 = thelabel.top(btex $\mathtt{9.4}$ etex, (0, 0));
-draw d2 rotated 90 shifted z02 shifted (a01/2 + a06 - a07, 0);
-draw d3 rotated 90 shifted z02 shifted (a01/2 + a06 - a07, -a00);
-label.top(btex $\varnothing\,\mathtt{9.7}$ etex, z02 %
-	shifted (0, a00/2 + a06 - a07));
-label.urt(btex $\varnothing\,\mathtt{0.5}$ etex, z02 %
-	shifted (-a04 - a03/2 - 3a06/2, -3a00/2 - a06 + a07));
+label.lft (btex $R = 100$ k$\Omega$ etex, (2.5w, 13w));
+label.lft (btex $R$ etex, (2.5w, 7w));
+label.rt (btex $C$ etex, (6.75w, 7w));
+label.top (btex $V^+_{CC}$ etex, (3w, 17.5w));
+label.lft (btex $R_G$ etex, (14.75w, 14w));
+label.lrt (btex $R$ etex, (18w, 5.5w));
+label.lrt (btex $C = 100$ pF etex, (17.25w + 0.2w, 2.5w));
+label.rt (btex $V^-_{CC} \simeq 0$ V etex, (5w, 2.5w));
+label.lft (btex $V^-_{CC}$ etex, (17.75w, 8.5w));
+label.rt (btex $V^+_{CC} \simeq 9$ V etex, (19w, 19.5w));
+label.lrt (btex $V_{REF}$ etex, (21.25w, 12.75w));
+% label.llft (btex $1$ M$\Omega$ etex, (24.75w, 7.75w));
+% label.urt (btex $150$ pF etex, (28.25w, 9.25w + 0.2w));
+label.rt (btex $V_{OUT}$ etex, (33.25w, 12w));
+z0 = (26.5w, 4w);   z1 = (33w, 10w);	z10 = 2/3[z1, z0];
+label.lrt (btex $V^-_{CC}$ etex, z10);
+
+endfig;
+% ==================================================================
+
+
+
+% ==================================================================
+% Circuito de acondicionamiento del actuador de ultrasonidos
+beginfig(5);
+numeric a[], i, j, k, w, x[], y[];
+picture d[], arh, cap, neg, pzt, piswitch, r, timer, inverter,
+    blackdot, whitedot;
+pen l[];
+path p[], q[][];
+transform t[][];
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+pickup l1;
 
 % ··································································
-% marco
+% constantes
+w = 3u;					% factor de escala
+p1 = (-w/3, 0)--(w/3, 0)--(0, 2w/3)--cycle;	% arrowhead path
+arh := image( fill p1; );
+cap := image( draw capacitor scaled 2w withpen l2; );
+p2 = fullcircle scaled (3u/4);
+blackdot := image( fill p2 withpen l1; );
+p3 = fullcircle scaled (3u/2);
+whitedot := image(
+    fill p3 withpen l0 withcolor white;
+    draw p3 withpen l1;
+);
+pzt := image( draw loudspeaker scaled 2w withpen l2; );
+r := image( draw resistor scaled 2w rotated 90 withpen l2; );
+timer = tlc( w );
+piswitch = switchPI( 2w );
+inverter = cdub( w );
+
+% ··································································
+% cableado (empiezo por la izquierda, arriba)
+draw (7w, 20w)--(7w, 18w);
+draw (5w, 16w)--(5w, 18w)--(9w, 18w)--(9w, 16w);
+draw (5w, 14w)--(5w, 10w);
+draw (5w, 8w)--(5w, 6w);
+draw (9w, 14w)--(9w, 12w);
+draw (5w, 12w)--(7w - 0.2w, 12w);
+draw (7w + 0.2w, 12w)--(15w, 12w);
+% primer temporizador
+draw (15w, 8w)--(12w, 8w)--(12w, 19w)--(24w, 19w)--(24w, 14w)--
+    (23w, 14w);
+draw (19w, 19w)--(19w, 21w);
+draw (24w, 15w)--(27w, 15w)--(27w, 14w);
+draw (23w, 12w)--(24w, 12w)--(24w, 10w)--(23w, 10w);
+draw (24w, 11w)--(27w, 11w);
+draw (27w, 12w)--(27w, 4w + 0.2w);
+draw (23w, 8w)--(24w, 8w)--(24w, 4w + 0.2w);
+draw (24w, 4w - 0.2w)--(24w, 2w);
+draw (19w, 2w)--(19w, 0);
+draw (27w, 4w - 0.2w)--(27w, 2w)--(14w, 2w)--(14w, 14w)--(15w, 14w);
+draw (15w, 10w)--(13w, 10w)--(13w, 17w)--(33w, 17w);
+% segundo temporizador
+draw (41w, 23w)--(42w, 23w)--(42w, 27w)--(46w, 27w)--(46w, 26w);
+draw (44w, 27w)--(44w, 29w);
+draw (41w, 21w)--(44w, 21w)--(44w, 23w)--(46w, 23w);
+draw (46w, 24w)--(46w, 22w);
+draw (41w, 19w)--(46w, 19w);
+draw (43w, 19w)--(43w, 12w)--(30w, 12w)--(30w, 21w)--(33w, 21w);
+draw (46w, 20w)--(46w, 10w + 0.2w);
+draw (41w, 17w)--(42w, 17w)--(42w, 10w + 0.2w);
+draw (37w, 8w)--(37w, 6w);
+draw (42w, 10w - 0.2w)--(42w, 8w);
+draw (46w, 10w - 0.2w)--(46w, 8w)--(32w, 8w)--(32w, 23w)--
+    (33w, 23w);
+draw (33w, 19w)--(31w, 19w)--(31w, 14w)--(53w, 14w);
+% inversor y final
+draw (53w, 6w)--(50w, 6w)--(50w, 21w)--(63w, 21w)--(63w, 14w)--
+    (61w, 14w);
+draw (53w, 18w)--(52w, 18w)--(52w, 22w)--(57w, 22w)--(57w, 24w);
+draw (53w, 4w)--(52w, 4w)--(52w, 0);
+draw (53w, 16w)--(50w, 16w);
+draw (53w, 10w)--(50w, 10w);
+draw (53w, 12w)--(51w, 12w)--(51w, w)--(66w - 0.2w, w);
+draw (53w, 8w)--(51w, 8w);
+draw (61w, 16w)--(62w, 16w)--(62w, 4w)--(61w, 4w);
+draw (61w, 8w)--(62w, 8w);
+draw (61w, 10w)--(64w, 10w)--(64w, 6w)--(61w, 6w);
+draw (64w, 8w)--(66w - 0.2w, 8w);
+draw (66w + 0.2w, w)--(68w, w)--(68w, 4.5w - 2w/3)--
+    (69w, 4.5w - 2w/3);
+draw (66w + 0.2w, 8w)--(68w, 8w)--(68w, 4.5w + 2w/3)--
+    (69w, 4.5w + 2w/3);
+
+% ··································································
+% referencias de tensión (empiezo por la izquierda, abajo)
+draw arh yscaled -1 shifted (5w, 6w);
+draw arh shifted (7w, 20w);
+draw arh yscaled -1 shifted (19w, 0);
+draw arh shifted (19w, 21w);
+draw arh yscaled -1 shifted (37w, 6w);
+draw arh shifted (44w, 29w);
+draw arh yscaled -1 shifted (52w, 0);
+draw arh shifted (57w, 24w);
+
+% ··································································
+% nodos (empiezo por la izquierda)
+draw blackdot shifted (5w, 12w);
+draw blackdot shifted (7w, 18w);
+draw blackdot shifted (9w, 12w);
+draw blackdot shifted (5w, 12w);
+draw blackdot shifted (19w, 19w);
+draw blackdot shifted (19w, 2w);
+draw blackdot shifted (24w, 2w);
+draw blackdot shifted (24w, 11w);
+draw blackdot shifted (24w, 15w);
+draw blackdot shifted (27w, 11w);
+draw blackdot shifted (37w, 8w);
+draw blackdot shifted (42w, 8w);
+draw blackdot shifted (43w, 19w);
+draw blackdot shifted (46w, 23w);
+draw blackdot shifted (44w, 27w);
+draw blackdot shifted (50w, 16w);
+draw blackdot shifted (50w, 10w);
+draw blackdot shifted (51w, 8w);
+draw blackdot shifted (62w, 8w);
+draw blackdot shifted (64w, 8w);
+
+% ··································································
+% resistencias, condensadores y conmutadores (empiezo por la
+% izquierda, abajo)
+draw piswitch rotated 270 shifted (5w, 9w);
+draw r shifted (5w, 15w);
+draw r shifted (9w, 15w);
+draw cap rotated 90 shifted (7w, 12w);
+draw cap shifted (24w, 4w);
+draw cap shifted (27w, 4w);
+draw r shifted (27w, 13w);
+draw cap shifted (42w, 10w);
+draw cap shifted (46w, 10w);
+draw r shifted (46w, 21w);
+draw r shifted (46w, 25w);
+draw cap rotated 90 shifted (66w, w);
+draw cap rotated 90 shifted (66w, 8w);
+
+% ··································································
+% integrados y transductor (empiezo por la izquierda)
+draw timer shifted (19w, 11w);
+draw timer shifted (37w, 20w);
+draw inverter shifted (57w, 11w);
+draw pzt shifted (71w, 4.5w);
+
+% ··································································
+% etiquetas (empiezo por la izquierda)
+label.rt( btex $R_1$ etex, (5.25w, 15w) );
+label.bot( btex $V^-_{CC}$ etex, (5w, 5w) );
+label.top( btex $V^+_{CC}$ etex, (7w, 21w) );
+label.rt( btex $R_1$ etex, (9.25w, 15w) );
+label.lrt( btex $47$ nF etex, (7.5w, 11.5w) );
+label.lft( btex $C = 100$ nF etex, (23w, 4w) );
+label.rt( btex $470$ pF etex, (28w, 4w) );
+label.lft( btex $R_2$ etex, (26.75w, 13w) );
+label.rt( btex $V^-_{CC} \simeq 0$ V etex, (19.5w, -0.5w) );
+label.top( btex $V^+_{CC}$ etex, (19w, 22w) );
+label.lft( btex $V^+_{CC} \simeq 9$ V etex, (43.5w, 29.25w) );
+label.urt( btex $R_2 = 750$ k$\Omega$ etex, (46.25w, 25.25w) );
+label.urt( btex $1$ M$\Omega$ etex, (46.25w, 21.25w) );
+label.llft( btex $18$ pF etex, (46w, 9.625w) );
+label.lft( btex $C$ etex, (41w, 10w) );
+label.rt( btex $V^-_{CC}$ etex, (37.5w, 5.5w) );
+label.rt( btex $V^+_{CC}$ etex, (57.5w, 24.5w) );
+label.rt( btex $V^-_{CC}$ etex, (52.5w, -0.5w) );
+label.top( btex $C$ etex, (66w, 9w) );
+label.top( btex $C$ etex, (66w, 2w) );
+
+endfig;
+% ==================================================================
+
+
+
+% ==================================================================
+% señal generada por el circuito acondicionador de la sección de
+% emisión
+beginfig(6);
+numeric a[], b[], i, j, k;
+picture d[];
+pen l[];
+path p[], q[][];
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+l4 = pensquare scaled 0.15u;
+l5 = pensquare scaled 0.25u;
+l6 = pensquare scaled 0.35u;
+l7 = pensquare scaled 0.5u;
+pickup l1;
+verbatimtex
+\newlength\taltura
+\settoheight{\taltura}{$T_H$}
+etex
+
+% ··································································
+% ejes coordenados
+a00 = 3he02/4;			a01 = u/10;
+drawgisarrow (0, -a01)--(wi, -a01);
+drawgisarrow (wi/2, 0)--(wi/2, a00);
+label.lrt(btex $u(t)$ etex, (wi/2 + u, a00));
+
+% ··································································
+% marcas de grafo
+a02 = 2.5u;		a03 = 3u;
+draw (wi/3, 0)--(wi/3, a02);
+draw (2wi/3, 0)--(2wi/3, a02);
+label.lft(btex \vbox to \taltura {\hbox{$t$}\vss} etex, %
+	(wi - 2u, -a03));
+label(btex \vbox to \taltura {\hbox{$-T$}\vss} etex, (wi/6, -a03));
+label(btex \vbox to \taltura {\hbox{$0$}\vss} etex, (wi/2, -a03));
+label(btex \vbox to \taltura {\hbox{$T$}\vss} etex, (5wi/6, -a03));
+
+% ··································································
+% tren de pulsos
+a04 = wi/20;		a05 = he02/2;
+p0 = (0, 0)--(0, a05)--(a04, a05)--(a04, 0);
+p2 = for i = 0 upto 2:
+	p0 shifted (wi/6 + i*wi/3, 0)--
+	endfor (11wi/12, 0);
 pickup l2;
-draw (0, 0)--(wi, 0)--(wi, he02)--(0, he02)--cycle;
+draw (wi/12, 0)--(wi/6, 0)--p2;
+label.ulft(btex $P$ etex, (wi/2 - u, a05));
+label.rt(btex \vbox to \taltura {\hbox{$T_H$}\vss} etex, %
+	(wi/2 + a04, -a03));
+
+% ··································································
+% puntos suspensivos
+d0 = dashpattern(on 0.35u off 2.65u);
+% el ancho del patrón se corresponde con el ancho de línea l2 (.35u)
+pickup l2;
+draw (wi/8, a05/2)--(wi/8 - 3wi/40, a05/2) dashed d0 %
+	shifted (u/50, 0);
+draw (a04 + 21wi/24, a05/2)--(wi, a05/2) dashed d0;
 
 endfig;
 % ==================================================================

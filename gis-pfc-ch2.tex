@@ -1,4 +1,4 @@
-\chapter{Subsistema de adquisición}
+\chapter{Subsistema de adquisición}\label{chap:acquisition}
 
 El subsistema de adquisición es el encargado de recibir la señal analógica
 procedente del subsistema para la interacción con el medio físico,
@@ -108,7 +108,7 @@ puede verse una representación de un ejemplo de la cola de muestreo.
 \begin{table}
 	\centering
 	\begin{threeparttable}
-	\begin{tabular}{lccccccccc}
+	\begin{tabular}{l*{9}{c}}
 		\toprule
 		Posición en la cola & 1 & 2 & 3 & 4 %
 		& \multicolumn{2}{c}{$\cdots$} & 254 & 255 & 256 \\
@@ -242,7 +242,9 @@ resolución del conversor analógico digital.
 	\end{tabular}
 	\caption[Ganancia del amplificador y precisión del
 	conversor]{Relación entre ganancia, rango de trabajo y resolución
-	según el modo de adquisición.}
+	según el modo de adquisición (apréciese el cambio de unidades en
+	las que es medido el rango de tensiones a partir de una ganancia de
+	20 V/V).}
 	\label{tab:acqmodes}
 \end{sidewaystable}
 
@@ -814,7 +816,7 @@ en la \vref{fig:conbox}.
 		\includegraphics[scale=1, keepaspectratio=true]
 		{gis-pfc-ch2-05.jpg}
 	\end{center}
-	\caption[Plano de la caja de conexiones ya terminada] {Plano de la
+	\caption[Plano de la caja de conexiones ya terminada]{Plano de la
 	caja de conexiones ya terminada.}
 	\label{fig:conbox}
 \end{figure}

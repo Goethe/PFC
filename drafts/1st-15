@@ -1,0 +1,88 @@
+|Lunes, 8 de Agosto de 2011|
+
+	Las necesidades del lado del sensor son, amplificar la señal, de
+	unos 100 mV que espero, debería hacer el cálculo antes de poner
+	nada, a los 20 Vpp de rango que tiene la tarjeta de adquisición.
+	Filtrar las componentes de señal por debajo de los 20 kHz y por
+	encima de los 60 kHz, y proporcionar adaptación de impedancias. Es
+	importante que la impedancia del sensor no ejerza una influencia
+	parásita en la función del amplificador, por eso es por lo que
+	elijo un amplificador de instrumentación, que además de tener
+	impedancia de entrada infinita, sus primeras etapas no tienen
+	realimentación con la entrada consiguiendo mi propósito. Luego digo
+	que con un amplificador más tengo un filtro de paso bajo a
+	frecuencia
+
+
+|Lunes, 22 de Agosto de 2011|
+
+	Necesito meter una referencia de tensión a la entrada para que el
+	amplificador no me recorte el ciclo negativo de la señal.
+
+	Precisamente en el ejemplo que establece mi circuito acondicionador
+	la referencia de tensión de continua que meto a la entrada del
+	amplificador es retirada aunque luego a la salida se suma la
+	tensión de referencia.
+
+
+|TODO, ideas que se me ocurren sobre la marcha y que podría implementar en
+el documento|
+
+	Tengo que incluir una sección que explique las mejoras que podrían
+	introducirse en el circuito acondicionador, como por ejemplo, un
+	filtro o un segundo amplificador en cascada, pero de ganancia
+	variable.
+
+	Tengo que deshacer los horrendos cuadros que exponen los parámetros
+	que según yo mismo son los que determinan como debe ser o
+	comportarse el circuito acondicionador. Asimismo tengo que exponer
+	que tipo de señal espero, decir por ejemplo que el sensor actúa
+	como un filtro que deja pasar únicamente su frecuencia de
+	resonancia y sus armónicos pero que al no responder inmediatamente
+	al impulso acústico introduce una distorsión en la señal que hace
+	que se ensanche su espectro en frecuencia
+
+	A ver, ésto que he dicho en el párrafo anterior es una trola como
+	una casa. El sensor no es que no responda inmediatamente al impulso
+	acústico, si no lo hiciera y como digo introdujera una distorsión
+	en la señal, probablemente la señal resultante no me serviría de
+	nada ya que lo que estudio en un ENDUS por transmisión es
+	precisamente la distorsión que introduce en el pulso acústico
+	original el medio de propagación. Si el sensor, como digo, filtrase
+	en primer lugar la señal acústica relegándola a una combinación de
+	tonos compuesta por la frecuencia de resonancia y sus armónicos, y
+	después introdujese por sí mismo una distorsión en esa señal, lo
+	que percibiría en la señal recibida sería la distorsión introducida
+	por el propio sensor y no la que introduce el medio, que habría
+	sido filtrada. Otra cosa es que el pulso acústico que genera el
+	actuador se asemeja a un tono (o combinación de tonos, recordar los
+	armónicos) a la frecuencia de resonancia del sensor que
+	indudablemente debe estar modulado por otra señal: en el caso ideal
+	esa señal sería un pulso rectangular (puesto que la transmisión es
+	pulsada), en la práctica se trata de un pulso gaussiano. En
+	definitiva, lo que quiero decir es que la señal que recibe el
+	acondicionador probablemente lleva información relevante en
+	frecuencias en torno a la frecuencia de resonancia, lo que no sé es
+	qué ancho de banda tiene la señal, ni qué parte debo conservar.
+	Todo ello me lleva a la conclusión de que el hecho de que la
+	ganancia decaiga a partir de los 40 kHz no es tan bueno como he
+	dejado entrever antes, no está para nada justificado que sea algo
+	bueno.
+
+	La ganancia no decae mucho a 40 kHz (aproximadamente a 47 V/V) ni a
+	80 kHz (segundo armónico, aproximadamente a 40 ~ 35 V/V), pero lo
+	importante no es eso, lo importante es la distorsión que introduce
+	el circuito si funciono a máxima ganancia (R_G en circuito
+	abierto). Por eso, es prudente funcionar con una ganancia por
+	debajo de los 30 V/V, eso me garantiza que el amplificador no me
+	introduce distorsión en la señal. Si la amplitud de la señal que
+	recibe el acondicionador es de unos 100 mVpp, una ganancia de 30
+	V/V, garantiza una salida de 3 Vpp de amplitud. Ésto no parece
+	demasiado, sobre todo teniendo en cuenta que puedo sacar señales
+	del doble de amplitud sin saturar alimentando el circuito con una
+	pila de 9 V, pero todavía no estoy seguro del nivel de señal
+	esperado del sensor, debo repetir los cálculos teniendo en cuenta
+	las nuevas condiciones de trabajo. En caso de que el nivel de señal
+	fuese demasiado pequeño podría resolverlo poniendo otro
+	amplificador, esta vez un amplificador operacional, en cascada con
+	el INA155, un amplificador de ganancia variable.

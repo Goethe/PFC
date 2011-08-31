@@ -85,7 +85,9 @@ z17 = z14 shifted -z01 shifted z15;
 
 % ··································································
 % flechas
-for i = 0 upto 2 :
+drawgisarrow z07--z08 cutbefore p0 transformed t[0][0] cutafter p1 %
+	transformed t[0][1] shifted z5 dashed evenly shifted (u, 0);
+for i = 1,2 :
 	drawgisarrow z[i + 7]--z[i + 8] cutbefore p0 %
 		transformed t[0][i] cutafter p1 %
 		transformed t[0][i + 1] shifted z05;
@@ -125,12 +127,11 @@ endfig;
 % ejemplo de modos de terminación de la kpci-3108
 beginfig(2);
 numeric a[];
-picture d[];
+picture d[], amp, arh, cswitch, oswitch, tswitch,
+    blackdot, whitedot, signalbox, revsignalbox;
 pen l[];
 path p[], q[][];
 transform t[];
-ahlength := 4u;	ahangle := 20;
-ahinset := 5/100;
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
 l2 = pencircle scaled 0.35u;
@@ -139,162 +140,126 @@ pickup l1;
 
 % ··································································
 % constantes
-% alturas
-a00 = 15u/4;		a01 = 3v;
-a02 = 9v/2 + 5u/2;	a03 = 11v/2;
-a04 = 6v + 5u/2;
-% switch, diferencias de altura entre terminales en T
-z00 = (8u, 0) rotated 20;
-% switches
-d0 = conmutadorA(u, (0, 0));
-d1 = conmutadorC(u, (0, 0));
-d2 = conmutadorT(u, (0, 0));
-p0 = bbox d2;
-begingroup
-	interim bboxmargin := 0; p1 = bbox d0 scaled 19/20;
-endgroup;
-% switch, ancho total (si no me equivoco 27/2 * escala)
-a05 = xpart(urcorner d0 - ulcorner d0);
-% cajas de señal
-d3 = thelabel.top(btex Se\~nal etex, (0, 0));
-z01 = llcorner d3;	z02 = lrcorner d3;
-addto d3 also thelabel.bot(btex $+$ etex, z01);
-addto d3 also thelabel.bot(btex $-$ etex, z02);
-p2 = bbox d3;
-% caja de señal, ancho total
-a06 = xpart(urcorner d3 - ulcorner d3);
-% posición etiquetas
-z03 = 1/2[ulcorner d3, urcorner d3] + %
-	5/8(ulcorner d3 - llcorner d3);
-% ajuste para centrar las etiquetas
-d4 = thelabel(btex 00 Lo/08 Hi etex, (0, 0));
-d5 = thelabel(btex 00 Hi etex, (0, 0));
-a07 = 11/20;			x04 = 0;
-(whatever, y04) = a07*(llcorner d5 - llcorner d4);
-% resto de anchos
-a08 = 15u/4;		a09 = a08/2;
-a10 = xpart(urcorner p0 - ulcorner p0);
-a11 = a06;		a12 = 6a08 + 2a05 + 2a06 + a11;
-a13 = 3u/2;		a14 = a13/2;
-a15 = a14/3;
-% puntos clave
-a16 = a05 + a08;	a17 = a05 + a06/2 + 3a08;
-a18 = a12 - a17;	a19 = a12 - a16;
-a20 = a12 + 2a08;
+w = 3u;
+p0 = amplifier scaled 6w;
+amp := image(
+    fill p0 withpen l0 withcolor white;
+    draw p0 withpen l2;
+    label.top(btex $-$ etex, (0.75w, -2.25w));
+    label.bot(btex $+$ etex, (0.75w, 2.25w));
+    label(btex \textsc{ai} etex, (2w, 0));
+);
+p1 = (-w/3, 0)--(w/3, 0)--(0, 2w/3)--cycle;	% arrowhead path
+arh := image( fill p1 yscaled -1; );
+p2 = fullcircle scaled (3u/4);
+blackdot := image( fill p2 withpen l1; );
+p3 = fullcircle scaled (3u/2);
+whitedot := image(
+    fill p3 withpen l0 withcolor white;
+    draw p3 withpen l1;
+);
+cswitch = switchC(2w);
+oswitch = switchO(2w);
+tswitch = switchT(2w);
+d0 = thelabel.top(btex Se\~nal etex, (0, 0));
+d1 := d0;
+z0 = llcorner d0;
+z1 = lrcorner d0;
+addto d0 also thelabel.bot(btex $+$ etex, z0);
+addto d0 also thelabel.bot(btex $-$ etex, z1);
+signalbox := image(
+    fill bbox d0 withpen l0 withcolor white;
+    draw d0;
+    draw bbox d0 withpen l2;
+);
+addto d1 also thelabel.bot(btex $-$ etex, z0);
+addto d1 also thelabel.bot(btex $+$ etex, z1);
+revsignalbox := image(
+    fill bbox d1 withpen l0 withcolor white;
+    draw d1;
+    draw bbox d1 withpen l2;
+);
+d2 = dashpattern(on 0.35u off 6w);
 
 % ··································································
-% primera parte conmutada
-% dibujo las líneas centrales, los switches y las cajas de señal
-p3 = fullcircle scaled (a13);
-p4 = (0, 0)--(a09 + a05, 0)--(a09 + a05, a03)--(0, a03)--cycle;
-p5 = (a09/2 + a05/2, 3a00)--(a09/2 + a05/2, a01 - 3a00/2);
-d6 = thelabel.bot(btex Multiplexador etex, (a09/2 + a05/2, 0));
-draw (a20, a04)--(0, a04)--(0, a00)--(a08, a00)-- %
-	(a12 - a08, a00)--(a12, a00)--(a12, a02)--(a20, a02);
-for i = a00, a01, a02:
-	if not(i = a00):
-		pickup l3;
-		fill p3 shifted (0, i);
-		fill p3 shifted (a12, i);
-		pickup l1;
-		draw (0, i)--(a12, i);
-	fi
-	if i = a01: fill p3 shifted (a12/2, i); fi
-	pickup l0;
-	fill p1 shifted (a08, i) withcolor white;
-	fill p1 shifted (a19 + a09/2 - a15, i) withcolor white;
-	fill p2 shifted (a17, i) withcolor white;
-	if i = a01:
-		fill p2 shifted (a18, i) %
-			withcolor white; fi
-	pickup l1;
-	draw d0 xscaled -1 shifted (a16 - a13 - a15, i);
-	draw d3 shifted (a17, i);
-	if i = a01:
-		draw d1 shifted (a19 + a09/2 - a15, i);
-		draw d3 shifted (a18, i);
-		drawgisarrow (a12/2, i)-- %
-			(a12/2, i - v);
-	else :
-		draw d0 shifted (a19 + a09/2 - a15, i);
-	fi
-	pickup l2;
-	draw p2 shifted (a17, i);
-	if i = a01: draw p2 shifted (a18, i); fi
-endfor
-for i = (3a09/2 - a14), (a19 + a14 - a09):
-	draw p4 shifted (i, 0);
-	linejoin := rounded;
-	linecap := rounded;
-	draw p5 shifted (i, 0) dashed withdots scaled 2;
-	linejoin := mitered;
-	linecap := butt;
-	draw d6 shifted (i, 0);
-endfor
+% cables (empiezo desde el cableado externo)
+draw (31w, 20w + 7w/9)--(29w, 20w + 7w/9)--(29w, 22w)--(0, 22w)--
+    (0, w)--(2w, w);
+draw (4w, w)--(23w, w);
+draw (25w, w)--(27w, w)--(27w, 18w);
+draw (0, 18w)--(2w, 18w);
+draw (4w, 18w)--(23w, 18w);
+draw (25w, 18w)--(29w, 18w);
+draw (0, 11w)--(2w, 11w);
+draw (4w, 11w)--(23w, 11w);
+draw (25w, 11w)--(27w, 11w);
+draw (31w, 20w - 7w/9)--(29w, 20w - 7w/9)--(29w, 16w + 7w/9)--
+    (31w, 16w + 7w/9);
+draw (33w, 20w)--(35w, 20w);
+draw (33w, 16w)--(35w, 16w);
+draw (39w, 18w)--(42w, 18w);
 
 % ··································································
-% etiquetas
-label(btex 00 Lo/08 Hi etex, z03 shifted (a18, a02));
-label(btex 01 Lo/09 Hi etex, z03 shifted (a18, a01));
-label(btex 07 Lo/15 Hi etex, z03 shifted (a18, a00));
-label(btex 00 Hi etex, z03 + z04 shifted (a17, a02));
-label(btex 01 Hi etex, z03 + z04 shifted (a17, a01));
-label(btex 07 Hi etex, z03 + z04 shifted (a17, a00));
+% referencias de tensión (empiezo desde la izquierda)
+draw (13.5w, 11w)--(13.5w, 9w);
+draw arh shifted (13.5w, 9w);
+draw (31w, 16w - 7w/9)--(29w, 16w - 7w/9)--(29w, 14w - 7w/9);
+draw arh shifted (29w, 14w - 7w/9);
+draw (38w, 17w)--(38w, 15w);
+draw arh shifted (38w, 15w);
+draw whitedot shifted (42w, 18w);
 
 % ··································································
-% segunda parte conmutada
-pickup l1;
-a21 = a04 - 2y00;		a22 = a02 - 2y00;
-a23 = a21 + y00;		a24 = a22 + y00;
-a25 = a20 - a08;		a26 = a20 + a05 - a09;
-a27 = a26 + a08;
-draw (a20, a21)--(a25, a21)--(a25, a02);
-drawgisarrow (a20, a22)--(a25, a22)--(a25, a22 - v);
-draw (a26, a23)--(a27, a23);	draw (a26, a24)--(a27, a24);
-draw d2 shifted (a20, a21);	draw d2 shifted (a20, a22);
-pickup l2;
-draw p0 shifted (a20, a21);	draw p0 shifted (a20, a22);
-pickup l1;
+% nodos (empiezo desde la izquierda)
+draw blackdot shifted (0, 11w);
+draw blackdot shifted (0, 18w);
+draw blackdot shifted (27w, 11w);
+draw blackdot shifted (27w, 18w);
+draw blackdot shifted (13.5w, 11w);
+draw blackdot shifted (29w, 18w);
 
 % ··································································
-% amplificador de instrumentación
-% defininciones
-z06 = 1/2[(a27, a23), (a27, a24)];
-p6 = amplificador;
-a28 = a23 - a24 + 3y00/2;
-a29 = a28/2 + 3a09;
-p7 = p6 scaled a28 shifted z06;
-z07 = center p7 shifted (-a09, 0);
-p8 = z07--z07 shifted (0, -3v);
-z08 = p8 intersectionpoint p7;
-d7 = thelabel(btex \textsc{ai} etex, z07);
-begingroup
-	interim bboxmargin := 3u; p9 = bbox d7;
-endgroup;
-p10 = z07 shifted (a08, a28/2)--z07 shifted (a29 - a08, a28/2);
-z09 = point (length p10)/2 of p10;
-% dibujo todos los elementos definidos previamente
-drawgisarrow z07--z08 shifted (0, -v);
-draw z07--z07 shifted (a29, 0);
-pickup l0;
-fill p7 withcolor white;
-fill fullcircle scaled (3u/2) shifted z07 shifted (a29, 0) %
-	withcolor white;
-pickup l2; 
-draw p7; 			
-pickup l1;
-draw fullcircle scaled (3u/2) shifted z07 shifted (a29, 0);
-draw d7;
-begingroup
-	interim ahlength := 2u; drawgisarrow p10;
-endgroup;
+% conmutadores (empiezo desde la izquierda)
+draw oswitch xscaled -1 shifted (3w, w);
+draw oswitch xscaled -1 shifted (3w, 11w);
+draw oswitch xscaled -1 shifted (3w, 18w);
+draw oswitch shifted (24w, w);
+draw oswitch shifted (24w, 18w);
+draw cswitch shifted (24w, 11w);
+draw tswitch scaled -1 shifted (32w, 20w);
+draw tswitch scaled -1 shifted (32w, 16w);
+p4 = (-2w, -3w/2)--(2w, -3w/2)--(2w, 3w/2)--(-2w, 3w/2)--cycle;
+draw p4 shifted (32w, 20w) withpen l2;
+draw p4 shifted (32w, 16w) withpen l2;
+p5 = (0, 0)--(4w, 0)--(4w, 20w)--(0, 20w)--cycle;
+draw p5 shifted (w, 0) withpen l2;
+draw p5 shifted (22w, 0) withpen l2;
+draw (3w, 5w)--(3w, 8w) withpen l2 dashed d2;
+draw (24w, 5w)--(24w, 8w) withpen l2 dashed d2;
+
+% ··································································
+% fuentes de señal, puertos (empiezo desde la izquierda)
+for i = w, 11w, 18w :  draw signalbox shifted (9.25w, i);  endfor
+draw revsignalbox shifted (17.75w, 11w);
+
+% ··································································
+% amplificador y final (empiezo desde la izquierda)
+draw amp shifted (35w, 18w);
+label.bot(btex \textsc{agnd} etex, (38w, 14w));
+drawgisarrow (38w, 20.5w)--(41.5w, 20.5w);
+label.top(btex \textsc{a/d} etex, (39.75w, 21w));
 
 % ··································································
 % etiquetas
-label(btex $+$ etex, ulcorner p9);
-label(btex $-$ etex, llcorner p9);
-label.top(btex \textsc{a/d} etex, z09);
-label.bot(btex \textsc{agnd} etex, z08 shifted (0, -25u/2));
+d3 = thelabel(btex 00 Lo/08 Hi etex, (0, 0));
+d4 = thelabel(btex 00 Hi etex, (0, 0));
+z2 = 11/20 * (llcorner d4 - llcorner d3);
+label(btex \textsc{00 lo/08 hi} etex, (17.75w, 19w));
+label(btex \textsc{01 lo/09 hi} etex, (17.75w, 13.5w));
+label(btex \textsc{07 lo/15 hi} etex, (17.75w, 2w));
+label(btex \textsc{00 hi} etex, (9.25w, 20.5w));
+label(btex \textsc{01 hi} etex, (9.25w, 13.5w + y2));
+label(btex \textsc{07 hi} etex, (9.25w, 3.5w));
 
 endfig;
 % ==================================================================
@@ -330,7 +295,8 @@ z04 = (a06, 0) rotated 330;
 
 % ··································································
 % conector
-draw conectorh(a00, z00);
+d1 = conectorh(a00);
+draw d1 shifted z00;
 
 % ··································································
 % posiciones
@@ -424,7 +390,8 @@ z04 = (a06, 0) rotated 330;
 
 % ··································································
 % conector
-draw conectorh(a00, z00);
+d1 = conectorh(a00);
+draw d1 shifted z00;
 
 % ··································································
 % posiciones
