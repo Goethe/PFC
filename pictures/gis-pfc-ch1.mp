@@ -622,6 +622,7 @@ draw blackdot shifted (27w, 11w);
 draw blackdot shifted (37w, 8w);
 draw blackdot shifted (42w, 8w);
 draw blackdot shifted (43w, 19w);
+draw blackdot shifted (46w, 19w);
 draw blackdot shifted (46w, 23w);
 draw blackdot shifted (44w, 27w);
 draw blackdot shifted (50w, 16w);
