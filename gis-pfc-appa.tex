@@ -1,131 +1,121 @@
 \chapter{Guía de usuario de la aplicación de control}\label{chap:appendixA}
 
-Es sabido que el propósito de una memoria de proyecto fin de carrera es
-exponer los procedimientos mediante los cuales se aborda un determinado
-tema de investigación, dar a conocer los frutos obtenidos en la ejecución
-de los mismos y alcanzar una serie de conclusiones a partir de esos
-resultados. Por tanto, la inclusión del manual de usuario del software de
-representación de señales y espectros en frecuencia se aleja de las
-pretensiones convencionales de una memoria de \textsc{pfc}. No obstante, la
-aplicación informática se ha desarrollado durante el curso del proyecto y
-forma parte del mismo. Además, cabe la posibilidad de que suscite interés
-en un público que encuentre de poca utilidad el resto del texto. Teniendo
-ésto en consideración, se ha creído conveniente la adición del manual al
-documento pero en forma de apéndice al final de éste.
-
-Este manual está destinado a todo aquel usuario interesado en la
-representación de señales eléctricas en el contexto que se ha expuesto
-anteriormente en el libro. En concreto, puede ser de especial interés para
-aquellos usuarios que deseen representar el espectro en frecuencia de una
-señal eléctrica en tiempo real, de forma que al mismo tiempo pueda
-visualizarse la señal correspondiente a dicho espectro.
-
-Los objetivos que pretende esta guía son: en primer lugar, ofrecer una
-visión general de la aplicación que hace hincapié en el aspecto de la
-interfaz y en las posibilidades del software; en segundo lugar se dan unas
-pautas para facilitar el proceso de adaptación del usuario a la interfaz
-que muestra la aplicación; pero, puesto que el uso de la aplicación es
-sencillo, el verdadero propósito de esta guía es servir de manual de
-consulta que permita recordar en caso de olvido cual es con detalle la
-funcionalidad de los elementos que componen la interfaz de usuario.
+Este manual pretende instruir al lector que esté interesado en el manejo
+del sistema de medida digital desarrollado como parte del proyecto
+documentado en esta memoria por medio del software que le sirve de interfaz
+para con el usuario. La otra intención que persigue este documento es la de
+valer como manual de referencia para futuras consultas. En vistas a
+conseguir dichos objetivos, el manual se ha estructurado del siguiente
+modo. Por una parte se describen de forma concisa las principales
+características funcionales que definen la aplicación como son: la
+organización de la interfaz de usuario, la función de los distintos
+controles presentes en dicha interfaz, o los tipos de dato que devuelve la
+aplicación en sus distintas configuraciones, etcétera. Todo ello acompañado
+de una serie de directrices que indican cual es el procedimiento a seguir
+para poner en funcionamiento o detener el sistema de medida y activar
+correctamente cualquiera de sus funciones. De modo que un usuario que está
+aprendiendo a manejar la aplicación puede prepararse leyendo la primera
+descripción, que puede ir consultando a medida que aprende los distintos
+procedimientos detallados en el manual; al tiempo que se da al usuario
+experimentado la posibilidad de consultar cualquier detalle de la
+aplicación que no recuerde de forma precisa.
 
 
-\section{Un vistazo general de la interfaz de usuario}
-
-En la \vref{fig:interface} puede observarse el aspecto general (justo
-después de ejecutarse y antes de ser utilizada) que muestra la aplicación
-de control. Como puede verse, se ha dividido la interfaz gráfica en
-distintos paneles en los que se reúnen los elementos de que consta esta
-interfaz. En el primer panel se observan los elementos que permiten
-controlar los parámetros de configuración de la tarjeta de adquisición. Un
-segundo panel contiene un monitor en el que se representan los resultados
-del proceso de adquisición en los modos numéricos o no visuales de
-funcionamiento de la aplicación. Además, un subpanel alberga los controles
-que permiten, por un lado, gobernar el modo de funcionamiento y, por otro,
-el comportamiento de la función de representación.
-
-\begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-appa-01.png}
-	\end{center}
-	\caption[Aspecto de la interfaz de usuario]{Aspecto de la interfaz
-	con controles y gráficos separados por paneles.}
-	\label{fig:interface}
-\end{figure}
-
-A continuación pueden observarse dos paneles que contienen los espacios de
-coordenadas destinados a alojar las representaciones de señal y espectro y
-varios grupos de controles, uno por cada espacio de coordenadas, cada uno
-de los cuales controla propiedades del espacio de coordenadas al que está
-sujeto. Por último, un quinto panel dispone de los mandos necesarios para
-habilitar o deshabilitar la representación de señal, espectro o ambos.
-
-
-\section{Especificaciones técnicas y limitaciones}
+\section{Especificaciones}
 
 A continuación se enumeran brevemente los requisitos necesarios para poder
-emplear la aplicación de control.
+instalar y utilizar la aplicación de control en un \textsc{pc}. Por un lado
+se tienen los requisitos que debe satisfacer un ordenador para que en éste
+pueda instalarse la tarjeta de adquisición que, como apunta el segundo
+capítulo de la memoria, constituye una parte fundamental del sistema de
+medida. Dichos requisitos se enumeran a continuación:
 
 \begin{itemize}
-	\item En primer lugar es necesario un \textsc{pc} funcionando sobre
-		el sistema operativo Microsoft Windows.
-	\item En dicho \textsc{pc} debe encontrarse correctamente instalada
-		una tarjeta \kpci{} o similar. Son compatibles con la
-		aplicación las tarjetas fabricadas por \emph{Keithley} que
-		dispongan al menos de un puerto de adquisición analógica,
-		cuyas características sean similares a la \kpci{} y cuya
-		interacción con la \datx{} de \matlab{} sea similar a la
-		interacción que se da entre este software y la \kpci{}.
-		Para que una tarjeta de adquisición de datos se encuentre
-		correctamente instalada en un \textsc{pc}, en primer lugar
-		debe encontrarse correctamente conectada a la placa base
-		del \textsc{pc} y, en segundo lugar, deben haberse
-		instalado con éxito los drivers de la misma.
-	\item Para poder emplear el software resulta imprescindible que en
-		el \textsc{pc} correspondiente se halle instalada una copia
-		de la suite matemática \matlab{} cuya versión sea
-		compatible con la aplicación.
-	\item Es necesario tener acceso desde \matlab{} a los ficheros
-		correspondientes a la aplicación de control que, como es
-		obvio, tendrán que haberse instalado previamente en el
-		\textsc{pc}.
-	\item Es necesaria una interfaz externa compatible con los
-		conectores mini-\sig{d} de la \kpci{}. Puede emplearse por
-		ejemplo la caja de conexiones descrita en el
-		\vref{subsec:conbox}, en ese caso será necesaria al menos
-		una sonda en la que, por lo menos, una de las terminaciones
-		sea compatible con la caja de conexiones.
+	\item Es necesaria una ranura \textsc{pci} libre en la placa base
+		del ordenador.
+	\item Para instalar los drivers de la tarjeta, necesarios para que
+		exista comunicación entre \sig{matlab} y la \kpci{}, el
+		sistema debe ejecutar un sistema operativo Microsoft
+		Windows. Estos drivers se encuentran disponibles
+		directamente en la web del fabricante.
+	\item Puede sustituirse la \kpci{} por una tarjeta compatible de
+		características similares manufacturada por el mismo
+		fabricante.
 \end{itemize}
 
-Como indica su título, este apartado se ha pensado además para indicar las
-limitaciones que muestra la aplicación de control. Desde el punto de vista
-de su origen estas limitaciones pueden dividirse en limitaciones derivadas
-del uso de la \kpci{} y en limitaciones introducidas por la propio
-software. Para una mayor información sobre las primeras pueden consultarse
-las \vrefrange{sec:technical}{sec:throughput} en el segundo capítulo. A
-destacar el comportamiento del rendimiento de la tarjeta que se verá
-reducido según se vayan añadiendo canales al objeto dispositivo.
-
-En cuanto a las limitaciones que introduce el software son las siguientes.
-Para empezar es destacable el hecho de que únicamente es posible controlar
-un canal de muestreo desde la aplicación de control. El canal controlado
-puede estar asociado a cualquier puerto físico de la tarjeta pero sólo se
-da acceso a un único canal por sesión. A esta limitación se debe añadir que
-desde el software es imposible crear o eliminar canales u objetos
-dispositivo de forma manual.
-
-Por otro lado se da la incapacidad de modificar desde la utilidad
-propiedades de la configuración de la tarjeta que no vengan representadas
-por controles en la interfaz de usuario. Algunos de estos controles se
-deshabilitan durante la actividad de muestreo, se ha hecho así para impedir
-que se altere el valor de parámetros tales como la frecuencia de muestreo
-en tiempo real. En ocasiones es \matlab{} desde un nivel superior en la
-jerarquía del software el que impide que una de estas propiedades cambie al
-vuelo, en el resto de casos se ha hecho para evitar problemas de
-rendimiento experimentados durante pruebas de software.
+Por otro lado, para poder utilizar la software de control en el ordenador
+en el que se haya instalado la tarjeta de adquisición es necesario,
+obviamente, disponer de una copia de \sig{matlab} instalada en el sistema y
+de una copia de la propia aplicación, de los ficheros fuente, también
+instalados en el disco duro del ordenador. Como explica el
+\cref{subsec:conbox}, la interfaz estándar con la que cuenta la tarjeta de
+adquisición está diseñada para servir como una vía de comunicación entre
+dispositivos de características similares a las de la tarjeta y, en
+consecuencia, no está preparada para conectar la tarjeta a sondas con el
+fin de explorar circuitos electrónicos; para poder utilizar la tarjeta como
+parte del sistema de medida es pues necesario un accesorio que simplifique
+esta tarea.
 
 
-\section{Instrucciones de uso}
+\section{Limitaciones del software}
+
+Este apartado trata de las limitaciones que presenta el software de control
+atendiendo al siguiente concepto: allí donde existe la posibilidad de
+configurar un parámetro de funcionamiento del sistema de medida se entiende
+que el software de control presenta una limitación si priva al usuario de
+dicha opción por el mero hecho de emplear la aplicación para interactuar
+con el sistema de medida en lugar de haber recurrido a cualquier otro medio
+disponible. Este tipo de <<limitaciones>> surgen fundamentalmente debido a
+que frente a la multitud de opciones de configuración que presenta el
+sistema resulta adecuado representar en la interfaz de usuario únicamente
+las más relevantes de cara a realizar una prueba experimental. Se descarta,
+por tanto, analizar cualquier limitación de carácter técnico asociada a la
+aplicación, principalmente debido a que este tipo de limitaciones las
+hereda el software del sistema en el que se ejecuta.
+
+Mencionar que el sistema de medida presenta asimismo sus propias
+limitaciones, heredadas por su parte de los distintos subsistemas que lo
+integran, limitaciones que inevitablemente se ven reflejadas en la
+aplicación de software. Por ejemplo, uno no puede configurar el sistema
+desde la aplicación para que muestree señales cuyo nivel de pico a pico sea
+superior a 10 Vpp, pues el sistema de por sí no lo permite, ahí la
+aplicación no tiene nada que ver. Dentro de este segundo grupo son notables
+las limitaciones que derivan del uso de la tarjeta \kpci{} como instrumento
+para la adquisición de señales, éstas se encuentran debidamente
+documentadas en las \vrefrange{sec:technical}{sec:throughput}, donde el
+lector puede consultarlas. Cabe mencionar aquí también que el rendimiento
+de la tarjeta es limitado y depende no sólo de como se encuentre
+configurada, si no también del nivel de la señal de entrada así como de
+otros parámetros.
+
+Por lo demás, este apartado trata únicamente de las limitaciones que son
+inherentes a la propia aplicación, que tienen su origen en el planteamiento
+de su código fuente y que surgen como parte del proceso de diseño y el
+posterior proceso de programación. En el proceso de diseño se ha priorizado
+la sencillez a la completitud. De ese modo se explican las decisiones que
+han dado lugar a que el software presente las siguientes limitaciones.
+
+\begin{itemize}
+	\item El software de control no permite la manipulación directa de
+		la cola de muestreo. Únicamente se da acceso a un canal
+		que, eso sí, puede vincularse a voluntad (es preciso pausar
+		previamente la sesión de adquisición) a cualquier puerto
+		físico de la tarjeta, esté configurado en modo diferencial
+		o sencillo.
+	\item No todas las opciones de configuración de objeto dispositivo
+		y de canal se encuentran representadas mediante controles
+		en la interfaz de usuario de la aplicación. Eso significa
+		que no es posible configurar desde el software esas
+		propiedades.
+	\item Algunos de los controles de la interfaz se deshabilitan al
+		reanudar la sesión de adquisición. Esto impide que se
+		produzcan errores si se trata de configurar al vuelo alguna
+		propiedad de configuración cuando no está permitido (sólo
+		ocurre con un subconjunto de las propiedades) y simplifica
+		el diseño de la aplicación.
+\end{itemize}
+
+\section{Procedimientos de llamada}
 
 El manejo del software de representación de señales es relativamente
 sencillo. Para arrancar el software debe ejecutarse en primer lugar
@@ -172,6 +162,9 @@ ellos.
 		relacionadas con las interfaces de usuario.
 \end{itemize}
 
+
+\section{Rutina de inicialización}
+
 De no existir ningún objeto dispositivo asociado a la \kpci{}, la función
 de creación presente en la aplicación crea, al iniciarse ésta, un objeto
 dispositivo asociado a la \kpci{} o cualquier otra tarjeta fabricada por
@@ -195,12 +188,42 @@ nombres de los objetos dispositivos eliminados de la memoria de \matlab{}
 que queden en el espacio de trabajo---.
 
 \begin{lstlisting}
-	delete(daqfind);
-	clear;
+	delete(daqfind);	clear;
 \end{lstlisting}
 
 
-\subsection{Descripción detallada de la interfaz de usuario}
+\section{Interfaz de usuario}
+
+En la \vref{fig:interface} puede observarse el aspecto general (justo
+después de ejecutarse y antes de ser utilizada) que muestra la aplicación
+de control. Como puede verse, se ha dividido la interfaz gráfica en
+distintos paneles en los que se reúnen los elementos de que consta esta
+interfaz. En el primer panel se observan los elementos que permiten
+controlar los parámetros de configuración de la tarjeta de adquisición. Un
+segundo panel contiene un monitor en el que se representan los resultados
+del proceso de adquisición en los modos numéricos o no visuales de
+funcionamiento de la aplicación. Además, un subpanel alberga los controles
+que permiten, por un lado, gobernar el modo de funcionamiento y, por otro,
+el comportamiento de la función de representación.
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-appa-01.png}
+	\end{center}
+	\caption[Aspecto de la interfaz de usuario]{Aspecto de la interfaz
+	con controles y gráficos separados por paneles.}
+	\label{fig:interface}
+\end{figure}
+
+A continuación pueden observarse dos paneles que contienen los espacios de
+coordenadas destinados a alojar las representaciones de señal y espectro y
+varios grupos de controles, uno por cada espacio de coordenadas, cada uno
+de los cuales controla propiedades del espacio de coordenadas al que está
+sujeto. Por último, un quinto panel dispone de los mandos necesarios para
+habilitar o deshabilitar la representación de señal, espectro o ambos.
+
+
+\subsection{Funciones asociadas a los controles}
 
 Aquí, en este apartado, se muestran los controles y sus funciones para que
 el usuario pueda comprender su funcionamiento. Para facilitar la búsqueda
