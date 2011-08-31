@@ -6,9 +6,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%        Preámbulo        %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\includeonly{gis-pfc-tit,  gis-pfc-pro,  gis-pfc-part1, gis-pfc-part2,
-             gis-pfc-ch1,  gis-pfc-ch2,  gis-pfc-ch3,   gis-pfc-ch4,
-             gis-pfc-ch5,  gis-pfc-appa, gis-pfc-appb,  gis-pfc-lic}
+\includeonly{gis-pfc-pro,  gis-pfc-part1, gis-pfc-part2,    gis-pfc-ch1,
+	     gis-pfc-ch2,  gis-pfc-ch3,   gis-pfc-ch4,      gis-pfc-ch5,
+	     gis-pfc-appa}
 
 \usepackage[english, spanish]				{babel}
 \usepackage[utf8]					{inputenc}
@@ -28,7 +28,7 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 \usepackage[nottoc]					{tocbibind}
 \usepackage[spanish]					{varioref}
 \usepackage[noauto]					{chappg}
-\usepackage[draft]					{graphicx}
+\usepackage						{graphicx}
 
 \usepackage{amsfonts, amsmath,  amssymb,  calc,     color,    fancyhdr}
 \usepackage{hyperref, ifthen,   layouts,  listings, rotating, textcase}
@@ -133,7 +133,7 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 	\footnoterule\vspace{.2ex}}
 	{\end{tablenotes}}
 
-% \renewcommand\chappgsep{--}					%% chappg
+\renewcommand\chappgsep{}					%% chappg
 
 \newcolumntype{d}[1]{D{,}{,}{#1}}			  % dcolumn + array
 \newcolumntype{+}{D{/}{\mbox{\ --\ }}{5}}
@@ -179,7 +179,7 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 \renewcommand\labelitemii{\leavevmode\hbox to 1.1ex
 	{\hss\vrule height .7ex width .5ex depth -.15ex\hss}}
 
-\makeatletter\renewcommand\@pnumwidth{25.5pt}\makeatother	% pnumwidth
+\makeatletter\renewcommand\@pnumwidth{20.4pt}\makeatother	% pnumwidth
 \newcommand\eletras{
 	\renewcommand\labelenumi{\textsc{\alph{enumi}}.}}	% enumerate
 \newcommand\sectionlabel{

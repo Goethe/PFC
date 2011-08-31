@@ -14,7 +14,8 @@
 *latexmk
 ~*
 bibliografia
-gis-pfc.pdf
+*.pdf
+!pictures/*.pdf
 application
 pictures/*.jpg
 pictures/*.mps
