@@ -6,9 +6,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%        Preámbulo        %%%%%%%%%%%%%%%%%%%%%%%%%
 
-\includeonly{gis-pfc-pro,  gis-pfc-part1, gis-pfc-part2,    gis-pfc-ch1,
-	     gis-pfc-ch2,  gis-pfc-ch3,   gis-pfc-ch4,      gis-pfc-ch5,
-	     gis-pfc-appa}
+\includeonly{gis-pfc-pro,  gis-pfc-part1, gis-pfc-part2, gis-pfc-ch1,
+	     gis-pfc-ch2,  gis-pfc-ch3,   gis-pfc-ch4,   gis-pfc-ch5,
+	     gis-pfc-ch6,  gis-pfc-appa}
 
 \usepackage[english, spanish]				{babel}
 \usepackage[utf8]					{inputenc}
@@ -190,10 +190,8 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 
 \begin{document}
 
-\pagestyle{plain}
-\include{gis-pfc-tit}
-\setuplayouts							% layouts
 \pagestyle{Number}						% fancyhdr
+
 
 \frontmatter
 
@@ -201,6 +199,7 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 \listoftables
 \listoffigures
 \include{gis-pfc-pro}
+
 
 \mainmatter
 
@@ -219,6 +218,7 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 \include{gis-pfc-part2}
 \pagestyle{body}						% fancyhdr
 \include{gis-pfc-ch5}
+\include{gis-pfc-ch6}
 
 \part*{Apéndices}
 
@@ -226,11 +226,6 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 \addtocounter{totalpages}{\value{page} + 1}		       % totalpages
 \pagenumbering{bychapter}					% chappg
 \include{gis-pfc-appa}
-\addtocounter{totalpages}{\value{page} - 1}		       % totalpages
-\include{gis-pfc-appb}
-\addtocounter{totalpages}{\value{page} - 1}		       % totalpages
-{\sectionlabel{}						% sectionl
-\include{gis-pfc-lic}}
 
 
 \backmatter

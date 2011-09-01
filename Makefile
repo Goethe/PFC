@@ -4,7 +4,7 @@ BBL = $(TEXMAIN:.tex=.bbl)
 TEXMAIN = gis-pfc.tex
 TEX = gis-pfc-tit.tex gis-pfc-pro.tex gis-pfc-part1.tex gis-pfc-ch1.tex \
 	gis-pfc-ch2.tex gis-pfc-ch3.tex gis-pfc-ch4.tex gis-pfc-part2.tex \
-	gis-pfc-ch5.tex gis-pfc-appa.tex gis-pfc-appb.tex gis-pfc-lic.tex
+	gis-pfc-ch5.tex gis-pfc-ch6.tex gis-pfc-appa.tex
 BIB = $(TEXMAIN:.tex=.bib)
 PICSPT1 = gis-pfc-part1-01.mps
 PICSCH1 = gis-pfc-ch1-01.mps gis-pfc-ch1-02.mps gis-pfc-ch1-03.mps gis-pfc-ch1-04.mps \
