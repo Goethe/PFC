@@ -4,6 +4,7 @@
 *.blg
 *.cb
 *.cb2
+*.d
 *.lof
 *.log
 *.lot
