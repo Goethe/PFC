@@ -11,11 +11,13 @@ my @first = <FILEIN>;
 close FILEIN;
 
 my $filename = shift @ARGV;
-rename $filename, $filename . '~' or die "Can't rename: $!";
+if( -e $filename ) {
+    rename $filename, $filename . '~' or die "Can't rename: $!";
+}
 open FILEOUT, '>', $filename or die "Can't open $filename: $!";
 select FILEOUT;
 
-my @last = pop @first;
+my $last = pop @first;
 print @first;
 
 my @blockfirst = (
@@ -32,6 +34,8 @@ my @blockfirst = (
 );
 
 my @blocklast = (
+    "\t\tglabel.bot(btex \$t [\\text{s}]\$ etex, OUT);",
+    "\t\tglabel.lft(btex \$x(t) [\\text{V}]\$ etex, OUT);",
     "\tendgraph;",
     "endfig;",
     "",
@@ -53,4 +57,4 @@ for my $datafile ( @ARGV ) {
     }
 }
 
-print @last;
+print $last;

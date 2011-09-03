@@ -4,7 +4,7 @@ verbatimtex
 \usepackage[spanish]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{lucidabr}
-\usepackage{textcomp, amssymb}
+\usepackage{textcomp, amsfonts, amsmath, amssymb}
 \begin{document}
 \fontsize{11pt}{13.2pt}\selectfont
 etex
