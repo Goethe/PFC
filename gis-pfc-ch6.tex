@@ -311,7 +311,7 @@ percutir el sensor y en último lugar, pero no por ello menos importante,
 bolígrafo y papel para realizar anotaciones.
 
 
-\section{Metodología seguida durante las pruebas}
+\section{Metodología seguida durante las pruebas}\label{sec:methodology}
 
 Las pruebas realizadas persiguen demostrar que existe una relación entre
 los distintos parámetros de la señal recibida y las características del
@@ -402,6 +402,24 @@ forma resumida.
 	a siete muestras por ejemplar.
 \end{enumerate}
 
+La escala de amplitudes del osciloscopio se ajusta del siguiente modo.
+Durante la realización de los ensayos a la primera palmera se fija la
+escala de amplitudes de modo que la señal recibida ocupe toda la pantalla,
+pudiendo observar así los rasgos de la señal en mayor detalle. Sin embargo,
+para poder comparar en igualdad de condiciones onda transmitida y onda
+reflejada se mantiene la misma escala para la onda transmitida lo que
+ocasiona que parte de la onda transmitida quede fuera del monitor del
+osciloscopio. Al recoger los datos, todo aquello que queda fuera de la
+ventana del osciloscopio se descarta, ello origina que señales de mayor
+amplitud aparezcan truncadas en las figuras expuestas en el apartado de
+resultados de este capítulo. A efectos de comparar varias señales
+únicamente se ha de observar que cuando una señal aparece truncada es
+porque es de una magnitud mayor que una que no lo está. Este mismo concepto
+se ha de aplicar también al comparar medidas de varias muestras, ya que
+para poder comparar los resultados de forma ecuánime se ha mantenido la
+escala de amplitudes del osciloscopio durante la ejecución de todos los
+ensayos.
+
 Se muestran a continuación las \cref{fig:testheight,fig:testequipment}, son
 dos fotografías tomadas durante la ejecución de los ensayos. Estas
 fotografías complementan la descripción que se ha hecho de los pasos que
@@ -470,10 +488,129 @@ ensayos.
 
 \section{Resultados obtenidos}
 
-Tras finalizar el proceso de medida se disponía de 420 muestras (210
-correspondientes a ondas acústicas transmitidas y otras 210
-correspondientes a las respectivas ondas recibidas).
+Tras finalizar el proceso de medida se dispone de 420 muestras, entre ondas
+ultrasónicas transmitidas y recibidas, que ha habido que procesar para
+poder observar como se comportan los parámetros de la señal sometidos a
+observación (véase la \vref{sec:methodology}) en las distintas condiciones
+en las que se han realizado los ensayos. Para ello se han desarrollado
+rutinas en \matlab{} que permiten realizar las siguientes operaciones:
+% (210 correspondientes a ondas acústicas transmitidas y otras 210
+% correspondientes a las respectivas ondas recibidas)
 
-tengo que decir que he procesado con cuidado las muestras y he creado
-aplicaciones en matlab que me permitiesen observar los datos que voy a
-exponer ahora.
+\begin{itemize}
+    \item Importar las señales transmitida y recibida, y la duración
+	temporal de las mismas a partir de los archivos de muestras.
+    \item Calcular la media aritmética de todas las muestras (distinguiendo
+	entre onda transmitida y recibida) tomadas de un mismo ejemplar.
+    \item Realizar el cálculo de la \sig{fft} de cada muestra individual y
+	de la media obtenida en el paso anterior.
+    \item A partir de las señales en el dominio temporal y las señales en
+	el dominio espectral representar gráficos acompañados de curvas
+	auxiliares en los que pueda compararse la señal transmitida (o su
+	espectro) con la señal recibida (o su espectro).
+    \item Cálculo automático de tiempos de vuelo y desplazamiento del
+	máximo en frecuencias.
+\end{itemize}
+
+Las --figuras-- a continuación y el \cref{tab:results} muestran los valores
+observados en las muestras más representativas del conjunto, aquellas que
+muestran más claramente los fenómenos que se ponen de relieve más adelante,
+en los siguientes párrafos.
+
+\begin{table}
+    \centering
+    \begin{tabular}{ld{1,3}d{2,2}d{4,2}d{2,1}d{2,2}}
+	\toprule
+	\multicolumn{1}{c}{Muestra} &
+	\multicolumn{1}{c}{Altura\tnote{a} (m)} &
+	\multicolumn{1}{c}{Espesor (cm)} &
+	\multicolumn{1}{c}{$\V_p$ ($\text{ms}^{-1}$)} &
+	\multicolumn{1}{c}{$\Delta f$ (kHz)} \\
+	\midrule
+	Palmera sana (i) & 1,43 & 45 & 515,58 & 24,9 \\
+	Palmera sana (ii) & 1,1 & 36 & 739,73 & 20,3 \\
+	Palmera sana (iii) & 1,04 & 41,8 & 508,67 & 18,1 \\
+	Palmera sana\tnote{b} (iii) & 1,25 & 33 & 986,84 & 28,7 \\
+	Palmera muerta & 1,2 & 30,5 & 851,16 & 1,91 \\
+	Eucalipto & 1,165 & 31 & 1374,1 & 32,25 \\
+	Pino & 1,165 & 37,75 & 1337,9 & 3,83 \\
+	Poste telefónico & 1,15 & 21,7 & 1379,9 & 5,75 \\
+	\bottomrule
+    \end{tabular}
+    \caption{Tabla comparativa donde aparecen los resultados obtenidos a
+    partir de las muestras más significativas.}
+    \label{tab:results}
+\end{table}
+
+Por lo general, exceptuando alguna muestra concreta, se observa lo
+siguiente: a medida que una madera es más maciza y presenta menor grado de
+humedad, se observa que las ondas sónicas se propagan más rápidamente por
+ella (compárese en el \cref{tab:results} la velocidad de propagación,
+$V_{p}$) y se ven menos afectados por la atenuación; asimismo en maderas
+<<secas>> y compactas los ultrasonidos sufren una menor dispersión y sufren
+menor desplazamiento espectral (véase el desplazamiento del máximo del
+espectro en frecuencias, $\Delta f$, en el mismo cuadro).
+
+Se puede observar el mismo fenómeno al comparar, por ejemplo, las
+--figuras-- que representan la onda recibida en un eucalipto y la onda
+recibida en una palmera sana respectivamente. Las --figuras-- representan
+por su parte sus respectivos pares transmitidos. Se observa que, aunque la
+duración de la onda transmitida en el eucalipto es mayor que la de la
+transmitida a la palmera, la duración de la onda recibida en la palmera
+supera a la de la recibida en el eucalipto. Eso significa que la señal se
+ensancha o se dispersa más al propagarse por madera de palmera, cuyo
+contenido en agua es elevado, que al propagarse por madera de eucalipto,
+más compacta. Además se puede ver como la señal recibida en el eucalipto
+sale de los límites del osciloscopio y satura, mientras que la recibida en
+la palmera se ve comparablemente atenuada.
+
+En maderas más blandas la señal recibida se compone de una sola
+contribución o eco o en ocasiones de varios, sólo que solapados, en parte
+debido a la acción de la dispersión que al ensanchar los ecos causa el
+solapamiento. Por el contrario en maderas más sólidas se aprecia la
+frecuente aparición de ecos secundarios que aparecen mejor definidos en la
+señal recibida. Obsérvese este fenómeno al comparar los resultados
+expuestos en las --figuras-- que corresponden a los resultados al evaluar
+un pino y una palmera sana respectivamente.
+% Un comentario más detallado al pie de la figura. Señal recibida en una
+% palmera plana, se observa una discontinuidad en la forma de la señal que
+% puede ser debida a la presencia de un eco secundario que solapa con la
+% contribución principal.
+
+En cuanto al desplazamiento en frecuencia, se aprecia que a medida que una
+madera es más compacta el desplazamiento del máximo del espectro en
+frecuencias decrece. Esto puede verse si se compara por ejemplo el
+desplazamiento observado en el espectro de las señales correspondientes a
+una palmera y a un poste telefónico,  --figuras--. Obviamente queda patente
+al contemplar los resultados que el desplazamiento es mayor al desplazarse
+la onda por la palmera.
+
+Por último, para finalizar este apartado, se muestran las muestras tomadas
+de los siguientes ejemplares: --figura--, correspondiente a una muestra
+tomada de una palmera muerta; las --figuras-- representan los datos
+obtenidos al evaluar una palmera a diferentes alturas, primero más abajo y
+luego más arriba; la última figura del grupo, la --figura--, representa por
+su parte el aspecto de la señal recibida al efectuar el ensayo en un poste
+telefónico. Puede observarse como la curva correspondiente a la palmera
+muerta es más compacta que la del resto de palmeras, se puede ver como
+conserva su forma y al mismo tiempo no presenta la aparición de ecos
+secundarios. Al observar los resultados obtenidos a distintas alturas en
+una misma palmera se infiere que la madera de un ejemplar vivo es más seca
+y compacta a medida que se asciende por el tallo, pero para confirmarlo
+deberían realizarse más medidas en distintos ejemplares. Las muestras
+tomadas de un poste telefónico revelan una señal recibida caótica, plagada
+de ecos secundarios, pero a pesar de ello no demasiado dispersa.
+
+
+\section{Conclusiones y futuras líneas de trabajo}
+
+A juzgar por los resultados obtenidos en este estudio preliminar se infiere
+que existe en efecto una relación entre los parámetros de la señal obtenida
+en un ensayo por ultrasonidos y las características, ya sean físicas o
+estructurales, de un ejemplar de palmera in vivo. Sin embargo, la ausencia
+de un profundo estudio teórico previo a la realización de las pruebas
+impide extraer conclusiones significativas de los resultados obtenidos. Es
+por ello que se recomienda la ejecución en un futuro próximo de un proyecto
+más ambicioso en este campo que permita determinar sin ambigüedad que
+relación existe, creyendo suficientemente justificado este proyecto en
+vistas a los resultados que se han expuesto en esta memoria.
