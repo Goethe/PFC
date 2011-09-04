@@ -42,12 +42,14 @@ sub write_pattern {
 	"",
 	"pickup l1",
 	"",
-	"\tdraw begingraph (wi, he02);"
+	"\tdraw begingraph (10v, he02);"
+	"\t\tsetrange (-0.004,whatever , 0.042,whatever);",
     );
 
     my @blocklast = (
-	"\t\tglabel.bot(btex \$t [\\text{s}]\$ etex, OUT);",
-	"\t\tglabel.lft(btex \$x(t) [\\text{V}]\$ etex, OUT);",
+	"\t\tglabel.bot(btex \$t\$ etex, OUT);",
+	"\t\tglabel.lft(btex \$x(t)\$ etex, OUT);",
+	"\t\tframe withpen l2;",
 	"\tendgraph;",
 	"endfig;",
 	"",
@@ -61,7 +63,7 @@ sub write_pattern {
 	    unshift @blockfirst, "beginfig ($figure)";
 	    print "$_\n" for @blockfirst;
 	}
-	print "\t\tgdraw \"$datafile\" withpen l2;\n";
+	print "\t\tgdraw \"$datafile\";\n";
 	$count++;
 	if ( $count == 4 ) {
 	    print "$_\n" for @blocklast;

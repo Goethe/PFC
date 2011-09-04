@@ -14,6 +14,9 @@ PICSCH3 = gis-pfc-ch3-01.pdf gis-pfc-ch3-02.pdf gis-pfc-ch3-03.pdf gis-pfc-ch3-0
 	  gis-pfc-ch3-05.pdf gis-pfc-ch3-06.pdf gis-pfc-ch3-07.pdf gis-pfc-ch3-08.pdf
 PICSCH5 = gis-pfc-ch5-01.pdf gis-pfc-ch5-02.pdf gis-pfc-ch5-03.pdf gis-pfc-ch5-04.pdf \
 	  gis-pfc-ch5-05.pdf gis-pfc-ch5-07.pdf
+PICSCH6 = gis-pfc-ch6-07.pdf gis-pfc-ch6-08.pdf gis-pfc-ch6-09.pdf gis-pfc-ch6-10.pdf \
+      	  gis-pfc-ch6-11.pdf gis-pfc-ch6-12.mps gis-pfc-ch6-13.mps gis-pfc-ch6-14.mps \
+      	  gis-pfc-ch6-15.pdf gis-pfc-ch6-16.mps gis-pfc-ch6-17.mps
 PICSDIR = pictures
 JPGPNGS = gis-pfc-ch2-05.jpg gis-pfc-ch2-06.jpg gis-pfc-ch4-01.png gis-pfc-ch4-02.png \
 	  gis-pfc-ch4-03.png gis-pfc-ch4-04.png gis-pfc-ch5-06.jpg gis-pfc-ch6-01.jpg \

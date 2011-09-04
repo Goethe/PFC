@@ -38,7 +38,7 @@ linejoin := mitered;
 linecap := butt;
 
 
-beginfig (7)
+beginfig (8)
 pen l[];
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
@@ -60,7 +60,7 @@ pickup l1
 endfig;
 
 
-beginfig (8)
+beginfig (9)
 pen l[];
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
@@ -82,7 +82,7 @@ pickup l1
 endfig;
 
 
-beginfig (9)
+beginfig (10)
 pen l[];
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
@@ -104,7 +104,7 @@ pickup l1
 endfig;
 
 
-beginfig (10)
+beginfig (11)
 pen l[];
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
@@ -126,7 +126,7 @@ pickup l1
 endfig;
 
 
-beginfig (11)
+beginfig (12)
 pen l[];
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
@@ -148,7 +148,7 @@ pickup l1
 endfig;
 
 
-beginfig (12)
+beginfig (13)
 pen l[];
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
@@ -170,7 +170,7 @@ pickup l1
 endfig;
 
 
-beginfig (13)
+beginfig (14)
 pen l[];
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
@@ -192,7 +192,7 @@ pickup l1
 endfig;
 
 
-beginfig (14)
+beginfig (15)
 pen l[];
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
@@ -214,7 +214,7 @@ pickup l1
 endfig;
 
 
-beginfig (15)
+beginfig (16)
 pen l[];
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
@@ -236,7 +236,7 @@ pickup l1
 endfig;
 
 
-beginfig (16)
+beginfig (17)
 pen l[];
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;
@@ -258,7 +258,7 @@ pickup l1
 endfig;
 
 
-beginfig (17)
+beginfig (18)
 pen l[];
 l0 = pencircle scaled 0.15u;
 l1 = pencircle scaled 0.25u;

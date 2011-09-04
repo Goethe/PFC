@@ -1,4 +1,4 @@
-\chapter{Caracterización de la madera de palmera en ultrasonidos}
+\chapter{Caracterización de la madera de palmera por ultrasonidos}
 
 El interés de la madera como material de construcción, o materia prima para
 la fabricación de herramientas, instrumentos musicales, mobiliario o
@@ -203,13 +203,9 @@ compatible con osciloscopios.
 
 \begin{figure}
     \begin{center}
-	\subfloat[Dispositivo empleado como actuador de
-	    ultrasonidos][Dispositivo actuador.]
-	    {\includegraphics{gis-pfc-ch6-02.jpg}}
-	    \qquad
-	\subfloat[Dispositivo empleado como sensor de
-	    ultrasonidos][Dispositivo sensor]
-	    {\includegraphics{gis-pfc-ch6-03.jpg}}
+	    \includegraphics{gis-pfc-ch6-02.jpg}
+	\qquad
+	    \includegraphics{gis-pfc-ch6-03.jpg}
     \end{center}
     \caption[Transductores de impacto utilizados durante los
     ensayos]{Imágenes de los transductores tomadas durante la realización
@@ -420,32 +416,26 @@ para poder comparar los resultados de forma ecuánime se ha mantenido la
 escala de amplitudes del osciloscopio durante la ejecución de todos los
 ensayos.
 
-Se muestran a continuación las \cref{fig:testheight,fig:testequipment}, son
-dos fotografías tomadas durante la ejecución de los ensayos. Estas
-fotografías complementan la descripción que se ha hecho de los pasos que
-comprende el procedimiento de toma de medida, de modo que el lector pueda
-comprender mejor como se han realizado los ensayos. La primera de las
-figuras muestra una palmera que, a juzgar por el tamaño que ocupa en la
-figura en comparación con las dimensiones de la referencia se calcula que
-debe medir unos $5.5$ metros altura aproximadamente. La segunda muestra a
-su vez una palmera de medidas similares y parte del equipo utilizado
-dispuesto para la toma de muestras.
+Se muestra a continuación la \cref{fig:tests}, aparecen en ella dos
+fotografías tomadas durante la ejecución de los ensayos. Estas fotografías
+complementan la descripción que se ha hecho de los pasos que comprende el
+procedimiento de toma de medida, de modo que el lector pueda comprender
+mejor como se han realizado los ensayos. La primera de las figuras muestra
+una palmera que, a juzgar por el tamaño que ocupa en la figura en
+comparación con las dimensiones de la referencia se calcula que debe medir
+unos $5.5$ metros altura aproximadamente. La segunda muestra a su vez una
+palmera de medidas similares y parte del equipo utilizado dispuesto para la
+toma de muestras.
 
 \begin{figure}
     \begin{center}
-	\subfloat[Fotografía que muestra una palmera de unos $5.5$ m de
-	    alto][Palmera alta.]{
-		\label{fig:testheight}
-		\begin{minipage}[c]{.425\textwidth}
-		    \includegraphics{gis-pfc-ch6-05.jpg}
-		\end{minipage}}
-	\subfloat[Fotografía en la que puede apreciarse parte del equipo
-	    utilizado.][Palmera mediana.]{
-		\label{fig:testequipment}
-		\begin{minipage}[c]{.425\textwidth}
-		    \includegraphics{gis-pfc-ch6-06.jpg}
-		\end{minipage}}
-		\end{center}
+	\begin{minipage}[c]{.425\textwidth}\label{fig:testheight}
+	    \includegraphics{gis-pfc-ch6-05.jpg}
+	\end{minipage}
+	\begin{minipage}[c]{.425\textwidth}\label{fig:testequipment}
+	    \includegraphics{gis-pfc-ch6-06.jpg}
+	\end{minipage}
+    \end{center}
     \caption[Fotografías tomadas durante la realización de los
     ensayos]{Fotografías tomadas durante la realización de los ensayos.}
     \label{fig:tests}
@@ -524,7 +514,7 @@ en los siguientes párrafos.
 	\multicolumn{1}{c}{Muestra} &
 	\multicolumn{1}{c}{Altura\tnote{a} (m)} &
 	\multicolumn{1}{c}{Espesor (cm)} &
-	\multicolumn{1}{c}{$\V_p$ ($\text{ms}^{-1}$)} &
+	\multicolumn{1}{c}{$V_p$ ($\text{ms}^{-1}$)} &
 	\multicolumn{1}{c}{$\Delta f$ (kHz)} \\
 	\midrule
 	Palmera sana (i) & 1,43 & 45 & 515,58 & 24,9 \\
@@ -537,8 +527,9 @@ en los siguientes párrafos.
 	Poste telefónico & 1,15 & 21,7 & 1379,9 & 5,75 \\
 	\bottomrule
     \end{tabular}
-    \caption{Tabla comparativa donde aparecen los resultados obtenidos a
-    partir de las muestras más significativas.}
+    \caption[Tabla comparativa de resultados]{Tabla comparativa donde
+    aparecen los resultados obtenidos a partir de las muestras más
+    significativas.}
     \label{tab:results}
 \end{table}
 
@@ -552,9 +543,11 @@ menor desplazamiento espectral (véase el desplazamiento del máximo del
 espectro en frecuencias, $\Delta f$, en el mismo cuadro).
 
 Se puede observar el mismo fenómeno al comparar, por ejemplo, las
---figuras-- que representan la onda recibida en un eucalipto y la onda
-recibida en una palmera sana respectivamente. Las --figuras-- representan
-por su parte sus respectivos pares transmitidos. Se observa que, aunque la
+\cref{fig:eucalipto-recibida,fig:palmera1-recibida} que representan la onda
+recibida en un eucalipto y la onda recibida en una palmera sana
+respectivamente. Las
+\cref{fig:eucalipto-transmitida,fig:palmera1-transmitida} representan por
+su parte sus respectivos pares transmitidos. Se observa que, aunque la
 duración de la onda transmitida en el eucalipto es mayor que la de la
 transmitida a la palmera, la duración de la onda recibida en la palmera
 supera a la de la recibida en el eucalipto. Eso significa que la señal se
@@ -564,18 +557,74 @@ más compacta. Además se puede ver como la señal recibida en el eucalipto
 sale de los límites del osciloscopio y satura, mientras que la recibida en
 la palmera se ve comparablemente atenuada.
 
+\begin{figure}
+    \begin{center}
+	\includegraphics{gis-pfc-ch6-07.pdf}
+    \end{center}
+    \caption[Eucalipto (onda recibida)]{Eucalipto, onda recibida (el tiempo
+    se mide en segundos y la amplitud en voltios).}
+    \label{fig:eucalipto-recivida}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+	\includegraphics{gis-pfc-ch6-10.pdf}
+    \end{center}
+    \caption[Primera palmera sana (onda recibida)]{Primera palmera sana,
+    onda recibida (el tiempo se mide en segundos y la amplitud en
+    voltios).}
+    \label{fig:palmera1-recivida}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+	\includegraphics{gis-pfc-ch6-08.pdf}
+    \end{center}
+    \caption[Eucalipto (onda transmitida)]{Eucalipto, onda transmitida.}
+    \label{fig:eucalipto-transmitida}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+	\includegraphics{gis-pfc-ch6-11.pdf}
+    \end{center}
+    \caption[Primera palmera sana (onda transmitida)]{Primera palmera sana,
+    onda transmitida.}
+    \label{fig:palmera1-transmitida}
+\end{figure}
+
+\clearpage
+
 En maderas más blandas la señal recibida se compone de una sola
 contribución o eco o en ocasiones de varios, sólo que solapados, en parte
 debido a la acción de la dispersión que al ensanchar los ecos causa el
 solapamiento. Por el contrario en maderas más sólidas se aprecia la
 frecuente aparición de ecos secundarios que aparecen mejor definidos en la
 señal recibida. Obsérvese este fenómeno al comparar los resultados
-expuestos en las --figuras-- que corresponden a los resultados al evaluar
-un pino y una palmera sana respectivamente.
-% Un comentario más detallado al pie de la figura. Señal recibida en una
-% palmera plana, se observa una discontinuidad en la forma de la señal que
-% puede ser debida a la presencia de un eco secundario que solapa con la
-% contribución principal.
+expuestos en las \cref{fig:pino-recibida,fig:palmera2-recibida} que
+corresponden a los resultados al evaluar un pino y otra de las palmeras
+sanas respectivamente.
+
+\begin{figure}
+    \begin{center}
+	\includegraphics{gis-pfc-ch6-15.pdf}
+    \end{center}
+    \caption[Pino (onda recibida)]{Pino, onda recibida.}
+    \label{fig:pino-recibida}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+	\includegraphics{gis-pfc-ch6-12.pdf}
+    \end{center}
+    \caption[Segunda palmera sana (onda recibida)]{Segunda palmera sana,
+    onda recibida. Se observa una discontinuidad en la forma de la señal
+    que puede ser debida a la presencia de un eco secundario que solapa con
+    la contribución principal.}
+    \label{fig:palmera2-recibida}
+\end{figure}
+
+\clearpage
 
 En cuanto al desplazamiento en frecuencia, se aprecia que a medida que una
 madera es más compacta el desplazamiento del máximo del espectro en
@@ -586,20 +635,58 @@ al contemplar los resultados que el desplazamiento es mayor al desplazarse
 la onda por la palmera.
 
 Por último, para finalizar este apartado, se muestran las muestras tomadas
-de los siguientes ejemplares: --figura--, correspondiente a una muestra
-tomada de una palmera muerta; las --figuras-- representan los datos
+de los siguientes ejemplares: \cref{fig:palmeramuerta-recibida},
+correspondiente a una muestra tomada de una palmera muerta; las
+\cref{fig:palmera3a-recibida,fig:palmera3b-recibida} representan los datos
 obtenidos al evaluar una palmera a diferentes alturas, primero más abajo y
-luego más arriba; la última figura del grupo, la --figura--, representa por
-su parte el aspecto de la señal recibida al efectuar el ensayo en un poste
-telefónico. Puede observarse como la curva correspondiente a la palmera
-muerta es más compacta que la del resto de palmeras, se puede ver como
-conserva su forma y al mismo tiempo no presenta la aparición de ecos
-secundarios. Al observar los resultados obtenidos a distintas alturas en
-una misma palmera se infiere que la madera de un ejemplar vivo es más seca
-y compacta a medida que se asciende por el tallo, pero para confirmarlo
-deberían realizarse más medidas en distintos ejemplares. Las muestras
-tomadas de un poste telefónico revelan una señal recibida caótica, plagada
-de ecos secundarios, pero a pesar de ello no demasiado dispersa.
+luego más arriba; la última figura del grupo, la \cref{fig:poste-recibida},
+representa por su parte el aspecto de la señal recibida al efectuar el
+ensayo en un poste telefónico. Puede observarse como la curva
+correspondiente a la palmera muerta es más compacta que la del resto de
+palmeras, se puede ver como conserva su forma y al mismo tiempo no presenta
+la aparición de ecos secundarios. Al observar los resultados obtenidos a
+distintas alturas en una misma palmera se infiere que la madera de un
+ejemplar vivo es más seca y compacta a medida que se asciende por el tallo,
+pero para confirmarlo deberían realizarse más medidas en distintos
+ejemplares. Las muestras tomadas de un poste telefónico revelan una señal
+recibida caótica, plagada de ecos secundarios, pero a pesar de ello no
+demasiado dispersa.
+
+\begin{figure}
+    \begin{center}
+	\includegraphics{gis-pfc-ch6-09.pdf}
+    \end{center}
+    \caption[Palmera muerta (onda recibida)]{Palmera muerta, onda
+    recibida.}
+    \label{fig:palmeramuerta-recibida}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+	\includegraphics{gis-pfc-ch6-13.pdf}
+    \end{center}
+    \caption[Tercera palmera sana (onda recibida)]{Tercera palmera sana,
+    medida a menor altura, onda recibida.}
+    \label{fig:palmera3a-recibida}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+	\includegraphics{gis-pfc-ch6-14.pdf}
+    \end{center}
+    \caption[Tercera palmera sana (onda recibida)]{Tercera palmera sana,
+    medida a mayor altura, onda recibida.}
+    \label{fig:palmera3b-recibida}
+\end{figure}
+
+\begin{figure}
+    \begin{center}
+	\includegraphics{gis-pfc-ch6-16.pdf}
+    \end{center}
+    \caption[Poste telefónico (onda recibida)]{Poste telefónico, onda
+    recibida.}
+    \label{fig:poste-recibida}
+\end{figure}
 
 
 \section{Conclusiones y futuras líneas de trabajo}
