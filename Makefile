@@ -16,7 +16,9 @@ PICSCH5 = gis-pfc-ch5-01.pdf gis-pfc-ch5-02.pdf gis-pfc-ch5-03.pdf gis-pfc-ch5-0
 	  gis-pfc-ch5-05.pdf gis-pfc-ch5-07.pdf
 PICSDIR = pictures
 JPGPNGS = gis-pfc-ch2-05.jpg gis-pfc-ch2-06.jpg gis-pfc-ch4-01.png gis-pfc-ch4-02.png \
-	  gis-pfc-ch4-03.png gis-pfc-ch4-04.png gis-pfc-ch5-06.jpg gis-pfc-appa-01.png
+	  gis-pfc-ch4-03.png gis-pfc-ch4-04.png gis-pfc-ch5-06.jpg gis-pfc-ch6-01.jpg \
+	  gis-pfc-ch6-02.jpg gis-pfc-ch6-03.jpg gis-pfc-ch6-04.jpg gis-pfc-ch6-05.jpg \
+	  gis-pfc-ch6-06.jpg gis-pfc-appa-01.png
 PICS = $(addprefix $(PICSDIR)/, $(PICSPT1) $(PICSCH1) $(PICSCH2) $(PICSCH3) $(PICSCH5))
 OTHPICS = $(addprefix $(PICSDIR)/, $(JPGPNGS))
 LM = latexmk

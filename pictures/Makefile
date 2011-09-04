@@ -12,7 +12,9 @@ CH2PDF = $(CH2MPS:.mps=.pdf)
 CH3PDF = $(CH3MPS:.mps=.pdf)
 CH5PDF = $(CH5MPS:.mps=.pdf)
 # CH6 = gis-pfc-ch6-01.mps
-JPG = gis-pfc-ch2-05.jpg gis-pfc-ch2-06.jpg gis-pfc-ch5-06.jpg
+JPG = gis-pfc-ch2-05.jpg gis-pfc-ch2-06.jpg gis-pfc-ch5-06.jpg gis-pfc-ch6-01.jpg \
+      gis-pfc-ch6-02.jpg gis-pfc-ch6-03.jpg gis-pfc-ch6-04.jpg gis-pfc-ch6-05.jpg \
+      gis-pfc-ch6-06.jpg
 PNG = gis-pfc-ch4-01.png gis-pfc-ch4-02.png gis-pfc-ch4-03.png gis-pfc-ch4-04.png \
       gis-pfc-ch4-05.png gis-pfc-appa-01.png
 # OBJMPS = $(PT1) $(CH1) $(CH2) $(CH3) $(CH5) $(CH6)
