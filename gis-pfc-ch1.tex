@@ -2,30 +2,27 @@
 
 Para que un sistema pueda considerarse un sistema de medida debe haber una
 interacción con el objeto o evento de estudio. El propósito de este sistema
-es medir las propiedades de un determinado medio físico, en este caso
-madera de palmera. La interacción con el medio ocurre en el primer
-subsistema que se encuentra dentro de la jerarquía de capas que define el
-sistema de medida. Atendiendo a su función dentro del sistema, este
-subsistema recibe en esta memoria el nombre de subsistema para la
-interacción con el medio físico. Es el único de los tres subsistemas que
-conforman el sistema de medida que está directamente relacionado con los
-ensayos no destructivos, mientras que el resto de subsistemas ---el
-subsistema de adquisición y el subsistema de control y presentación--- se
-encuentran más ligados al tratamiento digital de señales. En otras
-palabras, para la realización de un ensayo el subsistema para la
-interacción con el medio físico es imprescindible, el resto no, y pueden
-ser sustituidos por otros elementos que suplan su función en el sistema.
+es medir las propiedades de un determinado medio físico, la madera de
+palmera. Atendiendo a su función dentro del sistema este subsistema recibe
+en esta memoria el nombre de subsistema para la interacción con el medio
+físico. Es el único de los tres subsistemas que conforman el sistema de
+medida que está directamente relacionado con los ensayos no destructivos
+mientras que el resto de subsistemas, el subsistema de adquisición y el
+subsistema de control y presentación, se encuentran más ligados al
+tratamiento digital de señales. En otras palabras, en la ejecución de un
+\sig{endus} el subsistema para la interacción con el medio físico es
+imprescindible, el resto de elementos del sistema no y pueden ser
+sustituidos por otros que los suplan.
 
 El subsistema para la interacción con el medio físico está compuesto por
 los elementos presentes en la figura \cref{fig:submedium}. Como puede verse
-en el esquema, los transductores son dispositivos que interactúan con el
-medio (por medio de la onda acústica). El acondicionador conectado al
+en el esquema los transductores son dispositivos que interactúan con el
+medio (por medio de una onda acústica). El acondicionador conectado al
 sensor adecua la señal eléctrica que el dispositivo genera de modo que la
-información con transporta pueda transmitirse correctamente a etapas
+información que transporta pueda transmitirse correctamente a etapas
 posteriores del sistema. El acondicionador que acompaña al actuador genera
-una señal de características determinadas con la que éste es alimentado. El
-objeto de alimentar el transductor con una señal eléctrica de propiedades
-tan concretas es el de obtener del actuador una respuesta también concreta.
+una señal de características determinadas con la que el dispositivo es
+alimentado de forma que su respuesta pueda predecirse.
 
 \begin{figure}
 	\begin{center}
@@ -49,21 +46,22 @@ Los transductores de ultrasonidos son transductores piezoeléctricos y, por
 tanto, entran en la categoría de transductores generadores. La principal
 característica de un sensor generador es que al ser expuesto a la magnitud
 no eléctrica de interés genera una diferencia de potencial eléctrico
-proporcional, sin necesidad de una alimentación eléctrica. Este efecto es
+proporcional sin necesidad de una alimentación eléctrica. Este efecto es
 reversible y puede utilizarse para provocar una respuesta no eléctrica a
-una variación en una corriente eléctrica por medio de un actuador. Los
-actuadores y los sensores generadores suelen presentar características
-similares por este motivo.
+una variación en una corriente eléctrica, para hacerlo hay que emplear un
+actuador. Los actuadores y los sensores generadores suelen presentar
+características similares debido a la reversibilidad del efecto que
+gobierna su funcionamiento.
 
-En determinados materiales aparece una polarización eléctrica si se somete
-el material a un esfuerzo que provoca deformación, este fenómeno se conoce
+En determinados materiales aparece una polarización eléctrica si son
+sometidos a un esfuerzo que provoca deformación, este fenómeno se conoce
 como efecto piezoeléctrico y es un efecto reversible. Si se aplica una
 diferencia de potencial eléctrico a dos de las caras de un material
 piezoeléctrico en éste aparece una deformación. Un actuador de ultrasonidos
 vibra cuando se excita con una onda eléctrica y esta vibración se transmite
 al medio en forma de onda de presión. La señal ultrasónica se propaga por
 el medio y finalmente incide en el sensor, ejerciendo una presión sobre su
-superficie que el transductor traduce en una señal eléctrica.
+superficie que es traducida en una señal eléctrica.
 
 La principal diferencia entre los transductores de ultrasonidos y los
 transductores acústicos convencionales es que los transductores de
@@ -72,18 +70,18 @@ acústica se hace inaudible para el oído humano, de esta manera es posible
 transmitir la energía acústica en pulsos estrechos. Los transductores de
 ultrasonidos pueden ser de dos tipos dependiendo de como se construyan,
 abiertos o cerrados. Los transductores de tipo abierto están formados por
-una pantalla protectora y la pieza de material piezoeléctrico montada sobre
-un cono metálico, suelen ser más eficientes y presentan un mayor ancho de
-banda, no obstante, están menos preparados para trabajar en condiciones
-adversas y presentan una frecuencia de resonancia menos precisa. En
-transductores de diseño cerrado la pieza resonante está en contacto directo
-con la carcasa protectora, y ésta se ajusta durante el proceso de
-fabricación para que el conjunto vibre a la frecuencia de resonancia
-elegida, estos transductores son menos eficientes pero más resistentes y
-más precisos. Los transductores empleados en este \sig{pfc} son de tipo
-cerrado. La \vref{fig:transducers} muestra una representación del
-encapsulado que reviste los transductores utilizados en el proyecto, en la
-que pueden apreciarse las dimensiones del dispositivo. En el encapsulado
+una pantalla protectora y la pieza de material piezoeléctrico está montada
+sobre un cono metálico, suelen ser más eficientes y presentan un mayor
+ancho de banda. No obstante, están menos preparados para trabajar en
+condiciones adversas y presentan una frecuencia de resonancia menos
+precisa. En transductores de diseño cerrado la pieza resonante está en
+contacto directo con la carcasa protectora y ésta se ajusta durante el
+proceso de fabricación para que el conjunto vibre a la frecuencia de
+resonancia elegida, estos transductores son menos eficientes pero más
+resistentes y más precisos. Los transductores empleados en este \sig{pfc}
+son de tipo cerrado. La \vref{fig:transducers} muestra una representación
+del encapsulado que reviste los transductores utilizados en el proyecto en
+la que pueden apreciarse las dimensiones del dispositivo. En el encapsulado
 del actuador existe una marca en forma de punto blanco que lo identifica y
 que sirve para distinguirlo del sensor, es la única diferencia aparente
 entre ambos. Las características técnicas de los transductores vienen
@@ -138,24 +136,33 @@ recogidas en el \cref{tab:transducers}.
 
 \subsection{El actuador de ultrasonidos}
 
-El actuador de ultrasonidos puede funcionar de dos formas diferentes: si es
-alimentado con una sinusoide emite una onda acústica continua al medio; por
-el contrario, si se alimenta con un pulso rectangular (o de continua) o
-tren de pulsos rectangulares, emite un tono modulado por un pulso gaussiano
-de la misma duración. En cualquier caso la potencia disipada por el
-actuador no puede exceder el límite de 20 mW eficaces especificado por el
-fabricante. Dependiendo del tipo de alimentación es posible adoptar una u
-otra estrategia para acotar la potencia suministrada al sensor. Si se
-alimenta el transductor con una onda sinusoidal puede, o bien limitarse la
-amplitud de la onda, o bien utilizarse una sinusoide
-pulsada\footnote{Nótese que al utilizar una sinusoide pulsada para
-alimentar el actuador en lugar de una sinusoide continua, la señal acústica
-generada por el dispositivo no difiere más que en su intensidad y no en su
-forma.}, empleando una configuración de ciclo de trabajo que garantice que
-no se supera el límite de potencia soportado. En caso de utilizar un pulso
-rectangular, o un tren de pulsos rectangulares, las opciones son similares,
-reducir el nivel de tensión de salida en el estado alto o configurar el
-ciclo de trabajo de la señal apropiadamente.
+En general los actuadores de ultrasonidos no son muy exigentes y admiten
+ser alimentados para su funcionamiento con señales de formas muy diversas
+como, por ejemplo, sinusoides u ondas rectangulares. Sin embargo, aunque
+oscilan siempre a su frecuencia natural de resonancia, los actuadores
+alimentados con señales de forma no sinusoidal emiten más intensamente
+armónicos secundarios, comportamiento que puede ser indeseado. Pueden
+utilizarse también para el propósito de alimentar un actuador señales
+moduladas (pulsadas) a fin de introducir un ciclo de trabajo y conseguir
+señales de menor potencia, al alimentar el actuador con una señal pulsada
+no se modifica su comportamiento y puede servir para limitar la potencia
+que disipa (que no puede superar el límite establecido por el fabricante,
+en este caso 200 mW). Si se desea trabajar con pulsos acústicos, para
+conseguir que el actuador los emita debe alimentarse con un pulso
+rectangular o una portadora modulada por un pulso de este tipo (véase la
+\cref{fig:pulse}).
+
+\sshortpage{}
+
+\begin{figure}
+	\begin{center}
+		\includegraphics{gis-pfc-ch1-03.pdf}
+	\end{center}
+	\caption[Pulso acústico generado por el actuador de
+	ultrasonidos]{Pulso acústico que se obtiene del actuador de
+	ultrasonidos cuando se alimenta con un pulso rectangular.}
+	\label{fig:pulse}
+\end{figure}
 
 El actuador de ultrasonidos carga el circuito de alimentación con una
 impedancia que presenta carácter variable, la componente reactiva de la
@@ -170,35 +177,15 @@ de potencia a frecuencias en torno a la frecuencia natural de resonancia
 del actuador. Por otro lado, la potencia suministrada al actuador se
 reparte entre la frecuencia fundamental de resonancia y los distintos
 armónicos a frecuencias superiores. El actuador siempre vibra a su
-frecuencia fundamental de resonancia o a frecuencias múltiplo de ésta,
-independientemente de la frecuencia de la onda eléctrica utilizada para el
-suministro de potencia. Si bien esto es cierto, para evitar excitar
-armónicos secundarios distintos de la frecuencia fundamental de resonancia
-es aconsejable que la frecuencia de la onda eléctrica sea lo más próxima a
-la frecuencia de resonancia del actuador, además esto garantiza la máxima
-transferencia de potencia.
+frecuencia fundamental de resonancia o a frecuencias múltiplo de ésta
+independientemente de la frecuencia o la forma de la onda eléctrica
+utilizada para su suministro de potencia. Si bien esto es cierto, para
+evitar excitar armónicos secundarios distintos de la frecuencia fundamental
+de resonancia es aconsejable que la frecuencia de la onda eléctrica sea lo
+más próxima posible a la frecuencia de resonancia del actuador, además esto
+garantiza la máxima transferencia de potencia.
 
-En ensayos no destructivos mediante ultrasonidos es imprescindible trabajar
-con pulsos acústicos como el representado en la \cref{fig:pulse}, para
-poder evaluar las propiedades del medio de propagación empleando una de las
-dos técnicas expuestas en el \cref{chap:endus} en la \cref{sec:technics}.
-Como se explica en dicho capítulo, el actuador continua vibrando a su
-frecuencia fundamental de resonancia incluso después de que la onda de
-alimentación pase a un estado bajo continuo, durante un tiempo determinado
-durante el proceso de fabricación del dispositivo ---esto es algo que no se
-aprecia en la figura---, dando lugar a lo que en teoría de \sig{endus} se
-conoce como <<zona ciega>> o <<zona muerta>>, este fenómeno se explica con
-mayor detalle en la \cref{sec:field}.
-
-\begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch1-03.pdf}
-	\end{center}
-	\caption[Pulso acústico generado por el actuador de
-	ultrasonidos]{Pulso acústico que se obtiene del actuador de
-	ultrasonidos cuando se alimenta con un pulso rectangular.}
-	\label{fig:pulse}
-\end{figure}
+\sshortpage{}
 
 El parámetro más importante asociado al actuador de ultrasonidos es el
 nivel de presión acústica transmitida (\emph{Transmitting Sound Pressure
@@ -216,30 +203,29 @@ o bien el valor típico del \sig{spl} a la frecuencia de resonancia, o bien
 un perfil de la magnitud frente a la frecuencia de la onda eléctrica. Con
 independencia de que el \sig{spl} se presente mediante un valor numérico o
 mediante un gráfico suele proporcionarse en unidades en base a una escala
-logarítmica que toma como referencia un valor de presión que, generalmente,
-se especifica también. Para calcular el \sig{spl} que se da en condiciones
-distintas de aquellas en que se miden las especificaciones debe calcularse
-la variación en escala lineal y después trasladar este resultado a escala
-logarítmica antes de poder operar con el \sig{spl}.
+logarítmica que toma como referencia un valor de presión que se especifica
+también. Para calcular el \sig{spl} que se da en condiciones distintas de
+aquellas en que se miden las especificaciones debe calcularse la variación
+en escala lineal y después trasladar este resultado a escala logarítmica.
 
 
 \subsection{Sensor de ultrasonidos}
 
 El sensor de ultrasonidos presenta unas propiedades muy similares a las
-propiedades del actuador, si bien se caracteriza por presentar una
+propiedades del actuador si bien se caracteriza por presentar una
 impedancia característica bastante mayor. En el sensor la conversión se da
 en sentido contrario, las ondas acústicas de presión que inciden en la cara
 externa del sensor se traducen en variaciones de la tensión eléctrica que
 existe en bornes del dispositivo. Si la propiedad más característica del
 actuador de ultrasonidos es el \sig{spl}, la propiedad más característica
 del sensor es la sensibilidad. La sensibilidad suele proporcionarse también
-en escala logarítmica, igual que ocurre con el \sig{spl}, suele darse un
+en escala logarítmica, igual que ocurre con el \sig{spl} suele darse un
 valor típico o una característica de la propiedad frente a la frecuencia
-que, en ocasiones, se superpone con la gráfica del \sig{spl} si los
+que en ocasiones se superpone con la gráfica del \sig{spl} si los
 transductores pertenecen a una misma serie. La magnitud lineal es la
 relación entre la presión detectada y la diferencia de potencial eléctrico
-que se crea en bornes del sensor y, en este caso, representa una medida de
-la eficiencia del sensor.
+que se crea en bornes del sensor y constituye una medida de la eficiencia
+del sensor.
 
 
 \subsection{Observaciones sobre los transductores}
@@ -264,21 +250,21 @@ transductores para poder efectuar los ensayos previstos, este tema vuelve a
 tratarse más adelante durante la segunda parte de la memoria.
 
 
-\section{Acondicionador de la sección de recepción}\label{sec:rxco}
+\section{Circuito de acondicionamiento del sensor}\label{sec:rxco}
 
 Generalmente, el núcleo de un sistema de medida ---su unidad de
 procesamiento, almacenamiento y/o presentación--- está formado por uno o
-varios dispositivos estándar, como son un osciloscopio o un analizador de
+varios dispositivos estándar como son un osciloscopio o un analizador de
 espectros. Los dispositivos de este tipo son eficaces en el ejercicio de
-sus funciones y, dada su versatilidad y precisión, cumplen las expectativas
+sus funciones y dada su versatilidad y precisión cumplen las expectativas
 de los usuarios en la gran mayoría de situaciones, por lo que son
-ampliamente utilizados. Sus características son bien conocidas, de modo que
+ampliamente utilizados. Sus características son bien conocidas de modo que
 hacer uso de dispositivos estándar simplifica el diseño de un sistema de
 medida. En el caso de optar por el uso de una alternativa a los
-dispositivos estándar en la configuración de un sistema de medida, ello no
-suele estar motivado por una razón de necesidad si no, en la mayoría de los
-casos, por un interés particular en aplicaciones concretas y
-funcionalidades añadidas.
+dispositivos estándar en la configuración de un sistema de medida ello no
+suele estar motivado por una razón de necesidad si no en la mayoría de los
+casos por un interés particular en aplicaciones concretas y funcionalidades
+añadidas.
 
 No obstante, la señal que genera un sensor no es adecuada para ser
 procesada directamente por un dispositivo estándar, es necesario
@@ -286,57 +272,53 @@ acondicionar previamente dicha señal, de no hacerlo se perdería la mayor
 parte de la información que transmite. Con el término acondicionador se
 designa el circuito electrónico que se interpone entre el sensor y el
 dispositivo estándar y cuya finalidad es adecuar la señal generada por el
-sensor a las características de la unidad de procesado del sistema. Con el
-propósito de que la información se transmita de forma íntegra al
-dispositivo estándar que sigue, un circuito acondicionador puede ser
-diseñado y fabricado, según la situación lo requiera, para desempeñar una o
-varias de las funciones listadas a continuación.
+sensor a las características de la unidad de procesado del sistema. Con
+éste propósito un circuito acondicionador puede ser diseñado y construido,
+según la situación lo requiera, para desempeñar una o varias de las
+funciones listadas a continuación.
 
 \begin{itemize}
 	\item Acotar el recorrido de la señal y confinarlo en unos márgenes
-		de tensión apropiados, evitando una posible saturación (y
-		eventual daño) de etapas posteriores.
+	    de tensión apropiados evitando una posible saturación y
+	    eventual daño de etapas posteriores.
 	\item Proporcionar adaptación de impedancias entre el sensor y el
-		dispositivo estándar, de modo que la transferencia de señal
-		sea máxima.
-	% \item Adaptar la impedancia de salida del sensor a la impedancia
-	% 	de entrada de la etapa posterior al circuito, de modo que
-	% 	la transmisión sea máxima.
+	    dispositivo estándar de modo que la transferencia de señal sea
+	    máxima.
 	\item A menudo los sensores proveen una señal de amplitud
-		comparable al ruido, el circuito acondicionador es
-		responsable de amplificar la señal manteniendo ---o
-		mejorando si es posible--- el nivel de \sig{snr}. Los
-		circuitos acondicionadores están integrados ---en caso de
-		que sea necesario--- por amplificadores de instrumentación,
-		útiles por sus altos índices de \sig{cmrr}.
+	    comparable al ruido, el circuito acondicionador es responsable
+	    de amplificar la señal manteniendo ---o mejorando si es
+	    posible--- el nivel de \sig{snr}. Los circuitos
+	    acondicionadores están integrados, en caso de que sea
+	    necesario, por amplificadores de instrumentación útiles por sus
+	    altos índices de \sig{cmrr}.
 	\item El acondicionador de un sistema de medida ha de intentar
-		filtrar todas las componentes de señal indeseadas
-		susceptibles de causar algún tipo de distorsión en los
-		resultados de una prueba.
-	\item Modular o demodular la señal de acuerdo a las necesidades de
-		la etapa subsiguiente (dispositivo estándar).
+	    filtrar todas las componentes de señal indeseadas susceptibles
+	    de causar algún tipo de distorsión en los resultados de una
+	    prueba.
+	\item Ha de modular o demodular la señal de acuerdo a las
+	    necesidades de la etapa subsiguiente.
 \end{itemize}
 
 
-\subsection{Diseño del circuito acondicionador}
+\subsection[Requisitos de diseño del circuito acondicionador]{Requisitos de
+diseño que debe satisfacer el circuito acondicionador}
 
 El acondicionador es un circuito complejo que requiere de un diseño
 elaborado. La función que ejerce el circuito acondicionador en el sistema
 de medida es, en definitiva, muy concreta: a partir de la señal generada
 por el sensor ofrece una señal que puede ser procesada adecuadamente por un
-dispositivo estándar. El diseño del circuito depende, entonces,
+dispositivo estándar. El diseño del circuito depende entonces
 exclusivamente de tres aspectos: el sensor utilizado, el dispositivo
 estándar que sirve de interfaz para con el resto del sistema, y las
 condiciones de funcionamiento.
 
 De lado del sensor es preciso determinar: la impedancia equivalente del
-sensor; el tipo de señal que genera, su amplitud y frecuencia, en ocasiones
-energía o densidad espectral de potencia, y si se encuentra o no modulada;
-por último, la presencia de ruido o señales interferentes y el tipo de los
-mismos.
+sensor; el tipo de señal que genera (su amplitud y frecuencia, su densidad
+espectral de potencia, y si se encuentra o no modulada); por último, la
+presencia de ruido o señales interferentes y el tipo de los mismos.
 
 Las funciones de procesamiento, almacenamiento y presentación de la señal
-se reparten en el esquema propuesto en este proyecto
+se reparten en el sistema de medida que ocupa a este proyecto
 (\vref{fig:digmeasstm}) en dos entidades físicas distintas: la tarjeta de
 adquisición digital\footnote{Concretamente la tarjeta de adquisición
 realiza las funciones de: conversión de analógico a digital de la señal;
@@ -345,10 +327,10 @@ intermedio de las muestras antes de servirlas al ordenador anfitrión,
 evitando fallos en la transmisión y garantizando que los datos se reciben
 en el mismo orden en el que se envían. En el \cref{chap:acquisition} se
 profundiza en la descripción del funcionamiento de la tarjeta \kpci{}.} y
-el ordenador, que asimismo gobierna el funcionamiento del sistema. Ambas
+el ordenador, que además gobierna el funcionamiento del sistema. Ambas
 entidades pueden ser consideradas dispositivos estándar de acuerdo a la
 definición dada en la introducción a esta sección. De ambos dispositivos,
-configurados en cascada, el acondicionador interactúa de manera directa
+configurados en cascada el acondicionador interactúa de manera directa
 sólo con la tarjeta de adquisición. Este hecho es relevante de cara al
 diseño del circuito pues significa que únicamente depende de las
 características de la tarjeta y no de las del ordenador. Al interponerse la
@@ -366,59 +348,8 @@ radiación, presencia de impulsos eléctricos\dots; pueden ser muy variadas
 pero se asume que se trabaja en condiciones estándar y no se profundizará
 más en el tema.
 
-Recapitulando, en los \cref{tab:sensprop,tab:cardprop} se encuentran
-recogidos los parámetros relevantes en el diseño de este circuito
-acondicionador y los valores que adquieren en el caso particular de este
-sistema de medida (recuérdese que la configuración del subsistema, en una
-división que responde a la función de los distintos elementos que lo
-integran, puede verse en la \cref{fig:submedium}).
 
-\begin{table}
-	\centering
-	\begin{tabular}{l r@{\ }l}
-		\toprule
-		Propiedad & \multicolumn{2}{c}{Valor} \\
-		\midrule
-		\\
-		Tipo de señal generada & \multicolumn{2}{c}{$x(t) =
-		A\sin(\omega t)\cdot\text{e}^{-\alpha t^2}$} \\\\
-		Densidad espectral de potencia & \multicolumn{2}{c}{$X(F) =
-		(A/2)\sqrt{\pi/\alpha}\cdot\text{e}^{-(\pi F)^2/\alpha}$}\\
-		\\
-		Frecuencia de resonancia & $20$ & $[\text{kHz}]$ \\
-		Ancho de banda (aprox.) & $20$ & $[\text{kHz}]$ \\
-		Resistencia & \hspace*{4.8em}$2$ & $[\text{k}\Omega]$ \\
-		Capacitancia & \hspace*{4.8em}$1.9$ & $[\text{nF}]$ \\
-		\bottomrule
-	\end{tabular}
-	\caption[Propiedades relevantes del sensor]{Propiedades del sensor
-	relevantes para el diseño del circuito acondicionador.}
-	\label{tab:sensprop}
-\end{table}
-
-\begin{table}
-	\centering
-	\begin{tabular}{l@{\hspace*{3em}}r@{\ }l}
-		\toprule
-		Propiedad & \multicolumn{2}{c}{Valor} \\
-		\midrule
-		Rango de tensiones aceptado & $(-10, 10)$ & $[\text{V}]$ \\
-		Resistencia & $1$ & $[\text{G}\Omega]$ \\
-		Capacitancia & $C < 200$ & $[\text{pF}]$ \\
-		\bottomrule
-	\end{tabular}
-	\caption[Propiedades relevantes de la tarjeta]{Propiedades de la
-	tarjeta de adquisición \kpci{} (vid. cáp. \ref{chap:acquisition})
-	relevantes para el diseño del circuito acondicionador.}
-	\label{tab:cardprop}
-\end{table}
-
-% Todo ello nos dice (de acuerdo con las necesidades del experimento de
-% endus que se desea realizar)\dots
-
-%\subsection{Circuito propuesto}
-
-\subsection{Diseño propuesto}
+\subsection{Circuito propuesto}
 
 La \cref{fig:sensor-conditioner} muestra una representación esquemática del
 circuito propuesto para el acondicionamiento del sensor de ultrasonidos.
@@ -429,8 +360,8 @@ de funcionar polarizado con una única fuente de alimentación o batería (a
 partir de aquí se utilizarán indistintamente los términos fuente de
 alimentación o batería para referirse a la referencia de tensión utilizada
 para polarizar los circuitos acondicionadores), presenta una ganancia
-máxima de 50 V/V que se mantiene hasta los 40 kHz (ganancias inferiores se
-mantienen por encima de este margen de frecuencias).
+máxima de 50 V/V que se mantiene plana más allá de los 100 kHz (ganancias
+inferiores se mantienen por encima de este margen de frecuencias).
 
 \begin{figure}
     \begin{center}
@@ -473,179 +404,127 @@ cinco horas y media con una pila de petaca alcalina de 9 V).
 
 La elección del \sig{ina155} se ha hecho teniendo en cuenta que la
 respuesta en frecuencia del amplificador es plana en torno a la frecuencia
-de resonancia del sensor.
-% únicamente introduce un desfase de unos 45º con respecto a la señal de
-% entrada (a esa frecuencia). Además, el hecho de que la ganancia decaiga a
-% partir de los 40 kHz resulta asimismo conveniente, pues ayuda a la
-% atenuación de los armónicos indeseados de la señal.
-
-% ATENCIÓN TODO AQUÍ
-%
-% ATENCIÓN, LA GANANCIA DEBE SER PLANA MÁS ALLÁ DE LOS 40 kHz
-%
-% De lo contrario se introduce una distorsión en la señal que será difícil
-% compensar después en MATLAB. Si sólo me interesase saber si el pulso
-% llega o no y cuando, como ocurre con un sensor de distancia, no me
-% interesaría más que la frecuencia de resonancia del sensor donde se
-% concentra la mayor parte de la energía de la señal. Pero no es así, en un
-% ENDUS por transmisión he de evaluar la distorsión que introduce el medio
-% en la señal acústica, por eso no debo despreciar la señal, al menos no
-% antes del segundo armónico (recuerda que el espectro de la señal se
-% corresponde con una señal gaussiana aproximadamente, cuyo ancho de banda
-% me es desconocido pero que calculo estará en torno a los 20 kHz).
-%
-% La respuesta plana de la ganancia garantiza que no se introduce
-% distorsión en la señal. La ganancia se mantiene plana si se mantiene por
-% debajo de un umbral de unos 30 V/V aproximadamente. Lo que puede resultar
-% insuficiente, para determinar si es así tengo que realizar el estudio
-% pertinente, pero en cualquier caso puedo resolver el problema si utilizo
-% un segundo amplificador (me refiero a un amplificador operacional) en
-% cascada. Sería conveniente que la ganancia de este amplificador fuese
-% variable ---puede conseguirse una ganancia variable si conecto un
-% potenciómetro en la red de realimentación negativa del operacional, una
-% configuración arriesgada pero sencilla consiste en conectar un terminal
-% del potenciómetro a la salida del operacional, otro a tierra
-% (configuración no inversora) y el terminal común a la entrada negativa
-% del operacional--- así me libraría de posibles problemas ocasionados por
-% trabajar en distintas condiciones (gruesos de muestra muy variados,
-% muestras menos dispersivas,\dots).
-
-% El desfase de 45º se debe al condensador que el sensor introduce en serie
-% con el generador de señal (supuestamente, utilizando el modelo que he
-% inventado), y no al amplificador de instrumentación. Atribuirlo al
-% amplificador de instrumentación resulta incorrecto.
+de resonancia del sensor. En los \sig{endus} la onda ultrasónica suele
+verse afectada por la dispersión y se desplaza en frecuencia por lo que un
+amplificador cuya respuesta es plana en torno a la frecuencia de trabajo es
+especialmente apropiado para la realización de este tipo de ensayos.
 
 
 \subsubsection{Funcionamiento del circuito}
 
-
-\section{Acondicionador de la sección de emisión}
-
-Los circuitos acondicionadores a menudo se relacionan únicamente con
-sensores y no con actuadores. No obstante, en el marco que define el
-sistema de medida digital no puede entenderse el circuito que precede al
-actuador de un modo distinto a como se entiende conceptualmente un circuito
-acondicionador, aunque el flujo de información circule en sentido
-contrario. Conceptualmente, un circuito que acondiciona un sensor traslada
-las variaciones que se producen en cierta propiedad del sensor a un
-instrumento estándar por medio de una señal eléctrica. El circuito que se
-inserta entre la fuente de alimentación y el actuador genera, a partir de
-la alimentación que suministra la fuente, una señal adecuada para excitar
-el actuador. El tipo de alimentación que precisa el actuador para emitir
-pulsos acústicos como los que requiere el experimento de ultrasonidos es
-muy concreta, y en cierto sentido transporta una determinada información,
-por lo que no puede obtenerse directamente a partir de un instrumento
-estándar como es en este caso la fuente de alimentación. Este circuito
-proporciona, además, adaptación de impedancias entre la fuente de
-alimentación y el actuador. Estas dos son, sin duda, competencias
-atribuidas a los circuitos acondicionadores, teniendo esto en consideración
-y atendiendo a la definición de circuito acondicionador que se hace en el
-\cref{sec:rxco}, puede decirse que, efectivamente, el circuito que acompaña
-al actuador en el sistema de medida responde a la definición formal de
-circuito acondicionador y puede considerarse como tal.
+Al polarizarse el circuito con una única fuente de alimentación
+($V^+_{cc}$) es necesario introducir una componente en continua en la señal
+de entrada para evitar que el acondicionador recorte el ciclo negativo de
+la señal. Con el mismo propósito se polariza la entrada de referencia del
+integrado. Para ello se utiliza una tensión de valor igual a $V^+_{cc}/2$
+que garantiza el mayor recorrido de la señal de salida sin que ninguno de
+los dos ciclos de la señal sature el amplificador. Obviamente, al
+configurar el circuito de esta manera la señal de salida oscilará en torno
+a la tensión de referencia y no respecto al nivel de cero.
 
 
-\subsection[Requisitos de diseño del acondicionador]{Requisitos de diseño
-que debe satisfacer el circuito acondicionador}
+\section{Circuito de acondicionamiento del actuador}
 
-Aclarado ésto, el primer paso en el diseño de un circuito acondicionador es
-determinar los requisitos que dicho circuito debe satisfacer. Como se
-observa del párrafo anterior, el acondicionador debe proporcionar un
-suministro eléctrico que reúna unas condiciones determinadas. En
-definitiva, para determinar que tipo de señal debe generar el
-acondicionador es preciso estudiar el tipo de experimento realizado y las
-características del actuador empleado en dicho experimento. Para la
-realización de un \sig{endus} es necesario que el actuador de ultrasonidos
-emita un pulso acústico, no una onda acústica continua. De lo contrario no
-se pueden percibir parámetros en la señal eléctrica necesarios para
-determinar algunas de las propiedades del medio de propagación. El actuador
-de ultrasonidos utilizado en el proyecto puede emitir este tipo de pulsos
-acústicos, para emitir un pulso acústico debe excitarse con un pulso
-eléctrico rectangular. Por tanto, uno de los requisitos que el circuito
-acondicionador debe satisfacer es que a su salida debe generar un tren de
-pulsos eléctricos rectangulares. Con cada pulso rectangular el actuador
-emite un pulso acústico, como requisito opcional puede considerarse la
-incorporación de un interruptor de inicio con el que controlar el proceso.
+\sshortpage{}
 
-El otro requisito fundamental que debe cumplir el circuito es un requisito
-de potencia. El pulso acústico que emite el actuador debe ser capaz de
-atravesar el tronco de una palmera, para conseguirlo una buena estrategia
-consiste en emitir la máxima energía ultrasónica posible. Esto, a su vez,
-puede conseguirse si se suministra al actuador la máxima potencia que puede
-soportar. El límite de potencia que el actuador puede disipar es de 200 mW
-eficaces, considerando máxima transferencia de potencia, la tensión eficaz
-de la onda eléctrica con la que se alimenta el actuador debe encontrarse en
-torno a los 10 V eficaces. La impedancia con la que el actuador carga el
-circuito debe, sin embargo, tenerse en cuenta a la hora de calcular la
-transferencia de potencia que existe entre el acondicionador y el actuador.
-Cuando es alimentado por un tren de pulsos rectangulares, el conjunto
-formado por el acondicionador y el actuador se comporta como un circuito
-\sig{RC} que se encuentra en régimen transitorio. De forma que para
-averiguar cuales son los niveles de tensión y corriente que se observan en
-bornes del actuador es menester calcular la constante de tiempos del
-circuito ($\tau = C\cdot R_\text{eq}$) y observar el comportamiento del
-circuito en el tiempo. Tomando como hipótesis que la impedancia de salida
-del acondicionador es reducida ---hipótesis que se cumple en el circuito
-propuesto (\cref{fig:actuator-conditioner}), dado que la etapa de salida de
-dicho circuito la constituye un amplificador operacional cuya impedancia de
-salida se aproxima a cero---, y teniendo en cuenta que la parte resistiva
-de la impedancia atribuida al actuador es también pequeña
-(\cref{tab:transducers}), puede deducirse que la constante de tiempos
-resultante es también moderada. Es posible obtener un valor aproximado a
-partir de cálculos sencillos.
-
-\begin{equation}\label{eq:timec}
-	\begin{split}
-		\tau &= C_\text{L}\cdot R_\text{eq}
-		\Big|_{R_\text{in}\simeq\infty} =
-		C_\text{L}\left(R_\text{L} + R_0\|(R_\text{a} +
-		R_\text{b})\right)\Big|_{R_0 \simeq 0} =
-		C_\text{L}\cdot R_\text{L} \\
-		&= 700\cdot2.2\cdot 10^{-9} = 1.54\mu s
-	\end{split}
-\end{equation}
-
-Donde $R_\text{in}$ y $R_\text{0}$ representan respectivamente la
-impedancia de entrada y la impedancia de salida del amplificador
-operacional. Finalmente se observa que, con los valores de periodo, tensión
-en el estado alto y ciclo de trabajo de la señal que proporciona el
-acondicionador (\cref{fig:txacvo}), y considerando una constante de tiempos
-como la obtenida en la \cref{eq:timec}, la respuesta del actuador es muy
-rápida y la señal en sus bornes sigue con bastante fidelidad la señal que
-puede medirse con el circuito en abierto.
+A menudo el concepto de circuito acondicionador está ligado únicamente al
+concepto de sensor. En un sistema de medida, por el contrario, el circuito
+que acompaña al actuador también se conoce como circuito acondicionador.
+Ésto se debe a que en cierto modo el comportamiento de éste circuito es
+similar al de un circuito acondicionador como se entiende normalmente. Para
+extraer conclusiones a partir de la señal obtenida de un sensor es
+necesario conocer cual es la señal que la origina. Resulta pues
+comprensible pensar que la señal transmitida contiene también información
+importante. Siguiendo esta línea de pensamiento se llega a la conclusión de
+que no es útil alimentar un actuador con cualquier señal ya que la señal
+que emite debe conocerse. En ocasiones no es posible o práctico averiguar
+directamente cómo es la señal que emite un actuador, sin embargo,
+conociendo la respuesta del actuador al impulso es fácil determinar que
+señal que emite si se conoce la señal con la que se alimenta. Podría
+afirmarse también entonces que la señal que alimenta al actuador contiene
+información valiosa. Si la actividad del circuito de alimentación depende
+del sistema, puede decirse para terminar que el acondicionador recibe
+información procedente del sistema. En otras palabras, el circuito de
+acondicionamiento del actuador transforma la información que recibe del
+sistema en información útil para el actuador. En conjunto, si se observa
+como un conducto por el que circula información, el circuito acondicionador
+de la sección de emisión ocupa la posición contraria que el circuito
+acondicionador de la sección de recepción, realizando la misma tarea
+(conversión del formato de la información) pero en sentido contrario
+(del sistema al transductor). Además, teniendo en cuenta que el circuito
+acondicionador que acompaña al actuador realiza otras funciones que
+permiten que la información se transmita al actuador, puede considerarse
+este circuito como un verdadero circuito acondicionador.
 
 
-\subsection[Circuito acondicionador propuesto]{Circuito acondicionador
-propuesto, el 555}
+\subsection[Requisitos de diseño del circuito acondicionador]{Requisitos de
+diseño que debe satisfacer el circuito acondicionador}
 
-El diseño propuesto se muestra en la \cref{fig:actuator-conditioner}, está
-basado en dos temporizadores 555 ---a nivel comercial se encuentran
-disponibles encapsulados que en su interior contienen dos 555, generalmente
-se conocen bajo el número de referencia 556--- y lo completa un
-amplificador operacional. El 555 es un temporizador integrado de gran
-precisión capaz de proporcionar pulsos rectangulares de 12 V de amplitud
-con tiempos de subida y de bajada contenidos entre los 300 y los 100 ns. Es
-un integrado muy conocido, es muy versátil, y es empleado en gran variedad
-de aplicaciones. Habitualmente se utiliza en sus configuraciones de
-multivibrador astable y multivibrador monoestable. En su configuración
-astable el 555 genera un tren de pulsos rectangulares periódico en el que
-el ciclo de trabajo puede ajustarse a voluntad para adoptar un valor entre
-el 50\% y el 100\%. Por el contrario, en su configuración monoestable el
-circuito genera un pulso de duración muy precisa bajo un estímulo externo.
-La configuración monoestable responde a un estímulo por estado bajo, por
-tanto, es fácil observar la relación que existe entre las dos
-configuraciones. Utilizando dos 555 en cascada (alimentando uno con la
-salida del anterior), el primero en su configuración astable y el segundo
-configurado como monoestable puede obtenerse un tren de pulsos
-rectangulares en el que el ciclo de trabajo no se encuentra limitado a
-ningún rango de valores. En una configuración en cascada como la propuesta,
-el ciclo de trabajo está determinado por la relación entre el periodo del
-tren de pulsos, que únicamente depende de la configuración del astable, y
-la duración de los pulsos, que a su vez depende de la configuración del
-monoestable; de ahí que pueda evitarse la restricción que se aplica al
-ciclo de trabajo cuando sólo se utiliza un astable.
+Aclarado ésto se procede a determinar que parámetros han de tenerse en
+cuenta en el diseño del circuito acondicionador. En \sig{endus} el actuador
+debe emitir al medio un pulso o una señal pulsada. Para conseguir que el
+actuador emita al medio un pulso acústico debe recibir un pulso eléctrico
+rectangular o una señal modulada por un pulso rectangular. Para controlar
+mínimamente la potencia de los armónicos secundarios es preferible
+administrar al actuador una señal modulada por un pulso de duración
+limitada. En principio, se puede pensar que los sensores pueden llegar a
+utilizarse en la realización de pruebas de campo. Para no tener que
+depender de una fuente de alimentación se fija una condición de diseño: que
+el circuito pueda funcionar con una batería. Es difícil obtener una señal
+sinusoidal mediante un pequeño circuito alimentado con una batería, es más
+práctico obtener una señal rectangular. La duración del pulso (del pulso
+acústico y, en consecuencia, del pulso eléctrico que alimenta al actuador)
+la fija el tipo de experimento que se va a realizar. Como a priori no se
+conocen las necesidades concretas del experimento puede fijarse como
+condición de diseño del circuito acondicionador que sea capaz de generar
+una señal modulada por un pulso cuya duración se pueda seleccionar.
 
-\begin{sidewaysfigure}
+Los ensayos se van a realizar de forma manual y no automática, es decir,
+cada vez que se desea transmitir un pulso acústico al medio es un operador
+en realidad el que acciona el circuito acondicionador. Por eso, <<del lado
+del sistema>> el único requisito es que el circuito presente un interruptor
+o cualquier otro mecanismo que sirva para accionarlo.
+
+En \sig{endus} efectuados sobre madera de palmera la onda acústica se ve
+particularmente afectada por la dispersión. Por este motivo es importante
+transmitir pulsos acústicos de la mayor potencia posible. Ésto condiciona a
+su vez el circuito de acondicionamiento del actuador que debe transmitirle
+una señal lo más intensa posible garantizando una buena transferencia de
+potencia (o lo que es lo mismo, debe existir entre acondicionador y
+actuador adaptación de impedancias). La máxima potencia que puede disipar
+el sensor es de 200 mW eficaces, lo que significa que en régimen pulsado,
+de forma instantánea, puede disipar una potencia mayor. Para el propósito
+de este proyecto se decide que la señal destinada a alimentar el sensor
+debe alcanzar al menos una amplitud de 15 Vpp (obviamente debe suministrar
+la intensidad que corresponde a esos niveles de tensión). Por otra parte,
+para conseguir la máxima transferencia de posible, se fija también como
+condición de diseño que la señal generada por el acondicionador ha de
+oscilar a la frecuencia natural de resonancia del actuador, de modo que la
+impedancia observada por el circuito sea de carácter resistivo y su valor
+sea cercana a los 500 $\Omega$. Siendo así es posible garantizar la máxima
+transferencia de potencia siempre y cuando la impedancia de salida del
+osciloscopio sea cercana a 0.
+
+
+\subsection{Circuito propuesto}
+
+Dispuestas las condiciones de diseño expuestas en el apartado anterior se
+propone el circuito representado en la \cref{fig:actuator-conditioner} para
+el acondicionamiento del actuador. Este circuito está constituido por
+cuatro etapas:
+
+\begin{itemize}
+    \item Una primera etapa que cuenta con un interruptor para que el
+	operario pueda accionar el circuito y generar el pulso acústico.
+    \item Una segunda etapa cuyo elemento central es un temporizador en
+	configuración monoestable.
+    \item La tercera etapa está formada también en base a un temporizador
+	pero en este caso configurado en su configuración astable.
+    \item Por último el circuito dispone de una etapa de salida que amplia
+	la variación de tensión hasta el nivel requerido.
+\end{itemize}
+
+\begin{sidewaysfigure}[p]
 	\begin{center}
 		\includegraphics{gis-pfc-ch1-05.pdf}
 	\end{center}
@@ -656,112 +535,53 @@ ciclo de trabajo cuando sólo se utiliza un astable.
 	\label{fig:actuator-conditioner}
 \end{sidewaysfigure}
 
-Ambas configuraciones, astable y monoestable, se caracterizan por la
-presencia de una red temporal en el circuito. Otra propiedad característica
-de estos circuitos es que el terminal de control debe encontrarse acoplado
-a tierra por medio de un condensador. La red temporal es un circuito
-compuesto por resistencias y condensadores que se encuentra conectado a los
-terminales de disparo, umbral y descarga del 555 y que dependiendo de la
-distribución, número y valor de sus componentes provoca un determinado
-comportamiento en el 555. En un astable la red temporal está compuesta por
-un condensador conectado por un lado a los terminales de umbral y disparo y
-por otro a masa, y dos resistencias: una situada entre la tensión de
-alimentación y el terminal de descarga del 555; y otra que está conectada
-al primer terminal del condensador y en su otro extremo al terminal de
-descarga. El periodo y el ciclo de trabajo del tren de pulsos que puede
-observarse a la salida de un astable están determinados por las siguientes
-ecuaciones.
+El \sig{tlc555}, utilizado en este circuito, es un temporizador integrado
+del tipo 555 fabricado en tecnología \sig{cmos}. Se trata de un
+temporizador de bajo consumo y elevada precisión diseñado para funcionar
+alimentado con una batería. El \sig{cd4049ub} por su parte es un \sig{ic}
+en el que se integran seis inversores, también es capaz de funcionar a
+partir del suministro eléctrico que entrega una batería.
 
-\begin{align}
-	T_H &= ln(2)(R_1 + R_2)C_1 \simeq 0,693(R_1 + R_2)C_1 \\
-	T_L &= ln(2)(R_2)C_1 \simeq 0,693\cdot C_1R_2 \\
-	T &= T_H + T_L = ln(2)(R_1 + 2R_2)C_1 = \frac{1}{f} \\
-	D &= \frac{T_H}{T} = \frac{R_1 + R_2}{R_1 + 2R_2}
-	\label{eq:astable}
-\end{align}
 
-Por su parte, la red temporal de un circuito monoestable está compuesta por
-una resistencia ubicada entre la alimentación y los terminales de descarga
-y umbral, y un condensador conectado al segundo terminal de la resistencia
-y a masa. En este caso la red temporal determina la duración del pulso que
-el monoestable genera cuando recibe un estímulo, la ecuación es la
-siguiente.
+\subsubsection{Funcionamiento del circuito}
 
-\begin{equation}
-	T_H = ln(3)C_2R_3 \simeq 1,1\cdot C_2R_3
-	\label{eq:monostable}
-\end{equation}
+Un 555 en su configuración monoestable genera, al percibir en su entrada de
+disparo (\sig{trig}) una tensión por debajo de un umbral de $V^+_{cc}/3$,
+un pulso de una duración determinada por la red $RC$ que lo acompaña. Si el
+estado bajo persiste tras transcurrir un tiempo igual a la duración del
+pulso el comportamiento de la tensión de salida del circuito es
+impredecible. La primera etapa del circuito mantiene la tensión que entra
+al temporizador de la segunda por su puerta de disparo por encima del nivel
+de umbral. En el instante en el que el operario acciona el pulsador la
+tensión de salida de la etapa pasa a un estado bajo cercano a cero tras el
+cual empieza a crecer exponencialmente (a medida que el condensador se
+carga) hasta alcanzar su valor estable $V^+_{cc}$. La curva de crecimiento
+exponencial que sigue la tensión está determinada por la resistencia y el
+condensador conectados a la entrada de disparo del 555.
 
-El terminal de disparo de un monoestable ha de ser conectado a la señal de
-estímulo. La señal de estímulo, que en la configuración en cascada de dos
-555 es la señal a la salida del astable, debe caracterizarse por permanecer
-siempre en un estado estable en el que la tensión debe ser próxima a la
-tensión de alimentación, y en el momento en el que deba generarse el pulso
-cambiar a un estado bajo que no debe durar más de lo que dura el pulso de
-salida. Por tanto, resulta comprensible que el ciclo de trabajo de un tren
-de pulsos generado por un astable con el propósito de servir de señal de
-estímulo de un 555 monoestable debe rondar valores elevados y, por tanto,
-$R_2 \lll R_1$.
+La segunda etapa genera un pulso rectangular de 300 $\mu\text{s}$ (el
+equivalente a 12 periodos de una señal que oscila a 40 kHz) que sirve para
+modular la salida de la tercera etapa. La entrada de \sig{reset} de un 555
+es activa a estado bajo, es decir, que mientras la salida del primer 555
+permanece en el estado estable (en el que adquiere un valor próximo a cero)
+el segundo 555 permanece inactivo. En el momento en el que detecta el pulso
+generado por el primer temporizador, el segundo 555 empieza a generar un
+tren de pulsos rectangulares. La frecuencia de oscilación de la señal
+rectangular observada a la salida de la tercera etapa está determinada por
+la red de resistencias y condensadores conectada a las entradas de
+descarga, umbral y disparo del temporizador. Esta red está formada por un
+condensador y dos resistencias cuyos valores se ha seleccionado para que
+generar una señal que oscila a 40 kHz.
 
-Como se mencionaba al inicio del apartado el circuito acondicionador lo
-completa un amplificador operacional configurado con realimentación
-negativa. El propósito de este circuito es amplificar la señal de salida
-del 556 al tiempo que limita el valor de la impedancia de salida del
-conjunto. La señal de salida resultante, al emplear los componentes
-listados en el \cref{tab:txcondcomp} puede observarse en la
-\cref{fig:txacvo}. De acuerdo con lo observado en la \cref{fig:pulse} en la
-sección anterior, cuando uno de los pulsos rectangulares de los que se
-compone el tren llega al actuador se genera un pulso acústico. Por razones
-de comodidad puede instalarse un interruptor en el terminal de \func{reset}
-del 555 monoestable para poder detener o iniciar el proceso, aunque desde
-el punto de vista del experimento basta con pausar la representación de los
-datos en el momento deseado. Puesto que con la configuración propuesta la
-imagen ha de refrescarse cada segundo es fácil para un ser humano
-determinar en que momento resulta adecuado congelar la prueba.
-
-\begin{table}
-	\centering
-	\begin{threeparttable}
-	% Columnas en modo matemático
-	\begin{tabular}{>{\centering\(}p{.3\textwidth}<{\)} D{.}{\ }{3.4}
-		>{\(}c<{\)}}
-		\toprule
-		\multicolumn{1}{c}{Componente} &
-			\multicolumn{1}{c}{Valor nominal} &
-			\multicolumn{1}{c}{Coste
-			aproximado\tnote{a}\hspace{.8em}(\texteuro)} \\
-		\midrule
-		R_1 & 1.{\text{k}\Omega} & 0.20 \\
-		R_2 & 10.{\text{M}\Omega} & 0.20 \\
-		R_3 & 510.{\Omega} & 0.20 \\
-		C\hspace*{.4em} & 100.\text{nF} & 0.20 \\
-		C_1 & 150.\text{nF} & 0.20 \\
-		C_2 & 680.\text{nF} & 0.20 \\
-		\multicolumn{1}{c}{\textsc{ne/se} \(556\)} &
-		\multicolumn{1}{c}{\parbox{1.5em}{---}} & 0.40 \\
-		\multicolumn{1}{c}{\textsc{ne} \(5534\)} &
-		\multicolumn{1}{c}{\parbox{1.5em}{---}} & 0.70 \\
-		\bottomrule
-	\end{tabular}
-	\begin{TableNotes}
-		\tnotetext{a}{Los datos correspondientes a esta columna del
-		cuadro se han elaborado a partir de los precios que pueden
-		consultarse en el catálogo de
-		\href{http://es.farnell.com}{Farnell}.}
-	\end{TableNotes}
-	\end{threeparttable}
-	\caption[Componentes del acondicionador en emisión]{Componentes
-	seleccionados para implementar el circuito acondicionador que
-	aparece en la \cref{fig:actuator-conditioner}.}
-	\label{tab:txcondcomp}
-\end{table}
-
-\begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch1-06.pdf}
-	\end{center}
-	\caption[Señal a la salida del amplificador \textsc{ne5534},
-	$u(t)$]{Señal generada por el acondicionador de transmisión medida
-	a la salida del amplificador \textsc{ne5534}, $u(t)$.}
-	\label{fig:txacvo}
-\end{figure}
+La señal que ve la cuarta etapa a su entrada es pues una señal rectangular
+que oscila a 40 kHz entre 0 y $V^+_{cc}$ modulada por un pulso de 300
+$\mu\text{s}$ de duración. La última etapa del circuito duplica la amplitud
+de pico a pico de la señal de modo que el actuador es finalmente alimentado
+por una señal cuya amplitud es igual a $2 V^+_{cc}$ Vpp. Como puede
+observarse en el esquemático, cada extremo del actuador está conectado a un
+condensador que a su vez está conectado a la salida de dos de los
+inversores integrados en el \sig{cd4049ub}. Al cortocircuitar la salida de
+dos inversores se suministra la corriente suficiente para alimentar el
+transductor, por su parte la función de los condensadores es la de filtrar
+la componente en continua de la señal e impedir que ésta llegue al
+dispositivo de ultrasonidos.
