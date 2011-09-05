@@ -15,15 +15,6 @@
 \usepackage[T1]						{fontenc}
 \usepackage[altbullet, nofontinfo]			{lucidabr}
 
-\usepackage[format    = hang,
-	    font      = small,
-	    labelfont = bf,
-	    labelsep  = endash,
-	    width     = .9\textwidth]			{caption}
-
-\usepackage[listofformat=subsimple, format=hang, captionskip=10pt,
-labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
-
 \usepackage[clearempty]					{titlesec}
 \usepackage[nottoc]					{tocbibind}
 \usepackage[spanish]					{varioref}
@@ -33,6 +24,15 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 \usepackage{amsfonts, amsmath,  amssymb,  calc,     color,    fancyhdr}
 \usepackage{hyperref, ifthen,   layouts,  listings, rotating, textcase}
 \usepackage{array,    booktabs, tabularx, tabulary, dcolumn,  multirow}
+
+\usepackage[format    = hang,
+	    font      = small,
+	    labelfont = bf,
+	    labelsep  = endash,
+	    width     = .9\textwidth]			{caption}
+
+\usepackage[listofformat=subsimple, format=hang, captionskip=10pt,
+labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 
 \usepackage						{threeparttable}
 \usepackage						{textcomp}
@@ -179,7 +179,10 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 \renewcommand\labelitemii{\leavevmode\hbox to 1.1ex
 	{\hss\vrule height .7ex width .5ex depth -.15ex\hss}}
 
-\makeatletter\renewcommand\@pnumwidth{20.4pt}\makeatother	% pnumwidth
+\makeatletter
+    \renewcommand\@pnumwidth{20.4pt}				% pnumwidth
+    \renewcommand\l@figure  {\@dottedtocline{1}{1.5em}{2.8em}}
+\makeatother
 \newcommand\eletras{
 	\renewcommand\labelenumi{\textsc{\alph{enumi}}.}}	% enumerate
 \newcommand\sectionlabel{

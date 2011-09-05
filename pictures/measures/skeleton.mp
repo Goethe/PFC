@@ -11,6 +11,8 @@ etex
 
 filenametemplate "%j-%02c.mps";
 
+defaultfont := "hlhr8r";
+
 newinternal u, v;
 u := 1mm;
 v := 10mm;
