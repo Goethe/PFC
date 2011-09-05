@@ -277,6 +277,7 @@ pickup l1
 			(ms$^{-1}$) etex, OUT);
 		glabel.lft(btex \begin{tabular}{c}Desplazamiento \\%
 			en frecuencia (kHz)\end{tabular} etex, OUT);
+		frame withpen l2;
 	endgraph;
 endfig;
 

@@ -179,7 +179,10 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 \renewcommand\labelitemii{\leavevmode\hbox to 1.1ex
 	{\hss\vrule height .7ex width .5ex depth -.15ex\hss}}
 
-\makeatletter\renewcommand\@pnumwidth{20.4pt}\makeatother	% pnumwidth
+\makeatletter
+    \renewcommand\@pnumwidth{20.4pt}				% pnumwidth
+    \renewcommand\l@figure  {\@dottedtocline{1}{1.5em}{2.8em}}
+\makeatother
 \newcommand\eletras{
 	\renewcommand\labelenumi{\textsc{\alph{enumi}}.}}	% enumerate
 \newcommand\sectionlabel{
