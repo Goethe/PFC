@@ -281,4 +281,71 @@ pickup l1
 	endgraph;
 endfig;
 
+
+beginfig (18)
+pen l[];
+picture d, leyenda;
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+
+interim bboxmargin := 2u;
+
+pickup l1;
+
+d = thelabel.llft(btex \begin{tabular}{r@{ }l} --- & %
+    recibida, $Y (f)$ \\ - - & transmitida, $X (f)$ %
+	\end{tabular} etex, (0, 0));
+
+leyenda := image(
+    fill bbox d withcolor white withpen l0;
+    draw bbox d;
+    draw d;
+);
+
+draw begingraph (10v, he02);
+    gdraw "palmtx.dat" dashed evenly;
+    gdraw "palmrx.dat";
+    gdraw ((200, 1)) plot leyenda;
+    glabel.bot(btex $f$ (kHz) etex, OUT);
+    glabel.lft(btex $X(f), Y(f)$ etex, OUT);
+    frame withpen l2;
+endgraph;
+endfig;
+
+
+beginfig (19)
+pen l[];
+picture d, leyenda;
+l0 = pencircle scaled 0.15u;
+l1 = pencircle scaled 0.25u;
+l2 = pencircle scaled 0.35u;
+l3 = pencircle scaled 0.5u;
+
+interim bboxmargin := 2u;
+
+pickup l1;
+
+d = thelabel.llft(btex \begin{tabular}{r@{ }l} --- & %
+    recibida, $Y (f)$ \\ - - & transmitida, $X (f)$ %
+	\end{tabular} etex, (0, 0));
+
+leyenda := image(
+    fill bbox d withcolor white withpen l0;
+    draw bbox d;
+    draw d;
+);
+
+draw begingraph (10v, he02);
+    gdraw "pinorx.dat" dashed evenly;
+    gdraw "pinotx.dat";
+    gdraw ((200, 1)) plot leyenda;
+    glabel.bot(btex $f$ (kHz) etex, OUT);
+    glabel.lft(btex $X(f), Y(f)$ etex, OUT);
+    frame withpen l2;
+endgraph;
+endfig;
+
+
 end

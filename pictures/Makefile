@@ -10,7 +10,8 @@ CH5MPS = gis-pfc-ch5-01.mps gis-pfc-ch5-02.mps gis-pfc-ch5-03.mps gis-pfc-ch5-04
       	 gis-pfc-ch5-05.mps gis-pfc-ch5-07.mps
 CH6MPS = gis-pfc-ch6-07.mps gis-pfc-ch6-08.mps gis-pfc-ch6-09.mps gis-pfc-ch6-10.mps \
       	 gis-pfc-ch6-11.mps gis-pfc-ch6-12.mps gis-pfc-ch6-13.mps gis-pfc-ch6-14.mps \
-      	 gis-pfc-ch6-15.mps gis-pfc-ch6-16.mps gis-pfc-ch6-17.mps
+      	 gis-pfc-ch6-15.mps gis-pfc-ch6-16.mps gis-pfc-ch6-17.mps gis-pfc-ch6-18.mps \
+	 gis-pfc-ch6-19.mps
 PT1PDF = $(PT1MPS:.mps=.pdf)
 CH1PDF = $(CH1MPS:.mps=.pdf)
 CH2PDF = $(CH2MPS:.mps=.pdf)

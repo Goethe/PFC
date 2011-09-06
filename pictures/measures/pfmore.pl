@@ -40,7 +40,7 @@ sub write_pattern {
 	"l2 = pencircle scaled 0.35u;",
 	"l3 = pencircle scaled 0.5u;",
 	"",
-	"pickup l1",
+	"pickup l1;",
 	"",
 	"\tdraw begingraph (10v, he02);"
 	"\t\tsetrange (-0.004,whatever , 0.042,whatever);",
