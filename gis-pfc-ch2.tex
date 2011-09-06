@@ -29,13 +29,15 @@ especificaciones de la tarjeta, además el circuito acondicionador de
 recepción debe adaptar la impedancia de entrada mostrada por el
 dispositivo. Por su parte, el subsistema de control y presentación debe ser
 capaz de gestionar el funcionamiento de este instrumento y administrar los
-valores de señal que proporciona. Además, la \kpci{}, disponer de ella, es
-una de las razones principales por las que se ha optado por desarrollar un
-sistema de adquisición propio, de propósito, sin tener en cuenta las
-principales razones, como es obvio, uno de los objetivos del proyecto,
+valores de señal que proporciona. Disponer de la tarjeta de adquisición es
+lo que ha motivado en parte el desarrollo de un sistema de medida propio.
+Otras razones que han impulsado el diseño e implementación de un sistema de
+medida personalizado son: la posibilidad de poder realizar fácilmente los
+ensayos de los que se ocupa la segunda parte de esta memoria al contar con
+un sistema de medida diseñado a la medida de las pruebas, la oportunidad de
 adquirir conocimientos prácticos en el campo del tratamiento digital de
-señales y, por supuesto, contar con un sistema diseñado a medida. Por todas
-estas razones, resulta comprensible realizar un estudio previo acerca de
+señales y que se trataba de uno de los objetivos del proyecto. Por todas
+estas razones resulta comprensible realizar un estudio previo acerca de
 las propiedades y el comportamiento de un instrumento de tan singular
 importancia para este proyecto.
 
@@ -67,29 +69,26 @@ estos atributos guardan con el proceso de adquisición de señales analógicas
 en la tarjeta \kpci{}, véase la \vref{sec:funcdesc}.
 
 \begin{itemize}
-	\item El módulo de adquisición analógica dispone de 16 puertos
-		físicos.
-	\item La impedancia de entrada equivalente de cada puerto es
-		aproximadamente igual a una capacidad de 200 pF en serie
-		con una resistencia de valor inferior, pero aproximadamente
-		igual, a 1 k$\Omega$.
-	\item En condiciones óptimas, es posible conseguir un rendimiento
-		máximo de 100 \kms{} (cien mil operaciones de conversión
-		por segundo). Este valor está sujeto a un error relativo
-		del $0.02\%$.
-	\item La resolución del conversor analógico digital es de 16 bits
-		por muestra. El rango de amplitudes en el que opera depende
-		de como esté configurado el modo de adquisición. Puede ir
-		de 0 V a 10 V si el modo de adquisición es unipolar, o de
-		-10 V a 10 V si es bipolar.
-	\item La cola de muestreo tiene capacidad para hasta 256 canales
-		distintos. Cada uno de los cuales puede configurarse
-		independientemente en términos de ganancia, frecuencia de
-		muestreo, modo de adquisición o modo de terminación.
-	\item La ganancia, responsable en parte de la resolución con la que
-		se cuantifica las muestras, puede tomar cada ciclo de reloj
-		uno de entre 16 valores posibles (véase el
-		\vref{tab:acqmodes}).
+    \item El módulo de adquisición analógica dispone de 16 puertos físicos.
+    \item La impedancia de entrada equivalente de cada puerto es
+	aproximadamente igual a una capacidad de 200 pF en serie con una
+	resistencia de valor inferior, pero aproximadamente igual, a 1
+	k$\Omega$.
+    \item En condiciones óptimas, es posible conseguir un rendimiento
+	máximo de 100 \kms{} (cien mil operaciones de conversión por
+	segundo). Este valor está sujeto a un error relativo del $0.02\%$.
+    \item La resolución del conversor analógico digital es de 16 bits por
+	muestra. El rango de amplitudes en el que opera depende de como
+	esté configurado el modo de adquisición. Puede ir de 0 V a 10 V si
+	el modo de adquisición es unipolar, o de -10 V a 10 V si es
+	bipolar.
+    \item La cola de muestreo tiene capacidad para 256 canales distintos.
+	Cada uno de los cuales puede configurarse independientemente en
+	términos de ganancia, frecuencia de muestreo, modo de adquisición o
+	modo de terminación.
+    \item La ganancia, responsable en parte de la resolución con la que se
+	cuantifica las muestras, puede tomar cada ciclo de reloj uno de
+	entre 16 valores posibles (véase el \vref{tab:acqmodes}).
 \end{itemize}
 
 
@@ -310,13 +309,13 @@ operaciones contribuya a la medida de rendimiento debe superar un requisito
 de precisión.
 
 El rendimiento óptimo de la tarjeta \kpci{} especificado por el fabricante
-es de cien mil operaciones por segundo (100 \kms{}). No obstante se
-advierte, para obtener este nivel de rendimiento es necesario alimentar la
-tarjeta con una fuente de tensión ideal. Además, es importante que exista
-adaptación de impedancias entre el circuito de alimentación y el puerto por
-el que se quiere introducir la señal. Aún en estas condiciones el valor
-proporcionado por la casa Keithley está sujeto a un error relativo máximo
-del $0.02\%$, el cual supone un error absoluto máximo de dos mil
+es de cien mil operaciones por segundo (100 \kms{}). No obstante, se
+advierte que para obtener este nivel de rendimiento es necesario alimentar
+la tarjeta con una fuente de tensión ideal. Además, es importante que
+exista adaptación de impedancias entre el circuito de alimentación y el
+puerto por el que se quiere introducir la señal. Aún en estas condiciones
+el valor proporcionado por la casa Keithley está sujeto a un error relativo
+máximo del $0.02\%$, el cual supone un error absoluto máximo de dos mil
 operaciones por segundo (2 \kms{}).
 
 En los \sig{endus}, existe una relación directa entre la resolución, la
@@ -376,13 +375,13 @@ amplificador en la operación de adquisición.
 
 Cada ciclo de reloj cambia el canal activo y debe cambiar, si es oportuno,
 la señal que accede al amplificador. Este proceso no es inmediato. Tras
-conmutar el multiplexor que precede al amplificador, se da paso al puerto
+conmutar el multiplexor que precede al amplificador se da paso al puerto
 conveniente. No obstante, la señal que recibe el amplificador presenta,
-hasta transcurrido un determinado periodo de tiempo, una componente
-residual de la señal que se amplificó en el anterior ciclo de reloj.
-Transcurrido dicho periodo de tiempo la señal que entra al amplificador se
-ve libre de esa componente residual y se corresponde únicamente con la
-señal que entrega el multiplexor, se dice que se ha fijado la señal.
+durante un determinado periodo de tiempo, una componente residual de la
+señal que se amplificó en el anterior ciclo de reloj. Transcurrido dicho
+periodo de tiempo la señal que entra al amplificador se ve libre de esa
+componente residual y se corresponde únicamente con la señal que entrega el
+multiplexor, se dice que se ha fijado la señal.
 
 Y es así como el amplificador es causa de pérdida de rendimiento, por medio
 de las componentes residuales. Si la conversión se realiza antes de fijar
@@ -444,7 +443,7 @@ diferentes ciclos de reloj el amplificador actúa con ganancias distintas.
 Eso con frecuencia significa que el rango en el que se encuentra
 comprendida la amplitud de las señales que están entrando al dispositivo de
 adquisición es diferente de una señal a otra. Cuando así ocurre puede
-sucederse en ocasiones que en ciclos de reloj consecutivos entren al
+suceder en ocasiones que en ciclos de reloj consecutivos entren al
 amplificador dos señales de amplitud diferente, siendo la amplitud de la
 señal que ocupa el primer ciclo mucho mayor que la de la otra señal en el
 tiempo en el que ambas permanecen a la entrada del dispositivo. Por otro
@@ -507,15 +506,15 @@ buena, esta solución no deja de ser trivial puesto que el amplificador de
 instrumentación de la tarjeta pierde toda funcionalidad y pasa a ser un
 estorbo en el proceso de adquisición.
 
-La solución de carácter práctico propuesta por Keithley radica configurar
-la cola de muestreo de forma minuciosa, persiguiendo optimizar el
-rendimiento. Como se ha visto, en determinadas ocasiones una configuración
-inapropiada de la cola de muestreo puede inducir que la pérdida de
-productividad que provoca la inclusión del amplificador en el circuito de
-adquisición sea todavía mayor. Para evitar que esto ocurra y sacar el
-máximo partido del dispositivo se dan en el manual dos condiciones que de
-cumplirse garantizan que la cola se encuentre configurada de forma óptima
-en términos de rendimiento.
+La solución de carácter práctico propuesta por Keithley radica en
+configurar la cola de muestreo de forma minuciosa, persiguiendo optimizar
+el rendimiento. Como se ha visto, en determinadas ocasiones una
+configuración inapropiada de la cola de muestreo puede inducir que la
+pérdida de productividad que provoca la inclusión del amplificador en el
+circuito de adquisición sea todavía mayor. Para evitar que esto ocurra y
+sacar el máximo partido del dispositivo se dan en el manual dos condiciones
+que de cumplirse garantizan que la cola se encuentre configurada de forma
+óptima en términos de rendimiento.
 
 
 \subsubsection{Agrupaciones de canales}
