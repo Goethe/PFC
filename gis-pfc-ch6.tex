@@ -201,10 +201,10 @@ compatible con osciloscopios.
 
 \begin{figure}
     \begin{center}
-	\subfloat[Transductor utilizado como actuador][]{
+	\subfloat[Transductor utilizado como actuador][Actuador]{
 	    \includegraphics{gis-pfc-ch6-02.jpg}}
 	\qquad
-	\subfloat[Transductor utilizado como sensor][]{
+	\subfloat[Transductor utilizado como sensor][Sensor]{
 	    \includegraphics{gis-pfc-ch6-03.jpg}}
     \end{center}
     \caption[Transductores de impacto utilizados durante los
@@ -427,15 +427,22 @@ unos $5.5$ metros altura aproximadamente. La segunda muestra a su vez una
 palmera de medidas similares y parte del equipo utilizado dispuesto para la
 toma de muestras.
 
+\newlength{\biggestpalm}
+\settoheight{\biggestpalm}{\includegraphics{gis-pfc-ch6-06.jpg}}
+
 \begin{figure}
     \begin{center}
-	\subfloat[Palmera de unos $5.5$ m de alto][]{
-	    \begin{minipage}[c]{.425\textwidth}\label{fig:testheight}
+	\subfloat[Palmera de unos $5.5$ m de alto][Palmera de $5.5$ metros
+	    de alto]{
+	    \label{fig:testheight}
+	    \begin{minipage}[top][\biggestpalm][c]{.425\textwidth}
 		\centering
 		\includegraphics{gis-pfc-ch6-05.jpg}
 	    \end{minipage}}
-	\subfloat[Fotografía de parte del equipo de medida utilizado.][]{
-	    \begin{minipage}[c]{.425\textwidth}\label{fig:testequipment}
+	\subfloat[Fotografía de parte del equipo de medida
+	    utilizado.][Equipo utilizado]{
+	    \label{fig:testequipment}
+	    \begin{minipage}[top][\biggestpalm][c]{.425\textwidth}
 		\centering
 		\includegraphics{gis-pfc-ch6-06.jpg}
 	    \end{minipage}}

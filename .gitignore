@@ -17,6 +17,8 @@
 ~*
 bibliografia
 *.pdf
+!acta.pdf
+!logo.pdf
 pictures/*.mps
 pictures/*.mpx
 pictures/mpxerr.tex
