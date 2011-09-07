@@ -22,8 +22,9 @@
 \usepackage						{graphicx}
 
 \usepackage{amsfonts, amsmath,  amssymb,  calc,     color,    fancyhdr}
-\usepackage{hyperref, ifthen,   layouts,  listings, rotating, textcase}
-\usepackage{array,    booktabs, tabularx, tabulary, dcolumn,  multirow}
+\usepackage{hyperref, ifthen,   layouts,  tabulary, rotating, textcase}
+\usepackage{array,    booktabs, tabularx, listings, dcolumn,  multirow}
+\usepackage{afterpage}
 
 \usepackage[format    = hang,
 	    font      = small,
@@ -237,7 +238,11 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 \addtocounter{totalpages}{\value{page} - 1}		       % totalpages
 \pagenumbering{arabic}
 \setcounter{page}{\value{totalpages}}			       % totalpages
-\nocite{mittelbach2004lc, stutzman1997atd, garcia2000mrsr, pallas2004sas}
+\nocite{
+    mittelbach2004lc,   stutzman1997atd,    garcia2000mrsr,   pallas2004sas,
+    bucur2006aw,        bucur2003ndciw,     proakis1998tds,   sedra1999cm,
+    ramos2000dpdr,      ruiz2006pcmuit,     ruiz2002nlamns,   ruiz2002pst,
+    mathworks2010mcgui, mathworks2009datug, keithley2001kpci}
 \bibliographystyle{gis-pfc}
 \bibliography{gis-pfc}
 
