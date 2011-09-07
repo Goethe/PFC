@@ -12,6 +12,7 @@
 *.swp
 *.toc
 *.txt
+*.url
 *latexmk
 ~*
 bibliografia
