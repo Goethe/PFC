@@ -22,32 +22,34 @@ el proyecto comprende un único bloque, un bloque de adquisición en el que
 se ubica una tarjeta de adquisición. La tarjeta \kpci{} es el fundamento en
 el que se basa, no sólo el subsistema de adquisición, si no el sistema
 digital de medida al completo. Sus capacidades y muchas de sus limitaciones
-las hereda el sistema, y constituyen los principios de diseño del resto de
+las hereda el sistema y constituyen los principios de diseño del resto de
 subsistemas. El subsistema para la interacción con el medio debe proveer al
 subsistema de adquisición con una señal que se ajuste a las
 especificaciones de la tarjeta, además el circuito acondicionador de
 recepción debe adaptar la impedancia de entrada mostrada por el
 dispositivo. Por su parte, el subsistema de control y presentación debe ser
 capaz de gestionar el funcionamiento de este instrumento y administrar los
-valores de señal que proporciona. Disponer de la tarjeta de adquisición es
-lo que ha motivado en parte el desarrollo de un sistema de medida propio.
-Otras razones que han impulsado el diseño e implementación de un sistema de
-medida personalizado son: la posibilidad de poder realizar fácilmente los
-ensayos de los que se ocupa la segunda parte de esta memoria al contar con
-un sistema de medida diseñado a la medida de las pruebas, la oportunidad de
-adquirir conocimientos prácticos en el campo del tratamiento digital de
-señales y que se trataba de uno de los objetivos del proyecto. Por todas
-estas razones resulta comprensible realizar un estudio previo acerca de
-las propiedades y el comportamiento de un instrumento de tan singular
-importancia para este proyecto.
+valores de señal que proporciona.
 
-Esta memoria dedica un capítulo completo a exponer las características de
-la tarjeta \kpci{}. Una breve relación de las características técnicas del
-hardware da paso a la descripción funcional, en la que se explica cual es
-el comportamiento interno de la tarjeta, como se implementan las distintas
-funciones que ofrece. Para terminar el capítulo se reproducen los consejos
-que el fabricante proporciona en el manual de usuario con la premisa de que
-los usuarios consigan el máximo rendimiento de la tarjeta (punto
+Disponer de la tarjeta de adquisición es lo que ha motivado en parte el
+desarrollo de un sistema de medida propio. Otras razones que han impulsado
+el diseño e implementación de un sistema de medida personalizado son: la
+posibilidad de poder realizar fácilmente los ensayos de los que se ocupa la
+segunda parte de esta memoria al contar con un sistema de medida diseñado a
+la medida de las pruebas, la oportunidad de adquirir conocimientos
+prácticos en el campo del tratamiento digital de señales, y que se trataba
+de uno de los objetivos del proyecto.
+
+Por todas estas razones resulta comprensible realizar un estudio previo
+acerca de las propiedades y el comportamiento de un instrumento de tan
+singular importancia para este proyecto. Esta memoria dedica un capítulo
+completo a exponer las características de la tarjeta \kpci{}. Una breve
+relación de las características técnicas del hardware da paso a la
+descripción funcional, en la que se explica cual es el comportamiento
+interno de la tarjeta, como se implementan las distintas funciones que
+ofrece. Para terminar el capítulo se reproducen los consejos que el
+fabricante proporciona en el manual de usuario con la premisa de que los
+usuarios consigan el máximo rendimiento de la tarjeta (punto
 \ref{sec:throughput} en la página \pageref{sec:throughput}) y se muestra la
 caja de conexiones elaborada expresamente para este proyecto.
 
@@ -79,9 +81,9 @@ en la tarjeta \kpci{}, véase la \vref{sec:funcdesc}.
 	segundo). Este valor está sujeto a un error relativo del $0.02\%$.
     \item La resolución del conversor analógico digital es de 16 bits por
 	muestra. El rango de amplitudes en el que opera depende de como
-	esté configurado el modo de adquisición. Puede ir de 0 V a 10 V si
-	el modo de adquisición es unipolar, o de -10 V a 10 V si es
-	bipolar.
+	esté configurado el modo de adquisición. Puede ir de \mbox{0 V} a
+	\mbox{10 V} si el modo de adquisición es unipolar, o de -10 V a 10
+	V si es bipolar.
     \item La cola de muestreo tiene capacidad para 256 canales distintos.
 	Cada uno de los cuales puede configurarse independientemente en
 	términos de ganancia, frecuencia de muestreo, modo de adquisición o
