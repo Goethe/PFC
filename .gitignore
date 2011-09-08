@@ -17,7 +17,7 @@
 ~*
 bibliografia
 *.pdf
-!acta.pdf
+!anexoIV.pdf
 !logo.pdf
 pictures/*.mps
 pictures/*.mpx

@@ -1,3 +1,4 @@
+ANEMPS = gis-pfc-anexoIV-01.mps
 PT1MPS = gis-pfc-part1-01.mps
 CH1MPS = gis-pfc-ch1-01.mps gis-pfc-ch1-02.mps gis-pfc-ch1-03.mps gis-pfc-ch1-04.mps \
       	 gis-pfc-ch1-05.mps gis-pfc-ch1-06.mps
@@ -12,6 +13,7 @@ CH6MPS = gis-pfc-ch6-07.mps gis-pfc-ch6-08.mps gis-pfc-ch6-09.mps gis-pfc-ch6-10
       	 gis-pfc-ch6-11.mps gis-pfc-ch6-12.mps gis-pfc-ch6-13.mps gis-pfc-ch6-14.mps \
       	 gis-pfc-ch6-15.mps gis-pfc-ch6-16.mps gis-pfc-ch6-17.mps gis-pfc-ch6-18.mps \
 	 gis-pfc-ch6-19.mps
+ANEPDF = $(ANEMPS:.mps=.pdf)
 PT1PDF = $(PT1MPS:.mps=.pdf)
 CH1PDF = $(CH1MPS:.mps=.pdf)
 CH2PDF = $(CH2MPS:.mps=.pdf)
@@ -23,10 +25,11 @@ JPG = gis-pfc-ch2-05.jpg gis-pfc-ch2-06.jpg gis-pfc-ch5-06.jpg gis-pfc-ch6-01.jp
       gis-pfc-ch6-06.jpg
 PNG = gis-pfc-ch4-01.png gis-pfc-ch4-02.png gis-pfc-ch4-03.png gis-pfc-ch4-04.png \
       gis-pfc-ch4-05.png gis-pfc-appa-01.png
-OBJMPS = $(PT1MPS) $(CH1MPS) $(CH2MPS) $(CH3MPS) $(CH5MPS) $(CH6MPS)
-OBJPDF = $(PT1PDF) $(CH1PDF) $(CH2PDF) $(CH3PDF) $(CH5PDF) $(CH6PDF)
+OBJMPS = $(ANEMPS) $(PT1MPS) $(CH1MPS) $(CH2MPS) $(CH3MPS) $(CH5MPS) $(CH6MPS)
+OBJPDF = $(ANEPDF) $(PT1PDF) $(CH1PDF) $(CH2PDF) $(CH3PDF) $(CH5PDF) $(CH6PDF)
 MOBJ = $(JPG) $(PNG)
 LIB = gis-pfc.mp gis-pfc-arr.mp
+ANESRC = gis-pfc-anexoIV.mp
 PT1SRC = gis-pfc-part1.mp
 CH1SRC = gis-pfc-ch1.mp
 CH2SRC = gis-pfc-ch2.mp
@@ -59,6 +62,10 @@ force :	$(TEX) $(OBJPDF) $(MOBJ)
 verbose : $(TEX) $(OBJPDF) $(MOBJ)
 	$(LM) $(LMOPTS) $(TEX)
 
+$(ANEPDF) : $(ANEMPS)
+	$(MPDF) $(ANEMPS)
+	$(RENAME)
+
 $(PT1PDF) : $(PT1MPS)
 	$(MPDF) $(PT1MPS)
 	$(RENAME)
@@ -82,6 +89,9 @@ $(CH5PDF) : $(CH5MPS)
 $(CH6PDF) : $(CH6MPS)
 	$(MPDF) $(CH6MPS)
 	$(RENAME)
+
+$(ANEMPS) : $(ANESRC) $(LIB)
+	$(MP) $(ANESRC)
 
 $(PT1MPS) : $(PT1SRC) $(LIB)
 	$(MP) $(PT1SRC)

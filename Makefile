@@ -2,10 +2,11 @@ PDF = $(TEXMAIN:.tex=.pdf)
 AUX = $(TEXMAIN:.tex=.cb) $(TEXMAIN:.tex=.cb2)
 BBL = $(TEXMAIN:.tex=.bbl)
 TEXMAIN = gis-pfc.tex
-TEX = gis-pfc-tit.tex gis-pfc-pro.tex gis-pfc-part1.tex gis-pfc-ch1.tex \
-	gis-pfc-ch2.tex gis-pfc-ch3.tex gis-pfc-ch4.tex gis-pfc-part2.tex \
-	gis-pfc-ch5.tex gis-pfc-ch6.tex gis-pfc-appa.tex
+TEX = gis-pfc-tit.tex   gis-pfc-thanks.tex gis-pfc-pro.tex gis-pfc-part1.tex \
+      gis-pfc-ch1.tex   gis-pfc-ch2.tex    gis-pfc-ch3.tex gis-pfc-ch4.tex   \
+      gis-pfc-part2.tex gis-pfc-ch5.tex    gis-pfc-ch6.tex gis-pfc-appa.tex
 BIB = $(TEXMAIN:.tex=.bib)
+PICSANE = gis-pfc-anexoIV-01.pdf logo.pdf
 PICSPT1 = gis-pfc-part1-01.pdf
 PICSCH1 = gis-pfc-ch1-01.pdf gis-pfc-ch1-02.pdf gis-pfc-ch1-03.pdf gis-pfc-ch1-04.pdf \
 	  gis-pfc-ch1-05.pdf gis-pfc-ch1-06.pdf
@@ -23,8 +24,10 @@ JPGPNGS = gis-pfc-ch2-05.jpg gis-pfc-ch2-06.jpg gis-pfc-ch4-01.png gis-pfc-ch4-0
 	  gis-pfc-ch4-03.png gis-pfc-ch4-04.png gis-pfc-ch5-06.jpg gis-pfc-ch6-01.jpg \
 	  gis-pfc-ch6-02.jpg gis-pfc-ch6-03.jpg gis-pfc-ch6-04.jpg gis-pfc-ch6-05.jpg \
 	  gis-pfc-ch6-06.jpg gis-pfc-appa-01.png
-PICS = $(addprefix $(PICSDIR)/, $(PICSPT1) $(PICSCH1) $(PICSCH2) $(PICSCH3) $(PICSCH5))
-OTHPICS = $(addprefix $(PICSDIR)/, $(JPGPNGS))
+PICS = $(addprefix $(PICSDIR)/, $(PICSPT1) $(PICSCH1) $(PICSCH2) $(PICSCH3) $(PICSCH5)\
+       $(PICSCH6))
+OTHPICS = $(addprefix $(PICSDIR)/, $(PICSANE) $(JPGPNGS))
+MOREPICS = anexoIV.pdf
 LM = latexmk
 RM = rm
 LMOPTS = -pdf
@@ -34,13 +37,13 @@ RMOPTS = -fv
 
 .PHONY: clean, cleanmost, cleanall, force, verbose
 
-$(PDF) : $(TEXMAIN) $(TEX) $(BIB) $(PICS) $(OTHPICS)
+$(PDF) : $(TEXMAIN) $(TEX) $(BIB) $(PICS) $(OTHPICS) $(MOREPICS)
 	$(LM) $(LMOPTS) $(LMSILENT) $(TEXMAIN)
 
-force : $(TEXMAIN) $(TEX) $(BIB) $(PICS)
+force : $(TEXMAIN) $(TEX) $(BIB) $(PICS) $(OTHPICS) $(MOREPICS)
 	$(LM) $(LMOPTS) $(LMFORCE) $(TEXMAIN)
 
-verbose : $(TEXMAIN) $(TEX) $(BIB) $(PICS)
+verbose : $(TEXMAIN) $(TEX) $(BIB) $(PICS) $(OTHPICS) $(MOREPICS)
 	$(LM) $(LMOPTS) $(TEXMAIN)
 
 $(PICS) :
