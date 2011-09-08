@@ -61,12 +61,13 @@ usuario de la aplicación. La interfaz gráfica permite la interacción con el
 sistema de medida, pueden encontrarse en ella 6 paneles.
 
 \begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-appa-01.png}
-	\end{center}
-	\caption[Aspecto de la interfaz de usuario]{Aspecto de la interfaz
-	con controles y gráficos separados por paneles.}
-	\label{fig:interface}
+    \begin{center}
+	\includegraphics{gis-pfc-appa-01.png}
+    \end{center}
+    \caption[Aspecto de la interfaz de usuario]{Disposición de los
+	distintos paneles de control y visualizadores en la interfaz de
+	usuario.}
+    \label{fig:interface}
 \end{figure}
 
 \begin{enumerate}
@@ -88,6 +89,10 @@ sistema de medida, pueden encontrarse en ella 6 paneles.
 
 
 \subsection{Panel de control principal}
+
+A continuación se enumeran los distintos botones y visualizadores que
+integran el panel de control, su disposición en el panel se ilustra en la
+\vref{fig:firstcontrolpanel}.
 
 \begin{enumerate}
     \itembf{Selector de canal} Permite seleccionar el canal del que se
@@ -115,6 +120,10 @@ sistema de medida, pueden encontrarse en ella 6 paneles.
 
 \subsection{Panel de control secundario}
 
+Los elementos contenidos en el panel de control secundario son los listados
+a continuación. La \cref{fig:secondcontrolpanel} muestra su ubicación
+relativa en el panel.
+
 \begin{enumerate}
     \itembf{Selector de tipo de medida} Permite seleccionar el tipo de
 	resultado devuelto: muestra individual, media aritmética o
@@ -130,6 +139,30 @@ sistema de medida, pueden encontrarse en ella 6 paneles.
 	gráficamente la señal y su espectro en frecuencia.
 \end{enumerate}
 
+\newlength{\biggestpanel}
+\settoheight{\biggestpanel}{\includegraphics{gis-pfc-appa-02.png}}
+
+\begin{figure}
+    \begin{center}
+	\subfloat[Elementos del panel de control principal][Panel de
+	    control principal.]{
+	    \label{fig:firstcontrolpanel}
+	    \begin{minipage}[top][\biggestpanel][c]{.425\textwidth}
+		\centering
+		\includegraphics{gis-pfc-appa-02.png}
+	    \end{minipage}}
+	\subfloat[Elementos del panel de control secundario][Panel de
+	    control secundario.]{ \label{fig:secondcontrolpanel}
+	    \begin{minipage}[top][\biggestpanel][c]{.425\textwidth}
+		\centering
+		\includegraphics{gis-pfc-appa-03.png}
+	    \end{minipage}}
+    \end{center}
+    \caption[Paneles de control de la interfaz de usuario]{Esta figura
+    muestra los distintos elementos que integran los paneles de control
+    principal y secundario de la interfaz de usuario.}
+    \label{fig:controlpanels}
+\end{figure}
 
 \subsection{Visor}
 

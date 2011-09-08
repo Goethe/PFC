@@ -20,10 +20,10 @@ PICSCH6 = gis-pfc-ch6-07.pdf gis-pfc-ch6-08.pdf gis-pfc-ch6-09.pdf gis-pfc-ch6-1
       	  gis-pfc-ch6-15.pdf gis-pfc-ch6-16.mps gis-pfc-ch6-17.mps gis-pfc-ch6-18.mps \
 	  gis-pfc-ch6-19.mps
 PICSDIR = pictures
-JPGPNGS = gis-pfc-ch2-05.jpg gis-pfc-ch2-06.jpg gis-pfc-ch4-01.png gis-pfc-ch4-02.png \
-	  gis-pfc-ch4-03.png gis-pfc-ch4-04.png gis-pfc-ch5-06.jpg gis-pfc-ch6-01.jpg \
-	  gis-pfc-ch6-02.jpg gis-pfc-ch6-03.jpg gis-pfc-ch6-04.jpg gis-pfc-ch6-05.jpg \
-	  gis-pfc-ch6-06.jpg gis-pfc-appa-01.png
+JPGPNGS = gis-pfc-ch2-05.jpg gis-pfc-ch2-06.jpg  gis-pfc-ch4-01.png  gis-pfc-ch4-02.png \
+	  gis-pfc-ch4-03.png gis-pfc-ch4-04.png  gis-pfc-ch5-06.jpg  gis-pfc-ch6-01.jpg \
+	  gis-pfc-ch6-02.jpg gis-pfc-ch6-03.jpg  gis-pfc-ch6-04.jpg  gis-pfc-ch6-05.jpg \
+	  gis-pfc-ch6-06.jpg gis-pfc-appa-01.png gis-pfc-appa-02.png gis-pfc-appa-03.png
 PICS = $(addprefix $(PICSDIR)/, $(PICSPT1) $(PICSCH1) $(PICSCH2) $(PICSCH3) $(PICSCH5)\
        $(PICSCH6))
 OTHPICS = $(addprefix $(PICSDIR)/, $(PICSANE) $(JPGPNGS))
