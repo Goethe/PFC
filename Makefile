@@ -46,7 +46,7 @@ force : $(TEXMAIN) $(TEX) $(BIB) $(PICS) $(OTHPICS) $(MOREPICS)
 verbose : $(TEXMAIN) $(TEX) $(BIB) $(PICS) $(OTHPICS) $(MOREPICS)
 	$(LM) $(LMOPTS) $(TEXMAIN)
 
-$(PICS) :
+$(PICS) $(OTHPICS) :
 	$(MAKE) -C $(PICSDIR)
 
 clean :
