@@ -1,11 +1,13 @@
 \chapter{Resultados y conclusiones}\label{chap:part1conclusions}
 
-Para poder valorar la utilidad real de la aplicación frente a los distintos
-dispositivos ya disponibles y que realizan una función semejante se ha
-decidido comparar los resultados que se obtienen al utilizar la tarjeta y
-un osciloscopio, como elemento representativo, en una prueba genérica.
+Para poder valorar la utilidad real del sistema de medida que se ha
+desarrollado en este proyecto frente a las distintas alternativas que
+existen, dispositivos que realizan una función semejante, se ha decidido
+comparar los resultados que se obtienen al utilizar este sistema y los que
+se obtienen al utilizar un osciloscopio (como elemento representativo del
+conjunto de alternativas al sistema) en una prueba genérica.
 
-Por separado, se ha evaluado el rendimiento del subsistema de interacción
+Por separado se ha evaluado el rendimiento del subsistema de interacción
 con el medio físico (el conjunto formado por los circuitos acondicionadores
 y los transductores de ultrasonidos).
 
@@ -51,17 +53,18 @@ está formado por los siguientes elementos:
     \item Sondas para el osciloscopio y el generador de señales.
 \end{itemize}
 
-Los pasos seguidos para evaluar la bondad de la representación en el
-sistema de medida se enumeran a continuación.
+Los pasos seguidos para evaluar la bondad de la representación de la señal
+que realiza el sistema de medida se enumeran a continuación.
 
 \begin{enumerate}
     \item Se lanza la aplicación de control.
     \item Se configura el osciloscopio para que proporcione una medida de
 	la amplitud de la señal en Vpp y de su frecuencia.
     \item Se selecciona una forma de onda en el generador de señales.
-    \item Para la onda seleccionada se elige una amplitud 16 Vpp.
-    \item Se selecciona la frecuencia más baja del rango expuesto en el
-	\cref{tab:testparameters}.
+    \item Para la onda seleccionada se elige una amplitud de 16 Vpp.
+    \item Se selecciona una frecuencia del conjunto expuesto en el
+	\cref{tab:testparameters} empezando por la frecuencia más baja del
+	rango.
     \item Se observa la señal representada en el osciloscopio y en el
 	sistema de medida, comparando si la segunda es fiel a la primera.
 	Se anotan los valores observados de amplitud y frecuencia en ambos
@@ -94,10 +97,10 @@ de amplitud.
 	\midrule
 		    & 0,1	& 10000000	& \\
 		    & 1		& 1000000	& \\
-	Sinusoidal  & 5		& 2000000	& 16 \\
+	Sinusoidal  & 5		& 200000	& 16 \\
 		    & 25	& 40000		& \\
-	Rectangular & 1000	& 10000		& 10 \\
-		    & 1000	& 10000		& \\
+	Rectangular & 100	& 10000		& 10 \\
+		    & 1000	& 1000		& \\
 	Triangular  & 10000	& 100		& 1 \\
 		    & 20000	& 50		& \\
 	Pulsada	    & 30000	& 33,3		& 0,1 \\
@@ -120,7 +123,7 @@ consta de una serie de pasos que se enumeran a continuación.
 
 \begin{enumerate}
     \item Tras disponer el equipo y conectar los dispositivos se ajusta el
-	generador de señales para que transmita una onda sinusoidal de 1 Hz
+	generador de señales para que transmita una onda sinusoidal de 1~Hz
 	de frecuencia y una amplitud de 1 Vpp.
     \item Se comprueba que las medidas numéricas se correspondan con lo
 	esperado.
@@ -158,15 +161,15 @@ optado por ofrecer sólo una muestra representativa de los mismos
 	Señal evaluada & \multicolumn{1}{c}{amplitud (Vpp)} &
 	    \multicolumn{1}{c}{frecuencia (kHz)} \\
 	\midrule
-	sinosoidal @ 16 Vpp, 1 Hz & 16 & \sim0,001 \\
-	sinosoidal @ 16 Vpp, 5 Hz & 16 & 0,005 \\
-	sinosoidal @ 0,1 Vpp, 10 kHz & 0,1 & 9,9 \\
-	sinosoidal @ 16 Vpp, 10 kHz & 16 & 10 \\
+	sinusoidal @ 16 Vpp, 1 Hz & 16 & \sim0,001 \\
+	sinusoidal @ 16 Vpp, 5 Hz & 16 & 0,005 \\
+	sinusoidal @ 0,1 Vpp, 10 kHz & 0,1 & 9,9 \\
+	sinusoidal @ 16 Vpp, 10 kHz & 16 & 10 \\
 	rectangular @ 16 Vpp, 10 kHz & 16 & 9,5 \\
 	triangular @ 16 Vpp, 10 kHz & 15,4 & 9,35 \\
-	pulsada @ 16 Vpp, 10 kHz & 15,3 & 9,35 \\
-	sinosoidal @ 16 Vpp, 20 kHz & 16 & 20 \\
-	sinosoidal @ 16 Vpp, 40 kHz & 16 & 40 \\
+	pulsada @ 16 Vpp, 10 kHz & \text{---} & \text{---} \\
+	sinusoidal @ 16 Vpp, 20 kHz & 16 & 20 \\
+	sinusoidal @ 16 Vpp, 40 kHz & 16 & 40 \\
     \end{tabular}
     \caption[Resultados obtenidos]{Resultados obtenidos, se ha omitido la
     columna correspondiente al osciloscopio.}
@@ -177,15 +180,16 @@ optado por ofrecer sólo una muestra representativa de los mismos
 \subsubsection{Observaciones}
 
 Complementando los resultados expuestos en el \cref{tab:measureresults} se
-hacen las siguientes observaciones sobre la fidelidad de la representación.
+hacen las siguientes observaciones sobre la fidelidad de la representación
+de la señal que se observa en la interfaz del software de control.
 
 A frecuencias por debajo de 1 Hz el disparo del sistema empieza a fallar
 (del mismo modo que ocurre en los osciloscopios), por lo que se hace
 necesario representar la señal en modo continuo. Se ha observado que en
-sistemas con un rendimiento gráfico bajo la representación de la señal
-vista en el sistema de medida cuando representa en modo continuo no
-consigue seguir a la señal, pueden verse escalones correspondientes al
-instante en el que el búffer de la aplicación se refresca.
+sistemas con un rendimiento gráfico bajo la representación vista en el
+sistema de medida cuando representa en modo continuo no consigue seguir a
+la señal, pueden verse escalones correspondientes al instante en el que el
+búffer de la aplicación se refresca.
 
 Por otro lado, al ser limitada la frecuencia de muestreo del dispositivo de
 adquisición, la representación de la señal empieza a perder forma (aunque
@@ -194,10 +198,11 @@ de los 25 kHz aproximadamente.
 
 Por último se ha advertido que la caja de conexiones presenta un fallo.
 Cuando se inserta señal a través de un puerto analógico parte de esa señal
-se observa se resta en el resto de puertos de la misma fila (existen dos
-filas de puertos, una del 0 al 7 y otra del 8 al 15). Ello impide que se
-puedan utilizar dos puertos de la tarjeta simultáneamente (se subraya que
-es un fallo de la caja de conexiones y no de la aplicación de control).
+se observa en el resto de puertos de la misma fila (existen dos filas de
+puertos, una del 0 al 7 y otra del 8 al 15). Ello impide que se puedan
+utilizar dos puertos de la tarjeta simultáneamente (ha de recalcarse que se
+trata de un fallo en la caja de conexiones y no en la aplicación de
+control).
 
 
 \subsection{Resultados, prueba secundaria}
@@ -285,7 +290,7 @@ conocidas:
     \item Inherentes a los componentes del sistema:
 	\begin{itemize}
 	    \item La frecuencia de las señales que pueden representarse
-		está limitada a 25 kHz.
+		correctamente está limitada a 25 kHz.
 	    \item El modo continuo de representación (adecuado para
 		representar señales de frecuencia inferior a 5 Hz) no
 		funciona apropiadamente en equipos sin aceleración gráfica.
@@ -323,7 +328,7 @@ realizar una serie de ensayos ultrasónicos preliminares que pretenden
 evaluar la capacidad del sistema para encontrar resultados válidos. Estos
 ensayos se realizan en el laboratorio a partir de muestras extraídas de
 palmeras muertas (listones y tablones de madera de palmera). Los resultados
-arrojados por las pruebas demuestran que la onda ultrasónica que emiten el
+arrojados por las pruebas demuestran que el pulso ultrasónico que emite el
 actuador no es capaz de atravesar los tablones de 20 cm de espesor
 utilizados en el experimento. Se llega por tanto a la conclusión de que los
 transductores de gama baja utilizados para la confección del subsistema
