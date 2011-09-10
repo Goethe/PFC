@@ -14,12 +14,12 @@ que gobierna la tarjeta de adquisición pasa a conocerse en este documento
 como \emph{software de control}.
 
 \begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch3-01.pdf}
-	\end{center}
-	\caption[Subsistema de control y presentación] {Bloques de control
-	y presentación dentro del subsistema de control y presentación.}
-	\label{fig:subconpre}
+    \begin{center}
+	\includegraphics{gis-pfc-ch3-01.pdf}
+    \end{center}
+    \caption[Subsistema de control y presentación]{Bloques de control y
+    presentación dentro del subsistema de control y presentación.}
+    \label{fig:subconpre}
 \end{figure}
 
 El subsistema de control y presentación constituye la interfaz entre el
@@ -169,39 +169,38 @@ muestra las interdependencias que existen entre los elementos que aparecen
 en dicho cuadro.
 
 \begin{table}
-	\centering
-	\begin{tabulary}{.9\textwidth}{C L}
-		\toprule
-		Componente & \multicolumn{1}{c}{Propósito} \\
-		\midrule
-		Ficheros *.m & Se emplean para automatizar la creación de
-		objetos dispositivo, adquirir datos, configurar las
-		propiedades del dispositivo y la sesión, y evaluar el
-		estado de la adquisición y los recursos.\\
-		\midrule
-		Máquina virtual de adquisición de datos & Almacena objetos
-		dispositivo y sus propiedades, controla el almacenamiento
-		de los datos adquiridos y controla la sincronización de
-		eventos.\\
-		\midrule
-		Adaptadores & Son la vía de comunicación entre la máquina
-		virtual de adquisición de datos y el hardware por la cual
-		se transmiten propiedades, datos y eventos.\\
-		\bottomrule
-	\end{tabulary}
-	\caption[Descripción de los componentes de la \datx{}] {Descripción
-	de los componentes de la \datx{}.}
-	\label{tab:toolcomp}
+    \centering
+    \begin{tabulary}{.9\textwidth}{C L}
+	\toprule
+	Componente & \multicolumn{1}{c}{Propósito} \\
+	\midrule
+	Ficheros *.m & Se emplean para automatizar la creación de objetos
+	dispositivo, adquirir datos, configurar las propiedades del
+	dispositivo y la sesión, y evaluar el estado de la adquisición y
+	los recursos.\\
+	\midrule
+	Máquina virtual de adquisición de datos & Almacena objetos
+	dispositivo y sus propiedades, controla el almacenamiento de los
+	datos adquiridos y controla la sincronización de eventos.\\
+	\midrule
+	Adaptadores & Son la vía de comunicación entre la máquina virtual
+	de adquisición de datos y el hardware por la cual se transmiten
+	propiedades, datos y eventos.\\
+	\bottomrule
+    \end{tabulary}
+    \caption[Descripción de los componentes de la \datx{}]{Descripción de
+    los componentes de la \datx{}.}
+    \label{tab:toolcomp}
 \end{table}
 
 \begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch3-02.pdf}
-	\end{center}
-	\caption[Elementos que intervienen en el proceso de
-	adquisición]{Elementos que intervienen en el funcionamiento de la
-	\datx{}.}
-	\label{fig:toolcomp}
+    \begin{center}
+	\includegraphics{gis-pfc-ch3-02.pdf}
+    \end{center}
+    \caption[Elementos que intervienen en el proceso de
+    adquisición]{Elementos que intervienen en el funcionamiento de la
+    \datx{}.}
+    \label{fig:toolcomp}
 \end{figure}
 
 \subsubsection{Objetos dispositivo}
@@ -252,30 +251,30 @@ analógicos es necesario un comando como el siguiente, \func{analoginput}
 aplicación de control muestra cómo hacerlo en el \cref{cod:constructor}.
 
 \begin{table}
-	\centering
-	\begin{tabular}{l >{\tt}l}
-		\toprule
-		\multicolumn{1}{c}{Tipo de subsistema} %
-		& \multicolumn{1}{c}{\rm Constructor} \\
-		\midrule
-		Entrada analógica & analoginput(`adaptador', ID); \\
-		\midrule
-		Salida analógica & analogoutput(`adaptador', ID); \\
-		\midrule
-		Entrada / Salida digital & digitalio(`adaptador', ID); \\
-		\bottomrule
-	\end{tabular}
-	\caption[Tipos de constructor y objetos dispositivo]{Tipos de
-	función de creación de acuerdo con el tipo subsistema al que se
-	orienta el objeto dispositivo creado.}
-	\label{tab:constructors}
+    \centering
+    \begin{tabular}{l >{\tt}l}
+	\toprule
+	\multicolumn{1}{c}{Tipo de subsistema} %
+	& \multicolumn{1}{c}{\rm Constructor} \\
+	\midrule
+	Entrada analógica & analoginput(`adaptador', ID); \\
+	\midrule
+	Salida analógica & analogoutput(`adaptador', ID); \\
+	\midrule
+	Entrada / Salida digital & digitalio(`adaptador', ID); \\
+	\bottomrule
+    \end{tabular}
+    \caption[Tipos de constructor y objetos dispositivo]{Tipos de
+    constructor en relación con el tipo de objeto dispositivo que crean y
+    el tipo de subsistema hardware al que dan acceso.}
+    \label{tab:constructors}
 \end{table}
 
 \begin{lstlisting}[style=displayed, caption={[Método a seguir para crear un
-	objeto dispositivo] {Método que evalúa la existencia de un objeto
-	dispositivo previo a la llamada de la aplicación, en caso positivo
-	lo hereda para su uso posterior, de lo contrario crea uno
-	nuevo.}}, label={cod:constructor}]
+    objeto dispositivo]{Método que evalúa la existencia de un objeto
+    dispositivo previo a la llamada de la aplicación, en caso positivo lo
+    hereda para su uso posterior, de lo contrario crea uno nuevo.}},
+    label={cod:constructor}]
 	handles.ai = [];
 
 	if ~isempty(daqfind)
@@ -315,29 +314,29 @@ adaptador que debe introducirse como argumento de la llamada a
 \func{analoginput}. Por conveniencia se ha añadido Keithley a esta lista.
 
 \begin{table}
-	\centering
-	\begin{tabular}{l >{\tt\qquad}l}
-		\toprule
-		\multicolumn{1}{c}{Fabricante de Hardware} %
-		& \multicolumn{1}{c}{\rm Nombre de adaptador} \\
-		\midrule
-		Advantech & advantech \\
-		\midrule
-		Measurement Computing & mcc \\
-		\midrule
-		National Instruments & nidaq \\
-		\midrule
-		Parallel port & parallel \\
-		\midrule
-		Microsoft Windows & winsound \\
-		\midrule
-		Keithley Instruments, Inc. & keithley \\
-		\bottomrule
-	\end{tabular}
-	\caption[Valores que puede adoptar el argumento
-	\func{adaptador}.]{Valores que puede adoptar el argumento
-	\func{adaptador} necesario en la llamada a \func{analoginput}.}
-	\label{tab:adaptors}
+    \centering
+    \begin{tabular}{l >{\tt\qquad}l}
+	\toprule
+	\multicolumn{1}{c}{Fabricante de Hardware} %
+	& \multicolumn{1}{c}{\rm Nombre de adaptador} \\
+	\midrule
+	Advantech & advantech \\
+	\midrule
+	Measurement Computing & mcc \\
+	\midrule
+	National Instruments & nidaq \\
+	\midrule
+	Parallel port & parallel \\
+	\midrule
+	Microsoft Windows & winsound \\
+	\midrule
+	Keithley Instruments, Inc. & keithley \\
+	\bottomrule
+    \end{tabular}
+    \caption[Valores que puede adoptar el argumento
+    \func{adaptador}]{Valores que puede adoptar el argumento
+    \func{adaptador} necesario en la llamada a \func{analoginput}.}
+    \label{tab:adaptors}
 \end{table}
 
 
@@ -451,33 +450,30 @@ de datos y la propiedad \textsf{Logging} del objeto dispositivo asociado
 conmuta al estado \textsf{On}.
 
 \begin{table}
-	\centering
-	\begin{tabulary}{.9\linewidth}{>{\sf}c L}
-		\toprule
-		{\rm Tipo de disparo} & \multicolumn{1}{c}{Descripción} \\
-		\midrule
-		Inmediato & El disparo ocurre justo después de la llamada a
-		\func{start}. Este es el tipo de trigger predeterminado. \\
-		\midrule
-		Manual & El disparo ocurre después de llamar manualmente a
-		la función \func{trigger}. \\
-		\midrule
-		Software & El disparo sucede cuando se detecta una señal
-		que satisface una determinada condición especificada de
-		antemano. El objeto dispositivo debe disponer de más de un
-		canal que hará las veces de la señal de disparo. Debe
-		especificarse, como es obvio, que canal actúa como fuente
-		del disparo. \\
-		\midrule
-		Reloj interno & Por añadidura, la \kpci{} cuenta con la
-		posibilidad de recibir el disparo de la fuente de reloj
-		interna. \\
-		\bottomrule
-	\end{tabulary}
-	\caption[Tipos de disparo soportados]{Tipos de disparo soportados
-	por el hardware compatible con \matlab{} y una breve descripción de
-	los mismos.}
-	\label{tab:triggers}
+    \centering
+    \begin{tabulary}{.9\linewidth}{>{\sf}c L}
+	\toprule
+	{\rm Tipo de disparo} & \multicolumn{1}{c}{Descripción} \\
+	\midrule
+	Inmediato & El disparo ocurre justo después de la llamada a
+	\func{start}. Este es el tipo de trigger predeterminado. \\
+	\midrule
+	Manual & El disparo ocurre después de llamar manualmente a la
+	función \func{trigger}. \\
+	\midrule
+	Software & El disparo sucede cuando se detecta una señal que
+	satisface una determinada condición especificada de antemano. El
+	objeto dispositivo debe disponer de más de un canal que hará las
+	veces de la señal de disparo. Debe especificarse, como es obvio,
+	que canal actúa como fuente del disparo. \\
+	\midrule
+	Reloj interno & Por añadidura, la \kpci{} cuenta con la posibilidad
+	de recibir el disparo de la fuente de reloj interna. \\
+	\bottomrule
+    \end{tabulary}
+    \caption[Tipos de disparo que soporta la \datx{}]{Tipos de disparo
+    soportados por \matlab{} y una breve descripción de los mismos.}
+    \label{tab:triggers}
 \end{table}
 
 Por último, existen tres causas por las que un objeto dispositivo puede
@@ -702,33 +698,33 @@ osciloscopios analógicos. Las
 comportamiento.
 
 \begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch3-04.pdf}
-	\end{center}
-	\caption[Señal analógica, representación continua]{Señal analógica
-	vista desde la sonda del osciloscopio, se han marcado los instantes
-	en los que se refresca el monitor del osciloscopio.}
-	\label{fig:sigmodcont}
+    \begin{center}
+	\includegraphics{gis-pfc-ch3-04.pdf}
+    \end{center}
+    \caption[Señal analógica, representación continua]{Señal analógica
+    vista desde la sonda del osciloscopio, se han marcado los instantes en
+    los que se refresca el monitor del osciloscopio.}
+    \label{fig:sigmodcont}
 \end{figure}
 
 \begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch3-05.pdf}
-	\end{center}
-	\caption[Evolución que sufre la representación]{Evolución de la
-	representación cuando aún no abarca la dimensión horizontal del
-	monitor.}
-	\label{fig:firmodcont}
+    \begin{center}
+	\includegraphics{gis-pfc-ch3-05.pdf}
+    \end{center}
+    \caption[Evolución que sufre la representación]{Evolución de la
+    representación cuando aún no abarca la dimensión horizontal del
+    monitor.}
+    \label{fig:firmodcont}
 \end{figure}
 
 \begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch3-06.pdf}
-	\end{center}
-	\caption[Desplazamiento que experimenta la
-	representación]{Desplazamiento que experimenta la representación
-	una vez ocupa toda la pantalla del osciloscopio.}
-	\label{fig:desmodcont}
+    \begin{center}
+	\includegraphics{gis-pfc-ch3-06.pdf}
+    \end{center}
+    \caption[Desplazamiento que experimenta la representación]
+    {Desplazamiento que experimenta la representación una vez ocupa toda la
+    pantalla del osciloscopio.}
+    \label{fig:desmodcont}
 \end{figure}
 
 \subsubsection{Barrido disparado}
@@ -749,24 +745,24 @@ alineadas. Las \cref{fig:sigmodtri,fig:repmodtri} muestran cual es el
 resultado de utilizar este algoritmo.
 
 \begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch3-07.pdf}
-	\end{center}
-	\caption[Representación de barridos por disparo]{En esta figura se
-	muestran las distintas ventanas que intervienen en la solución
-	aproximada utilizada para implementar la representación de barridos
-	activados por disparo en el software de control. Puede apreciarse
-	la información que se descarta en cada ciclo.}
-	\label{fig:sigmodtri}
+    \begin{center}
+	\includegraphics{gis-pfc-ch3-07.pdf}
+    \end{center}
+    \caption[Representación de barridos por disparo]{En esta figura se
+    muestran las distintas ventanas que intervienen en la solución
+    aproximada utilizada para implementar la representación de barridos
+    activados por disparo en el software de control. Puede apreciarse la
+    información que se descarta en cada ciclo.}
+    \label{fig:sigmodtri}
 \end{figure}
 
 \begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch3-08.pdf}
-	\end{center}
-	\caption[Representación del fragmento de señal]{Fragmento de señal
-	representado centrado en el cero del plano cartesiano.}
-	\label{fig:repmodtri}
+    \begin{center}
+	\includegraphics{gis-pfc-ch3-08.pdf}
+    \end{center}
+    \caption[Representación del fragmento de señal]{Fragmento de señal
+    representado centrado en el cero del plano cartesiano.}
+    \label{fig:repmodtri}
 \end{figure}
 
 \llongpage{}

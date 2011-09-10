@@ -72,11 +72,11 @@ ondas y, en particular, los principios de superposición de
 Huygens\footnote{El tratamiento que se da en esta sección a los
 transductores de ultrasonidos es similar al que la teoría de antenas da a
 las antenas de apertura conocidas como bocinas. Para un mayor detalle
-consultar el texto de Stutzman y Thiele \citep{stutzman1997atd}.}. Se
-denomina campo acústico a la distribución temporal y espacial de la presión
-acústica a la que se someten las partículas materiales del medio en el que
-se propagan las ondas acústicas. Las características del campo acústico
-dependen principalmente de aspectos geométricos del transductor.
+consultar el texto: \citet{stutzman1997atd}.}. Se denomina campo acústico a
+la distribución temporal y espacial de la presión acústica a la que se
+someten las partículas materiales del medio en el que se propagan las ondas
+acústicas. Las características del campo acústico dependen principalmente
+de aspectos geométricos del transductor.
 
 La región del campo acústico más próxima al transductor se conoce como
 campo próximo o cercano. También recibe el nombre de campo de interferencia
@@ -105,13 +105,13 @@ $\gamma_0$ a partir de la siguiente expresión.
 \end{equation}
 
 \begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch5-01.pdf}
-	\end{center}
-	\caption[Campo acústico generado por un transductor
-	cilíndrico]{Diagrama simplificado que muestra el campo acústico
-	generado por un transductor cilíndrico.}
-	\label{fig:transceiver}
+    \begin{center}
+	\includegraphics{gis-pfc-ch5-01.pdf}
+    \end{center}
+    \caption[Campo acústico generado por un transductor cilíndrico]
+    {Diagrama simplificado que muestra el campo acústico
+    generado por un transductor cilíndrico.}
+    \label{fig:transceiver}
 \end{figure}
 
 En la \vref{fig:transceiver} el lector puede observar una representación
@@ -457,15 +457,14 @@ sistema puede obtenerse de modo sencillo aplicando el teorema de la
 convolución.
 
 \begin{figure}
-	\begin{center}
-		\includegraphics[scale=1, keepaspectratio=true]%
-		{gis-pfc-ch5-04.pdf}
-	\end{center}
-	\caption[Diagrama que representa el proceso de
-	emisión"=recepción]{Diagrama de bloques que representa el proceso
-	de emisión"=recepción y todos los elementos que en el intervienen
-	(considerando el modelo propuesto).}
-	\label{fig:emirecmodel}
+    \begin{center}
+	\includegraphics {gis-pfc-ch5-04.pdf}
+    \end{center}
+    \caption[Diagrama que representa el proceso de emisión"=recepción]
+    {Diagrama de bloques que representa el proceso de emisión"=recepción y
+    todos los elementos que en el intervienen (considerando el modelo
+    propuesto).}
+    \label{fig:emirecmodel}
 \end{figure}
 
 \begin{equation}
@@ -572,13 +571,12 @@ respuesta de un reflector e integrando a todo el volumen el resultado
 obtenido para un solo grano.
 
 \begin{figure}
-	\begin{center}
-		\includegraphics[scale=1, keepaspectratio=true]%
-		{gis-pfc-ch5-05.pdf}
-	\end{center}
-	\caption[Modelo de pequeños receptores] {Modelo de pequeños
-	receptores para la estimación del coeficiente de dispersión.}
-	\label{fig:matrix}
+    \begin{center}
+	\includegraphics {gis-pfc-ch5-05.pdf}
+    \end{center}
+    \caption[Modelo de pequeños receptores]{Modelo de pequeños receptores
+    para la estimación del coeficiente de dispersión.}
+    \label{fig:matrix}
 \end{figure}
 
 La \vref{eq:disperser} es una aproximación de la respuesta espacial al
@@ -651,14 +649,14 @@ longitud de onda.
 \end{equation}}
 
 \begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch5-06.jpg}
-	\end{center}
-	\caption[Comportamiento del coeficiente de
-	atenuación]{Representación del coeficiente de atenuación que
-	muestra su comportamiento en las distintas regiones del material
-	(figura extraída de \citealp{garcia2000mrsr}).}
-	\label{fig:losscoefficient}
+    \begin{center}
+	\includegraphics{gis-pfc-ch5-06.jpg}
+    \end{center}
+    \caption[Comportamiento del coeficiente de atenuación]{Representación
+    del coeficiente de atenuación que muestra su comportamiento en las
+    distintas regiones del material. \\\emph{Fuente:}
+    \citet{garcia2000mrsr}.}
+    \label{fig:losscoefficient}
 \end{figure}
 
 Para finalizar este apartado, en la \vref{fig:losscoefficient} se muestra
@@ -825,50 +823,46 @@ bibliografía como métodos que explotan la fase del defecto.
 
 
 \begin{table}
-	\centering
-	\begin{tabulary}{.95\textwidth}{>{\((}c<{)\)}Lr@{\hspace{6pt}}L}
-		\toprule
-		\multicolumn{2}{c}{Parámetros} %
-		& \multicolumn{2}{c}{Algoritmo} \\
-		\cmidrule(r){1-2}\cmidrule(l){3-4}
-		y & Señal a procesar & 1. & Generar del banco de filtros \\
-		f_\text{min} %
-		& Frecuencia inferior de corte del banco de filtros & 2. %
-		& Calcular la \sig{fft} de $y$ \\
-		f_\text{max} %
-		& Frecuencia superior de corte del banco de filtros & 3. %
-		& Procesar el resultado obtenido en (2) con el banco de %
-		filtros \\
-		\Delta f & Separación entre filtros & 4. %
-		& Calcular la \sig{ifft} de las trazas de banda estrecha \\
-		pb & Ancho de banda de los filtros & 5. %
-		& Normalizar la amplitud de las trazas de banda estrecha \\
-		h_f & Tipo de filtro empleado & 6. %
-		& Construir una única traza a partir de las trazas de %
-		banda estrecha normalizadas \\
-		\bottomrule
-	\end{tabulary}
-	\caption[Particularidades propias de los algoritmos de
-	\sig{ssp}]{Particularidades que en general se aplican a todos los
-	algoritmos de \sig{ssp}.}
-	\label{tab:sspfeatures}
+    \centering
+    \begin{tabulary}{.95\textwidth}{>{\((}c<{)\)}Lr@{\hspace{6pt}}L}
+	\toprule
+	\multicolumn{2}{c}{Parámetros} & \multicolumn{2}{c}{Algoritmo} \\
+	\cmidrule(r){1-2}\cmidrule(l){3-4}
+	y & Señal a procesar & 1. & Generar del banco de filtros \\
+	f_\text{min} & Frecuencia inferior de corte del banco de filtros &
+	2. & Calcular la \sig{fft} de $y$ \\
+	f_\text{max} & Frecuencia superior de corte del banco de filtros &
+	3. & Procesar el resultado obtenido en (2) con el banco de
+	filtros \\
+	\Delta f & Separación entre filtros & 4. & Calcular la \sig{ifft}
+	de las trazas de banda estrecha \\
+	b & Ancho de banda de los filtros & 5. & Normalizar la amplitud de
+	las trazas de banda estrecha \\
+	h_f & Tipo de filtro empleado & 6. & Construir una única traza a
+	partir de las trazas de banda estrecha normalizadas \\
+	\bottomrule
+    \end{tabulary}
+    \caption[Particularidades propias de los algoritmos de
+    \sig{ssp}]{Particularidades que en general se aplican a todos los
+    algoritmos de \sig{ssp}.\\\emph{Fuente:} \citet{garcia2000mrsr}.}
+    \label{tab:sspfeatures}
 \end{table}
 
 \begin{figure}
-	\begin{center}
-		\includegraphics{gis-pfc-ch5-07.pdf}
-	\end{center}
-	\caption[Parámetros de configuración del banco de filtros]%
-	{Representación esquemática en la que pueden observarse los
-	parámetros empleados en la configuración del banco de filtros
-	comparados con el espectro de la señal de audio.}
-	\label{fig:filter}
+    \begin{center}
+	\includegraphics{gis-pfc-ch5-07.pdf}
+    \end{center}
+    \caption[Parámetros de configuración del banco de filtros]
+    {Representación esquemática en la que pueden observarse los parámetros
+    empleados en la configuración del banco de filtros comparados con el
+    espectro de la señal de audio.}
+    \label{fig:filter}
 \end{figure}
 
 La eficacia de las técnicas de \sig{ssp} no está garantizada, depende en
 gran parte de dos de los parámetros listados en el \cref{tab:sspfeatures}.
 Por un lado está la configuración del banco de filtros, a destacar dos
-aspectos: el tipo de filtro empleado y la zona del aspecto en la que se
+aspectos: el tipo de filtro empleado y la zona del espectro en la que se
 aplica el método. Según afirma M.\,A. Izquierdo
 \citep[en][]{garcia2000mrsr}, trabajos realizados a principios de los
 noventa como los de P.\,Karpur apuntan a la existencia de una relación
