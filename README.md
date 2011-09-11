@@ -1,15 +1,17 @@
 Copyright (C)  2009, 2010, 2011  José Ramón Gisbert Valls.
 
-Ensayos no destructivos con ultrasonidos en madera de palmera
-=============================================================
-###(Adquisición y tratamiento digital de señales ultrasónicas)
+"Desarrollo de sistema de medida por ultrasonidos de baja frecuencia. Aplicación al análisis de palmeras in vivo."
+==================================================================================================================
 
-Proyecto Fin de Carrera (PFC), [Universidad Miguel Hernández](http://www.umh.es).
+##[Universidad Miguel Hernández](http://www.umh.es).
 
-Autor
------
+###Escuela Politécnica Superior de Elche
 
-* José Ramón Gisbert Valls (Ingeniería de Telecomunicaciones).
+###Ingeniero de Telecomunicación
+
+####Proyecto Fin de Carrera: Septiembre — 2011
+
+Autor: José Ramón Gisbert Valls
 
 Requisitos para compilar el proyecto
 ------------------------------------
