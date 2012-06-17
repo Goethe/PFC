@@ -1,25 +1,25 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%		 Proyecto Fin de Carrera		   %%%%%%%%
+           %%%%%%%%      Proyecto Fin de Carrera     %%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[a4paper, 12pt]				{book}
+\documentclass[a4paper, 12pt]                                        {book}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%        Preámbulo        %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \includeonly{gis-pfc-tit,   gis-pfc-thanks, gis-pfc-pro,  gis-pfc-part1,
-	     gis-pfc-ch1,   gis-pfc-ch2,    gis-pfc-ch3,  gis-pfc-ch4,
-	     gis-pfc-part2, gis-pfc-ch5,    gis-pfc-ch6,  gis-pfc-appa}
+             gis-pfc-ch1,   gis-pfc-ch2,    gis-pfc-ch3,  gis-pfc-ch4,
+             gis-pfc-part2, gis-pfc-ch5,    gis-pfc-ch6,  gis-pfc-appa}
 
-\usepackage[english, spanish]				{babel}
-\usepackage[utf8]					{inputenc}
-\usepackage[T1]						{fontenc}
-\usepackage[altbullet, nofontinfo]			{lucidabr}
+\usepackage[english, spanish]                                       {babel}
+\usepackage[utf8]                                                {inputenc}
+\usepackage[T1]                                                   {fontenc}
+\usepackage[altbullet, nofontinfo]                               {lucidabr}
 
-\usepackage[clearempty]					{titlesec}
-\usepackage[nottoc]					{tocbibind}
-\usepackage[spanish]					{varioref}
-\usepackage[noauto]					{chappg}
-\usepackage						{graphicx}
+\usepackage[clearempty]                                          {titlesec}
+\usepackage[nottoc]                                             {tocbibind}
+\usepackage[spanish]                                             {varioref}
+\usepackage[noauto]                                                {chappg}
+\usepackage                                                      {graphicx}
 
 \usepackage{amsfonts, amsmath,  amssymb,  pdfpages, jurabib,  fancyhdr}
 \usepackage{hyperref, ifthen,   layouts,  tabulary, rotating, textcase}
@@ -27,36 +27,43 @@
 \usepackage{color,    geometry, calc,     afterpage}
 
 \usepackage[format    = hang,
-	    font      = small,
-	    labelfont = bf,
-	    labelsep  = endash,
-	    width     = .9\textwidth]			{caption}
+            font      = small,
+            labelfont = bf,
+            labelsep  = endash,
+            width     = .9\textwidth]                             {caption}
 
-\usepackage[listofformat=subsimple, format=hang, captionskip=10pt,
-labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
+\usepackage[listofformat = subsimple,
+            format       = hang,
+            captionskip  = 10pt,
+            labelfont    = footnotesize,
+            textfont     = {it, footnotesize}]                     {subfig}
 
-\usepackage						{threeparttable}
-\usepackage						{textcomp}
-\usepackage[spanish]					{cleveref}
+\usepackage                                                {threeparttable}
+\usepackage                                                      {textcomp}
+\usepackage[spanish]                                             {cleveref}
 
-\setcounter{lofdepth}{2}				% subfig
+\setcounter{lofdepth}{2}                                           % subfig
 
-\titleformat{\part}[display]				% titlesec
-	{\centering\huge\bfseries}
-	{\partname\ \thepart}
-	{.5\baselineskip}{}
+\titleformat{\part}[display]                                     % titlesec
+  {\centering\huge\bfseries}
+  {\partname\ \thepart}
+  {.5\baselineskip}{}
 
 %--------------------------------hyperref---------------------------------%
 \hypersetup{
-	pdftitle           = Desarrollo de sistema de medida por
-			     ultrasonidos de baja frecuencia. Aplicación al
-			     análisis de palmeras in vivo.,
-	pdfauthor          = José Ramón Gisbert Valls,
-	pdfcreator         = Vim 7.2-3,
-	pdfstartview       = FitH,		colorlinks    = true,
-	pdfdisplaydoctitle = true, 		linkcolor     = black,
-	citecolor          = black,		bookmarksopen = true,
-	bookmarksopenlevel = 0,			urlcolor      = black
+  pdftitle           = Desarrollo de sistema de medida por
+                       ultrasonidos de baja frecuencia. Aplicación al
+                       análisis de palmeras in vivo.,
+  pdfautho           = José Ramón Gisbert Valls,
+  pdfcreator         = Vim 7.2-3,
+  pdfstartview       = FitH,
+  colorlinks         = true,
+  pdfdisplaydoctitle = true,
+  linkcolor          = black,
+  citecolor          = black,
+  bookmarksopen      = true,
+  bookmarksopenlevel = 0,
+  urlcolor           = black
 }
 %-------------------------------\hyperref---------------------------------%
 
@@ -84,81 +91,87 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 
 %--------------------------------fancyhdr---------------------------------%
 \fancypagestyle{plain}{
-	\fancyhf{}
-	\renewcommand\headrulewidth{0pt}
+  \fancyhf{}
+  \renewcommand\headrulewidth{0pt}
 }
 \fancypagestyle{Number}{
-	\fancyhf{}
-	\fancyfoot[C]{\bfseries\scshape\thepage}
-	\renewcommand\headrulewidth{0pt}
+  \fancyhf{}
+  \fancyfoot[C]{\bfseries\scshape\thepage}
+  \renewcommand\headrulewidth{0pt}
 }
 \fancypagestyle{number}{
-	\fancyhf{}
-	\fancyfoot[C]{\footnotesize\sffamily\bfseries\thepage}
-	\renewcommand\headrulewidth{0pt}
+  \fancyhf{}
+  \fancyfoot[C]{\footnotesize\sffamily\bfseries\thepage}
+  \renewcommand\headrulewidth{0pt}
 }
 \fancypagestyle{body}{
-	\fancyhf{}
-	\fancyhead[RO, LE]{\footnotesize\sffamily\bfseries\thepage}
-	\fancyhead[LO]{\footnotesize\sffamily\nouppercase{\rightmark}}
-	\fancyhead[RE]{\footnotesize\sffamily\nouppercase{\leftmark}}
-	\fancyhfoffset[RO, LE]{(\marginparwidth + \marginparsep)/2}
-	\renewcommand\headrulewidth{0pt}
-	\renewcommand\chaptermark[1]{\markboth{##1}{}}
+  \fancyhf{}
+  \fancyhead[RO, LE]{\footnotesize\sffamily\bfseries\thepage}
+  \fancyhead[LO]{\footnotesize\sffamily\nouppercase{\rightmark}}
+  \fancyhead[RE]{\footnotesize\sffamily\nouppercase{\leftmark}}
+  \fancyhfoffset[RO, LE]{(\marginparwidth + \marginparsep)/2}
+  \renewcommand\headrulewidth{0pt}
+  \renewcommand\chaptermark[1]{\markboth{##1}{}}
 }
 \setlength\marginparsep{12pt}
 \setlength\marginparwidth{\pdfpagewidth - \textwidth - \oddsidemargin -
-	2\marginparsep - 1in}
+  2\marginparsep - 1in}
 %-------------------------------\fancyhdr---------------------------------%
 
 %--------------------------------listings---------------------------------%
 \lstloadlanguages{Matlab}
 
 \lstset{language      = Matlab,
-	basicstyle    = \ttfamily,
-	keywordstyle  = \sffamily\bfseries,
-	extendedchars = true,
-	breaklines,
-	captionpos    = b,
-	morekeywords  = {addchannel,     analoginput, catch,
-	datadqcallback,	 daqfind,        daqhwinfo,   errordlg,
-	gcbo,            getdata,        guidata,     localDaqCallback,
-	peekdata,        single_channel, start,       stop,
-	strcmpi,	 trigger,        try,         warning}
+        basicstyle    = \ttfamily,
+        keywordstyle  = \sffamily\bfseries,
+        extendedchars = true,
+        breaklines,
+        captionpos    = b,
+        morekeywords  = {addchannel,     analoginput,      catch,
+                         datadqcallback, daqfind,          daqhwinfo,
+                         errordlg,       gcbo,             getdata,
+                         guidata,        localDaqCallback, peekdata,
+                         single_channel, start,            stop,
+                         strcmpi,        trigger,          try,
+                         warning}
 }
 
 \lstdefinestyle{displayed}{
-	float            = tpbh,           tabsize     = 5,
-	abovecaptionskip = \bigskipamount, gobble      = 4,
-	xleftmargin      = .082\textwidth, numbers     = left,
-	numberstyle      = \tiny,          numbersep   = 5pt
+	float            = tpbh,
+  tabsize          = 5,
+	abovecaptionskip = \bigskipamount,
+  gobble           = 4,
+	xleftmargin      = .082\textwidth,
+  numbers          = left,
+	numberstyle      = \tiny,
+  numbersep        = 5pt
 }
 %-------------------------------\listings---------------------------------%
 
-\crefname{lstlisting}	{fragmento de código}{fragmentos de código}
-\crefname{listing}	{fragmento de código}{fragmentos de código}
-\crefname{subsection}	{subapartado}        {subapartados}
-\crefname{subsubsection}{subapartado}        {subapartados}	% cleveref
+\crefname{lstlisting} {fragmento de código}{fragmentos de código}
+\crefname{listing}    {fragmento de código}{fragmentos de código}
+\crefname{subsection} {subapartado}        {subapartados}
+\crefname{subsubsection}{subapartado}      {subapartados}        % cleveref
 
-\graphicspath{{./pictures/}{../pictures/}}			% graphics
+\graphicspath{{./pictures/}{../pictures/}}                       % graphics
 
-\DeclareCaptionLabelFormat{cont}{#1~#2\alph{ContinuedFloat}}	% caption
+\DeclareCaptionLabelFormat{cont}{#1~#2\alph{ContinuedFloat}}      % caption
 \captionsetup[ContinuedFloat]{labelformat=cont}
 \DeclareCaptionLabelFormat{romanos}{\textbf{(\,\Roman{figure}\,)}}
 \DeclareCaptionListFormat{romanos}{\thepart\,.\,\Roman{figure}\,}
 
-\newcommand\tnotetext[2]				   % threeparttable
-	{\item\hspace*{-5pt}\raisebox{.7ex}
-	{\fontsize{7pt}{8.4pt}\selectfont\normalfont #1}
-	{\hspace*{-0.2em}\footnotesize #2}}
+\newcommand\tnotetext[2]                                   % threeparttable
+  {\item\hspace*{-5pt}\raisebox{.7ex}
+  {\fontsize{7pt}{8.4pt}\selectfont\normalfont #1}
+  {\hspace*{-0.2em}\footnotesize #2}}
 \newenvironment{TableNotes}{\begin{tablenotes}
-	\vspace{\footnotesep}
-	\footnoterule\vspace{.2ex}}
-	{\end{tablenotes}}
+  \vspace{\footnotesep}
+  \footnoterule\vspace{.2ex}}
+  {\end{tablenotes}}
 
-\renewcommand\chappgsep{}					%% chappg
+\renewcommand\chappgsep{}                                         %% chappg
 
-\newcolumntype{d}[1]{D{,}{,}{#1}}			  % dcolumn + array
+\newcolumntype{d}[1]{D{,}{,}{#1}                          % dcolumn + array
 \newcolumntype{+}{D{/}{\mbox{\ --\ }}{5}}
 
 % Convenios tipográficos: siglas (primera vez), siglas, funciones,
@@ -189,9 +202,9 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 \newcommand\schoolname[1]{\fontsize{16pt}{19.2pt}\selectfont#1}
 \newcommand\directorname[1]{\fontsize{14pt}{16.8pt}\selectfont#1}
 
-\newcommand\miniit[1]{\begin{itemize} #1 \end{itemize}}		% miniit
+\newcommand\miniit[1]{\begin{itemize} #1 \end{itemize}}            % miniit
 
-\newcommand\prosec{						% prosec
+\newcommand\prosec{                                                % prosec
 	\smallskip\begin{center}
 		\usefont{T1}{hlh}{m}{n}
 		\UseTextSymbol{OMS}{\textasteriskcentered}\quad
@@ -199,25 +212,25 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 		\UseTextSymbol{OMS}{\textasteriskcentered}
 	\end{center}\smallskip}
 
-\newcommand\longpage [1][1]{\enlargethispage {#1\baselineskip}}	% longpage
+\newcommand\longpage [1][1]{\enlargethispage {#1\baselineskip}}  % longpage
 \newcommand\llongpage[1][0]{\enlargethispage*{#1\baselineskip}}
 \newcommand\shortpage[1][1]{\enlargethispage{-#1\baselineskip}}
 \newcommand\sshortpage[1][1]{\enlargethispage*{-#1\baselineskip}}
 
-\renewcommand\labelitemi{\textbullet}				% itemize
+\renewcommand\labelitemi{\textbullet}                             % itemize
 \renewcommand\labelitemii{\leavevmode\hbox to 1.1ex
-	{\hss\vrule height .7ex width .5ex depth -.15ex\hss}}
+  {\hss\vrule height .7ex width .5ex depth -.15ex\hss}}
 
 \makeatletter
-    \renewcommand\@pnumwidth{20.4pt}				% pnumwidth
-    \renewcommand\l@figure  {\@dottedtocline{1}{1.5em}{2.8em}}
+  \renewcommand\@pnumwidth{20.4pt}                              % pnumwidth
+  \renewcommand\l@figure{\@dottedtocline{1}{1.5em}{2.8em}}
 \makeatother
 \newcommand\eletras{
-	\renewcommand\labelenumi{\textsc{\alph{enumi}}.}}	% enumerate
+  \renewcommand\labelenumi{\textsc{\alph{enumi}}.}}             % enumerate
 \newcommand\itembf[1]{\item\textbf{#1} ---}
 \newcommand\sectionlabel{
-	\renewcommand\thesection{\arabic{section}}}		% sectionl
-\newcounter{totalpages}					       % totalpages
+  \renewcommand\thesection{\arabic{section}}}                    % sectionl
+\newcounter{totalpages}                                        % totalpages
 
 %%%%%%%%%%%%%%%%%%%%%%%%         Contenido         %%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -230,23 +243,23 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 % Acta de aprobación del proyecto
 \newsavebox\logo
 \sbox{\logo}{
-    \includegraphics{gis-pfc-anexoIV-01.pdf}
-    \hspace*{-2.3cm}\includegraphics[bb = 0 524 152 678, clip,
-	height = 2.4cm, keepaspectratio]{logo.pdf}
+  \includegraphics{gis-pfc-anexoIV-01.pdf}
+  \hspace*{-2.3cm}\includegraphics[bb = 0 524 152 678, clip,
+    height = 2.4cm, keepaspectratio]{logo.pdf}
 }
 \includepdf[
-    pages = -,
-    fitpaper = true,
-    pagecommand = {
-	\vspace*{-3.69cm}\hspace*{-.65cm}\usebox{\logo}
-    }
+  pages = -,
+  fitpaper = true,
+  pagecommand = {
+    \vspace*{-3.69cm}\hspace*{-.65cm}\usebox{\logo}
+  }
 ]{anexoIV.pdf}
 \cleardoublepage
 
 \include{gis-pfc-thanks}
 
 
-\pagestyle{Number}						% fancyhdr
+\pagestyle{Number}
 
 \frontmatter
 
@@ -259,26 +272,26 @@ labelfont=footnotesize, textfont={it, footnotesize}]	{subfig}
 \mainmatter
 
 \part[Implementación del sistema digital de medida] %
-{Diseño e implementación del sistema digital de medida}
-\pagestyle{number}						% fancyhdr
+  {Diseño e implementación del sistema digital de medida}
+\pagestyle{number}
 \include{gis-pfc-part1}
-\pagestyle{body}						% fancyhdr
+\pagestyle{body}
 \include{gis-pfc-ch1}
 \include{gis-pfc-ch2}
 \include{gis-pfc-ch3}
 \include{gis-pfc-ch4}
 \part[\textsc{endus} en madera de palmera] %
 {Ensayos no destructivos en madera de palmera}
-\pagestyle{number}						% fancyhdr
+\pagestyle{number}
 \include{gis-pfc-part2}
-\pagestyle{body}						% fancyhdr
+\pagestyle{body}
 \include{gis-pfc-ch5}
 \include{gis-pfc-ch6}
 
 \part*{Apéndices}
 
 \appendix
-\pagenumbering{bychapter}					% chappg
+\pagenumbering{bychapter}
 \include{gis-pfc-appa}
 
 
